@@ -19,6 +19,7 @@ var _building_with_fireplace_8c =
     [ "Land_Ruin_HouseSmall2", "d3/dcb/class_land___ruin___house_small2.html", null ],
     [ "Land_Ruin_HouseSmall2_NoIvy", "d9/d91/class_land___ruin___house_small2___no_ivy.html", null ],
     [ "Land_House_1W13_Dam", "dc/d38/class_land___house__1_w13___dam.html", null ],
+    [ "Land_Ruin_Chimney", "d2/d29/class_land___ruin___chimney.html", null ],
     [ "Land_Tenement_Small_Brick", "d8/d49/class_land___tenement___small___brick.html", null ],
     [ "Land_Tenement_Small_Brown", "da/d4f/class_land___tenement___small___brown.html", null ],
     [ "Land_Tenement_Small_Yellow", "d9/d2f/class_land___tenement___small___yellow.html", null ]

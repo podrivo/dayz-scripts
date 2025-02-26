@@ -4,6 +4,7 @@ var class_bios_session_service =
     [ "EnterGameplaySessionAsync", "d4/d9e/class_bios_session_service.html#a2bf2b9927a8bec343dc59d4fb65c0e6f", null ],
     [ "GetSessionAsync", "d4/d9e/class_bios_session_service.html#ac922a6ab7e60e6a0e2a876ade1179379", null ],
     [ "GetSessionPlayerList", "d4/d9e/class_bios_session_service.html#a36ab0add31e2b3b2cc4ef93102fc39a6", null ],
+    [ "GetSessionPlayerListEx", "d4/d9e/class_bios_session_service.html#aa35194caf82f9def5e2758fdd686d7dd", null ],
     [ "InviteToGameplaySessionAsync", "d4/d9e/class_bios_session_service.html#a328f7776ff93458af1342904fc3ba0a4", null ],
     [ "LeaveGameplaySessionAsync", "d4/d9e/class_bios_session_service.html#a5b1fc1cfa44d667d2520ee0d8b0be5cb", null ],
     [ "OnClearActivity", "d4/d9e/class_bios_session_service.html#a2d940040fce8f0cea526c48101d8c0ca", null ],

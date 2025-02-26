@@ -5,7 +5,7 @@ var _cfg_player_spawn_data_json_8c =
     [ "PlayerSpawnPresetItemSetBase", "db/d2a/class_player_spawn_preset_item_set_base.html", "db/d2a/class_player_spawn_preset_item_set_base" ],
     [ "PlayerSpawnPresetDiscreteItemSetSlotData", "d8/d5e/class_player_spawn_preset_discrete_item_set_slot_data.html", "d8/d5e/class_player_spawn_preset_discrete_item_set_slot_data" ],
     [ "PlayerSpawnPresetComplexChildrenType", "d1/d25/class_player_spawn_preset_complex_children_type.html", "d1/d25/class_player_spawn_preset_complex_children_type" ],
-    [ "IsValid", "d0/dd4/_cfg_player_spawn_data_json_8c.html#a9c68026aa816e619e6ff1e770eebbbc0", null ],
+    [ "IsValid", "d7/ddb/group___sound_controller.html#ga12ac56eacd52df3fe1c19a18046c7c99", null ],
     [ "TranslateAndValidateSlot", "d0/dd4/_cfg_player_spawn_data_json_8c.html#a6022174b73ea9fc5b34f59cb2e5c641b", null ],
     [ "discreteItemSets", "d0/dd4/_cfg_player_spawn_data_json_8c.html#a43f89b4bd93fae5ba6f79670a99be0b3", null ],
     [ "healthMax", "d0/dd4/_cfg_player_spawn_data_json_8c.html#ad83095e38a164afae4680c14dc88cdd2", null ],

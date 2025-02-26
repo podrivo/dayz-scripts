@@ -19,10 +19,6 @@ var class_trap_spawn_base =
     [ "IsPlaceableAtPosition", "d6/d3e/class_trap_spawn_base.html#afd01b82a1d31ad71342c37463ab43c46", null ],
     [ "IsPlaceableAtPosition", "d6/d3e/class_trap_spawn_base.html#afd01b82a1d31ad71342c37463ab43c46", null ],
     [ "OnPlacementComplete", "d6/d3e/class_trap_spawn_base.html#a6ff31a876fba89e2f0ae6c33af8cd551", null ],
-    [ "OnPlacementComplete", "d6/d3e/class_trap_spawn_base.html#a6ff31a876fba89e2f0ae6c33af8cd551", null ],
-    [ "OnVariablesSynchronized", "d6/d3e/class_trap_spawn_base.html#ad183155e7592e816863539c54b6fa83f", null ],
-    [ "OnVariablesSynchronized", "d6/d3e/class_trap_spawn_base.html#ad183155e7592e816863539c54b6fa83f", null ],
-    [ "OnVariablesSynchronized", "d6/d3e/class_trap_spawn_base.html#ad183155e7592e816863539c54b6fa83f", null ],
     [ "SetActions", "d6/d3e/class_trap_spawn_base.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
     [ "SetupTrap", "d6/d3e/class_trap_spawn_base.html#a4eaa75c09257961659a66cde5f4f511b", null ]
 ];

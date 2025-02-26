@@ -15,6 +15,8 @@ var class_impact_materials =
     [ "FIST", "d2/d47/class_impact_materials.html#abc4f9ade2eb36357b00078b0e520f9e4", null ],
     [ "FIST_HEAVY", "d2/d47/class_impact_materials.html#a70a957a55842abe006be002d0484488f", null ],
     [ "FOLIAGE", "d2/d47/class_impact_materials.html#a45320efd28caa26a8d3b0250c9b8b9c1", null ],
+    [ "FOLIAGE_CONIFER", "d2/d47/class_impact_materials.html#a2a1421dab6192240669214930cc357da", null ],
+    [ "FOLIAGE_GREEN", "d2/d47/class_impact_materials.html#ae74e8e23bf63298451f63239de064a09", null ],
     [ "GLASS", "d2/d47/class_impact_materials.html#a0c6aa06f2a817dca5cccac1521a9bb48", null ],
     [ "GLASS_THIN", "d2/d47/class_impact_materials.html#a2304e78ed248b1a748df22d256133ba4", null ],
     [ "GRASS", "d2/d47/class_impact_materials.html#a5c041583f0d3453cc3285fd61994d779", null ],

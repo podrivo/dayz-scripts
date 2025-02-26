@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -156,9 +156,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a29f157057b6c9627dfc033cfb79873d8"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a29f157057b6c9627dfc033cfb79873d8">LockDoor</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> index, <a class="el" href="../../d9/db9/classbool.html">bool</a> force=false)</td></tr>
 <tr class="memdesc:a29f157057b6c9627dfc033cfb79873d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks the door if not already locked, resets the door health. 'force = true' will close the door if open.  <br /></td></tr>
 <tr class="separator:a29f157057b6c9627dfc033cfb79873d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b6f2e2851ca9e32c261fff3caedeb89"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a0b6f2e2851ca9e32c261fff3caedeb89">UnlockDoor</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> index)</td></tr>
-<tr class="memdesc:a0b6f2e2851ca9e32c261fff3caedeb89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the door if locked.  <br /></td></tr>
-<tr class="separator:a0b6f2e2851ca9e32c261fff3caedeb89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab638a5ad7229924c87d5437b361e58d2"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#ab638a5ad7229924c87d5437b361e58d2">UnlockDoor</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> index, <a class="el" href="../../d9/db9/classbool.html">bool</a> animate=true)</td></tr>
+<tr class="memdesc:ab638a5ad7229924c87d5437b361e58d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the door if locked, AJAR animation optional.  <br /></td></tr>
+<tr class="separator:ab638a5ad7229924c87d5437b361e58d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aecc0d325021882b0a1d6e8c267be7f"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a4aecc0d325021882b0a1d6e8c267be7f">GetDoorSoundPos</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> index)</td></tr>
 <tr class="memdesc:a4aecc0d325021882b0a1d6e8c267be7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position in world space for where the door sounds are played from.  <br /></td></tr>
 <tr class="separator:a4aecc0d325021882b0a1d6e8c267be7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,6 +202,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:aaa3970a74235314d836a3bda03ea6359"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#aaa3970a74235314d836a3bda03ea6359">CanDoorBeLocked</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> doorIndex)</td></tr>
 <tr class="memdesc:aaa3970a74235314d836a3bda03ea6359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the door is closed and if the door is unlocked.  <br /></td></tr>
 <tr class="separator:aaa3970a74235314d836a3bda03ea6359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a632f7299d0a3e4e6c6cfe3984d02d5c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a632f7299d0a3e4e6c6cfe3984d02d5c0">GetLockCompatibilityType</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> doorIdx)</td></tr>
+<tr class="memdesc:a632f7299d0a3e4e6c6cfe3984d02d5c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which door is compatible with which key (door idx supplied). Bitwise.  <br /></td></tr>
+<tr class="separator:a632f7299d0a3e4e6c6cfe3984d02d5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab110c1ad759f395660b0ae9242843731"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#ab110c1ad759f395660b0ae9242843731">GetDebugActions</a> (out TSelectableActionInfoArrayEx outputList)</td></tr>
 <tr class="separator:ab110c1ad759f395660b0ae9242843731"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64db4496134a9520c526e341cd13807f"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a64db4496134a9520c526e341cd13807f">OnAction</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> action_id, <a class="el" href="../../df/df9/class_entity_a_i.html#aa1c9ced75db4a9a643207fac787ce924">Man</a> player, <a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a> ctx)</td></tr>
@@ -263,7 +266,7 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:aac3514ae6c998cfb0dfac38bc377ac11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a0b1a224b2a5d50faf3a3c2940f90cd"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a0a0b1a224b2a5d50faf3a3c2940f90cd">InitImpactSoundData</a> ()</td></tr>
 <tr class="separator:a0a0b1a224b2a5d50faf3a3c2940f90cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2caeed82d3a8e1332e3e4291a4d807f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d52/class_abstract_wave.html">AbstractWave</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a2caeed82d3a8e1332e3e4291a4d807f7">PlaySound</a> (<a class="el" href="../../d1/d13/_sound_8c.html#a88b8e74ab7a8a3d20a2f3f55948b0ed6">SoundObject</a> so, <a class="el" href="../../d5/db9/class_sound_object_builder.html">SoundObjectBuilder</a> sob)</td></tr>
+<tr class="memitem:a2caeed82d3a8e1332e3e4291a4d807f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga80a77266d85badc03dd5f75c3f3b5c95">AbstractWave</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a2caeed82d3a8e1332e3e4291a4d807f7">PlaySound</a> (<a class="el" href="../../dc/dff/class_sound_object.html">SoundObject</a> so, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga64e2d161ee236deaf631f4ef1c674063">SoundObjectBuilder</a> sob)</td></tr>
 <tr class="separator:a2caeed82d3a8e1332e3e4291a4d807f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefec87df2baa6bb84c85a8137f5d3316"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#aefec87df2baa6bb84c85a8137f5d3316">PlaySoundByAnimEvent</a> (<a class="el" href="../../d5/df7/_e_anim_sound_event_i_d_8c.html#a10de926578f04cb215fdf8c6fb062006">EAnimSoundEventID</a> id)</td></tr>
 <tr class="separator:aefec87df2baa6bb84c85a8137f5d3316"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -428,6 +431,19 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:aa21b0b6b87d7f31146e6f6de216cd4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f04b35220df24986a02eb1d4ddf9418"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a5f04b35220df24986a02eb1d4ddf9418">GetRefillPointPosWS</a> ()</td></tr>
 <tr class="separator:a5f04b35220df24986a02eb1d4ddf9418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15faac75ca8ed27196f46df5c4ab6085"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d8/d13/class_vehicle_flipped_context.html">VehicleFlippedContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a15faac75ca8ed27196f46df5c4ab6085">GetFlipContext</a> ()</td></tr>
+<tr class="separator:a15faac75ca8ed27196f46df5c4ab6085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35289dea6b283d2e3c5b7395c579e6cf"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a35289dea6b283d2e3c5b7395c579e6cf">DetectFlippedUsingSurface</a> (<a class="el" href="../../d8/d13/class_vehicle_flipped_context.html">VehicleFlippedContext</a> ctx, <a class="el" href="../../d4/dc3/classfloat.html">float</a> angleTolerance)</td></tr>
+<tr class="separator:a35289dea6b283d2e3c5b7395c579e6cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0467361e608f2014b0e83fb272e300d"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#ae0467361e608f2014b0e83fb272e300d">DetectFlipped</a> (<a class="el" href="../../d8/d13/class_vehicle_flipped_context.html">VehicleFlippedContext</a> ctx)</td></tr>
+<tr class="memdesc:ae0467361e608f2014b0e83fb272e300d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override based on vehicle implementation (Car, Boat, modded, etc.)  <br /></td></tr>
+<tr class="separator:ae0467361e608f2014b0e83fb272e300d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62edba121bdfe3e86c6e602da1970249"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a62edba121bdfe3e86c6e602da1970249">IsFlipped</a> ()</td></tr>
+<tr class="memdesc:a62edba121bdfe3e86c6e602da1970249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Don't override, may change to native for caching 'DetectFlipped' in the future based on active-ness (i.e. only updated when vehicle changes active state)  <br /></td></tr>
+<tr class="separator:a62edba121bdfe3e86c6e602da1970249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba672e3dde782fb19746d1ccb6440080"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#aba672e3dde782fb19746d1ccb6440080">IsActionFlipped</a> (<a class="el" href="../../df/df9/class_entity_a_i.html#aa1c9ced75db4a9a643207fac787ce924">Man</a> player)</td></tr>
+<tr class="memdesc:aba672e3dde782fb19746d1ccb6440080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Don't override, may change to native for caching 'DetectFlipped' in the future based on active-ness (i.e. only updated when vehicle changes active state)  <br /></td></tr>
+<tr class="separator:aba672e3dde782fb19746d1ccb6440080"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e3e8ecdfd480d5578b346163d21cf6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a1e3e8ecdfd480d5578b346163d21cf6e">IsAnyCrewPresent</a> ()</td></tr>
 <tr class="separator:a1e3e8ecdfd480d5578b346163d21cf6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac71cbcc6528f70a6416474ef23d9cdaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#ac71cbcc6528f70a6416474ef23d9cdaf">GetTransportCameraDistance</a> ()</td></tr>
@@ -732,15 +748,17 @@ Private Attributes</h2></td></tr>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:aec2c03243ad026489e708373676099be"><td class="memItemLeft" align="right" valign="top">static private const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#aec2c03243ad026489e708373676099be">SOUND_CONTACT_SKIP</a> = 0.33</td></tr>
 <tr class="separator:aec2c03243ad026489e708373676099be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf7840753e164dcf2627400aa477304d"><td class="memItemLeft" align="right" valign="top">static private ref <a class="el" href="../../d8/d13/class_vehicle_flipped_context.html">VehicleFlippedContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#adf7840753e164dcf2627400aa477304d">m_FlippedContext</a></td></tr>
+<tr class="memdesc:adf7840753e164dcf2627400aa477304d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared context across all vehicles for flipping.  <br /></td></tr>
+<tr class="separator:adf7840753e164dcf2627400aa477304d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add25d232e32f5d5b52b94e7898b2bfb0"><td class="memItemLeft" align="right" valign="top">static ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt; <a class="el" href="../../d2/db4/classtypename.html">typename</a>, ref <a class="el" href="../../d2/dae/_action_manager_client_8c.html#ad78eb700709b2384123a58b91044a6fa">TInputActionMap</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#add25d232e32f5d5b52b94e7898b2bfb0">m_AdvComTypeActionsMap</a> = new <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt;<a class="el" href="../../d2/db4/classtypename.html">typename</a>, ref <a class="el" href="../../d2/dae/_action_manager_client_8c.html#ad78eb700709b2384123a58b91044a6fa">TInputActionMap</a>&gt;</td></tr>
 <tr class="separator:add25d232e32f5d5b52b94e7898b2bfb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5010c33ae8c5a537348697cdb351191"><td class="memItemLeft" align="right" valign="top">protected ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#af5010c33ae8c5a537348697cdb351191">m_OnItemAddedToHands</a></td></tr>
 <tr class="separator:af5010c33ae8c5a537348697cdb351191"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab40d4253a49b9885281b680f253d7760"><td class="memItemLeft" align="right" valign="top">protected ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#ab40d4253a49b9885281b680f253d7760">m_OnItemRemovedFromHands</a></td></tr>
 <tr class="separator:ab40d4253a49b9885281b680f253d7760"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3836b44a9c6783a9c105f9883e683578"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d86/class_human_inventory.html">HumanInventory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory</a> ()</td></tr>
-<tr class="memdesc:a3836b44a9c6783a9c105f9883e683578"><td class="mdescLeft">&#160;</td><td class="mdescRight">inventory  <br /></td></tr>
-<tr class="separator:a3836b44a9c6783a9c105f9883e683578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1a4031a17ebb77aa7f3f66b8d01869f"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d8/d86/class_human_inventory.html">HumanInventory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory</a> ()</td></tr>
+<tr class="separator:ae1a4031a17ebb77aa7f3f66b8d01869f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9633fb4c0efe45df9e2b4874853c2dfc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a9633fb4c0efe45df9e2b4874853c2dfc">GetOnItemAddedToHands</a> ()</td></tr>
 <tr class="separator:a9633fb4c0efe45df9e2b4874853c2dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a060863b6bb74b6e8e484aa3c464bcabd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df9/class_entity_a_i.html#a060863b6bb74b6e8e484aa3c464bcabd">GetOnItemRemovedFromHands</a> ()</td></tr>
@@ -1682,6 +1700,72 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae0467361e608f2014b0e83fb272e300d" name="ae0467361e608f2014b0e83fb272e300d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0467361e608f2014b0e83fb272e300d">&#9670;&#160;</a></span>DetectFlipped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/db9/classbool.html">bool</a> DetectFlipped </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d13/class_vehicle_flipped_context.html">VehicleFlippedContext</a>&#160;</td>
+          <td class="paramname"><em>ctx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Override based on vehicle implementation (Car, Boat, modded, etc.) </p>
+
+</div>
+</div>
+<a id="a35289dea6b283d2e3c5b7395c579e6cf" name="a35289dea6b283d2e3c5b7395c579e6cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35289dea6b283d2e3c5b7395c579e6cf">&#9670;&#160;</a></span>DetectFlippedUsingSurface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/db9/classbool.html">bool</a> DetectFlippedUsingSurface </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d13/class_vehicle_flipped_context.html">VehicleFlippedContext</a>&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>angleTolerance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga174eb1cdd51e752a3b400c2621f09d08">Math::Cos()</a>, <a class="el" href="../../d5/d98/group___math.html#gacbfd2fc3314cc3762ea0c3720979f8bc">Math::DEG2RAD</a>, <a class="el" href="../../d7/dfc/classvector.html#acba4fc7dd97cc98f3ef5faa3f378e12a">vector::Direction()</a>, <a class="el" href="../../d7/dfc/classvector.html#adafa60c456aeee3fe7b5f31f5802ffa1">vector::Dot()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#abb48cd9951977f31dd83aa07c4628d5c">CGame::GetSurface()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a2442e99c64166abafbc95775c62b6e4b">CGame::GetWaterDepth()</a>, <a class="el" href="../../dd/d96/class_surface_detection_result.html#a48083b65ac9a863566dc3e3fff09a5b4">SurfaceDetectionResult::height</a>, <a class="el" href="../../d5/d4f/class_surface_detection_parameters.html#a085d54fa3d51cb1ad664b1510eb76498">SurfaceDetectionParameters::ignore</a>, <a class="el" href="../../d5/d4f/class_surface_detection_parameters.html#abcd282433506a1ce9b710706d95ef67b">SurfaceDetectionParameters::includeWater</a>, <a class="el" href="../../d8/d13/class_vehicle_flipped_context.html#a94b47bd4d8f669beaac183f608be174c">VehicleFlippedContext::m_SurfaceParams</a>, <a class="el" href="../../d8/d13/class_vehicle_flipped_context.html#a8a9b4ca5c35b32140d9f06ba91e5f2c5">VehicleFlippedContext::m_SurfaceResult</a>, <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>, <a class="el" href="../../d5/d4f/class_surface_detection_parameters.html#a764a35c2d73b3fff21cd85b6baf13df4">SurfaceDetectionParameters::position</a>, <a class="el" href="../../d5/d4f/class_surface_detection_parameters.html#a4039bd55b6cbdd651ceb0c3cd1d7c6f4">SurfaceDetectionParameters::rsd</a>, <a class="el" href="../../dc/d49/group___diag_menu.html#ga6eaf263a07e0b8a8895ed494afceed7d">Shape</a>, <a class="el" href="../../d5/d4f/class_surface_detection_parameters.html#a2943d993d75d8e38bb92d21da3157ccb">SurfaceDetectionParameters::type</a>, <a class="el" href="../../d7/dfc/classvector.html#a323c92620ed83ca5e6df94a02fdaac2c">vector::Up</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
+
+</div>
+</div>
 <a id="a0089a36ce58db8239e22f8acca76314a" name="a0089a36ce58db8239e22f8acca76314a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0089a36ce58db8239e22f8acca76314a">&#9670;&#160;</a></span>DisableVicinityIcon()</h2>
 
@@ -1749,7 +1833,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d86/class_human_inventory.html#a68194eaeace064f84414b9ac8b24b909">HumanInventory::DropEntity()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d86/class_human_inventory.html#a68194eaeace064f84414b9ac8b24b909">HumanInventory::DropEntity()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/df9/class_entity_a_i.html#a3b2501835a6b9c7bda009e66cd263997">JunctureDropEntity()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a85fa437532af74cdea3a70bcd7a3e2de">LocalDropEntity()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3e1638f3922e86718e85a889b4e3b055">PredictiveDropEntity()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#affb76a3e76602ff558db381a6b5e19a3">ServerDropEntity()</a>.</p>
 
@@ -1983,7 +2067,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d86/class_human_inventory.html#abe2d83ac0c98db0acdb554f13193de4b">HumanInventory::ForceSwapEntities()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d86/class_human_inventory.html#abe2d83ac0c98db0acdb554f13193de4b">HumanInventory::ForceSwapEntities()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/df9/class_entity_a_i.html#a23b9ef3651a0981442b1442c13d680b4">JunctureForceSwapEntities()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3d185ac2f279ec0df1d997ed0461bc53">LocalForceSwapEntities()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae0eb257209304ba3cd9b39d60cfb70f8">PredictiveForceSwapEntities()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#a706f06b7873968698504b2509ad013b5">ServerForceSwapEntities()</a>.</p>
 
@@ -2328,6 +2412,33 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a15faac75ca8ed27196f46df5c4ab6085" name="a15faac75ca8ed27196f46df5c4ab6085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15faac75ca8ed27196f46df5c4ab6085">&#9670;&#160;</a></span>GetFlipContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d8/d13/class_vehicle_flipped_context.html">VehicleFlippedContext</a> GetFlipContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../dc/d49/group___diag_menu.html#ga094401a2b5687f6b5845a5717984cbb0">DiagMenu::GetBool()</a>.</p>
+
+</div>
+</div>
 <a id="a9cc254aef96ca1d2720e07163f42a1c6" name="a9cc254aef96ca1d2720e07163f42a1c6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9cc254aef96ca1d2720e07163f42a1c6">&#9670;&#160;</a></span>GetHideIconMask()</h2>
 
@@ -2355,8 +2466,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3836b44a9c6783a9c105f9883e683578" name="a3836b44a9c6783a9c105f9883e683578"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3836b44a9c6783a9c105f9883e683578">&#9670;&#160;</a></span>GetHumanInventory()</h2>
+<a id="ae1a4031a17ebb77aa7f3f66b8d01869f" name="ae1a4031a17ebb77aa7f3f66b8d01869f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1a4031a17ebb77aa7f3f66b8d01869f">&#9670;&#160;</a></span>GetHumanInventory()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2365,7 +2476,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d8/d86/class_human_inventory.html">HumanInventory</a> GetHumanInventory </td>
+          <td class="memname">proto native <a class="el" href="../../d8/d86/class_human_inventory.html">HumanInventory</a> GetHumanInventory </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2373,12 +2484,11 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>inventory </p>
+<p>inventory Returns player's inventory </p>
 
 <p class="reference">Referenced by <a class="el" href="../../d4/d49/class_hand_action_base.html#aa48f7d7786ad8088b84720add04ea1d8">HandActionBase::Action()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae4b09f818aaa2458cb46e12b69bb5814">DropEntityImpl()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#acca3e59acdcdf82929e01965de0ca761">ForceSwapEntitiesImpl()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#aff1240689ec702f631f079488bbca905">InventoryItem::GetRecipesActions()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a8b5bc4513e0fce403f3bb2356aaf52cd">LocalDestroyEntityInHands()</a>, <a class="el" href="../../d2/d9a/class_hand_state_base.html#a5af9858c011f114ddfd56d0edc6b60c7">HandStateBase::OnEntry()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#abbe50e1ae9704b47d7ac8ec53f3b9b16">PredictiveMoveItemFromHandsToInventory()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ae93d6ed30a6375f1d9245a413253fe05">HumanInventory::RedirectToHandEvent()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae7b675ec85ac038c2c0bb352221866b8">ReplaceItemElsewhereWithNewInHandsImpl()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ab3770b3bd9964967dd438390f811cf78">ReplaceItemInHandsWithNewElsewhereImpl()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a4835dd87c1149603b3697367a51ca1a8">ReplaceItemInHandsWithNewImpl()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a5d0a0e33e19d419a155dcbcf4793c8db">ReplaceItemWithNewImpl()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a00640a1a7f1797d1a626e3259f73af41">SwapEntitiesImpl()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ace2d381f3dc565fe768f9771710e6295">TakeEntityAsAttachmentExImpl()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a61f685325f1d9e1c8fda092c7238202c">TakeEntityAsAttachmentImpl()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a429894d259f98c1e1ec511f8e52c0dab">TakeEntityToCargoImpl()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a6a99557d160aa4d5b36cc952aef3817d">TakeEntityToHandsImpl()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3ee874d47451a24c58b0b4f8d5cf495f">TakeEntityToInventoryImpl()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#a728f2c5e5d0f458bfbd35484fdc1bbf5">TakeToDstImpl()</a>.</p>
 
@@ -2617,6 +2727,46 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a632f7299d0a3e4e6c6cfe3984d02d5c0" name="a632f7299d0a3e4e6c6cfe3984d02d5c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a632f7299d0a3e4e6c6cfe3984d02d5c0">&#9670;&#160;</a></span>GetLockCompatibilityType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> GetLockCompatibilityType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td>
+          <td class="paramname"><em>doorIdx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Which door is compatible with which key (door idx supplied). Bitwise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doorIdx</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bitwise value of all compatible locks </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>you can combine the bit values like so: </dd>
+<dd>
+return (1 &lt;&lt; EBuildingLockType.LOCKPICK) | (1 &lt;&lt; EBuildingLockType.SHIP_CONTAINER_1); </dd>
+<dd>
+you can also this for each individual door idx </dd></dl>
 
 </div>
 </div>
@@ -3373,6 +3523,36 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aba672e3dde782fb19746d1ccb6440080" name="aba672e3dde782fb19746d1ccb6440080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba672e3dde782fb19746d1ccb6440080">&#9670;&#160;</a></span>IsActionFlipped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> IsActionFlipped </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/df9/class_entity_a_i.html#aa1c9ced75db4a9a643207fac787ce924">Man</a>&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Don't override, may change to native for caching 'DetectFlipped' in the future based on active-ness (i.e. only updated when vehicle changes active state) </p>
+
+<p class="reference">References <a class="el" href="../../d5/d71/_car_script_8c.html#a8c8c661a5e592a68d33ea23191334dca">DetectFlipped()</a>, <a class="el" href="../../d8/d13/class_vehicle_flipped_context.html#a18eb0119e2c603e0eb9713c88b15bd0a">VehicleFlippedContext::m_ActionPlayer</a>, and <a class="el" href="../../d8/d13/class_vehicle_flipped_context.html#ae86eae5c5c53e69e286736cece847639">VehicleFlippedContext::m_bIsAction</a>.</p>
+
+</div>
+</div>
 <a id="a1e3e8ecdfd480d5578b346163d21cf6e" name="a1e3e8ecdfd480d5578b346163d21cf6e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1e3e8ecdfd480d5578b346163d21cf6e">&#9670;&#160;</a></span>IsAnyCrewPresent()</h2>
 
@@ -3775,6 +3955,35 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>When the wanted phase is at the ajar phase target (0.2) </p>
+
+</div>
+</div>
+<a id="a62edba121bdfe3e86c6e602da1970249" name="a62edba121bdfe3e86c6e602da1970249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62edba121bdfe3e86c6e602da1970249">&#9670;&#160;</a></span>IsFlipped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> IsFlipped </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Don't override, may change to native for caching 'DetectFlipped' in the future based on active-ness (i.e. only updated when vehicle changes active state) </p>
+
+<p class="reference">References <a class="el" href="../../d5/d71/_car_script_8c.html#a8c8c661a5e592a68d33ea23191334dca">DetectFlipped()</a>, <a class="el" href="../../d8/d13/class_vehicle_flipped_context.html#a18eb0119e2c603e0eb9713c88b15bd0a">VehicleFlippedContext::m_ActionPlayer</a>, and <a class="el" href="../../d8/d13/class_vehicle_flipped_context.html#ae86eae5c5c53e69e286736cece847639">VehicleFlippedContext::m_bIsAction</a>.</p>
 
 </div>
 </div>
@@ -4899,7 +5108,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ad2485be861f15945233e0160481a36a1">HumanInventory::LocalDestroyEntity()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ad2485be861f15945233e0160481a36a1">HumanInventory::LocalDestroyEntity()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 </div>
 </div>
@@ -5610,6 +5819,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d6/dae/group___debug_shape.html#gaa9ba3114af4e5ecafd82fcdfd3c196b1">SetFlags()</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d96/class_entity.html#a2e2a43cd077db645fc7f3f8da2b24ae9">Entity::EEItemLocationChanged()</a>, and <a class="el" href="../../d2/d96/class_entity.html#ab364494e725a168f87ee6b4c06f05f6e">Entity::IsSlotReserved()</a>.</p>
+
 </div>
 </div>
 <a id="a056a3bbf847d0fd5f08078f0f645f1c5" name="a056a3bbf847d0fd5f08078f0f645f1c5"></a>
@@ -5748,7 +5959,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/df9/class_entity_a_i.html#ae8107e2c8ae6d32a7da754ef82a78fbb">CloseDoor()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#adc77d0cf1f635e913458f621c0760606">GetNearestDoorBySoundPos()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a29f157057b6c9627dfc033cfb79873d8">LockDoor()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a8086a2d4a346036de75e78ae298369b3">OpenDoor()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#aded93212f37d0254981466114d8af7d6">OutputDoorLog()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a60bf90db82bbff2fcb2c4598e94d0e6f">PlayDoorSound()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#a0b6f2e2851ca9e32c261fff3caedeb89">UnlockDoor()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/df9/class_entity_a_i.html#ae8107e2c8ae6d32a7da754ef82a78fbb">CloseDoor()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#adc77d0cf1f635e913458f621c0760606">GetNearestDoorBySoundPos()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a29f157057b6c9627dfc033cfb79873d8">LockDoor()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a8086a2d4a346036de75e78ae298369b3">OpenDoor()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#aded93212f37d0254981466114d8af7d6">OutputDoorLog()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a60bf90db82bbff2fcb2c4598e94d0e6f">PlayDoorSound()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ab638a5ad7229924c87d5437b361e58d2">UnlockDoor()</a>.</p>
 
 </div>
 </div>
@@ -6242,7 +6453,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/db9/class_sound_object_builder.html#a44805ad91dfd68290920d5aea733b420">SoundObjectBuilder::AddEnvSoundVariables()</a>, <a class="el" href="../../d5/db9/class_sound_object_builder.html#a1ca1c591baf1b6f80d99187f7775f127">SoundObjectBuilder::AddVariable()</a>, <a class="el" href="../../d5/db9/class_sound_object_builder.html#a6dd53aeb21ba907a52f8d39ec8916f5d">SoundObjectBuilder::BuildSoundObject()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d4/d4d/class_sound_lookup_table.html#a331064fdd07bc0cd0e8bb1e7aa1146d1">SoundLookupTable::GetSoundBuilder()</a>, <a class="el" href="../../d8/d9b/_hunger_sound_handler_8c.html#a37a72bb98e9ec48f9c2e65feae17943d">PlaySound()</a>, and <a class="el" href="../../d1/d13/_sound_8c.html#a88b8e74ab7a8a3d20a2f3f55948b0ed6">SoundObject()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d4/d4d/class_sound_lookup_table.html#a331064fdd07bc0cd0e8bb1e7aa1146d1">SoundLookupTable::GetSoundBuilder()</a>, <a class="el" href="../../d8/d9b/_hunger_sound_handler_8c.html#a37a72bb98e9ec48f9c2e65feae17943d">PlaySound()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga46d88285c7916a70ae205c016c8ad2fa">SoundObject::SetKind()</a>, and <a class="el" href="../../d7/ddb/group___sound_controller.html#ga64e2d161ee236deaf631f4ef1c674063">SoundObjectBuilder()</a>.</p>
 
 </div>
 </div>
@@ -6256,15 +6467,15 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d9/d52/class_abstract_wave.html">AbstractWave</a> PlaySound </td>
+          <td class="memname"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga80a77266d85badc03dd5f75c3f3b5c95">AbstractWave</a> PlaySound </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/d13/_sound_8c.html#a88b8e74ab7a8a3d20a2f3f55948b0ed6">SoundObject</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/dff/class_sound_object.html">SoundObject</a>&#160;</td>
           <td class="paramname"><em>so</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d5/db9/class_sound_object_builder.html">SoundObjectBuilder</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga64e2d161ee236deaf631f4ef1c674063">SoundObjectBuilder</a>&#160;</td>
           <td class="paramname"><em>sob</em>&#160;</td>
         </tr>
         <tr>
@@ -6280,7 +6491,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d2/de6/class_c_game.html#a57166c5b6300a3c85c6028a384efc379">CGame::GetSoundScene()</a>, and <a class="el" href="../../d9/d52/class_abstract_wave.html#a5614f74913bfb4465d03b78f8802c12a">AbstractWave::SetPosition()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/ddb/group___sound_controller.html#ga80a77266d85badc03dd5f75c3f3b5c95">AbstractWave()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d2/de6/class_c_game.html#a57166c5b6300a3c85c6028a384efc379">CGame::GetSoundScene()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#gabb688ba5faf07148f058fe5bfa55068f">AbstractSoundScene::Play3D()</a>, and <a class="el" href="../../d7/ddb/group___sound_controller.html#ga3aa6cafceab9d573982aa9db5a5d6e34">SoundObject::SetPosition()</a>.</p>
 
 </div>
 </div>
@@ -6308,7 +6519,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/db9/class_sound_object_builder.html#a6dd53aeb21ba907a52f8d39ec8916f5d">SoundObjectBuilder::BuildSoundObject()</a>, <a class="el" href="../../d8/d9b/_hunger_sound_handler_8c.html#a37a72bb98e9ec48f9c2e65feae17943d">PlaySound()</a>, and <a class="el" href="../../d1/d13/_sound_8c.html#a88b8e74ab7a8a3d20a2f3f55948b0ed6">SoundObject()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d9b/_hunger_sound_handler_8c.html#a37a72bb98e9ec48f9c2e65feae17943d">PlaySound()</a>, and <a class="el" href="../../d7/ddb/group___sound_controller.html#ga64e2d161ee236deaf631f4ef1c674063">SoundObjectBuilder()</a>.</p>
 
 </div>
 </div>
@@ -6408,7 +6619,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>returns item to previous location, if available</p>
 
-<p class="reference">References <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ab50342a3878d77468c997bfee8913576">HumanInventory::GetEntityInHands()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a9a754f08f5932e76037b74685f080781">NeedInventoryJunctureFromServer()</a>, <a class="el" href="../../d0/d62/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a605a34f248da9ce4f3715f29fb7ed63e">HumanInventory::TakeEntityToInventory()</a>, <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#a6f3ac4a65e51aa125f52179fd0ee1ed6">TakeToDst()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ab50342a3878d77468c997bfee8913576">HumanInventory::GetEntityInHands()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a9a754f08f5932e76037b74685f080781">NeedInventoryJunctureFromServer()</a>, <a class="el" href="../../d0/d62/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a605a34f248da9ce4f3715f29fb7ed63e">HumanInventory::TakeEntityToInventory()</a>, <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#a6f3ac4a65e51aa125f52179fd0ee1ed6">TakeToDst()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 </div>
 </div>
@@ -7068,7 +7279,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>!hand replace -&gt; hand </p>
 
-<p class="reference">References <a class="el" href="../../d5/de4/class_replace_item_with_new_lambda_base.html#ae398a2cb0008e523c8a5ca822e4c2b1a">ReplaceItemWithNewLambdaBase::DumpToString()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#abd8eaff4c2453b1ba124a4a3ef441d69">HumanInventory::ReplaceItemElsewhereWithNewInHands()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/de4/class_replace_item_with_new_lambda_base.html#ae398a2cb0008e523c8a5ca822e4c2b1a">ReplaceItemWithNewLambdaBase::DumpToString()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#abd8eaff4c2453b1ba124a4a3ef441d69">HumanInventory::ReplaceItemElsewhereWithNewInHands()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/df9/class_entity_a_i.html#ae115c75a980867d0539b03701125a9da">LocalReplaceItemElsewhereWithNewInHands()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#a4350a1e11fc39bedaf35e2aba165606d">ServerReplaceItemElsewhereWithNewInHands()</a>.</p>
 
@@ -7110,7 +7321,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>hand replace2 </p>
 
-<p class="reference">References <a class="el" href="../../d5/de4/class_replace_item_with_new_lambda_base.html#ae398a2cb0008e523c8a5ca822e4c2b1a">ReplaceItemWithNewLambdaBase::DumpToString()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a75e75b9f433204bdd4875634df708d22">HumanInventory::ReplaceItemInHandsWithNewElsewhere()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/de4/class_replace_item_with_new_lambda_base.html#ae398a2cb0008e523c8a5ca822e4c2b1a">ReplaceItemWithNewLambdaBase::DumpToString()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a75e75b9f433204bdd4875634df708d22">HumanInventory::ReplaceItemInHandsWithNewElsewhere()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/df9/class_entity_a_i.html#a5f7af2e7b827d56fb9d458f242d074c4">LocalReplaceItemInHandsWithNewElsewhere()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#a3b09ea8fd1b5f1922a4ff6381e3ee517">ServerReplaceItemInHandsWithNewElsewhere()</a>.</p>
 
@@ -7152,7 +7363,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>hand replace </p>
 
-<p class="reference">References <a class="el" href="../../d5/de4/class_replace_item_with_new_lambda_base.html#ae398a2cb0008e523c8a5ca822e4c2b1a">ReplaceItemWithNewLambdaBase::DumpToString()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a5daaa823b76371ec881de67a3f08f281">HumanInventory::ReplaceItemInHandsWithNew()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/de4/class_replace_item_with_new_lambda_base.html#ae398a2cb0008e523c8a5ca822e4c2b1a">ReplaceItemWithNewLambdaBase::DumpToString()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a5daaa823b76371ec881de67a3f08f281">HumanInventory::ReplaceItemInHandsWithNew()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/df9/class_entity_a_i.html#aa898edb38e5397b0e3edf1da7810a80d">LocalReplaceItemInHandsWithNew()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ad04e548b9eb5c4b6fad8371a3c127df7">ServerReplaceItemInHandsWithNew()</a>.</p>
 
@@ -7194,7 +7405,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>!hand -&gt; !hand replace </p>
 
-<p class="reference">References <a class="el" href="../../d5/de4/class_replace_item_with_new_lambda_base.html#ae398a2cb0008e523c8a5ca822e4c2b1a">ReplaceItemWithNewLambdaBase::DumpToString()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ab20a855638a60f3fc0767f5192c30e38">HumanInventory::ReplaceItemWithNew()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/de4/class_replace_item_with_new_lambda_base.html#ae398a2cb0008e523c8a5ca822e4c2b1a">ReplaceItemWithNewLambdaBase::DumpToString()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ab20a855638a60f3fc0767f5192c30e38">HumanInventory::ReplaceItemWithNew()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/df9/class_entity_a_i.html#ac80a0b56358416d67502c5b66b5a8de2">LocalReplaceItemWithNew()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae8bfb796c9568da05322accfc376f2ed">ServerReplaceItemWithNew()</a>.</p>
 
@@ -8468,7 +8679,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a7f828c6b946c0ad83fb20112aae89a56">GameInventory::CanSwapEntitiesEx()</a>, <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a92ae506a926a85013caf3e20952e34eb">HumanInventory::SwapEntities()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a7f828c6b946c0ad83fb20112aae89a56">GameInventory::CanSwapEntitiesEx()</a>, <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a92ae506a926a85013caf3e20952e34eb">HumanInventory::SwapEntities()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/df9/class_entity_a_i.html#a4d794b3b579ed2129d9263749cb4533f">JunctureSwapEntities()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a8f0668c7c78429321d5a5e3d76d1b33c">LocalSwapEntities()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ad7bdd99eb69cf9889cd2206b8ffd39ea">PredictiveSwapEntities()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae07cc14926165360ace28a1ed979ac47">ServerSwapEntities()</a>.</p>
 
@@ -8571,7 +8782,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a147871717565735aad073456ec5373a5">HumanInventory::TakeEntityAsAttachmentEx()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a147871717565735aad073456ec5373a5">HumanInventory::TakeEntityAsAttachmentEx()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/df9/class_entity_a_i.html#a134ca54c0d4f9b9cf7dc3d9b8e289f8c">JunctureTakeEntityAsAttachmentEx()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#aa1bf5e0e66e00ecc171fa721735ce06a">LocalTakeEntityAsAttachmentEx()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a059b6cdcd57f8a14cfce4a03e902a30b">PredictiveTakeEntityAsAttachmentEx()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#a5349232b9a7755d968b31a097119a163">ServerTakeEntityAsAttachmentEx()</a>.</p>
 
@@ -8611,7 +8822,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a776545d18f3c81e95ded82152e8ed981">GameInventory::TakeEntityAsAttachment()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a776545d18f3c81e95ded82152e8ed981">GameInventory::TakeEntityAsAttachment()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/df9/class_entity_a_i.html#ace1fd03d553b88cca184a14543d39bc5">JunctureTakeEntityAsAttachment()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae90f483532a5866d8bad32356d80e2cf">LocalTakeEntityAsAttachment()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a7a8c77629e12d72e5df0e6b1f2285981">PredictiveTakeEntityAsAttachment()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#a187b45a974bf1772a9afedb672a9e668">ServerTakeEntityAsAttachment()</a>.</p>
 
@@ -8651,7 +8862,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a38236df77b45b779113d099102737d11">GameInventory::TakeEntityToCargo()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a38236df77b45b779113d099102737d11">GameInventory::TakeEntityToCargo()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/df9/class_entity_a_i.html#ae56cb942cd03d820159a468917fc1ee8">JunctureTakeEntityToCargo()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a045efd24f35b4b2743459acda5498b08">LocalTakeEntityToCargo()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a19182e40276ed41982f15d6442049458">PredictiveTakeEntityToCargo()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ab1e2765d6675aa47132e9dd034ffa392">ServerTakeEntityToCargo()</a>.</p>
 
@@ -8691,7 +8902,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ab50342a3878d77468c997bfee8913576">HumanInventory::GetEntityInHands()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a94c4d45b595955237d20b8f958b93435">InventoryLocation::SetHands()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a6f3ac4a65e51aa125f52179fd0ee1ed6">HumanInventory::TakeToDst()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ab50342a3878d77468c997bfee8913576">HumanInventory::GetEntityInHands()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a94c4d45b595955237d20b8f958b93435">InventoryLocation::SetHands()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a6f3ac4a65e51aa125f52179fd0ee1ed6">HumanInventory::TakeToDst()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/df9/class_entity_a_i.html#afa664cfee60544d81498b027163e4db7">JunctureTakeEntityToHands()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a0a329b50703459c56eb28424a31c76fa">LocalTakeEntityToHands()</a>, <a class="el" href="../../df/dbb/_action_take_item_to_hands_8c.html#af71faf9b6bdafd0264b3e984e454b677">PerformSwap()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a46dfcb0cdf52dac39644fbe81926bf11">PredictiveTakeEntityToHands()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#a29735a6f2f691ff3fe52d115cdbc9514">ServerTakeEntityToHands()</a>.</p>
 
@@ -8737,7 +8948,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a605a34f248da9ce4f3715f29fb7ed63e">HumanInventory::TakeEntityToInventory()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a605a34f248da9ce4f3715f29fb7ed63e">HumanInventory::TakeEntityToInventory()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/df9/class_entity_a_i.html#a4bc61ea413a3bed1f2dfc3e69b33c401">JunctureTakeEntityToInventory()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3bbaadece83118431920c042b3f15805">LocalTakeEntityToInventory()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a610593f9e548a9ae6984256ecce19529">PredictiveTakeEntityToInventory()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#a38f1a769acb9633ab723648d310afd10">ServerTakeEntityToInventory()</a>.</p>
 
@@ -9037,7 +9248,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d6/dc5/class_inventory_location.html#aecedc0dc7274fd6ada907f30627a658a">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a6f3ac4a65e51aa125f52179fd0ee1ed6">HumanInventory::TakeToDst()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/dc5/class_inventory_location.html#aecedc0dc7274fd6ada907f30627a658a">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">GetHumanInventory()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a6f3ac4a65e51aa125f52179fd0ee1ed6">HumanInventory::TakeToDst()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#ae0a0180f66b3db1f96c6ca89eee96058">UpdateInventoryMenu()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/df9/class_entity_a_i.html#ab3d5555ef2f83b1f91f1d54332469b95">JunctureTakeToDst()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a0778b141979660898a89c1143c653b7a">LocalTakeToDst()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a8b596073e78360d836485125bb8dd7e8">PredictiveTakeToDst()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#a8e51cd6f7a1978d29c9fd925876454f5">ServerTakeToDst()</a>.</p>
 
@@ -9160,8 +9371,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a0b6f2e2851ca9e32c261fff3caedeb89" name="a0b6f2e2851ca9e32c261fff3caedeb89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b6f2e2851ca9e32c261fff3caedeb89">&#9670;&#160;</a></span>UnlockDoor()</h2>
+<a id="ab638a5ad7229924c87d5437b361e58d2" name="ab638a5ad7229924c87d5437b361e58d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab638a5ad7229924c87d5437b361e58d2">&#9670;&#160;</a></span>UnlockDoor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9173,8 +9384,18 @@ Static Private Attributes</h2></td></tr>
           <td class="memname">proto native void UnlockDoor </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td>
+          <td class="paramname"><em>animate</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -9184,7 +9405,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Unlocks the door if locked. </p>
+<p>Unlocks the door if locked, AJAR animation optional. </p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/df9/class_entity_a_i.html#a64db4496134a9520c526e341cd13807f">OnAction()</a>.</p>
 
@@ -9325,6 +9546,30 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="adf7840753e164dcf2627400aa477304d" name="adf7840753e164dcf2627400aa477304d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf7840753e164dcf2627400aa477304d">&#9670;&#160;</a></span>m_FlippedContext</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">private ref <a class="el" href="../../d8/d13/class_vehicle_flipped_context.html">VehicleFlippedContext</a> m_FlippedContext</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Shared context across all vehicles for flipping. </p>
 
 </div>
 </div>

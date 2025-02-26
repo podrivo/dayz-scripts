@@ -3,6 +3,7 @@ var class_hot_spring_trigger =
     [ "ApplyEffects", "d3/d4f/class_hot_spring_trigger.html#a1fce56daa01fc1d9f1ab2f02d5f1dfee", null ],
     [ "EEDelete", "d3/d4f/class_hot_spring_trigger.html#a83a1e547e0d1e65ad421070058a093a9", null ],
     [ "EEInit", "d3/d4f/class_hot_spring_trigger.html#a58793c1561abb560da4377da77ad6dea", null ],
+    [ "GetDisplayName", "d3/d4f/class_hot_spring_trigger.html#a8f38203d9eb8fd850f774fae213eba9a", null ],
     [ "OnEnterClientEvent", "d3/d4f/class_hot_spring_trigger.html#af882f0ed5d220ff79057bd31b73692a4", null ],
     [ "OnEnterServerEvent", "d3/d4f/class_hot_spring_trigger.html#ad16543cdaa1c85cc80cbb2305c04034b", null ],
     [ "OnLeaveClientEvent", "d3/d4f/class_hot_spring_trigger.html#a7a9fcb087aae28b2dc84d3fdbe588c74", null ],

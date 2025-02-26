@@ -15,7 +15,9 @@ var _edible___base_8c =
     [ "EEInit", "d8/d81/_edible___base_8c.html#a58793c1561abb560da4377da77ad6dea", null ],
     [ "EEItemLocationChanged", "d8/d81/_edible___base_8c.html#aafac0842577356f878e87cbecd8dbdc1", null ],
     [ "FilterAgents", "d8/d81/_edible___base_8c.html#afdb010d1c38a40534242a2145e361d58", null ],
+    [ "GetAgentsPerDigest", "d8/d81/_edible___base_8c.html#ac16be7f9980e79e58d970f4a68eaa5b8", null ],
     [ "GetBaitEffectivity", "d8/d81/_edible___base_8c.html#af9cf14935cf2d84d4be38b601d90abef", null ],
+    [ "GetConsumptionPenaltyContext", "d8/d81/_edible___base_8c.html#a9dab00b1c1c431be6d13cc0267c54d10", null ],
     [ "GetCookingTime", "d8/d81/_edible___base_8c.html#a75057cfbd62c1a655ea775be6b72927f", null ],
     [ "GetDebugActions", "d8/d81/_edible___base_8c.html#ab110c1ad759f395660b0ae9242843731", null ],
     [ "GetDebugText", "d8/d81/_edible___base_8c.html#a3fae6d6b0946cbe842c50c8ab274e1e4", null ],
@@ -82,5 +84,9 @@ var _edible___base_8c =
     [ "m_SoundPlaying", "d8/d81/_edible___base_8c.html#aefeda867d92c23d30797980474ba6088", null ],
     [ "SOUND_BAKING_DONE", "d8/d81/_edible___base_8c.html#a701d2e029a2705e7642a3e6c81459289", null ],
     [ "SOUND_BAKING_START", "d8/d81/_edible___base_8c.html#ab2017ffc0317f9381cc955425c1bde03", null ],
-    [ "SOUND_BURNING_DONE", "d8/d81/_edible___base_8c.html#a346053d51725a8ef1d0df3c50493c537", null ]
+    [ "SOUND_BOILING_DONE", "d8/d81/_edible___base_8c.html#ae39c6d6dcb9b91e7c5e3e183a07591cf", null ],
+    [ "SOUND_BOILING_START", "d8/d81/_edible___base_8c.html#ae66280a3c6f2e4f2d4628723ca613994", null ],
+    [ "SOUND_BURNING_DONE", "d8/d81/_edible___base_8c.html#a346053d51725a8ef1d0df3c50493c537", null ],
+    [ "SOUND_DRYING_DONE", "d8/d81/_edible___base_8c.html#ab9548e38287314df23d113b593f4c225", null ],
+    [ "SOUND_DRYING_START", "d8/d81/_edible___base_8c.html#aa59c696adae800ec1b211c45f9a5e02b", null ]
 ];

@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -264,7 +264,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a23d7d40a21ae7945d17f90fe1efd292a"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d90/class_base_building_base.html#a23d7d40a21ae7945d17f90fe1efd292a">OnCEUpdate</a> ()</td></tr>
 <tr class="separator:a23d7d40a21ae7945d17f90fe1efd292a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d50b8e42121738185861fcf5e5e48f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d90/class_base_building_base.html#a1d50b8e42121738185861fcf5e5e48f9">HandleRefreshers</a> ()</td></tr>
-<tr class="memdesc:a1d50b8e42121738185861fcf5e5e48f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Client-side, saves positions of active lifetime refreshers to MissionGameplay.  <br /></td></tr>
+<tr class="memdesc:a1d50b8e42121738185861fcf5e5e48f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves positions of active lifetime refreshers to MissionGameplay / MissionServer.  <br /></td></tr>
 <tr class="separator:a1d50b8e42121738185861fcf5e5e48f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2af65c7b31f02eb44fc2f28dba04c263"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d90/class_base_building_base.html#a2af65c7b31f02eb44fc2f28dba04c263">SetRefresherActive</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> state)</td></tr>
 <tr class="separator:a2af65c7b31f02eb44fc2f28dba04c263"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -457,7 +457,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ~<a class="el" href="../../dd/d90/class_base_building_base.html#a6edd0fbf1d9285cbd3e03e5452bd19ea">TerritoryFlag</a> </td>
+          <td class="memname">void ~<a class="el" href="../../dd/d4b/class_territory_flag.html">TerritoryFlag</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -469,8 +469,6 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../dd/d90/class_base_building_base.html#a74c02ad925dc1415da9eeaf347d20f8b">RemoveRefresherPosition()</a>.</p>
 
 </div>
 </div>
@@ -499,9 +497,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../d5/d98/group___math.html#ga508b1867c6e0e338fc793045a4a7680a">Math::Round()</a>, and <a class="el" href="../../dd/d90/class_base_building_base.html#a2af65c7b31f02eb44fc2f28dba04c263">SetRefresherActive()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../dd/d90/class_base_building_base.html#a05eab95952a189dc9e08ccecec41b51a">OnDebugSpawn()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, and <a class="el" href="../../d5/d98/group___math.html#ga508b1867c6e0e338fc793045a4a7680a">Math::Round()</a>.</p>
 
 </div>
 </div>
@@ -555,7 +551,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../db/d35/_central_economy_8c.html#a1c3868536538a6b8e3eb8c24fc2af617">GetCEApi()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#a5b07bbf36655b126760a35cb75dcad01">InitRefresherData()</a>, and <a class="el" href="../../dd/d90/class_base_building_base.html#a5b48944590b717c0eeed8ac6d7aec92f">UpdateVisuals()</a>.</p>
+<p class="reference">References <a class="el" href="../../db/d35/_central_economy_8c.html#a1c3868536538a6b8e3eb8c24fc2af617">GetCEApi()</a>, and <a class="el" href="../../de/df0/_construction_8c.html#a57ed5d4223f68511e3c487a0487b5573">UpdateVisuals()</a>.</p>
 
 </div>
 </div>
@@ -610,10 +606,6 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dd/d90/class_base_building_base.html#ad63db0c6736050868189f1e94b57c6f3">AnimateFlagEx()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../dd/d90/class_base_building_base.html#a870b0dcd0dfafe4a764232688d9356c0">EEItemDetached()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#a23d7d40a21ae7945d17f90fe1efd292a">OnCEUpdate()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#a05eab95952a189dc9e08ccecec41b51a">OnDebugSpawn()</a>, and <a class="el" href="../../dd/d90/class_base_building_base.html#ab311cdf3df0e3547b7d3cd810e61ca61">OnStoreLoad()</a>.</p>
-
 </div>
 </div>
 <a id="ad63db0c6736050868189f1e94b57c6f3" name="ad63db0c6736050868189f1e94b57c6f3"></a>
@@ -650,9 +642,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../df/d36/class_inventory_slots.html#a09656dcf60f7f4af50c14be4da1e7ba6">InventorySlots::GetSlotIdFromString()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#a1b03f869e97fa103818f448034559499">LogAnimateFlag()</a>, and <a class="el" href="../../d5/d98/group___math.html#ga508b1867c6e0e338fc793045a4a7680a">Math::Round()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../dd/d90/class_base_building_base.html#ad033ea659c8b2d2a362a31c2013795ba">AnimateFlag()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../df/d36/class_inventory_slots.html#a09656dcf60f7f4af50c14be4da1e7ba6">InventorySlots::GetSlotIdFromString()</a>, and <a class="el" href="../../d5/d98/group___math.html#ga508b1867c6e0e338fc793045a4a7680a">Math::Round()</a>.</p>
 
 </div>
 </div>
@@ -1377,8 +1367,6 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d90/class_base_building_base.html#ab311cdf3df0e3547b7d3cd810e61ca61">OnStoreLoad()</a>.</p>
-
 </div>
 </div>
 <a id="a429495cbe782081f2f3a5d4a99571b4c" name="a429495cbe782081f2f3a5d4a99571b4c"></a>
@@ -1568,7 +1556,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dd/d90/class_base_building_base.html#ad033ea659c8b2d2a362a31c2013795ba">AnimateFlag()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../dd/d90/class_base_building_base.html#ad9560ee7f8522f49ca0f5335a7ef13a5">SetRefreshTimer01()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -1916,7 +1904,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../de/d7a/class_item_base.html#a653430e037a2cf5a5e3407b6ec9b6e11">ItemBase::CreateConstructionKit()</a>.</p>
 
@@ -1945,7 +1933,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>.</p>
 
 </div>
 </div>
@@ -1972,7 +1960,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>.</p>
 
 </div>
 </div>
@@ -2099,10 +2087,6 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dd/d90/class_base_building_base.html#af40b409a1dd09a31f669b330fcab8c83">m_FlagRefresherMaxDuration</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../dd/d90/class_base_building_base.html#a23d7d40a21ae7945d17f90fe1efd292a">OnCEUpdate()</a>, and <a class="el" href="../../dd/d90/class_base_building_base.html#ab311cdf3df0e3547b7d3cd810e61ca61">OnStoreLoad()</a>.</p>
-
 </div>
 </div>
 <a id="a7eb9d3911ea0fd57b0fb7399d7496ca2" name="a7eb9d3911ea0fd57b0fb7399d7496ca2"></a>
@@ -2158,11 +2142,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Client-side, saves positions of active lifetime refreshers to MissionGameplay. </p>
+<p>Saves positions of active lifetime refreshers to MissionGameplay / MissionServer. </p>
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#ada89ca2ab6cd502bed0ff784b22ea8c9">InsertRefresherPosition()</a>, <a class="el" href="../../db/dad/class_mission.html#a6913c8744ed06a704d190c73e4a2dd6d">Mission::m_ActiveRefresherLocations</a>, <a class="el" href="../../d9/de7/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>, and <a class="el" href="../../dd/d90/class_base_building_base.html#a74c02ad925dc1415da9eeaf347d20f8b">RemoveRefresherPosition()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../dd/d90/class_base_building_base.html#ad183155e7592e816863539c54b6fa83f">OnVariablesSynchronized()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../db/dad/class_mission.html#a6913c8744ed06a704d190c73e4a2dd6d">Mission::m_ActiveRefresherLocations</a>, and <a class="el" href="../../d9/de7/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>.</p>
 
 </div>
 </div>
@@ -2403,8 +2385,6 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../db/d35/_central_economy_8c.html#a1c3868536538a6b8e3eb8c24fc2af617">GetCEApi()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d90/class_base_building_base.html#a94e94836ed80bf81df4751938ab00cbc">AfterStoreLoad()</a>, and <a class="el" href="../../dd/d90/class_base_building_base.html#a6edd0fbf1d9285cbd3e03e5452bd19ea">TerritoryFlag()</a>.</p>
-
 </div>
 </div>
 <a id="ada89ca2ab6cd502bed0ff784b22ea8c9" name="ada89ca2ab6cd502bed0ff784b22ea8c9"></a>
@@ -2430,9 +2410,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../db/dad/class_mission.html#a6913c8744ed06a704d190c73e4a2dd6d">Mission::m_ActiveRefresherLocations</a>, and <a class="el" href="../../d9/de7/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../dd/d90/class_base_building_base.html#a1d50b8e42121738185861fcf5e5e48f9">HandleRefreshers()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../db/dad/class_mission.html#a6913c8744ed06a704d190c73e4a2dd6d">Mission::m_ActiveRefresherLocations</a>, and <a class="el" href="../../d9/de7/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>.</p>
 
 </div>
 </div>
@@ -2546,7 +2524,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d7/dfc/classvector.html#adafa60c456aeee3fe7b5f31f5802ffa1">vector::Dot()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a12cef74155564a85f15164eb018f4134">CGame::GetCurrentCameraDirection()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/dfc/classvector.html#adafa60c456aeee3fe7b5f31f5802ffa1">vector::Dot()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a12cef74155564a85f15164eb018f4134">CGame::GetCurrentCameraDirection()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>.</p>
 
 </div>
 </div>
@@ -2584,7 +2562,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga0338557f21327edf5ad5080449203443">Math::Acos()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga0338557f21327edf5ad5080449203443">Math::Acos()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/d0a/class_action_repair_part.html#a6ac405e40b14080d26e5258559dd7754">ActionRepairPart::RepairCondition()</a>.</p>
 
@@ -2624,7 +2602,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga0338557f21327edf5ad5080449203443">Math::Acos()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga0338557f21327edf5ad5080449203443">Math::Acos()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>.</p>
 
 </div>
 </div>
@@ -2662,7 +2640,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#gaae5a8127fc6393d55122ac12f2d16c16">Math::AbsFloat()</a>, <a class="el" href="../../d7/dfc/classvector.html#adafa60c456aeee3fe7b5f31f5802ffa1">vector::Dot()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#gaae5a8127fc6393d55122ac12f2d16c16">Math::AbsFloat()</a>, <a class="el" href="../../d7/dfc/classvector.html#adafa60c456aeee3fe7b5f31f5802ffa1">vector::Dot()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>.</p>
 
 </div>
 </div>
@@ -2758,7 +2736,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d7/dfc/classvector.html#a62993545b7e0017e827ba3627da347f3">vector::AnglesToVector()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>, <a class="el" href="../../d7/dfc/classvector.html#ac6cfb4d9e0f5e67be5d45a729a57171a">vector::VectorToAngles()</a>, and <a class="el" href="../../dd/d4b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/dfc/classvector.html#a62993545b7e0017e827ba3627da347f3">vector::AnglesToVector()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>, <a class="el" href="../../d7/dfc/classvector.html#ac6cfb4d9e0f5e67be5d45a729a57171a">vector::VectorToAngles()</a>, and <a class="el" href="../../dd/d4b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d4/d3b/class_action_mount_barbed_wire.html#aa9aa4864fae11769c65e644b5fd97c66">ActionMountBarbedWire::ActionCondition()</a>, <a class="el" href="../../d5/d21/class_action_unmount_barbed_wire.html#aa9aa4864fae11769c65e644b5fd97c66">ActionUnmountBarbedWire::ActionCondition()</a>, <a class="el" href="../../d4/d76/class_action_take_material_to_hands.html#aa9aa4864fae11769c65e644b5fd97c66">ActionTakeMaterialToHands::ActionCondition()</a>, <a class="el" href="../../d3/d62/class_action_attach_to_construction.html#aa9aa4864fae11769c65e644b5fd97c66">ActionAttachToConstruction::ActionCondition()</a>, <a class="el" href="../../dd/da3/class_action_take_material_to_hands_switch.html#aa9aa4864fae11769c65e644b5fd97c66">ActionTakeMaterialToHandsSwitch::ActionCondition()</a>, <a class="el" href="../../dc/d98/_misc_gameplay_functions_8c.html#a91aa3bca9a66d1d7de9dd1c145a5e274">BuildCondition()</a>, <a class="el" href="../../d6/d9d/class_action_dismantle_part.html#aa84f344578c02102450e583cbb5b6e47">ActionDismantlePart::DismantleCondition()</a>, and <a class="el" href="../../dc/d12/class_vicinity_container.html#a42e4b360bf0d3f641767685cd5089432">VicinityContainer::UpdateInterval()</a>.</p>
 
@@ -2798,7 +2776,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d7/dfc/classvector.html#a62993545b7e0017e827ba3627da347f3">vector::AnglesToVector()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>, and <a class="el" href="../../d7/dfc/classvector.html#ac6cfb4d9e0f5e67be5d45a729a57171a">vector::VectorToAngles()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/dfc/classvector.html#a62993545b7e0017e827ba3627da347f3">vector::AnglesToVector()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>, and <a class="el" href="../../d7/dfc/classvector.html#ac6cfb4d9e0f5e67be5d45a729a57171a">vector::VectorToAngles()</a>.</p>
 
 </div>
 </div>
@@ -2836,7 +2814,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d7/dfc/classvector.html#a62993545b7e0017e827ba3627da347f3">vector::AnglesToVector()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>, <a class="el" href="../../d7/dfc/classvector.html#ac6cfb4d9e0f5e67be5d45a729a57171a">vector::VectorToAngles()</a>, and <a class="el" href="../../dd/d4b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/dfc/classvector.html#a62993545b7e0017e827ba3627da347f3">vector::AnglesToVector()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>, <a class="el" href="../../d7/dfc/classvector.html#ac6cfb4d9e0f5e67be5d45a729a57171a">vector::VectorToAngles()</a>, and <a class="el" href="../../dd/d4b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>.</p>
 
 </div>
 </div>
@@ -2874,7 +2852,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d7/dfc/classvector.html#a62993545b7e0017e827ba3627da347f3">vector::AnglesToVector()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#a75183bb6d9616beac3a25a8d20591921">CheckLevelVerticalDistance()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>, and <a class="el" href="../../d7/dfc/classvector.html#ac6cfb4d9e0f5e67be5d45a729a57171a">vector::VectorToAngles()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/dfc/classvector.html#a62993545b7e0017e827ba3627da347f3">vector::AnglesToVector()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#a75183bb6d9616beac3a25a8d20591921">CheckLevelVerticalDistance()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d7/dfc/classvector.html#ad45bf31a68542e955163264562648236">vector::Length()</a>, <a class="el" href="../../d7/dfc/classvector.html#a2872bd9c10a1281a614a1a527683053a">vector::Normalize()</a>, and <a class="el" href="../../d7/dfc/classvector.html#ac6cfb4d9e0f5e67be5d45a729a57171a">vector::VectorToAngles()</a>.</p>
 
 </div>
 </div>
@@ -2913,8 +2891,6 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../d9/d5d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../dd/d90/class_base_building_base.html#ad63db0c6736050868189f1e94b57c6f3">AnimateFlagEx()</a>.</p>
 
 </div>
 </div>
@@ -2994,7 +2970,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dd/d90/class_base_building_base.html#ad033ea659c8b2d2a362a31c2013795ba">AnimateFlag()</a>, <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#a1c3868536538a6b8e3eb8c24fc2af617">GetCEApi()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#aa51400a1ef5e061adc085373f42232e3">GetRefresherTime01()</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#gac14e3ee7d7f1dbb7a11f76e9e02b934e">GameConstants::REFRESHER_RADIUS</a>, <a class="el" href="../../d5/d98/group___math.html#ga508b1867c6e0e338fc793045a4a7680a">Math::Round()</a>, and <a class="el" href="../../dd/d90/class_base_building_base.html#a2af65c7b31f02eb44fc2f28dba04c263">SetRefresherActive()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#a1c3868536538a6b8e3eb8c24fc2af617">GetCEApi()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#gac14e3ee7d7f1dbb7a11f76e9e02b934e">GameConstants::REFRESHER_RADIUS</a>, and <a class="el" href="../../d5/d98/group___math.html#ga508b1867c6e0e338fc793045a4a7680a">Math::Round()</a>.</p>
 
 </div>
 </div>
@@ -3045,8 +3021,6 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../dd/d90/class_base_building_base.html#af51bd9a441963e6d8bfdb6a07203bf60">AddRefresherTime01()</a>, and <a class="el" href="../../dd/d90/class_base_building_base.html#ad033ea659c8b2d2a362a31c2013795ba">AnimateFlag()</a>.</p>
 
 </div>
 </div>
@@ -3267,7 +3241,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dd/d90/class_base_building_base.html#a5b48944590b717c0eeed8ac6d7aec92f">UpdateVisuals()</a>.</p>
+<p class="reference">References <a class="el" href="../../de/df0/_construction_8c.html#a57ed5d4223f68511e3c487a0487b5573">UpdateVisuals()</a>.</p>
 
 </div>
 </div>
@@ -3411,7 +3385,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dd/d90/class_base_building_base.html#a5b48944590b717c0eeed8ac6d7aec92f">UpdateVisuals()</a>.</p>
+<p class="reference">References <a class="el" href="../../de/df0/_construction_8c.html#a57ed5d4223f68511e3c487a0487b5573">UpdateVisuals()</a>.</p>
 
 </div>
 </div>
@@ -3549,7 +3523,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d1/dcf/_base_building_base_8c.html#a6b30510f85eeab50f12e4e910b8eae15">GetConstruction()</a>, and <a class="el" href="../../dd/d90/class_base_building_base.html#a5b48944590b717c0eeed8ac6d7aec92f">UpdateVisuals()</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/dcf/_base_building_base_8c.html#a6b30510f85eeab50f12e4e910b8eae15">GetConstruction()</a>, and <a class="el" href="../../de/df0/_construction_8c.html#a57ed5d4223f68511e3c487a0487b5573">UpdateVisuals()</a>.</p>
 
 </div>
 </div>
@@ -3669,7 +3643,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dd/d90/class_base_building_base.html#ad033ea659c8b2d2a362a31c2013795ba">AnimateFlag()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#a57030feb0fb86b01a03c85d13e066b28">CheckLoadedVariables()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#aa51400a1ef5e061adc085373f42232e3">GetRefresherTime01()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a34c68c9c93798008667c773b4818177d">Serializer::Read()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/dc2/class_serializer.html#a34c68c9c93798008667c773b4818177d">Serializer::Read()</a>.</p>
 
 </div>
 </div>
@@ -3779,8 +3753,6 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dd/d90/class_base_building_base.html#a1d50b8e42121738185861fcf5e5e48f9">HandleRefreshers()</a>, and <a class="el" href="../../dd/d90/class_base_building_base.html#ae91643f3aab806b14c1319c4c9c50c86">m_RefresherActive</a>.</p>
-
 </div>
 </div>
 <a id="a6a137cdb954e9e5940c72241312209e7" name="a6a137cdb954e9e5940c72241312209e7"></a>
@@ -3852,7 +3824,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d7/dbe/class_cfg_gameplay_handler.html#aaee2904ad5f4bd84c0b7952d9d8ad75d">CfgGameplayHandler::GetDisablePerformRoofCheck()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#a3bae34135b918bcd04b5f8a3d136e313">GetOrientation()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, and <a class="el" href="../../d2/de6/class_c_game.html#ade62cce80883bc39564c273cc31fd9bc">CGame::IsBoxCollidingGeometry()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/dbe/class_cfg_gameplay_handler.html#aaee2904ad5f4bd84c0b7952d9d8ad75d">CfgGameplayHandler::GetDisablePerformRoofCheck()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#a3bae34135b918bcd04b5f8a3d136e313">GetOrientation()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, and <a class="el" href="../../d2/de6/class_c_game.html#ade62cce80883bc39564c273cc31fd9bc">CGame::IsBoxCollidingGeometry()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d98/_misc_gameplay_functions_8c.html#aad9cb6b22bc750ab03b38e694d342d00">ComplexBuildCollideCheckClient()</a>.</p>
 
@@ -3907,9 +3879,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../db/dad/class_mission.html#a6913c8744ed06a704d190c73e4a2dd6d">Mission::m_ActiveRefresherLocations</a>, and <a class="el" href="../../d9/de7/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../dd/d90/class_base_building_base.html#a1d50b8e42121738185861fcf5e5e48f9">HandleRefreshers()</a>, and <a class="el" href="../../dd/d90/class_base_building_base.html#ac5e59a6f99bac4e36343fb0aecb78af7">~TerritoryFlag()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../db/dad/class_mission.html#a6913c8744ed06a704d190c73e4a2dd6d">Mission::m_ActiveRefresherLocations</a>, and <a class="el" href="../../d9/de7/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>.</p>
 
 </div>
 </div>
@@ -4103,9 +4073,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../db/d35/_central_economy_8c.html#a1c3868536538a6b8e3eb8c24fc2af617">GetCEApi()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, and <a class="el" href="../../d2/d68/group___emote_i_ds.html#gac14e3ee7d7f1dbb7a11f76e9e02b934e">GameConstants::REFRESHER_RADIUS</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../dd/d90/class_base_building_base.html#af51bd9a441963e6d8bfdb6a07203bf60">AddRefresherTime01()</a>, and <a class="el" href="../../dd/d90/class_base_building_base.html#a23d7d40a21ae7945d17f90fe1efd292a">OnCEUpdate()</a>.</p>
+<p class="reference">References <a class="el" href="../../db/d35/_central_economy_8c.html#a1c3868536538a6b8e3eb8c24fc2af617">GetCEApi()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, and <a class="el" href="../../d2/d68/group___emote_i_ds.html#gac14e3ee7d7f1dbb7a11f76e9e02b934e">GameConstants::REFRESHER_RADIUS</a>.</p>
 
 </div>
 </div>
@@ -4134,8 +4102,6 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, and <a class="el" href="../../d5/d98/group___math.html#ga508b1867c6e0e338fc793045a4a7680a">Math::Round()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../dd/d90/class_base_building_base.html#a870b0dcd0dfafe4a764232688d9356c0">EEItemDetached()</a>.</p>
 
 </div>
 </div>
@@ -4261,7 +4227,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void TerritoryFlag </td>
+          <td class="memname">void <a class="el" href="../../dd/d4b/class_territory_flag.html">TerritoryFlag</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -4274,7 +4240,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../db/d35/_central_economy_8c.html#a1c3868536538a6b8e3eb8c24fc2af617">GetCEApi()</a>, and <a class="el" href="../../dd/d90/class_base_building_base.html#a5b07bbf36655b126760a35cb75dcad01">InitRefresherData()</a>.</p>
+<p class="reference">References <a class="el" href="../../db/d35/_central_economy_8c.html#a1c3868536538a6b8e3eb8c24fc2af617">GetCEApi()</a>.</p>
 
 </div>
 </div>
@@ -4815,8 +4781,6 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d90/class_base_building_base.html#aa51400a1ef5e061adc085373f42232e3">GetRefresherTime01()</a>.</p>
-
 </div>
 </div>
 <a id="af90b69ae6c2e5b8eedc19991e4f4c0eb" name="af90b69ae6c2e5b8eedc19991e4f4c0eb"></a>
@@ -4908,8 +4872,6 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../dd/d90/class_base_building_base.html#ad183155e7592e816863539c54b6fa83f">OnVariablesSynchronized()</a>.</p>
 
 </div>
 </div>

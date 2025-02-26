@@ -10,7 +10,7 @@ var _smpt_anim_meta_8c =
     [ "Init", "d9/dbc/_smpt_anim_meta_8c.html#a69ef46320d95df6b98882f60af5c0642", null ],
     [ "IsDestroyReqested", "d9/dbc/_smpt_anim_meta_8c.html#a501e67a60bc96f94a37954306ac09173", null ],
     [ "IsPlaying", "d9/dbc/_smpt_anim_meta_8c.html#a755f326e8b06e5f2807d64baf8bf582c", null ],
-    [ "Play", "d9/dbc/_smpt_anim_meta_8c.html#a1044d828832cd398ac046799915a5136", null ],
+    [ "Play", "d7/ddb/group___sound_controller.html#ga1044d828832cd398ac046799915a5136", null ],
     [ "PlayRequest", "d9/dbc/_smpt_anim_meta_8c.html#a1298686b3cdfa075b18f24f6ede82d60", null ],
     [ "SmptAnimMetaBase", "d9/dbc/_smpt_anim_meta_8c.html#a9fa90c649d2e15fa33b45caf4860c9ba", null ],
     [ "Update", "d9/dbc/_smpt_anim_meta_8c.html#a4884d19b1077f72a3541688b892f02e4", null ],

@@ -7,7 +7,7 @@ var _server_browser_tab_8c =
       [ "FAVORITE", "d7/de3/_server_browser_tab_8c.html#a6d0b33e703e1291d0b60d4fe5a5e12ccafd3a8854adbf848c406058efeac956c9", null ],
       [ "NONE", "d7/de3/_server_browser_tab_8c.html#a6d0b33e703e1291d0b60d4fe5a5e12ccac157bdf0b85a40d2619cbc8bc1ae5fe2", null ]
     ] ],
-    [ "AddFavoritesToFilter", "d7/de3/_server_browser_tab_8c.html#a91d14283caf9fab75ca2d9a866c612b5", null ],
+    [ "AddFavoritesToFilter", "d7/de3/_server_browser_tab_8c.html#ac209d95b7df6fd3eb3149de74356fd4c", null ],
     [ "AddSorted", "d7/de3/_server_browser_tab_8c.html#afe8c2ede77de0b5d4df27360050eaafc", null ],
     [ "ApplyFilters", "d7/de3/_server_browser_tab_8c.html#a26e953d0a69587d6f54be96931b026e7", null ],
     [ "ButtonDisable", "d7/de3/_server_browser_tab_8c.html#a417c2ed8c5c639794c80a0d8869694b9", null ],
@@ -49,7 +49,7 @@ var _server_browser_tab_8c =
     [ "OnFocusLost", "d7/de3/_server_browser_tab_8c.html#ac4fe9e0a034ac5f4b1ad5afd30ac3f79", null ],
     [ "OnLoadServerModsAsync", "d7/de3/_server_browser_tab_8c.html#aced8a3cf35a45cb6743e7e9555d3bd68", null ],
     [ "OnLoadServersAsyncConsole", "d7/de3/_server_browser_tab_8c.html#a7a84a43736a504225b0c155dc5574d4f", null ],
-    [ "OnLoadServersAsyncPC", "d7/de3/_server_browser_tab_8c.html#a2cd84a887630376e1250495b0235bd1d", null ],
+    [ "OnLoadServersAsyncPC", "d7/de3/_server_browser_tab_8c.html#a6e9e457752b1d9394863d0239548f23e", null ],
     [ "OnMouseEnter", "d7/de3/_server_browser_tab_8c.html#acd2b0c0714d497b259c4276ac92d2d79", null ],
     [ "OnMouseLeave", "d7/de3/_server_browser_tab_8c.html#a472c39c87ea477147b2c9353631a9822", null ],
     [ "OnPressShoulder", "d7/de3/_server_browser_tab_8c.html#a0f07a1132001c1b116fad84b308c0a15", null ],

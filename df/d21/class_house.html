@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -119,6 +119,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a58793c1561abb560da4377da77ad6dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83a1e547e0d1e65ad421070058a093a9"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d21/class_house.html#a83a1e547e0d1e65ad421070058a093a9">EEDelete</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> parent)</td></tr>
 <tr class="separator:a83a1e547e0d1e65ad421070058a093a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a31485b8285dc5e248d12b49765e506"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d21/class_house.html#a3a31485b8285dc5e248d12b49765e506">DeferredInit</a> ()</td></tr>
+<tr class="separator:a3a31485b8285dc5e248d12b49765e506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5fe86c9ad5adf8c004b6669c027901a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d21/class_house.html#ae5fe86c9ad5adf8c004b6669c027901a">~Land_Buoy</a> ()</td></tr>
+<tr class="separator:ae5fe86c9ad5adf8c004b6669c027901a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a992179336f89c36e8c3062e557d253ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d21/class_house.html#a992179336f89c36e8c3062e557d253ab">House</a> ()</td></tr>
 <tr class="separator:a992179336f89c36e8c3062e557d253ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6be063aa620192dd300b92724981c036"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d21/class_house.html#a6be063aa620192dd300b92724981c036">ChristmasTree</a> ()</td></tr>
@@ -137,6 +141,8 @@ Static Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a7a8558104691a05cc918b4bf27eaa5d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d85/class_particle.html">Particle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d21/class_house.html#a7a8558104691a05cc918b4bf27eaa5d5">m_ParticleEfx</a></td></tr>
 <tr class="separator:a7a8558104691a05cc918b4bf27eaa5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c20ceba8317868f5845b0c36cc29a96"><td class="memItemLeft" align="right" valign="top">protected BuoyLight&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d21/class_house.html#a8c20ceba8317868f5845b0c36cc29a96">m_Light</a></td></tr>
+<tr class="separator:a8c20ceba8317868f5845b0c36cc29a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c0d98ec775779a214a71fc01b403014"><td class="memItemLeft" align="right" valign="top">XmasTreeLight&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d21/class_house.html#a8c0d98ec775779a214a71fc01b403014">m_TreeLight</a></td></tr>
 <tr class="separator:a8c0d98ec775779a214a71fc01b403014"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0288e02dfd6a99e37da3aaba2e1dfab7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d89/class_effect_sound.html">EffectSound</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d21/class_house.html#a0288e02dfd6a99e37da3aaba2e1dfab7">m_AmbientSoundLoop</a></td></tr>
@@ -150,6 +156,33 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:a506584130d676f3b6bc27c24304e4e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae5fe86c9ad5adf8c004b6669c027901a" name="ae5fe86c9ad5adf8c004b6669c027901a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5fe86c9ad5adf8c004b6669c027901a">&#9670;&#160;</a></span>~Land_Buoy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ~Land_Buoy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d5/d36/_land___buoy_8c.html#a93720ba798e5af6ef4707cac404ca7eb">m_Light</a>.</p>
+
+</div>
+</div>
 <a id="a992179336f89c36e8c3062e557d253ab" name="a992179336f89c36e8c3062e557d253ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a992179336f89c36e8c3062e557d253ab">&#9670;&#160;</a></span>House()</h2>
 
@@ -200,6 +233,33 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
+
+</div>
+</div>
+<a id="a3a31485b8285dc5e248d12b49765e506" name="a3a31485b8285dc5e248d12b49765e506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a31485b8285dc5e248d12b49765e506">&#9670;&#160;</a></span>DeferredInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void DeferredInit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d5/d36/_land___buoy_8c.html#a93720ba798e5af6ef4707cac404ca7eb">m_Light</a>.</p>
 
 </div>
 </div>
@@ -282,7 +342,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d5/dd5/class_crash_base.html#a76d2278ae9595a1b11277b25cd553770">CrashBase::GetSoundSet()</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#af0e79eb49231c4fb5ae3467be05f43a0">SEffectManager::PlaySound()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af5eacfbd1ed6f18ade3c93953dece0d1">EffectSound::SetAutodestroy()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d5/dd5/class_crash_base.html#a76d2278ae9595a1b11277b25cd553770">CrashBase::GetSoundSet()</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#af0e79eb49231c4fb5ae3467be05f43a0">SEffectManager::PlaySound()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af5eacfbd1ed6f18ade3c93953dece0d1">EffectSound::SetAutodestroy()</a>.</p>
 
 </div>
 </div>
@@ -413,7 +473,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d5/dd5/class_crash_base.html#a76d2278ae9595a1b11277b25cd553770">CrashBase::GetSoundSet()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#a9f0e0ce7825af5deb8d9b60842a0d9e8">CGame::RPCSingleParam()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d5/dd5/class_crash_base.html#a76d2278ae9595a1b11277b25cd553770">CrashBase::GetSoundSet()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#a36adda952415004bdca1e3f04c3f2c14">CGame::RPCSingleParam()</a>.</p>
 
 </div>
 </div>
@@ -484,6 +544,28 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a8c20ceba8317868f5845b0c36cc29a96" name="a8c20ceba8317868f5845b0c36cc29a96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c20ceba8317868f5845b0c36cc29a96">&#9670;&#160;</a></span>m_Light</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected BuoyLight m_Light</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7a8558104691a05cc918b4bf27eaa5d5" name="a7a8558104691a05cc918b4bf27eaa5d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a8558104691a05cc918b4bf27eaa5d5">&#9670;&#160;</a></span>m_ParticleEfx</h2>
 
@@ -530,6 +612,7 @@ Static Private Attributes</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>P:/scripts/4_World/Entities/Building/<a class="el" href="../../d4/d59/_crash_base_8c.html">CrashBase.c</a></li>
+<li>P:/scripts/4_World/Entities/Building/Specific/<a class="el" href="../../d5/d36/_land___buoy_8c.html">Land_Buoy.c</a></li>
 <li>P:/scripts/4_World/Entities/WoodBase/<a class="el" href="../../d0/da0/_christmas_tree_8c.html">ChristmasTree.c</a></li>
 <li>P:/scripts/4_World/Entities/Game/Super/<a class="el" href="../../d6/db8/4___world_2_entities_2_game_2_super_2_building_8c.html">Building.c</a></li>
 </ul>

@@ -7,6 +7,9 @@ var class_left_area =
     [ "GetCurrentContainerTopY", "d5/da4/class_left_area.html#a701e9a8aeea4cf3221266dadb87860a4", null ],
     [ "GetFocusedItem", "d5/da4/class_left_area.html#aea298266b318cedf96eeba32b3761875", null ],
     [ "GetScrollWidget", "d5/da4/class_left_area.html#a7b7b9f9a087356d127faf91fc4f50803", null ],
+    [ "GetSlotsArea", "d5/da4/class_left_area.html#a5079c9f8996312df7fa160bda86c7f2c", null ],
+    [ "GetSlotsHeader", "d5/da4/class_left_area.html#a8c5bb3a532b4633c91d08e803f521761", null ],
+    [ "GetSlotsScrollWidget", "d5/da4/class_left_area.html#a7fd29957ae4b1f94103a835b1b2073b3", null ],
     [ "GetVicinityContainer", "d5/da4/class_left_area.html#a9f5b30b40be699811eb9e109200d2de5", null ],
     [ "IsActive", "d5/da4/class_left_area.html#a6e926133f2e30970578864bd7db31459", null ],
     [ "OnChildAdd", "d5/da4/class_left_area.html#a226b35929e25810d25c1a6beb8d96fc7", null ],
@@ -28,6 +31,9 @@ var class_left_area =
     [ "m_IsProcessing", "d5/da4/class_left_area.html#a24d42cb9c782221cc329216d8b4076d4", null ],
     [ "m_ScrollWidget", "d5/da4/class_left_area.html#a246c72323939f264057bebf2dfb86d38", null ],
     [ "m_ShouldChangeSize", "d5/da4/class_left_area.html#a838ce7669d60a7fa23fa45a4c2d51997", null ],
+    [ "m_SlotsContent", "d5/da4/class_left_area.html#a49bd49a5af38d73d171825a5ce9460d1", null ],
+    [ "m_SlotsHeader", "d5/da4/class_left_area.html#a759e39d2d429be38e6187e59f1179886", null ],
+    [ "m_SlotsScrollWidget", "d5/da4/class_left_area.html#a054817eda27b689a440d3b045799ae8c", null ],
     [ "m_UpIcon", "d5/da4/class_left_area.html#a694954d9baf48c11be415ddbe7211782", null ],
     [ "m_VicinityContainer", "d5/da4/class_left_area.html#a88c3ca3e9c3b749523c0824dd6b98e58", null ]
 ];

@@ -8,7 +8,7 @@ var _a_i_behaviour_8c =
     [ "OnAnimationEvent", "d5/dcf/_a_i_behaviour_8c.html#adf50c6a2e73048031341b9d4f910e875", null ],
     [ "OnDamage", "d5/dcf/_a_i_behaviour_8c.html#a2b06a47f169f6529991137ea0ce25f77", null ],
     [ "OnDamageInflicted", "d5/dcf/_a_i_behaviour_8c.html#ac240c7cf90966a0243839a28c1e127d2", null ],
-    [ "OnInit", "d5/dcf/_a_i_behaviour_8c.html#a8205b960f863843d84dcde6e2f23acc1", null ],
+    [ "OnInit", "d8/d83/group___script_testing_framework.html#ga01f1070c46e4cc24d25a0ea0869bc972", null ],
     [ "OnParseConfig", "d5/dcf/_a_i_behaviour_8c.html#adc730086b6e6cdeb71037dddf716985e", null ],
     [ "ParseAlertLevel", "d5/dcf/_a_i_behaviour_8c.html#a7646e65477a51f55b02feafe9b23a2ae", null ],
     [ "ParseBehaviourSlot", "d5/dcf/_a_i_behaviour_8c.html#a6d36be1a14b7ab7948ff829c9c49f9cc", null ],

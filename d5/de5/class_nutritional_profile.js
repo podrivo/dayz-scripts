@@ -1,6 +1,6 @@
 var class_nutritional_profile =
 [
-    [ "NutritionalProfile", "d5/de5/class_nutritional_profile.html#a7dd7faebe7225d082c6734d8acdc30a4", null ],
+    [ "NutritionalProfile", "d5/de5/class_nutritional_profile.html#af68a5e0985e4b28b5836945296740357", null ],
     [ "GetAgents", "d5/de5/class_nutritional_profile.html#adac4b5411a2da62affc47b3aebe3eadf", null ],
     [ "GetDigestibility", "d5/de5/class_nutritional_profile.html#acf194706b787bd021218d45495ef3281", null ],
     [ "GetEnergy", "d5/de5/class_nutritional_profile.html#a3202b5c78ccc3eb501a5b82ac8b5f584", null ],
@@ -13,6 +13,7 @@ var class_nutritional_profile =
     [ "IsLiquid", "d5/de5/class_nutritional_profile.html#ace7bacd938776423b7ca5932c4160ef4", null ],
     [ "MarkAsLiquid", "d5/de5/class_nutritional_profile.html#a21ddcf73d5b6ca76493e13c18e43b64d", null ],
     [ "m_Agents", "d5/de5/class_nutritional_profile.html#aaf0e5fe8f36118434dbd279d8be72d78", null ],
+    [ "m_AgentsPerDigest", "d5/de5/class_nutritional_profile.html#a5fa0bb8b0c92d1cd27b1fa92c5f2ac11", null ],
     [ "m_Digestibility", "d5/de5/class_nutritional_profile.html#adaab02636ed919689ba916dc70c8714b", null ],
     [ "m_Energy", "d5/de5/class_nutritional_profile.html#ad25a71213258b6d3043e42d95502ccf9", null ],
     [ "m_FullnessIndex", "d5/de5/class_nutritional_profile.html#a2202a9ae31d5d0cb74f29c773eedaa16", null ],

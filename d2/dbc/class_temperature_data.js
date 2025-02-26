@@ -9,5 +9,6 @@ var class_temperature_data =
     [ "m_InterpolatedStepSize", "d2/dbc/class_temperature_data.html#a4169c5b05b058c3cf7d25c25ead853e4", null ],
     [ "m_UpdateTimeCoef", "d2/dbc/class_temperature_data.html#a7bbd23cfe228b3865c9da1a91eb88030", null ],
     [ "m_UpdateTimeInfo", "d2/dbc/class_temperature_data.html#a7abc76859c718a4e2121a5ee29baf76f", null ],
+    [ "m_UseGlobalCooling", "d2/dbc/class_temperature_data.html#abea27d6262f817ffa781fae71d17c769", null ],
     [ "m_Value", "d2/dbc/class_temperature_data.html#ab3ebc5cf4a617d43371a4cb7fecdeb32", null ]
 ];

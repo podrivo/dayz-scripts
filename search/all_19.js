@@ -6,11 +6,12 @@ var searchData=
   ['xbanimstate_3',['XBAnimState',['../d9/d3c/_crossbow_8c.html#ae1135a88cc1d6c6f4c015847bc38667a',1,'Crossbow.c']]],
   ['xboxdemogame_2ec_4',['XboxDemoGame.c',['../dd/d33/_xbox_demo_game_8c.html',1,'']]],
   ['xbstablestateid_5',['XBStableStateID',['../d9/d3c/_crossbow_8c.html#ac73a681f7812b22f3c723c04fe58d193',1,'Crossbow.c']]],
-  ['xmaslights_6',['XmasLights',['../d7/d5d/class_inventory___base.html#aa2d4aef2e0932d2a34310e0eab4848d6',1,'Inventory_Base']]],
-  ['xmaslights_2ec_7',['XmasLights.c',['../dd/d30/_xmas_lights_8c.html',1,'']]],
-  ['xmassleighlight_8',['XmasSleighLight',['../d8/dbb/class_point_light_base.html#ae841664b933bb03e11182c5157623c5e',1,'PointLightBase']]],
-  ['xmassleighlight_2ec_9',['XmasSleighLight.c',['../d9/df1/_xmas_sleigh_light_8c.html',1,'']]],
-  ['xmastreelight_10',['XmasTreeLight',['../d8/dbb/class_point_light_base.html#aab1892b3ddf43f2587e828916105179f',1,'PointLightBase']]],
-  ['xmastreelight_2ec_11',['XmasTreeLight.c',['../d9/d05/_xmas_tree_light_8c.html',1,'']]],
-  ['xzdir_12',['XZDir',['../d6/d36/_melee_targeting_8c.html#a6a0679651c3333c5df568b189157fee6',1,'MeleeTargeting.c']]]
+  ['xmasbaseballbat_2ec_6',['XmasBaseballBat.c',['../d7/dc6/_xmas_baseball_bat_8c.html',1,'']]],
+  ['xmaslights_7',['XmasLights',['../d7/d5d/class_inventory___base.html#aa2d4aef2e0932d2a34310e0eab4848d6',1,'Inventory_Base']]],
+  ['xmaslights_2ec_8',['XmasLights.c',['../dd/d30/_xmas_lights_8c.html',1,'']]],
+  ['xmassleighlight_9',['XmasSleighLight',['../d8/dbb/class_point_light_base.html#ae841664b933bb03e11182c5157623c5e',1,'PointLightBase']]],
+  ['xmassleighlight_2ec_10',['XmasSleighLight.c',['../d9/df1/_xmas_sleigh_light_8c.html',1,'']]],
+  ['xmastreelight_11',['XmasTreeLight',['../d8/dbb/class_point_light_base.html#aab1892b3ddf43f2587e828916105179f',1,'PointLightBase']]],
+  ['xmastreelight_2ec_12',['XmasTreeLight.c',['../d9/d05/_xmas_tree_light_8c.html',1,'']]],
+  ['xzdir_13',['XZDir',['../d6/d36/_melee_targeting_8c.html#a6a0679651c3333c5df568b189157fee6',1,'MeleeTargeting.c']]]
 ];

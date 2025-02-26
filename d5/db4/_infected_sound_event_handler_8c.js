@@ -16,7 +16,7 @@ var _infected_sound_event_handler_8c =
     [ "IsPlaying", "d5/db4/_infected_sound_event_handler_8c.html#a755f326e8b06e5f2807d64baf8bf582c", null ],
     [ "PlayRequest", "d5/db4/_infected_sound_event_handler_8c.html#a2e229f82987abb5c54f0367f04fb7a41", null ],
     [ "SoftStop", "d5/db4/_infected_sound_event_handler_8c.html#a31f919438432a46f9d6947ac6e8dedd1", null ],
-    [ "Stop", "d5/db4/_infected_sound_event_handler_8c.html#a17a237457e57625296e6b24feb19c60a", null ],
+    [ "Stop", "d7/ddb/group___sound_controller.html#gaec3d6c69da12025dfcf342c7e5456d46", null ],
     [ "m_AvailableStates", "d5/db4/_infected_sound_event_handler_8c.html#a98394cf5cde267376d49ea7b1fa9d9ad", null ],
     [ "m_CurrentState", "d5/db4/_infected_sound_event_handler_8c.html#a516af10c0db8313c15156087f7f8f5c1", null ],
     [ "m_Infected", "d5/db4/_infected_sound_event_handler_8c.html#a11c1f64745139bf5d7f0ed4be5386dbe", null ],

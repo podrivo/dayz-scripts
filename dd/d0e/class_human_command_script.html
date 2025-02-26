@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -123,6 +123,15 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a65d021ebb99fdd70e7f4330559edbc39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab55632ce4f1d8ab1f807ba017cfea90e"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0e/class_human_command_script.html#ab55632ce4f1d8ab1f807ba017cfea90e">AddHeadingRelativeTo</a> (HumanRelativeHeadingMode mode, <a class="el" href="../../d4/dc3/classfloat.html">float</a> yawAngle, <a class="el" href="../../d4/dc3/classfloat.html">float</a> filterDt=-1, <a class="el" href="../../d4/dc3/classfloat.html">float</a> maxYawSpeed=FLT_MAX)</td></tr>
 <tr class="separator:ab55632ce4f1d8ab1f807ba017cfea90e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8c65a9215f8c85033cc996c7d621ae2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0e/class_human_command_script.html#ad8c65a9215f8c85033cc996c7d621ae2">GetCurrentStance</a> ()</td></tr>
+<tr class="memdesc:ad8c65a9215f8c85033cc996c7d621ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to return the current stance of the human.  <br /></td></tr>
+<tr class="separator:ad8c65a9215f8c85033cc996c7d621ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58c5c4e96322f512ec21d7353a46ae4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0e/class_human_command_script.html#ab58c5c4e96322f512ec21d7353a46ae4">GetCurrentMovement</a> ()</td></tr>
+<tr class="memdesc:ab58c5c4e96322f512ec21d7353a46ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to return the current movement state of the human.  <br /></td></tr>
+<tr class="separator:ab58c5c4e96322f512ec21d7353a46ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3f2d851fda9b72a8aa9cd35eab168b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0e/class_human_command_script.html#ab3f2d851fda9b72a8aa9cd35eab168b3">GetCurrentLeaning</a> ()</td></tr>
+<tr class="memdesc:ab3f2d851fda9b72a8aa9cd35eab168b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to return the current leaning state of the human. &lt;-1, 1&gt;  <br /></td></tr>
+<tr class="separator:ab3f2d851fda9b72a8aa9cd35eab168b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6da797c0b9bda02ce0bf849b9c811ebb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0e/class_human_command_script.html#a6da797c0b9bda02ce0bf849b9c811ebb">PreAnimUpdate</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> pDt)</td></tr>
 <tr class="separator:a6da797c0b9bda02ce0bf849b9c811ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87877069885acf2042e8c807f11e5cac"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0e/class_human_command_script.html#a87877069885acf2042e8c807f11e5cac">PreAnim_CallCommand</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pCommand, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pParamInt, <a class="el" href="../../d4/dc3/classfloat.html">float</a> pParamFloat)</td></tr>
@@ -219,6 +228,87 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3f2d851fda9b72a8aa9cd35eab168b3" name="ab3f2d851fda9b72a8aa9cd35eab168b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3f2d851fda9b72a8aa9cd35eab168b3">&#9670;&#160;</a></span>GetCurrentLeaning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dc3/classfloat.html">float</a> GetCurrentLeaning </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Override this to return the current leaning state of the human. &lt;-1, 1&gt; </p>
+
+</div>
+</div>
+<a id="ab58c5c4e96322f512ec21d7353a46ae4" name="ab58c5c4e96322f512ec21d7353a46ae4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab58c5c4e96322f512ec21d7353a46ae4">&#9670;&#160;</a></span>GetCurrentMovement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> GetCurrentMovement </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Override this to return the current movement state of the human. </p>
+
+</div>
+</div>
+<a id="ad8c65a9215f8c85033cc996c7d621ae2" name="ad8c65a9215f8c85033cc996c7d621ae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8c65a9215f8c85033cc996c7d621ae2">&#9670;&#160;</a></span>GetCurrentStance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> GetCurrentStance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Override this to return the current stance of the human. </p>
 
 </div>
 </div>

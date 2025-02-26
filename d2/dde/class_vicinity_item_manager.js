@@ -6,6 +6,7 @@ var class_vicinity_item_manager =
     [ "ExcludeFromContainer_Phase1", "d2/dde/class_vicinity_item_manager.html#a787d27af7a31143aa85c56927a056d35", null ],
     [ "ExcludeFromContainer_Phase2", "d2/dde/class_vicinity_item_manager.html#a4c0dfc179db693bac282cefff49dcae6", null ],
     [ "ExcludeFromContainer_Phase3", "d2/dde/class_vicinity_item_manager.html#a26063d9ddf7c8ce2fad301a73e4654e9", null ],
+    [ "GetFixedHeadHeightAdjustment", "d2/dde/class_vicinity_item_manager.html#aec06645864d633bfd8857f0760beb92c", null ],
     [ "GetInstance", "d2/dde/class_vicinity_item_manager.html#a50eb7794e2903d39d75b2dc474590148", null ],
     [ "GetVicinityCargos", "d2/dde/class_vicinity_item_manager.html#ac7b6d507a27a4e695e18eaa153fd4f4e", null ],
     [ "GetVicinityItems", "d2/dde/class_vicinity_item_manager.html#a43e37ad70dfb540e192fd8a1f93e7b4e", null ],

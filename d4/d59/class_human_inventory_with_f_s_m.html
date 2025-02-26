@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -123,6 +123,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a611651478b09a831c5cb412825cd7679"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af36afc20d1192880385071fe67358661"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#af36afc20d1192880385071fe67358661">ProcessHandAbortEvent</a> (<a class="el" href="../../d8/d9e/class_hand_event_base.html">HandEventBase</a> e)</td></tr>
 <tr class="separator:af36afc20d1192880385071fe67358661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae525b4192b6697aa6472b39328d4ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#aaae525b4192b6697aa6472b39328d4ed">CheckFSMState</a> ()</td></tr>
+<tr class="separator:aaae525b4192b6697aa6472b39328d4ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab311cdf3df0e3547b7d3cd810e61ca61"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#ab311cdf3df0e3547b7d3cd810e61ca61">OnStoreLoad</a> (<a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a> ctx, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> version)</td></tr>
 <tr class="separator:ab311cdf3df0e3547b7d3cd810e61ca61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35a85dbb8d86badfdee250107b15e803"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a35a85dbb8d86badfdee250107b15e803">OnStoreSave</a> (<a class="el" href="../../d8/d18/gameplay_8c.html#af1d1033fca2ebd02f4ba61051b6341c4">ParamsWriteContext</a> ctx)</td></tr>
@@ -203,6 +205,35 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aaae525b4192b6697aa6472b39328d4ed" name="aaae525b4192b6697aa6472b39328d4ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaae525b4192b6697aa6472b39328d4ed">&#9670;&#160;</a></span>CheckFSMState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CheckFSMState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a524e881e774556ec14e7d230a6184a8f">GetCurrentStateID()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ab50342a3878d77468c997bfee8913576">HumanInventory::GetEntityInHands()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#abe6dfcc8cd5b9de6d33256ea73f5fadf">m_Empty</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a2ad1ad5375abd1b5b03212da2c948f90">m_Equipped</a>, and <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#ae4bc128a9839793c47c3651ab9f68557">m_FSM</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d2e/class_day_z_player.html#ab24be46d13d4324f4f971feb645499f0">DayZPlayer::OnItemInHandsChanged()</a>.</p>
+
+</div>
+</div>
 <a id="a159cbac92f2de441f2cb44e4e7c6d21b" name="a159cbac92f2de441f2cb44e4e7c6d21b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a159cbac92f2de441f2cb44e4e7c6d21b">&#9670;&#160;</a></span>CreateStableStates()</h2>
 
@@ -257,6 +288,8 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>identifier of current stable state </dd></dl>
 
 <p class="reference">References <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#ae4bc128a9839793c47c3651ab9f68557">m_FSM</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#aaae525b4192b6697aa6472b39328d4ed">CheckFSMState()</a>.</p>
 
 </div>
 </div>
@@ -489,7 +522,7 @@ Private Attributes</h2></td></tr>
 
 <p>hand slot state machine </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a159cbac92f2de441f2cb44e4e7c6d21b">CreateStableStates()</a>, and <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a8045e088b31fe0754fb20cb0a5ff0dc9">Init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#aaae525b4192b6697aa6472b39328d4ed">CheckFSMState()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a159cbac92f2de441f2cb44e4e7c6d21b">CreateStableStates()</a>, and <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a8045e088b31fe0754fb20cb0a5ff0dc9">Init()</a>.</p>
 
 </div>
 </div>
@@ -513,7 +546,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a159cbac92f2de441f2cb44e4e7c6d21b">CreateStableStates()</a>, and <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a8045e088b31fe0754fb20cb0a5ff0dc9">Init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#aaae525b4192b6697aa6472b39328d4ed">CheckFSMState()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a159cbac92f2de441f2cb44e4e7c6d21b">CreateStableStates()</a>, and <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a8045e088b31fe0754fb20cb0a5ff0dc9">Init()</a>.</p>
 
 </div>
 </div>
@@ -537,7 +570,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a2fb35749a434db920984cc7f0a4445e0">CanProcessHandEvents()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a524e881e774556ec14e7d230a6184a8f">GetCurrentStateID()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#aaf5539a8f3a69a01a93e95ad16b3a7bc">HumanInventoryWithFSM()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a8045e088b31fe0754fb20cb0a5ff0dc9">Init()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a429c892072aceb4600503a23503a03f6">IsIdle()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a052c96d35bdc709b3dba08242f6af53a">NetSyncCurrentStateID()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#af36afc20d1192880385071fe67358661">ProcessHandAbortEvent()</a>, and <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a611651478b09a831c5cb412825cd7679">ProcessHandEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a2fb35749a434db920984cc7f0a4445e0">CanProcessHandEvents()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#aaae525b4192b6697aa6472b39328d4ed">CheckFSMState()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a524e881e774556ec14e7d230a6184a8f">GetCurrentStateID()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#aaf5539a8f3a69a01a93e95ad16b3a7bc">HumanInventoryWithFSM()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a8045e088b31fe0754fb20cb0a5ff0dc9">Init()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a429c892072aceb4600503a23503a03f6">IsIdle()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a052c96d35bdc709b3dba08242f6af53a">NetSyncCurrentStateID()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#af36afc20d1192880385071fe67358661">ProcessHandAbortEvent()</a>, and <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#a611651478b09a831c5cb412825cd7679">ProcessHandEvent()</a>.</p>
 
 </div>
 </div>

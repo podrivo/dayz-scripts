@@ -215,6 +215,7 @@ var class_day_z_player =
     [ "m_ProcessFirearmMeleeHit", "db/d2e/class_day_z_player.html#ab1d246486fbada23d3f1a7073a36a8ec", null ],
     [ "m_ProcessLiftWeapon", "db/d2e/class_day_z_player.html#a6b62a30b83a2a731a12a9a10a7f79398", null ],
     [ "m_ProcessLiftWeaponState", "db/d2e/class_day_z_player.html#a92192ec98572380b00d0e865be0db978", null ],
+    [ "m_ProcessResetADS", "db/d2e/class_day_z_player.html#a36ab916f3d61936a6a6a9b7a59dfaf88", null ],
     [ "m_ProcessWeaponRaiseCompleted", "db/d2e/class_day_z_player.html#a3d0af33353a78ad62d24be6df62354b9", null ],
     [ "m_PullPlayerOutOfVehicleKeepsInLocalSpace", "db/d2e/class_day_z_player.html#ae4007d8f1e6aa4977e5fdc4d4090b1e7", null ],
     [ "m_PullPlayerOutOfVehicleState", "db/d2e/class_day_z_player.html#a1ff8e68fed929d60b78c8cd512004dec", null ],
@@ -237,7 +238,7 @@ var class_day_z_player =
     [ "m_TriggerPullPlayerOutOfVehicleSynch", "db/d2e/class_day_z_player.html#a6775df1dcb35f87430ebd15b94653610", null ],
     [ "m_UnconsciousDebug", "db/d2e/class_day_z_player.html#a138fdd6a5c95b1c19413b2e010eee685", null ],
     [ "m_WasInVehicle", "db/d2e/class_day_z_player.html#ad3de21717e3df812f4f865b1cdf5e35e", null ],
-    [ "m_WasIronsight", "db/d2e/class_day_z_player.html#a70c06c786b73b1991087803874e3e498", null ],
+    [ "m_WasIronSight", "db/d2e/class_day_z_player.html#a28670482c1e8c967e1d375ef672c1c5d", null ],
     [ "m_WeaponDebug", "db/d2e/class_day_z_player.html#a413263cf2bc5be0d5c46e505098913ad", null ],
     [ "m_WeaponRaiseCompleted", "db/d2e/class_day_z_player.html#aa849e5a0196191ebdc980404ff2ca7ed", null ],
     [ "m_WeaponRaiseTime", "db/d2e/class_day_z_player.html#abcf3a364c8c15becc5fa2c361b1bd3dc", null ]

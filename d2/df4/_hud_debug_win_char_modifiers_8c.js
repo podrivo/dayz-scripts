@@ -21,7 +21,7 @@ var _hud_debug_win_char_modifiers_8c =
     [ "~HudDebugWinCharModifiers", "d2/df4/_hud_debug_win_char_modifiers_8c.html#a93dd37c0c8733b21b1270603f75415d2", null ],
     [ "m_DetailedInfoIndex", "d2/df4/_hud_debug_win_char_modifiers_8c.html#abd2b27eb7d6bc85da921057c1a1fb4c7", null ],
     [ "m_ModifierWidgetData", "d2/df4/_hud_debug_win_char_modifiers_8c.html#a1711a9e3a6e4972567b0295629563a82", null ],
-    [ "m_ModifierWidgets", "d2/df4/_hud_debug_win_char_modifiers_8c.html#a4fcac670104371d06a1c49be646851e1", null ],
+    [ "m_ModifierWidgets", "d2/df4/_hud_debug_win_char_modifiers_8c.html#a8d00e36096a2b4d067f211fa9ee317cb", null ],
     [ "m_PluginDeveloperSync", "d2/df4/_hud_debug_win_char_modifiers_8c.html#a3f40fa44e60904ea57abfb3c32ee96c0", null ],
     [ "m_WgtDetailedInfo", "d2/df4/_hud_debug_win_char_modifiers_8c.html#acab6ca2cdb52868c846753300922d256", null ],
     [ "m_WgtDetailedInfoText", "d2/df4/_hud_debug_win_char_modifiers_8c.html#a5f28338c13480c939d34df5d423ae8be", null ],

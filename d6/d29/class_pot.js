@@ -15,6 +15,7 @@ var class_pot =
     [ "GetPouringSoundset", "d6/d29/class_pot.html#a50af78fb1504b0d35390c1090d0fbff6", null ],
     [ "GetQuantityNormalizedScripted", "d6/d29/class_pot.html#afb875797f7a1fc5f74016efe0cac9ae2", null ],
     [ "IsContainer", "d6/d29/class_pot.html#ada59923e2d740ffca32807d0ded46ebd", null ],
+    [ "IsCookware", "d6/d29/class_pot.html#ac3cadebadf7fa591487c571176436613", null ],
     [ "IsOpen", "d6/d29/class_pot.html#a05bac627bbb13f7329a1aff6e140219b", null ],
     [ "SetActions", "d6/d29/class_pot.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ]
 ];

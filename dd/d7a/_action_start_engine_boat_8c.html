@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -122,8 +122,8 @@ Functions</h2></td></tr>
 <tr class="separator:aa9aa4864fae11769c65e644b5fd97c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0219366b3a3c15c9abf16939b18d7508"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7a/_action_start_engine_boat_8c.html#a0219366b3a3c15c9abf16939b18d7508">OnFinishProgress</a> (<a class="el" href="../../d6/d59/_action_base_8c.html#afed569492a6824c86798ac839f679651">ActionData</a> action_data)</td></tr>
 <tr class="separator:a0219366b3a3c15c9abf16939b18d7508"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26c6922d796bdf663f49119e83fe26f8"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7a/_action_start_engine_boat_8c.html#a26c6922d796bdf663f49119e83fe26f8">OnExecuteServer</a> (<a class="el" href="../../d6/d59/_action_base_8c.html#afed569492a6824c86798ac839f679651">ActionData</a> action_data)</td></tr>
-<tr class="separator:a26c6922d796bdf663f49119e83fe26f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd166a68dd6f387d58965b4b20698a5"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7a/_action_start_engine_boat_8c.html#a8cd166a68dd6f387d58965b4b20698a5">OnExecute</a> (<a class="el" href="../../d6/d59/_action_base_8c.html#afed569492a6824c86798ac839f679651">ActionData</a> action_data)</td></tr>
+<tr class="separator:a8cd166a68dd6f387d58965b4b20698a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac606356eec5274b943e399d1261b3d15"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7a/_action_start_engine_boat_8c.html#ac606356eec5274b943e399d1261b3d15">CanBeUsedInVehicle</a> ()</td></tr>
 <tr class="separator:ac606356eec5274b943e399d1261b3d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab80733e1a8c145c8ee7b04476d535d72"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7a/_action_start_engine_boat_8c.html#ab80733e1a8c145c8ee7b04476d535d72">HasTarget</a> ()</td></tr>
@@ -162,7 +162,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d6/d37/class_boat_script.html#ad4852ab76760a879996bd8830c280b4c">BoatScript::CheckOperationalState()</a>, and <a class="el" href="../../d1/d1f/class_human_command_vehicle.html#a340bedb37b2a917a5e95ac0c4c5fa02e">HumanCommandVehicle::GetTransport()</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d1f/class_human_command_vehicle.html#a340bedb37b2a917a5e95ac0c4c5fa02e">HumanCommandVehicle::GetTransport()</a>, and <a class="el" href="../../de/db5/group___item_health.html#ga16c9f4d849f6ae2ef05dbba27c8dc7e1">GameConstants::STATE_RUINED</a>.</p>
 
 </div>
 </div>
@@ -255,14 +255,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a26c6922d796bdf663f49119e83fe26f8" name="a26c6922d796bdf663f49119e83fe26f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26c6922d796bdf663f49119e83fe26f8">&#9670;&#160;</a></span>OnExecuteServer()</h2>
+<a id="a8cd166a68dd6f387d58965b4b20698a5" name="a8cd166a68dd6f387d58965b4b20698a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cd166a68dd6f387d58965b4b20698a5">&#9670;&#160;</a></span>OnExecute()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">override void OnExecuteServer </td>
+          <td class="memname">override void OnExecute </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d6/d59/_action_base_8c.html#afed569492a6824c86798ac839f679651">ActionData</a>&#160;</td>
           <td class="paramname"><em>action_data</em></td><td>)</td>
@@ -271,7 +271,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d1/d1f/class_human_command_vehicle.html#a340bedb37b2a917a5e95ac0c4c5fa02e">HumanCommandVehicle::GetTransport()</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d1f/class_human_command_vehicle.html#a340bedb37b2a917a5e95ac0c4c5fa02e">HumanCommandVehicle::GetTransport()</a>, and <a class="el" href="../../d3/d36/class_transport.html#a8d8968b9c6a1a7f1207e8c6a6d0d53c7">Transport::OnBeforeEngineStart()</a>.</p>
 
 </div>
 </div>

@@ -8,5 +8,8 @@ var class_server_browser_tab_console_pages =
     [ "PressThumbRight", "d4/d6d/class_server_browser_tab_console_pages.html#a7a92f598210a7dd83ae2dfd16f1f2657", null ],
     [ "PressX", "d4/d6d/class_server_browser_tab_console_pages.html#a05c9838f112dd033fb76921948525d53", null ],
     [ "RefreshList", "d4/d6d/class_server_browser_tab_console_pages.html#a41a27f11b9ec5c89a188018a831d12ba", null ],
-    [ "SetFocusFilters", "d4/d6d/class_server_browser_tab_console_pages.html#a21e454d22ff6c3457e5fba05f964b7e2", null ]
+    [ "RefreshServerList", "d4/d6d/class_server_browser_tab_console_pages.html#a4732e884960176c03cd6536a5e2b3178", null ],
+    [ "SetFavoriteChanged", "d4/d6d/class_server_browser_tab_console_pages.html#a261d9372e78bb752dc3b928d6129ef57", null ],
+    [ "SetFocusFilters", "d4/d6d/class_server_browser_tab_console_pages.html#a21e454d22ff6c3457e5fba05f964b7e2", null ],
+    [ "m_IsFavoriteChanged", "d4/d6d/class_server_browser_tab_console_pages.html#a2d85d5978fbeeb6ee6a4d749131442cb", null ]
 ];

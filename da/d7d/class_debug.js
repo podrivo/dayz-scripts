@@ -5,6 +5,7 @@ var class_debug =
     [ "BleedingChancesLog", "da/d7d/class_debug.html#abbbfaf8b3732d9e1f755b97353b925a7", null ],
     [ "CanvasDrawLine", "da/d7d/class_debug.html#a465ffcb3bbebfca401621ef02e43b0df", null ],
     [ "CanvasDrawPoint", "da/d7d/class_debug.html#af184830590d396089ad0b2ec167a248f", null ],
+    [ "CleanupDrawShapes", "da/d7d/class_debug.html#a28fd97864861c72a091d46d8b0837ebd", null ],
     [ "ClearCanvas", "da/d7d/class_debug.html#ae28d66cac13ef9c6ef6c3c5c04d9fe10", null ],
     [ "ClearLogs", "da/d7d/class_debug.html#afe2b6b094dbf08323f3730453a6201ba", null ],
     [ "ClearScriptLogs", "da/d7d/class_debug.html#a4e49e3dd731be8c5a2e56f6083326fa9", null ],

@@ -3,7 +3,7 @@ var class_inventory___base =
     [ "AttachToObject", "d7/d5d/class_inventory___base.html#abe2a3394bf707562a3c833a4357f0f25", null ],
     [ "CanBeFilledAtPosition", "d7/d5d/class_inventory___base.html#a327f03f907bae82f5869a56321c19b97", null ],
     [ "CanBeManipulated", "d7/d5d/class_inventory___base.html#aaef900b1c3e704ea3c4adbddd72d8a3c", null ],
-    [ "CanDetachAttachment", "d7/d5d/class_inventory___base.html#aec9696a11752eeb8cc616e69e9bc8435", null ],
+    [ "CanDetachAttachment", "d7/d5d/class_inventory___base.html#ae0d251e23b974adefb41a65a7c832b5e", null ],
     [ "CanDetachAttachment", "d7/d5d/class_inventory___base.html#ae0d251e23b974adefb41a65a7c832b5e", null ],
     [ "CanDetachAttachment", "d7/d5d/class_inventory___base.html#ae0d251e23b974adefb41a65a7c832b5e", null ],
     [ "CanDetachAttachment", "d7/d5d/class_inventory___base.html#ae0d251e23b974adefb41a65a7c832b5e", null ],

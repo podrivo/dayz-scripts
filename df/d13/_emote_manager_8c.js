@@ -38,6 +38,7 @@ var _emote_manager_8c =
     [ "PickEmote", "df/d13/_emote_manager_8c.html#a7a305ed244d13a38a62fbb04687c9f29", null ],
     [ "PlayEmote", "df/d13/_emote_manager_8c.html#af59931998eda1e7e190aff2074f74961", null ],
     [ "PlaySurrenderInOut", "df/d13/_emote_manager_8c.html#a58c19af9f33578abe8718c3c93eb7f1e", null ],
+    [ "RequestCommitSuicide", "df/d13/_emote_manager_8c.html#a1af6faee610cd2721c1b8c6c85aaccb1", null ],
     [ "SendEmoteRequestSync", "df/d13/_emote_manager_8c.html#ae2584c97b3284501fbd3df050a9022ff", null ],
     [ "ServerRequestEmoteCancel", "df/d13/_emote_manager_8c.html#a885f1b27cca10f365dce998e84f05cfb", null ],
     [ "SetEmoteLockState", "df/d13/_emote_manager_8c.html#a9243c72013b80fe35944180a69a83d22", null ],

@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -261,6 +261,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aee745521abc2b6e5efd08bb65a2f86a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2401ed0d761d55a380a38071c475beae"><td class="memItemLeft" align="right" valign="top">private <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dcd/class_u_i_menu_panel.html#a2401ed0d761d55a380a38071c475beae">m_AnimAlphaValue</a></td></tr>
 <tr class="separator:a2401ed0d761d55a380a38071c475beae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b40f9540ca1a6d968b843f76eff18d9"><td class="memItemLeft" align="right" valign="top">private <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dcd/class_u_i_menu_panel.html#a1b40f9540ca1a6d968b843f76eff18d9">m_PlayerDeathInvoker</a></td></tr>
+<tr class="separator:a1b40f9540ca1a6d968b843f76eff18d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Part of main menu hierarchy to create custom menus from script. </p>
@@ -1480,7 +1482,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#adf005a6f0d3d238d83768f20c51e657f">UIScriptedMenu::IsHandlingPlayerDeathEvent()</a>, and <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ac0cd24e24b0aa9bb1dee05e5e5dcd2fc">UIScriptedMenu::OnPlayerDeath()</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ac0cd24e24b0aa9bb1dee05e5e5dcd2fc">UIScriptedMenu::OnPlayerDeath()</a>, and <a class="el" href="../../d4/d2d/class_script_invoker.html#a0a18c16f75eba3f8429c07129476b5d8">ScriptInvoker::Remove()</a>.</p>
 
 </div>
 </div>
@@ -2158,7 +2160,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#adf005a6f0d3d238d83768f20c51e657f">UIScriptedMenu::IsHandlingPlayerDeathEvent()</a>, and <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ac0cd24e24b0aa9bb1dee05e5e5dcd2fc">UIScriptedMenu::OnPlayerDeath()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d4/d2d/class_script_invoker.html#a97ed19e1e143a0863889e8ec011af969">ScriptInvoker::Insert()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#adf005a6f0d3d238d83768f20c51e657f">UIScriptedMenu::IsHandlingPlayerDeathEvent()</a>, and <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ac0cd24e24b0aa9bb1dee05e5e5dcd2fc">UIScriptedMenu::OnPlayerDeath()</a>.</p>
 
 </div>
 </div>
@@ -2670,6 +2672,28 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> m_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1b40f9540ca1a6d968b843f76eff18d9" name="a1b40f9540ca1a6d968b843f76eff18d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b40f9540ca1a6d968b843f76eff18d9">&#9670;&#160;</a></span>m_PlayerDeathInvoker</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">private <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a> m_PlayerDeathInvoker</td>
         </tr>
       </table>
   </td>

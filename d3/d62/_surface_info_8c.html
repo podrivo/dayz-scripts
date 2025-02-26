@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -100,7 +100,8 @@ $(document).ready(function(){initNavTree('d3/d62/_surface_info_8c.html','../../'
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">SurfaceInfo.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -109,11 +110,27 @@ $(document).ready(function(){initNavTree('d3/d62/_surface_info_8c.html','../../'
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc8/class_surface_info.html">SurfaceInfo</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4f/class_surface_detection_parameters.html">SurfaceDetectionParameters</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d96/class_surface_detection_result.html">SurfaceDetectionResult</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a4ca8d9e629f8006263c22f239b63a359"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d62/_surface_info_8c.html#a4ca8d9e629f8006263c22f239b63a359">SurfaceInfo</a></td></tr>
 <tr class="separator:a4ca8d9e629f8006263c22f239b63a359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a2af112a3b0d4134db92a9d05f4085260"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d62/_surface_info_8c.html#a2af112a3b0d4134db92a9d05f4085260">UseObjectsMode</a> { <a class="el" href="../../d3/d62/_surface_info_8c.html#a2af112a3b0d4134db92a9d05f4085260a9779a7e9f14b8a5b1d7640a1ff0dab26">Wait</a>
+, <a class="el" href="../../d3/d62/_surface_info_8c.html#a2af112a3b0d4134db92a9d05f4085260ab30cc3c635f3a57e2cf00f034f78832b">NoWait</a>
+, <a class="el" href="../../d3/d62/_surface_info_8c.html#a2af112a3b0d4134db92a9d05f4085260ac6cf9f4fb81b827d80382aaefc231555">NoLock</a>
+ }</td></tr>
+<tr class="separator:a2af112a3b0d4134db92a9d05f4085260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a254322375aac9d3654d156176eb84e92"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d62/_surface_info_8c.html#a254322375aac9d3654d156176eb84e92">SurfaceDetectionType</a> { <a class="el" href="../../d3/d62/_surface_info_8c.html#a254322375aac9d3654d156176eb84e92a7b285c043a6baff2f94b75f798c7095a">Scenery</a>
+, <a class="el" href="../../d3/d62/_surface_info_8c.html#a254322375aac9d3654d156176eb84e92a8c8078a353eb7bc7458b64d37cc8ed08">Roadway</a>
+ }</td></tr>
+<tr class="separator:a254322375aac9d3654d156176eb84e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a4ca8d9e629f8006263c22f239b63a359" name="a4ca8d9e629f8006263c22f239b63a359"></a>
@@ -127,6 +144,47 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a254322375aac9d3654d156176eb84e92" name="a254322375aac9d3654d156176eb84e92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a254322375aac9d3654d156176eb84e92">&#9670;&#160;</a></span>SurfaceDetectionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d3/d62/_surface_info_8c.html#a254322375aac9d3654d156176eb84e92">SurfaceDetectionType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a254322375aac9d3654d156176eb84e92a7b285c043a6baff2f94b75f798c7095a" name="a254322375aac9d3654d156176eb84e92a7b285c043a6baff2f94b75f798c7095a"></a>Scenery&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a254322375aac9d3654d156176eb84e92a8c8078a353eb7bc7458b64d37cc8ed08" name="a254322375aac9d3654d156176eb84e92a8c8078a353eb7bc7458b64d37cc8ed08"></a>Roadway&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a2af112a3b0d4134db92a9d05f4085260" name="a2af112a3b0d4134db92a9d05f4085260"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2af112a3b0d4134db92a9d05f4085260">&#9670;&#160;</a></span>UseObjectsMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d3/d62/_surface_info_8c.html#a2af112a3b0d4134db92a9d05f4085260">UseObjectsMode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2af112a3b0d4134db92a9d05f4085260a9779a7e9f14b8a5b1d7640a1ff0dab26" name="a2af112a3b0d4134db92a9d05f4085260a9779a7e9f14b8a5b1d7640a1ff0dab26"></a>Wait&#160;</td><td class="fielddoc"><p>wait for the data to be ready </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2af112a3b0d4134db92a9d05f4085260ab30cc3c635f3a57e2cf00f034f78832b" name="a2af112a3b0d4134db92a9d05f4085260ab30cc3c635f3a57e2cf00f034f78832b"></a>NoWait&#160;</td><td class="fielddoc"><p>do not wait for the data, but refresh caches </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2af112a3b0d4134db92a9d05f4085260ac6cf9f4fb81b827d80382aaefc231555" name="a2af112a3b0d4134db92a9d05f4085260ac6cf9f4fb81b827d80382aaefc231555"></a>NoLock&#160;</td><td class="fielddoc"><p>only return the data we have, do not touch any caches (MT safe mode) </p>
+</td></tr>
+</table>
 
 </div>
 </div>

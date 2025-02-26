@@ -1,6 +1,7 @@
 var class_crafting_manager =
 [
     [ "CraftingManager", "d4/db5/class_crafting_manager.html#a6c711141fef69ffce72a40a941c17f9e", null ],
+    [ "~CraftingManager", "d4/db5/class_crafting_manager.html#a3ac0f7384926d3e6a48cbb52787dee6a", null ],
     [ "GetRecipeID", "d4/db5/class_crafting_manager.html#acc25f05c5e488e245352ecfebd929964", null ],
     [ "GetRecipeID", "d4/db5/class_crafting_manager.html#a5969da2d16d5bed99774373ebcaa11f9", null ],
     [ "GetRecipesCount", "d4/db5/class_crafting_manager.html#a872d65af228649f961981ec3548dbc08", null ],

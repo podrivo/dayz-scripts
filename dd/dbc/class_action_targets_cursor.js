@@ -6,6 +6,7 @@ var class_action_targets_cursor =
     [ "BuildFixedCursor", "dd/dbc/class_action_targets_cursor.html#ad9aa7f35b7160eadc3a95c52738d4ae7", null ],
     [ "BuildFloatingCursor", "dd/dbc/class_action_targets_cursor.html#a0ec4ac03337a0bb4e0d6e271614751f4", null ],
     [ "CheckRefresherFlagVisibility", "dd/dbc/class_action_targets_cursor.html#ae8b58ce0cb6307b83a9180150c9c7b69", null ],
+    [ "CheckRefresherFlagVisibilityEx", "dd/dbc/class_action_targets_cursor.html#a8043750b89bc53fb01568e56e23362ee", null ],
     [ "GetActionDesc", "dd/dbc/class_action_targets_cursor.html#af2ef01cfc08742275556e3da2d27f9f5", null ],
     [ "GetActionManager", "dd/dbc/class_action_targets_cursor.html#a7bfe0daa7710ddfc48f1bc0cc9f3742b", null ],
     [ "GetActions", "dd/dbc/class_action_targets_cursor.html#aaae0c438a09652dd0224e727986293dd", null ],

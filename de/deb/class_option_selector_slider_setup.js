@@ -1,10 +1,29 @@
 var class_option_selector_slider_setup =
 [
+    [ "Changed", "de/deb/class_option_selector_slider_setup.html#a08e5b1190bdf4e10f6d70450aa8d6014", null ],
     [ "Disable", "de/deb/class_option_selector_slider_setup.html#a1f8be84feac6d2e2b44e604854725f81", null ],
     [ "Enable", "de/deb/class_option_selector_slider_setup.html#a8bc3dae4e844a52779027e81526b9c3f", null ],
+    [ "GetRangePercantageByValue", "de/deb/class_option_selector_slider_setup.html#aeed299736345260f1344437e3e5c58b1", null ],
+    [ "IsFocusable", "de/deb/class_option_selector_slider_setup.html#a04ee2c706364ff75f23781939df87928", null ],
+    [ "IsValidEditboxValue", "de/deb/class_option_selector_slider_setup.html#a68bc54c20745a66bc99e229e02f22890", null ],
+    [ "IsValueTextVisible", "de/deb/class_option_selector_slider_setup.html#a90a0bc67d511114519a1ae50a3ccffa8", null ],
+    [ "OnChange", "de/deb/class_option_selector_slider_setup.html#a0b2a27b5e2351f66f2d8025f4797124c", null ],
+    [ "OnDoubleClick", "de/deb/class_option_selector_slider_setup.html#a2ebc786bda2400ce2a7852071f7028f5", null ],
+    [ "OnFocus", "de/deb/class_option_selector_slider_setup.html#ae449a57e925d5a7698f26ff6c4d1e1f0", null ],
+    [ "OnFocusLost", "de/deb/class_option_selector_slider_setup.html#ac4fe9e0a034ac5f4b1ad5afd30ac3f79", null ],
+    [ "OnMouseLeave", "de/deb/class_option_selector_slider_setup.html#a472c39c87ea477147b2c9353631a9822", null ],
     [ "OnUpdate", "de/deb/class_option_selector_slider_setup.html#adfb163c2d62d2c8b89e000339afbab76", null ],
     [ "OptionSelectorLevelMarker", "de/deb/class_option_selector_slider_setup.html#ad22ca55745662e7309841d0b53252998", null ],
-    [ "OptionSelectorSlider", "de/deb/class_option_selector_slider_setup.html#ad5f07f354ecb3fcad61f26be69188fd8", null ],
+    [ "OptionSelectorSlider", "de/deb/class_option_selector_slider_setup.html#ab8ea44142934ab59b2b6974ff32564a2", null ],
+    [ "Refresh", "de/deb/class_option_selector_slider_setup.html#a439ca2591bbdd1c5b8d86a14487c6d03", null ],
+    [ "SetActiveOption", "de/deb/class_option_selector_slider_setup.html#af460fff23be9034b7292eb9e4fc20eba", null ],
     [ "SetSlider2Value", "de/deb/class_option_selector_slider_setup.html#af393769cf745e8d35ae56effc67391f2", null ],
-    [ "m_Slider2", "de/deb/class_option_selector_slider_setup.html#a0bcee66db9c3afdb4c9c5e726a1241f7", null ]
+    [ "SetValueText", "de/deb/class_option_selector_slider_setup.html#a3e0fe690f101c9a05df4acb33879ea76", null ],
+    [ "Update", "de/deb/class_option_selector_slider_setup.html#aec0783b5a136e042adcc47bae4fe5291", null ],
+    [ "UpdateActiveOption", "de/deb/class_option_selector_slider_setup.html#aa8df01679c2862f0bd6a7b114fa06182", null ],
+    [ "m_Changed", "de/deb/class_option_selector_slider_setup.html#a159abfe3bbb990b7971c0fad20258778", null ],
+    [ "m_LastValue", "de/deb/class_option_selector_slider_setup.html#a4b7d22ba2f82116a5c51ecd7b4335437", null ],
+    [ "m_ShowEditbox", "de/deb/class_option_selector_slider_setup.html#a113e8e0d6f972afbb9ee6bd3b150d648", null ],
+    [ "m_Slider2", "de/deb/class_option_selector_slider_setup.html#a0bcee66db9c3afdb4c9c5e726a1241f7", null ],
+    [ "m_ValueText", "de/deb/class_option_selector_slider_setup.html#a90b2c7b1cc16562bc221eccdb75155a8", null ]
 ];

@@ -29,6 +29,7 @@ var searchData=
   ['orange_26',['Orange',['../d2/d4d/class_orange.html',1,'']]],
   ['orienteeringcompass_27',['OrienteeringCompass',['../dd/d28/class_orienteering_compass.html',1,'']]],
   ['ots14_28',['OTS14',['../d9/df2/class_o_t_s14.html',1,'']]],
-  ['overheatingparticle_29',['OverheatingParticle',['../dc/d83/class_overheating_particle.html',1,'']]],
-  ['ownershiptestdummyclass_30',['OwnershipTestDummyClass',['../de/d19/class_ownership_test_dummy_class.html',1,'']]]
+  ['outdoorthermometermanager_29',['OutdoorThermometerManager',['../d4/d00/class_outdoor_thermometer_manager.html',1,'']]],
+  ['overheatingparticle_30',['OverheatingParticle',['../dc/d83/class_overheating_particle.html',1,'']]],
+  ['ownershiptestdummyclass_31',['OwnershipTestDummyClass',['../de/d19/class_ownership_test_dummy_class.html',1,'']]]
 ];

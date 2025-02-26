@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -475,7 +475,7 @@ Variables</h2></td></tr>
 <tr class="memdesc:ga70102fd33ee888a46f8a66765de7d96b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="../../d2/d96/class_entity.html">Entity</a> flags.  <br /></td></tr>
 <tr class="separator:ga70102fd33ee888a46f8a66765de7d96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaec35efbce9abbd0d9c06d9aff3f6768b"><td class="memItemLeft" align="right" valign="top">proto native external <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d14/group___entity_attributes.html#gaec35efbce9abbd0d9c06d9aff3f6768b">IsFlagSet</a> (<a class="el" href="../../d3/d14/group___entity_attributes.html#gacda3452546886b2b713c62c4a07fd52a">EntityFlags</a> flags)</td></tr>
-<tr class="memdesc:gaec35efbce9abbd0d9c06d9aff3f6768b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if one or more of specified flags are set.  <br /></td></tr>
+<tr class="memdesc:gaec35efbce9abbd0d9c06d9aff3f6768b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d1/d9b/class_test.html" title="Attribute used for tests annotation and assignment to Suites.">Test</a> if one or more of specified flags are set.  <br /></td></tr>
 <tr class="separator:gaec35efbce9abbd0d9c06d9aff3f6768b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9aa1580ffee543a6a0894e354bdeaae0"><td class="memItemLeft" align="right" valign="top">proto native external <a class="el" href="../../d3/d14/group___entity_attributes.html#gacda3452546886b2b713c62c4a07fd52a">EntityFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d14/group___entity_attributes.html#ga9aa1580ffee543a6a0894e354bdeaae0">SetFlags</a> (<a class="el" href="../../d3/d14/group___entity_attributes.html#gacda3452546886b2b713c62c4a07fd52a">EntityFlags</a> flags, <a class="el" href="../../d9/db9/classbool.html">bool</a> recursively)</td></tr>
 <tr class="memdesc:ga9aa1580ffee543a6a0894e354bdeaae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets <a class="el" href="../../d2/d96/class_entity.html">Entity</a> flags. It's OR operation, not rewrite. Returns previous flags.  <br /></td></tr>
@@ -854,7 +854,7 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">&gt;&gt; 128</div>
 <div class="line">&gt;&gt; 0</div>
-<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> DayZGame.c:3820</div></div>
+<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> DayZGame.c:3868</div></div>
 <div class="ttc" id="agroup___debug_html_gaaa9351d895a1f244a26fd635c378c536"><div class="ttname"><a href="../../d0/d62/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print</a></div><div class="ttdeci">proto void Print(void var)</div><div class="ttdoc">Prints content of variable to console/log.</div></div>
 <div class="ttc" id="agroup___entity_attributes_html_gaa29339063b04471895b3cb38b17cdb13"><div class="ttname"><a href="../../d3/d14/group___entity_attributes.html#gaa29339063b04471895b3cb38b17cdb13">EntityEvent</a></div><div class="ttdeci">EntityEvent</div><div class="ttdoc">Entity events for event-mask, or throwing event from code.</div><div class="ttdef"><b>Definition</b> EnEntity.c:45</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -3347,7 +3347,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test if one or more of specified flags are set. </p>
+<p><a class="el" href="../../d1/d9b/class_test.html" title="Attribute used for tests annotation and assignment to Suites.">Test</a> if one or more of specified flags are set. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>bool</code> True if is set, false otherwise. <div class="fragment"><div class="line">Man player = <a class="code hl_variable" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetPlayer();</div>
 <div class="line">player.SetFlags(<a class="code hl_enumeration" href="../../d3/d14/group___entity_attributes.html#gacda3452546886b2b713c62c4a07fd52a">EntityFlags</a>.VISIBLE);</div>
 <div class="line"><a class="code hl_function" href="../../d0/d62/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print</a>( player.IsFlagSet(<a class="code hl_enumeration" href="../../d3/d14/group___entity_attributes.html#gacda3452546886b2b713c62c4a07fd52a">EntityFlags</a>.VISIBLE) );</div>

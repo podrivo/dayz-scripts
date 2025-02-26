@@ -18,6 +18,7 @@ var class_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event
     [ "ProcessCompletionTransitions", "d2/d6c/class_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189.html#a505f60442e28efd5b2456d7582913135", null ],
     [ "ProcessEvent", "d2/d6c/class_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189.html#a1806ca0faf767456caa21a68a8e770b7", null ],
     [ "ProcessLocalTransition", "d2/d6c/class_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189.html#af9dfea608c4deaf6135b7037b3060102", null ],
+    [ "SetCurrentState", "d2/d6c/class_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189.html#a19150b613cf2036daab5187ebdb7e578", null ],
     [ "SetInitialState", "d2/d6c/class_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189.html#a5006576c1a0a147b4589b3a0560b2e49", null ],
     [ "Start", "d2/d6c/class_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189.html#a26b9cd5120a906c1fde2e4b6052b41dd", null ],
     [ "Terminate", "d2/d6c/class_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189.html#afdfe84dd4f88a0cb44f75d0f8b8ce49f", null ],

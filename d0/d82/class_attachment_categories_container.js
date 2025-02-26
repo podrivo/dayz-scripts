@@ -1,9 +1,9 @@
 var class_attachment_categories_container =
 [
     [ "AttachmentCategoriesContainer", "d0/d82/class_attachment_categories_container.html#a8c7ee6d253991fc503ac9588e1c1c393", null ],
+    [ "~AttachmentCategoriesContainer", "d0/d82/class_attachment_categories_container.html#af73ec3a102434278609fe15cbcfb4a33", null ],
     [ "CanDisplayAnyCategory", "d0/d82/class_attachment_categories_container.html#a9b3db8d4b124cd2bdf85582748a71397", null ],
     [ "CanOpenCloseContainerEx", "d0/d82/class_attachment_categories_container.html#a71aea7945735c16297723aff90167429", null ],
-    [ "CanSplitEx", "d0/d82/class_attachment_categories_container.html#a54895fafc8c0fa282828872ed3a410da", null ],
     [ "Close", "d0/d82/class_attachment_categories_container.html#ab390fa8607d8d415cb28667bb2137bb5", null ],
     [ "CollapseButtonOnMouseButtonDown", "d0/d82/class_attachment_categories_container.html#ac0fe2fa78d496504da4194bcdafc40af", null ],
     [ "DraggingOverHeader", "d0/d82/class_attachment_categories_container.html#a9d744b9914ac440bf316cb39e33adb3f", null ],

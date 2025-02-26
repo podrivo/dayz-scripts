@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -115,7 +115,7 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a42f2147f809a3835c6b3d3dd19b9bd48"><td class="memItemLeft" align="right" valign="top">class PPERequesterBank extends <a class="el" href="../../dd/d17/class_managed.html">Managed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#a42f2147f809a3835c6b3d3dd19b9bd48">PPERequesterRegistrations</a> ()</td></tr>
-<tr class="memdesc:a42f2147f809a3835c6b3d3dd19b9bd48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mod this, if you wish to register custom requesters.  <br /></td></tr>
+<tr class="memdesc:a42f2147f809a3835c6b3d3dd19b9bd48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mod this, if you wish to register custom requesters inside 'RegisterAdditionalRequesters' override.  <br /></td></tr>
 <tr class="separator:a42f2147f809a3835c6b3d3dd19b9bd48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1716946dffd7f7f6a9c8f46406ab0732"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#a1716946dffd7f7f6a9c8f46406ab0732">Init</a> ()</td></tr>
 <tr class="separator:a1716946dffd7f7f6a9c8f46406ab0732"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,6 +139,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a48158e350ffae7a5eef34d6b6b3f547e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#a48158e350ffae7a5eef34d6b6b3f547e">VerifyRequester</a> (<a class="el" href="../../d0/d96/class_p_p_e_requester_base.html">PPERequesterBase</a> req)</td></tr>
 <tr class="memdesc:a48158e350ffae7a5eef34d6b6b3f547e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies the instance.  <br /></td></tr>
 <tr class="separator:a48158e350ffae7a5eef34d6b6b3f547e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87cc0d25340ee507516c4987d2912a88"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#a87cc0d25340ee507516c4987d2912a88">RegisterAdditionalRequesters</a> ()</td></tr>
+<tr class="separator:a87cc0d25340ee507516c4987d2912a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -216,6 +218,10 @@ Variables</h2></td></tr>
 <tr class="separator:a8d17d78f648e201ad53debb824cbe10f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad418d3b442d8bc3d2bab0a1d8211c2c7"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#ad418d3b442d8bc3d2bab0a1d8211c2c7">REQ_HMP_GHOST</a> = <a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#a48ff7409de41e49d9cddd3d1c32f7a9f">RegisterRequester</a>(PPERequester_HMPGhosts)</td></tr>
 <tr class="separator:ad418d3b442d8bc3d2bab0a1d8211c2c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10b8073fc450b641d5338cdf0977f0d5"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#a10b8073fc450b641d5338cdf0977f0d5">REQ_LATENCYBLUR</a> = <a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#a48ff7409de41e49d9cddd3d1c32f7a9f">RegisterRequester</a>(PPERequester_LatencyBlur)</td></tr>
+<tr class="separator:a10b8073fc450b641d5338cdf0977f0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34fa4ce2e137ef4ed0a5e421d709a824"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#a34fa4ce2e137ef4ed0a5e421d709a824">REQ_FEEDBACKBLUR</a> = <a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#a48ff7409de41e49d9cddd3d1c32f7a9f">RegisterRequester</a>(PPERequester_FeedbackBlur)</td></tr>
+<tr class="separator:a34fa4ce2e137ef4ed0a5e421d709a824"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a996cf6650ab1321b6e0d28660f4b5223"><td class="memItemLeft" align="right" valign="top">static private ref <a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#a42f2147f809a3835c6b3d3dd19b9bd48">PPERequesterRegistrations</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#a996cf6650ab1321b6e0d28660f4b5223">m_Registrations</a></td></tr>
 <tr class="separator:a996cf6650ab1321b6e0d28660f4b5223"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -428,9 +434,26 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Mod this, if you wish to register custom requesters. </p>
+<p>Mod this, if you wish to register custom requesters inside 'RegisterAdditionalRequesters' override. </p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/d17/class_managed.html#a1716946dffd7f7f6a9c8f46406ab0732">Managed::Init()</a>.</p>
+
+</div>
+</div>
+<a id="a87cc0d25340ee507516c4987d2912a88" name="a87cc0d25340ee507516c4987d2912a88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87cc0d25340ee507516c4987d2912a88">&#9670;&#160;</a></span>RegisterAdditionalRequesters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected void RegisterAdditionalRequesters </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -806,6 +829,28 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a34fa4ce2e137ef4ed0a5e421d709a824" name="a34fa4ce2e137ef4ed0a5e421d709a824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34fa4ce2e137ef4ed0a5e421d709a824">&#9670;&#160;</a></span>REQ_FEEDBACKBLUR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> REQ_FEEDBACKBLUR = <a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#a48ff7409de41e49d9cddd3d1c32f7a9f">RegisterRequester</a>(PPERequester_FeedbackBlur)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a71ed87e9257a0066ef933643ad063d22" name="a71ed87e9257a0066ef933643ad063d22"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a71ed87e9257a0066ef933643ad063d22">&#9670;&#160;</a></span>REQ_FEVEREFFECTS</h2>
 
@@ -1103,6 +1148,28 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">const <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> REQ_INVENTORYBLUR = <a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#a48ff7409de41e49d9cddd3d1c32f7a9f">RegisterRequester</a>(PPERequester_InventoryBlur)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a10b8073fc450b641d5338cdf0977f0d5" name="a10b8073fc450b641d5338cdf0977f0d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10b8073fc450b641d5338cdf0977f0d5">&#9670;&#160;</a></span>REQ_LATENCYBLUR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> REQ_LATENCYBLUR = <a class="el" href="../../dc/d76/_p_p_e_requester_bank_8c.html#a48ff7409de41e49d9cddd3d1c32f7a9f">RegisterRequester</a>(PPERequester_LatencyBlur)</td>
         </tr>
       </table>
   </td>

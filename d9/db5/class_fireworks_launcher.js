@@ -35,7 +35,6 @@ var class_fireworks_launcher =
     [ "RestartEventTimer", "d9/db5/class_fireworks_launcher.html#afc094d4ce92766e88f137d50596aae39", null ],
     [ "SetupColorSequences", "d9/db5/class_fireworks_launcher.html#a9f71fd66df0c19c857b87ab2524a5b93", null ],
     [ "SpawnEvent", "d9/db5/class_fireworks_launcher.html#a50446bb86f4065cf53c1d06f32269658", null ],
-    [ "UsesGlobalDeploy", "d9/db5/class_fireworks_launcher.html#a1596ac180393c68d7763637e191d6e5d", null ],
     [ "m_ColorSequence", "d9/db5/class_fireworks_launcher.html#ac98c291f2b7ffd44fef92ac997d9b53d", null ],
     [ "m_ColorSequenceIndex", "d9/db5/class_fireworks_launcher.html#a977134f238d6f8f6f14589c2671576f3", null ],
     [ "m_Events", "d9/db5/class_fireworks_launcher.html#abcafc7d9e9452ca3f0a6719df2b0dd36", null ],

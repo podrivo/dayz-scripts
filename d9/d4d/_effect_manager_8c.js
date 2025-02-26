@@ -15,7 +15,7 @@ var _effect_manager_8c =
     [ "SetParticle", "d9/d4d/_effect_manager_8c.html#a80d58b2ddfaa01a5edb8015d7d9e5e87", null ],
     [ "SetParticleID", "d9/d4d/_effect_manager_8c.html#ac29e31eadce152f7a3d67a155e00a573", null ],
     [ "Start", "d9/d4d/_effect_manager_8c.html#a07aaf1227e4d645f15e0a964f54ef291", null ],
-    [ "Stop", "d9/d4d/_effect_manager_8c.html#a17a237457e57625296e6b24feb19c60a", null ],
+    [ "Stop", "d7/ddb/group___sound_controller.html#gaec3d6c69da12025dfcf342c7e5456d46", null ],
     [ "m_Command", "d9/d4d/_effect_manager_8c.html#a0e0dc456680e1c466fc4777b6d802ad6", null ],
     [ "m_CommandSync", "d9/d4d/_effect_manager_8c.html#a9c3a606c2ecf4725b4572b69036bad35", null ],
     [ "m_EffecterType", "d9/d4d/_effect_manager_8c.html#a29976efc7340d36e6af92d0202f61c4a", null ],

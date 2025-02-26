@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -274,6 +274,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a935f9f3a5859f019e6f76993dd0b34b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf6ee4d1f067be1038b7a662af6af1bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d29/class_item_optics.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a> ()</td></tr>
 <tr class="separator:aaf6ee4d1f067be1038b7a662af6af1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25d2aa400c24ed5dac91f7bead52eb94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d29/class_item_optics.html#a25d2aa400c24ed5dac91f7bead52eb94">StartWorkServer</a> ()</td></tr>
+<tr class="separator:a25d2aa400c24ed5dac91f7bead52eb94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c8833bb0557ea2c73e146c87c40d5a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d29/class_item_optics.html#a4c8833bb0557ea2c73e146c87c40d5a5">StopWorkServer</a> ()</td></tr>
+<tr class="separator:a4c8833bb0557ea2c73e146c87c40d5a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -309,6 +313,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a9bd83a26bbdee02d9de9c76e851b16da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dd2585f9b6cb233c97468e2356201f7"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d29/class_item_optics.html#a9dd2585f9b6cb233c97468e2356201f7">m_Player</a></td></tr>
 <tr class="separator:a9dd2585f9b6cb233c97468e2356201f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac54c2f856caedcfc6187bc8b72d56593"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d29/class_item_optics.html#ac54c2f856caedcfc6187bc8b72d56593">m_IsActionActive</a></td></tr>
+<tr class="separator:ac54c2f856caedcfc6187bc8b72d56593"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1a6616b2dbf9c22ef1223a0a8a05b931" name="a1a6616b2dbf9c22ef1223a0a8a05b931"></a>
@@ -2186,6 +2192,31 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a25d2aa400c24ed5dac91f7bead52eb94" name="a25d2aa400c24ed5dac91f7bead52eb94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25d2aa400c24ed5dac91f7bead52eb94">&#9670;&#160;</a></span>StartWorkServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StartWorkServer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2f06527cd9acc213b36d366f9c781c87" name="a2f06527cd9acc213b36d366f9c781c87"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f06527cd9acc213b36d366f9c781c87">&#9670;&#160;</a></span>StepFOVDown()</h2>
 
@@ -2299,6 +2330,31 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if zeroing set </dd></dl>
 
 <p class="reference">Referenced by <a class="el" href="../../db/d2e/class_day_z_player.html#ab6bf010c5edd3a5143cbbb337b1fe938">DayZPlayer::HandleWeapons()</a>.</p>
+
+</div>
+</div>
+<a id="a4c8833bb0557ea2c73e146c87c40d5a5" name="a4c8833bb0557ea2c73e146c87c40d5a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c8833bb0557ea2c73e146c87c40d5a5">&#9670;&#160;</a></span>StopWorkServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StopWorkServer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -2529,6 +2585,28 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="../../d2/d29/class_item_optics.html#a101a4e0a34158504bb78e6c0460c26cc">InitReddotData()</a>, and <a class="el" href="../../d2/d29/class_item_optics.html#a44d9f3c0408ee838522982a80ae401e2">ShowReddot()</a>.</p>
+
+</div>
+</div>
+<a id="ac54c2f856caedcfc6187bc8b72d56593" name="ac54c2f856caedcfc6187bc8b72d56593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac54c2f856caedcfc6187bc8b72d56593">&#9670;&#160;</a></span>m_IsActionActive</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/db9/classbool.html">bool</a> m_IsActionActive</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

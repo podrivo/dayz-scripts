@@ -376,6 +376,7 @@ var config_8cpp =
     [ "Slot_VestGrenadeB", "d9/dc3/class_cfg_slots_1_1_slot___vest_grenade_b.html", "d9/dc3/class_cfg_slots_1_1_slot___vest_grenade_b" ],
     [ "Slot_VestGrenadeC", "d9/d9b/class_cfg_slots_1_1_slot___vest_grenade_c.html", "d9/d9b/class_cfg_slots_1_1_slot___vest_grenade_c" ],
     [ "Slot_VestGrenadeD", "dd/dae/class_cfg_slots_1_1_slot___vest_grenade_d.html", "dd/dae/class_cfg_slots_1_1_slot___vest_grenade_d" ],
+    [ "Slot_Backpack_1", "d1/dab/class_cfg_slots_1_1_slot___backpack__1.html", "d1/dab/class_cfg_slots_1_1_slot___backpack__1" ],
     [ "Slot_GasMaskFilter", "d7/d5a/class_cfg_slots_1_1_slot___gas_mask_filter.html", "d7/d5a/class_cfg_slots_1_1_slot___gas_mask_filter" ],
     [ "Slot_Rope", "de/dea/class_cfg_slots_1_1_slot___rope.html", "de/dea/class_cfg_slots_1_1_slot___rope" ],
     [ "Slot_RevolverCylinder", "d7/d63/class_cfg_slots_1_1_slot___revolver_cylinder.html", "d7/d63/class_cfg_slots_1_1_slot___revolver_cylinder" ],

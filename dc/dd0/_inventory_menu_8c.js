@@ -19,6 +19,7 @@ var _inventory_menu_8c =
     [ "LanguageChanged", "dc/dd0/_inventory_menu_8c.html#a9885f4a10e8f529322cb212e9dbeebc3", null ],
     [ "OnController", "dc/dd0/_inventory_menu_8c.html#abe0598728c91681d078d3b0c5a1a6a01", null ],
     [ "OnHide", "dc/dd0/_inventory_menu_8c.html#aa18b07ff149f2b7439905008fc25f412", null ],
+    [ "OnPlayerDeath", "dc/dd0/_inventory_menu_8c.html#ac0cd24e24b0aa9bb1dee05e5e5dcd2fc", null ],
     [ "OnShow", "dc/dd0/_inventory_menu_8c.html#a44c86b20c27f7a8ddb7c1337e9538f80", null ],
     [ "Refresh", "dc/dd0/_inventory_menu_8c.html#a3056ff926528b94b606ba7e8617dda3d", null ],
     [ "RefreshQuickbar", "dc/dd0/_inventory_menu_8c.html#a9d71bf52d8e3be064a61d997cae66e93", null ],

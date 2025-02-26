@@ -13,6 +13,7 @@ var class_cauldron =
     [ "GetPouringSoundset", "df/d16/class_cauldron.html#a50af78fb1504b0d35390c1090d0fbff6", null ],
     [ "GetQuantityNormalizedScripted", "df/d16/class_cauldron.html#afb875797f7a1fc5f74016efe0cac9ae2", null ],
     [ "IsContainer", "df/d16/class_cauldron.html#ada59923e2d740ffca32807d0ded46ebd", null ],
+    [ "IsCookware", "df/d16/class_cauldron.html#ac3cadebadf7fa591487c571176436613", null ],
     [ "IsOpen", "df/d16/class_cauldron.html#a05bac627bbb13f7329a1aff6e140219b", null ],
     [ "SetActions", "df/d16/class_cauldron.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ]
 ];

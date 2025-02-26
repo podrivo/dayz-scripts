@@ -1,6 +1,7 @@
 var class_transport =
 [
     [ "DebugFreeAreaAtDoor", "d3/d36/class_transport.html#a7b0c8c1f7c2c0d3149536a77240a6159", null ],
+    [ "DetectFlippedUsingWheels", "d3/d36/class_transport.html#aaf821ca099b6b1e27200886ca8a10a91", null ],
     [ "EngineGetRPM", "d3/d36/class_transport.html#a94f77fbfe26f398fbd2e787ca84d067f", null ],
     [ "EngineGetRPM", "d3/d36/class_transport.html#a94f77fbfe26f398fbd2e787ca84d067f", null ],
     [ "EngineGetRPMIdle", "d3/d36/class_transport.html#a86b6093b2e558475ed2277cde2522cb9", null ],

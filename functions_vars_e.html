@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -183,6 +183,7 @@ $(document).ready(function(){initNavTree('functions_vars_e.html',''); initResiza
 <li>ENVIRO_PLAYER_HEATBUFFER_CAPACITY_MIN&#160;:&#160;<a class="el" href="d6/d55/group___environment_cfg.html#ga36c472101f42e82ea439d58c9352a928">GameConstants</a></li>
 <li>ENVIRO_PLAYER_HEATBUFFER_DECREASE&#160;:&#160;<a class="el" href="d6/d55/group___environment_cfg.html#gabeb3f78f2ceb9f7e6ccc4f968cec88e7">GameConstants</a></li>
 <li>ENVIRO_PLAYER_HEATBUFFER_INCREASE&#160;:&#160;<a class="el" href="d6/d55/group___environment_cfg.html#gab68cc79abd395c7de7e660a511e74a15">GameConstants</a></li>
+<li>ENVIRO_PLAYER_HEATBUFFER_STAGE_RATELIMIT&#160;:&#160;<a class="el" href="d6/d55/group___environment_cfg.html#gad587e7da996dcb1ad9e09f36e2c9da8f">GameConstants</a></li>
 <li>ENVIRO_PLAYER_HEATBUFFER_TEMP_AFFECT&#160;:&#160;<a class="el" href="d6/d55/group___environment_cfg.html#gaa7a09085ab8a9e30a21b8538295a824e">GameConstants</a></li>
 <li>ENVIRO_PLAYER_HEATBUFFER_TICK&#160;:&#160;<a class="el" href="d2/d68/group___emote_i_ds.html#gaa20f3e721086eaf0c05b1cc414208c88">GameConstants</a></li>
 <li>ENVIRO_PLAYER_HEATBUFFER_WATEREFFECT&#160;:&#160;<a class="el" href="d6/d55/group___environment_cfg.html#gac24cac73c02a27efa3c3a30da92b5f87">GameConstants</a></li>
@@ -231,12 +232,17 @@ $(document).ready(function(){initNavTree('functions_vars_e.html',''); initResiza
 <li>Event_OnRPC&#160;:&#160;<a class="el" href="d2/de6/class_c_game.html#a7723e05484e15b5cca9f7ce9df66a08a">CGame</a></li>
 <li>Event_OnSoundFadeInStopped&#160;:&#160;<a class="el" href="d9/d89/class_effect_sound.html#abeb4c4f65671d5690ce1002bcb59ceb4">EffectSound</a></li>
 <li>Event_OnSoundFadeOutStarted&#160;:&#160;<a class="el" href="d9/d89/class_effect_sound.html#a22a4794016f62bca9252800c94dee516">EffectSound</a></li>
-<li>Event_OnSoundWaveEnded&#160;:&#160;<a class="el" href="d9/d89/class_effect_sound.html#a30792d0380a5b20f9f4a04d5c92a9e89">EffectSound</a></li>
-<li>Event_OnSoundWaveStarted&#160;:&#160;<a class="el" href="d9/d89/class_effect_sound.html#af143afd6fdb06ee0a2ede34f339148b4">EffectSound</a></li>
+<li>Event_OnSoundWaveEnded&#160;:&#160;<a class="el" href="d7/ddb/group___sound_controller.html#ga30792d0380a5b20f9f4a04d5c92a9e89">AbstractWaveEvents</a>, <a class="el" href="d9/d89/class_effect_sound.html#a30792d0380a5b20f9f4a04d5c92a9e89">EffectSound</a></li>
+<li>Event_OnSoundWaveHeaderLoaded&#160;:&#160;<a class="el" href="d7/ddb/group___sound_controller.html#ga9986b102e97ef33c1a0b233f39907595">AbstractWaveEvents</a></li>
+<li>Event_OnSoundWaveLoaded&#160;:&#160;<a class="el" href="d7/ddb/group___sound_controller.html#ga3aceb4902e02d03efee7131f918fe5ba">AbstractWaveEvents</a></li>
+<li>Event_OnSoundWaveStarted&#160;:&#160;<a class="el" href="d7/ddb/group___sound_controller.html#gaf143afd6fdb06ee0a2ede34f339148b4">AbstractWaveEvents</a>, <a class="el" href="d9/d89/class_effect_sound.html#af143afd6fdb06ee0a2ede34f339148b4">EffectSound</a></li>
+<li>Event_OnSoundWaveStopped&#160;:&#160;<a class="el" href="d7/ddb/group___sound_controller.html#ga43f209bd57bc5603be646d5fa2b3485e">AbstractWaveEvents</a></li>
 <li>EVENT_SPLASH_SIGNAL&#160;:&#160;<a class="el" href="d9/d18/class_u_a_fishing_constants.html#ae9ec155054a306addcb4238065620bde">UAFishingConstants</a></li>
 <li>Exclude&#160;:&#160;<a class="el" href="df/d60/group___ocean.html#ga648ad7c5f1f2fd433fa2ffafed40b6e0">TraceParam</a></li>
 <li>exit&#160;:&#160;<a class="el" href="de/d3a/class_raycast_r_v_result.html#add93a36b81b5f541d2f3237a7f363a7e">RaycastRVResult</a></li>
 <li>EXPLOSION_GOAT&#160;:&#160;<a class="el" href="dd/dd2/class_particle_list.html#aeea48f43dd0612c16901527e4802cc33">ParticleList</a></li>
+<li>EXPLOSION_GRENADE_ICE&#160;:&#160;<a class="el" href="dd/dd2/class_particle_list.html#a295f5224c506961522c799d6cc61b5c2">ParticleList</a></li>
+<li>EXPLOSION_GRENADE_SNOW&#160;:&#160;<a class="el" href="dd/dd2/class_particle_list.html#ad60335a16c3d16bfa9b78a6f9e3bdbe2">ParticleList</a></li>
 <li>EXPLOSION_LANDMINE&#160;:&#160;<a class="el" href="dd/dd2/class_particle_list.html#ad163c31d7e29032a19df3c5826f22e71">ParticleList</a></li>
 <li>EXPLOSION_TEST&#160;:&#160;<a class="el" href="dd/dd2/class_particle_list.html#a6345648d147411d452ac0345ee1da607">ParticleList</a></li>
 <li>EXPLOSIVE_ARM&#160;:&#160;<a class="el" href="d8/d3b/class_u_a_time_spent.html#a59b89b5da396657e02da32340625e022">UATimeSpent</a></li>

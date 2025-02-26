@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -206,6 +206,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:ada26ff6f34ff5cd4bb3b9dbd871a84e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9262f02e63907e678d4f32cf34550fc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/de1/class_item_manager.html#a9262f02e63907e678d4f32cf34550fc6">ShowTooltipSlot</a> ()</td></tr>
 <tr class="separator:a9262f02e63907e678d4f32cf34550fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a974024a9850524f2f1b712f47223cca7"><td class="memItemLeft" align="right" valign="top">ScrollWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/de1/class_item_manager.html#a974024a9850524f2f1b712f47223cca7">GetLeftSlotsScroller</a> ()</td></tr>
+<tr class="separator:a974024a9850524f2f1b712f47223cca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -282,6 +284,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ae7ec875249a15cd640a6e3cecce8ad5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2a616d742935be23455c34150d3376c"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/de1/class_item_manager.html#ab2a616d742935be23455c34150d3376c">m_TooltipSourceWidget</a></td></tr>
 <tr class="separator:ab2a616d742935be23455c34150d3376c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ac5b263a1fa0d6e789dda4390c367b8"><td class="memItemLeft" align="right" valign="top">protected ScrollWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/de1/class_item_manager.html#a3ac5b263a1fa0d6e789dda4390c367b8">m_LeftSlotsScroller</a></td></tr>
+<tr class="separator:a3ac5b263a1fa0d6e789dda4390c367b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b1fa861b91a78abffee6dcf946975a3"><td class="memItemLeft" align="right" valign="top">protected const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/de1/class_item_manager.html#a9b1fa861b91a78abffee6dcf946975a3">TOOLTIP_DELAY</a> = 0.25</td></tr>
 <tr class="separator:a9b1fa861b91a78abffee6dcf946975a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -649,7 +653,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d9/ddf/class_inventory_combination_flags.html#a8842e32816db17998ba5d9fb8fd85c27">InventoryCombinationFlags::ADD_AS_ATTACHMENT</a>, <a class="el" href="../../d9/ddf/class_inventory_combination_flags.html#a20720b514cb680e81d2d0b817314259c">InventoryCombinationFlags::ADD_AS_CARGO</a>, <a class="el" href="../../de/d7a/class_item_base.html#ac029fc15079a4c3a51ba2b5e4f04b2e4">ItemBase::CanBeCombined()</a>, <a class="el" href="../../d7/da1/class_action_manager_client.html#a4610a3316a04075861be834c647cad84">ActionManagerClient::CanPerformActionFromInventory()</a>, <a class="el" href="../../d7/da1/class_action_manager_client.html#a3786e958aa027bcbc3565573d2eb232a">ActionManagerClient::CanSetActionFromInventory()</a>, <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d9/ddf/class_inventory_combination_flags.html#aa7c335693dea9530487dd25e853b2168">InventoryCombinationFlags::COMBINE_QUANTITY2</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer()</a>, <a class="el" href="../../d6/dc5/_random_generator_sync_manager_8c.html#aef33c42cd9f2c3506278326238dcc9a6">m_player</a>, <a class="el" href="../../d9/ddf/class_inventory_combination_flags.html#a210c5c907ef13e492c3fe8c957108f82">InventoryCombinationFlags::PERFORM_ACTION</a>, and <a class="el" href="../../d9/ddf/class_inventory_combination_flags.html#abc2259c375f8e1a2991c7333da8504e5">InventoryCombinationFlags::SET_ACTION</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/ddf/class_inventory_combination_flags.html#a8842e32816db17998ba5d9fb8fd85c27">InventoryCombinationFlags::ADD_AS_ATTACHMENT</a>, <a class="el" href="../../d9/ddf/class_inventory_combination_flags.html#a20720b514cb680e81d2d0b817314259c">InventoryCombinationFlags::ADD_AS_CARGO</a>, <a class="el" href="../../de/d7a/class_item_base.html#ac029fc15079a4c3a51ba2b5e4f04b2e4">ItemBase::CanBeCombined()</a>, <a class="el" href="../../d7/da1/class_action_manager_client.html#a4610a3316a04075861be834c647cad84">ActionManagerClient::CanPerformActionFromInventory()</a>, <a class="el" href="../../d7/da1/class_action_manager_client.html#a3786e958aa027bcbc3565573d2eb232a">ActionManagerClient::CanSetActionFromInventory()</a>, <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d9/ddf/class_inventory_combination_flags.html#aa7c335693dea9530487dd25e853b2168">InventoryCombinationFlags::COMBINE_QUANTITY2</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aec280ad00fb591910bbefb89b17cb070">InventoryLocation::GetSlot()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a126b312186e0481dff1f5980ff24b596">InventoryLocation::IsValid()</a>, <a class="el" href="../../d9/ddf/class_inventory_combination_flags.html#a210c5c907ef13e492c3fe8c957108f82">InventoryCombinationFlags::PERFORM_ACTION</a>, and <a class="el" href="../../d9/ddf/class_inventory_combination_flags.html#abc2259c375f8e1a2991c7333da8504e5">InventoryCombinationFlags::SET_ACTION</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/d6f/class_attachments.html#a81e4df310774497c86c3f25fc265e3e9">Attachments::CanCombine()</a>, <a class="el" href="../../d5/d08/class_layout_holder.html#a86f9177f84d361092166fbb7d3a3d322">LayoutHolder::CanCombineEx()</a>, and <a class="el" href="../../db/d60/class_icon.html#acf8ca6d74e4990565f52684a01970ef6">Icon::CombineItems()</a>.</p>
 
@@ -949,7 +953,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d9/d36/class_colors.html#a068c61444acb3ee37dc0e5c1f1da1807">Colors::COLOR_BADLY_DAMAGED</a>, <a class="el" href="../../d9/d36/class_colors.html#a755ee622658a4bf29f210bb0cbbe9824">Colors::COLOR_DAMAGED</a>, <a class="el" href="../../d9/d36/class_colors.html#a546b7896e6b80c366a5469e34aa33665">Colors::COLOR_PRISTINE</a>, <a class="el" href="../../d9/d36/class_colors.html#a7823c71a896e6dbba687f313457f9c00">Colors::COLOR_RUINED</a>, <a class="el" href="../../d9/d36/class_colors.html#a6679c0408967c75d4e2cc2e07c19037a">Colors::COLOR_WORN</a>, <a class="el" href="../../de/db5/group___item_health.html#ga8342c2d6a79923b469b7a9e4bd816443">GameConstants::STATE_BADLY_DAMAGED</a>, <a class="el" href="../../de/db5/group___item_health.html#gad1b6b9acc22e13e7f0dd26c89d1d93ed">GameConstants::STATE_DAMAGED</a>, <a class="el" href="../../de/db5/group___item_health.html#gada413113efbd3ef25c541a434f2df61a">GameConstants::STATE_PRISTINE</a>, <a class="el" href="../../de/db5/group___item_health.html#ga16c9f4d849f6ae2ef05dbba27c8dc7e1">GameConstants::STATE_RUINED</a>, and <a class="el" href="../../de/db5/group___item_health.html#gaeea63d1d9596188244030330fa1f724e">GameConstants::STATE_WORN</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#aca0fa9bd6ef229ea277e5b4b0ebea05e">Hud::RefreshVehicleHud()</a>, <a class="el" href="../../db/d4e/class_car_hud.html#a7a637516c54c8ddb815a2aad0e098c73">CarHud::RefreshVehicleHud()</a>, <a class="el" href="../../dd/dbc/class_action_targets_cursor.html#af00a3b8bcea51ba392f07a9670df2d2e">ActionTargetsCursor::SetItemHealth()</a>, and <a class="el" href="../../dc/d23/class_boat_hud.html#aef5ee41177e958bbf069299a126bc45e">BoatHud::UpdateEngineIcon()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/d4e/class_car_hud.html#a7a637516c54c8ddb815a2aad0e098c73">CarHud::RefreshVehicleHud()</a>, <a class="el" href="../../dd/dbc/class_action_targets_cursor.html#af00a3b8bcea51ba392f07a9670df2d2e">ActionTargetsCursor::SetItemHealth()</a>, and <a class="el" href="../../dc/d23/class_boat_hud.html#aef5ee41177e958bbf069299a126bc45e">BoatHud::UpdateEngineIcon()</a>.</p>
 
 </div>
 </div>
@@ -979,6 +983,35 @@ Static Private Attributes</h2></td></tr>
 <p class="reference">References <a class="el" href="../../dc/de1/class_item_manager.html#a84d573ea5bbd14eb7a8802e9087d609d">m_LeftDropzone</a>, and <a class="el" href="../../dc/de1/class_item_manager.html#aed39bf2adbf447dc926719028aa4ebef">m_RootWidget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d7/d00/class_closable_container.html#a1a6aa4d5271b2cd868b12c55847f4ecc">ClosableContainer::DraggingOver()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#ad7aaabb06d5c1d734167247f0b684a0e">ClosableContainer::DraggingOverGrid()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#ac45546f13fe2421c26f7a9337573bbea">ClosableContainer::DraggingOverGrid()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#a9d744b9914ac440bf316cb39e33adb3f">HandsContainer::DraggingOverHeader()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#a9d744b9914ac440bf316cb39e33adb3f">AttachmentCategoriesRow::DraggingOverHeader()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a9d744b9914ac440bf316cb39e33adb3f">ClosableContainer::DraggingOverHeader()</a>, <a class="el" href="../../dc/d12/class_vicinity_container.html#a9d744b9914ac440bf316cb39e33adb3f">VicinityContainer::DraggingOverHeader()</a>, <a class="el" href="../../dc/d12/class_vicinity_container.html#a341432628ffc67aa15e2498e37e5cfc0">VicinityContainer::DraggingOverIcon()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#a6b12829beee89bfad6ddd1a5b40aa5d5">HideDropzones()</a>, <a class="el" href="../../db/d60/class_icon.html#ab9898702f33e6fd8c57408134452475b">Icon::OnDraggingOverBackground()</a>, <a class="el" href="../../d3/dae/class_slots_icon.html#a44626b6f51efae3ac98182bb40ce85d4">SlotsIcon::OnIconDrag()</a>, and <a class="el" href="../../dc/de1/class_item_manager.html#a24e65aa0a0618639aa88076d839c484a">ShowSourceDropzone()</a>.</p>
+
+</div>
+</div>
+<a id="a974024a9850524f2f1b712f47223cca7" name="a974024a9850524f2f1b712f47223cca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a974024a9850524f2f1b712f47223cca7">&#9670;&#160;</a></span>GetLeftSlotsScroller()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ScrollWidget GetLeftSlotsScroller </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../dc/de1/class_item_manager.html#a3ac5b263a1fa0d6e789dda4390c367b8">m_LeftSlotsScroller</a>, and <a class="el" href="../../dc/de1/class_item_manager.html#aed39bf2adbf447dc926719028aa4ebef">m_RootWidget</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d12/class_vicinity_container.html#a9d744b9914ac440bf316cb39e33adb3f">VicinityContainer::DraggingOverHeader()</a>, and <a class="el" href="../../dc/de1/class_item_manager.html#a6b12829beee89bfad6ddd1a5b40aa5d5">HideDropzones()</a>.</p>
 
 </div>
 </div>
@@ -1192,7 +1225,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dc/de1/class_item_manager.html#a016b10c05826bb4fefce90354d7ced82">GetCenterDropzone()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#a552831310e23f2f9f9fddd84957f0574">GetLeftDropzone()</a>, and <a class="el" href="../../dc/de1/class_item_manager.html#ac95249e7100f2ed99c7cd9333af5f476">GetRightDropzone()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/de1/class_item_manager.html#a016b10c05826bb4fefce90354d7ced82">GetCenterDropzone()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#a552831310e23f2f9f9fddd84957f0574">GetLeftDropzone()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#a974024a9850524f2f1b712f47223cca7">GetLeftSlotsScroller()</a>, and <a class="el" href="../../dc/de1/class_item_manager.html#ac95249e7100f2ed99c7cd9333af5f476">GetRightDropzone()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/d60/class_icon.html#a2efba87bb99fbab4fa2967a19e918120">Icon::Combine()</a>, <a class="el" href="../../db/d60/class_icon.html#af93f0421def332251dc4aa70b8fabdb9">Icon::DestroyWhiteBackground()</a>, <a class="el" href="../../db/d60/class_icon.html#a05db08a28405c0a1a1394d262a083927">Icon::DraggingOver()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a1a6aa4d5271b2cd868b12c55847f4ecc">ClosableContainer::DraggingOver()</a>, <a class="el" href="../../d7/d9c/class_player_container.html#a1a6aa4d5271b2cd868b12c55847f4ecc">PlayerContainer::DraggingOver()</a>, <a class="el" href="../../d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a2a714b7b3098d0b04b5949abea8382aa">DraggingOverCenterPanel()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#ad7aaabb06d5c1d734167247f0b684a0e">ClosableContainer::DraggingOverGrid()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#ac45546f13fe2421c26f7a9337573bbea">HandsContainer::DraggingOverGrid()</a>, <a class="el" href="../../d8/da4/class_hands_area.html#a3dba93a07b46fdcef2080d8b18c1995d">HandsArea::DraggingOverHandsPanel()</a>, <a class="el" href="../../d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a3dba93a07b46fdcef2080d8b18c1995d">DraggingOverHandsPanel()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#a9d744b9914ac440bf316cb39e33adb3f">HandsContainer::DraggingOverHeader()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#a9d744b9914ac440bf316cb39e33adb3f">AttachmentCategoriesRow::DraggingOverHeader()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a9d744b9914ac440bf316cb39e33adb3f">ClosableContainer::DraggingOverHeader()</a>, <a class="el" href="../../d7/d9c/class_player_container.html#a9d744b9914ac440bf316cb39e33adb3f">PlayerContainer::DraggingOverHeader()</a>, <a class="el" href="../../dc/d12/class_vicinity_container.html#a9d744b9914ac440bf316cb39e33adb3f">VicinityContainer::DraggingOverHeader()</a>, <a class="el" href="../../dc/d12/class_vicinity_container.html#a341432628ffc67aa15e2498e37e5cfc0">VicinityContainer::DraggingOverIcon()</a>, <a class="el" href="../../db/d60/class_icon.html#ad405facb4aedc376e80ee73711f33362">Icon::DraggingOverSwap()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a20048343d6c2c47d93965e9fc6d9de4f">ClosableContainer::DropReceived()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#a2a77ae263203758a44be6bab02496fcd">HandsContainer::DropReceived()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a2a77ae263203758a44be6bab02496fcd">ClosableContainer::DropReceived()</a>, <a class="el" href="../../db/d60/class_icon.html#af5e62f81a77b3b3479ae58eb6a43abe3">Icon::DropReceivedFromMain()</a>, <a class="el" href="../../db/d60/class_icon.html#ab9898702f33e6fd8c57408134452475b">Icon::OnDraggingOverBackground()</a>, <a class="el" href="../../db/d35/class_closable_header.html#ac50750364fea677fae465ae108dfc4c5">ClosableHeader::OnDropHeader()</a>, <a class="el" href="../../d7/d9c/class_player_container.html#a424f5540cee1b56b57c7937186bdfc90">PlayerContainer::OnDropReceivedFromGhostArea()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#a5f51d12a155546ba924479ffb6436aaa">AttachmentCategoriesRow::OnDropReceivedFromHeader()</a>, <a class="el" href="../../dc/d12/class_vicinity_container.html#a5f51d12a155546ba924479ffb6436aaa">VicinityContainer::OnDropReceivedFromHeader()</a>, <a class="el" href="../../dc/d12/class_vicinity_container.html#a269daa8b432979badd46e8bb11396dea">VicinityContainer::OnDropReceivedFromIcon()</a>, <a class="el" href="../../d3/dae/class_slots_icon.html#a44626b6f51efae3ac98182bb40ce85d4">SlotsIcon::OnIconDrag()</a>, <a class="el" href="../../d3/dae/class_slots_icon.html#aba5e52052dcd8f79ee4358d138537ef8">SlotsIcon::OnIconDrop()</a>, <a class="el" href="../../d2/df1/class_inventory_grid_controller.html#a7b7d16227a9539ded1dd1b20eea3c251">InventoryGridController::OnItemDrop()</a>, <a class="el" href="../../db/d60/class_icon.html#aa92a25d76dbdb3e89cc402f75e836ff8">Icon::ShowActionMenuCombine()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#a24e65aa0a0618639aa88076d839c484a">ShowSourceDropzone()</a>, <a class="el" href="../../db/d60/class_icon.html#aabdf788ebe905fc18f3ec7222e363170">Icon::Swap()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#a23b778e27fb6c2b7fa73843f831ca87f">HandsContainer::TakeAsAttachment()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a23b778e27fb6c2b7fa73843f831ca87f">ClosableContainer::TakeAsAttachment()</a>, <a class="el" href="../../db/d60/class_icon.html#a1dff3dfb449e13b7bb0a6a8bf7ef8236">Icon::UpdateFrameColor()</a>, <a class="el" href="../../db/d60/class_icon.html#a71db2e2e456f034337b29c19757174cf">Icon::~Icon()</a>, and <a class="el" href="../../d3/dae/class_slots_icon.html#a917a40435d77b045dce611bedcfa2eae">SlotsIcon::~SlotsIcon()</a>.</p>
 
@@ -1437,7 +1470,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#aaad9855bd03095da22291776b3cea427">m_DefautHeaderOpenStates</a>, <a class="el" href="../../d2/de6/class_c_game.html#addcad607e837d6959a369a92edc618a8">CGame::SaveProfile()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#ae1ca6d46a3517018839303e21e0a1757">CGame::SetProfileStringList()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#aaad9855bd03095da22291776b3cea427">m_DefautHeaderOpenStates</a>, and <a class="el" href="../../d2/de6/class_c_game.html#ae1ca6d46a3517018839303e21e0a1757">CGame::SetProfileStringList()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a8fe076e3f0b81bc7875b3819d112aef8">Serialize()</a>.</p>
 
@@ -1466,7 +1499,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#aa0140d5351218ec690e6fadabda41fda">m_DefautOpenStates</a>, <a class="el" href="../../d2/de6/class_c_game.html#addcad607e837d6959a369a92edc618a8">CGame::SaveProfile()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#ae1ca6d46a3517018839303e21e0a1757">CGame::SetProfileStringList()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#aa0140d5351218ec690e6fadabda41fda">m_DefautOpenStates</a>, and <a class="el" href="../../d2/de6/class_c_game.html#ae1ca6d46a3517018839303e21e0a1757">CGame::SetProfileStringList()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a8fe076e3f0b81bc7875b3819d112aef8">Serialize()</a>.</p>
 
@@ -2398,6 +2431,30 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a3ac5b263a1fa0d6e789dda4390c367b8" name="a3ac5b263a1fa0d6e789dda4390c367b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ac5b263a1fa0d6e789dda4390c367b8">&#9670;&#160;</a></span>m_LeftSlotsScroller</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected ScrollWidget m_LeftSlotsScroller</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/class_item_manager.html#a974024a9850524f2f1b712f47223cca7">GetLeftSlotsScroller()</a>.</p>
+
+</div>
+</div>
 <a id="a60fa60ed56a5e2b23524b1573a9534fc" name="a60fa60ed56a5e2b23524b1573a9534fc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60fa60ed56a5e2b23524b1573a9534fc">&#9670;&#160;</a></span>m_RightDropzone</h2>
 
@@ -2442,7 +2499,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/class_item_manager.html#a016b10c05826bb4fefce90354d7ced82">GetCenterDropzone()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#a552831310e23f2f9f9fddd84957f0574">GetLeftDropzone()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#ac95249e7100f2ed99c7cd9333af5f476">GetRightDropzone()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#ae2f6929656af69a93db68977c0a3352a">ItemManager()</a>, and <a class="el" href="../../dc/de1/class_item_manager.html#a160fb3a0ad511fd047b83dd5b2ab4e04">PrepareTooltip()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/class_item_manager.html#a016b10c05826bb4fefce90354d7ced82">GetCenterDropzone()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#a552831310e23f2f9f9fddd84957f0574">GetLeftDropzone()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#a974024a9850524f2f1b712f47223cca7">GetLeftSlotsScroller()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#ac95249e7100f2ed99c7cd9333af5f476">GetRightDropzone()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#ae2f6929656af69a93db68977c0a3352a">ItemManager()</a>, and <a class="el" href="../../dc/de1/class_item_manager.html#a160fb3a0ad511fd047b83dd5b2ab4e04">PrepareTooltip()</a>.</p>
 
 </div>
 </div>

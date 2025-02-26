@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -111,6 +111,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a86f6cf25184e013a4e0276a02cf092b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49127b88bcdcda48600b260c4c0b52e2"><td class="memItemLeft" align="right" valign="top">FSMStateBase&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d6c/class_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189.html#a49127b88bcdcda48600b260c4c0b52e2">GetCurrentState</a> ()</td></tr>
 <tr class="separator:a49127b88bcdcda48600b260c4c0b52e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19150b613cf2036daab5187ebdb7e578"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d6c/class_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189.html#a19150b613cf2036daab5187ebdb7e578">SetCurrentState</a> (FSMStateBase state)</td></tr>
+<tr class="separator:a19150b613cf2036daab5187ebdb7e578"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a09db8422adf8f9f4d2b08452668848"><td class="memItemLeft" align="right" valign="top">FSMStateBase&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d6c/class_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189.html#a5a09db8422adf8f9f4d2b08452668848">GetOwnerState</a> ()</td></tr>
 <tr class="separator:a5a09db8422adf8f9f4d2b08452668848"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef3e058795a674f8e16b856de39de6c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d6c/class_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189.html#aef3e058795a674f8e16b856de39de6c5">GetHierarchyPath</a> (FSMStateBase state, out <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; FSMStateBase &gt; <a class="el" href="../../d1/db8/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>)</td></tr>
@@ -806,6 +808,35 @@ FSM_TERMINATED state machine has terminated </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>FSM_OK or FSM_TERMINATED </dd></dl>
 
 <p class="reference">References <a class="el" href="../../d4/d99/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#a1d85377e18f016d0c80816c505bdc4d5">LogManager::IsInventoryHFSMLogEnable()</a>, and <a class="el" href="../../d8/d93/_object_temperature_state_data_8c.html#abcfde5c4d2ef2734fdfd753388cd1aa7">m_State</a>.</p>
+
+</div>
+</div>
+<a id="a19150b613cf2036daab5187ebdb7e578" name="a19150b613cf2036daab5187ebdb7e578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19150b613cf2036daab5187ebdb7e578">&#9670;&#160;</a></span>SetCurrentState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SetCurrentState </td>
+          <td>(</td>
+          <td class="paramtype">FSMStateBase&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>returns currently active state within this machine (i.e. not hierarchic state) </dd></dl>
+
+<p class="reference">References <a class="el" href="../../d8/d93/_object_temperature_state_data_8c.html#abcfde5c4d2ef2734fdfd753388cd1aa7">m_State</a>.</p>
 
 </div>
 </div>

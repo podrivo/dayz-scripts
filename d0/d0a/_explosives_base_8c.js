@@ -1,12 +1,14 @@
 var _explosives_base_8c =
 [
     [ "ExplosiveLight", "dd/dd2/class_explosive_light.html", "dd/dd2/class_explosive_light" ],
+    [ "AddExplosionEffectForSurface", "d0/d0a/_explosives_base_8c.html#a2d8ec88e472ea9b133a3bc6cfe152515", null ],
     [ "Arm", "d0/d0a/_explosives_base_8c.html#ac4cc6602780ad6cab3ca4b2b7852a78d", null ],
     [ "CanBeArmed", "d0/d0a/_explosives_base_8c.html#afaaadcd5d0be9d20aa9ef99bde269859", null ],
     [ "CanBeDisarmed", "d0/d0a/_explosives_base_8c.html#ad4c1c1d0634db5d6dccf2c16d618d919", null ],
     [ "CanPutInCargo", "d0/d0a/_explosives_base_8c.html#a5ea0aaf035a1939c725579219040c481", null ],
     [ "CanPutIntoHands", "d0/d0a/_explosives_base_8c.html#a9c46909a8838ed5e1786f94e56237b43", null ],
     [ "CanRemoveFromHands", "d0/d0a/_explosives_base_8c.html#aed925ee192783eac2b5b80458d1e6f3c", null ],
+    [ "Cleanup", "d0/d0a/_explosives_base_8c.html#a2eb14aa097905e66a26c178d5d947e85", null ],
     [ "CreateLight", "d0/d0a/_explosives_base_8c.html#abd9c7ec47e426c5dc398c4699db38936", null ],
     [ "DestroyParticle", "d0/d0a/_explosives_base_8c.html#aac3ee12e85dc33aede84a0e842836515", null ],
     [ "Disarm", "d0/d0a/_explosives_base_8c.html#a0c6b2b4e0c25672818ec334633d6de22", null ],
@@ -14,9 +16,15 @@ var _explosives_base_8c =
     [ "EEKilled", "d0/d0a/_explosives_base_8c.html#a4de4d414d0cbf15100ab71ec84ca25f7", null ],
     [ "ExplosivesBase", "d0/d0a/_explosives_base_8c.html#aee93f0aec8cce6897cf2da6281a3d9ee", null ],
     [ "GetArmed", "d0/d0a/_explosives_base_8c.html#a6de1fd0cb2bdb06bab78c93bc6cd5aad", null ],
+    [ "GetArmSoundset", "d0/d0a/_explosives_base_8c.html#ab04cbdee7e2e559fb20ae44f5f1376eb", null ],
     [ "GetDefused", "d0/d0a/_explosives_base_8c.html#a8ba8a611614b1f2598e88da15e7c4e46", null ],
+    [ "GetDisarmSoundset", "d0/d0a/_explosives_base_8c.html#a08518f10219db5a004e26b8bbb35ce42", null ],
+    [ "GetParticleExplosionID", "d0/d0a/_explosives_base_8c.html#affc7280b62cb5a15f6c56c87732873f3", null ],
     [ "HasLockedTriggerSlots", "d0/d0a/_explosives_base_8c.html#ad92d68b9fe0fe2710f5ae8bf4c2373d4", null ],
+    [ "Init", "d0/d0a/_explosives_base_8c.html#a1e3b6d38df0786ccf7f938d60e386aae", null ],
     [ "InitiateExplosion", "d0/d0a/_explosives_base_8c.html#a7a643b860d7e72a81b4174709e092069", null ],
+    [ "InitItemSounds", "d0/d0a/_explosives_base_8c.html#af8f3ba1e1b486edf50014768d57f0656", null ],
+    [ "InitSpecificsExplosionEffectForSurface", "d0/d0a/_explosives_base_8c.html#a3a30917cb89011366e1f0dbe509a2109", null ],
     [ "IsExplosive", "d0/d0a/_explosives_base_8c.html#a72d3eb960ea0bd58897306425633cf4d", null ],
     [ "IsInventoryVisible", "d0/d0a/_explosives_base_8c.html#a074d6a8b3ce6d5ed5aebdf1d6efb4952", null ],
     [ "IsTakeable", "d0/d0a/_explosives_base_8c.html#ac04a39fa356ae48f99ac9fed3df8887d", null ],
@@ -55,5 +63,6 @@ var _explosives_base_8c =
     [ "m_ParticleExplosionArr", "d0/d0a/_explosives_base_8c.html#abbcc0caede430f339f36a6d0b915fc73", null ],
     [ "m_ParticleExplosionId", "d0/d0a/_explosives_base_8c.html#aa71734ca4c5420a9c16d9f2ccbbb00b4", null ],
     [ "m_ParticleOrientation", "d0/d0a/_explosives_base_8c.html#ae336d37a1107da43a544d4c3ea56a096", null ],
-    [ "m_ParticlePosition", "d0/d0a/_explosives_base_8c.html#a3ce133a7da08fe405136f0b51de3f00f", null ]
+    [ "m_ParticlePosition", "d0/d0a/_explosives_base_8c.html#a3ce133a7da08fe405136f0b51de3f00f", null ],
+    [ "m_TypeToSurfaceParticleIDMap", "d0/d0a/_explosives_base_8c.html#a3055eda3046c17bc3ff039d8e6e762f8", null ]
 ];

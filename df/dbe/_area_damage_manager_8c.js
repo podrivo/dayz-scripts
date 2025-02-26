@@ -15,7 +15,7 @@ var _area_damage_manager_8c =
     [ "GetExtents", "df/dbe/_area_damage_manager_8c.html#a0e843003609c90acf22525d960e4941a", null ],
     [ "GetOrientation", "df/dbe/_area_damage_manager_8c.html#a3bae34135b918bcd04b5f8a3d136e313", null ],
     [ "GetParentObject", "df/dbe/_area_damage_manager_8c.html#af741ebe3bfabe480118d7a9d93975aa5", null ],
-    [ "GetPosition", "df/dbe/_area_damage_manager_8c.html#a68c83d319275347dcd1c0c4da8734703", null ],
+    [ "GetPosition", "d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d", null ],
     [ "GetTrigger", "df/dbe/_area_damage_manager_8c.html#a225bae8883222c4e06b59a32accdff05", null ],
     [ "GetWorldExtents", "df/dbe/_area_damage_manager_8c.html#a417cb2746cda49dea23fa75cedcef03d", null ],
     [ "OnEnterBeginEvent", "df/dbe/_area_damage_manager_8c.html#af08d674d5d002b9f17ec08497b4106e9", null ],

@@ -19,6 +19,7 @@ var group___menu_i_d =
     [ "MENU_CHAT", "d7/d7f/group___menu_i_d.html#ga9c004fb801353b2dcc3cd935649d4f5a", null ],
     [ "MENU_CHAT_INPUT", "d7/d7f/group___menu_i_d.html#gadeacc202f7a24c195c898de24c1627a9", null ],
     [ "MENU_CONNECT_ERROR", "d7/d7f/group___menu_i_d.html#ga082c230464c05d3a0554e0b1d4539dd5", null ],
+    [ "MENU_CONNECTION_DIALOGUE", "d7/d7f/group___menu_i_d.html#ga9b1a4f2aa35036dab77fe7363759b1a8", null ],
     [ "MENU_CONTROLS_PRESET", "d7/d7f/group___menu_i_d.html#gaafae5ab2199522632160e2ec305c4a38", null ],
     [ "MENU_CREDITS", "d7/d7f/group___menu_i_d.html#ga80f11829357eaed7231d76c0e3ec18e2", null ],
     [ "MENU_EARLYACCESS", "d7/d7f/group___menu_i_d.html#gab01da4b9358a918722ada8bff805b6fb", null ],

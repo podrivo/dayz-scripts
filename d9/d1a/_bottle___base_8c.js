@@ -7,6 +7,7 @@ var _bottle___base_8c =
     [ "Bottle_Base", "d9/d1a/_bottle___base_8c.html#ab10131d5d39797f56b85f801c60359ea", null ],
     [ "EECargoIn", "d9/d1a/_bottle___base_8c.html#a0b0e37f5ad607ca64689ec14f13f129d", null ],
     [ "EEDelete", "d9/d1a/_bottle___base_8c.html#a83a1e547e0d1e65ad421070058a093a9", null ],
+    [ "GetConsumptionPenaltyContext", "d9/d1a/_bottle___base_8c.html#aacf99b9a6149d637b8753e6139a32e4b", null ],
     [ "GetEmptyingEndSoundset", "d9/d1a/_bottle___base_8c.html#a537397b7a95dd3a8ff3e3a0df29cfe95", null ],
     [ "GetEmptyingEndSoundsetHard", "d9/d1a/_bottle___base_8c.html#a5930e338800d07357636232da8dfb351", null ],
     [ "GetEmptyingEndSoundsetSoft", "d9/d1a/_bottle___base_8c.html#a4124c1a6282a1fa16d0401d086d8522c", null ],
@@ -18,6 +19,7 @@ var _bottle___base_8c =
     [ "GetLiquidEmptyRate", "d9/d1a/_bottle___base_8c.html#ab4861af08cd97688ae9950cfd6ab0959", null ],
     [ "GetPouringSoundset", "d9/d1a/_bottle___base_8c.html#a15df905ba91aaf75782d1860a5d3a5d5", null ],
     [ "OnDebugSpawn", "d9/d1a/_bottle___base_8c.html#a05eab95952a189dc9e08ccecec41b51a", null ],
+    [ "OnFreezeStateChangeServer", "d9/d1a/_bottle___base_8c.html#a079fe8b19fed37c99827b112df751f9e", null ],
     [ "OnRPC", "d9/d1a/_bottle___base_8c.html#a23f886d53b513cd9424769403fbf6866", null ],
     [ "OnVariablesSynchronized", "d9/d1a/_bottle___base_8c.html#ad183155e7592e816863539c54b6fa83f", null ],
     [ "ParticleCookingStart", "d9/d1a/_bottle___base_8c.html#a8e124b9810d9bb7f3e92ca8df2c2dd1b", null ],
@@ -25,9 +27,9 @@ var _bottle___base_8c =
     [ "PlayEmptyingLoopSound", "d9/d1a/_bottle___base_8c.html#a90d96e5a45a5320ebf0450295e5e9c9f", null ],
     [ "PlayPouringLoopSound", "d9/d1a/_bottle___base_8c.html#af31e2b0b37c6033702912925c8055fea", null ],
     [ "RefreshAudioVisuals", "d9/d1a/_bottle___base_8c.html#a9ce1fd4b27cf50ba9b95cc60af444c0d", null ],
-    [ "RefreshAudioVisualsOnClient", "d9/d1a/_bottle___base_8c.html#a422376c33b82971205b6533191a97657", null ],
+    [ "RefreshAudioVisualsOnClient", "d9/d1a/_bottle___base_8c.html#a1ee366b5d7b5ca6ba1e187157fb43eaa", null ],
     [ "RemoveAudioVisuals", "d9/d1a/_bottle___base_8c.html#a64a1db237bdeb3b6b006d664a45cace4", null ],
-    [ "RemoveAudioVisualsOnClient", "d9/d1a/_bottle___base_8c.html#aa124b032742b823eac7fc294d9e973b3", null ],
+    [ "RemoveAudioVisualsOnClient", "d9/d1a/_bottle___base_8c.html#a484f1749819440cd9370f75e9305f9d9", null ],
     [ "SetActions", "d9/d1a/_bottle___base_8c.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
     [ "StopEmptyingLoopSound", "d9/d1a/_bottle___base_8c.html#a1082850467ae686191ec6edc2743c85b", null ],
     [ "StopPouringLoopSound", "d9/d1a/_bottle___base_8c.html#a1ee18c05ea4da30d03269f0bcc244055", null ],
@@ -51,9 +53,5 @@ var _bottle___base_8c =
     [ "PARTICLE_DRYING_DONE", "d9/d1a/_bottle___base_8c.html#aa727dff376ef565bd3f2fc6b8c081af3", null ],
     [ "PARTICLE_DRYING_START", "d9/d1a/_bottle___base_8c.html#a730208a084f5f8f2c56ff5f31da37b46", null ],
     [ "QUANTITY_EMPTIED_PER_SEC_DEFAULT", "d9/d1a/_bottle___base_8c.html#a5216487aba8e682e117fa5855f60e90a", null ],
-    [ "SOUND_BOILING_DONE", "d9/d1a/_bottle___base_8c.html#ae39c6d6dcb9b91e7c5e3e183a07591cf", null ],
-    [ "SOUND_BOILING_EMPTY", "d9/d1a/_bottle___base_8c.html#afbf55716464e1a4263929c5e02c53a00", null ],
-    [ "SOUND_BOILING_START", "d9/d1a/_bottle___base_8c.html#ae66280a3c6f2e4f2d4628723ca613994", null ],
-    [ "SOUND_DRYING_DONE", "d9/d1a/_bottle___base_8c.html#ab9548e38287314df23d113b593f4c225", null ],
-    [ "SOUND_DRYING_START", "d9/d1a/_bottle___base_8c.html#aa59c696adae800ec1b211c45f9a5e02b", null ]
+    [ "SOUND_BOILING_EMPTY", "d9/d1a/_bottle___base_8c.html#afbf55716464e1a4263929c5e02c53a00", null ]
 ];

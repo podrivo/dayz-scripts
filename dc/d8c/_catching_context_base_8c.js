@@ -19,7 +19,7 @@ var _catching_context_base_8c =
     [ "InitCatchMasks", "dc/d8c/_catching_context_base_8c.html#ac313d1a1b7698b6f46277d2ff4563bc9", null ],
     [ "InitCatchMethodMask", "dc/d8c/_catching_context_base_8c.html#a57f7926f335fa309aa44163d27f0b664", null ],
     [ "InitItemValues", "dc/d8c/_catching_context_base_8c.html#ae0b0196dffbbd00ca29ca2a5c65a9f3f", null ],
-    [ "IsValid", "dc/d8c/_catching_context_base_8c.html#a9dcb9b43a3d0fa9003d4c1c9d921f6b2", null ],
+    [ "IsValid", "d7/ddb/group___sound_controller.html#ga12ac56eacd52df3fe1c19a18046c7c99", null ],
     [ "ModifySignalProbability", "dc/d8c/_catching_context_base_8c.html#a6be245ce433d3a234dd2b73c4fb0de9d", null ],
     [ "ParseYieldItemsForCompatibility", "dc/d8c/_catching_context_base_8c.html#a8dbfcba7688663dfe3532311a2541e11", null ],
     [ "RecalculateProcessingData", "dc/d8c/_catching_context_base_8c.html#acf47e340c37a1517a047ac7f4c40dc84", null ],

@@ -14,6 +14,7 @@ var class_yield_item_base =
     [ "GetType", "d9/de5/class_yield_item_base.html#a26d5ac6b0e2c548907c421d3be7f7b3d", null ],
     [ "GetYieldWeight", "d9/de5/class_yield_item_base.html#ac3467983c8569cbd40c4e80ed5767e1d", null ],
     [ "Init", "d9/de5/class_yield_item_base.html#a1e3b6d38df0786ccf7f938d60e386aae", null ],
+    [ "OnEntityYieldSpawned", "d9/de5/class_yield_item_base.html#a535f77a80767063ca9910d179cffcdae", null ],
     [ "SetRegistrationIdx", "d9/de5/class_yield_item_base.html#ab138b2d3070686cf84240e197c08d556", null ],
     [ "m_BaseWeight", "d9/de5/class_yield_item_base.html#ace2029c3dfc4ce9ba42864c4f61ae26d", null ],
     [ "m_EnviroMask", "d9/de5/class_yield_item_base.html#a66488c59d78c1f1a6d319e4678be96bd", null ],

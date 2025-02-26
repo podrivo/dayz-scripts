@@ -52,7 +52,7 @@ var class_online_services =
     [ "ShowUserProfile", "d0/d36/class_online_services.html#a313a3df3a478a958c08079b77e2d3349", null ],
     [ "m_AutoConnectTries", "d0/d36/class_online_services.html#aa56722c013d922d283c89b782251e146", null ],
     [ "m_BiosUser", "d0/d36/class_online_services.html#a21c5f2d0f9838fe3f9060400d46f38f6", null ],
-    [ "m_ClientServices", "d0/d36/class_online_services.html#acd86bdaa80801443113314f0ef30b4b8", null ],
+    [ "m_ClientServices", "d0/d36/class_online_services.html#a326084efd54809066cca7c7e01dc3d98", null ],
     [ "m_CurrentServerInfo", "d0/d36/class_online_services.html#a17e9b6bcd69bbb4e7f0046d719bbede4", null ],
     [ "m_CurrentServerIP", "d0/d36/class_online_services.html#a6726b563caa4fca0edac2351fdc3acaa", null ],
     [ "m_CurrentServerPort", "d0/d36/class_online_services.html#ad1c2f33d9a825ea3df557c97e3c2ecb8", null ],

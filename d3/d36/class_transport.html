@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -222,6 +222,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a2df35b1fd2ef35c4ecf9c849090f7f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b0c8c1f7c2c0d3149536a77240a6159"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../dc/d49/group___diag_menu.html#ga6eaf263a07e0b8a8895ed494afceed7d">Shape</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d36/class_transport.html#a7b0c8c1f7c2c0d3149536a77240a6159">DebugFreeAreaAtDoor</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> currentSeat, <a class="el" href="../../d4/dc3/classfloat.html">float</a> maxAllowedObjHeight=0.5, <a class="el" href="../../d4/dc3/classfloat.html">float</a> horizontalExtents=0.5, <a class="el" href="../../d4/dc3/classfloat.html">float</a> playerHeight=1.7)</td></tr>
 <tr class="separator:a7b0c8c1f7c2c0d3149536a77240a6159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf821ca099b6b1e27200886ca8a10a91"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d36/class_transport.html#aaf821ca099b6b1e27200886ca8a10a91">DetectFlippedUsingWheels</a> (<a class="el" href="../../d8/d13/class_vehicle_flipped_context.html">VehicleFlippedContext</a> ctx, <a class="el" href="../../d9/db9/classbool.html">bool</a> disallowSide)</td></tr>
+<tr class="separator:aaf821ca099b6b1e27200886ca8a10a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dee9d87041898881299c2c97f165419"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d36/class_transport.html#a2dee9d87041898881299c2c97f165419">GetSteering</a> ()</td></tr>
 <tr class="memdesc:a2dee9d87041898881299c2c97f165419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current steering value in range &lt;-1, 1&gt;.  <br /></td></tr>
 <tr class="separator:a2dee9d87041898881299c2c97f165419"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -419,6 +421,44 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../dc/d3d/proto_8c.html#a117bd706d35f6f2ae3f5db263b778704">ARGB()</a>, <a class="el" href="../../da/d7d/class_debug.html#ab02fd76bdc689d85cb5d786127d79e3c">Debug::DrawBox()</a>, <a class="el" href="../../d3/d36/class_transport.html#ae10ee1008817a401c35044e995c597f1">GetSpeedometerAbsolute()</a>, <a class="el" href="../../d3/d36/class_transport.html#a2df35b1fd2ef35c4ecf9c849090f7f8c">IsAreaAtDoorFree()</a>, and <a class="el" href="../../dc/d49/group___diag_menu.html#ga6eaf263a07e0b8a8895ed494afceed7d">Shape</a>.</p>
+
+</div>
+</div>
+<a id="aaf821ca099b6b1e27200886ca8a10a91" name="aaf821ca099b6b1e27200886ca8a10a91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf821ca099b6b1e27200886ca8a10a91">&#9670;&#160;</a></span>DetectFlippedUsingWheels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/db9/classbool.html">bool</a> DetectFlippedUsingWheels </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d13/class_vehicle_flipped_context.html">VehicleFlippedContext</a>&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td>
+          <td class="paramname"><em>disallowSide</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d7/dfc/classvector.html#adafa60c456aeee3fe7b5f31f5802ffa1">vector::Dot()</a>, <a class="el" href="../../d7/dfc/classvector.html#a323c92620ed83ca5e6df94a02fdaac2c">vector::Up</a>, <a class="el" href="../../d3/d36/class_transport.html#a5bcdc6760f3525b8d1c96932180f4638">WheelCount()</a>, and <a class="el" href="../../d3/d36/class_transport.html#a6c8c1e9303d9e26272268521de144fbe">WheelHasContact()</a>.</p>
 
 </div>
 </div>
@@ -2002,6 +2042,8 @@ Private Member Functions</h2></td></tr>
 <p>Is called every time the game wants to start the engine.</p>
 <dl class="section return"><dt>Returns</dt><dd>true if the engine can start, false otherwise. </dd></dl>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d7a/_action_start_engine_boat_8c.html#a8cd166a68dd6f387d58965b4b20698a5">OnExecute()</a>.</p>
+
 </div>
 </div>
 <a id="a8d8968b9c6a1a7f1207e8c6a6d0d53c7" name="a8d8968b9c6a1a7f1207e8c6a6d0d53c7"></a>
@@ -3145,6 +3187,8 @@ Private Member Functions</h2></td></tr>
 
 <p>How many wheel can be attached to a car (hubs only) </p>
 
+<p class="reference">Referenced by <a class="el" href="../../d3/d36/class_transport.html#aaf821ca099b6b1e27200886ca8a10a91">DetectFlippedUsingWheels()</a>.</p>
+
 </div>
 </div>
 <a id="a380cc75ed4cc9a572280519e531e5ca1" name="a380cc75ed4cc9a572280519e531e5ca1"></a>
@@ -3435,6 +3479,8 @@ Private Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d36/class_transport.html#aaf821ca099b6b1e27200886ca8a10a91">DetectFlippedUsingWheels()</a>.</p>
 
 </div>
 </div>

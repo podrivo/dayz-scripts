@@ -14,6 +14,8 @@ var class_script_console_tab_base =
     [ "OnKeyDown", "d8/d29/class_script_console_tab_base.html#a978fa2793e50e85f22ef5878f5064615", null ],
     [ "OnKeyPress", "d8/d29/class_script_console_tab_base.html#a949c26b96e73e214caf7c299d9962b95", null ],
     [ "OnMouseButtonDown", "d8/d29/class_script_console_tab_base.html#af66cd677915d52ac09ebb37aa1a702c2", null ],
+    [ "OnMouseEnter", "d8/d29/class_script_console_tab_base.html#ade9307e61a8862fb2146a0e8f0d72467", null ],
+    [ "OnMouseLeave", "d8/d29/class_script_console_tab_base.html#a769875f3a787c270c210fdf53bfd0e18", null ],
     [ "OnRPCEx", "d8/d29/class_script_console_tab_base.html#a668ce8e071fd9109e8ee425880489748", null ],
     [ "OnSelected", "d8/d29/class_script_console_tab_base.html#aca9606d6a4a0d7afc75aa74a40e83b20", null ],
     [ "Select", "d8/d29/class_script_console_tab_base.html#a58ee3db4bb2971990963376c516a7ee9", null ],

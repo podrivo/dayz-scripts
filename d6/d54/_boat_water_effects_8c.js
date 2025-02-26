@@ -11,7 +11,7 @@ var _boat_water_effects_8c =
     ] ],
     [ "EffectBoatWaterFront", "d6/d54/_boat_water_effects_8c.html#a12dcf952460e402344285116e94cdbed", null ],
     [ "EffectBoatWaterSide", "d6/d54/_boat_water_effects_8c.html#a546aa5aa208781a6f55a083cec8b5ef9", null ],
-    [ "Update", "d9/d0e/group___widget_a_p_i.html#ga70ac517aa5d3b3af95f61a2d560d811f", null ],
+    [ "Update", "d6/d54/_boat_water_effects_8c.html#a1928d9318147cf0368b06007ec64d8e1", null ],
     [ "UpdateSpeedState", "d6/d54/_boat_water_effects_8c.html#a200675ec6111abdaee6b2c6f9656e651", null ],
     [ "EMITORS_FAST", "d6/d54/_boat_water_effects_8c.html#a55413f01992232d01a7cb7d02fd7d49d", null ]
 ];

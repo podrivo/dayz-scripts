@@ -8,5 +8,7 @@ var _action_arm_explosive_8c =
     [ "GetInputType", "d9/d80/_action_arm_explosive_8c.html#ab6eb153abc42e514909126c621d01280", null ],
     [ "HasProgress", "d9/d80/_action_arm_explosive_8c.html#a6201cf1bf986bd9c1f571cb58a6946ed", null ],
     [ "InitActionComponent", "d9/d80/_action_arm_explosive_8c.html#aba102feb8b95d3539c145469351091c2", null ],
-    [ "OnFinishProgressServer", "d9/d80/_action_arm_explosive_8c.html#a00cda41fe9dd093059da5c4b83b591bc", null ]
+    [ "OnEndServer", "d9/d80/_action_arm_explosive_8c.html#a2ebf3855cc8960864124ba5ca4949033", null ],
+    [ "OnFinishProgressServer", "d9/d80/_action_arm_explosive_8c.html#a00cda41fe9dd093059da5c4b83b591bc", null ],
+    [ "OnStartServer", "d9/d80/_action_arm_explosive_8c.html#af5aa64866cd0cfb7cd9989eb748abbe0", null ]
 ];

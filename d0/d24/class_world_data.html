@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -157,6 +157,14 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:af1e7184c2d17b1c9ebe4f0becfab34c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bf05df9b677fc8215dc29e65a55893e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/class_world_data.html#a9bf05df9b677fc8215dc29e65a55893e">GetUniversalTemperatureSourceCapModifier</a> ()</td></tr>
 <tr class="separator:a9bf05df9b677fc8215dc29e65a55893e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c2466c1daa84e1c948a5aecd6659be2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/class_world_data.html#a2c2466c1daa84e1c948a5aecd6659be2">GetTemperature</a> (<a class="el" href="../../d8/d83/class_object.html">Object</a> object, <a class="el" href="../../d7/d6a/_e_environment_temperature_component_8c.html#a15c2a26f382dfb39024934acc6e8bfec">EEnvironmentTemperatureComponent</a> properties=<a class="el" href="../../d7/d6a/_e_environment_temperature_component_8c.html#a15c2a26f382dfb39024934acc6e8bfecaa7d623548e49a1514076f5bee3b314a4">EEnvironmentTemperatureComponent.BASE</a>)</td></tr>
+<tr class="memdesc:a2c2466c1daa84e1c948a5aecd6659be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return actual temperature of environment based on provided parameters.  <br /></td></tr>
+<tr class="separator:a2c2466c1daa84e1c948a5aecd6659be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9749e66cdfb4807c8632d515d54cc4c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/class_world_data.html#a9749e66cdfb4807c8632d515d54cc4c8">GetTemperatureComponentValue</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> temperatureIn, <a class="el" href="../../d7/d6a/_e_environment_temperature_component_8c.html#a15c2a26f382dfb39024934acc6e8bfec">EEnvironmentTemperatureComponent</a> properties=0)</td></tr>
+<tr class="memdesc:a9749e66cdfb4807c8632d515d54cc4c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return value of queried EEnvironmentTemperatureComponent which can be used in future calculation(s)  <br /></td></tr>
+<tr class="separator:a9749e66cdfb4807c8632d515d54cc4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab62c979acc6e80f529b486e0ead870a8"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/class_world_data.html#ab62c979acc6e80f529b486e0ead870a8">WindEffectTemperatureValue</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> temperatureInput)</td></tr>
+<tr class="separator:ab62c979acc6e80f529b486e0ead870a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e9f7d3f69473bc4231dcd385f54803f"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/class_world_data.html#a9e9f7d3f69473bc4231dcd385f54803f">CalculateWind</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> newWeather, <a class="el" href="../../d9/db9/classbool.html">bool</a> suddenChange, out <a class="el" href="../../d4/dc3/classfloat.html">float</a> magnitude, out <a class="el" href="../../d4/dc3/classfloat.html">float</a> direction)</td></tr>
 <tr class="separator:a9e9f7d3f69473bc4231dcd385f54803f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68cc3c612d9656766d3224dd85a5ed01"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/class_world_data.html#a68cc3c612d9656766d3224dd85a5ed01">CalculateVolFog</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> lerpValue, <a class="el" href="../../d4/dc3/classfloat.html">float</a> windMagnitude, <a class="el" href="../../d4/dc3/classfloat.html">float</a> changeTime)</td></tr>
@@ -203,9 +211,13 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a60421caa86a9efe6ef0ae46cbadc89c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/class_world_data.html#a60421caa86a9efe6ef0ae46cbadc89c0">m_CloudsTemperatureEffectModifier</a></td></tr>
 <tr class="memdesc:a60421caa86a9efe6ef0ae46cbadc89c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">amount of °C reduced for each 100 meteres of height above water level  <br /></td></tr>
 <tr class="separator:a60421caa86a9efe6ef0ae46cbadc89c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6f9e26a2aa5219257db8de88eaf596e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a> m_TemperatureInsideBuildingsModifier <a class="el" href="../../d4/dc3/classfloat.html">float</a> m_WaterContactTemperatureModifier protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/class_world_data.html#ae6f9e26a2aa5219257db8de88eaf596e">SUDDENCHANGE_TIME_MULTIPLIER</a> = 0.2</td></tr>
-<tr class="memdesc:ae6f9e26a2aa5219257db8de88eaf596e"><td class="mdescLeft">&#160;</td><td class="mdescRight">how many % of environment temperature can be lowered by clouds  <br /></td></tr>
-<tr class="separator:ae6f9e26a2aa5219257db8de88eaf596e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85ec4ed0fab5a8e751b4c7d8795aca84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/class_world_data.html#a85ec4ed0fab5a8e751b4c7d8795aca84">m_TemperatureInsideBuildingsModifier</a></td></tr>
+<tr class="memdesc:a85ec4ed0fab5a8e751b4c7d8795aca84"><td class="mdescLeft">&#160;</td><td class="mdescRight">how many % of environment temperature can be lowered by clouds  <br /></td></tr>
+<tr class="separator:a85ec4ed0fab5a8e751b4c7d8795aca84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a3b2fe8a7bdb71f87c33cec2397f7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/class_world_data.html#af1a3b2fe8a7bdb71f87c33cec2397f7c">m_WaterContactTemperatureModifier</a></td></tr>
+<tr class="separator:af1a3b2fe8a7bdb71f87c33cec2397f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61b428c7caac6861c2d9124292f6ed66"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/class_world_data.html#a61b428c7caac6861c2d9124292f6ed66">SUDDENCHANGE_TIME_MULTIPLIER</a> = 0.2</td></tr>
+<tr class="separator:a61b428c7caac6861c2d9124292f6ed66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d6926e73f1f2a51fdf9a30984249b41"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/class_world_data.html#a0d6926e73f1f2a51fdf9a30984249b41">SUDDENCHANGE_LENGTH_MULTIPLIER</a> = 0.4</td></tr>
 <tr class="separator:a0d6926e73f1f2a51fdf9a30984249b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5d6c059a1460d00f0e0a91b86b43123"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/class_world_data.html#aa5d6c059a1460d00f0e0a91b86b43123">WIND_MAGNITUDE_TIME_MULTIPLIER</a> = 0.1</td></tr>
@@ -817,7 +829,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d0/d24/class_world_data.html#aa3799fcbc0fd1ecab4033e9c53b40f56">m_EnvironmentTemperature</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dde/class_apple.html#a619b8813fa2383350e7279314acc80a9">Apple::EEOnCECreate()</a>, <a class="el" href="../../d7/d3a/class_green_bell_pepper.html#a619b8813fa2383350e7279314acc80a9">GreenBellPepper::EEOnCECreate()</a>, <a class="el" href="../../d2/d65/class_pear.html#a619b8813fa2383350e7279314acc80a9">Pear::EEOnCECreate()</a>, <a class="el" href="../../d8/deb/class_plum.html#a619b8813fa2383350e7279314acc80a9">Plum::EEOnCECreate()</a>, <a class="el" href="../../d8/d39/class_potato.html#a619b8813fa2383350e7279314acc80a9">Potato::EEOnCECreate()</a>, <a class="el" href="../../d9/dd5/class_tomato.html#a619b8813fa2383350e7279314acc80a9">Tomato::EEOnCECreate()</a>, <a class="el" href="../../de/d94/class_zucchini.html#a619b8813fa2383350e7279314acc80a9">Zucchini::EEOnCECreate()</a>, and <a class="el" href="../../dc/d38/class_environment.html#aac844beb28d57e85724ffc100d7cc817">Environment::GetDebugMessage()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dde/class_apple.html#a619b8813fa2383350e7279314acc80a9">Apple::EEOnCECreate()</a>, <a class="el" href="../../d7/d33/class_craterellus_mushroom.html#a619b8813fa2383350e7279314acc80a9">CraterellusMushroom::EEOnCECreate()</a>, <a class="el" href="../../d7/d3a/class_green_bell_pepper.html#a619b8813fa2383350e7279314acc80a9">GreenBellPepper::EEOnCECreate()</a>, <a class="el" href="../../d2/d65/class_pear.html#a619b8813fa2383350e7279314acc80a9">Pear::EEOnCECreate()</a>, <a class="el" href="../../d8/deb/class_plum.html#a619b8813fa2383350e7279314acc80a9">Plum::EEOnCECreate()</a>, <a class="el" href="../../d8/d39/class_potato.html#a619b8813fa2383350e7279314acc80a9">Potato::EEOnCECreate()</a>, <a class="el" href="../../d9/dd5/class_tomato.html#a619b8813fa2383350e7279314acc80a9">Tomato::EEOnCECreate()</a>, <a class="el" href="../../de/d94/class_zucchini.html#a619b8813fa2383350e7279314acc80a9">Zucchini::EEOnCECreate()</a>, <a class="el" href="../../dc/d38/class_environment.html#aac844beb28d57e85724ffc100d7cc817">Environment::GetDebugMessage()</a>, and <a class="el" href="../../d0/d24/class_world_data.html#a2c2466c1daa84e1c948a5aecd6659be2">GetTemperature()</a>.</p>
 
 </div>
 </div>
@@ -845,9 +857,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d0/d24/class_world_data.html#a8d1cfd3f1d292c97808538f4ce6dfd0a">GetBaseEnvTemperatureAtPosition()</a>, and <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d24/class_world_data.html#a8d1cfd3f1d292c97808538f4ce6dfd0a">GetBaseEnvTemperatureAtPosition()</a>, and <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d38/class_environment.html#aac844beb28d57e85724ffc100d7cc817">Environment::GetDebugMessage()</a>, <a class="el" href="../../dc/d38/class_environment.html#a0b2b93f3a86a55037fac97c535608e5b">Environment::GetEnvironmentTemperature()</a>, <a class="el" href="../../dc/d38/class_environment.html#a1e3b6d38df0786ccf7f938d60e386aae">Environment::Init()</a>, and <a class="el" href="../../dc/d38/class_environment.html#a25400a453e3a8ed90d8296a92b246c23">Environment::SetAreaGenericColdness()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/d38/class_environment.html#aac844beb28d57e85724ffc100d7cc817">Environment::GetDebugMessage()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a2c2466c1daa84e1c948a5aecd6659be2">GetTemperature()</a>, <a class="el" href="../../dc/d38/class_environment.html#a1e3b6d38df0786ccf7f938d60e386aae">Environment::Init()</a>, and <a class="el" href="../../dc/d38/class_environment.html#a25400a453e3a8ed90d8296a92b246c23">Environment::SetAreaGenericColdness()</a>.</p>
 
 </div>
 </div>
@@ -1098,7 +1110,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d6/dae/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#a3b2f70215d99f89322d4399b4afa1010">INDEX_NOT_FOUND</a>, <a class="el" href="../../d0/d24/class_world_data.html#aa3799fcbc0fd1ecab4033e9c53b40f56">m_EnvironmentTemperature</a>, and <a class="el" href="../../d0/d24/class_world_data.html#a6e77d333d99d95051176211dae07a6b0">m_LiquidSettings</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/dc0/class_filtering_bottle.html#ad193d5b56ad4a6855f0f979cface49e1">FilteringBottle::AffectLiquidContainerOnFill()</a>, <a class="el" href="../../da/d60/class_bottle___base.html#ad193d5b56ad4a6855f0f979cface49e1">Bottle_Base::AffectLiquidContainerOnFill()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a23095014cb12caebdbf6bb1ae90b6bd2">ManBase::Consume()</a>, <a class="el" href="../../dc/d38/class_environment.html#a0b2b93f3a86a55037fac97c535608e5b">Environment::GetEnvironmentTemperature()</a>, and <a class="el" href="../../d5/dfb/_liquid_8c.html#ae07267233411211f2a7225156846a27b">GetLiquidTypeEnviroTemperature()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/dc0/class_filtering_bottle.html#ad193d5b56ad4a6855f0f979cface49e1">FilteringBottle::AffectLiquidContainerOnFill()</a>, <a class="el" href="../../da/d60/class_bottle___base.html#ad193d5b56ad4a6855f0f979cface49e1">Bottle_Base::AffectLiquidContainerOnFill()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a6e2178c991b241153671d0f19d6b0f9d">ManBase::Consume()</a>, <a class="el" href="../../dc/d38/class_environment.html#a0b2b93f3a86a55037fac97c535608e5b">Environment::GetEnvironmentTemperature()</a>, <a class="el" href="../../d5/dfb/_liquid_8c.html#ae07267233411211f2a7225156846a27b">GetLiquidTypeEnviroTemperature()</a>, and <a class="el" href="../../dc/d38/class_environment.html#a72a162e447b8429b8c23cfaf33472f1a">Environment::SetProcessedItemTemperature()</a>.</p>
 
 </div>
 </div>
@@ -1154,7 +1166,105 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d0/d24/class_world_data.html#a51ccc9b180720da59e1864547a1e1ef5">m_Pollution</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#a23095014cb12caebdbf6bb1ae90b6bd2">ManBase::Consume()</a>, and <a class="el" href="../../dd/da1/class_plugin_base.html#a882a8e3bfc3f959d0d13f40cf28a4810">PluginBase::TransmitAgentsEx()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#a6e2178c991b241153671d0f19d6b0f9d">ManBase::Consume()</a>, and <a class="el" href="../../dd/da1/class_plugin_base.html#a882a8e3bfc3f959d0d13f40cf28a4810">PluginBase::TransmitAgentsEx()</a>.</p>
+
+</div>
+</div>
+<a id="a2c2466c1daa84e1c948a5aecd6659be2" name="a2c2466c1daa84e1c948a5aecd6659be2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c2466c1daa84e1c948a5aecd6659be2">&#9670;&#160;</a></span>GetTemperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dc3/classfloat.html">float</a> GetTemperature </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d83/class_object.html">Object</a>&#160;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d6a/_e_environment_temperature_component_8c.html#a15c2a26f382dfb39024934acc6e8bfec">EEnvironmentTemperatureComponent</a>&#160;</td>
+          <td class="paramname"><em>properties</em> = <code><a class="el" href="../../d7/d6a/_e_environment_temperature_component_8c.html#a15c2a26f382dfb39024934acc6e8bfecaa7d623548e49a1514076f5bee3b314a4">EEnvironmentTemperatureComponent.BASE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return actual temperature of environment based on provided parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>Reference to object that is used mainly for sea height related calculation </td></tr>
+    <tr><td class="paramname">properties</td><td>Flag made of EEnvironmentTemperatureComponent which will influence the resulting value of temperature based on combination of the parts </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="../../d6/d55/group___environment_cfg.html#ga795cfeedc03d8c025e1f7b1e1f0e58aa">GameConstants::ENVIRO_FOG_TEMP_EFFECT</a>, <a class="el" href="../../d8/d95/class_weather_phenomenon.html#adfd3c46c4142f05b6020446e886a99c9">WeatherPhenomenon::GetActual()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a6c4b6d257d283d5c6dacac7287d7f06b">GetBaseEnvTemperature()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a427b3b1b091311619f800dcb6b1e37ac">GetBaseEnvTemperatureAtObject()</a>, <a class="el" href="../../d2/d72/class_weather.html#aed21da305e058025bfaa56b3f1074ea7">Weather::GetFog()</a>, <a class="el" href="../../d2/d72/class_weather.html#a6ff201816268272333c8fa4805327d2d">Weather::GetOvercast()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a60421caa86a9efe6ef0ae46cbadc89c0">m_CloudsTemperatureEffectModifier</a>, <a class="el" href="../../d0/d24/class_world_data.html#a3d43a159b16d45243df04dc2b151b331">m_Weather</a>, and <a class="el" href="../../d0/d24/class_world_data.html#ab62c979acc6e80f529b486e0ead870a8">WindEffectTemperatureValue()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d38/class_environment.html#a0b2b93f3a86a55037fac97c535608e5b">Environment::GetEnvironmentTemperature()</a>.</p>
+
+</div>
+</div>
+<a id="a9749e66cdfb4807c8632d515d54cc4c8" name="a9749e66cdfb4807c8632d515d54cc4c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9749e66cdfb4807c8632d515d54cc4c8">&#9670;&#160;</a></span>GetTemperatureComponentValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dc3/classfloat.html">float</a> GetTemperatureComponentValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>temperatureIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d6a/_e_environment_temperature_component_8c.html#a15c2a26f382dfb39024934acc6e8bfec">EEnvironmentTemperatureComponent</a>&#160;</td>
+          <td class="paramname"><em>properties</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return value of queried EEnvironmentTemperatureComponent which can be used in future calculation(s) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temperature</td><td>Base temperature which will be used in component calculation (currently WIND only) </td></tr>
+    <tr><td class="paramname">properties</td><td>Flag made of EEnvironmentTemperatureComponent which will influence the resulting value of temperature based on combination of the parts </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="../../d6/d55/group___environment_cfg.html#ga795cfeedc03d8c025e1f7b1e1f0e58aa">GameConstants::ENVIRO_FOG_TEMP_EFFECT</a>, <a class="el" href="../../d8/d95/class_weather_phenomenon.html#adfd3c46c4142f05b6020446e886a99c9">WeatherPhenomenon::GetActual()</a>, <a class="el" href="../../d2/d72/class_weather.html#aed21da305e058025bfaa56b3f1074ea7">Weather::GetFog()</a>, <a class="el" href="../../d2/d72/class_weather.html#a6ff201816268272333c8fa4805327d2d">Weather::GetOvercast()</a>, <a class="el" href="../../da/d7d/class_debug.html#ac0a75400c551a91931b86b09125cfa59">Debug::Log()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a60421caa86a9efe6ef0ae46cbadc89c0">m_CloudsTemperatureEffectModifier</a>, <a class="el" href="../../d0/d24/class_world_data.html#a3d43a159b16d45243df04dc2b151b331">m_Weather</a>, and <a class="el" href="../../d0/d24/class_world_data.html#ab62c979acc6e80f529b486e0ead870a8">WindEffectTemperatureValue()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d38/class_environment.html#a0b2b93f3a86a55037fac97c535608e5b">Environment::GetEnvironmentTemperature()</a>.</p>
 
 </div>
 </div>
@@ -1210,7 +1320,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d0/d24/class_world_data.html#a76d8fbce86d1195f372aba305b4c9f40">m_WorldWindCoef</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d38/class_environment.html#ab62c979acc6e80f529b486e0ead870a8">Environment::WindEffectTemperatureValue()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d24/class_world_data.html#ab62c979acc6e80f529b486e0ead870a8">WindEffectTemperatureValue()</a>, and <a class="el" href="../../dc/d38/class_environment.html#ab62c979acc6e80f529b486e0ead870a8">Environment::WindEffectTemperatureValue()</a>.</p>
 
 </div>
 </div>
@@ -1237,7 +1347,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d0/d24/class_world_data.html#a3a684cc2f5ff31898b22e719c07d8666">m_BadWeatherChance</a>, <a class="el" href="../../d7/dbe/class_world_data_weather_settings.html#a8468dda00acbcdbf05db7d679ea0d8ca">WorldDataWeatherSettings::m_BadWeatherChance</a>, <a class="el" href="../../d0/d24/class_world_data.html#ab2c7323885fb0e0680cdf7b8f18c6a15">m_ClearWeatherChance</a>, <a class="el" href="../../d7/dbe/class_world_data_weather_settings.html#a0940c96bbd5511c87b2bb310e0c77d10">WorldDataWeatherSettings::m_ClearWeatherChance</a>, <a class="el" href="../../d0/d24/class_world_data.html#a60421caa86a9efe6ef0ae46cbadc89c0">m_CloudsTemperatureEffectModifier</a>, <a class="el" href="../../d0/d24/class_world_data.html#a4dfafa9723bde3ddd54dd4dee30b5fe7">m_DefaultPlayerRestrictedAreas</a>, <a class="el" href="../../d0/d24/class_world_data.html#a61f2f50914c41cc3f6e19f3ca1ba7abf">m_EnTempUpdated</a>, <a class="el" href="../../d0/d24/class_world_data.html#aa3799fcbc0fd1ecab4033e9c53b40f56">m_EnvironmentTemperature</a>, <a class="el" href="../../d0/d24/class_world_data.html#a05f7aeb79d04dbbde912808a19b1e308">m_MaxTemps</a>, <a class="el" href="../../d0/d24/class_world_data.html#acd50f66af331ac024a9043161c29c2e1">m_MinTemps</a>, <a class="el" href="../../d0/d24/class_world_data.html#a51ccc9b180720da59e1864547a1e1ef5">m_Pollution</a>, <a class="el" href="../../d0/d24/class_world_data.html#a1172913f7faef9da5ef826fa103ea717">m_Sunrise_Jan</a>, <a class="el" href="../../d0/d24/class_world_data.html#a48acdb6b131a88a878a8618488fee1d5">m_Sunrise_Jul</a>, <a class="el" href="../../d0/d24/class_world_data.html#a22cce6bb88273872e2f3434d38cfa8d8">m_Sunset_Jan</a>, <a class="el" href="../../d0/d24/class_world_data.html#ae78899359c6ae7bf1b38591f1502ad3d">m_Sunset_Jul</a>, <a class="el" href="../../d0/d24/class_world_data.html#aa8ea4ff7200d38395d8c9337452265c8">m_TemperaturePerHeightReductionModifier</a>, <a class="el" href="../../d0/d24/class_world_data.html#afbde063c72f8bd469d53bad16a6d260c">m_Timer</a>, <a class="el" href="../../d0/d24/class_world_data.html#a1df4efd96ac7d136cd5b0cbb2b946611">m_UniversalTemperatureSourceCapModifier</a>, <a class="el" href="../../d0/d24/class_world_data.html#a3d43a159b16d45243df04dc2b151b331">m_Weather</a>, <a class="el" href="../../d0/d24/class_world_data.html#a0194389b31ab5c9310a0fe4be36049a6">m_WeatherDefaultSettings</a>, <a class="el" href="../../d0/d24/class_world_data.html#a76d8fbce86d1195f372aba305b4c9f40">m_WorldWindCoef</a>, <a class="el" href="../../d0/d24/class_world_data.html#a2d500dd6fd42576905880c36bbbccd13">SetupLiquidTemperatures()</a>, and <a class="el" href="../../d0/d24/class_world_data.html#a9f60f93b48faf4cb1fbb22e05c243161">SetupWeatherSettings()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d0/d24/class_world_data.html#a3a684cc2f5ff31898b22e719c07d8666">m_BadWeatherChance</a>, <a class="el" href="../../d7/dbe/class_world_data_weather_settings.html#a8468dda00acbcdbf05db7d679ea0d8ca">WorldDataWeatherSettings::m_BadWeatherChance</a>, <a class="el" href="../../d0/d24/class_world_data.html#ab2c7323885fb0e0680cdf7b8f18c6a15">m_ClearWeatherChance</a>, <a class="el" href="../../d7/dbe/class_world_data_weather_settings.html#a0940c96bbd5511c87b2bb310e0c77d10">WorldDataWeatherSettings::m_ClearWeatherChance</a>, <a class="el" href="../../d0/d24/class_world_data.html#a60421caa86a9efe6ef0ae46cbadc89c0">m_CloudsTemperatureEffectModifier</a>, <a class="el" href="../../d0/d24/class_world_data.html#a4dfafa9723bde3ddd54dd4dee30b5fe7">m_DefaultPlayerRestrictedAreas</a>, <a class="el" href="../../d0/d24/class_world_data.html#a61f2f50914c41cc3f6e19f3ca1ba7abf">m_EnTempUpdated</a>, <a class="el" href="../../d0/d24/class_world_data.html#aa3799fcbc0fd1ecab4033e9c53b40f56">m_EnvironmentTemperature</a>, <a class="el" href="../../d0/d24/class_world_data.html#a05f7aeb79d04dbbde912808a19b1e308">m_MaxTemps</a>, <a class="el" href="../../d0/d24/class_world_data.html#acd50f66af331ac024a9043161c29c2e1">m_MinTemps</a>, <a class="el" href="../../d0/d24/class_world_data.html#a51ccc9b180720da59e1864547a1e1ef5">m_Pollution</a>, <a class="el" href="../../d0/d24/class_world_data.html#a1172913f7faef9da5ef826fa103ea717">m_Sunrise_Jan</a>, <a class="el" href="../../d0/d24/class_world_data.html#a48acdb6b131a88a878a8618488fee1d5">m_Sunrise_Jul</a>, <a class="el" href="../../d0/d24/class_world_data.html#a22cce6bb88273872e2f3434d38cfa8d8">m_Sunset_Jan</a>, <a class="el" href="../../d0/d24/class_world_data.html#ae78899359c6ae7bf1b38591f1502ad3d">m_Sunset_Jul</a>, <a class="el" href="../../d0/d24/class_world_data.html#a85ec4ed0fab5a8e751b4c7d8795aca84">m_TemperatureInsideBuildingsModifier</a>, <a class="el" href="../../d0/d24/class_world_data.html#aa8ea4ff7200d38395d8c9337452265c8">m_TemperaturePerHeightReductionModifier</a>, <a class="el" href="../../d0/d24/class_world_data.html#afbde063c72f8bd469d53bad16a6d260c">m_Timer</a>, <a class="el" href="../../d0/d24/class_world_data.html#a1df4efd96ac7d136cd5b0cbb2b946611">m_UniversalTemperatureSourceCapModifier</a>, <a class="el" href="../../d0/d24/class_world_data.html#af1a3b2fe8a7bdb71f87c33cec2397f7c">m_WaterContactTemperatureModifier</a>, <a class="el" href="../../d0/d24/class_world_data.html#a3d43a159b16d45243df04dc2b151b331">m_Weather</a>, <a class="el" href="../../d0/d24/class_world_data.html#a0194389b31ab5c9310a0fe4be36049a6">m_WeatherDefaultSettings</a>, <a class="el" href="../../d0/d24/class_world_data.html#a76d8fbce86d1195f372aba305b4c9f40">m_WorldWindCoef</a>, <a class="el" href="../../d0/d24/class_world_data.html#a2d500dd6fd42576905880c36bbbccd13">SetupLiquidTemperatures()</a>, and <a class="el" href="../../d0/d24/class_world_data.html#a9f60f93b48faf4cb1fbb22e05c243161">SetupWeatherSettings()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d0/d24/class_world_data.html#a8b34f1c93faca5c0061bd88963333926">WorldData()</a>.</p>
 
@@ -1588,6 +1698,36 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab62c979acc6e80f529b486e0ead870a8" name="ab62c979acc6e80f529b486e0ead870a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab62c979acc6e80f529b486e0ead870a8">&#9670;&#160;</a></span>WindEffectTemperatureValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a> WindEffectTemperatureValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>temperatureInput</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d6/d55/group___environment_cfg.html#gaf3ae3a53dfeaf0f404b71833178c77cf">GameConstants::ENVIRO_WIND_CHILL_LIMIT</a>, <a class="el" href="../../d6/d55/group___environment_cfg.html#gae257682cb4482d8537e20d0ac9d14d6c">GameConstants::ENVIRO_WIND_EFFECT_SLOPE</a>, <a class="el" href="../../d8/d95/class_weather_phenomenon.html#adfd3c46c4142f05b6020446e886a99c9">WeatherPhenomenon::GetActual()</a>, <a class="el" href="../../d0/d24/class_world_data.html#af1e7184c2d17b1c9ebe4f0becfab34c2">GetWindCoef()</a>, <a class="el" href="../../d2/d72/class_weather.html#a8d239100ad11190341c64f2a6f23a5bb">Weather::GetWindMagnitude()</a>, and <a class="el" href="../../d0/d24/class_world_data.html#a3d43a159b16d45243df04dc2b151b331">m_Weather</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d24/class_world_data.html#a2c2466c1daa84e1c948a5aecd6659be2">GetTemperature()</a>, and <a class="el" href="../../d0/d24/class_world_data.html#a9749e66cdfb4807c8632d515d54cc4c8">GetTemperatureComponentValue()</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Field Documentation</h2>
 <a id="ae517b61db5377d4403808f9e47876484" name="ae517b61db5377d4403808f9e47876484"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae517b61db5377d4403808f9e47876484">&#9670;&#160;</a></span>BAD_WEATHER</h2>
@@ -1921,7 +2061,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>amount of °C reduced for each 100 meteres of height above water level </p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d38/class_environment.html#a0b2b93f3a86a55037fac97c535608e5b">Environment::GetEnvironmentTemperature()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a1e3b6d38df0786ccf7f938d60e386aae">Init()</a>, and <a class="el" href="../../dc/d97/class_enoch_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">EnochData::Init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d24/class_world_data.html#a2c2466c1daa84e1c948a5aecd6659be2">GetTemperature()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a9749e66cdfb4807c8632d515d54cc4c8">GetTemperatureComponentValue()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a1e3b6d38df0786ccf7f938d60e386aae">Init()</a>, and <a class="el" href="../../dc/d97/class_enoch_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">EnochData::Init()</a>.</p>
 
 </div>
 </div>
@@ -2424,6 +2564,32 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a85ec4ed0fab5a8e751b4c7d8795aca84" name="a85ec4ed0fab5a8e751b4c7d8795aca84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85ec4ed0fab5a8e751b4c7d8795aca84">&#9670;&#160;</a></span>m_TemperatureInsideBuildingsModifier</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dc3/classfloat.html">float</a> m_TemperatureInsideBuildingsModifier</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>how many % of environment temperature can be lowered by clouds </p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d38/class_environment.html#a0b2b93f3a86a55037fac97c535608e5b">Environment::GetEnvironmentTemperature()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a1e3b6d38df0786ccf7f938d60e386aae">Init()</a>, and <a class="el" href="../../d1/d14/class_sakhal_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">SakhalData::Init()</a>.</p>
+
+</div>
+</div>
 <a id="aa8ea4ff7200d38395d8c9337452265c8" name="aa8ea4ff7200d38395d8c9337452265c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa8ea4ff7200d38395d8c9337452265c8">&#9670;&#160;</a></span>m_TemperaturePerHeightReductionModifier</h2>
 
@@ -2498,6 +2664,30 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="af1a3b2fe8a7bdb71f87c33cec2397f7c" name="af1a3b2fe8a7bdb71f87c33cec2397f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1a3b2fe8a7bdb71f87c33cec2397f7c">&#9670;&#160;</a></span>m_WaterContactTemperatureModifier</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dc3/classfloat.html">float</a> m_WaterContactTemperatureModifier</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d38/class_environment.html#a0b2b93f3a86a55037fac97c535608e5b">Environment::GetEnvironmentTemperature()</a>, and <a class="el" href="../../d0/d24/class_world_data.html#a1e3b6d38df0786ccf7f938d60e386aae">Init()</a>.</p>
+
+</div>
+</div>
 <a id="a3d43a159b16d45243df04dc2b151b331" name="a3d43a159b16d45243df04dc2b151b331"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d43a159b16d45243df04dc2b151b331">&#9670;&#160;</a></span>m_Weather</h2>
 
@@ -2518,7 +2708,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d97/class_enoch_data.html#a532d1d8c1f9216593de00a3391241e8e">EnochData::CalculateVolFog()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a532d1d8c1f9216593de00a3391241e8e">SakhalData::CalculateVolFog()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#ac4b7d7e527a356c1ca57f05e2863087d">EnochData::CalculateWind()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#ac4b7d7e527a356c1ca57f05e2863087d">SakhalData::CalculateWind()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a1e3b6d38df0786ccf7f938d60e386aae">Init()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">EnochData::Init()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">SakhalData::Init()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a36eac65c1c677546c5dd1ee899e071ae">EnochData::WeatherOnBeforeChange()</a>, and <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/d97/class_enoch_data.html#a532d1d8c1f9216593de00a3391241e8e">EnochData::CalculateVolFog()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a532d1d8c1f9216593de00a3391241e8e">SakhalData::CalculateVolFog()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#ac4b7d7e527a356c1ca57f05e2863087d">EnochData::CalculateWind()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#ac4b7d7e527a356c1ca57f05e2863087d">SakhalData::CalculateWind()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a2c2466c1daa84e1c948a5aecd6659be2">GetTemperature()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a9749e66cdfb4807c8632d515d54cc4c8">GetTemperatureComponentValue()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a1e3b6d38df0786ccf7f938d60e386aae">Init()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">EnochData::Init()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">SakhalData::Init()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a36eac65c1c677546c5dd1ee899e071ae">EnochData::WeatherOnBeforeChange()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>, and <a class="el" href="../../d0/d24/class_world_data.html#ab62c979acc6e80f529b486e0ead870a8">WindEffectTemperatureValue()</a>.</p>
 
 </div>
 </div>
@@ -2776,8 +2966,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ae6f9e26a2aa5219257db8de88eaf596e" name="ae6f9e26a2aa5219257db8de88eaf596e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6f9e26a2aa5219257db8de88eaf596e">&#9670;&#160;</a></span>SUDDENCHANGE_TIME_MULTIPLIER</h2>
+<a id="a61b428c7caac6861c2d9124292f6ed66" name="a61b428c7caac6861c2d9124292f6ed66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61b428c7caac6861c2d9124292f6ed66">&#9670;&#160;</a></span>SUDDENCHANGE_TIME_MULTIPLIER</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2786,7 +2976,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d4/dc3/classfloat.html">float</a> m_TemperatureInsideBuildingsModifier <a class="el" href="../../d4/dc3/classfloat.html">float</a> m_WaterContactTemperatureModifier protected <a class="el" href="../../d4/dc3/classfloat.html">float</a> SUDDENCHANGE_TIME_MULTIPLIER = 0.2</td>
+          <td class="memname">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a> SUDDENCHANGE_TIME_MULTIPLIER = 0.2</td>
         </tr>
       </table>
   </td>
@@ -2795,8 +2985,6 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>how many % of environment temperature can be lowered by clouds </p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d97/class_enoch_data.html#a36eac65c1c677546c5dd1ee899e071ae">EnochData::WeatherOnBeforeChange()</a>, and <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>.</p>
 

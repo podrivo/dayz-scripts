@@ -17,6 +17,7 @@ var class_grenade___base =
     [ "FlashGrenade", "d1/d48/class_grenade___base.html#afef0d6b92bb926c776f43b5ed2a0db5e", null ],
     [ "GetGrenadeType", "d1/d48/class_grenade___base.html#af2cf293a6c1a3b9314dca657c6e4f456", null ],
     [ "InitiateExplosion", "d1/d48/class_grenade___base.html#a71b002b4b5c530588e39d0638ddde7da", null ],
+    [ "InitSpecificsExplosionEffectForSurface", "d1/d48/class_grenade___base.html#a86436899f551bf991adc435fd991c8bb", null ],
     [ "IsPinnable", "d1/d48/class_grenade___base.html#aabc61918930d189d63a9314ad8eb14da", null ],
     [ "IsPinned", "d1/d48/class_grenade___base.html#ad6525060df2ff583b83a94aabbdb7d07", null ],
     [ "M67Grenade", "d1/d48/class_grenade___base.html#a54a5467ceeffd9ae8cabe17dfe0717dc", null ],

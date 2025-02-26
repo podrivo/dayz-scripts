@@ -2,8 +2,10 @@ var class_cfg_gameplay_handler =
 [
     [ "GetAllowRefillSpeedModifier", "d7/dbe/class_cfg_gameplay_handler.html#a5c69e7caa26ddacdf142701f65ce38c8", null ],
     [ "GetAllowStaminaAffectInertia", "d7/dbe/class_cfg_gameplay_handler.html#a0195a419f928dd323e5afe168d0f34bc", null ],
+    [ "GetBoatDecayMultiplier", "d7/dbe/class_cfg_gameplay_handler.html#a2c78e9b7aefdc57791d762cb3fd6d0d0", null ],
     [ "GetDisable2dMap", "d7/dbe/class_cfg_gameplay_handler.html#ab48d5bb9833f8b543858a6b82320c169", null ],
     [ "GetDisableBaseDamage", "d7/dbe/class_cfg_gameplay_handler.html#a36d03cd48e7dc597ca0427bec5651384", null ],
+    [ "GetDisableColdAreaPlacementCheck", "d7/dbe/class_cfg_gameplay_handler.html#aafed830d7405016b2e1197cba1a11fdc", null ],
     [ "GetDisableContainerDamage", "d7/dbe/class_cfg_gameplay_handler.html#ae1ec23c1a9658661505818f63b00afd4", null ],
     [ "GetDisableDistanceCheck", "d7/dbe/class_cfg_gameplay_handler.html#a0677660d0360b6bb5f04c2d5215db5fd", null ],
     [ "GetDisableHeightPlacementCheck", "d7/dbe/class_cfg_gameplay_handler.html#aba6b0ca2ecbe0a2e3d051f7ef99653c2", null ],

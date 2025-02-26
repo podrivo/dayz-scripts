@@ -25,6 +25,7 @@ var _state_manager_8c =
     [ "SYMPTOM_DEAFNESS_COMPLETE", "db/d8d/_state_manager_8c.html#ae4c83536abfc43bddb09c2b00ad3cf48", null ],
     [ "SYMPTOM_FEVERBLUR", "db/d8d/_state_manager_8c.html#a5fe1d2246d79520616bcb9aa04cfe3bd", null ],
     [ "SYMPTOM_FREEZE", "db/d8d/_state_manager_8c.html#a64a93ef17d8344f6ba6b361c061321b1", null ],
+    [ "SYMPTOM_FREEZE_RATTLE", "db/d8d/_state_manager_8c.html#aeb9fa6461b351d2d16878d86e8f5afd2", null ],
     [ "SYMPTOM_GASP", "db/d8d/_state_manager_8c.html#a3b15cff882af99880d81a87409d96fcc", null ],
     [ "SYMPTOM_HAND_SHIVER", "db/d8d/_state_manager_8c.html#a43803a4f76f8e047c690cd333b40c0ad", null ],
     [ "SYMPTOM_HMP_SEVERE", "db/d8d/_state_manager_8c.html#ac761615a6f6318ff9c7723da883b5ddc", null ],

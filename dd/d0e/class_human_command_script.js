@@ -1,6 +1,9 @@
 var class_human_command_script =
 [
     [ "AddHeadingRelativeTo", "dd/d0e/class_human_command_script.html#ab55632ce4f1d8ab1f807ba017cfea90e", null ],
+    [ "GetCurrentLeaning", "dd/d0e/class_human_command_script.html#ab3f2d851fda9b72a8aa9cd35eab168b3", null ],
+    [ "GetCurrentMovement", "dd/d0e/class_human_command_script.html#ab58c5c4e96322f512ec21d7353a46ae4", null ],
+    [ "GetCurrentStance", "dd/d0e/class_human_command_script.html#ad8c65a9215f8c85033cc996c7d621ae2", null ],
     [ "OnActivate", "dd/d0e/class_human_command_script.html#a106f4e7cb7e00a24f6fc24c4819a76c3", null ],
     [ "OnDeactivate", "dd/d0e/class_human_command_script.html#a3b701e8c012278766c1ce05f921ab16a", null ],
     [ "PostPhys_GetPosition", "dd/d0e/class_human_command_script.html#af69a50250ef7c434305653ebe178fedf", null ],

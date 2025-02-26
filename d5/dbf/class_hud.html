@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -173,6 +173,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:ad845fbb1b9e0f2f9fa80752df7d1ed05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd352d0186bd266491d643c0c3369e47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#afd352d0186bd266491d643c0c3369e47">OnResizeScreen</a> ()</td></tr>
 <tr class="separator:afd352d0186bd266491d643c0c3369e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd4ddc9ef00a445f2ca246bc0eaf8e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a6cd4ddc9ef00a445f2ca246bc0eaf8e8">OnPlayerLoaded</a> ()</td></tr>
+<tr class="separator:a6cd4ddc9ef00a445f2ca246bc0eaf8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af96ae806d814fb51dd7287c01554bfa9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#af96ae806d814fb51dd7287c01554bfa9">SetPermanentCrossHair</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> show)</td></tr>
 <tr class="separator:af96ae806d814fb51dd7287c01554bfa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3e387ec6daf49b89fd8f19f40ab0970"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ab3e387ec6daf49b89fd8f19f40ab0970">SpawnHitDirEffect</a> (<a class="el" href="../../db/d2e/class_day_z_player.html">DayZPlayer</a> player, <a class="el" href="../../d4/dc3/classfloat.html">float</a> hit_direction, <a class="el" href="../../d4/dc3/classfloat.html">float</a> intensity_max)</td></tr>
@@ -189,6 +191,12 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a91a34ab3b092cd9e32f42e275cd739a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a362b086e3e9e3414cbc1360e94e21264"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a362b086e3e9e3414cbc1360e94e21264">OnResizeScreen</a> ()</td></tr>
 <tr class="separator:a362b086e3e9e3414cbc1360e94e21264"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6a0ec2531d719b23b9be05448a68917"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#af6a0ec2531d719b23b9be05448a68917">OnPlayerLoaded</a> ()</td></tr>
+<tr class="separator:af6a0ec2531d719b23b9be05448a68917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac58827ea75afdcee38105ae3cb8610eb"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ac58827ea75afdcee38105ae3cb8610eb">OnUnconsciousStart</a> ()</td></tr>
+<tr class="separator:ac58827ea75afdcee38105ae3cb8610eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60cecdd5f498a03266bfd2f3958bb255"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a60cecdd5f498a03266bfd2f3958bb255">OnUnconsciousStop</a> ()</td></tr>
+<tr class="separator:a60cecdd5f498a03266bfd2f3958bb255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93c2b3696d380c75b1b09841df071843"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a93c2b3696d380c75b1b09841df071843">Show</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> show)</td></tr>
 <tr class="separator:a93c2b3696d380c75b1b09841df071843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ca1b63334ad7cc26e3bb24c142b91fa"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a2ca1b63334ad7cc26e3bb24c142b91fa">ShowWalkieTalkie</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> show)</td></tr>
@@ -245,24 +253,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:afdc22e3a1c1b96437330cf668c1990fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa22047f0e62045eee8ecbe195723946e"><td class="memItemLeft" align="right" valign="top">InventoryQuickbar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#aa22047f0e62045eee8ecbe195723946e">GetQuickbar</a> ()</td></tr>
 <tr class="separator:aa22047f0e62045eee8ecbe195723946e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e0d66b4323c213d7dd56f51ea3c9899"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a7e0d66b4323c213d7dd56f51ea3c9899">IsQuickbarVisible</a> ()</td></tr>
-<tr class="separator:a7e0d66b4323c213d7dd56f51ea3c9899"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6342d66dc36f10d8c762d92f572c3a42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a6342d66dc36f10d8c762d92f572c3a42">IsHudVisible</a> ()</td></tr>
-<tr class="separator:a6342d66dc36f10d8c762d92f572c3a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b23a05429c9624fb66531f878fa114c"><td class="memItemLeft" align="right" valign="top">IngameHudVisibility&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a7b23a05429c9624fb66531f878fa114c">GetHudVisibility</a> ()</td></tr>
+<tr class="separator:a7b23a05429c9624fb66531f878fa114c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c537c69fbf018892c8e6dc7a2feea1e"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a2c537c69fbf018892c8e6dc7a2feea1e">UpdateQuickbarGlobalVisibility</a> ()</td></tr>
 <tr class="separator:a2c537c69fbf018892c8e6dc7a2feea1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaff67b0c6f7d33e873ce90d6d3f83fa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#aaff67b0c6f7d33e873ce90d6d3f83fa4">RefreshQuickbarVisibility</a> ()</td></tr>
-<tr class="separator:aaff67b0c6f7d33e873ce90d6d3f83fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad61e9af47b46e78b742151390e7e1204"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ad61e9af47b46e78b742151390e7e1204">RefreshVehicleHudVisibility</a> ()</td></tr>
-<tr class="separator:ad61e9af47b46e78b742151390e7e1204"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a564331638c1ec5f2880f8ca8fa1e1f95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a564331638c1ec5f2880f8ca8fa1e1f95">RefreshHudVisibility</a> ()</td></tr>
-<tr class="separator:a564331638c1ec5f2880f8ca8fa1e1f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a808714af6f8479baf1e221a13efa55b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a808714af6f8479baf1e221a13efa55b7">UpdateSpecialtyMeter</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> <a class="el" href="../../dd/d4b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="el" href="../../d4/dc3/classfloat.html">float</a> <a class="el" href="../../dd/d4b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>)</td></tr>
-<tr class="separator:a808714af6f8479baf1e221a13efa55b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af47262be3e14e90bb11db0ea68326f22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#af47262be3e14e90bb11db0ea68326f22">IsHideQuickbarPlayer</a> ()</td></tr>
-<tr class="separator:af47262be3e14e90bb11db0ea68326f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4d87f9497a6ccefbd49533ce82bddaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#aa4d87f9497a6ccefbd49533ce82bddaa">IsHideHudPlayer</a> ()</td></tr>
-<tr class="separator:aa4d87f9497a6ccefbd49533ce82bddaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e472f4405fd6ea9871def5fcfdd7e53"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a1e472f4405fd6ea9871def5fcfdd7e53">ShowQuickbarUI</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> show)</td></tr>
 <tr class="separator:a1e472f4405fd6ea9871def5fcfdd7e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73c097f7aa9f7d4978670f9006d94f95"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a73c097f7aa9f7d4978670f9006d94f95">ShowQuickbarPlayer</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> show)</td></tr>
@@ -274,7 +268,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a6d61d393236c2e850602d657684fc389"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a6d61d393236c2e850602d657684fc389">ShowHudInventory</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> show)</td></tr>
 <tr class="separator:a6d61d393236c2e850602d657684fc389"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fb87ff2a84f9e748edc286e375a9919"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a7fb87ff2a84f9e748edc286e375a9919">ShowQuickBar</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> show)</td></tr>
-<tr class="memdesc:a7fb87ff2a84f9e748edc286e375a9919"><td class="mdescLeft">&#160;</td><td class="mdescRight">global setting; is quickbar visibility allowed?  <br /></td></tr>
+<tr class="memdesc:a7fb87ff2a84f9e748edc286e375a9919"><td class="mdescLeft">&#160;</td><td class="mdescRight">global setting -&gt; used to determine visibility based on platform  <br /></td></tr>
 <tr class="separator:a7fb87ff2a84f9e748edc286e375a9919"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7fc5818f0afe84869e2aa8ec2e791b2"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ab7fc5818f0afe84869e2aa8ec2e791b2">ShowHud</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> show)</td></tr>
 <tr class="separator:ab7fc5818f0afe84869e2aa8ec2e791b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -282,17 +276,10 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a47271e4554e59eafc7f2b9918b9eadb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">enter/exit driver seat  <br /></td></tr>
 <tr class="separator:a47271e4554e59eafc7f2b9918b9eadb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05bd72727edbd4720a4078fa505d753c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a05bd72727edbd4720a4078fa505d753c">SetVehicleHudDisabled</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> state)</td></tr>
-<tr class="memdesc:a05bd72727edbd4720a4078fa505d753c"><td class="mdescLeft">&#160;</td><td class="mdescRight">game settings option  <br /></td></tr>
+<tr class="memdesc:a05bd72727edbd4720a4078fa505d753c"><td class="mdescLeft">&#160;</td><td class="mdescRight">disable vehicle HUD through options menu  <br /></td></tr>
 <tr class="separator:a05bd72727edbd4720a4078fa505d753c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af438864a1c9f1c8b87db36c9f588be88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#af438864a1c9f1c8b87db36c9f588be88">GetQuickBarState</a> ()</td></tr>
-<tr class="separator:af438864a1c9f1c8b87db36c9f588be88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a829b5486037724df35dbf4b7db086d79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a829b5486037724df35dbf4b7db086d79">GetHudState</a> ()</td></tr>
-<tr class="separator:a829b5486037724df35dbf4b7db086d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac46e4dc3a65b4750f2db66d7fce7ab34"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ac46e4dc3a65b4750f2db66d7fce7ab34">SetConnectivityStatIcon</a> (<a class="el" href="../../df/df3/_e_game_state_icons_8c.html#a44918823dc85c87ef1f65cff856263de">EConnectivityStatType</a> type, EConnectivityStatLevel level)</td></tr>
 <tr class="separator:ac46e4dc3a65b4750f2db66d7fce7ab34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11c5eea1751c7c45c7db5a138438b7f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a11c5eea1751c7c45c7db5a138438b7f1">SetLeftStatsVisibility</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> visible)</td></tr>
-<tr class="memdesc:a11c5eea1751c7c45c7db5a138438b7f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">eg. stamina bar...  <br /></td></tr>
-<tr class="separator:a11c5eea1751c7c45c7db5a138438b7f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ecb9657ede4e1325fc51d3e43dffb0c"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a6ecb9657ede4e1325fc51d3e43dffb0c">RefreshQuickbar</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> itemChanged=false)</td></tr>
 <tr class="separator:a6ecb9657ede4e1325fc51d3e43dffb0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a04391165ec903c01b7bd0026fe6aab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a5a04391165ec903c01b7bd0026fe6aab">GetHudPanelWidget</a> ()</td></tr>
@@ -317,6 +304,28 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:ae1b2e01cd24e2e8b018c9615bd3c51b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63c366c689229ebbc4482813896280c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a63c366c689229ebbc4482813896280c7">HideQuickbarTimer</a> ()</td></tr>
 <tr class="separator:a63c366c689229ebbc4482813896280c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad61e9af47b46e78b742151390e7e1204"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ad61e9af47b46e78b742151390e7e1204">RefreshVehicleHudVisibility</a> ()</td></tr>
+<tr class="separator:ad61e9af47b46e78b742151390e7e1204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaff67b0c6f7d33e873ce90d6d3f83fa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#aaff67b0c6f7d33e873ce90d6d3f83fa4">RefreshQuickbarVisibility</a> ()</td></tr>
+<tr class="separator:aaff67b0c6f7d33e873ce90d6d3f83fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a564331638c1ec5f2880f8ca8fa1e1f95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a564331638c1ec5f2880f8ca8fa1e1f95">RefreshHudVisibility</a> ()</td></tr>
+<tr class="separator:a564331638c1ec5f2880f8ca8fa1e1f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a808714af6f8479baf1e221a13efa55b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a808714af6f8479baf1e221a13efa55b7">UpdateSpecialtyMeter</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> <a class="el" href="../../dd/d4b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="el" href="../../d4/dc3/classfloat.html">float</a> <a class="el" href="../../dd/d4b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>)</td></tr>
+<tr class="separator:a808714af6f8479baf1e221a13efa55b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11c5eea1751c7c45c7db5a138438b7f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a11c5eea1751c7c45c7db5a138438b7f1">SetLeftStatsVisibility</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> visible)</td></tr>
+<tr class="separator:a11c5eea1751c7c45c7db5a138438b7f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e0d66b4323c213d7dd56f51ea3c9899"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a7e0d66b4323c213d7dd56f51ea3c9899">IsQuickbarVisible</a> ()</td></tr>
+<tr class="separator:a7e0d66b4323c213d7dd56f51ea3c9899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af47262be3e14e90bb11db0ea68326f22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#af47262be3e14e90bb11db0ea68326f22">IsHideQuickbarPlayer</a> ()</td></tr>
+<tr class="separator:af47262be3e14e90bb11db0ea68326f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af438864a1c9f1c8b87db36c9f588be88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#af438864a1c9f1c8b87db36c9f588be88">GetQuickBarState</a> ()</td></tr>
+<tr class="separator:af438864a1c9f1c8b87db36c9f588be88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6342d66dc36f10d8c762d92f572c3a42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a6342d66dc36f10d8c762d92f572c3a42">IsHudVisible</a> ()</td></tr>
+<tr class="separator:a6342d66dc36f10d8c762d92f572c3a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4d87f9497a6ccefbd49533ce82bddaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#aa4d87f9497a6ccefbd49533ce82bddaa">IsHideHudPlayer</a> ()</td></tr>
+<tr class="separator:aa4d87f9497a6ccefbd49533ce82bddaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a829b5486037724df35dbf4b7db086d79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a829b5486037724df35dbf4b7db086d79">GetHudState</a> ()</td></tr>
+<tr class="separator:a829b5486037724df35dbf4b7db086d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -346,8 +355,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a936b44e0c9b571f2b96dc0d09c0a2dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd57909200152deb4443317ba801dce9"><td class="memItemLeft" align="right" valign="top">protected ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt; <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>, ImageWidget &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#abd57909200152deb4443317ba801dce9">m_BadgesWidgets</a></td></tr>
 <tr class="separator:abd57909200152deb4443317ba801dce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b9c1d1bf01b4fccf4d2586f7c1ad45c"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a7b9c1d1bf01b4fccf4d2586f7c1ad45c">m_AnyBadgeVisible</a></td></tr>
-<tr class="separator:a7b9c1d1bf01b4fccf4d2586f7c1ad45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5707dac29266f9b8d690a346354e475c"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a5707dac29266f9b8d690a346354e475c">m_IsTemperatureVisible</a></td></tr>
 <tr class="separator:a5707dac29266f9b8d690a346354e475c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70d972fd1b33611439321807b2c662fe"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a70d972fd1b33611439321807b2c662fe">m_TemperatureTimer</a></td></tr>
@@ -362,72 +369,16 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a3c3f7e803c4d4c8f9dbe91bf8b0e7da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe028290ab08e9fba96e45ae67f51226"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#abe028290ab08e9fba96e45ae67f51226">m_StaminaShowTime</a> = 0.15</td></tr>
 <tr class="separator:abe028290ab08e9fba96e45ae67f51226"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a501e3630a65e3fc31861d956e84a1053"><td class="memItemLeft" align="right" valign="top">protected ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt; <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>, <a class="el" href="../../d5/d92/classstring.html">string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a501e3630a65e3fc31861d956e84a1053">m_VehicleGearTable</a></td></tr>
-<tr class="separator:a501e3630a65e3fc31861d956e84a1053"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a71f83d9b15e35add0a1db35e4cf06a"><td class="memItemLeft" align="right" valign="top">protected ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt; <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>, <a class="el" href="../../d5/d92/classstring.html">string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a8a71f83d9b15e35add0a1db35e4cf06a">m_VehicleGearTableAuto</a></td></tr>
-<tr class="separator:a8a71f83d9b15e35add0a1db35e4cf06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0495c098dd163cee578640105388159"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ab0495c098dd163cee578640105388159">m_HudPanelWidget</a></td></tr>
 <tr class="separator:ab0495c098dd163cee578640105388159"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fcd1f39fd1be3f58adc51f0ccd6969a"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a7fcd1f39fd1be3f58adc51f0ccd6969a">m_LeftHudPanelWidget</a></td></tr>
-<tr class="separator:a7fcd1f39fd1be3f58adc51f0ccd6969a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a700dfbfec6d2000efc57ca86ee4e3915"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a700dfbfec6d2000efc57ca86ee4e3915">m_PlayerPanelWidget</a></td></tr>
-<tr class="separator:a700dfbfec6d2000efc57ca86ee4e3915"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a131dc7e21d492c67a96d8a5bbb699674"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a131dc7e21d492c67a96d8a5bbb699674">m_QuickbarWidget</a></td></tr>
 <tr class="separator:a131dc7e21d492c67a96d8a5bbb699674"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33ef165984f9a887465389323d8bbaa1"><td class="memItemLeft" align="right" valign="top">protected ref InventoryQuickbar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a33ef165984f9a887465389323d8bbaa1">m_Quickbar</a></td></tr>
-<tr class="separator:a33ef165984f9a887465389323d8bbaa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26ad366b6cf2c44ec5d163bfc2bbff9f"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a26ad366b6cf2c44ec5d163bfc2bbff9f">m_VehiclePanel</a></td></tr>
-<tr class="separator:a26ad366b6cf2c44ec5d163bfc2bbff9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87da815828132f45d280c574e59041bb"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a87da815828132f45d280c574e59041bb">m_VehicleHudPanels</a></td></tr>
 <tr class="separator:a87da815828132f45d280c574e59041bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2de8900d12c130b17949b0f80cfa97f"><td class="memItemLeft" align="right" valign="top">protected ImageWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ae2de8900d12c130b17949b0f80cfa97f">m_VehicleRPMPointer</a></td></tr>
-<tr class="separator:ae2de8900d12c130b17949b0f80cfa97f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab563f9ab519748735b84be66325f191f"><td class="memItemLeft" align="right" valign="top">protected ImageWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ab563f9ab519748735b84be66325f191f">m_VehicleRPMDial</a></td></tr>
-<tr class="separator:ab563f9ab519748735b84be66325f191f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa465c2612d592128eededca539808362"><td class="memItemLeft" align="right" valign="top">protected ImageWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#aa465c2612d592128eededca539808362">m_VehicleRPMRedline</a></td></tr>
-<tr class="separator:aa465c2612d592128eededca539808362"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03c82e85e01f8f40184fcb92ee019f3d"><td class="memItemLeft" align="right" valign="top">protected ImageWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a03c82e85e01f8f40184fcb92ee019f3d">m_VehicleSpeedPointer</a></td></tr>
-<tr class="separator:a03c82e85e01f8f40184fcb92ee019f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd81b7c31c658a02f50e23b1850b79d5"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#abd81b7c31c658a02f50e23b1850b79d5">m_VehicleTemperatureIndicator</a></td></tr>
-<tr class="separator:abd81b7c31c658a02f50e23b1850b79d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f9ddc42c6489e6f8215ac043b0ff00e"><td class="memItemLeft" align="right" valign="top">protected ImageWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a6f9ddc42c6489e6f8215ac043b0ff00e">m_VehicleTemperaturePointer</a></td></tr>
-<tr class="separator:a6f9ddc42c6489e6f8215ac043b0ff00e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cd1a46c9ff9a1eb61c1ba2797941b7e"><td class="memItemLeft" align="right" valign="top">protected ImageWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a9cd1a46c9ff9a1eb61c1ba2797941b7e">m_VehicleTemperatureLight</a></td></tr>
-<tr class="separator:a9cd1a46c9ff9a1eb61c1ba2797941b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af50b0ecd14f74ff84f9fc1423809ddf1"><td class="memItemLeft" align="right" valign="top">protected ImageWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#af50b0ecd14f74ff84f9fc1423809ddf1">m_VehicleFuelPointer</a></td></tr>
-<tr class="separator:af50b0ecd14f74ff84f9fc1423809ddf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba9fa218b0aa3883de7e93c131976960"><td class="memItemLeft" align="right" valign="top">protected ImageWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#aba9fa218b0aa3883de7e93c131976960">m_VehicleFuelLight</a></td></tr>
-<tr class="separator:aba9fa218b0aa3883de7e93c131976960"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17f2ba593ab28cde43d3e3c3cc86c220"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../da/dbc/class_text_widget.html">TextWidget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a17f2ba593ab28cde43d3e3c3cc86c220">m_VehicleSpeedValue</a></td></tr>
-<tr class="separator:a17f2ba593ab28cde43d3e3c3cc86c220"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bd13f6e41194db6a6e051fdba1ee716"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../da/dbc/class_text_widget.html">TextWidget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a5bd13f6e41194db6a6e051fdba1ee716">m_VehicleCurrentGearValue</a></td></tr>
-<tr class="separator:a5bd13f6e41194db6a6e051fdba1ee716"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d7c03b6a6c93831be44f4b68135b573"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../da/dbc/class_text_widget.html">TextWidget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a5d7c03b6a6c93831be44f4b68135b573">m_VehicleNextGearValue</a></td></tr>
-<tr class="separator:a5d7c03b6a6c93831be44f4b68135b573"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2f839f18e6b50223396d315aede9aa1"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../da/dbc/class_text_widget.html">TextWidget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#aa2f839f18e6b50223396d315aede9aa1">m_VehiclePrevGearValue</a></td></tr>
-<tr class="separator:aa2f839f18e6b50223396d315aede9aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0400cd0c26cf405ef3835de02ff91ad"><td class="memItemLeft" align="right" valign="top">protected ImageWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ab0400cd0c26cf405ef3835de02ff91ad">m_VehicleBatteryLight</a></td></tr>
-<tr class="separator:ab0400cd0c26cf405ef3835de02ff91ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a1c1424414fa1fff6385d2861933c78"><td class="memItemLeft" align="right" valign="top">protected ImageWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a3a1c1424414fa1fff6385d2861933c78">m_VehicleEngineLight</a></td></tr>
-<tr class="separator:a3a1c1424414fa1fff6385d2861933c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8ddebffb8dea414f1d6ee3eb6fa8cc5"><td class="memItemLeft" align="right" valign="top">protected ImageWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ae8ddebffb8dea414f1d6ee3eb6fa8cc5">m_VehicleOilLight</a></td></tr>
-<tr class="separator:ae8ddebffb8dea414f1d6ee3eb6fa8cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc97c678daa0fb0ae5cb7706e4f9d7f5"><td class="memItemLeft" align="right" valign="top">protected ImageWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#abc97c678daa0fb0ae5cb7706e4f9d7f5">m_VehicleHandBrakeLight</a></td></tr>
-<tr class="separator:abc97c678daa0fb0ae5cb7706e4f9d7f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34821343253ae5664907af18403532ed"><td class="memItemLeft" align="right" valign="top">protected ImageWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a34821343253ae5664907af18403532ed">m_VehicleWheelLight</a></td></tr>
-<tr class="separator:a34821343253ae5664907af18403532ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfc19fab13fa5ba28dde5586ffefe0a6"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#abfc19fab13fa5ba28dde5586ffefe0a6">m_VehicleDamageZoneHitEngineState</a></td></tr>
-<tr class="separator:abfc19fab13fa5ba28dde5586ffefe0a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66506102368f95d5303461736faba0f4"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a66506102368f95d5303461736faba0f4">m_VehicleDamageZonesHitTimer</a></td></tr>
-<tr class="separator:a66506102368f95d5303461736faba0f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81721cbf9762be1de61b69c5350fef95"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a81721cbf9762be1de61b69c5350fef95">m_InVehicleAsDriver</a></td></tr>
-<tr class="separator:a81721cbf9762be1de61b69c5350fef95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e6c4405b312c3eff40e740b28a25729"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../de/d59/class_car_script.html">CarScript</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a4e6c4405b312c3eff40e740b28a25729">m_CurrentVehicle</a></td></tr>
-<tr class="separator:a4e6c4405b312c3eff40e740b28a25729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33ef165984f9a887465389323d8bbaa1"><td class="memItemLeft" align="right" valign="top">protected ref InventoryQuickbar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a33ef165984f9a887465389323d8bbaa1">m_Quickbar</a></td></tr>
+<tr class="separator:a33ef165984f9a887465389323d8bbaa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55da335c72b4aab30f8d2bcbc1772147"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d0/db6/class_vehicle_hud_base.html">VehicleHudBase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a55da335c72b4aab30f8d2bcbc1772147">m_ActiveVehicleHUD</a></td></tr>
 <tr class="separator:a55da335c72b4aab30f8d2bcbc1772147"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a246c83a0870232227751f0b0aa13f2d4"><td class="memItemLeft" align="right" valign="top">protected ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d0/db6/class_vehicle_hud_base.html">VehicleHudBase</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a246c83a0870232227751f0b0aa13f2d4">m_VehicleHudArray</a></td></tr>
-<tr class="separator:a246c83a0870232227751f0b0aa13f2d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b2352ee72b351b94d0e3e9f4c0988cc"><td class="memItemLeft" align="right" valign="top">protected ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt; <a class="el" href="../../d5/d92/classstring.html">string</a>, ref <a class="el" href="../../d0/db6/class_vehicle_hud_base.html">VehicleHudBase</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a3b2352ee72b351b94d0e3e9f4c0988cc">m_VehicleHudMap</a></td></tr>
 <tr class="separator:a3b2352ee72b351b94d0e3e9f4c0988cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3163f47dbcd05257637a919259463eb"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#af3163f47dbcd05257637a919259463eb">m_GameStatusIconsPanel</a></td></tr>
@@ -448,8 +399,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aba2ee603c06267f46f7b56e7115f1bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad737b82f9ed9c9ff802e35f9fc4131f5"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../da/dbc/class_text_widget.html">TextWidget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ad737b82f9ed9c9ff802e35f9fc4131f5">m_BloodPosType</a></td></tr>
 <tr class="separator:ad737b82f9ed9c9ff802e35f9fc4131f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ae35a15e7f380801294b16498c44834"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a3ae35a15e7f380801294b16498c44834">m_BadgeNotifierDivider</a></td></tr>
-<tr class="separator:a3ae35a15e7f380801294b16498c44834"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9b87ed12c60ecd1ae17f80aa844b55d"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#af9b87ed12c60ecd1ae17f80aa844b55d">m_Badges</a></td></tr>
 <tr class="separator:af9b87ed12c60ecd1ae17f80aa844b55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fd3396b88b3bd4bccb3d50c4e4da9d8"><td class="memItemLeft" align="right" valign="top">protected ref <a class="el" href="../../d8/d08/class_timer.html">Timer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a2fd3396b88b3bd4bccb3d50c4e4da9d8">m_HideTimer</a></td></tr>
@@ -488,8 +437,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a5afffa01aa2b1215d936ca1be4ddf33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8d3bbadcbf4fe598487df463418a644"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ac8d3bbadcbf4fe598487df463418a644">m_StanceCar</a></td></tr>
 <tr class="separator:ac8d3bbadcbf4fe598487df463418a644"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefd86ba3a91bdce5d1bf68438a35d326"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#aefd86ba3a91bdce5d1bf68438a35d326">m_StancePanel</a></td></tr>
-<tr class="separator:aefd86ba3a91bdce5d1bf68438a35d326"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf843457c81c3fcaed47bb0b53646e1d"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#acf843457c81c3fcaed47bb0b53646e1d">m_PresenceLevel0</a></td></tr>
 <tr class="separator:acf843457c81c3fcaed47bb0b53646e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9387670fb308d86ce223ccd85f1453aa"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a9387670fb308d86ce223ccd85f1453aa">m_PresenceLevel1</a></td></tr>
@@ -548,32 +495,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a47fc56632c59d169f8b401eda8dd962c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b5e46b35556e3c3d3d81c6e1ffbe68c"><td class="memItemLeft" align="right" valign="top">protected ImageWidget&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a5b5e46b35556e3c3d3d81c6e1ffbe68c">m_PermanentCrossHair</a></td></tr>
 <tr class="separator:a5b5e46b35556e3c3d3d81c6e1ffbe68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afec998313b68936cca0f19cf52589c1f"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#afec998313b68936cca0f19cf52589c1f">m_HudHideUI</a></td></tr>
-<tr class="separator:afec998313b68936cca0f19cf52589c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87b9fd2d8391c8d4bd9e1f24d29bd7b2"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a87b9fd2d8391c8d4bd9e1f24d29bd7b2">m_HudHidePlayer</a></td></tr>
-<tr class="separator:a87b9fd2d8391c8d4bd9e1f24d29bd7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d1402333c5f9cda0cfbe7bf26e791c6"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a1d1402333c5f9cda0cfbe7bf26e791c6">m_HudInventory</a></td></tr>
-<tr class="separator:a1d1402333c5f9cda0cfbe7bf26e791c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b0e3883a293eeaa5a24c39dee14adac"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a6b0e3883a293eeaa5a24c39dee14adac">m_HudState</a></td></tr>
-<tr class="separator:a6b0e3883a293eeaa5a24c39dee14adac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0160f7c4dde6323f4cdac3ffe810b0f8"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a0160f7c4dde6323f4cdac3ffe810b0f8">m_VehicleHudState</a></td></tr>
-<tr class="separator:a0160f7c4dde6323f4cdac3ffe810b0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7377622725ca70d00544bdca4866b21d"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a7377622725ca70d00544bdca4866b21d">m_VehicleHudDisabled</a></td></tr>
-<tr class="separator:a7377622725ca70d00544bdca4866b21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f308afaf3e09f2b64aeb4986c650e14"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a1f308afaf3e09f2b64aeb4986c650e14">m_IsVehicleHudVisible</a></td></tr>
-<tr class="separator:a1f308afaf3e09f2b64aeb4986c650e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62854e3cdb81698e687cb0376a3a648b"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a62854e3cdb81698e687cb0376a3a648b">m_QuickbarHideUI</a></td></tr>
-<tr class="separator:a62854e3cdb81698e687cb0376a3a648b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b79ea77c1350b0be5ec592e558bc77e"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a7b79ea77c1350b0be5ec592e558bc77e">m_QuickbarHidePlayer</a></td></tr>
-<tr class="separator:a7b79ea77c1350b0be5ec592e558bc77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99b9df1d2967aad74c790dc9b34dfc22"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a99b9df1d2967aad74c790dc9b34dfc22">m_QuickbarState</a></td></tr>
-<tr class="separator:a99b9df1d2967aad74c790dc9b34dfc22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f0c4e12a12cf91fce00ce2f5ffdfd53"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a0f0c4e12a12cf91fce00ce2f5ffdfd53">m_IsQuickbarVisible</a></td></tr>
-<tr class="separator:a0f0c4e12a12cf91fce00ce2f5ffdfd53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cad7bf92817a87b7494316c4e82089e"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a4cad7bf92817a87b7494316c4e82089e">m_IsHudVisible</a></td></tr>
-<tr class="separator:a4cad7bf92817a87b7494316c4e82089e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affebc0318aea66d0ea71495ce06db4ba"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#affebc0318aea66d0ea71495ce06db4ba">m_Faded</a></td></tr>
-<tr class="separator:affebc0318aea66d0ea71495ce06db4ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6c2513623e0e7836a5aa2b870af1583"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ae6c2513623e0e7836a5aa2b870af1583">m_ZeroingKeyPressed</a></td></tr>
 <tr class="separator:ae6c2513623e0e7836a5aa2b870af1583"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58cef000274a8f2fe25f130267d6a074"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a58cef000274a8f2fe25f130267d6a074">m_HitIndicatorUp</a></td></tr>
@@ -586,22 +507,12 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a25045be9d87e3121a03a4c1368a75c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7aa19126369ca903904eaa6cdaff6c8"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ad7aa19126369ca903904eaa6cdaff6c8">m_HitIndicatorSingle</a></td></tr>
 <tr class="separator:ad7aa19126369ca903904eaa6cdaff6c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09f035d99dba7dfbe902b721a85ee863"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a09f035d99dba7dfbe902b721a85ee863">m_SpecializatonPanel</a></td></tr>
-<tr class="separator:a09f035d99dba7dfbe902b721a85ee863"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45f50b67c9d2c63301c61c3b2cfd9912"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a45f50b67c9d2c63301c61c3b2cfd9912">m_SpecializationIcon</a></td></tr>
-<tr class="separator:a45f50b67c9d2c63301c61c3b2cfd9912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5fc2f97ab3e07445a9f54cbc571f468"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; ref <a class="el" href="../../dc/d39/class_hit_direction_effect_base.html">HitDirectionEffectBase</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#ad5fc2f97ab3e07445a9f54cbc571f468">m_HitDirEffectArray</a></td></tr>
 <tr class="separator:ad5fc2f97ab3e07445a9f54cbc571f468"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e9443ab5b906beb5883234f1e59992f"><td class="memItemLeft" align="right" valign="top">protected ref <a class="el" href="../../de/d18/class_ingame_hud_heat_buffer.html">IngameHudHeatBuffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a2e9443ab5b906beb5883234f1e59992f">m_HeatBufferUI</a></td></tr>
 <tr class="separator:a2e9443ab5b906beb5883234f1e59992f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5d791de80b4033502a1f7ec28795ea7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#aa5d791de80b4033502a1f7ec28795ea7">m_VehicleGearCount</a> = -1</td></tr>
-<tr class="separator:aa5d791de80b4033502a1f7ec28795ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4af0f6fad7f1ca9d0c9fe40979d1f737"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a4af0f6fad7f1ca9d0c9fe40979d1f737">m_TimeSinceLastEngineLightChange</a></td></tr>
-<tr class="separator:a4af0f6fad7f1ca9d0c9fe40979d1f737"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43e7541572509c3543a976353b433480"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a43e7541572509c3543a976353b433480">m_VehicleHasOil</a></td></tr>
-<tr class="separator:a43e7541572509c3543a976353b433480"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af36d242cb9809c25c22b989e63db6bb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#af36d242cb9809c25c22b989e63db6bb4">m_VehicleHasCoolant</a></td></tr>
-<tr class="separator:af36d242cb9809c25c22b989e63db6bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af79c2e02ce3bcea83426c081e681e799"><td class="memItemLeft" align="right" valign="top">protected ref IngameHudVisibility&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#af79c2e02ce3bcea83426c081e681e799">m_HudVisibility</a></td></tr>
+<tr class="separator:af79c2e02ce3bcea83426c081e681e799"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9609481c211bdb94fd506aa858938df7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a9609481c211bdb94fd506aa858938df7">m_PlayerSpineIndex</a></td></tr>
 <tr class="separator:a9609481c211bdb94fd506aa858938df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a239cc96dc5204660cf3e1c9e665b6684"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a239cc96dc5204660cf3e1c9e665b6684">m_CurrentTaggedPlayer</a></td></tr>
@@ -610,6 +521,60 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ae91def45dfb6e9e69db48d6fa809bc29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6b3e894b887b1d4b346d0f12a9d924a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dbc/class_text_widget.html">TextWidget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#aa6b3e894b887b1d4b346d0f12a9d924a">m_PlayerTagText</a></td></tr>
 <tr class="separator:aa6b3e894b887b1d4b346d0f12a9d924a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26ad366b6cf2c44ec5d163bfc2bbff9f"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a26ad366b6cf2c44ec5d163bfc2bbff9f">m_VehiclePanel</a></td></tr>
+<tr class="separator:a26ad366b6cf2c44ec5d163bfc2bbff9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fcd1f39fd1be3f58adc51f0ccd6969a"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a7fcd1f39fd1be3f58adc51f0ccd6969a">m_LeftHudPanelWidget</a></td></tr>
+<tr class="separator:a7fcd1f39fd1be3f58adc51f0ccd6969a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a700dfbfec6d2000efc57ca86ee4e3915"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a700dfbfec6d2000efc57ca86ee4e3915">m_PlayerPanelWidget</a></td></tr>
+<tr class="separator:a700dfbfec6d2000efc57ca86ee4e3915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefd86ba3a91bdce5d1bf68438a35d326"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#aefd86ba3a91bdce5d1bf68438a35d326">m_StancePanel</a></td></tr>
+<tr class="separator:aefd86ba3a91bdce5d1bf68438a35d326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f035d99dba7dfbe902b721a85ee863"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a09f035d99dba7dfbe902b721a85ee863">m_SpecializatonPanel</a></td></tr>
+<tr class="separator:a09f035d99dba7dfbe902b721a85ee863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45f50b67c9d2c63301c61c3b2cfd9912"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a45f50b67c9d2c63301c61c3b2cfd9912">m_SpecializationIcon</a></td></tr>
+<tr class="separator:a45f50b67c9d2c63301c61c3b2cfd9912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ae35a15e7f380801294b16498c44834"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a3ae35a15e7f380801294b16498c44834">m_BadgeNotifierDivider</a></td></tr>
+<tr class="separator:a3ae35a15e7f380801294b16498c44834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0160f7c4dde6323f4cdac3ffe810b0f8"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a0160f7c4dde6323f4cdac3ffe810b0f8">m_VehicleHudState</a></td></tr>
+<tr class="separator:a0160f7c4dde6323f4cdac3ffe810b0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7377622725ca70d00544bdca4866b21d"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a7377622725ca70d00544bdca4866b21d">m_VehicleHudDisabled</a></td></tr>
+<tr class="separator:a7377622725ca70d00544bdca4866b21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f308afaf3e09f2b64aeb4986c650e14"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a1f308afaf3e09f2b64aeb4986c650e14">m_IsVehicleHudVisible</a></td></tr>
+<tr class="separator:a1f308afaf3e09f2b64aeb4986c650e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b9c1d1bf01b4fccf4d2586f7c1ad45c"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a7b9c1d1bf01b4fccf4d2586f7c1ad45c">m_AnyBadgeVisible</a></td></tr>
+<tr class="separator:a7b9c1d1bf01b4fccf4d2586f7c1ad45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f0c4e12a12cf91fce00ce2f5ffdfd53"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a0f0c4e12a12cf91fce00ce2f5ffdfd53">m_IsQuickbarVisible</a></td></tr>
+<tr class="separator:a0f0c4e12a12cf91fce00ce2f5ffdfd53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62854e3cdb81698e687cb0376a3a648b"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a62854e3cdb81698e687cb0376a3a648b">m_QuickbarHideUI</a></td></tr>
+<tr class="separator:a62854e3cdb81698e687cb0376a3a648b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b79ea77c1350b0be5ec592e558bc77e"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a7b79ea77c1350b0be5ec592e558bc77e">m_QuickbarHidePlayer</a></td></tr>
+<tr class="separator:a7b79ea77c1350b0be5ec592e558bc77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99b9df1d2967aad74c790dc9b34dfc22"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a99b9df1d2967aad74c790dc9b34dfc22">m_QuickbarState</a></td></tr>
+<tr class="separator:a99b9df1d2967aad74c790dc9b34dfc22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afec998313b68936cca0f19cf52589c1f"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#afec998313b68936cca0f19cf52589c1f">m_HudHideUI</a></td></tr>
+<tr class="separator:afec998313b68936cca0f19cf52589c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87b9fd2d8391c8d4bd9e1f24d29bd7b2"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a87b9fd2d8391c8d4bd9e1f24d29bd7b2">m_HudHidePlayer</a></td></tr>
+<tr class="separator:a87b9fd2d8391c8d4bd9e1f24d29bd7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d1402333c5f9cda0cfbe7bf26e791c6"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a1d1402333c5f9cda0cfbe7bf26e791c6">m_HudInventory</a></td></tr>
+<tr class="separator:a1d1402333c5f9cda0cfbe7bf26e791c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b0e3883a293eeaa5a24c39dee14adac"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a6b0e3883a293eeaa5a24c39dee14adac">m_HudState</a></td></tr>
+<tr class="separator:a6b0e3883a293eeaa5a24c39dee14adac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cad7bf92817a87b7494316c4e82089e"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a4cad7bf92817a87b7494316c4e82089e">m_IsHudVisible</a></td></tr>
+<tr class="separator:a4cad7bf92817a87b7494316c4e82089e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affebc0318aea66d0ea71495ce06db4ba"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#affebc0318aea66d0ea71495ce06db4ba">m_Faded</a></td></tr>
+<tr class="separator:affebc0318aea66d0ea71495ce06db4ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6040074abb7f24dbd66804430f35e177"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a6040074abb7f24dbd66804430f35e177">m_IsInVehicle</a></td></tr>
+<tr class="separator:a6040074abb7f24dbd66804430f35e177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a246c83a0870232227751f0b0aa13f2d4"><td class="memItemLeft" align="right" valign="top">protected ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d0/db6/class_vehicle_hud_base.html">VehicleHudBase</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a246c83a0870232227751f0b0aa13f2d4">m_VehicleHudArray</a></td></tr>
+<tr class="separator:a246c83a0870232227751f0b0aa13f2d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5d791de80b4033502a1f7ec28795ea7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#aa5d791de80b4033502a1f7ec28795ea7">m_VehicleGearCount</a> = -1</td></tr>
+<tr class="separator:aa5d791de80b4033502a1f7ec28795ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4af0f6fad7f1ca9d0c9fe40979d1f737"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a4af0f6fad7f1ca9d0c9fe40979d1f737">m_TimeSinceLastEngineLightChange</a></td></tr>
+<tr class="separator:a4af0f6fad7f1ca9d0c9fe40979d1f737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43e7541572509c3543a976353b433480"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#a43e7541572509c3543a976353b433480">m_VehicleHasOil</a></td></tr>
+<tr class="separator:a43e7541572509c3543a976353b433480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af36d242cb9809c25c22b989e63db6bb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dbf/class_hud.html#af36d242cb9809c25c22b989e63db6bb4">m_VehicleHasCoolant</a></td></tr>
+<tr class="separator:af36d242cb9809c25c22b989e63db6bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a4db8768c37c868b5b1ed5a8f3d200bd8" name="a4db8768c37c868b5b1ed5a8f3d200bd8"></a>
@@ -738,7 +703,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../dc/df1/4___world_2_classes_2_virtual_hud_2__constants_8c.html#aca403666773117874fdd8c73e16dd77c">NTFKEY_BLEEDISH</a>, and <a class="el" href="../../d5/dbf/class_hud.html#a564331638c1ec5f2880f8ca8fa1e1f95">RefreshHudVisibility()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, and <a class="el" href="../../dc/df1/4___world_2_classes_2_virtual_hud_2__constants_8c.html#aca403666773117874fdd8c73e16dd77c">NTFKEY_BLEEDISH</a>.</p>
 
 </div>
 </div>
@@ -1082,7 +1047,34 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#a6b0e3883a293eeaa5a24c39dee14adac">m_HudState</a>.</p>
+</div>
+</div>
+<a id="a7b23a05429c9624fb66531f878fa114c" name="a7b23a05429c9624fb66531f878fa114c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b23a05429c9624fb66531f878fa114c">&#9670;&#160;</a></span>GetHudVisibility()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IngameHudVisibility GetHudVisibility </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#af79c2e02ce3bcea83426c081e681e799">m_HudVisibility</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/class_mission_base.html#a7ab491bf0e44a0d24c1709d8822652d8">MissionBase::OnUpdate()</a>, and <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#afa987720726641f19abf9973713646a5">ScriptedWidgetEventHandler::Update()</a>.</p>
 
 </div>
 </div>
@@ -1135,8 +1127,6 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#a99b9df1d2967aad74c790dc9b34dfc22">m_QuickbarState</a>.</p>
 
 </div>
 </div>
@@ -1208,7 +1198,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1294,7 +1284,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d0/db6/class_vehicle_hud_base.html#a3ad68358aad7574e066784440c4892f4">VehicleHudBase::HideVehicleInfo()</a>, and <a class="el" href="../../d5/dbf/class_hud.html#a47271e4554e59eafc7f2b9918b9eadb4">ShowVehicleHud()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/db6/class_vehicle_hud_base.html#a3e68cb23a91a266819a24d0a19e82de1">VehicleHudBase::HidePanel()</a>, <a class="el" href="../../d0/db6/class_vehicle_hud_base.html#a3ad68358aad7574e066784440c4892f4">VehicleHudBase::HideVehicleInfo()</a>, and <a class="el" href="../../d5/dbf/class_hud.html#a47271e4554e59eafc7f2b9918b9eadb4">ShowVehicleHud()</a>.</p>
 
 </div>
 </div>
@@ -1376,7 +1366,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>gets scripted handler from widget</p>
 
-<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#ga32e05515215d4ff50969513ff6d88310">CALL_CATEGORY_GAMEPLAY</a>, <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d5/dbf/class_hud.html#ada48cbf2a24f0db4b41c75653d172ba5">InitBadgesAndNotifiers()</a>, <a class="el" href="../../d5/d6f/_plugin_lifespan_8c.html#aa6cf8142ec32a8635b0d31ea0bc338c2">m_BloodType</a>, <a class="el" href="../../d5/d4d/_notifiers_manager_8c.html#ac75f7d00c32013052bbba687fe608d38">m_Notifiers</a>, <a class="el" href="../../d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a131dc7e21d492c67a96d8a5bbb699674">m_QuickbarWidget</a>, <a class="el" href="../../d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a45f50b67c9d2c63301c61c3b2cfd9912">m_SpecializationIcon</a>, <a class="el" href="../../dd/de6/_stamina_sound_handler_8c.html#ada43ad83bfe5873c4363c42050196493">m_Stamina</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#ade208a99b4d0ba9d762ce532f7e5d709">m_Timer</a>, <a class="el" href="../../d5/dbf/class_hud.html#a3b2352ee72b351b94d0e3e9f4c0988cc">m_VehicleHudMap</a>, and <a class="el" href="../../d5/dbf/class_hud.html#a11c5eea1751c7c45c7db5a138438b7f1">SetLeftStatsVisibility()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#ga32e05515215d4ff50969513ff6d88310">CALL_CATEGORY_GAMEPLAY</a>, <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d5/dbf/class_hud.html#ada48cbf2a24f0db4b41c75653d172ba5">InitBadgesAndNotifiers()</a>, <a class="el" href="../../d5/d6f/_plugin_lifespan_8c.html#aa6cf8142ec32a8635b0d31ea0bc338c2">m_BloodType</a>, <a class="el" href="../../d5/d4d/_notifiers_manager_8c.html#ac75f7d00c32013052bbba687fe608d38">m_Notifiers</a>, <a class="el" href="../../d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a131dc7e21d492c67a96d8a5bbb699674">m_QuickbarWidget</a>, <a class="el" href="../../dd/de6/_stamina_sound_handler_8c.html#ada43ad83bfe5873c4363c42050196493">m_Stamina</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#ade208a99b4d0ba9d762ce532f7e5d709">m_Timer</a>, <a class="el" href="../../d5/dbf/class_hud.html#a3b2352ee72b351b94d0e3e9f4c0988cc">m_VehicleHudMap</a>, <a class="el" href="../../d5/dbf/class_hud.html#a05bd72727edbd4720a4078fa505d753c">SetVehicleHudDisabled()</a>, and <a class="el" href="../../d5/dbf/class_hud.html#ad845fbb1b9e0f2f9fa80752df7d1ed05">ShowHud()</a>.</p>
 
 </div>
 </div>
@@ -1513,10 +1503,6 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#a87b9fd2d8391c8d4bd9e1f24d29bd7b2">m_HudHidePlayer</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d5/d04/class_mission_base.html#a7ab491bf0e44a0d24c1709d8822652d8">MissionBase::OnUpdate()</a>.</p>
-
 </div>
 </div>
 <a id="af47262be3e14e90bb11db0ea68326f22" name="af47262be3e14e90bb11db0ea68326f22"></a>
@@ -1541,10 +1527,6 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#a7b79ea77c1350b0be5ec592e558bc77e">m_QuickbarHidePlayer</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d5/d04/class_mission_base.html#a7ab491bf0e44a0d24c1709d8822652d8">MissionBase::OnUpdate()</a>.</p>
 
 </div>
 </div>
@@ -1571,10 +1553,6 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#a4cad7bf92817a87b7494316c4e82089e">m_IsHudVisible</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#afa987720726641f19abf9973713646a5">ScriptedWidgetEventHandler::Update()</a>.</p>
-
 </div>
 </div>
 <a id="a7e0d66b4323c213d7dd56f51ea3c9899" name="a7e0d66b4323c213d7dd56f51ea3c9899"></a>
@@ -1599,8 +1577,6 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#a0f0c4e12a12cf91fce00ce2f5ffdfd53">m_IsQuickbarVisible</a>.</p>
 
 </div>
 </div>
@@ -1658,6 +1634,60 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a6cd4ddc9ef00a445f2ca246bc0eaf8e8" name="a6cd4ddc9ef00a445f2ca246bc0eaf8e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd4ddc9ef00a445f2ca246bc0eaf8e8">&#9670;&#160;</a></span>OnPlayerLoaded() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OnPlayerLoaded </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#a6cd4ddc9ef00a445f2ca246bc0eaf8e8">ManBase::OnPlayerLoaded()</a>.</p>
+
+</div>
+</div>
+<a id="af6a0ec2531d719b23b9be05448a68917" name="af6a0ec2531d719b23b9be05448a68917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6a0ec2531d719b23b9be05448a68917">&#9670;&#160;</a></span>OnPlayerLoaded() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void OnPlayerLoaded </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer()</a>, and <a class="el" href="../../d5/dbf/class_hud.html#a60cecdd5f498a03266bfd2f3958bb255">OnUnconsciousStop()</a>.</p>
+
+</div>
+</div>
 <a id="afd352d0186bd266491d643c0c3369e47" name="afd352d0186bd266491d643c0c3369e47"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd352d0186bd266491d643c0c3369e47">&#9670;&#160;</a></span>OnResizeScreen() <span class="overload">[1/2]</span></h2>
 
@@ -1712,6 +1742,58 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac58827ea75afdcee38105ae3cb8610eb" name="ac58827ea75afdcee38105ae3cb8610eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac58827ea75afdcee38105ae3cb8610eb">&#9670;&#160;</a></span>OnUnconsciousStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected void OnUnconsciousStart </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60cecdd5f498a03266bfd2f3958bb255" name="a60cecdd5f498a03266bfd2f3958bb255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60cecdd5f498a03266bfd2f3958bb255">&#9670;&#160;</a></span>OnUnconsciousStop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected void OnUnconsciousStop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#af6a0ec2531d719b23b9be05448a68917">OnPlayerLoaded()</a>.</p>
+
+</div>
+</div>
 <a id="a564331638c1ec5f2880f8ca8fa1e1f95" name="a564331638c1ec5f2880f8ca8fa1e1f95"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a564331638c1ec5f2880f8ca8fa1e1f95">&#9670;&#160;</a></span>RefreshHudVisibility()</h2>
 
@@ -1730,14 +1812,10 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#a6b0e3883a293eeaa5a24c39dee14adac">m_HudState</a>, <a class="el" href="../../d5/d4d/_notifiers_manager_8c.html#ac75f7d00c32013052bbba687fe608d38">m_Notifiers</a>, and <a class="el" href="../../d5/dbf/class_hud.html#a11c5eea1751c7c45c7db5a138438b7f1">SetLeftStatsVisibility()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#a030b6f6e3d921b455c1d5ea9fc9ea15c">DisplayBadge()</a>, <a class="el" href="../../d5/dbf/class_hud.html#ab7fc5818f0afe84869e2aa8ec2e791b2">ShowHud()</a>, <a class="el" href="../../d5/dbf/class_hud.html#a6d61d393236c2e850602d657684fc389">ShowHudInventory()</a>, <a class="el" href="../../d5/dbf/class_hud.html#a95128d2a27d8f1bf137188cc54d52b56">ShowHudPlayer()</a>, and <a class="el" href="../../d5/dbf/class_hud.html#a9ad5f546c1d4c813ec819649dd13f4ad">ShowHudUI()</a>.</p>
 
 </div>
 </div>
@@ -1842,14 +1920,10 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#a99b9df1d2967aad74c790dc9b34dfc22">m_QuickbarState</a>, and <a class="el" href="../../d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a131dc7e21d492c67a96d8a5bbb699674">m_QuickbarWidget</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#a7fb87ff2a84f9e748edc286e375a9919">ShowQuickBar()</a>, <a class="el" href="../../d5/dbf/class_hud.html#a73c097f7aa9f7d4978670f9006d94f95">ShowQuickbarPlayer()</a>, and <a class="el" href="../../d5/dbf/class_hud.html#a1e472f4405fd6ea9871def5fcfdd7e53">ShowQuickbarUI()</a>.</p>
 
 </div>
 </div>
@@ -1876,13 +1950,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>engine</p>
-<p>fuel tank</p>
-<p>temperature</p>
-<p>general hit timer reset <br  />
-</p>
 
-<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#gae404cb6f8d93f20fded11cad6c2126ab">Math::AbsInt()</a>, <a class="el" href="../../d9/d36/class_colors.html#a7823c71a896e6dbba687f313457f9c00">Colors::COLOR_RUINED</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a92f5918ec5d632d5159c9d1f52fe7758">GetDayZGame()</a>, <a class="el" href="../../dc/d98/class_enum_tools.html#a99d9135595ce62073d37d753722183f3">EnumTools::GetEnumSize()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#a7dc5676bbf9af0f4a45d8b79c5647f33">ItemManager::GetItemHealthColor()</a>, <a class="el" href="../../de/d59/class_car_script.html#a277527c3888a667451c21bbaa18c7d1a">CarScript::IsVitalRadiator()</a>, <a class="el" href="../../d0/db6/class_vehicle_hud_base.html#aca0fa9bd6ef229ea277e5b4b0ebea05e">VehicleHudBase::RefreshVehicleHud()</a>, <a class="el" href="../../d5/dbf/class_hud.html#ad61e9af47b46e78b742151390e7e1204">RefreshVehicleHudVisibility()</a>, <a class="el" href="../../de/db5/group___item_health.html#gaeea63d1d9596188244030330fa1f724e">GameConstants::STATE_WORN</a>, and <a class="el" href="../../d9/d36/class_colors.html#a6fdc54ca55874b2959f7d77967f78dc2">Colors::WHITE</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a5ea16fa19c11f786c7b9f675d8cf8f2e">CGame::GetPlayer()</a>, <a class="el" href="../../d1/d1f/class_human_command_vehicle.html#a340bedb37b2a917a5e95ac0c4c5fa02e">HumanCommandVehicle::GetTransport()</a>, and <a class="el" href="../../d0/db6/class_vehicle_hud_base.html#aca0fa9bd6ef229ea277e5b4b0ebea05e">VehicleHudBase::RefreshVehicleHud()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#a20746af9bf585a9b33a260a207026e65">Update()</a>.</p>
 
@@ -1906,14 +1975,10 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/d75/class_u_i_manager.html#a67ce9a10c307353939a4bfbf63b4fb93">UIManager::GetMenu()</a>, <a class="el" href="../../d2/de6/class_c_game.html#ac7e6886eef7485897279cffc48f83fca">CGame::GetUIManager()</a>, and <a class="el" href="../../d5/dbf/class_hud.html#a246c83a0870232227751f0b0aa13f2d4">m_VehicleHudArray</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#aca0fa9bd6ef229ea277e5b4b0ebea05e">RefreshVehicleHud()</a>, <a class="el" href="../../d5/dbf/class_hud.html#a05bd72727edbd4720a4078fa505d753c">SetVehicleHudDisabled()</a>, and <a class="el" href="../../d5/dbf/class_hud.html#a47271e4554e59eafc7f2b9918b9eadb4">ShowVehicleHud()</a>.</p>
 
 </div>
 </div>
@@ -2310,14 +2375,10 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>eg. stamina bar... </p>
-
-<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#a5032c232a39f658b262890ae01b312af">Init()</a>, and <a class="el" href="../../d5/dbf/class_hud.html#a564331638c1ec5f2880f8ca8fa1e1f95">RefreshHudVisibility()</a>.</p>
 
 </div>
 </div>
@@ -2587,9 +2648,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>game settings option </p>
+<p>disable vehicle HUD through options menu </p>
 
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#ad61e9af47b46e78b742151390e7e1204">RefreshVehicleHudVisibility()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#a5032c232a39f658b262890ae01b312af">Init()</a>.</p>
 
 </div>
 </div>
@@ -2773,6 +2834,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#a5032c232a39f658b262890ae01b312af">Init()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#aa18b07ff149f2b7439905008fc25f412">UIScriptedMenu::OnHide()</a>, and <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a44c86b20c27f7a8ddb7c1337e9538f80">UIScriptedMenu::OnShow()</a>.</p>
+
 </div>
 </div>
 <a id="ab7fc5818f0afe84869e2aa8ec2e791b2" name="ab7fc5818f0afe84869e2aa8ec2e791b2"></a>
@@ -2799,7 +2862,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#a564331638c1ec5f2880f8ca8fa1e1f95">RefreshHudVisibility()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#a92bb0e80a3fec1873ede362f1560eaba">ShowHudPlayer()</a>.</p>
 
 </div>
 </div>
@@ -2853,8 +2916,6 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#a564331638c1ec5f2880f8ca8fa1e1f95">RefreshHudVisibility()</a>.</p>
-
 </div>
 </div>
 <a id="a92bb0e80a3fec1873ede362f1560eaba" name="a92bb0e80a3fec1873ede362f1560eaba"></a>
@@ -2881,7 +2942,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#ac0d35236d81cd77e0e53e4eb0f2539dd">ManBase::CloseMapEx()</a>, <a class="el" href="../../d5/d04/class_mission_base.html#a7ab491bf0e44a0d24c1709d8822652d8">MissionBase::OnUpdate()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a2a5673c2c9a67e69c1805b25e9fe7595">UIScriptedMenu::ScriptConsole()</a>, and <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a2b5ec5b4f1d6d5ff07388327f376516d">UIScriptedMenu::~ScriptConsole()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/class_mission_base.html#a7ab491bf0e44a0d24c1709d8822652d8">MissionBase::OnUpdate()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a2a5673c2c9a67e69c1805b25e9fe7595">UIScriptedMenu::ScriptConsole()</a>, <a class="el" href="../../d5/dbf/class_hud.html#ab7fc5818f0afe84869e2aa8ec2e791b2">ShowHud()</a>, and <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a2b5ec5b4f1d6d5ff07388327f376516d">UIScriptedMenu::~ScriptConsole()</a>.</p>
 
 </div>
 </div>
@@ -2909,8 +2970,6 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#a564331638c1ec5f2880f8ca8fa1e1f95">RefreshHudVisibility()</a>.</p>
-
 </div>
 </div>
 <a id="a34509a8cd782d8b954f847c9948503fb" name="a34509a8cd782d8b954f847c9948503fb"></a>
@@ -2937,7 +2996,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a1561242c86fc642907c30622e80a7597">UIScriptedMenu::CloseMapMenu()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ab212fc3a61460b771a18d71f052d31e8">UIScriptedMenu::Init()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#ac848efa2bb45049d41862fc66c9a9006">ScriptedWidgetEventHandler::InspectItem()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#aef05288eb71d95ac4068f7ac7286ddef">UIScriptedMenu::InviteMenu()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a6cd4ddc9ef00a445f2ca246bc0eaf8e8">ManBase::OnPlayerLoaded()</a>, <a class="el" href="../../d4/d87/class_man_base.html#af485ba9caca9a432b56274e1e99a8bee">ManBase::OnUnconsciousStop()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a4f266b66f19e5611e23e0a17e69e1ad4">ManBase::OnUnconsciousUpdate()</a>, <a class="el" href="../../d5/d04/class_mission_base.html#a7ab491bf0e44a0d24c1709d8822652d8">MissionBase::OnUpdate()</a>, <a class="el" href="../../d8/d68/class_warning_menu_base.html#a459b758fcfb8b2138e8eefd6f544f051">WarningMenuBase::WarningMenuBase()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a162c6c2bd3a8c6ad511eb67b407b5173">UIScriptedMenu::~InspectMenuNew()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a9e8f9a260525d11fb733fc26c38407ae">UIScriptedMenu::~InviteMenu()</a>, and <a class="el" href="../../d8/d68/class_warning_menu_base.html#a5a137ea8ede2e422799351d22d5d3f97">WarningMenuBase::~WarningMenuBase()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a1561242c86fc642907c30622e80a7597">UIScriptedMenu::CloseMapMenu()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ab212fc3a61460b771a18d71f052d31e8">UIScriptedMenu::Init()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#ac848efa2bb45049d41862fc66c9a9006">ScriptedWidgetEventHandler::InspectItem()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#aef05288eb71d95ac4068f7ac7286ddef">UIScriptedMenu::InviteMenu()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a7042fe353836b02710cebbfad9464a7f">ManBase::OnUnconsciousStart()</a>, <a class="el" href="../../d4/d87/class_man_base.html#af485ba9caca9a432b56274e1e99a8bee">ManBase::OnUnconsciousStop()</a>, <a class="el" href="../../d5/d04/class_mission_base.html#a7ab491bf0e44a0d24c1709d8822652d8">MissionBase::OnUpdate()</a>, <a class="el" href="../../d8/d68/class_warning_menu_base.html#a459b758fcfb8b2138e8eefd6f544f051">WarningMenuBase::WarningMenuBase()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a162c6c2bd3a8c6ad511eb67b407b5173">UIScriptedMenu::~InspectMenuNew()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a9e8f9a260525d11fb733fc26c38407ae">UIScriptedMenu::~InviteMenu()</a>, and <a class="el" href="../../d8/d68/class_warning_menu_base.html#a5a137ea8ede2e422799351d22d5d3f97">WarningMenuBase::~WarningMenuBase()</a>.</p>
 
 </div>
 </div>
@@ -2964,8 +3023,6 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#a564331638c1ec5f2880f8ca8fa1e1f95">RefreshHudVisibility()</a>.</p>
 
 </div>
 </div>
@@ -3023,7 +3080,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#a2c537c69fbf018892c8e6dc7a2feea1e">UpdateQuickbarGlobalVisibility()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#aa18b07ff149f2b7439905008fc25f412">UIScriptedMenu::OnHide()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a44c86b20c27f7a8ddb7c1337e9538f80">UIScriptedMenu::OnShow()</a>, and <a class="el" href="../../d5/dbf/class_hud.html#a2c537c69fbf018892c8e6dc7a2feea1e">UpdateQuickbarGlobalVisibility()</a>.</p>
 
 </div>
 </div>
@@ -3051,9 +3108,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>global setting; is quickbar visibility allowed? </p>
-
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#aaff67b0c6f7d33e873ce90d6d3f83fa4">RefreshQuickbarVisibility()</a>.</p>
+<p>global setting -&gt; used to determine visibility based on platform </p>
 
 </div>
 </div>
@@ -3109,8 +3164,6 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#aaff67b0c6f7d33e873ce90d6d3f83fa4">RefreshQuickbarVisibility()</a>.</p>
-
 </div>
 </div>
 <a id="acaa547f4eb4a2b80c99f494082838833" name="acaa547f4eb4a2b80c99f494082838833"></a>
@@ -3165,8 +3218,6 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#aaff67b0c6f7d33e873ce90d6d3f83fa4">RefreshQuickbarVisibility()</a>.</p>
-
 </div>
 </div>
 <a id="a47271e4554e59eafc7f2b9918b9eadb4" name="a47271e4554e59eafc7f2b9918b9eadb4"></a>
@@ -3194,8 +3245,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>enter/exit driver seat </p>
-
-<p class="reference">References <a class="el" href="../../d5/dbf/class_hud.html#ad61e9af47b46e78b742151390e7e1204">RefreshVehicleHudVisibility()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#a9f401d2357f8bfbfc45c570b6537c42b">HideVehicleInfo()</a>, and <a class="el" href="../../d5/dbf/class_hud.html#a17bb376d215dc94beeeb7fcf18e2ee02">ShowVehicleInfo()</a>.</p>
 
@@ -3251,7 +3300,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer()</a>, <a class="el" href="../../d1/d1f/class_human_command_vehicle.html#a340bedb37b2a917a5e95ac0c4c5fa02e">HumanCommandVehicle::GetTransport()</a>, <a class="el" href="../../d5/dbf/class_hud.html#a47271e4554e59eafc7f2b9918b9eadb4">ShowVehicleHud()</a>, and <a class="el" href="../../d0/db6/class_vehicle_hud_base.html#a85606bb855080cd4e85e4d7c30a246cb">VehicleHudBase::ShowVehicleInfo()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer()</a>, <a class="el" href="../../d0/db6/class_vehicle_hud_base.html#af79847333f2ab22cdc859c39ab89df44">VehicleHudBase::ShowPanel()</a>, <a class="el" href="../../d5/dbf/class_hud.html#a47271e4554e59eafc7f2b9918b9eadb4">ShowVehicleHud()</a>, and <a class="el" href="../../d0/db6/class_vehicle_hud_base.html#a85606bb855080cd4e85e4d7c30a246cb">VehicleHudBase::ShowVehicleInfo()</a>.</p>
 
 </div>
 </div>
@@ -3670,12 +3719,10 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a45f50b67c9d2c63301c61c3b2cfd9912">m_SpecializationIcon</a>, <a class="el" href="../../dd/d4b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d4b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -4347,28 +4394,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a4e6c4405b312c3eff40e740b28a25729" name="a4e6c4405b312c3eff40e740b28a25729"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e6c4405b312c3eff40e740b28a25729">&#9670;&#160;</a></span>m_CurrentVehicle</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected <a class="el" href="../../de/d59/class_car_script.html">CarScript</a> m_CurrentVehicle</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a11fdff0fd87d1b237b8a2128c6d5cfd2" name="a11fdff0fd87d1b237b8a2128c6d5cfd2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a11fdff0fd87d1b237b8a2128c6d5cfd2">&#9670;&#160;</a></span>m_CursorIcon</h2>
 
@@ -4939,8 +4964,6 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#aa4d87f9497a6ccefbd49533ce82bddaa">IsHideHudPlayer()</a>.</p>
-
 </div>
 </div>
 <a id="afec998313b68936cca0f19cf52589c1f" name="afec998313b68936cca0f19cf52589c1f"></a>
@@ -5031,12 +5054,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#a829b5486037724df35dbf4b7db086d79">GetHudState()</a>, and <a class="el" href="../../d5/dbf/class_hud.html#a564331638c1ec5f2880f8ca8fa1e1f95">RefreshHudVisibility()</a>.</p>
-
 </div>
 </div>
-<a id="a81721cbf9762be1de61b69c5350fef95" name="a81721cbf9762be1de61b69c5350fef95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81721cbf9762be1de61b69c5350fef95">&#9670;&#160;</a></span>m_InVehicleAsDriver</h2>
+<a id="af79c2e02ce3bcea83426c081e681e799" name="af79c2e02ce3bcea83426c081e681e799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af79c2e02ce3bcea83426c081e681e799">&#9670;&#160;</a></span>m_HudVisibility</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5045,7 +5066,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">protected <a class="el" href="../../d9/db9/classbool.html">bool</a> m_InVehicleAsDriver</td>
+          <td class="memname">protected ref IngameHudVisibility m_HudVisibility</td>
         </tr>
       </table>
   </td>
@@ -5054,6 +5075,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#a7b23a05429c9624fb66531f878fa114c">GetHudVisibility()</a>.</p>
 
 </div>
 </div>
@@ -5077,7 +5100,27 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#a6342d66dc36f10d8c762d92f572c3a42">IsHudVisible()</a>.</p>
+</div>
+</div>
+<a id="a6040074abb7f24dbd66804430f35e177" name="a6040074abb7f24dbd66804430f35e177"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6040074abb7f24dbd66804430f35e177">&#9670;&#160;</a></span>m_IsInVehicle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/db9/classbool.html">bool</a> m_IsInVehicle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -5100,8 +5143,6 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#a7e0d66b4323c213d7dd56f51ea3c9899">IsQuickbarVisible()</a>.</p>
 
 </div>
 </div>
@@ -5589,8 +5630,6 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#af47262be3e14e90bb11db0ea68326f22">IsHideQuickbarPlayer()</a>.</p>
-
 </div>
 </div>
 <a id="a62854e3cdb81698e687cb0376a3a648b" name="a62854e3cdb81698e687cb0376a3a648b"></a>
@@ -5634,8 +5673,6 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#af438864a1c9f1c8b87db36c9f588be88">GetQuickBarState()</a>, and <a class="el" href="../../d5/dbf/class_hud.html#aaff67b0c6f7d33e873ce90d6d3f83fa4">RefreshQuickbarVisibility()</a>.</p>
 
 </div>
 </div>
@@ -6145,160 +6182,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab0400cd0c26cf405ef3835de02ff91ad" name="ab0400cd0c26cf405ef3835de02ff91ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0400cd0c26cf405ef3835de02ff91ad">&#9670;&#160;</a></span>m_VehicleBatteryLight</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ImageWidget m_VehicleBatteryLight</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5bd13f6e41194db6a6e051fdba1ee716" name="a5bd13f6e41194db6a6e051fdba1ee716"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bd13f6e41194db6a6e051fdba1ee716">&#9670;&#160;</a></span>m_VehicleCurrentGearValue</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected <a class="el" href="../../da/dbc/class_text_widget.html">TextWidget</a> m_VehicleCurrentGearValue</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abfc19fab13fa5ba28dde5586ffefe0a6" name="abfc19fab13fa5ba28dde5586ffefe0a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfc19fab13fa5ba28dde5586ffefe0a6">&#9670;&#160;</a></span>m_VehicleDamageZoneHitEngineState</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected <a class="el" href="../../d9/db9/classbool.html">bool</a> m_VehicleDamageZoneHitEngineState</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a66506102368f95d5303461736faba0f4" name="a66506102368f95d5303461736faba0f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66506102368f95d5303461736faba0f4">&#9670;&#160;</a></span>m_VehicleDamageZonesHitTimer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a> m_VehicleDamageZonesHitTimer</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3a1c1424414fa1fff6385d2861933c78" name="a3a1c1424414fa1fff6385d2861933c78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a1c1424414fa1fff6385d2861933c78">&#9670;&#160;</a></span>m_VehicleEngineLight</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ImageWidget m_VehicleEngineLight</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aba9fa218b0aa3883de7e93c131976960" name="aba9fa218b0aa3883de7e93c131976960"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba9fa218b0aa3883de7e93c131976960">&#9670;&#160;</a></span>m_VehicleFuelLight</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ImageWidget m_VehicleFuelLight</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af50b0ecd14f74ff84f9fc1423809ddf1" name="af50b0ecd14f74ff84f9fc1423809ddf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af50b0ecd14f74ff84f9fc1423809ddf1">&#9670;&#160;</a></span>m_VehicleFuelPointer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ImageWidget m_VehicleFuelPointer</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aa5d791de80b4033502a1f7ec28795ea7" name="aa5d791de80b4033502a1f7ec28795ea7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa5d791de80b4033502a1f7ec28795ea7">&#9670;&#160;</a></span>m_VehicleGearCount</h2>
 
@@ -6310,72 +6193,6 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> m_VehicleGearCount = -1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a501e3630a65e3fc31861d956e84a1053" name="a501e3630a65e3fc31861d956e84a1053"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a501e3630a65e3fc31861d956e84a1053">&#9670;&#160;</a></span>m_VehicleGearTable</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt;<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>,<a class="el" href="../../d5/d92/classstring.html">string</a>&gt; m_VehicleGearTable</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8a71f83d9b15e35add0a1db35e4cf06a" name="a8a71f83d9b15e35add0a1db35e4cf06a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a71f83d9b15e35add0a1db35e4cf06a">&#9670;&#160;</a></span>m_VehicleGearTableAuto</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt;<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>,<a class="el" href="../../d5/d92/classstring.html">string</a>&gt; m_VehicleGearTableAuto</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abc97c678daa0fb0ae5cb7706e4f9d7f5" name="abc97c678daa0fb0ae5cb7706e4f9d7f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc97c678daa0fb0ae5cb7706e4f9d7f5">&#9670;&#160;</a></span>m_VehicleHandBrakeLight</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ImageWidget m_VehicleHandBrakeLight</td>
         </tr>
       </table>
   </td>
@@ -6450,8 +6267,6 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../d5/dbf/class_hud.html#ad61e9af47b46e78b742151390e7e1204">RefreshVehicleHudVisibility()</a>.</p>
 
 </div>
 </div>
@@ -6545,50 +6360,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5d7c03b6a6c93831be44f4b68135b573" name="a5d7c03b6a6c93831be44f4b68135b573"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d7c03b6a6c93831be44f4b68135b573">&#9670;&#160;</a></span>m_VehicleNextGearValue</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected <a class="el" href="../../da/dbc/class_text_widget.html">TextWidget</a> m_VehicleNextGearValue</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae8ddebffb8dea414f1d6ee3eb6fa8cc5" name="ae8ddebffb8dea414f1d6ee3eb6fa8cc5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8ddebffb8dea414f1d6ee3eb6fa8cc5">&#9670;&#160;</a></span>m_VehicleOilLight</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ImageWidget m_VehicleOilLight</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a26ad366b6cf2c44ec5d163bfc2bbff9f" name="a26ad366b6cf2c44ec5d163bfc2bbff9f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a26ad366b6cf2c44ec5d163bfc2bbff9f">&#9670;&#160;</a></span>m_VehiclePanel</h2>
 
@@ -6600,226 +6371,6 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a> m_VehiclePanel</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa2f839f18e6b50223396d315aede9aa1" name="aa2f839f18e6b50223396d315aede9aa1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2f839f18e6b50223396d315aede9aa1">&#9670;&#160;</a></span>m_VehiclePrevGearValue</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected <a class="el" href="../../da/dbc/class_text_widget.html">TextWidget</a> m_VehiclePrevGearValue</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab563f9ab519748735b84be66325f191f" name="ab563f9ab519748735b84be66325f191f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab563f9ab519748735b84be66325f191f">&#9670;&#160;</a></span>m_VehicleRPMDial</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ImageWidget m_VehicleRPMDial</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae2de8900d12c130b17949b0f80cfa97f" name="ae2de8900d12c130b17949b0f80cfa97f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2de8900d12c130b17949b0f80cfa97f">&#9670;&#160;</a></span>m_VehicleRPMPointer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ImageWidget m_VehicleRPMPointer</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa465c2612d592128eededca539808362" name="aa465c2612d592128eededca539808362"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa465c2612d592128eededca539808362">&#9670;&#160;</a></span>m_VehicleRPMRedline</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ImageWidget m_VehicleRPMRedline</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a03c82e85e01f8f40184fcb92ee019f3d" name="a03c82e85e01f8f40184fcb92ee019f3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03c82e85e01f8f40184fcb92ee019f3d">&#9670;&#160;</a></span>m_VehicleSpeedPointer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ImageWidget m_VehicleSpeedPointer</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a17f2ba593ab28cde43d3e3c3cc86c220" name="a17f2ba593ab28cde43d3e3c3cc86c220"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17f2ba593ab28cde43d3e3c3cc86c220">&#9670;&#160;</a></span>m_VehicleSpeedValue</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected <a class="el" href="../../da/dbc/class_text_widget.html">TextWidget</a> m_VehicleSpeedValue</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abd81b7c31c658a02f50e23b1850b79d5" name="abd81b7c31c658a02f50e23b1850b79d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd81b7c31c658a02f50e23b1850b79d5">&#9670;&#160;</a></span>m_VehicleTemperatureIndicator</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected <a class="el" href="../../dd/d6a/class_widget.html">Widget</a> m_VehicleTemperatureIndicator</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9cd1a46c9ff9a1eb61c1ba2797941b7e" name="a9cd1a46c9ff9a1eb61c1ba2797941b7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cd1a46c9ff9a1eb61c1ba2797941b7e">&#9670;&#160;</a></span>m_VehicleTemperatureLight</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ImageWidget m_VehicleTemperatureLight</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6f9ddc42c6489e6f8215ac043b0ff00e" name="a6f9ddc42c6489e6f8215ac043b0ff00e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f9ddc42c6489e6f8215ac043b0ff00e">&#9670;&#160;</a></span>m_VehicleTemperaturePointer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ImageWidget m_VehicleTemperaturePointer</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a34821343253ae5664907af18403532ed" name="a34821343253ae5664907af18403532ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34821343253ae5664907af18403532ed">&#9670;&#160;</a></span>m_VehicleWheelLight</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">protected ImageWidget m_VehicleWheelLight</td>
         </tr>
       </table>
   </td>

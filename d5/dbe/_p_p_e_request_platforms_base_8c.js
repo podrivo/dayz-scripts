@@ -21,7 +21,7 @@ var _p_p_e_request_platforms_base_8c =
     [ "SetRequesterUpdating", "d5/dbe/_p_p_e_request_platforms_base_8c.html#a4aad5271445de567dee25aee9eb1ac1e", null ],
     [ "SetTargetValueBool", "d5/dbe/_p_p_e_request_platforms_base_8c.html#a41707f9312a4ed4879bbbdeb170db793", null ],
     [ "SetTargetValueBoolDefault", "d5/dbe/_p_p_e_request_platforms_base_8c.html#a101f2f81e90633e731289dcf3f861ccb", null ],
-    [ "SetTargetValueColor", "d5/dbe/_p_p_e_request_platforms_base_8c.html#ad6b64b6826ba7036d3fc91d9c37fa6d0", null ],
+    [ "SetTargetValueColor", "d5/dbe/_p_p_e_request_platforms_base_8c.html#a729d429b679a8b14299127d881b9d179", null ],
     [ "SetTargetValueColorDefault", "d5/dbe/_p_p_e_request_platforms_base_8c.html#a2e4c34848617d9a0f2b8a6952647a671", null ],
     [ "SetTargetValueFloat", "d5/dbe/_p_p_e_request_platforms_base_8c.html#aa90b1958e65e65eadce415b9521ad323", null ],
     [ "SetTargetValueFloatDefault", "d5/dbe/_p_p_e_request_platforms_base_8c.html#a34eb876b0b8c716c06aac3750966fbdb", null ],

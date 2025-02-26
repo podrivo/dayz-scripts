@@ -94,7 +94,7 @@ var class_inventory_item_super =
     [ "IsWeapon", "dc/da1/class_inventory_item_super.html#af44b47a1984ff3e53150e73e89f90566", null ],
     [ "ItemMap", "dc/da1/class_inventory_item_super.html#a134dc2dba616e060f717a2ab6926725e", null ],
     [ "NameOverride", "dc/da1/class_inventory_item_super.html#aa339754ea13f009ae4a422fe259fbde3", null ],
-    [ "OnIgnitedTarget", "dc/da1/class_inventory_item_super.html#a176d75a8657e37b9df2e996f82f2bdf9", null ],
+    [ "OnIgnitedTarget", "dc/da1/class_inventory_item_super.html#adef78c76771d58e38a8682fd6cd472ad", null ],
     [ "OnIgnitedThis", "dc/da1/class_inventory_item_super.html#a89ee9c793503408599f1d172a6278179", null ],
     [ "OnInventoryEnter", "dc/da1/class_inventory_item_super.html#ad0580e19ee7c965536e590ae5f2c9ea8", null ],
     [ "OnInventoryEnter", "dc/da1/class_inventory_item_super.html#ad0580e19ee7c965536e590ae5f2c9ea8", null ],

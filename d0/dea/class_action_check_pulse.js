@@ -4,7 +4,6 @@ var class_action_check_pulse =
     [ "ActionCondition", "d0/dea/class_action_check_pulse.html#aa9aa4864fae11769c65e644b5fd97c66", null ],
     [ "CreateConditionComponents", "d0/dea/class_action_check_pulse.html#a6b922d3bb1d26f790bc52030566ba2df", null ],
     [ "GetPulseMessage", "d0/dea/class_action_check_pulse.html#aacf3bf90ee84fd93e9e975cd78f6a789", null ],
-    [ "OnEndServer", "d0/dea/class_action_check_pulse.html#a2ebf3855cc8960864124ba5ca4949033", null ],
     [ "OnExecuteClient", "d0/dea/class_action_check_pulse.html#a7c0913512f25d83df6aa6530b769b65e", null ],
     [ "OnExecuteServer", "d0/dea/class_action_check_pulse.html#a26c6922d796bdf663f49119e83fe26f8", null ],
     [ "TARGET_IRREGULAR_PULSE_BIT", "d0/dea/class_action_check_pulse.html#adcf4f1ad3699a53ad20a1d542ebd98db", null ]

@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -111,6 +111,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a811dcd3e79ce62b03413530b5cf80853"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d41db12cbb1ae5ce092b21818b06750"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_action_manager_server.html#a9d41db12cbb1ae5ce092b21818b06750">OnJumpStart</a> ()</td></tr>
 <tr class="separator:a9d41db12cbb1ae5ce092b21818b06750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6855f0b86da249ea1c785547107fc290"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_action_manager_server.html#a6855f0b86da249ea1c785547107fc290">EndOrInterruptCurrentAction</a> ()</td></tr>
+<tr class="separator:a6855f0b86da249ea1c785547107fc290"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2415f4c87057ce9e06c970d9c7221511"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_action_manager_server.html#a2415f4c87057ce9e06c970d9c7221511">OnInputUserDataProcess</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> userDataType, <a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a> ctx)</td></tr>
 <tr class="separator:a2415f4c87057ce9e06c970d9c7221511"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b5f709bb03ca616b4367c927f2fe832"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_action_manager_server.html#a8b5f709bb03ca616b4367c927f2fe832">StartDeliveredAction</a> ()</td></tr>
@@ -119,8 +121,9 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a478f9f5414384b0a935f66773da405e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47d07e65dec68c40fc31b18e63954616"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_action_manager_server.html#a47d07e65dec68c40fc31b18e63954616">Update</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pCurrentCommandID)</td></tr>
 <tr class="separator:a47d07e65dec68c40fc31b18e63954616"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace383a0e8c967efc1bd10449666931f1"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_action_manager_server.html#ace383a0e8c967efc1bd10449666931f1">Interrupt</a> ()</td></tr>
-<tr class="separator:ace383a0e8c967efc1bd10449666931f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae41e1be5814e327aa911186eec7a3153"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_action_manager_server.html#ae41e1be5814e327aa911186eec7a3153">RequestInterruptAction</a> ()</td></tr>
+<tr class="memdesc:ae41e1be5814e327aa911186eec7a3153"><td class="mdescLeft">&#160;</td><td class="mdescRight">server requests action interrupt  <br /></td></tr>
+<tr class="separator:ae41e1be5814e327aa911186eec7a3153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68062e3948af52d8de703889f335b0ca"><td class="memItemLeft" align="right" valign="top">override ActionReciveData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d33/class_action_manager_server.html#a68062e3948af52d8de703889f335b0ca">GetReciveData</a> ()</td></tr>
 <tr class="separator:a68062e3948af52d8de703889f335b0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -161,6 +164,35 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6855f0b86da249ea1c785547107fc290" name="a6855f0b86da249ea1c785547107fc290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6855f0b86da249ea1c785547107fc290">&#9670;&#160;</a></span>EndOrInterruptCurrentAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void EndOrInterruptCurrentAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d5/db9/_action_manager_base_8c.html#aed62a4ad1d38acf13a562eb6c614a381">m_CurrentActionData</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#af4e438e9d299f1125aad9a077e31451d">m_PendingActionAcknowledgmentID</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#a478f9f5414384b0a935f66773da405e9">OnActionEnd()</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga4f9f8e8e9f282dcaaae5a369175d3547">UA_AM_ACCEPTED</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga9c2343e8e5f2ccc0417e387fc4478e3c">UA_AM_PENDING</a>, and <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga6612d92ddce214fb1f9e6e13e6b96c37">UA_AM_REJECTED</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d33/class_action_manager_server.html#a9d41db12cbb1ae5ce092b21818b06750">OnJumpStart()</a>.</p>
+
+</div>
+</div>
 <a id="a68062e3948af52d8de703889f335b0ca" name="a68062e3948af52d8de703889f335b0ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68062e3948af52d8de703889f335b0ca">&#9670;&#160;</a></span>GetReciveData()</h2>
 
@@ -185,35 +217,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../d3/d33/class_action_manager_server.html#a6bec6d6f30e06c9b8da7303a40f96f5d">m_PendingActionReciveData</a>.</p>
-
-</div>
-</div>
-<a id="ace383a0e8c967efc1bd10449666931f1" name="ace383a0e8c967efc1bd10449666931f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace383a0e8c967efc1bd10449666931f1">&#9670;&#160;</a></span>Interrupt()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">override void Interrupt </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../d5/db9/_action_manager_base_8c.html#aed62a4ad1d38acf13a562eb6c614a381">m_CurrentActionData</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, and <a class="el" href="../../d9/d6e/class_day_z_player_sync_junctures.html#ae70615e8b32b93ce24263d1d544ee541">DayZPlayerSyncJunctures::SendActionInterrupt()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d3/d33/class_action_manager_server.html#a2415f4c87057ce9e06c970d9c7221511">OnInputUserDataProcess()</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#a8b5f709bb03ca616b4367c927f2fe832">StartDeliveredAction()</a>, and <a class="el" href="../../d3/d33/class_action_manager_server.html#a47d07e65dec68c40fc31b18e63954616">Update()</a>.</p>
 
 </div>
 </div>
@@ -242,7 +245,7 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d5/db9/_action_manager_base_8c.html#aed62a4ad1d38acf13a562eb6c614a381">m_CurrentActionData</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/d33/class_action_manager_server.html#a9d41db12cbb1ae5ce092b21818b06750">OnJumpStart()</a>, and <a class="el" href="../../d3/d33/class_action_manager_server.html#a47d07e65dec68c40fc31b18e63954616">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d33/class_action_manager_server.html#a6855f0b86da249ea1c785547107fc290">EndOrInterruptCurrentAction()</a>, and <a class="el" href="../../d3/d33/class_action_manager_server.html#a47d07e65dec68c40fc31b18e63954616">Update()</a>.</p>
 
 </div>
 </div>
@@ -280,7 +283,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d2/df5/_action_input_8c.html#a87b9148e9fe6d2d5723fbe73113089a6">GetAction()</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#a95cec92a1b876711f91309df9f59d212">INPUT_UDT_STANDARD_ACTION_END_REQUEST</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#af18b9c33c3cad52a58ea076e923b7762">INPUT_UDT_STANDARD_ACTION_INPUT_END</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#aadb88447d20a26fbe2a80a27950789e3">INPUT_UDT_STANDARD_ACTION_START</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#ace383a0e8c967efc1bd10449666931f1">Interrupt()</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#a1dbba9fbab31e586a620752cdf863b2d">m_ActionInputWantEnd</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#a78708291ec338f5b05fa1c6e330018ff">m_ActionWantEndRequest</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#ad88175a76ee31936325f4a3d3c8781d3">m_PendingAction</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#af4e438e9d299f1125aad9a077e31451d">m_PendingActionAcknowledgmentID</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#a6bec6d6f30e06c9b8da7303a40f96f5d">m_PendingActionReciveData</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../d0/dc2/class_serializer.html#a34c68c9c93798008667c773b4818177d">Serializer::Read()</a>, <a class="el" href="../../d8/d39/class_action_base.html#acdf23bc9e5d2d0dbfc08b30e5772202e">ActionBase::ReadFromContext()</a>, <a class="el" href="../../d9/d6e/class_day_z_player_sync_junctures.html#a750dcdc0c1e1df62393730d2f9a63806">DayZPlayerSyncJunctures::SendActionAcknowledgment()</a>, and <a class="el" href="../../d8/d39/class_action_base.html#a49211e993b8eec502433ac72c846049e">ActionBase::UseAcknowledgment()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/df5/_action_input_8c.html#a87b9148e9fe6d2d5723fbe73113089a6">GetAction()</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#a95cec92a1b876711f91309df9f59d212">INPUT_UDT_STANDARD_ACTION_END_REQUEST</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#af18b9c33c3cad52a58ea076e923b7762">INPUT_UDT_STANDARD_ACTION_INPUT_END</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#aadb88447d20a26fbe2a80a27950789e3">INPUT_UDT_STANDARD_ACTION_START</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#a1dbba9fbab31e586a620752cdf863b2d">m_ActionInputWantEnd</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#a78708291ec338f5b05fa1c6e330018ff">m_ActionWantEndRequest</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#ad88175a76ee31936325f4a3d3c8781d3">m_PendingAction</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#af4e438e9d299f1125aad9a077e31451d">m_PendingActionAcknowledgmentID</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#a6bec6d6f30e06c9b8da7303a40f96f5d">m_PendingActionReciveData</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../d0/dc2/class_serializer.html#a34c68c9c93798008667c773b4818177d">Serializer::Read()</a>, <a class="el" href="../../d8/d39/class_action_base.html#acdf23bc9e5d2d0dbfc08b30e5772202e">ActionBase::ReadFromContext()</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#ae41e1be5814e327aa911186eec7a3153">RequestInterruptAction()</a>, <a class="el" href="../../d9/d6e/class_day_z_player_sync_junctures.html#a750dcdc0c1e1df62393730d2f9a63806">DayZPlayerSyncJunctures::SendActionAcknowledgment()</a>, and <a class="el" href="../../d8/d39/class_action_base.html#a49211e993b8eec502433ac72c846049e">ActionBase::UseAcknowledgment()</a>.</p>
 
 </div>
 </div>
@@ -307,7 +310,38 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/db9/_action_manager_base_8c.html#aed62a4ad1d38acf13a562eb6c614a381">m_CurrentActionData</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#af4e438e9d299f1125aad9a077e31451d">m_PendingActionAcknowledgmentID</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#a478f9f5414384b0a935f66773da405e9">OnActionEnd()</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga4f9f8e8e9f282dcaaae5a369175d3547">UA_AM_ACCEPTED</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga9c2343e8e5f2ccc0417e387fc4478e3c">UA_AM_PENDING</a>, and <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga6612d92ddce214fb1f9e6e13e6b96c37">UA_AM_REJECTED</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d33/class_action_manager_server.html#a6855f0b86da249ea1c785547107fc290">EndOrInterruptCurrentAction()</a>.</p>
+
+</div>
+</div>
+<a id="ae41e1be5814e327aa911186eec7a3153" name="ae41e1be5814e327aa911186eec7a3153"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae41e1be5814e327aa911186eec7a3153">&#9670;&#160;</a></span>RequestInterruptAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void RequestInterruptAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>server requests action interrupt </p>
+
+<p class="reference">References <a class="el" href="../../d5/db9/_action_manager_base_8c.html#aed62a4ad1d38acf13a562eb6c614a381">m_CurrentActionData</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, and <a class="el" href="../../d9/d6e/class_day_z_player_sync_junctures.html#ae70615e8b32b93ce24263d1d544ee541">DayZPlayerSyncJunctures::SendActionInterrupt()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d33/class_action_manager_server.html#a2415f4c87057ce9e06c970d9c7221511">OnInputUserDataProcess()</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#a8b5f709bb03ca616b4367c927f2fe832">StartDeliveredAction()</a>, and <a class="el" href="../../d3/d33/class_action_manager_server.html#a47d07e65dec68c40fc31b18e63954616">Update()</a>.</p>
 
 </div>
 </div>
@@ -335,7 +369,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>error - expected action data</p>
 
-<p class="reference">References <a class="el" href="../../da/d7d/class_debug.html#a8c59e38da6c690521319ebdba489ad8d">Debug::ActionLog()</a>, <a class="el" href="../../d2/d9f/_action_targets_8c.html#a2ab3de6f698cb230ae0c129e3e01b341">ActionTarget</a>, <a class="el" href="../../d8/d39/class_action_base.html#aeeb25193dab76b2ff38990b511f32600">ActionBase::AddActionJuncture()</a>, <a class="el" href="../../d8/d39/class_action_base.html#a70ed3eac79e83fe45326d566a3671e03">ActionBase::Can()</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#ace383a0e8c967efc1bd10449666931f1">Interrupt()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#a7a46c2956126f27a67a98cb689da987c">LogManager::IsActionLogEnable()</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#aed62a4ad1d38acf13a562eb6c614a381">m_CurrentActionData</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#a000a23b17f99935883093f56369e9388">m_Interrupted</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#af4e438e9d299f1125aad9a077e31451d">m_PendingActionAcknowledgmentID</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../d9/d6e/class_day_z_player_sync_junctures.html#a750dcdc0c1e1df62393730d2f9a63806">DayZPlayerSyncJunctures::SendActionAcknowledgment()</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga4f9f8e8e9f282dcaaae5a369175d3547">UA_AM_ACCEPTED</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga9c2343e8e5f2ccc0417e387fc4478e3c">UA_AM_PENDING</a>, and <a class="el" href="../../d8/d39/class_action_base.html#a49211e993b8eec502433ac72c846049e">ActionBase::UseAcknowledgment()</a>.</p>
+<p class="reference">References <a class="el" href="../../da/d7d/class_debug.html#a8c59e38da6c690521319ebdba489ad8d">Debug::ActionLog()</a>, <a class="el" href="../../d2/d9f/_action_targets_8c.html#a2ab3de6f698cb230ae0c129e3e01b341">ActionTarget</a>, <a class="el" href="../../d8/d39/class_action_base.html#aeeb25193dab76b2ff38990b511f32600">ActionBase::AddActionJuncture()</a>, <a class="el" href="../../d8/d39/class_action_base.html#a70ed3eac79e83fe45326d566a3671e03">ActionBase::Can()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#a7a46c2956126f27a67a98cb689da987c">LogManager::IsActionLogEnable()</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#aed62a4ad1d38acf13a562eb6c614a381">m_CurrentActionData</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#a000a23b17f99935883093f56369e9388">m_Interrupted</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#af4e438e9d299f1125aad9a077e31451d">m_PendingActionAcknowledgmentID</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#ae41e1be5814e327aa911186eec7a3153">RequestInterruptAction()</a>, <a class="el" href="../../d9/d6e/class_day_z_player_sync_junctures.html#a750dcdc0c1e1df62393730d2f9a63806">DayZPlayerSyncJunctures::SendActionAcknowledgment()</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga4f9f8e8e9f282dcaaae5a369175d3547">UA_AM_ACCEPTED</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga9c2343e8e5f2ccc0417e387fc4478e3c">UA_AM_PENDING</a>, and <a class="el" href="../../d8/d39/class_action_base.html#a49211e993b8eec502433ac72c846049e">ActionBase::UseAcknowledgment()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d3/d33/class_action_manager_server.html#a47d07e65dec68c40fc31b18e63954616">Update()</a>.</p>
 
@@ -365,7 +399,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../da/d7d/class_debug.html#a8c59e38da6c690521319ebdba489ad8d">Debug::ActionLog()</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#aa4bcb5bbd0563be070193a860e13a341">ActionPossibilityCheck()</a>, <a class="el" href="../../d2/d9f/_action_targets_8c.html#a2ab3de6f698cb230ae0c129e3e01b341">ActionTarget</a>, <a class="el" href="../../d8/d39/class_action_base.html#a4dbbee7d6c2088ca8d2ce65c8ced8a25">ActionBase::ComputeConditionMask()</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#ace383a0e8c967efc1bd10449666931f1">Interrupt()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#a7a46c2956126f27a67a98cb689da987c">LogManager::IsActionLogEnable()</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#a1dbba9fbab31e586a620752cdf863b2d">m_ActionInputWantEnd</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#a78708291ec338f5b05fa1c6e330018ff">m_ActionWantEndRequest</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#aed62a4ad1d38acf13a562eb6c614a381">m_CurrentActionData</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#ad88175a76ee31936325f4a3d3c8781d3">m_PendingAction</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#af4e438e9d299f1125aad9a077e31451d">m_PendingActionAcknowledgmentID</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#a6bec6d6f30e06c9b8da7303a40f96f5d">m_PendingActionReciveData</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#a478f9f5414384b0a935f66773da405e9">OnActionEnd()</a>, <a class="el" href="../../d9/d6e/class_day_z_player_sync_junctures.html#a750dcdc0c1e1df62393730d2f9a63806">DayZPlayerSyncJunctures::SendActionAcknowledgment()</a>, <a class="el" href="../../d8/d39/class_action_base.html#a8a21ffe70ea6b59da731edb7976dffa7">ActionBase::SetupAction()</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#a8b5f709bb03ca616b4367c927f2fe832">StartDeliveredAction()</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga4f9f8e8e9f282dcaaae5a369175d3547">UA_AM_ACCEPTED</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga9c2343e8e5f2ccc0417e387fc4478e3c">UA_AM_PENDING</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga6612d92ddce214fb1f9e6e13e6b96c37">UA_AM_REJECTED</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga2a262864c0b574da7b58223194d07236">UA_START</a>, <a class="el" href="../../d8/d39/class_action_base.html#a49211e993b8eec502433ac72c846049e">ActionBase::UseAcknowledgment()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
+<p class="reference">References <a class="el" href="../../da/d7d/class_debug.html#a8c59e38da6c690521319ebdba489ad8d">Debug::ActionLog()</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#aa4bcb5bbd0563be070193a860e13a341">ActionPossibilityCheck()</a>, <a class="el" href="../../d2/d9f/_action_targets_8c.html#a2ab3de6f698cb230ae0c129e3e01b341">ActionTarget</a>, <a class="el" href="../../d8/d39/class_action_base.html#a4dbbee7d6c2088ca8d2ce65c8ced8a25">ActionBase::ComputeConditionMask()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#a7a46c2956126f27a67a98cb689da987c">LogManager::IsActionLogEnable()</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#a1dbba9fbab31e586a620752cdf863b2d">m_ActionInputWantEnd</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#a78708291ec338f5b05fa1c6e330018ff">m_ActionWantEndRequest</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#aed62a4ad1d38acf13a562eb6c614a381">m_CurrentActionData</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#ad88175a76ee31936325f4a3d3c8781d3">m_PendingAction</a>, <a class="el" href="../../d5/db9/_action_manager_base_8c.html#af4e438e9d299f1125aad9a077e31451d">m_PendingActionAcknowledgmentID</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#a6bec6d6f30e06c9b8da7303a40f96f5d">m_PendingActionReciveData</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#a478f9f5414384b0a935f66773da405e9">OnActionEnd()</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#ae41e1be5814e327aa911186eec7a3153">RequestInterruptAction()</a>, <a class="el" href="../../d9/d6e/class_day_z_player_sync_junctures.html#a750dcdc0c1e1df62393730d2f9a63806">DayZPlayerSyncJunctures::SendActionAcknowledgment()</a>, <a class="el" href="../../d8/d39/class_action_base.html#a8a21ffe70ea6b59da731edb7976dffa7">ActionBase::SetupAction()</a>, <a class="el" href="../../d3/d33/class_action_manager_server.html#a8b5f709bb03ca616b4367c927f2fe832">StartDeliveredAction()</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga4f9f8e8e9f282dcaaae5a369175d3547">UA_AM_ACCEPTED</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga9c2343e8e5f2ccc0417e387fc4478e3c">UA_AM_PENDING</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga6612d92ddce214fb1f9e6e13e6b96c37">UA_AM_REJECTED</a>, <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga2a262864c0b574da7b58223194d07236">UA_START</a>, <a class="el" href="../../d8/d39/class_action_base.html#a49211e993b8eec502433ac72c846049e">ActionBase::UseAcknowledgment()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
 
 </div>
 </div>

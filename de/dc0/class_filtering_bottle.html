@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -133,11 +133,11 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a45c3c1a42ba22c6dc8e8aa4513a3bd39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad193d5b56ad4a6855f0f979cface49e1"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc0/class_filtering_bottle.html#ad193d5b56ad4a6855f0f979cface49e1">AffectLiquidContainerOnFill</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> liquid_type, <a class="el" href="../../d4/dc3/classfloat.html">float</a> amount)</td></tr>
 <tr class="separator:ad193d5b56ad4a6855f0f979cface49e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb3d60927ace9b1f953c711970fc903b"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc0/class_filtering_bottle.html#abb3d60927ace9b1f953c711970fc903b">AffectLiquidContainerOnTransfer</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> liquidType, <a class="el" href="../../d4/dc3/classfloat.html">float</a> amount, <a class="el" href="../../d4/dc3/classfloat.html">float</a> sourceLiquidTemperature)</td></tr>
+<tr class="separator:abb3d60927ace9b1f953c711970fc903b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a090611f252876cc05f6633a56c891cc3"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc0/class_filtering_bottle.html#a090611f252876cc05f6633a56c891cc3">GetItemOverheatThreshold</a> ()</td></tr>
 <tr class="memdesc:a090611f252876cc05f6633a56c891cc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">disregards liquid boil threshold if filled  <br /></td></tr>
 <tr class="separator:a090611f252876cc05f6633a56c891cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae886c34e21cd369b3d86cd27cc513eac"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc0/class_filtering_bottle.html#ae886c34e21cd369b3d86cd27cc513eac">OnItemOverheat</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> deltaTime)</td></tr>
-<tr class="separator:ae886c34e21cd369b3d86cd27cc513eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -190,6 +190,50 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../de/dc0/class_filtering_bottle.html#a642fbea5edea0da0c3006baf54bdf79e">DAMAGE_ENVIRO_LIQUID_COEF_MAX</a>, <a class="el" href="../../de/dc0/class_filtering_bottle.html#a8dbcece9df290f8e38060cdf7c3ff3e1">DAMAGE_ENVIRO_LIQUID_COEF_MIN</a>, <a class="el" href="../../de/dc0/class_filtering_bottle.html#a2e968cdfa0602eab73477fd458c51b5b">DAMAGE_ENVIRO_TEMPDIFF_MAX</a>, <a class="el" href="../../de/dc0/class_filtering_bottle.html#a03e353bcba1c93de70cd0828fc7f3bf0">DAMAGE_ENVIRO_TEMPDIFF_MIN</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a09f969dc530be41fe32e0b2f24478719">WorldData::GetLiquidTypeEnviroTemperature()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#affca0b44c3ed5294d6e76e056b0c52b0">GetQuantityMax()</a>, <a class="el" href="../../db/dad/class_mission.html#a0dbbef234a46bf168875313a8fced8ca">Mission::GetWorldData()</a>, <a class="el" href="../../d5/d98/group___math.html#ga6530404da328a85a6ff9bd3a37765087">Math::InverseLerp()</a>, and <a class="el" href="../../d5/d98/group___math.html#gaa6376dcd0f724f11ba0b6bdf66b185ee">Math::Lerp()</a>.</p>
+
+</div>
+</div>
+<a id="abb3d60927ace9b1f953c711970fc903b" name="abb3d60927ace9b1f953c711970fc903b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb3d60927ace9b1f953c711970fc903b">&#9670;&#160;</a></span>AffectLiquidContainerOnTransfer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void AffectLiquidContainerOnTransfer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td>
+          <td class="paramname"><em>liquidType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>amount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>sourceLiquidTemperature</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../de/dc0/class_filtering_bottle.html#a642fbea5edea0da0c3006baf54bdf79e">DAMAGE_ENVIRO_LIQUID_COEF_MAX</a>, <a class="el" href="../../de/dc0/class_filtering_bottle.html#a8dbcece9df290f8e38060cdf7c3ff3e1">DAMAGE_ENVIRO_LIQUID_COEF_MIN</a>, <a class="el" href="../../de/dc0/class_filtering_bottle.html#a2e968cdfa0602eab73477fd458c51b5b">DAMAGE_ENVIRO_TEMPDIFF_MAX</a>, <a class="el" href="../../de/dc0/class_filtering_bottle.html#a03e353bcba1c93de70cd0828fc7f3bf0">DAMAGE_ENVIRO_TEMPDIFF_MIN</a>, <a class="el" href="../../de/dc0/class_filtering_bottle.html#a090611f252876cc05f6633a56c891cc3">GetItemOverheatThreshold()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#affca0b44c3ed5294d6e76e056b0c52b0">GetQuantityMax()</a>, <a class="el" href="../../d5/d98/group___math.html#ga6530404da328a85a6ff9bd3a37765087">Math::InverseLerp()</a>, and <a class="el" href="../../d5/d98/group___math.html#gaa6376dcd0f724f11ba0b6bdf66b185ee">Math::Lerp()</a>.</p>
 
 </div>
 </div>
@@ -460,6 +504,8 @@ Private Attributes</h2></td></tr>
 
 <p>disregards liquid boil threshold if filled </p>
 
+<p class="reference">Referenced by <a class="el" href="../../de/dc0/class_filtering_bottle.html#abb3d60927ace9b1f953c711970fc903b">AffectLiquidContainerOnTransfer()</a>.</p>
+
 </div>
 </div>
 <a id="a50af78fb1504b0d35390c1090d0fbff6" name="a50af78fb1504b0d35390c1090d0fbff6"></a>
@@ -550,34 +596,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ae886c34e21cd369b3d86cd27cc513eac" name="ae886c34e21cd369b3d86cd27cc513eac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae886c34e21cd369b3d86cd27cc513eac">&#9670;&#160;</a></span>OnItemOverheat()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">override void OnItemOverheat </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>deltaTime</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../de/dc0/class_filtering_bottle.html#ad55af955f0ed427eb3b76777f93d2296">DAMAGE_OVERHEAT_PER_S</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Field Documentation</h2>
 <a id="a37cc10e384f77048ec583639617b8faa" name="a37cc10e384f77048ec583639617b8faa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a37cc10e384f77048ec583639617b8faa">&#9670;&#160;</a></span>DAMAGE_CONSUME_PER_ML</h2>
@@ -623,7 +641,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../de/dc0/class_filtering_bottle.html#ad193d5b56ad4a6855f0f979cface49e1">AffectLiquidContainerOnFill()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/dc0/class_filtering_bottle.html#ad193d5b56ad4a6855f0f979cface49e1">AffectLiquidContainerOnFill()</a>, and <a class="el" href="../../de/dc0/class_filtering_bottle.html#abb3d60927ace9b1f953c711970fc903b">AffectLiquidContainerOnTransfer()</a>.</p>
 
 </div>
 </div>
@@ -647,7 +665,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../de/dc0/class_filtering_bottle.html#ad193d5b56ad4a6855f0f979cface49e1">AffectLiquidContainerOnFill()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/dc0/class_filtering_bottle.html#ad193d5b56ad4a6855f0f979cface49e1">AffectLiquidContainerOnFill()</a>, and <a class="el" href="../../de/dc0/class_filtering_bottle.html#abb3d60927ace9b1f953c711970fc903b">AffectLiquidContainerOnTransfer()</a>.</p>
 
 </div>
 </div>
@@ -671,7 +689,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../de/dc0/class_filtering_bottle.html#ad193d5b56ad4a6855f0f979cface49e1">AffectLiquidContainerOnFill()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/dc0/class_filtering_bottle.html#ad193d5b56ad4a6855f0f979cface49e1">AffectLiquidContainerOnFill()</a>, and <a class="el" href="../../de/dc0/class_filtering_bottle.html#abb3d60927ace9b1f953c711970fc903b">AffectLiquidContainerOnTransfer()</a>.</p>
 
 </div>
 </div>
@@ -695,7 +713,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../de/dc0/class_filtering_bottle.html#ad193d5b56ad4a6855f0f979cface49e1">AffectLiquidContainerOnFill()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/dc0/class_filtering_bottle.html#ad193d5b56ad4a6855f0f979cface49e1">AffectLiquidContainerOnFill()</a>, and <a class="el" href="../../de/dc0/class_filtering_bottle.html#abb3d60927ace9b1f953c711970fc903b">AffectLiquidContainerOnTransfer()</a>.</p>
 
 </div>
 </div>
@@ -718,8 +736,6 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../de/dc0/class_filtering_bottle.html#ae886c34e21cd369b3d86cd27cc513eac">OnItemOverheat()</a>.</p>
 
 </div>
 </div>

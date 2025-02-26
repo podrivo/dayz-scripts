@@ -25,7 +25,9 @@ var modules =
     [ "Message commands", "d3/dcd/group___message_c_m_d.html", "d3/dcd/group___message_c_m_d" ],
     [ "pools minimum tick times in ms", "d0/d58/group___modifier.html", "d0/d58/group___modifier" ],
     [ "Emote ids", "d2/d68/group___emote_i_ds.html", "d2/d68/group___emote_i_ds" ],
+    [ "API", "d7/ddb/group___sound_controller.html", "d7/ddb/group___sound_controller" ],
     [ "Components", "d5/d5c/group___components.html", "d5/d5c/group___components" ],
     [ "Modding DiagMenu", "dd/dd2/group___modding.html", null ],
-    [ "Mouse Events", "df/d0c/group___mouse_events.html", "df/d0c/group___mouse_events" ]
+    [ "Mouse Events", "df/d0c/group___mouse_events.html", "df/d0c/group___mouse_events" ],
+    [ "Script Testing Framework", "d8/d83/group___script_testing_framework.html", "d8/d83/group___script_testing_framework" ]
 ];

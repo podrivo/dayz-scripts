@@ -2,6 +2,7 @@ var class_human_inventory_with_f_s_m =
 [
     [ "HumanInventoryWithFSM", "d4/d59/class_human_inventory_with_f_s_m.html#aaf5539a8f3a69a01a93e95ad16b3a7bc", null ],
     [ "CanProcessHandEvents", "d4/d59/class_human_inventory_with_f_s_m.html#a2fb35749a434db920984cc7f0a4445e0", null ],
+    [ "CheckFSMState", "d4/d59/class_human_inventory_with_f_s_m.html#aaae525b4192b6697aa6472b39328d4ed", null ],
     [ "CreateStableStates", "d4/d59/class_human_inventory_with_f_s_m.html#a159cbac92f2de441f2cb44e4e7c6d21b", null ],
     [ "GetCurrentStateID", "d4/d59/class_human_inventory_with_f_s_m.html#a524e881e774556ec14e7d230a6184a8f", null ],
     [ "Init", "d4/d59/class_human_inventory_with_f_s_m.html#a8045e088b31fe0754fb20cb0a5ff0dc9", null ],

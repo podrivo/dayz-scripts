@@ -1,4 +1,4 @@
 var _fox_8c =
 [
-    [ "Edible_Base", "df/d7c/class_edible___base.html", "df/d7c/class_edible___base" ]
+    [ "DeadFox", "d0/d32/class_dead_fox.html", "d0/d32/class_dead_fox" ]
 ];

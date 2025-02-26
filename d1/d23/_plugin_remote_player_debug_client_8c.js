@@ -9,7 +9,7 @@ var _plugin_remote_player_debug_client_8c =
     [ "EnableWidgets", "d1/d23/_plugin_remote_player_debug_client_8c.html#a3220896629361cbdfbfb507dcf9859ad", null ],
     [ "InitWidgets", "d1/d23/_plugin_remote_player_debug_client_8c.html#abe86e971e9029c5e50a9cb2ca809d032", null ],
     [ "MergeDamage", "d1/d23/_plugin_remote_player_debug_client_8c.html#acf304cdc224f30c75e3370e42dd51318", null ],
-    [ "OnInit", "d1/d23/_plugin_remote_player_debug_client_8c.html#a01f1070c46e4cc24d25a0ea0869bc972", null ],
+    [ "OnInit", "d8/d83/group___script_testing_framework.html#ga01f1070c46e4cc24d25a0ea0869bc972", null ],
     [ "OnRPC", "d1/d23/_plugin_remote_player_debug_client_8c.html#abdc765142c7d9fa2c017982090949738", null ],
     [ "OnUpdate", "d1/d23/_plugin_remote_player_debug_client_8c.html#ada777685abe2f010988b4924f95e76bb", null ],
     [ "RequestPlayerInfo", "d1/d23/_plugin_remote_player_debug_client_8c.html#a8b6f72fdaff5d841039ea6c1f045485e", null ],

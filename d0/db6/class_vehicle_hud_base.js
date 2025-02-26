@@ -6,6 +6,7 @@ var class_vehicle_hud_base =
     [ "HideVehicleInfo", "d0/db6/class_vehicle_hud_base.html#a3ad68358aad7574e066784440c4892f4", null ],
     [ "Init", "d0/db6/class_vehicle_hud_base.html#af2a2af3e469c493911bdc157fc101fa0", null ],
     [ "RefreshVehicleHud", "d0/db6/class_vehicle_hud_base.html#aca0fa9bd6ef229ea277e5b4b0ebea05e", null ],
+    [ "ShowPanel", "d0/db6/class_vehicle_hud_base.html#af79847333f2ab22cdc859c39ab89df44", null ],
     [ "ShowVehicleInfo", "d0/db6/class_vehicle_hud_base.html#a85606bb855080cd4e85e4d7c30a246cb", null ],
     [ "m_VehicleCurrentGearValue", "d0/db6/class_vehicle_hud_base.html#a5bd13f6e41194db6a6e051fdba1ee716", null ],
     [ "m_VehicleGearTable", "d0/db6/class_vehicle_hud_base.html#a501e3630a65e3fc31861d956e84a1053", null ],

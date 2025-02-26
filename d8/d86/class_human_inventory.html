@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -210,6 +210,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a9d85fb887603ea275dcc3b5dcc7a427a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f2131a74219850a7a790ebb7d2104ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d86/class_human_inventory.html#a2f2131a74219850a7a790ebb7d2104ce">ValidateUserReservationCancel</a> (inout <a class="el" href="../../d0/dc2/class_serializer.html">Serializer</a> ctx, <a class="el" href="../../da/d63/class_inventory_validation.html">InventoryValidation</a> validation)</td></tr>
 <tr class="separator:a2f2131a74219850a7a790ebb7d2104ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a219e9a94647230b3c4326426aceb9c7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d86/class_human_inventory.html#a219e9a94647230b3c4326426aceb9c7d">PostDeferredEventTakeToDst</a> (<a class="el" href="../../dc/dd3/3___game_2_systems_2_inventory_2_inventory_8c.html#a5073c77c5d68882860f688a9fc4cba4d">InventoryMode</a> mode, notnull <a class="el" href="../../d6/dc5/class_inventory_location.html">InventoryLocation</a> src, notnull <a class="el" href="../../d6/dc5/class_inventory_location.html">InventoryLocation</a> dst)</td></tr>
+<tr class="separator:a219e9a94647230b3c4326426aceb9c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abde40f7b76f5cd92740e95ce08627c35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d86/class_human_inventory.html#abde40f7b76f5cd92740e95ce08627c35">PostDeferredForceSwapEntities</a> (<a class="el" href="../../dc/dd3/3___game_2_systems_2_inventory_2_inventory_8c.html#a5073c77c5d68882860f688a9fc4cba4d">InventoryMode</a> mode, notnull <a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> item1, notnull <a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> item2, notnull <a class="el" href="../../d6/dc5/class_inventory_location.html">InventoryLocation</a> dst1, notnull <a class="el" href="../../d6/dc5/class_inventory_location.html">InventoryLocation</a> dst2)</td></tr>
+<tr class="separator:abde40f7b76f5cd92740e95ce08627c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -618,6 +622,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d96/class_entity.html#ab364494e725a168f87ee6b4c06f05f6e">Entity::IsSlotReserved()</a>.</p>
+
 </div>
 </div>
 <a id="a113d42d88a8e02b80c1afd7dd4085965" name="a113d42d88a8e02b80c1afd7dd4085965"></a>
@@ -750,7 +756,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>entity in hands </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d49/class_hand_action_base.html#aa48f7d7786ad8088b84720add04ea1d8">HandActionBase::Action()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#aff1240689ec702f631f079488bbca905">InventoryItem::GetRecipesActions()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a0dd2f13d258110ef98f2ae9f8aeaa34f">HasEntityInHands()</a>, <a class="el" href="../../d2/d9a/class_hand_state_base.html#a5af9858c011f114ddfd56d0edc6b60c7">HandStateBase::OnEntry()</a>, <a class="el" href="../../d8/d3e/class_analytics_manager_client.html#a2ad5aee217665b25584d7c8539cd9d70">AnalyticsManagerClient::OnItemAttachedAtPlayer()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#abbe50e1ae9704b47d7ac8ec53f3b9b16">EntityAI::PredictiveMoveItemFromHandsToInventory()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a9420a3fbe3a89fc9eb3a246c3a981d96">ReplaceItemInElsewhereWithNewinHandsImpl()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#af616bececf35274d14c7a966e407aa0c">ReplaceItemInHandsWithNewImpl()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ab20a855638a60f3fc0767f5192c30e38">ReplaceItemWithNew()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#a6a99557d160aa4d5b36cc952aef3817d">EntityAI::TakeEntityToHandsImpl()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d49/class_hand_action_base.html#aa48f7d7786ad8088b84720add04ea1d8">HandActionBase::Action()</a>, <a class="el" href="../../d4/d59/class_human_inventory_with_f_s_m.html#aaae525b4192b6697aa6472b39328d4ed">HumanInventoryWithFSM::CheckFSMState()</a>, <a class="el" href="../../d4/d87/class_man_base.html#ae1412646a18d380dafc2982c690fd9d9">ManBase::GetItemInHands()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#aff1240689ec702f631f079488bbca905">InventoryItem::GetRecipesActions()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a0dd2f13d258110ef98f2ae9f8aeaa34f">HasEntityInHands()</a>, <a class="el" href="../../d2/d9a/class_hand_state_base.html#a5af9858c011f114ddfd56d0edc6b60c7">HandStateBase::OnEntry()</a>, <a class="el" href="../../d8/d3e/class_analytics_manager_client.html#a2ad5aee217665b25584d7c8539cd9d70">AnalyticsManagerClient::OnItemAttachedAtPlayer()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#abbe50e1ae9704b47d7ac8ec53f3b9b16">EntityAI::PredictiveMoveItemFromHandsToInventory()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a9420a3fbe3a89fc9eb3a246c3a981d96">ReplaceItemInElsewhereWithNewinHandsImpl()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#af616bececf35274d14c7a966e407aa0c">ReplaceItemInHandsWithNewImpl()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ab20a855638a60f3fc0767f5192c30e38">ReplaceItemWithNew()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#a6a99557d160aa4d5b36cc952aef3817d">EntityAI::TakeEntityToHandsImpl()</a>.</p>
 
 </div>
 </div>
@@ -817,7 +823,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d86/class_human_inventory.html#a985d6dee1a022dfac1bcb59afa4fb055">ClearUserReservedLocationAtIndexSynced()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ae93d6ed30a6375f1d9245a413253fe05">RedirectToHandEvent()</a>, and <a class="el" href="../../d8/d86/class_human_inventory.html#a9d85fb887603ea275dcc3b5dcc7a427a">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d86/class_human_inventory.html#a985d6dee1a022dfac1bcb59afa4fb055">ClearUserReservedLocationAtIndexSynced()</a>, <a class="el" href="../../d2/d96/class_entity.html#ab364494e725a168f87ee6b4c06f05f6e">Entity::IsSlotReserved()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ae93d6ed30a6375f1d9245a413253fe05">RedirectToHandEvent()</a>, and <a class="el" href="../../d8/d86/class_human_inventory.html#a9d85fb887603ea275dcc3b5dcc7a427a">Update()</a>.</p>
 
 </div>
 </div>
@@ -843,6 +849,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d96/class_entity.html#ab364494e725a168f87ee6b4c06f05f6e">Entity::IsSlotReserved()</a>.</p>
 
 </div>
 </div>
@@ -1133,6 +1141,102 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a219e9a94647230b3c4326426aceb9c7d" name="a219e9a94647230b3c4326426aceb9c7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a219e9a94647230b3c4326426aceb9c7d">&#9670;&#160;</a></span>PostDeferredEventTakeToDst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> PostDeferredEventTakeToDst </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/dd3/3___game_2_systems_2_inventory_2_inventory_8c.html#a5073c77c5d68882860f688a9fc4cba4d">InventoryMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">notnull <a class="el" href="../../d6/dc5/class_inventory_location.html">InventoryLocation</a>&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">notnull <a class="el" href="../../d6/dc5/class_inventory_location.html">InventoryLocation</a>&#160;</td>
+          <td class="paramname"><em>dst</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abde40f7b76f5cd92740e95ce08627c35" name="abde40f7b76f5cd92740e95ce08627c35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abde40f7b76f5cd92740e95ce08627c35">&#9670;&#160;</a></span>PostDeferredForceSwapEntities()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> PostDeferredForceSwapEntities </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/dd3/3___game_2_systems_2_inventory_2_inventory_8c.html#a5073c77c5d68882860f688a9fc4cba4d">InventoryMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">notnull <a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a>&#160;</td>
+          <td class="paramname"><em>item1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">notnull <a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a>&#160;</td>
+          <td class="paramname"><em>item2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">notnull <a class="el" href="../../d6/dc5/class_inventory_location.html">InventoryLocation</a>&#160;</td>
+          <td class="paramname"><em>dst1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">notnull <a class="el" href="../../d6/dc5/class_inventory_location.html">InventoryLocation</a>&#160;</td>
+          <td class="paramname"><em>dst2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad0e080aa43f6b82517ba97f9e0ecff05" name="ad0e080aa43f6b82517ba97f9e0ecff05"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad0e080aa43f6b82517ba97f9e0ecff05">&#9670;&#160;</a></span>ProcessHandEvent()</h2>
 
@@ -1201,7 +1305,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d86/class_human_inventory.html#a940af11354df2e105378371172bcea62">ClearUserReservedLocationAtIndex()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a113d42d88a8e02b80c1afd7dd4085965">FindUserReservedLocationIndex()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a3836b44a9c6783a9c105f9883e683578">EntityAI::GetHumanInventory()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aa4957320ada1b1e401862296fe14370b">InventoryLocation::GetParent()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aec280ad00fb591910bbefb89b17cb070">InventoryLocation::GetSlot()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956">InventoryLocation::GetType()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a493b5cec61bbc53021ad098dc934a277">GetUserReservedLocation()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a6de7925e788dafecfb62c7e19bdface3">HandEvent()</a>, <a class="el" href="../../d5/d4b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint()</a>, and <a class="el" href="../../d9/df7/class_log_manager.html#a1d85377e18f016d0c80816c505bdc4d5">LogManager::IsInventoryHFSMLogEnable()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d86/class_human_inventory.html#a940af11354df2e105378371172bcea62">ClearUserReservedLocationAtIndex()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a113d42d88a8e02b80c1afd7dd4085965">FindUserReservedLocationIndex()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#ae1a4031a17ebb77aa7f3f66b8d01869f">EntityAI::GetHumanInventory()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aa4957320ada1b1e401862296fe14370b">InventoryLocation::GetParent()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aec280ad00fb591910bbefb89b17cb070">InventoryLocation::GetSlot()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956">InventoryLocation::GetType()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a493b5cec61bbc53021ad098dc934a277">GetUserReservedLocation()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a6de7925e788dafecfb62c7e19bdface3">HandEvent()</a>, <a class="el" href="../../d5/d4b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint()</a>, and <a class="el" href="../../d9/df7/class_log_manager.html#a1d85377e18f016d0c80816c505bdc4d5">LogManager::IsInventoryHFSMLogEnable()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/d86/class_human_inventory.html#a605a34f248da9ce4f3715f29fb7ed63e">TakeEntityToInventory()</a>, and <a class="el" href="../../d8/d86/class_human_inventory.html#a6f3ac4a65e51aa125f52179fd0ee1ed6">TakeToDst()</a>.</p>
 

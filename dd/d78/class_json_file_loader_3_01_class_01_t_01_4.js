@@ -8,5 +8,6 @@ var class_json_file_loader_3_01_class_01_t_01_4 =
     [ "LoadFile", "dd/d78/class_json_file_loader_3_01_class_01_t_01_4.html#a3d88df6fcc7f1f9d61545f1f2a033811", null ],
     [ "MakeData", "dd/d78/class_json_file_loader_3_01_class_01_t_01_4.html#a7b7ab21dbd873fb87ddfbbe388df0b44", null ],
     [ "SaveFile", "dd/d78/class_json_file_loader_3_01_class_01_t_01_4.html#abb0e9487a152101fe9c2d4393d7d8edd", null ],
-    [ "m_Serializer", "dd/d78/class_json_file_loader_3_01_class_01_t_01_4.html#ab80c9cb738a696afa8011ac7dd2beff3", null ]
+    [ "m_Serializer", "dd/d78/class_json_file_loader_3_01_class_01_t_01_4.html#ab80c9cb738a696afa8011ac7dd2beff3", null ],
+    [ "READ_FILE_LENGTH", "dd/d78/class_json_file_loader_3_01_class_01_t_01_4.html#a237642b45c2d455da1aae0130df9a9fa", null ]
 ];

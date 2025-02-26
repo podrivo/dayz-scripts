@@ -22,6 +22,7 @@ var _player_sound_event_handler_8c =
       [ "INJURED_MEDIUM", "d5/d1b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88a5e16b6627d8f8887812b3e3a127fcad6", null ],
       [ "INJURED_HIGH", "d5/d1b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88a8714844273b9eee9097baca00a121237", null ],
       [ "FREEZING", "d5/d1b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88a75412e2bd8ba3afc57aea4165a1e26d3", null ],
+      [ "RATTLING_TEETH", "d5/d1b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88a73e54f2e978fdc56903a76d8eadb3bdc", null ],
       [ "HOT", "d5/d1b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88a5b2eed487adc23f794cf34d514dc804f", null ],
       [ "SYMPTOM_FATIGUE", "d5/d1b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88a2e10359756b031acb8c64986abd62cba", null ],
       [ "STAMINA_LOW_FILTER_UPPER", "d5/d1b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88abae6f902626ccfb401146a9a6594e2fc", null ],

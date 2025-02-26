@@ -23,7 +23,7 @@ var _player_sound_event_base_8c =
     [ "OnInterupt", "dd/d40/_player_sound_event_base_8c.html#af2de087c322808772c33d9436a3a87cd", null ],
     [ "OnPlay", "dd/d40/_player_sound_event_base_8c.html#a10841fcd45d6294fb05fd32b88de11a8", null ],
     [ "OnTick", "dd/d40/_player_sound_event_base_8c.html#ad5d7c03344a58c256752ec0476fbca54", null ],
-    [ "Play", "dd/d40/_player_sound_event_base_8c.html#ae49d189b5343f6e4b8153d5cddec41a6", null ],
+    [ "Play", "d7/ddb/group___sound_controller.html#ga1044d828832cd398ac046799915a5136", null ],
     [ "PlayerSoundEventBase", "dd/d40/_player_sound_event_base_8c.html#ac871fa77884e4b1233b1a7798bd7901e", null ],
     [ "SendEvent", "dd/d40/_player_sound_event_base_8c.html#abb78d805cfcb833542e1d0f97c168277", null ],
     [ "~PlayerSoundEventBase", "dd/d40/_player_sound_event_base_8c.html#a09bab0b0aca1f901d45035186c44cd28", null ],

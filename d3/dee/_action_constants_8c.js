@@ -17,5 +17,6 @@ var _action_constants_8c =
     [ "ROUGH_HIGH", "d3/dee/_action_constants_8c.html#a4a2a267d9ff3e9ea4b2cb74c71ac886e", null ],
     [ "ROUGH_LOW", "d3/dee/_action_constants_8c.html#aa904c96bcf2bbcc78c0b6d335c239565", null ],
     [ "ROUGH_MEDIUM", "d3/dee/_action_constants_8c.html#a585b2ea1c2eb592f4e4b363ddb0b420e", null ],
+    [ "VERY_NARROW", "d3/dee/_action_constants_8c.html#a18bc02443828c7385188eb85e9389d54", null ],
     [ "WIDE", "d3/dee/_action_constants_8c.html#a3368b9ceba8c616dc2500984cd8bf86d", null ]
 ];

@@ -1,4 +1,4 @@
 var _laughter_state_8c =
 [
-    [ "SymptomBase", "d9/db3/class_symptom_base.html", "d9/db3/class_symptom_base" ]
+    [ "LaughterSymptom", "df/d6d/class_laughter_symptom.html", "df/d6d/class_laughter_symptom" ]
 ];

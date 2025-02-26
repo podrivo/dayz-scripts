@@ -1,5 +1,6 @@
 var dir_07efb841fa3bbb87bb9275e451a171cf =
 [
+    [ "Hit_Foliage", "dir_28bacdb9f9c54ca13114b1a319235ea4.html", "dir_28bacdb9f9c54ca13114b1a319235ea4" ],
     [ "Hit_MeatBones", "dir_306661c63f04f71fa6eed9742c13c114.html", "dir_306661c63f04f71fa6eed9742c13c114" ],
     [ "Hit_Concrete.c", "d8/da7/_hit___concrete_8c.html", "d8/da7/_hit___concrete_8c" ],
     [ "Hit_Dirt.c", "dd/d80/_hit___dirt_8c.html", "dd/d80/_hit___dirt_8c" ],

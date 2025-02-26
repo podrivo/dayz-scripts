@@ -252,6 +252,7 @@ var class_i_entity =
     [ "OnRPC", "dc/da9/class_i_entity.html#a09ea733dd230b1a19873ebb7c6f968bf", null ],
     [ "OnSimulationDisabled", "dc/da9/class_i_entity.html#aa1df37f53d621849d703f9cbea51cdce", null ],
     [ "OnSimulationEnabled", "dc/da9/class_i_entity.html#ada5cd52051b20d74ee80ff548e61ee08", null ],
+    [ "OnSpawnByObjectSpawner", "dc/da9/class_i_entity.html#ae8e183009c757b0e0d0042be383630ad", null ],
     [ "OnTreeCutDown", "dc/da9/class_i_entity.html#aba18f30a53e010eb9c03f2f6fdcf9e4a", null ],
     [ "PlaceOnSurface", "dc/da9/class_i_entity.html#afb90fb93a37b4d24fc23a29b19fde432", null ],
     [ "PlaySound", "dc/da9/class_i_entity.html#a4f118747bc49f8bf23a80ba63745eaad", null ],

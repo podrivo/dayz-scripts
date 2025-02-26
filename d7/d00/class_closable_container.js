@@ -7,7 +7,7 @@ var class_closable_container =
     [ "CanCombine", "d7/d00/class_closable_container.html#a639624b9df1cb4b65cd897c2dfc949fb", null ],
     [ "CanCombineAmmo", "d7/d00/class_closable_container.html#a9f6e3b1133e790bc71784c5cfcb975e4", null ],
     [ "Close", "d7/d00/class_closable_container.html#ab390fa8607d8d415cb28667bb2137bb5", null ],
-    [ "ContainerWithCargo", "d7/d00/class_closable_container.html#ac5983a969243a8f317e0a251a069bb7b", null ],
+    [ "ContainerWithCargo", "d7/d00/class_closable_container.html#aff57819da7178d1c55aa824cb241498c", null ],
     [ "ContainerWithCargoAndAttachments", "d7/d00/class_closable_container.html#a9ed770c0f8b57ad6ed883e7a79d6c6e8", null ],
     [ "DoubleClick", "d7/d00/class_closable_container.html#a9136df4f7ed866294bb073b8ad7fb30e", null ],
     [ "DraggingOver", "d7/d00/class_closable_container.html#a1a6aa4d5271b2cd868b12c55847f4ecc", null ],

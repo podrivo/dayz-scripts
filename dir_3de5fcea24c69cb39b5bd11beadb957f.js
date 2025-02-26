@@ -9,6 +9,7 @@ var dir_3de5fcea24c69cb39b5bd11beadb957f =
     [ "BuildingWithFireplace.c", "d1/d01/_building_with_fireplace_8c.html", "d1/d01/_building_with_fireplace_8c" ],
     [ "CrashBase.c", "d4/d59/_crash_base_8c.html", "d4/d59/_crash_base_8c" ],
     [ "FuelStation.c", "dc/de9/_fuel_station_8c.html", "dc/de9/_fuel_station_8c" ],
+    [ "OutdoorThermometer.c", "d0/ddb/_outdoor_thermometer_8c.html", "d0/ddb/_outdoor_thermometer_8c" ],
     [ "Signs.c", "d2/d4b/_signs_8c.html", "d2/d4b/_signs_8c" ],
     [ "Well.c", "dc/da4/_well_8c.html", "dc/da4/_well_8c" ]
 ];

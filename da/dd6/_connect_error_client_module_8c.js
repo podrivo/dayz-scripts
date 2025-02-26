@@ -15,6 +15,9 @@ var _connect_error_client_module_8c =
       [ "DLC_CHECK_FAILED", "da/dd6/_connect_error_client_module_8c.html#aa07fb8e94c63ccb8d6a7e60ab7ca3593a7921d7940e343d1862be904b31100827", null ],
       [ "EMPTY_PASSWORD", "da/dd6/_connect_error_client_module_8c.html#aa07fb8e94c63ccb8d6a7e60ab7ca3593a4712cb64f64b315736aaea8d419e6209", null ],
       [ "PASSWORD", "da/dd6/_connect_error_client_module_8c.html#aa07fb8e94c63ccb8d6a7e60ab7ca3593a0763974ac198d8ead8dd2112dadfb216", null ],
-      [ "BE_LICENCE", "da/dd6/_connect_error_client_module_8c.html#aa07fb8e94c63ccb8d6a7e60ab7ca3593a362b93e14edc783d1156cd84956240aa", null ]
+      [ "BE_LICENCE", "da/dd6/_connect_error_client_module_8c.html#aa07fb8e94c63ccb8d6a7e60ab7ca3593a362b93e14edc783d1156cd84956240aa", null ],
+      [ "ALREADY_ON_ANOTHER_SERVER", "da/dd6/_connect_error_client_module_8c.html#aa07fb8e94c63ccb8d6a7e60ab7ca3593a626f80c7612a21613deff2fab18de8e1", null ],
+      [ "COMMUNICATION_TIMED_OUT", "da/dd6/_connect_error_client_module_8c.html#aa07fb8e94c63ccb8d6a7e60ab7ca3593a28f9e542c647f001abb74e93fac277f8", null ],
+      [ "ALREADY_ON_SERVER", "da/dd6/_connect_error_client_module_8c.html#aa07fb8e94c63ccb8d6a7e60ab7ca3593aa81924eb311be6d9d9eb2510d97d19d1", null ]
     ] ]
 ];

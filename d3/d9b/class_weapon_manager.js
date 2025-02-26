@@ -8,6 +8,7 @@ var class_weapon_manager =
     [ "CanEjectBulletVerified", "d3/d9b/class_weapon_manager.html#a44258d4858ba55b907c8b0d731288781", null ],
     [ "CanFire", "d3/d9b/class_weapon_manager.html#a68764a86fc03cead93204318889afc32", null ],
     [ "CanLoadBullet", "d3/d9b/class_weapon_manager.html#aebfe488cc9096fd8955057bace0d6794", null ],
+    [ "CanLoadMultipleBullet", "d3/d9b/class_weapon_manager.html#a719d91cdeb2b89a7033aef59fc859399", null ],
     [ "CanSwapMagazine", "d3/d9b/class_weapon_manager.html#a883e84ab13c119833e1c5b845cc57479", null ],
     [ "CanUnjam", "d3/d9b/class_weapon_manager.html#a1878b089988960c525c86708ab78d92e", null ],
     [ "CompareMagazinesSuitability", "d3/d9b/class_weapon_manager.html#ae842b66aff8dc9e4ce6944c418393736", null ],

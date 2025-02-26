@@ -4,6 +4,7 @@ var class_c_a_base =
     [ "Execute", "d0/df0/class_c_a_base.html#aa429576bab8adfad178c92a553dce1fd", null ],
     [ "GetACData", "d0/df0/class_c_a_base.html#a2263b6c89bff900949d54de9dead67ba", null ],
     [ "GetProgress", "d0/df0/class_c_a_base.html#afb52390946ae83c3997b18310d1d14bf", null ],
+    [ "GetProgressWidgetMultiplier", "d0/df0/class_c_a_base.html#a5d6705041ff1a44633fa96ab3af82dd6", null ],
     [ "Init", "d0/df0/class_c_a_base.html#af4edde4f72c94d8dce6d2b7868ea9289", null ],
     [ "Interrupt", "d0/df0/class_c_a_base.html#a65dff1f83cdbccba9744629f1ade2750", null ],
     [ "IsContinuousAction", "d0/df0/class_c_a_base.html#a0592bf28ef9f781c1bc9787fe2263b29", null ],

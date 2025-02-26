@@ -29,6 +29,8 @@ var class_human_inventory =
     [ "OnHandsEnteredStableState", "d8/d86/class_human_inventory.html#aa9d5b0eb4f93042aeb41d32849b1b4ef", null ],
     [ "OnHandsExitedStableState", "d8/d86/class_human_inventory.html#af769d141ffcaf6e8c4f6157f115bcde7", null ],
     [ "OnHandsStateChanged", "d8/d86/class_human_inventory.html#acaf2d4506fb1c8cee0b326ba9a22daed", null ],
+    [ "PostDeferredEventTakeToDst", "d8/d86/class_human_inventory.html#a219e9a94647230b3c4326426aceb9c7d", null ],
+    [ "PostDeferredForceSwapEntities", "d8/d86/class_human_inventory.html#abde40f7b76f5cd92740e95ce08627c35", null ],
     [ "ProcessHandEvent", "d8/d86/class_human_inventory.html#ad0e080aa43f6b82517ba97f9e0ecff05", null ],
     [ "RedirectToHandEvent", "d8/d86/class_human_inventory.html#ae93d6ed30a6375f1d9245a413253fe05", null ],
     [ "ReplaceItemElsewhereWithNewInHands", "d8/d86/class_human_inventory.html#abd8eaff4c2453b1ba124a4a3ef441d69", null ],

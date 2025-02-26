@@ -20,6 +20,7 @@ var _hud_debug_8c =
     [ "HUD_WIN_CHAR_STATS", "d8/d26/_hud_debug_8c.html#a91d04c1432fdd224cb785e57ec62dd9a", null ],
     [ "HUD_WIN_CHAR_STOMACH", "d8/d26/_hud_debug_8c.html#ab91ee7fcc0b936ec7e075ce84cff8cd6", null ],
     [ "HUD_WIN_HEALTH", "d8/d26/_hud_debug_8c.html#a61d68523f888ab2845b53d2c3f84280c", null ],
+    [ "HUD_WIN_HORTICULTURE", "d8/d26/_hud_debug_8c.html#a51617335e4533e84b997b09512402d51", null ],
     [ "HUD_WIN_TEMPERATURE", "d8/d26/_hud_debug_8c.html#ad1fea24b53714302b202bc8b43843bd9", null ],
     [ "HUD_WIN_UNDEFINED", "d8/d26/_hud_debug_8c.html#aef6771cd26df6cd77152c6184cfafda7", null ],
     [ "HUD_WIN_VERSION", "d8/d26/_hud_debug_8c.html#ae77c755764aa027590b8f44f5a0ccb39", null ],
@@ -31,5 +32,6 @@ var _hud_debug_8c =
     [ "m_WinCharAgents", "d8/d26/_hud_debug_8c.html#a45ed055eb784f700d8af49aea76661e0", null ],
     [ "m_WinCharModifiers", "d8/d26/_hud_debug_8c.html#aec0dab6efe720dd6a8a080e6aa6c4d0e", null ],
     [ "m_WinCharStats", "d8/d26/_hud_debug_8c.html#a78cbcc6ac4d46b7ab8113792a3a29de4", null ],
-    [ "m_WinHealth", "d8/d26/_hud_debug_8c.html#ab54192be8a3ca8be36af5f8c44972e99", null ]
+    [ "m_WinHealth", "d8/d26/_hud_debug_8c.html#ab54192be8a3ca8be36af5f8c44972e99", null ],
+    [ "m_WinHorticulture", "d8/d26/_hud_debug_8c.html#ae21b96bcdb6fdad307851b24566378c1", null ]
 ];

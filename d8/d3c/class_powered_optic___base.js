@@ -1,5 +1,6 @@
 var class_powered_optic___base =
 [
+    [ "~Rangefinder", "d8/d3c/class_powered_optic___base.html#ac2bddda97e40c356dc8b6b106525e759", null ],
     [ "DoMeasurement", "d8/d3c/class_powered_optic___base.html#a1fed9090379d6a62e4a7aab891fd3071", null ],
     [ "EEItemAttached", "d8/d3c/class_powered_optic___base.html#ac063b6124c64033d904f29247d8eb45a", null ],
     [ "EEItemDetached", "d8/d3c/class_powered_optic___base.html#a870b0dcd0dfafe4a764232688d9356c0", null ],

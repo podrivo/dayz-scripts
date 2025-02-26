@@ -3,6 +3,7 @@ var class_cfg_slots =
     [ "Slot_Armband", "da/db4/class_cfg_slots_1_1_slot___armband.html", "da/db4/class_cfg_slots_1_1_slot___armband" ],
     [ "Slot_Att_CombinationLock", "d4/dc8/class_cfg_slots_1_1_slot___att___combination_lock.html", "d4/dc8/class_cfg_slots_1_1_slot___att___combination_lock" ],
     [ "Slot_Back", "d8/d90/class_cfg_slots_1_1_slot___back.html", "d8/d90/class_cfg_slots_1_1_slot___back" ],
+    [ "Slot_Backpack_1", "d1/dab/class_cfg_slots_1_1_slot___backpack__1.html", "d1/dab/class_cfg_slots_1_1_slot___backpack__1" ],
     [ "Slot_Bait", "d0/d17/class_cfg_slots_1_1_slot___bait.html", "d0/d17/class_cfg_slots_1_1_slot___bait" ],
     [ "Slot_Bark", "d1/d1c/class_cfg_slots_1_1_slot___bark.html", "d1/d1c/class_cfg_slots_1_1_slot___bark" ],
     [ "Slot_BatteryD", "df/d22/class_cfg_slots_1_1_slot___battery_d.html", "df/d22/class_cfg_slots_1_1_slot___battery_d" ],

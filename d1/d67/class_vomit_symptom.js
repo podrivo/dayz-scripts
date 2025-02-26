@@ -12,5 +12,6 @@ var class_vomit_symptom =
     [ "BLOOD_LOSS", "d1/d67/class_vomit_symptom.html#a4a7f111303c3f8d9d7e69e84e8e3728c", null ],
     [ "m_VomitContentPercentage", "d1/d67/class_vomit_symptom.html#a742d06939aad60a9bd6453a5cb5e0166", null ],
     [ "STAMINA_DEPLETION_MULTIPLIER", "d1/d67/class_vomit_symptom.html#a90a86f8c53f14ceb42838290b978d999", null ],
-    [ "STAMINA_RECOVERY_MULTIPLIER", "d1/d67/class_vomit_symptom.html#af7eb103197c4e07f2ade53ee4e3c8d26", null ]
+    [ "STAMINA_RECOVERY_MULTIPLIER", "d1/d67/class_vomit_symptom.html#af7eb103197c4e07f2ade53ee4e3c8d26", null ],
+    [ "STOMACH_CONTENT_PERCENTAGE_DEFAULT", "d1/d67/class_vomit_symptom.html#a40a1ee6c616544362cfac4f9a1756df6", null ]
 ];

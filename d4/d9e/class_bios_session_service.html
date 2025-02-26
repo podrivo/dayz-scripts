@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -163,6 +163,9 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a5935eb879d630d79598c79f854c9cae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36ab0add31e2b3b2cc4ef93102fc39a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d5/d92/classstring.html">string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/class_bios_session_service.html#a36ab0add31e2b3b2cc4ef93102fc39a6">GetSessionPlayerList</a> ()</td></tr>
 <tr class="separator:a36ab0add31e2b3b2cc4ef93102fc39a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa35194caf82f9def5e2758fdd686d7dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/class_bios_session_service.html#aa35194caf82f9def5e2758fdd686d7dd">GetSessionPlayerListEx</a> (<a class="el" href="../../d5/d78/group___enforce.html#ga28845e68ed8329715e29aded7542ca15">TStringArray</a> outPlayerList)</td></tr>
+<tr class="memdesc:aa35194caf82f9def5e2758fdd686d7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Native callback function to retrieve the session player list.  <br /></td></tr>
+<tr class="separator:aa35194caf82f9def5e2758fdd686d7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -314,6 +317,44 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../d5/daf/class_client_data.html#a8d13d352518e225eb04de2b2fce11b16">ClientData::GetSimplePlayerList()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d9e/class_bios_session_service.html#aa35194caf82f9def5e2758fdd686d7dd">GetSessionPlayerListEx()</a>.</p>
+
+</div>
+</div>
+<a id="aa35194caf82f9def5e2758fdd686d7dd" name="aa35194caf82f9def5e2758fdd686d7dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa35194caf82f9def5e2758fdd686d7dd">&#9670;&#160;</a></span>GetSessionPlayerListEx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GetSessionPlayerListEx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/d78/group___enforce.html#ga28845e68ed8329715e29aded7542ca15">TStringArray</a>&#160;</td>
+          <td class="paramname"><em>outPlayerList</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Native callback function to retrieve the session player list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outPlayerList</td><td>Output list of players in the session. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="../../d4/d9e/class_bios_session_service.html#a36ab0add31e2b3b2cc4ef93102fc39a6">GetSessionPlayerList()</a>.</p>
 
 </div>
 </div>

@@ -28,7 +28,6 @@ var _trap___trip_wire_8c =
     [ "OnSteppedOn", "d0/d4a/_trap___trip_wire_8c.html#a832179b1b442b1db4376da2693413de5", null ],
     [ "OnStoreLoad", "d0/d4a/_trap___trip_wire_8c.html#ab311cdf3df0e3547b7d3cd810e61ca61", null ],
     [ "OnStoreSave", "d0/d4a/_trap___trip_wire_8c.html#a35a85dbb8d86badfdee250107b15e803", null ],
-    [ "OnVariablesSynchronized", "d0/d4a/_trap___trip_wire_8c.html#ad183155e7592e816863539c54b6fa83f", null ],
     [ "RefreshState", "d0/d4a/_trap___trip_wire_8c.html#a721aa5c9c604253743c10171d90cd9e9", null ],
     [ "SetActions", "d0/d4a/_trap___trip_wire_8c.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
     [ "SetInactive", "d0/d4a/_trap___trip_wire_8c.html#a7fd5a669e6eaaaeeae8a27282c448a49", null ],

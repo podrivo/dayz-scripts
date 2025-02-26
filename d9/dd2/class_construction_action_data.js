@@ -1,6 +1,7 @@
 var class_construction_action_data =
 [
     [ "ConstructionActionData", "d9/dd2/class_construction_action_data.html#aa8b1ed18a61bf1cc123050c2027c87c9", null ],
+    [ "~ConstructionActionData", "d9/dd2/class_construction_action_data.html#acaa7380c197e7c170e4c6a74e8f601e4", null ],
     [ "CombineItems", "d9/dd2/class_construction_action_data.html#a0533535a06cc905a1b3e1d9ce66c67a1", null ],
     [ "GetActionInitiator", "d9/dd2/class_construction_action_data.html#a5d2738e6dfa465f376b20e49915be9f4", null ],
     [ "GetActualAttachmentToDetach", "d9/dd2/class_construction_action_data.html#a821f02700c62d7f2b3bca8041275cfaa", null ],

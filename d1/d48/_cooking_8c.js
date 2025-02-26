@@ -24,6 +24,7 @@ var _cooking_8c =
     [ "TerminateCookingSounds", "d1/d48/_cooking_8c.html#a123de3a106a90a1146677eb631501bcb", null ],
     [ "UpdateCookingState", "d1/d48/_cooking_8c.html#a87910e253bdecf8768b07649ee104596", null ],
     [ "UpdateCookingStateOnStick", "d1/d48/_cooking_8c.html#ab5ea50bc941da1b9c868918dbbd09b3a", null ],
+    [ "BURNING_WARNING_THRESHOLD", "d1/d48/_cooking_8c.html#ac3341737831205f11a98f59c6dfc5bfe", null ],
     [ "COOKING_EQUIPMENT_CAULDRON", "d1/d48/_cooking_8c.html#a10418c42c392800b0bf55542f6ed968e", null ],
     [ "COOKING_EQUIPMENT_FRYINGPAN", "d1/d48/_cooking_8c.html#acd30e153d4a2647f6fa601bbc9817b85", null ],
     [ "COOKING_EQUIPMENT_POT", "d1/d48/_cooking_8c.html#a9ccf370ba3fa928373eb5942965036d5", null ],
@@ -38,6 +39,7 @@ var _cooking_8c =
     [ "LIQUID_VAPOR_QUANTITY", "d1/d48/_cooking_8c.html#a8db6d1462ef50dbf786d2b5697f6769f", null ],
     [ "m_UpdateTime", "d1/d48/_cooking_8c.html#a8358da92761ec9a979d13aeca4405e09", null ],
     [ "PARAM_BURN_DAMAGE_COEF", "d1/d48/_cooking_8c.html#a783cf4f9d873acaf8e8f6af4cd2f8a61", null ],
+    [ "SOLID_OVERHEAT_QUANTITY", "d1/d48/_cooking_8c.html#a32457a67956ca7675f86a5ea6c5ba536", null ],
     [ "TIME_WITH_SUPPORT_MATERIAL_COEF", "d1/d48/_cooking_8c.html#aa33523808ae3a2861da6dd6d7f2b3241", null ],
     [ "TIME_WITHOUT_SUPPORT_MATERIAL_COEF", "d1/d48/_cooking_8c.html#ac587277d3a738769499bd3dd0120322b", null ]
 ];

@@ -69,5 +69,6 @@ var class_u_i_menu_panel =
     [ "m_AnimAlphaIsIncreasing", "d7/dcd/class_u_i_menu_panel.html#aee745521abc2b6e5efd08bb65a2f86a3", null ],
     [ "m_AnimAlphaValue", "d7/dcd/class_u_i_menu_panel.html#a2401ed0d761d55a380a38071c475beae", null ],
     [ "m_AnimAlphaWidget", "d7/dcd/class_u_i_menu_panel.html#acdea3ee345a739cb031e73ab635dc5d0", null ],
-    [ "m_id", "d7/dcd/class_u_i_menu_panel.html#aad966617e7e050bedbead762727808a5", null ]
+    [ "m_id", "d7/dcd/class_u_i_menu_panel.html#aad966617e7e050bedbead762727808a5", null ],
+    [ "m_PlayerDeathInvoker", "d7/dcd/class_u_i_menu_panel.html#a1b40f9540ca1a6d968b843f76eff18d9", null ]
 ];

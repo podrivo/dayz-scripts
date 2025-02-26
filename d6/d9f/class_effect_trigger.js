@@ -5,6 +5,7 @@ var class_effect_trigger =
     [ "EOnFrame", "d6/d9f/class_effect_trigger.html#af518addd8ca6ecba428ecee6b06506a9", null ],
     [ "GetAmbientSoundsetName", "d6/d9f/class_effect_trigger.html#ab079631fe97309e1b941f56b2c3cac56", null ],
     [ "GetAmbientSoundsetName", "d6/d9f/class_effect_trigger.html#aa6ef00f3403609e6e91a7d1c17785183", null ],
+    [ "GetDisplayName", "d6/d9f/class_effect_trigger.html#a8f38203d9eb8fd850f774fae213eba9a", null ],
     [ "GetEffectArea", "d6/d9f/class_effect_trigger.html#ab251ed4e3b298c6a1f39e803c1a7eab6", null ],
     [ "GetEffectsPriority", "d6/d9f/class_effect_trigger.html#ad0c4b311cba89075d8b9465db45c99e8", null ],
     [ "Init", "d6/d9f/class_effect_trigger.html#a33cda4ca1085d5838217ffbcc68ffc0c", null ],

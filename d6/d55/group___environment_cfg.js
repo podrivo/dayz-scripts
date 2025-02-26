@@ -38,6 +38,7 @@ var group___environment_cfg =
     [ "ENVIRO_PLAYER_HEATBUFFER_CAPACITY_MIN", "d6/d55/group___environment_cfg.html#ga36c472101f42e82ea439d58c9352a928", null ],
     [ "ENVIRO_PLAYER_HEATBUFFER_DECREASE", "d6/d55/group___environment_cfg.html#gabeb3f78f2ceb9f7e6ccc4f968cec88e7", null ],
     [ "ENVIRO_PLAYER_HEATBUFFER_INCREASE", "d6/d55/group___environment_cfg.html#gab68cc79abd395c7de7e660a511e74a15", null ],
+    [ "ENVIRO_PLAYER_HEATBUFFER_STAGE_RATELIMIT", "d6/d55/group___environment_cfg.html#gad587e7da996dcb1ad9e09f36e2c9da8f", null ],
     [ "ENVIRO_PLAYER_HEATBUFFER_TEMP_AFFECT", "d6/d55/group___environment_cfg.html#gaa7a09085ab8a9e30a21b8538295a824e", null ],
     [ "ENVIRO_PLAYER_HEATBUFFER_WATEREFFECT", "d6/d55/group___environment_cfg.html#gac24cac73c02a27efa3c3a30da92b5f87", null ],
     [ "ENVIRO_SNOW_WET_COEF", "d6/d55/group___environment_cfg.html#gabc038ef4dbf6dd5318e5d36054922f76", null ],

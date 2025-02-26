@@ -11,5 +11,6 @@ var searchData=
   ['soundtypetrap_8',['SoundTypeTrap',['../dd/dd8/_trap_base_8c.html#ab155e660ca2cb510abae8873ae91df24',1,'TrapBase.c']]],
   ['sspanimstate_9',['SSPAnimState',['../d2/db3/_single_shot_pistol___base_8c.html#a70d3c4e132218cbbdc95c459f20d47e0',1,'SingleShotPistol_Base.c']]],
   ['sspstablestateid_10',['SSPStableStateID',['../d2/db3/_single_shot_pistol___base_8c.html#a3a1563cd5dd2a27b9301ac6e46734d2f',1,'SingleShotPistol_Base.c']]],
-  ['symptomtypes_11',['SymptomTypes',['../db/d8d/_state_manager_8c.html#a84def72c3d57c1a4612870b946745b74',1,'StateManager.c']]]
+  ['surfacedetectiontype_11',['SurfaceDetectionType',['../d3/d62/_surface_info_8c.html#a254322375aac9d3654d156176eb84e92',1,'SurfaceInfo.c']]],
+  ['symptomtypes_12',['SymptomTypes',['../db/d8d/_state_manager_8c.html#a84def72c3d57c1a4612870b946745b74',1,'StateManager.c']]]
 ];

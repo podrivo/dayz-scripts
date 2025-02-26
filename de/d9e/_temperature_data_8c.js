@@ -11,5 +11,6 @@ var _temperature_data_8c =
     [ "m_InterpolatedStepSize", "de/d9e/_temperature_data_8c.html#a4169c5b05b058c3cf7d25c25ead853e4", null ],
     [ "m_UpdateTimeCoef", "de/d9e/_temperature_data_8c.html#a7bbd23cfe228b3865c9da1a91eb88030", null ],
     [ "m_UpdateTimeInfo", "de/d9e/_temperature_data_8c.html#a7abc76859c718a4e2121a5ee29baf76f", null ],
+    [ "m_UseGlobalCooling", "de/d9e/_temperature_data_8c.html#abea27d6262f817ffa781fae71d17c769", null ],
     [ "m_Value", "de/d9e/_temperature_data_8c.html#ab3ebc5cf4a617d43371a4cb7fecdeb32", null ]
 ];

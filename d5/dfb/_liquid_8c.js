@@ -2,11 +2,13 @@ var _liquid_8c =
 [
     [ "LiquidInfo", "d3/d37/class_liquid_info.html", "d3/d37/class_liquid_info" ],
     [ "AffectContainerOnFill", "d5/dfb/_liquid_8c.html#aee6dfaf3824ddb6829f029b55d888c17", null ],
+    [ "AffectContainerOnTransfer", "d5/dfb/_liquid_8c.html#a5aa18216bdf3596a9f8803a57bace5ba", null ],
     [ "CanFillContainer", "d5/dfb/_liquid_8c.html#a50a869358948421e416fd882c017fb5b", null ],
     [ "CanTransfer", "d5/dfb/_liquid_8c.html#a880ebedb3f76ef2c08b555740551fe0a", null ],
     [ "FillContainer", "d5/dfb/_liquid_8c.html#ac98b9b20f245fbb688b248bf3d2bd381", null ],
     [ "FillContainerEnviro", "d5/dfb/_liquid_8c.html#a3e2b8ea12e94d9056d64c98120480637", null ],
     [ "GetAgents", "d5/dfb/_liquid_8c.html#a3d8e83bc28be10083296ccb54160a8a4", null ],
+    [ "GetAgentsPerDigest", "d5/dfb/_liquid_8c.html#aa2df443594f9317b6546ff3cca1f9743", null ],
     [ "GetBoilThreshold", "d5/dfb/_liquid_8c.html#a96e1cfd6cc02f38d614b7db300cab901", null ],
     [ "GetDigestibility", "d5/dfb/_liquid_8c.html#a2649f48717425a109f57dde658d4b6aa", null ],
     [ "GetDisplayName", "d5/dfb/_liquid_8c.html#aeca1ea4b3a980179c571b50629bbbc45", null ],

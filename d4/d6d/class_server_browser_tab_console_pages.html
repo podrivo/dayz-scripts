@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -99,7 +99,8 @@ $(document).ready(function(){initNavTree('d4/d6d/class_server_browser_tab_consol
 
 <div class="header">
   <div class="summary">
-<a href="#pri-methods">Private Member Functions</a>  </div>
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle"><div class="title">ServerBrowserTabConsolePages Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -116,6 +117,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:ad392ee0d49c7038513adac472fa5e52c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41a27f11b9ec5c89a188018a831d12ba"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d6d/class_server_browser_tab_console_pages.html#a41a27f11b9ec5c89a188018a831d12ba">RefreshList</a> ()</td></tr>
 <tr class="separator:a41a27f11b9ec5c89a188018a831d12ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4732e884960176c03cd6536a5e2b3178"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d6d/class_server_browser_tab_console_pages.html#a4732e884960176c03cd6536a5e2b3178">RefreshServerList</a> ()</td></tr>
+<tr class="separator:a4732e884960176c03cd6536a5e2b3178"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a261d9372e78bb752dc3b928d6129ef57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d6d/class_server_browser_tab_console_pages.html#a261d9372e78bb752dc3b928d6129ef57">SetFavoriteChanged</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> state)</td></tr>
+<tr class="separator:a261d9372e78bb752dc3b928d6129ef57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac61f4d5feab104ed3140635ac1ac4231"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d6d/class_server_browser_tab_console_pages.html#ac61f4d5feab104ed3140635ac1ac4231">PassFilter</a> (<a class="el" href="../../d5/d36/class_get_servers_result_row.html">GetServersResultRow</a> result)</td></tr>
 <tr class="separator:ac61f4d5feab104ed3140635ac1ac4231"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a92f598210a7dd83ae2dfd16f1f2657"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d6d/class_server_browser_tab_console_pages.html#a7a92f598210a7dd83ae2dfd16f1f2657">PressThumbRight</a> ()</td></tr>
@@ -124,6 +129,11 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a05c9838f112dd033fb76921948525d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21e454d22ff6c3457e5fba05f964b7e2"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d6d/class_server_browser_tab_console_pages.html#a21e454d22ff6c3457e5fba05f964b7e2">SetFocusFilters</a> ()</td></tr>
 <tr class="separator:a21e454d22ff6c3457e5fba05f964b7e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a2d85d5978fbeeb6ee6a4d749131442cb"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d6d/class_server_browser_tab_console_pages.html#a2d85d5978fbeeb6ee6a4d749131442cb">m_IsFavoriteChanged</a></td></tr>
+<tr class="separator:a2d85d5978fbeeb6ee6a4d749131442cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa26620c8decf025d04cd1e4c6e1ea9ea" name="aa26620c8decf025d04cd1e4c6e1ea9ea"></a>
@@ -378,9 +388,64 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d7/de3/_server_browser_tab_8c.html#a91d14283caf9fab75ca2d9a866c612b5">AddFavoritesToFilter()</a>, <a class="el" href="../../d0/d36/class_online_services.html#af89c0118b025fd7de450e6139da4c089">OnlineServices::LoadServers()</a>, <a class="el" href="../../d7/de3/_server_browser_tab_8c.html#a7f0a47a3b87055ee62b16f40a571434f">m_CurrentFilterInput</a>, and <a class="el" href="../../d9/d65/class_get_servers_input.html#a9230c112d3f06ac8a5ced3ded42f6be7">GetServersInput::SetFavorited()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/de3/_server_browser_tab_8c.html#ac209d95b7df6fd3eb3149de74356fd4c">AddFavoritesToFilter()</a>, <a class="el" href="../../d0/d36/class_online_services.html#af89c0118b025fd7de450e6139da4c089">OnlineServices::LoadServers()</a>, <a class="el" href="../../d7/de3/_server_browser_tab_8c.html#a7f0a47a3b87055ee62b16f40a571434f">m_CurrentFilterInput</a>, and <a class="el" href="../../d9/d65/class_get_servers_input.html#a9230c112d3f06ac8a5ced3ded42f6be7">GetServersInput::SetFavorited()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de0/class_server_browser_tab.html#a91289e01e13839a15bde6f268a686696">ServerBrowserTab::ApplyFilters()</a>, <a class="el" href="../../d9/de0/class_server_browser_tab.html#ae23f51abc79e1bb9d4932f299943dd7a">ServerBrowserTab::LeftRelease()</a>, <a class="el" href="../../d9/de0/class_server_browser_tab.html#aee6a27cad085ec84d5f5dbb765b63b53">ServerBrowserTab::OnClick()</a>, <a class="el" href="../../d9/de0/class_server_browser_tab.html#a05c9838f112dd033fb76921948525d53">ServerBrowserTab::PressX()</a>, and <a class="el" href="../../d9/de0/class_server_browser_tab.html#ab216779f5278183c60425dbd5b9d0e2e">ServerBrowserTab::RightRelease()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de0/class_server_browser_tab.html#a91289e01e13839a15bde6f268a686696">ServerBrowserTab::ApplyFilters()</a>, <a class="el" href="../../d9/de0/class_server_browser_tab.html#ae23f51abc79e1bb9d4932f299943dd7a">ServerBrowserTab::LeftRelease()</a>, <a class="el" href="../../d9/de0/class_server_browser_tab.html#aee6a27cad085ec84d5f5dbb765b63b53">ServerBrowserTab::OnClick()</a>, <a class="el" href="../../d9/de0/class_server_browser_tab.html#a1805393a6d27d469dec2d1409817465a">ServerBrowserTab::RefreshServerList()</a>, and <a class="el" href="../../d9/de0/class_server_browser_tab.html#ab216779f5278183c60425dbd5b9d0e2e">ServerBrowserTab::RightRelease()</a>.</p>
+
+</div>
+</div>
+<a id="a4732e884960176c03cd6536a5e2b3178" name="a4732e884960176c03cd6536a5e2b3178"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4732e884960176c03cd6536a5e2b3178">&#9670;&#160;</a></span>RefreshServerList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void RefreshServerList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d7/de3/_server_browser_tab_8c.html#af4c888e77ddf45e3478a9194e665731b">SetCurrentPage()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/de0/class_server_browser_tab.html#a05c9838f112dd033fb76921948525d53">ServerBrowserTab::PressX()</a>.</p>
+
+</div>
+</div>
+<a id="a261d9372e78bb752dc3b928d6129ef57" name="a261d9372e78bb752dc3b928d6129ef57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a261d9372e78bb752dc3b928d6129ef57">&#9670;&#160;</a></span>SetFavoriteChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetFavoriteChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -408,6 +473,29 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="../../d9/de0/class_server_browser_tab.html#afbe146cfc7e9c0b5c09b29df20dd6900">ServerBrowserTab::OnLoadServersAsyncConsole()</a>, and <a class="el" href="../../d9/de0/class_server_browser_tab.html#a90fb4df6adef302327c5998bcb2ab9bd">ServerBrowserTab::SwitchToFilters()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a2d85d5978fbeeb6ee6a4d749131442cb" name="a2d85d5978fbeeb6ee6a4d749131442cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d85d5978fbeeb6ee6a4d749131442cb">&#9670;&#160;</a></span>m_IsFavoriteChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/db9/classbool.html">bool</a> m_IsFavoriteChanged</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

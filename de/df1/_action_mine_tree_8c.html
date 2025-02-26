@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -134,6 +134,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a427ee5f2915112cea90b33f5988338c6"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df1/_action_mine_tree_8c.html#a427ee5f2915112cea90b33f5988338c6">CanContinue</a> (<a class="el" href="../../d6/d59/_action_base_8c.html#afed569492a6824c86798ac839f679651">ActionData</a> action_data)</td></tr>
 <tr class="memdesc:a427ee5f2915112cea90b33f5988338c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">not checking target damage anymore, callback takes care of that  <br /></td></tr>
 <tr class="separator:a427ee5f2915112cea90b33f5988338c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26c6922d796bdf663f49119e83fe26f8"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df1/_action_mine_tree_8c.html#a26c6922d796bdf663f49119e83fe26f8">OnExecuteServer</a> (<a class="el" href="../../d6/d59/_action_base_8c.html#afed569492a6824c86798ac839f679651">ActionData</a> action_data)</td></tr>
+<tr class="separator:a26c6922d796bdf663f49119e83fe26f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45e6903d1cc4092b1be9f9bf12479568"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df1/_action_mine_tree_8c.html#a45e6903d1cc4092b1be9f9bf12479568">HasMultipleExecution</a> (<a class="el" href="../../d6/d59/_action_base_8c.html#afed569492a6824c86798ac839f679651">ActionData</a> action_data)</td></tr>
+<tr class="separator:a45e6903d1cc4092b1be9f9bf12479568"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ebf3855cc8960864124ba5ca4949033"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df1/_action_mine_tree_8c.html#a2ebf3855cc8960864124ba5ca4949033">OnEndServer</a> (<a class="el" href="../../d6/d59/_action_base_8c.html#afed569492a6824c86798ac839f679651">ActionData</a> action_data)</td></tr>
 <tr class="separator:a2ebf3855cc8960864124ba5ca4949033"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -326,6 +330,24 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a45e6903d1cc4092b1be9f9bf12479568" name="a45e6903d1cc4092b1be9f9bf12479568"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e6903d1cc4092b1be9f9bf12479568">&#9670;&#160;</a></span>HasMultipleExecution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override <a class="el" href="../../d9/db9/classbool.html">bool</a> HasMultipleExecution </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d59/_action_base_8c.html#afed569492a6824c86798ac839f679651">ActionData</a>&#160;</td>
+          <td class="paramname"><em>action_data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2b6dbc5004ccc3fb83b39577c5ae9b32" name="a2b6dbc5004ccc3fb83b39577c5ae9b32"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b6dbc5004ccc3fb83b39577c5ae9b32">&#9670;&#160;</a></span>OnActionInfoUpdate()</h2>
 
@@ -377,6 +399,26 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../d2/d03/class_s_effect_manager.html#a7a9e715726d2f7e7161b924a5a8848ad">SEffectManager::DestroyEffecterParticleServer()</a>, and <a class="el" href="../../d4/d7c/class_mine_action_data.html#a27a385469a13da6f7a0708454137db8e">MineActionData::m_EffecterID</a>.</p>
+
+</div>
+</div>
+<a id="a26c6922d796bdf663f49119e83fe26f8" name="a26c6922d796bdf663f49119e83fe26f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c6922d796bdf663f49119e83fe26f8">&#9670;&#160;</a></span>OnExecuteServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void OnExecuteServer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d59/_action_base_8c.html#afed569492a6824c86798ac839f679651">ActionData</a>&#160;</td>
+          <td class="paramname"><em>action_data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d2/d03/class_s_effect_manager.html#ad348dc8fbf044100d8ce0694316a829c">SEffectManager::CreateParticleServer()</a>, <a class="el" href="../../d9/d4d/_effect_manager_8c.html#ac14afdaaefdd382a7ad2b3d474c7491c">EffecterBase()</a>, <a class="el" href="../../d4/d7c/class_mine_action_data.html#a27a385469a13da6f7a0708454137db8e">MineActionData::m_EffecterID</a>, and <a class="el" href="../../d2/d03/class_s_effect_manager.html#aaad9853008399b7caada0e5d3365955a">SEffectManager::ReactivateParticleServer()</a>.</p>
 
 </div>
 </div>

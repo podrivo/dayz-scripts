@@ -5,6 +5,7 @@ var dir_7650077ce641cd6e960faea9eac7ae3d =
     [ "BlowtorchLight.c", "d8/d17/_blowtorch_light_8c.html", "d8/d17/_blowtorch_light_8c" ],
     [ "BonfireLight.c", "dd/da0/_bonfire_light_8c.html", "dd/da0/_bonfire_light_8c" ],
     [ "BrightnessTestLight.c", "d0/d27/_brightness_test_light_8c.html", "d0/d27/_brightness_test_light_8c" ],
+    [ "BuoyLight.c", "d4/d2b/_buoy_light_8c.html", "d4/d2b/_buoy_light_8c" ],
     [ "ChemlightLight.c", "d9/d88/_chemlight_light_8c.html", "d9/d88/_chemlight_light_8c" ],
     [ "EntranceLight.c", "dc/d4e/_entrance_light_8c.html", "dc/d4e/_entrance_light_8c" ],
     [ "FireplaceLight.c", "d9/d39/_fireplace_light_8c.html", "d9/d39/_fireplace_light_8c" ],

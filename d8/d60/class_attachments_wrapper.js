@@ -23,5 +23,5 @@ var class_attachments_wrapper =
     [ "UpdateInterval", "d8/d60/class_attachments_wrapper.html#a42e4b360bf0d3f641767685cd5089432", null ],
     [ "m_Attachments", "d8/d60/class_attachments_wrapper.html#ad02f7e5ba7716e9e9d8ed4b173d1f11e", null ],
     [ "m_AttachmentsFalseHeader", "d8/d60/class_attachments_wrapper.html#a3b5a4427bcc24648e60aa96b371e9d79", null ],
-    [ "m_AttachmentsFalseHeaderText", "d8/d60/class_attachments_wrapper.html#a1479307a1d586ea1c402deb7f9a2325a", null ]
+    [ "m_AttachmentsFalseHeaderText", "d8/d60/class_attachments_wrapper.html#a4e382e70d89006a1f60819379f187d4a", null ]
 ];

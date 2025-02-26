@@ -5,7 +5,7 @@ var class_vehicle_battery =
     [ "CanDisplayAttachmentSlot", "d3/d3c/class_vehicle_battery.html#a850b9b0562bb3b88cad1d9d6d0202dc9", null ],
     [ "CanPutAsAttachment", "d3/d3c/class_vehicle_battery.html#abbd8d4142787998dba20c9b75567c440", null ],
     [ "CanPutInCargo", "d3/d3c/class_vehicle_battery.html#a5ea0aaf035a1939c725579219040c481", null ],
-    [ "CanPutIntoHands", "d3/d3c/class_vehicle_battery.html#a5ac054a754c5c3518459d0f33e818b2b", null ],
+    [ "CanPutIntoHands", "d3/d3c/class_vehicle_battery.html#a9c46909a8838ed5e1786f94e56237b43", null ],
     [ "CanReceiveAttachment", "d3/d3c/class_vehicle_battery.html#ae7bd4d02b82fa1017e3a4cf7e3caba18", null ],
     [ "DisplayNameRuinAttach", "d3/d3c/class_vehicle_battery.html#ada84f9dc2bde7dba86d3faef81296571", null ],
     [ "GetEfficiency0To1", "d3/d3c/class_vehicle_battery.html#af2c85e28d3952f243de535789d1d8e80", null ],

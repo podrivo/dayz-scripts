@@ -2,6 +2,7 @@ var class_i_t_e_m___hologram_data =
 [
     [ "InitServer", "d9/dda/class_i_t_e_m___hologram_data.html#a252cc19f9c828b933c1ddb8172c9baf7", null ],
     [ "ValidateServer", "d9/dda/class_i_t_e_m___hologram_data.html#a14ccfee252ee1bc560f82d20b0acc28f", null ],
+    [ "disableColdAreaPlacementCheck", "d9/dda/class_i_t_e_m___hologram_data.html#ad79eed47a95ec2820a3fe55866a70cb6", null ],
     [ "disableHeightPlacementCheck", "d9/dda/class_i_t_e_m___hologram_data.html#a211ebe60da77036634fa7dfc35c82e60", null ],
     [ "disableIsBaseViableCheck", "d9/dda/class_i_t_e_m___hologram_data.html#afd1911ec099ada59f709b7ee5996c1a8", null ],
     [ "disableIsClippingRoofCheck", "d9/dda/class_i_t_e_m___hologram_data.html#add01e94b96a080ed8bdd5ef03d310574", null ],

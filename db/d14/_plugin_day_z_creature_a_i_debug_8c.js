@@ -28,7 +28,7 @@ var _plugin_day_z_creature_a_i_debug_8c =
     [ "OnGUI_Variables", "db/d14/_plugin_day_z_creature_a_i_debug_8c.html#acedbfee853e17ad22c0fb52aac724ed2", null ],
     [ "OnGUI_VariablesEdit", "db/d14/_plugin_day_z_creature_a_i_debug_8c.html#abe06886574113a9c8874a1eaac0be4d6", null ],
     [ "OnGUITimer", "db/d14/_plugin_day_z_creature_a_i_debug_8c.html#ae9131ff3a7a350a6fa5ca21f467a67a0", null ],
-    [ "OnInit", "db/d14/_plugin_day_z_creature_a_i_debug_8c.html#a01f1070c46e4cc24d25a0ea0869bc972", null ],
+    [ "OnInit", "d8/d83/group___script_testing_framework.html#ga01f1070c46e4cc24d25a0ea0869bc972", null ],
     [ "OnRpc", "db/d14/_plugin_day_z_creature_a_i_debug_8c.html#a5666ed1027593540498a401f7dc1749c", null ],
     [ "OnUpdate", "db/d14/_plugin_day_z_creature_a_i_debug_8c.html#ada777685abe2f010988b4924f95e76bb", null ],
     [ "PluginDayZCreatureAIDebug", "db/d14/_plugin_day_z_creature_a_i_debug_8c.html#a342e2b46be97c94dd1fca69e42bb9b2c", null ],

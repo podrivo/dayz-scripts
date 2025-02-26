@@ -11,5 +11,20 @@ var class_debug_weather_r_p_c_data =
     [ "m_RainValue", "d1/d09/class_debug_weather_r_p_c_data.html#a70f4bbba17a2a2fc51898233bd94ff51", null ],
     [ "m_SnowfallDuration", "d1/d09/class_debug_weather_r_p_c_data.html#af2b00be037c2ffc3968b805c9a40e20d", null ],
     [ "m_SnowfallInterpolation", "d1/d09/class_debug_weather_r_p_c_data.html#a0c9326efc21233361116c4bc622f592e", null ],
-    [ "m_SnowfallValue", "d1/d09/class_debug_weather_r_p_c_data.html#ac522f3a75ba72380ee599ba2853b6c32", null ]
+    [ "m_SnowfallValue", "d1/d09/class_debug_weather_r_p_c_data.html#ac522f3a75ba72380ee599ba2853b6c32", null ],
+    [ "m_StormDensity", "d1/d09/class_debug_weather_r_p_c_data.html#ae361b93cf13a8fa3213790472d90d930", null ],
+    [ "m_StormThreshold", "d1/d09/class_debug_weather_r_p_c_data.html#a293990709b0aae542ba9603857b9e724", null ],
+    [ "m_StormTimeOut", "d1/d09/class_debug_weather_r_p_c_data.html#a721038998659033bb5e10f37fd4d23a1", null ],
+    [ "m_VolFogDistanceDensity", "d1/d09/class_debug_weather_r_p_c_data.html#a900bc9537a63c75886d6a66a6ff09851", null ],
+    [ "m_VolFogDistanceDensityTime", "d1/d09/class_debug_weather_r_p_c_data.html#a3418de84ca34194d29f51d59d53fba6f", null ],
+    [ "m_VolFogHeightBias", "d1/d09/class_debug_weather_r_p_c_data.html#a4d8df8a431951a1a0caf264235f8ca57", null ],
+    [ "m_VolFogHeightBiasTime", "d1/d09/class_debug_weather_r_p_c_data.html#ad82502ea3c64865c08a5c2558053bd47", null ],
+    [ "m_VolFogHeightDensity", "d1/d09/class_debug_weather_r_p_c_data.html#a28234249c6ed4f9bfd65b7bce7b789f4", null ],
+    [ "m_VolFogHeightDensityTime", "d1/d09/class_debug_weather_r_p_c_data.html#a94e6bf8bf3b7cca84633f583140d5c9c", null ],
+    [ "m_WindDDuration", "d1/d09/class_debug_weather_r_p_c_data.html#ae111c6da97b15918fd65cd342c7fd183", null ],
+    [ "m_WindDInterpolation", "d1/d09/class_debug_weather_r_p_c_data.html#ab1403ea66372f9205ebbe2d826bd0da1", null ],
+    [ "m_WindDirectionValue", "d1/d09/class_debug_weather_r_p_c_data.html#a7ca98a00d0898b5ca3f89691d37ab548", null ],
+    [ "m_WindMagnitudeValue", "d1/d09/class_debug_weather_r_p_c_data.html#a78b9a07c59da166c2d39051736286f74", null ],
+    [ "m_WindMDuration", "d1/d09/class_debug_weather_r_p_c_data.html#a4b7e4f48ff5927f25328ebcf5cb9af8a", null ],
+    [ "m_WindMInterpolation", "d1/d09/class_debug_weather_r_p_c_data.html#a1d4b997cc7e4cb923181a0868c012486", null ]
 ];

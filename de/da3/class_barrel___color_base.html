@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -113,6 +113,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a8ad3357a624c597d2314f7dc3dbba97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b0e37f5ad607ca64689ec14f13f129d"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a0b0e37f5ad607ca64689ec14f13f129d">EECargoIn</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> item)</td></tr>
 <tr class="separator:a0b0e37f5ad607ca64689ec14f13f129d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a079fe8b19fed37c99827b112df751f9e"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a079fe8b19fed37c99827b112df751f9e">OnFreezeStateChangeServer</a> ()</td></tr>
+<tr class="separator:a079fe8b19fed37c99827b112df751f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35a85dbb8d86badfdee250107b15e803"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a35a85dbb8d86badfdee250107b15e803">OnStoreSave</a> (<a class="el" href="../../d8/d18/gameplay_8c.html#af1d1033fca2ebd02f4ba61051b6341c4">ParamsWriteContext</a> ctx)</td></tr>
 <tr class="separator:a35a85dbb8d86badfdee250107b15e803"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab311cdf3df0e3547b7d3cd810e61ca61"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#ab311cdf3df0e3547b7d3cd810e61ca61">OnStoreLoad</a> (<a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a> ctx, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> version)</td></tr>
@@ -137,10 +139,6 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:ade89785688e1499bb5a8c80dc7cbb482"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad183155e7592e816863539c54b6fa83f"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#ad183155e7592e816863539c54b6fa83f">OnVariablesSynchronized</a> ()</td></tr>
 <tr class="separator:ad183155e7592e816863539c54b6fa83f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3af84f33c7219394a7274688420fadad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a3af84f33c7219394a7274688420fadad">SoundBarrelOpenPlay</a> ()</td></tr>
-<tr class="separator:a3af84f33c7219394a7274688420fadad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e69bc59c3ff83d99b5fc1215b093b22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a6e69bc59c3ff83d99b5fc1215b093b22">SoundBarrelClosePlay</a> ()</td></tr>
-<tr class="separator:a6e69bc59c3ff83d99b5fc1215b093b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53a3a78b854acf689d8b29de56171358"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a53a3a78b854acf689d8b29de56171358">Lock</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> actiontime)</td></tr>
 <tr class="separator:a53a3a78b854acf689d8b29de56171358"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91b88a5d5517cb042431c4ea24d8ecb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a91b88a5d5517cb042431c4ea24d8ecb7">Unlock</a> ()</td></tr>
@@ -163,20 +161,28 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a9c46909a8838ed5e1786f94e56237b43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d6c23666c8f172fd72a16c6dc67d4ab"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a3d6c23666c8f172fd72a16c6dc67d4ab">CanReceiveItemIntoCargo</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> item)</td></tr>
 <tr class="separator:a3d6c23666c8f172fd72a16c6dc67d4ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f7be8dcc69210dffbb9e947843f105a"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a1f7be8dcc69210dffbb9e947843f105a">CanReleaseCargo</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> attachment)</td></tr>
-<tr class="separator:a1f7be8dcc69210dffbb9e947843f105a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be186e83ac48161e66a13d84b794d85"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a7be186e83ac48161e66a13d84b794d85">CanReleaseCargo</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> cargo)</td></tr>
+<tr class="separator:a7be186e83ac48161e66a13d84b794d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0d251e23b974adefb41a65a7c832b5e"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#ae0d251e23b974adefb41a65a7c832b5e">CanDetachAttachment</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> parent)</td></tr>
 <tr class="separator:ae0d251e23b974adefb41a65a7c832b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ff31a876fba89e2f0ae6c33af8cd551"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a6ff31a876fba89e2f0ae6c33af8cd551">OnPlacementComplete</a> (Man player, <a class="el" href="../../d7/dfc/classvector.html">vector</a> position=&quot;0 0 0&quot;, <a class="el" href="../../d7/dfc/classvector.html">vector</a> orientation=&quot;0 0 0&quot;)</td></tr>
-<tr class="separator:a6ff31a876fba89e2f0ae6c33af8cd551"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c2dc96b8b4dcc70efe3b211654b13f1"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a8c2dc96b8b4dcc70efe3b211654b13f1">GetPlaceSoundset</a> ()</td></tr>
-<tr class="separator:a8c2dc96b8b4dcc70efe3b211654b13f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8f3ba1e1b486edf50014768d57f0656"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#af8f3ba1e1b486edf50014768d57f0656">InitItemSounds</a> ()</td></tr>
+<tr class="separator:af8f3ba1e1b486edf50014768d57f0656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14046891600537e83da30eb2e7a1f4d5"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a14046891600537e83da30eb2e7a1f4d5">GetDeploySoundset</a> ()</td></tr>
+<tr class="separator:a14046891600537e83da30eb2e7a1f4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a729f78da4fd956d845fdf463bc8d29c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a729f78da4fd956d845fdf463bc8d29c6">GetBarrelOpenSoundset</a> ()</td></tr>
+<tr class="separator:a729f78da4fd956d845fdf463bc8d29c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa935187e3bf49d1c46cfe42a797f4c94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#aa935187e3bf49d1c46cfe42a797f4c94">GetBarrelCloseSoundset</a> ()</td></tr>
+<tr class="separator:aa935187e3bf49d1c46cfe42a797f4c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6a3670ec761f695c0d3489b0d5420c5"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#ae6a3670ec761f695c0d3489b0d5420c5">GetLiquidThroughputCoef</a> ()</td></tr>
 <tr class="separator:ae6a3670ec761f695c0d3489b0d5420c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa39b7c4d3d085ef8514a87c32b81a4d"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#afa39b7c4d3d085ef8514a87c32b81a4d">SetActions</a> ()</td></tr>
 <tr class="separator:afa39b7c4d3d085ef8514a87c32b81a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05eab95952a189dc9e08ccecec41b51a"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a05eab95952a189dc9e08ccecec41b51a">OnDebugSpawn</a> ()</td></tr>
 <tr class="separator:a05eab95952a189dc9e08ccecec41b51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3af84f33c7219394a7274688420fadad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a3af84f33c7219394a7274688420fadad">SoundBarrelOpenPlay</a> ()</td></tr>
+<tr class="separator:a3af84f33c7219394a7274688420fadad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e69bc59c3ff83d99b5fc1215b093b22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da3/class_barrel___color_base.html#a6e69bc59c3ff83d99b5fc1215b093b22">SoundBarrelClosePlay</a> ()</td></tr>
+<tr class="separator:a6e69bc59c3ff83d99b5fc1215b093b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -226,7 +232,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d2/daf/group___barrel.html#gab2ba2bf09bbe4892fc7aab80c7dfe7b9">GameConstants::BAREL_BLEACH_PER_CLOTH</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../de/da3/class_barrel___color_base.html#a53a3a78b854acf689d8b29de56171358">Lock()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/daf/group___barrel.html#gab2ba2bf09bbe4892fc7aab80c7dfe7b9">GameConstants::BAREL_BLEACH_PER_CLOTH</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a53a3a78b854acf689d8b29de56171358">Lock()</a>, and <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../de/da3/class_barrel___color_base.html#a7b52af3f294fd7342d02055520d1dcdb">DetermineAction()</a>.</p>
 
@@ -344,8 +350,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1f7be8dcc69210dffbb9e947843f105a" name="a1f7be8dcc69210dffbb9e947843f105a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f7be8dcc69210dffbb9e947843f105a">&#9670;&#160;</a></span>CanReleaseCargo()</h2>
+<a id="a7be186e83ac48161e66a13d84b794d85" name="a7be186e83ac48161e66a13d84b794d85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7be186e83ac48161e66a13d84b794d85">&#9670;&#160;</a></span>CanReleaseCargo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -357,7 +363,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">override <a class="el" href="../../d9/db9/classbool.html">bool</a> CanReleaseCargo </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a>&#160;</td>
-          <td class="paramname"><em>attachment</em></td><td>)</td>
+          <td class="paramname"><em>cargo</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -395,7 +401,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d9/d4b/class_openable_behaviour.html#a7f7a3199c392465d0767c6506c1af5b4">OpenableBehaviour::Close()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#abf81298bc6303056015081dc916d816c">m_Openable</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a096568ae3d68cd02c977656003201a9c">m_RainProcComponent</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a688308b103363533a9f5b2299b4a1622">SetTakeable()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a34d2a682de08169eefff122c6c51d59a">SoundSynchRemote()</a>, <a class="el" href="../../df/d86/class_rain_procurement_component_base.html#a9bae69835a13f79268ed251cad4312f3">RainProcurementComponentBase::StopRainProcurement()</a>, and <a class="el" href="../../de/da3/class_barrel___color_base.html#ade89785688e1499bb5a8c80dc7cbb482">UpdateVisualState()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/d4b/class_openable_behaviour.html#a7f7a3199c392465d0767c6506c1af5b4">OpenableBehaviour::Close()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#abf81298bc6303056015081dc916d816c">m_Openable</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a096568ae3d68cd02c977656003201a9c">m_RainProcComponent</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a688308b103363533a9f5b2299b4a1622">SetTakeable()</a>, <a class="el" href="../../df/d86/class_rain_procurement_component_base.html#a9bae69835a13f79268ed251cad4312f3">RainProcurementComponentBase::StopRainProcurement()</a>, and <a class="el" href="../../de/da3/class_barrel___color_base.html#ade89785688e1499bb5a8c80dc7cbb482">UpdateVisualState()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../de/da3/class_barrel___color_base.html#a7b52af3f294fd7342d02055520d1dcdb">DetermineAction()</a>, and <a class="el" href="../../de/da3/class_barrel___color_base.html#a9ad76a420042dadc6ab67b7aa821a407">OnWasDetached()</a>.</p>
 
@@ -584,6 +590,60 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aa935187e3bf49d1c46cfe42a797f4c94" name="aa935187e3bf49d1c46cfe42a797f4c94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa935187e3bf49d1c46cfe42a797f4c94">&#9670;&#160;</a></span>GetBarrelCloseSoundset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d92/classstring.html">string</a> GetBarrelCloseSoundset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../de/da3/class_barrel___color_base.html#af8f3ba1e1b486edf50014768d57f0656">InitItemSounds()</a>, and <a class="el" href="../../df/d77/class_action_close_barrel.html#a26c6922d796bdf663f49119e83fe26f8">ActionCloseBarrel::OnExecuteServer()</a>.</p>
+
+</div>
+</div>
+<a id="a729f78da4fd956d845fdf463bc8d29c6" name="a729f78da4fd956d845fdf463bc8d29c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a729f78da4fd956d845fdf463bc8d29c6">&#9670;&#160;</a></span>GetBarrelOpenSoundset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d92/classstring.html">string</a> GetBarrelOpenSoundset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../de/da3/class_barrel___color_base.html#af8f3ba1e1b486edf50014768d57f0656">InitItemSounds()</a>, and <a class="el" href="../../d3/df9/class_action_open_barrel.html#a26c6922d796bdf663f49119e83fe26f8">ActionOpenBarrel::OnExecuteServer()</a>.</p>
+
+</div>
+</div>
 <a id="a8ad3357a624c597d2314f7dc3dbba97d" name="a8ad3357a624c597d2314f7dc3dbba97d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ad3357a624c597d2314f7dc3dbba97d">&#9670;&#160;</a></span>GetDamageSystemVersionChange()</h2>
 
@@ -595,6 +655,31 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">override <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> GetDamageSystemVersionChange </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a14046891600537e83da30eb2e7a1f4d5" name="a14046891600537e83da30eb2e7a1f4d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14046891600537e83da30eb2e7a1f4d5">&#9670;&#160;</a></span>GetDeploySoundset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override <a class="el" href="../../d5/d92/classstring.html">string</a> GetDeploySoundset </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -636,8 +721,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a8c2dc96b8b4dcc70efe3b211654b13f1" name="a8c2dc96b8b4dcc70efe3b211654b13f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c2dc96b8b4dcc70efe3b211654b13f1">&#9670;&#160;</a></span>GetPlaceSoundset()</h2>
+<a id="af8f3ba1e1b486edf50014768d57f0656" name="af8f3ba1e1b486edf50014768d57f0656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8f3ba1e1b486edf50014768d57f0656">&#9670;&#160;</a></span>InitItemSounds()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -646,7 +731,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">override <a class="el" href="../../d5/d92/classstring.html">string</a> GetPlaceSoundset </td>
+          <td class="memname">override void InitItemSounds </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -658,6 +743,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d3/d45/_hand___states_8c.html#ac3e3346bc6f9bb504e43495424c91a51">Empty</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#aa935187e3bf49d1c46cfe42a797f4c94">GetBarrelCloseSoundset()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a729f78da4fd956d845fdf463bc8d29c6">GetBarrelOpenSoundset()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a440a7d3e8cc4a881fa97c264718c3a19">GetItemSoundHandler()</a>, and <a class="el" href="../../d7/daf/_item_sound_handler_8c.html#a3ff7731e26437e20f1d0ffe4e1ce6e3a">ItemSoundHandler()</a>.</p>
 
 </div>
 </div>
@@ -742,7 +829,7 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d9/d4b/class_openable_behaviour.html#aa1afbaa8c5399ad1975bcb8259a5acb2">OpenableBehaviour::IsOpened()</a>, and <a class="el" href="../../de/da3/class_barrel___color_base.html#abf81298bc6303056015081dc916d816c">m_Openable</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d77/class_action_close_barrel.html#aa9aa4864fae11769c65e644b5fd97c66">ActionCloseBarrel::ActionCondition()</a>, <a class="el" href="../../d3/df9/class_action_open_barrel.html#aa9aa4864fae11769c65e644b5fd97c66">ActionOpenBarrel::ActionCondition()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a5ea0aaf035a1939c725579219040c481">CanPutInCargo()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a9c46909a8838ed5e1786f94e56237b43">CanPutIntoHands()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a3d6c23666c8f172fd72a16c6dc67d4ab">CanReceiveItemIntoCargo()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a1f7be8dcc69210dffbb9e947843f105a">CanReleaseCargo()</a>, <a class="el" href="../../d5/dfb/_liquid_8c.html#a880ebedb3f76ef2c08b555740551fe0a">CanTransfer()</a>, <a class="el" href="../../df/d7c/class_edible___base.html#a0086187ce58bf351b91f2b8f22a61f3a">Edible_Base::ConditionAttach()</a>, <a class="el" href="../../df/d7c/class_edible___base.html#ac42e5b52990ab679927c3c003c06310f">Edible_Base::ConditionDetach()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#ad183155e7592e816863539c54b6fa83f">OnVariablesSynchronized()</a>, and <a class="el" href="../../de/da3/class_barrel___color_base.html#ade89785688e1499bb5a8c80dc7cbb482">UpdateVisualState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d77/class_action_close_barrel.html#aa9aa4864fae11769c65e644b5fd97c66">ActionCloseBarrel::ActionCondition()</a>, <a class="el" href="../../d3/df9/class_action_open_barrel.html#aa9aa4864fae11769c65e644b5fd97c66">ActionOpenBarrel::ActionCondition()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a5ea0aaf035a1939c725579219040c481">CanPutInCargo()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a9c46909a8838ed5e1786f94e56237b43">CanPutIntoHands()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a3d6c23666c8f172fd72a16c6dc67d4ab">CanReceiveItemIntoCargo()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a7be186e83ac48161e66a13d84b794d85">CanReleaseCargo()</a>, <a class="el" href="../../d5/dfb/_liquid_8c.html#a880ebedb3f76ef2c08b555740551fe0a">CanTransfer()</a>, <a class="el" href="../../df/d7c/class_edible___base.html#a0086187ce58bf351b91f2b8f22a61f3a">Edible_Base::ConditionAttach()</a>, <a class="el" href="../../df/d7c/class_edible___base.html#ac42e5b52990ab679927c3c003c06310f">Edible_Base::ConditionDetach()</a>, and <a class="el" href="../../de/da3/class_barrel___color_base.html#ade89785688e1499bb5a8c80dc7cbb482">UpdateVisualState()</a>.</p>
 
 </div>
 </div>
@@ -803,8 +890,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a6ff31a876fba89e2f0ae6c33af8cd551" name="a6ff31a876fba89e2f0ae6c33af8cd551"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ff31a876fba89e2f0ae6c33af8cd551">&#9670;&#160;</a></span>OnPlacementComplete()</h2>
+<a id="a079fe8b19fed37c99827b112df751f9e" name="a079fe8b19fed37c99827b112df751f9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a079fe8b19fed37c99827b112df751f9e">&#9670;&#160;</a></span>OnFreezeStateChangeServer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -813,27 +900,10 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">override void OnPlacementComplete </td>
+          <td class="memname">override void OnFreezeStateChangeServer </td>
           <td>(</td>
-          <td class="paramtype">Man&#160;</td>
-          <td class="paramname"><em>player</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td>
-          <td class="paramname"><em>position</em> = <code>&quot;0&#160;0&#160;0&quot;</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td>
-          <td class="paramname"><em>orientation</em> = <code>&quot;0&#160;0&#160;0&quot;</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -843,7 +913,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#a89d900cab583af10d24153bd07ff1b2b">SetIsPlaceSound()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d6/d12/class_cargo_base.html#a863c3f1c9bd6e97991a02f917c01f01e">CargoBase::GetItem()</a>, <a class="el" href="../../d6/d12/class_cargo_base.html#a620e7644768b037d0b9787fbd1d60bc5">CargoBase::GetItemCount()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a85f174c6ab9495a46b365f6053c2cf07">GetLiquidType()</a>.</p>
 
 </div>
 </div>
@@ -936,7 +1006,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#a5fe3ce71b024b9931438316d0424f45b">IsBeingPlaced()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a05bac627bbb13f7329a1aff6e140219b">IsOpen()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#ad5c5c7ded9ccc2a445988abc71becf51">IsPlaceSound()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#aef18df786bf45e93bbdabca0b6d29546">IsSoundSynchRemote()</a>, <a class="el" href="../../d6/db5/_ui_hint_panel_8c.html#a2b24e7702c647888fe97110686cd2330">m_Initialized</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#ace823c54d08d003c1d597b7143221487">PlayPlaceSound()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a6e69bc59c3ff83d99b5fc1215b093b22">SoundBarrelClosePlay()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a3af84f33c7219394a7274688420fadad">SoundBarrelOpenPlay()</a>, and <a class="el" href="../../de/da3/class_barrel___color_base.html#ade89785688e1499bb5a8c80dc7cbb482">UpdateVisualState()</a>.</p>
+<p class="reference">References <a class="el" href="../../de/da3/class_barrel___color_base.html#ade89785688e1499bb5a8c80dc7cbb482">UpdateVisualState()</a>.</p>
 
 </div>
 </div>
@@ -1039,7 +1109,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../de/da3/class_barrel___color_base.html#abf81298bc6303056015081dc916d816c">m_Openable</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a096568ae3d68cd02c977656003201a9c">m_RainProcComponent</a>, <a class="el" href="../../d9/d4b/class_openable_behaviour.html#a5e53001785ff30ae485a113b9b8a0ddc">OpenableBehaviour::Open()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a688308b103363533a9f5b2299b4a1622">SetTakeable()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a34d2a682de08169eefff122c6c51d59a">SoundSynchRemote()</a>, <a class="el" href="../../df/d86/class_rain_procurement_component_base.html#aa21dba00b5da59bfa2ca0db8d5407f26">RainProcurementComponentBase::StartRainProcurement()</a>, and <a class="el" href="../../de/da3/class_barrel___color_base.html#ade89785688e1499bb5a8c80dc7cbb482">UpdateVisualState()</a>.</p>
+<p class="reference">References <a class="el" href="../../de/da3/class_barrel___color_base.html#abf81298bc6303056015081dc916d816c">m_Openable</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a096568ae3d68cd02c977656003201a9c">m_RainProcComponent</a>, <a class="el" href="../../d9/d4b/class_openable_behaviour.html#a5e53001785ff30ae485a113b9b8a0ddc">OpenableBehaviour::Open()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a688308b103363533a9f5b2299b4a1622">SetTakeable()</a>, <a class="el" href="../../df/d86/class_rain_procurement_component_base.html#aa21dba00b5da59bfa2ca0db8d5407f26">RainProcurementComponentBase::StartRainProcurement()</a>, and <a class="el" href="../../de/da3/class_barrel___color_base.html#ade89785688e1499bb5a8c80dc7cbb482">UpdateVisualState()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d3/df9/class_action_open_barrel.html#a26c6922d796bdf663f49119e83fe26f8">ActionOpenBarrel::OnExecuteServer()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#ac49b1cab32f5eab70aab44528726e721">OnWasAttached()</a>, and <a class="el" href="../../de/da3/class_barrel___color_base.html#a91b88a5d5517cb042431c4ea24d8ecb7">Unlock()</a>.</p>
 
@@ -1114,7 +1184,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d2/daf/group___barrel.html#ga99fe85392ecf302c4d61bdd001bb87b8">GameConstants::BAREL_LIME_PER_PLANT</a>, and <a class="el" href="../../de/da3/class_barrel___color_base.html#a53a3a78b854acf689d8b29de56171358">Lock()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/daf/group___barrel.html#ga99fe85392ecf302c4d61bdd001bb87b8">GameConstants::BAREL_LIME_PER_PLANT</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a53a3a78b854acf689d8b29de56171358">Lock()</a>, and <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../de/da3/class_barrel___color_base.html#a7b52af3f294fd7342d02055520d1dcdb">DetermineAction()</a>.</p>
 
@@ -1165,14 +1235,10 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#af0e79eb49231c4fb5ae3467be05f43a0">SEffectManager::PlaySound()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af5eacfbd1ed6f18ade3c93953dece0d1">EffectSound::SetAutodestroy()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../de/da3/class_barrel___color_base.html#ad183155e7592e816863539c54b6fa83f">OnVariablesSynchronized()</a>.</p>
 
 </div>
 </div>
@@ -1194,14 +1260,10 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#af0e79eb49231c4fb5ae3467be05f43a0">SEffectManager::PlaySound()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af5eacfbd1ed6f18ade3c93953dece0d1">EffectSound::SetAutodestroy()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../de/da3/class_barrel___color_base.html#ad183155e7592e816863539c54b6fa83f">OnVariablesSynchronized()</a>.</p>
 
 </div>
 </div>
@@ -1239,7 +1301,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d2/daf/group___barrel.html#ga847009c3779fe99495d08d4896883dd9">GameConstants::BAREL_LIME_PER_PELT</a>, <a class="el" href="../../d5/d98/group___math.html#gafb455a5c88958a7219b1c63d2d377766">Math::Floor()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, and <a class="el" href="../../de/da3/class_barrel___color_base.html#a53a3a78b854acf689d8b29de56171358">Lock()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/daf/group___barrel.html#ga847009c3779fe99495d08d4896883dd9">GameConstants::BAREL_LIME_PER_PELT</a>, <a class="el" href="../../d5/d98/group___math.html#gafb455a5c88958a7219b1c63d2d377766">Math::Floor()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a53a3a78b854acf689d8b29de56171358">Lock()</a>, and <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../de/da3/class_barrel___color_base.html#a7b52af3f294fd7342d02055520d1dcdb">DetermineAction()</a>.</p>
 

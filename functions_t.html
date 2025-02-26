@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -144,6 +144,7 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TELEPORT_DISTANCE_MAX_EX&#160;:&#160;<a class="el" href="dd/d2e/class_developer_teleport.html#abf1fe022ed5b9fbad01e1c48b2bb9730">DeveloperTeleport</a></li>
 <li>TeleportAtCursor()&#160;:&#160;<a class="el" href="dd/d2e/class_developer_teleport.html#a40081e940bd8ccab5e3cf122c40207f8">DeveloperTeleport</a>, <a class="el" href="dd/da1/class_plugin_base.html#a5e730eeba3bf03cc16dd3e68488c48b8">PluginBase</a></li>
 <li>TeleportAtCursorEx()&#160;:&#160;<a class="el" href="dd/d2e/class_developer_teleport.html#a9c99aecc4d255ae4423d919eba9da832">DeveloperTeleport</a></li>
+<li>TeleportToPos()&#160;:&#160;<a class="el" href="dd/de6/class_mission_benchmark.html#ac615d231ae0cae280ab87aaacc5894cf">MissionBenchmark</a></li>
 <li>TelescopicBaton()&#160;:&#160;<a class="el" href="df/d93/class_telescopic_baton.html#a62c7de4ad71a67ee183605c58aa53f15">TelescopicBaton</a></li>
 <li>temp_array&#160;:&#160;<a class="el" href="da/d73/class_day_z_player_camera_base.html#a19bfddd84c6a563bb3c5fb8c2969b338">DayZPlayerCameraBase</a></li>
 <li>TEMP_COEF_COOKING_CATCHUP&#160;:&#160;<a class="el" href="d9/d00/group___entity_temperature.html#ga27b8a1a20fee9d97507ea3d84371e8a5">GameConstants</a></li>
@@ -153,6 +154,7 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TEMP_COEF_FIREPLACE_HEATING&#160;:&#160;<a class="el" href="d9/d00/group___entity_temperature.html#ga3a0e8fc60f0e37c97777a27c851a740e">GameConstants</a></li>
 <li>TEMP_COEF_GAS_STOVE&#160;:&#160;<a class="el" href="d9/d00/group___entity_temperature.html#gaff3e1699c676332cb500217b8c59f9fb">GameConstants</a></li>
 <li>TEMP_COEF_INVENTORY&#160;:&#160;<a class="el" href="d9/d00/group___entity_temperature.html#gaca74322d2476f610e98024adfe954673">GameConstants</a></li>
+<li>TEMP_COEF_SWIMMING&#160;:&#160;<a class="el" href="d9/d00/group___entity_temperature.html#ga9a5ba3bf17311bbb714dcce304e8ba8e">GameConstants</a></li>
 <li>TEMP_COEF_UTS&#160;:&#160;<a class="el" href="d9/d00/group___entity_temperature.html#ga5fec7389140d6eb713324cde838d5126">GameConstants</a></li>
 <li>TEMP_COEF_WORLD&#160;:&#160;<a class="el" href="d9/d00/group___entity_temperature.html#ga5bd01eb763f9bfa9cec9cd9873adc4a8">GameConstants</a></li>
 <li>TEMP_VIS&#160;:&#160;<a class="el" href="d4/d49/class_plugin_config_handler.html#ab5f09051b0ebc75badcd408d87835a20">PluginConfigHandler</a></li>
@@ -162,6 +164,7 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TEMPERATURE_COLD_LVL_TWO&#160;:&#160;<a class="el" href="d9/d36/class_colors.html#a8fd550cc69cb8c17072d4a39a4364167">Colors</a></li>
 <li>TEMPERATURE_FREEZE_TIME_COEF_BURNED&#160;:&#160;<a class="el" href="d9/d00/group___entity_temperature.html#ga0efa604cde52576a81d6deb075b8c259">GameConstants</a></li>
 <li>TEMPERATURE_FREEZE_TIME_COEF_DRIED&#160;:&#160;<a class="el" href="d9/d00/group___entity_temperature.html#gaf270a3be9441ea34d731c05c93bdac3f">GameConstants</a></li>
+<li>TEMPERATURE_FREEZETHAW_ACCELERATION_COEF&#160;:&#160;<a class="el" href="d9/d00/group___entity_temperature.html#gafb951dfb4437e6811e0b144bd357d18f">GameConstants</a></li>
 <li>TEMPERATURE_FREEZETHAW_LEGACY_COEF&#160;:&#160;<a class="el" href="d9/d00/group___entity_temperature.html#ga7ca2c4ad2ba88b8f4801b0a7c7735fda">GameConstants</a></li>
 <li>TEMPERATURE_HOT_LVL_FOUR&#160;:&#160;<a class="el" href="d9/d36/class_colors.html#a41012d69a21eb61916e8780f347ed765">Colors</a></li>
 <li>TEMPERATURE_HOT_LVL_ONE&#160;:&#160;<a class="el" href="d9/d36/class_colors.html#af82b21fc143a8ce597a664f70ef2a646">Colors</a></li>
@@ -202,7 +205,7 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TentBase()&#160;:&#160;<a class="el" href="de/d7a/class_item_base.html#add224530cd3613ace7241a20d108bf60">ItemBase</a></li>
 <li>Terminate()&#160;:&#160;<a class="el" href="d8/d1b/class_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_01_ff05bd52b3b493f858f7641b9988f4c89.html#afdfe84dd4f88a0cb44f75d0f8b8ce49f">FSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;</a>, <a class="el" href="d2/d6c/class_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189.html#afdfe84dd4f88a0cb44f75d0f8b8ce49f">HFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;</a>, <a class="el" href="dc/d69/class_o_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_01435e9d74cc4290d138c404152b6f8f38.html#afcfb117e8e97bd680cfe6bc4584b3a0e">OFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;</a></li>
 <li>TerritoryFlag()&#160;:&#160;<a class="el" href="dd/d90/class_base_building_base.html#a6edd0fbf1d9285cbd3e03e5452bd19ea">BaseBuildingBase</a></li>
-<li>Test()&#160;:&#160;<a class="el" href="da/dd5/class_game_options.html#ab5f1f922a6325d45f8ad2a429fecb5db">GameOptions</a>, <a class="el" href="d6/d93/class_options_access.html#ab5f1f922a6325d45f8ad2a429fecb5db">OptionsAccess</a></li>
+<li>Test()&#160;:&#160;<a class="el" href="da/dd5/class_game_options.html#ab5f1f922a6325d45f8ad2a429fecb5db">GameOptions</a>, <a class="el" href="d6/d93/class_options_access.html#ab5f1f922a6325d45f8ad2a429fecb5db">OptionsAccess</a>, <a class="el" href="d1/d9b/class_test.html#a7b520fb985786c360e4cc0650d82cdd4">Test</a></li>
 <li>TEST_BLOOD&#160;:&#160;<a class="el" href="d8/d3b/class_u_a_time_spent.html#ac389af1bb3a2e79f3e1dc1d1c755a226">UATimeSpent</a></li>
 <li>TestAddEntityInCargoEx()&#160;:&#160;<a class="el" href="dc/d11/class_game_inventory.html#a40caa22c5b1f117c13283538428b9ec9">GameInventory</a></li>
 <li>TestAddEntityInCargoExLoc()&#160;:&#160;<a class="el" href="dc/d11/class_game_inventory.html#a710941c092b81269912c55b7d84f37b4">GameInventory</a></li>
@@ -231,6 +234,7 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TestSend()&#160;:&#160;<a class="el" href="d4/d87/class_man_base.html#a228aa27a1ce98c0bf55e5da4bc607381">ManBase</a></li>
 <li>TestSetFlags()&#160;:&#160;<a class="el" href="d8/d4b/class_en_profiler_tests.html#a4646f750f7724cdba0f98eb4156d3dc8">EnProfilerTests</a></li>
 <li>TestStopping()&#160;:&#160;<a class="el" href="d4/dbd/class_p_m_t_playback.html#a87056e05ce2c51a137146c06e5d18a5f">PMTPlayback</a></li>
+<li>TestSuites&#160;:&#160;<a class="el" href="d8/dc2/class_autotest_config_json.html#a4d1ba272800f5a33132568fd3a03272a">AutotestConfigJson</a></li>
 <li>TestToggling()&#160;:&#160;<a class="el" href="d8/d4b/class_en_profiler_tests.html#aa2bb7eeb51dbeb136cc4ffa4508394a0">EnProfilerTests</a></li>
 <li>TestTogglingImmediate()&#160;:&#160;<a class="el" href="d8/d4b/class_en_profiler_tests.html#a8d6cd8416f2a510ee05c800bd223b75c">EnProfilerTests</a></li>
 <li>testVar1&#160;:&#160;<a class="el" href="d2/d74/class_test_class.html#a801e5224f2e2c94827fab0be489abcf0">TestClass</a></li>
@@ -263,15 +267,20 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>ThrowItem()&#160;:&#160;<a class="el" href="da/dd0/class_human_command_weapons.html#a1ca462d0131f92c7f48c8f322ce0c54b">HumanCommandWeapons</a></li>
 <li>ThrowPhysically()&#160;:&#160;<a class="el" href="df/df9/class_entity_a_i.html#a80a595ae94277dbc5f934d9d3ac46f2e">EntityAI</a></li>
 <li>Tick()&#160;:&#160;<a class="el" href="dd/d2d/class_animation_timer.html#a9a7d79f0f58742be47491a7baecc0535">AnimationTimer</a>, <a class="el" href="d7/d10/class_animator_timer.html#ad8e2cfd30f831eb15f0c6e155f3205bf">AnimatorTimer</a>, <a class="el" href="d9/d0c/classarray_3_01ref_01_call_queue_context_01_4.html#af1c2514da5d1f25435a0ca0bfd2a1dcf">array&lt; ref CallQueueContext &gt;</a>, <a class="el" href="d8/d48/classarray_3_01_timer_base_01_4.html#ad8e2cfd30f831eb15f0c6e155f3205bf">array&lt; TimerBase &gt;</a>, <a class="el" href="dc/d22/class_call_queue.html#a6da6523dd57cb4ebba0f9a1be0edbe80">CallQueue</a>, <a class="el" href="d5/db0/class_contaminated_area___dynamic.html#a6da6523dd57cb4ebba0f9a1be0edbe80">ContaminatedArea_Dynamic</a>, <a class="el" href="dc/d57/class_contaminated_area___local.html#a6da6523dd57cb4ebba0f9a1be0edbe80">ContaminatedArea_Local</a>, <a class="el" href="da/d87/class_heat_buffer_mdfr.html#a3202812cd29421d2675169663f42cbfd">HeatBufferMdfr</a>, <a class="el" href="d6/d23/class_land___warhead_storage___power_station.html#af1c2514da5d1f25435a0ca0bfd2a1dcf">Land_WarheadStorage_PowerStation</a>, <a class="el" href="dd/da1/class_plugin_base.html#af1c2514da5d1f25435a0ca0bfd2a1dcf">PluginBase</a>, <a class="el" href="dc/de8/class_plugin_dayz_player_debug___weapons.html#af1c2514da5d1f25435a0ca0bfd2a1dcf">PluginDayzPlayerDebug_Weapons</a>, <a class="el" href="dc/dac/class_script_call_queue.html#ac3d78f8fb260b5d81808ef89a5f936b4">ScriptCallQueue</a>, <a class="el" href="dd/d1b/class_sound_event_base.html#af1c2514da5d1f25435a0ca0bfd2a1dcf">SoundEventBase</a></li>
+<li>TICK_FADEOUT_PROCESSOR_SECONDS&#160;:&#160;<a class="el" href="d4/d79/class_dynamic_music_player.html#af464072518eca698c8691a4f625e6f36">DynamicMusicPlayer</a></li>
 <li>TICK_FREQUENCY&#160;:&#160;<a class="el" href="df/d8b/class_drowning_mdfr.html#af75675b4a53e8456cefd06af14594f02">DrowningMdfr</a>, <a class="el" href="d9/d9a/class_flies_mdfr.html#af75675b4a53e8456cefd06af14594f02">FliesMdfr</a></li>
 <li>TICK_INTERVAL&#160;:&#160;<a class="el" href="dd/dcb/class_heat_comfort_anim_handler.html#ac13da884573e6187a54e91f76f0cf586">HeatComfortAnimHandler</a></li>
 <li>TICK_INTERVAL_SEC&#160;:&#160;<a class="el" href="dc/da8/class_bleeding_sources_manager_base.html#abcdf486894439ed0b69c41d68e44b0f5">BleedingSourcesManagerBase</a></li>
+<li>TICK_LOCATION_CACHE_UPDATE_SECONDS&#160;:&#160;<a class="el" href="d4/d79/class_dynamic_music_player.html#adfec48d6c278c93ceb3b0a2df52ccb4f">DynamicMusicPlayer</a></li>
+<li>TICK_LOCATION_UPDATE_SECONDS&#160;:&#160;<a class="el" href="d4/d79/class_dynamic_music_player.html#a179d9af84b80cb2b47db6243aa34d379">DynamicMusicPlayer</a></li>
+<li>TICK_PRIORITY_LOCATION_UPDATE_SECONDS&#160;:&#160;<a class="el" href="d4/d79/class_dynamic_music_player.html#af309a922c08dc42c9c41d9d99b1399e3">DynamicMusicPlayer</a></li>
 <li>TICK_RATE&#160;:&#160;<a class="el" href="dc/d57/class_contaminated_area___local.html#ac2faf28cdfed15928e70e7c9bda268e4">ContaminatedArea_Local</a>, <a class="el" href="dd/da1/class_plugin_base.html#a4357dfd5f4162134d5e38832f1e24431">PluginBase</a></li>
+<li>TICK_TIME_OF_DATE_UPDATE_SECONDS&#160;:&#160;<a class="el" href="d4/d79/class_dynamic_music_player.html#a83f33da5431b76f1b592d8d32dfe71b6">DynamicMusicPlayer</a></li>
 <li>TickScheduler()&#160;:&#160;<a class="el" href="d5/d04/class_mission_base.html#aa60be1e6720fd64571258f60bc3667eb">MissionBase</a></li>
 <li>Time01ToSeconds()&#160;:&#160;<a class="el" href="d0/da1/class_kitchen_timer.html#a892252991a435fbea8865935eceeab30">KitchenTimer</a></li>
-<li>TIME_AXES&#160;:&#160;<a class="el" href="d8/de5/class_action_saw_planks_c_b.html#a1ee8d75b77470e9bcd5a3bbc99eb295f">ActionSawPlanksCB</a></li>
 <li>TIME_BETWEEN_MATERIAL_DROPS&#160;:&#160;<a class="el" href="d3/d4d/class_action_mine_rock_c_b.html#ac83e92beebe0c673afa727a7bc20b152">ActionMineRockCB</a></li>
 <li>TIME_BETWEEN_MATERIAL_DROPS_DEFAULT&#160;:&#160;<a class="el" href="db/d62/class_action_mine_bush_c_b.html#ad4ad6f1ff3b916bee5764c831e9e1062">ActionMineBushCB</a></li>
+<li>TIME_BETWEEN_UPDATE&#160;:&#160;<a class="el" href="d4/d00/class_outdoor_thermometer_manager.html#ae28c32f3439070efc3c187ff22b5ffc9">OutdoorThermometerManager</a></li>
 <li>TIME_CAMERACHANGE_01&#160;:&#160;<a class="el" href="d0/d5d/class_day_z_player_cameras.html#a48cb760a1a981c81a06ca1a108b0d191">DayZPlayerCameras</a></li>
 <li>TIME_CAMERACHANGE_02&#160;:&#160;<a class="el" href="d0/d5d/class_day_z_player_cameras.html#a01ca78797f5b9b576c6036e25584d07a">DayZPlayerCameras</a></li>
 <li>TIME_CAMERACHANGE_03&#160;:&#160;<a class="el" href="d0/d5d/class_day_z_player_cameras.html#adf2cac712a722033fe4c34755f94055f">DayZPlayerCameras</a></li>
@@ -284,8 +293,6 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TIME_INTERVAL_HC_PLUS_HIGH_MIN&#160;:&#160;<a class="el" href="dd/dcb/class_heat_comfort_anim_handler.html#ad88e1576bb7f8c36e277a7a111723bdb">HeatComfortAnimHandler</a></li>
 <li>TIME_INTERVAL_HC_PLUS_LOW_MAX&#160;:&#160;<a class="el" href="dd/dcb/class_heat_comfort_anim_handler.html#ac929478ca4c1d69855f2a086b8ded820">HeatComfortAnimHandler</a></li>
 <li>TIME_INTERVAL_HC_PLUS_LOW_MIN&#160;:&#160;<a class="el" href="dd/dcb/class_heat_comfort_anim_handler.html#a09abe17131f362d18cc8ff077072af89">HeatComfortAnimHandler</a></li>
-<li>TIME_SAW_HACKSAW&#160;:&#160;<a class="el" href="d8/de5/class_action_saw_planks_c_b.html#a99258cd9854460368ed406fd70dc2b53">ActionSawPlanksCB</a></li>
-<li>TIME_SAW_HANDSAW&#160;:&#160;<a class="el" href="d8/de5/class_action_saw_planks_c_b.html#a02fadd7950176ba1a20650dea3f9237e">ActionSawPlanksCB</a></li>
 <li>TIME_TO_BREAK_STICKS&#160;:&#160;<a class="el" href="d4/d3d/class_action_break_long_wooden_stick_c_b.html#ab8786be8e93e28d5da530d53c35434da">ActionBreakLongWoodenStickCB</a></li>
 <li>TIME_TO_COMPLETE&#160;:&#160;<a class="el" href="d3/df5/class_action_set_alarm_clock_c_b.html#add9c6049bdd0eb5d4313a58434c4b8a8">ActionSetAlarmClockCB</a>, <a class="el" href="d8/d43/class_action_set_kitchen_timer_c_b.html#add9c6049bdd0eb5d4313a58434c4b8a8">ActionSetKitchenTimerCB</a></li>
 <li>TIME_TO_CRAFT&#160;:&#160;<a class="el" href="dd/ddc/class_action_craft_bolts_c_b.html#a85bd2a5133b4374ee25fe930d98c4d84">ActionCraftBoltsCB</a>, <a class="el" href="d8/d4f/class_action_craft_bolts_feather_c_b.html#a85bd2a5133b4374ee25fe930d98c4d84">ActionCraftBoltsFeatherCB</a></li>
@@ -299,6 +306,8 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TIME_TRIGGER_TIMER_BASED_DELAY_SECS&#160;:&#160;<a class="el" href="db/d46/class_improvised_explosive.html#aef34ed20dbbc417f0af70d67064e62fd">ImprovisedExplosive</a></li>
 <li>timeEntered&#160;:&#160;<a class="el" href="d2/db9/class_trigger_insider.html#aab1a3e4bdc169e52d8c438c08e25188a">TriggerInsider</a></li>
 <li>TIMEOUT&#160;:&#160;<a class="el" href="d1/d4b/class_trigger.html#ab9f12dae685ebdefb69bb04967a1ff43">Trigger</a></li>
+<li>TimeoutMs&#160;:&#160;<a class="el" href="d1/d9b/class_test.html#aea4beef5174148e8cc3adb2dfbf97948">Test</a></li>
+<li>TimeoutS&#160;:&#160;<a class="el" href="d1/d9b/class_test.html#a26187015fba5720926c0d73ae76d6630">Test</a></li>
 <li>Timer()&#160;:&#160;<a class="el" href="da/d69/class_timer_base.html#aa8fa811dd7ffe118d7740b7fc03b20d5">TimerBase</a></li>
 <li>TIMER_HEATING_UPDATE_INTERVAL&#160;:&#160;<a class="el" href="d5/d2c/class_building_super.html#adeb769cee0eca536fc5c2be9cf8e57a6">BuildingSuper</a></li>
 <li>TIMER_PLAYERLIST&#160;:&#160;<a class="el" href="dd/da1/class_plugin_base.html#a2a6118b32f303d4948027e98ddba0d7b">PluginBase</a></li>
@@ -325,6 +334,7 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>ToggleExpand()&#160;:&#160;<a class="el" href="df/df4/class_scripted_widget_event_handler.html#a13cc292a097338f7ab59bd3b709fbd89">ScriptedWidgetEventHandler</a></li>
 <li>ToggleFavorite()&#160;:&#160;<a class="el" href="df/df4/class_scripted_widget_event_handler.html#ab99506cc68273c410f16ff1fd0be13af">ScriptedWidgetEventHandler</a></li>
 <li>ToggleFavoriteServer()&#160;:&#160;<a class="el" href="d1/d5b/class_u_i_scripted_menu.html#ad9055688d952884a275daded36c2a6d4">UIScriptedMenu</a></li>
+<li>ToggleFeedbackDialog()&#160;:&#160;<a class="el" href="d1/d5b/class_u_i_scripted_menu.html#a3c83ae21cdfff3a0bedfaf214da67522">UIScriptedMenu</a></li>
 <li>ToggleFishBiting()&#160;:&#160;<a class="el" href="d1/d70/class_action_fishing_new_c_b.html#acfaf0d4e3741772ad02bca23b723075e">ActionFishingNewCB</a></li>
 <li>ToggleFocus()&#160;:&#160;<a class="el" href="dd/da1/class_plugin_base.html#a3a12fb34a4c69bc09fd75fa0216ae933">PluginBase</a>, <a class="el" href="d1/d5b/class_u_i_scripted_menu.html#a3a12fb34a4c69bc09fd75fa0216ae933">UIScriptedMenu</a></li>
 <li>ToggleFreeCamera()&#160;:&#160;<a class="el" href="dd/da1/class_plugin_base.html#ac148f3a23ea03da8b62c4a9d43b7a6c9">PluginBase</a></li>
@@ -339,6 +349,7 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TogglePlacingServer()&#160;:&#160;<a class="el" href="d4/d87/class_man_base.html#a09d06af5412761b194922a64a1e01b28">ManBase</a></li>
 <li>ToggleScriptConsole()&#160;:&#160;<a class="el" href="dd/da1/class_plugin_base.html#a89eb14bab9b1c7b090c0cdf4f51964e1">PluginBase</a></li>
 <li>ToggleSort()&#160;:&#160;<a class="el" href="d9/de0/class_server_browser_tab.html#a5cac70b7476bd84f6a6b6b53ded62dea">ServerBrowserTab</a></li>
+<li>ToggleValueEditMode()&#160;:&#160;<a class="el" href="d2/d40/class_script_console_camera_tab.html#ad84f5465f26cc84200cdf65a14c86822">ScriptConsoleCameraTab</a></li>
 <li>ToggleVideoSelection()&#160;:&#160;<a class="el" href="df/df4/class_scripted_widget_event_handler.html#a5b2be47922628b14ee1fae2fb0927d71">ScriptedWidgetEventHandler</a></li>
 <li>ToggleVisibility()&#160;:&#160;<a class="el" href="d1/d5b/class_u_i_scripted_menu.html#ab88e1bef0bb52da2e88820bd9f664082">UIScriptedMenu</a></li>
 <li>ToggleWidget()&#160;:&#160;<a class="el" href="d7/d9c/class_player_container.html#a3ec5b0c3631d85c821cc99e39694bceb">PlayerContainer</a></li>
@@ -355,13 +366,14 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TORCH_T3&#160;:&#160;<a class="el" href="dd/dd2/class_particle_list.html#a756437e8f5889b9fca4bcbc4060af099">ParticleList</a></li>
 <li>TorchLight()&#160;:&#160;<a class="el" href="d8/dbb/class_point_light_base.html#ad934eb74be73f8bc1fcda5c8932af5c8">PointLightBase</a></li>
 <li>ToRefresh()&#160;:&#160;<a class="el" href="db/d60/class_icon.html#a91d518f493fe8a18b3fa6612797c11aa">Icon</a></li>
-<li>ToString()&#160;:&#160;<a class="el" href="d9/db9/classbool.html#a18220b86ab5378509a68e4afa4a2fb5b">bool</a>, <a class="el" href="d5/d78/group___enforce.html#gadc99c4686fcc761e063cd68f510bcd90">Class</a>, <a class="el" href="d4/dc3/classfloat.html#afa7657e4f6687b78bc860ddff41c3bef">float</a>, <a class="el" href="d5/da2/group___strings.html#gade32b9d9b0a8625d7e264b43ab34d6fd">string</a>, <a class="el" href="d2/db4/classtypename.html#a47e0f9045c55ede71456915a7b53ef33">typename</a>, <a class="el" href="d7/dfc/classvector.html#a41b0874e884b691268bb5b09c6f0bf7f">vector</a>, <a class="el" href="d8/dca/class_world_data_daytime.html#aca4d1612937c5f9aa4553ac7c5af246f">WorldDataDaytime</a></li>
+<li>ToString()&#160;:&#160;<a class="el" href="d9/db9/classbool.html#a18220b86ab5378509a68e4afa4a2fb5b">bool</a>, <a class="el" href="d5/d78/group___enforce.html#gadc99c4686fcc761e063cd68f510bcd90">Class</a>, <a class="el" href="d4/dc3/classfloat.html#a20e2e23b58b06712efb8528d14f4c29e">float</a>, <a class="el" href="d5/da2/group___strings.html#gade32b9d9b0a8625d7e264b43ab34d6fd">string</a>, <a class="el" href="d2/db4/classtypename.html#a47e0f9045c55ede71456915a7b53ef33">typename</a>, <a class="el" href="d7/dfc/classvector.html#a41b0874e884b691268bb5b09c6f0bf7f">vector</a>, <a class="el" href="d8/dca/class_world_data_daytime.html#aca4d1612937c5f9aa4553ac7c5af246f">WorldDataDaytime</a></li>
 <li>TotemFlagChange()&#160;:&#160;<a class="el" href="dd/da1/class_plugin_base.html#a2fde174730777ba3cf4cdd25c959ac6a">PluginBase</a></li>
 <li>ToType()&#160;:&#160;<a class="el" href="d5/da2/group___strings.html#ga0afa93899a3e95fcfea4b9d83d0cc042">string</a></li>
 <li>ToUpper()&#160;:&#160;<a class="el" href="d5/da2/group___strings.html#ga7f67755dc28509b3916d4f075feb41c4">string</a></li>
 <li>ToVector()&#160;:&#160;<a class="el" href="d5/da2/group___strings.html#ga4c51cae6420dbcca7e1e94e2e2c8caa9">string</a></li>
 <li>TOXICITY_CLEANUP_PER_SEC&#160;:&#160;<a class="el" href="d4/dbf/class_toxicity_mdfr.html#a6191cdbe72d00ef769f02cc169bef5ae">ToxicityMdfr</a></li>
 <li>TraceWorldPos()&#160;:&#160;<a class="el" href="d9/d1b/class_world_editor_a_p_i.html#a1f8c31cce5ff6b4224df34d5d7dfdb66">WorldEditorAPI</a></li>
+<li>TRACKS_BUFFER_HISTORY_SIZE&#160;:&#160;<a class="el" href="d4/d79/class_dynamic_music_player.html#a7af4b51343cfc43ac7de3f43b08cafe2">DynamicMusicPlayer</a></li>
 <li>TransferAgents()&#160;:&#160;<a class="el" href="d6/d0e/class_inventory_item.html#ae1db4bcbca9286198ea68188ed80197e">InventoryItem</a></li>
 <li>TransferFoodStage()&#160;:&#160;<a class="el" href="df/d7c/class_edible___base.html#a76f16c2e19fdc80b025a1b764c3be0fc">Edible_Base</a></li>
 <li>TransferItem()&#160;:&#160;<a class="el" href="d6/d93/class_attachment_categories_row.html#a46f4ee6c24b7f56695d7bf16ae0755d4">AttachmentCategoriesRow</a>, <a class="el" href="de/db4/class_attachment_categories_slots_container.html#a46f4ee6c24b7f56695d7bf16ae0755d4">AttachmentCategoriesSlotsContainer</a>, <a class="el" href="d8/d6f/class_attachments.html#ae0006af3714e47b6690a62dc77c844b5">Attachments</a>, <a class="el" href="d8/d60/class_attachments_wrapper.html#a46f4ee6c24b7f56695d7bf16ae0755d4">AttachmentsWrapper</a>, <a class="el" href="d7/d00/class_closable_container.html#a46f4ee6c24b7f56695d7bf16ae0755d4">ClosableContainer</a>, <a class="el" href="d4/d8f/class_container.html#a46f4ee6c24b7f56695d7bf16ae0755d4">Container</a>, <a class="el" href="d3/d1c/class_hands_container.html#a46f4ee6c24b7f56695d7bf16ae0755d4">HandsContainer</a>, <a class="el" href="d5/d08/class_layout_holder.html#ae0006af3714e47b6690a62dc77c844b5">LayoutHolder</a>, <a class="el" href="d7/d9c/class_player_container.html#a46f4ee6c24b7f56695d7bf16ae0755d4">PlayerContainer</a>, <a class="el" href="d2/d5d/class_right_area.html#a46f4ee6c24b7f56695d7bf16ae0755d4">RightArea</a>, <a class="el" href="d8/d7b/class_vicinity_slots_container.html#a46f4ee6c24b7f56695d7bf16ae0755d4">VicinitySlotsContainer</a>, <a class="el" href="d5/d55/class_zombie_container.html#a46f4ee6c24b7f56695d7bf16ae0755d4">ZombieContainer</a></li>
@@ -375,6 +387,7 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TranslateHitAngleDegToDirectionIndex()&#160;:&#160;<a class="el" href="df/d1b/class_day_z_creature_a_i.html#a7a5192fbd0ae919fd66c77229a673f9f">DayZCreatureAI</a></li>
 <li>TranslateIDToType()&#160;:&#160;<a class="el" href="d6/ded/class_gameplay_effect_widgets__base.html#adf4bf264c4a3950ca80e61b640a4b863">GameplayEffectWidgets_base</a></li>
 <li>TranslateLevelToStatus()&#160;:&#160;<a class="el" href="d0/dea/class_display_element_tendency.html#a8947360afa938451b43c480d0115e126">DisplayElementTendency</a>, <a class="el" href="d5/d9b/class_message_receiver_base.html#addff9925c8ce3feab4ec802525406b0d">MessageReceiverBase</a></li>
+<li>TranslateLockSelectionIntoDoorIdx()&#160;:&#160;<a class="el" href="de/dbd/class_action_unlock_shipping_container.html#a0ef8716bced3ab299d24d0d208786e9d">ActionUnlockShippingContainer</a></li>
 <li>TranslateSafePositions()&#160;:&#160;<a class="el" href="d5/dc2/class_player_restricted_area_instance.html#a2621aae5a0c2a6de46c42292cede02f3">PlayerRestrictedAreaInstance</a></li>
 <li>TranslateSlotFromSelection()&#160;:&#160;<a class="el" href="dd/d90/class_base_building_base.html#ab4bcacb14a8f9af092a5c0f8a853ac36">BaseBuildingBase</a>, <a class="el" href="d2/d96/class_entity.html#a7189d645bbcacd18dcbcb5cd804bc036">Entity</a></li>
 <li>TransmitAgents()&#160;:&#160;<a class="el" href="d2/d70/class_area_exposure_mdfr.html#a29b74c0280cfaf8dc240f3f1d844219b">AreaExposureMdfr</a>, <a class="el" href="dd/da1/class_plugin_base.html#a024e453d4b59b03503a99ffb259fca41">PluginBase</a></li>
@@ -386,6 +399,10 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TREE_FALLING_LEAF&#160;:&#160;<a class="el" href="dd/dd2/class_particle_list.html#a4e9c3008157888072753d1e52140cc7b">ParticleList</a></li>
 <li>TREE_FALLING_NEEDLE&#160;:&#160;<a class="el" href="dd/dd2/class_particle_list.html#a31dcbde897df51da75af10687573f97e">ParticleList</a></li>
 <li>TREE_FALLING_SNOW&#160;:&#160;<a class="el" href="dd/dd2/class_particle_list.html#a9103f4ae4cd828dd000b504f85519858">ParticleList</a></li>
+<li>TREE_PASSING_SNOW&#160;:&#160;<a class="el" href="dd/dd2/class_particle_list.html#a0f52a3619020df0ffcb15473ea159cb0">ParticleList</a></li>
+<li>TREE_SMALL_FALLING_SNOW&#160;:&#160;<a class="el" href="dd/dd2/class_particle_list.html#a4916b23d115da3dfa738564842be8479">ParticleList</a></li>
+<li>TREE_SOFT_FALLING_SNOW&#160;:&#160;<a class="el" href="dd/dd2/class_particle_list.html#a47f8a330cae76bf15689002fb7776b73">ParticleList</a></li>
+<li>TREE_SOFT_LARGE_FALLING_SNOW&#160;:&#160;<a class="el" href="dd/dd2/class_particle_list.html#a5f5db82cec119b843e97bec83d1ada60">ParticleList</a></li>
 <li>TreeEffecterParameters()&#160;:&#160;<a class="el" href="d1/d9f/class_tree_effecter_parameters.html#a7b5a74a874b8b3d45c8e8e22e3785a43">TreeEffecterParameters</a></li>
 <li>TREMOR_DECREMENT_PER_SEC&#160;:&#160;<a class="el" href="d6/da8/class_tremor_mdfr.html#afa20bf8bf64f62bae68f961b57e8e609">TremorMdfr</a></li>
 <li>Triangle&#160;:&#160;<a class="el" href="df/d60/group___ocean.html#gaa85b0f4808a6659f6209594b20cdf4f5">TraceContact</a></li>
@@ -433,7 +450,7 @@ $(document).ready(function(){initNavTree('functions_t.html',''); initResizable()
 <li>TutorialKeybinds()&#160;:&#160;<a class="el" href="df/df4/class_scripted_widget_event_handler.html#acba7df3409f4bba6a97e8e86007b5703">ScriptedWidgetEventHandler</a></li>
 <li>type&#160;:&#160;<a class="el" href="d8/d22/class_anim_event.html#ac765329451135abec74c45e1897abf26">AnimEvent</a></li>
 <li>Type()&#160;:&#160;<a class="el" href="d5/d78/group___enforce.html#gaee2e70b9c6607d7afa3dc60ce2426377">Class</a></li>
-<li>type&#160;:&#160;<a class="el" href="d9/da4/class_raycast_r_v_params.html#ac765329451135abec74c45e1897abf26">RaycastRVParams</a>, <a class="el" href="dc/d9a/class_sound_event.html#ac765329451135abec74c45e1897abf26">SoundEvent</a></li>
+<li>type&#160;:&#160;<a class="el" href="d9/da4/class_raycast_r_v_params.html#ac765329451135abec74c45e1897abf26">RaycastRVParams</a>, <a class="el" href="dc/d9a/class_sound_event.html#ac765329451135abec74c45e1897abf26">SoundEvent</a>, <a class="el" href="d5/d4f/class_surface_detection_parameters.html#a2943d993d75d8e38bb92d21da3157ccb">SurfaceDetectionParameters</a></li>
 <li>TYPE_BLOOD&#160;:&#160;<a class="el" href="d0/d20/class_debug_monitor_values.html#a1b3e3e07c5b8a76ea1732184d6b845ca">DebugMonitorValues</a>, <a class="el" href="dd/d17/class_managed.html#a1b3e3e07c5b8a76ea1732184d6b845ca">Managed</a></li>
 <li>TYPE_BODY_TEMP&#160;:&#160;<a class="el" href="d0/d20/class_debug_monitor_values.html#ae701ac30dd8d035f78c15c27af009a64">DebugMonitorValues</a></li>
 <li>TYPE_HEALTH&#160;:&#160;<a class="el" href="d0/d20/class_debug_monitor_values.html#a2b73642d12cbd05f2fa79cc6d68f4302">DebugMonitorValues</a>, <a class="el" href="dd/d17/class_managed.html#a2b73642d12cbd05f2fa79cc6d68f4302">Managed</a></li>

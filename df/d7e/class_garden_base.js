@@ -16,5 +16,6 @@ var class_garden_base =
     [ "OnStoreLoad", "df/d7e/class_garden_base.html#ab311cdf3df0e3547b7d3cd810e61ca61", null ],
     [ "RefreshSlots", "df/d7e/class_garden_base.html#ab9d09749ee9ce035ba3dd57dd10f07b6", null ],
     [ "GARDEN_SLOT_COUNT", "df/d7e/class_garden_base.html#a7263e81b757a61542251265126279835", null ],
-    [ "m_ClutterCutter", "df/d7e/class_garden_base.html#a1dca2e5e8ef3dc7c04c949c57774184a", null ]
+    [ "m_ClutterCutter", "df/d7e/class_garden_base.html#a1dca2e5e8ef3dc7c04c949c57774184a", null ],
+    [ "PLACEMENT_HEIGHT_LIMIT", "df/d7e/class_garden_base.html#a96e15ed82c57a387177dd7da14d05901", null ]
 ];

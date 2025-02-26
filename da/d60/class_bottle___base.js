@@ -2,6 +2,7 @@ var class_bottle___base =
 [
     [ "~Canteen", "da/d60/class_bottle___base.html#a846e3f93172bc81d9a507c575c72e18c", null ],
     [ "AffectLiquidContainerOnFill", "da/d60/class_bottle___base.html#ad193d5b56ad4a6855f0f979cface49e1", null ],
+    [ "AffectLiquidContainerOnTransfer", "da/d60/class_bottle___base.html#abb3d60927ace9b1f953c711970fc903b", null ],
     [ "CanPutInCargo", "da/d60/class_bottle___base.html#a5ea0aaf035a1939c725579219040c481", null ],
     [ "CanPutInCargo", "da/d60/class_bottle___base.html#a5ea0aaf035a1939c725579219040c481", null ],
     [ "Canteen", "da/d60/class_bottle___base.html#aa3d0498aca409116aa315370b5d2f195", null ],
@@ -25,7 +26,6 @@ var class_bottle___base =
     [ "IsOpen", "da/d60/class_bottle___base.html#a05bac627bbb13f7329a1aff6e140219b", null ],
     [ "IsOpen", "da/d60/class_bottle___base.html#a05bac627bbb13f7329a1aff6e140219b", null ],
     [ "OnDebugSpawn", "da/d60/class_bottle___base.html#a05eab95952a189dc9e08ccecec41b51a", null ],
-    [ "OnItemOverheat", "da/d60/class_bottle___base.html#ae886c34e21cd369b3d86cd27cc513eac", null ],
     [ "DAMAGE_ENVIRO_LIQUID_COEF_MAX", "da/d60/class_bottle___base.html#a642fbea5edea0da0c3006baf54bdf79e", null ],
     [ "DAMAGE_ENVIRO_LIQUID_COEF_MIN", "da/d60/class_bottle___base.html#a8dbcece9df290f8e38060cdf7c3ff3e1", null ],
     [ "DAMAGE_ENVIRO_TEMPDIFF_MAX", "da/d60/class_bottle___base.html#a2e968cdfa0602eab73477fd458c51b5b", null ],

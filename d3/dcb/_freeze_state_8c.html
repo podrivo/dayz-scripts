@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -99,7 +99,8 @@ $(document).ready(function(){initNavTree('d3/dcb/_freeze_state_8c.html','../../'
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">FreezeState.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -108,7 +109,232 @@ $(document).ready(function(){initNavTree('d3/dcb/_freeze_state_8c.html','../../'
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/class_symptom_base.html">SymptomBase</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga01f1070c46e4cc24d25a0ea0869bc972"><td class="memItemLeft" align="right" valign="top">class FreezeSymptom extends <a class="el" href="../../d9/db3/class_symptom_base.html">SymptomBase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d83/group___script_testing_framework.html#ga01f1070c46e4cc24d25a0ea0869bc972">OnInit</a> ()</td></tr>
+<tr class="memdesc:ga01f1070c46e4cc24d25a0ea0869bc972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback for user defined initialization. Called for all suites during <a class="el" href="../../d9/d8a/class_test_harness.html#a686c3b91807db8ea0d6749798e3f8ce5" title="Starts up the testing process and initializes the structures.">TestHarness.Begin()</a>.  <br /></td></tr>
+<tr class="separator:ga01f1070c46e4cc24d25a0ea0869bc972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab11354e0a949ef5bf548e302266dea88"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dcb/_freeze_state_8c.html#ab11354e0a949ef5bf548e302266dea88">OnUpdateServer</a> (<a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player, <a class="el" href="../../d4/dc3/classfloat.html">float</a> deltatime)</td></tr>
+<tr class="memdesc:ab11354e0a949ef5bf548e302266dea88"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets called every frame  <br /></td></tr>
+<tr class="separator:ab11354e0a949ef5bf548e302266dea88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30da2e77547fc58f3ce425954682f3c1"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dcb/_freeze_state_8c.html#a30da2e77547fc58f3ce425954682f3c1">OnUpdateClient</a> (<a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player, <a class="el" href="../../d4/dc3/classfloat.html">float</a> deltatime)</td></tr>
+<tr class="separator:a30da2e77547fc58f3ce425954682f3c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7211a4f4215cf157511cce5130f5a03"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dcb/_freeze_state_8c.html#aa7211a4f4215cf157511cce5130f5a03">OnAnimationPlayFailed</a> ()</td></tr>
+<tr class="separator:aa7211a4f4215cf157511cce5130f5a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1eff6707789523ac8d657796b4636ad"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dcb/_freeze_state_8c.html#ad1eff6707789523ac8d657796b4636ad">CanActivate</a> ()</td></tr>
+<tr class="separator:ad1eff6707789523ac8d657796b4636ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d8220eba05ca3b37b1653e7372ddc32"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dcb/_freeze_state_8c.html#a3d8220eba05ca3b37b1653e7372ddc32">OnGetActivatedServer</a> (<a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player)</td></tr>
+<tr class="memdesc:a3d8220eba05ca3b37b1653e7372ddc32"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets called once on an Symptom which is being activated  <br /></td></tr>
+<tr class="separator:a3d8220eba05ca3b37b1653e7372ddc32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45ccd5d78afb6e7cb2ba715fbd9f368b"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dcb/_freeze_state_8c.html#a45ccd5d78afb6e7cb2ba715fbd9f368b">OnGetActivatedClient</a> (<a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player)</td></tr>
+<tr class="memdesc:a45ccd5d78afb6e7cb2ba715fbd9f368b"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets called once on a Symptom which is being activated  <br /></td></tr>
+<tr class="separator:a45ccd5d78afb6e7cb2ba715fbd9f368b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35ed1e5850ebcc15fb25a77af3daf693"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dcb/_freeze_state_8c.html#a35ed1e5850ebcc15fb25a77af3daf693">OnGetDeactivatedServer</a> (<a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player)</td></tr>
+<tr class="memdesc:a35ed1e5850ebcc15fb25a77af3daf693"><td class="mdescLeft">&#160;</td><td class="mdescRight">only gets called once on an active Symptom that is being deactivated  <br /></td></tr>
+<tr class="separator:a35ed1e5850ebcc15fb25a77af3daf693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59ac48e9dddb23c5081399940c807576"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dcb/_freeze_state_8c.html#a59ac48e9dddb23c5081399940c807576">OnGetDeactivatedClient</a> (<a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player)</td></tr>
+<tr class="memdesc:a59ac48e9dddb23c5081399940c807576"><td class="mdescLeft">&#160;</td><td class="mdescRight">only gets called once on an active Symptom that is being deactivated  <br /></td></tr>
+<tr class="separator:a59ac48e9dddb23c5081399940c807576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae430348fb68670bf7c871526cfc4631"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d4/d01/class_smpt_anim_meta_base.html">SmptAnimMetaBase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dcb/_freeze_state_8c.html#aae430348fb68670bf7c871526cfc4631">SpawnAnimMetaObject</a> ()</td></tr>
+<tr class="separator:aae430348fb68670bf7c871526cfc4631"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ad1eff6707789523ac8d657796b4636ad" name="ad1eff6707789523ac8d657796b4636ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1eff6707789523ac8d657796b4636ad">&#9670;&#160;</a></span>CanActivate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override <a class="el" href="../../d9/db9/classbool.html">bool</a> CanActivate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d8b/class_symptom_manager.html#a63a74dddc46ee2bf07fe10d19c91d222">SymptomManager::UpdateActiveSymptoms()</a>.</p>
+
+</div>
+</div>
+<a id="aa7211a4f4215cf157511cce5130f5a03" name="aa7211a4f4215cf157511cce5130f5a03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7211a4f4215cf157511cce5130f5a03">&#9670;&#160;</a></span>OnAnimationPlayFailed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void OnAnimationPlayFailed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a45ccd5d78afb6e7cb2ba715fbd9f368b" name="a45ccd5d78afb6e7cb2ba715fbd9f368b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45ccd5d78afb6e7cb2ba715fbd9f368b">&#9670;&#160;</a></span>OnGetActivatedClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void OnGetActivatedClient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a>&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>gets called once on a Symptom which is being activated </p>
+
+</div>
+</div>
+<a id="a3d8220eba05ca3b37b1653e7372ddc32" name="a3d8220eba05ca3b37b1653e7372ddc32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d8220eba05ca3b37b1653e7372ddc32">&#9670;&#160;</a></span>OnGetActivatedServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void OnGetActivatedServer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a>&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>gets called once on an Symptom which is being activated </p>
+
+</div>
+</div>
+<a id="a59ac48e9dddb23c5081399940c807576" name="a59ac48e9dddb23c5081399940c807576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59ac48e9dddb23c5081399940c807576">&#9670;&#160;</a></span>OnGetDeactivatedClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void OnGetDeactivatedClient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a>&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>only gets called once on an active Symptom that is being deactivated </p>
+
+</div>
+</div>
+<a id="a35ed1e5850ebcc15fb25a77af3daf693" name="a35ed1e5850ebcc15fb25a77af3daf693"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35ed1e5850ebcc15fb25a77af3daf693">&#9670;&#160;</a></span>OnGetDeactivatedServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void OnGetDeactivatedServer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a>&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>only gets called once on an active Symptom that is being deactivated </p>
+
+</div>
+</div>
+<a id="a30da2e77547fc58f3ce425954682f3c1" name="a30da2e77547fc58f3ce425954682f3c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30da2e77547fc58f3ce425954682f3c1">&#9670;&#160;</a></span>OnUpdateClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void OnUpdateClient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a>&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>deltatime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d9/df7/class_log_manager.html#ad17af8d9fd502b9bb89e01e041316180">LogManager::IsSymptomLogEnable()</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../d8/d9b/_hunger_sound_handler_8c.html#a37a72bb98e9ec48f9c2e65feae17943d">PlaySound()</a>, <a class="el" href="../../da/d7d/class_debug.html#a0a7bca1315e3591e8b42435308581683">Debug::SymptomLog()</a>, and <a class="el" href="../../d0/d13/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString()</a>.</p>
+
+</div>
+</div>
+<a id="ab11354e0a949ef5bf548e302266dea88" name="ab11354e0a949ef5bf548e302266dea88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab11354e0a949ef5bf548e302266dea88">&#9670;&#160;</a></span>OnUpdateServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void OnUpdateServer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a>&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>deltatime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>gets called every frame </p>
+
+</div>
+</div>
+<a id="aae430348fb68670bf7c871526cfc4631" name="aae430348fb68670bf7c871526cfc4631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae430348fb68670bf7c871526cfc4631">&#9670;&#160;</a></span>SpawnAnimMetaObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override <a class="el" href="../../d4/d01/class_smpt_anim_meta_base.html">SmptAnimMetaBase</a> SpawnAnimMetaObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d8b/class_symptom_manager.html#a05279e021c1a07421a5b84c9f809f918">SymptomManager::SetAnimation()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- Google tag (gtag.js) -->

@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -115,6 +115,11 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a5fdf9bcd50ffba0f3161c386a0d663dc"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a5fdf9bcd50ffba0f3161c386a0d663dc">SetActive</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> active)</td></tr>
 <tr class="memdesc:a5fdf9bcd50ffba0f3161c386a0d663dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets this camera as active.  <br /></td></tr>
 <tr class="separator:a5fdf9bcd50ffba0f3161c386a0d663dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ddb31b300964e8ae51630a70ab007cf"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a4ddb31b300964e8ae51630a70ab007cf">EnableSmooth</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> enable)</td></tr>
+<tr class="memdesc:a4ddb31b300964e8ae51630a70ab007cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the smoothing in interpolation.  <br /></td></tr>
+<tr class="separator:a4ddb31b300964e8ae51630a70ab007cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae39cfa4b89165332326ea495af832c"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a6ae39cfa4b89165332326ea495af832c">StopInterpolation</a> ()</td></tr>
+<tr class="separator:a6ae39cfa4b89165332326ea495af832c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a703703688964b1eb8b4ba7d0202df9c1"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a703703688964b1eb8b4ba7d0202df9c1">IsActive</a> ()</td></tr>
 <tr class="memdesc:a703703688964b1eb8b4ba7d0202df9c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this camera active?  <br /></td></tr>
 <tr class="separator:a703703688964b1eb8b4ba7d0202df9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,6 +133,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:ac03ec17c4eb88678bc3942285cbece2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orientation change by lookAt point.  <br /></td></tr>
 <tr class="separator:ac03ec17c4eb88678bc3942285cbece2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e93be3b0c56562927295e3fe28169f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a2e93be3b0c56562927295e3fe28169f4">EntityAI</a> ()</td></tr>
+<tr class="memdesc:a2e93be3b0c56562927295e3fe28169f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache blood infection chance (cfgVehicles-&gt;&lt;entity&gt;-&gt;Skinning-&gt;BloodInfectionSettings)  <br /></td></tr>
 <tr class="separator:a2e93be3b0c56562927295e3fe28169f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6be12174fdcbcb0edff7eb54f9630a7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a6be12174fdcbcb0edff7eb54f9630a7b">~EntityAI</a> ()</td></tr>
 <tr class="separator:a6be12174fdcbcb0edff7eb54f9630a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,6 +210,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:ab7687252d06397854417a17ace4eda00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0eccc65dee53474b4458ab9632b20c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#aa0eccc65dee53474b4458ab9632b20c1">IsBasebuildingKit</a> ()</td></tr>
 <tr class="separator:aa0eccc65dee53474b4458ab9632b20c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6dea85ca27bb8d682889391ffbc5ab5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#aa6dea85ca27bb8d682889391ffbc5ab5">IsCookware</a> ()</td></tr>
+<tr class="separator:aa6dea85ca27bb8d682889391ffbc5ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa72020e9a36cc402bd64ff3900a5da1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#aa72020e9a36cc402bd64ff3900a5da1a">PlacementCanBeRotated</a> ()</td></tr>
 <tr class="memdesc:aa72020e9a36cc402bd64ff3900a5da1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should return false if you want to disable hologram rotation.  <br /></td></tr>
 <tr class="separator:aa72020e9a36cc402bd64ff3900a5da1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -565,6 +573,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:ae28fda63774840599807c7ce914a5cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0db911d659e6c7703cd3ead16d7044b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#ab0db911d659e6c7703cd3ead16d7044b">FindAttachmentBySlotName</a> (<a class="el" href="../../d5/d92/classstring.html">string</a> slot_name)</td></tr>
 <tr class="separator:ab0db911d659e6c7703cd3ead16d7044b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab364494e725a168f87ee6b4c06f05f6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#ab364494e725a168f87ee6b4c06f05f6e">IsSlotReserved</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> slotID)</td></tr>
+<tr class="separator:ab364494e725a168f87ee6b4c06f05f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34adf81b1642e7e20dc30686f40f55fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a34adf81b1642e7e20dc30686f40f55fc">IsLockedInSlot</a> ()</td></tr>
 <tr class="separator:a34adf81b1642e7e20dc30686f40f55fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4abc3f5dcbc0008579db391690a942aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a4abc3f5dcbc0008579db391690a942aa">PredictiveTakeEntityToInventory</a> (<a class="el" href="../../d6/d52/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23dd">FindInventoryLocationType</a> flags, notnull <a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> item)</td></tr>
@@ -746,6 +756,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a15983c567ea744bddf0ad41357839fc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a15983c567ea744bddf0ad41357839fc3">GetFreezeThawProgress</a> ()</td></tr>
 <tr class="memdesc:a15983c567ea744bddf0ad41357839fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">on server only  <br /></td></tr>
 <tr class="separator:a15983c567ea744bddf0ad41357839fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9768d0c2e67ae294e8b8afc2f220d858"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a9768d0c2e67ae294e8b8afc2f220d858">IsFreezeThawProgressFinished</a> ()</td></tr>
+<tr class="memdesc:a9768d0c2e67ae294e8b8afc2f220d858"><td class="mdescLeft">&#160;</td><td class="mdescRight">on server only  <br /></td></tr>
+<tr class="separator:a9768d0c2e67ae294e8b8afc2f220d858"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4627569ddafb802b6007125ed434159d"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a4627569ddafb802b6007125ed434159d">SetFreezeThawProgress</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> val)</td></tr>
 <tr class="memdesc:a4627569ddafb802b6007125ed434159d"><td class="mdescLeft">&#160;</td><td class="mdescRight">0-&gt;1 when freezing, 1-&gt;0 when thawing  <br /></td></tr>
 <tr class="separator:a4627569ddafb802b6007125ed434159d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1162,6 +1175,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:af13447bdcebf0a2cbfae254d80ddac52"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#af13447bdcebf0a2cbfae254d80ddac52">AdjustExclusionAccessPropagation</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> occupiedSlot, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> testedSlot, set&lt; <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> &gt; value, inout set&lt; <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> &gt; adjustedValue)</td></tr>
 <tr class="memdesc:af13447bdcebf0a2cbfae254d80ddac52"><td class="mdescLeft">&#160;</td><td class="mdescRight">if we want to filter propagation specifically; DO NOT override unless you know what you are doing.  <br /></td></tr>
 <tr class="separator:af13447bdcebf0a2cbfae254d80ddac52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a743d98d25e1376b87efeb83221a4124f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a743d98d25e1376b87efeb83221a4124f">CheckAttachmentReceiveExclusion</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> attachment, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> slotId)</td></tr>
+<tr class="memdesc:a743d98d25e1376b87efeb83221a4124f"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks specifically for att. exclusion conflicts before att. receive  <br /></td></tr>
+<tr class="separator:a743d98d25e1376b87efeb83221a4124f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a484268bc11aa920efefe55aec76f902e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a484268bc11aa920efefe55aec76f902e">IsManagingArrows</a> ()</td></tr>
 <tr class="separator:a484268bc11aa920efefe55aec76f902e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a278797425afa31a02e61ab23600cda46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/ddf/class_arrow_manager_base.html">ArrowManagerBase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a278797425afa31a02e61ab23600cda46">GetArrowManager</a> ()</td></tr>
@@ -1252,6 +1268,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:afe0d2911b4ce9cc183029a3a5140c167"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb57cbb450c1c32979485100f9c71e33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#aeb57cbb450c1c32979485100f9c71e33">CanBeSkinnedWith</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> tool)</td></tr>
 <tr class="separator:aeb57cbb450c1c32979485100f9c71e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d180dfd605e5f61870c45e0d6bf5d59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a9d180dfd605e5f61870c45e0d6bf5d59">GetSkinningBloodInfectionChance</a> (<a class="el" href="../../d3/dfb/_e_agents_8c.html#a5a5d699a74359c32fabcdcdcbe60c1ae">eAgents</a> type)</td></tr>
+<tr class="separator:a9d180dfd605e5f61870c45e0d6bf5d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa29aef733b9fed2866ebd06b030ff70"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#afa29aef733b9fed2866ebd06b030ff70">CacheSkinningBloodInfectionChance</a> (<a class="el" href="../../d3/dfb/_e_agents_8c.html#a5a5d699a74359c32fabcdcdcbe60c1ae">eAgents</a> type)</td></tr>
+<tr class="separator:afa29aef733b9fed2866ebd06b030ff70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a79cad88633d0faaa6fba7e7cbeb02c6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/de6/class_component_energy_manager.html">ComponentEnergyManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a79cad88633d0faaa6fba7e7cbeb02c6a">GetCompEM</a> ()</td></tr>
 <tr class="separator:a79cad88633d0faaa6fba7e7cbeb02c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1306,6 +1326,8 @@ Static Private Member Functions</h2></td></tr>
 <tr class="memitem:aa844d911e56fcaaed845ad07ba065deb"><td class="memItemLeft" align="right" valign="top">static proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#aa844d911e56fcaaed845ad07ba065deb">InterpolateTo</a> (<a class="el" href="../../da/dbb/class_camera.html">Camera</a> targetCamera, <a class="el" href="../../d4/dc3/classfloat.html">float</a> time, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> type)</td></tr>
 <tr class="memdesc:aa844d911e56fcaaed845ad07ba065deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolation between camera instances (current camera becomes targetCamera at the end of interpolation)  <br /></td></tr>
 <tr class="separator:aa844d911e56fcaaed845ad07ba065deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad746b4c04bdb82938b01bbf0f51692b7"><td class="memItemLeft" align="right" valign="top">static proto native <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#ad746b4c04bdb82938b01bbf0f51692b7">IsInterpolationComplete</a> ()</td></tr>
+<tr class="separator:ad746b4c04bdb82938b01bbf0f51692b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d44749859d59dca1c721ef9a2334b9a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#af314c3a601e8bcad07a607f60bce1176">EWetnessLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a9d44749859d59dca1c721ef9a2334b9a">GetWetLevelInternal</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> wetness)</td></tr>
 <tr class="separator:a9d44749859d59dca1c721ef9a2334b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -1431,6 +1453,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:afcdb2c9d437fd8805db00df761df828d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad622b1f8c4ef0067d5f329af84709087"><td class="memItemLeft" align="right" valign="top">protected ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#ad622b1f8c4ef0067d5f329af84709087">m_OnKilledInvoker</a></td></tr>
 <tr class="separator:ad622b1f8c4ef0067d5f329af84709087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3672f39e90ade4841c85cd8966752f42"><td class="memItemLeft" align="right" valign="top">private ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt; <a class="el" href="../../d3/dfb/_e_agents_8c.html#a5a5d699a74359c32fabcdcdcbe60c1ae">eAgents</a>, <a class="el" href="../../d4/dc3/classfloat.html">float</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a3672f39e90ade4841c85cd8966752f42">m_BloodInfectionChanceCached</a></td></tr>
+<tr class="separator:a3672f39e90ade4841c85cd8966752f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4773a6ec66cebd4677ba84dd56720f0"><td class="memItemLeft" align="right" valign="top">private ref <a class="el" href="../../d4/d5f/class_components_bank.html">ComponentsBank</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#ab4773a6ec66cebd4677ba84dd56720f0">m_ComponentsBank</a></td></tr>
 <tr class="separator:ab4773a6ec66cebd4677ba84dd56720f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a269aeecee417793eaad20192c3d87544"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/de6/class_component_energy_manager.html">ComponentEnergyManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a269aeecee417793eaad20192c3d87544">m_EM</a></td></tr>
@@ -1746,6 +1770,34 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../d6/dae/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, <a class="el" href="../../de/db7/_animal_base_8c.html#ac2653d047934c614414dccfa25a11176">GetDestructionBehaviour()</a>, <a class="el" href="../../de/db7/_animal_base_8c.html#a2d13cfb6ba973d82f1228275eb8f64d9">IsDestructionBehaviour()</a>, and <a class="el" href="../../d6/dee/class_destruction_effect_base.html#ac51338892038440663f68ebe5b92e61a">DestructionEffectBase::OnHealthLevelChanged()</a>.</p>
+
+</div>
+</div>
+<a id="afa29aef733b9fed2866ebd06b030ff70" name="afa29aef733b9fed2866ebd06b030ff70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa29aef733b9fed2866ebd06b030ff70">&#9670;&#160;</a></span>CacheSkinningBloodInfectionChance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected void CacheSkinningBloodInfectionChance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/dfb/_e_agents_8c.html#a5a5d699a74359c32fabcdcdcbe60c1ae">eAgents</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../dc/d98/class_enum_tools.html#a4d760aada5b38f38a4f20e66cb38c925">EnumTools::EnumToString()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>, and <a class="el" href="../../d5/da2/group___strings.html#gad79d97f841c94fe94ecb04ae5695292b">string::ToLower()</a>.</p>
 
 </div>
 </div>
@@ -2676,8 +2728,6 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if action allowed</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>: return scriptConditionExecute(this, attachment, "CanReceiveAttachment"); </dd></dl>
 
-<p class="reference">References <a class="el" href="../../d6/dc5/class_inventory_location.html#aec280ad00fb591910bbefb89b17cb070">InventoryLocation::GetSlot()</a>, and <a class="el" href="../../d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956">InventoryLocation::GetType()</a>.</p>
-
 </div>
 </div>
 <a id="ab69b295c610ba947998631b50837d3b5" name="ab69b295c610ba947998631b50837d3b5"></a>
@@ -3074,6 +3124,46 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a743d98d25e1376b87efeb83221a4124f" name="a743d98d25e1376b87efeb83221a4124f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a743d98d25e1376b87efeb83221a4124f">&#9670;&#160;</a></span>CheckAttachmentReceiveExclusion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> CheckAttachmentReceiveExclusion </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a>&#160;</td>
+          <td class="paramname"><em>attachment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td>
+          <td class="paramname"><em>slotId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>checks specifically for att. exclusion conflicts before att. receive </p>
+
+<p class="reference">References <a class="el" href="../../d6/dc5/class_inventory_location.html#aec280ad00fb591910bbefb89b17cb070">InventoryLocation::GetSlot()</a>, and <a class="el" href="../../d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956">InventoryLocation::GetType()</a>.</p>
 
 </div>
 </div>
@@ -3570,7 +3660,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../db/d35/_central_economy_8c.html#a237dbb4ebe003efc8551d727dd98c525">ECE_OBJECT_SWAP</a>, <a class="el" href="../../de/db7/_animal_base_8c.html#a839948b6f7b99a323f4335d035a93e94">GetDeadItemName()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#a3bae34135b918bcd04b5f8a3d136e313">GetOrientation()</a>, <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../de/db7/_animal_base_8c.html#ae5ccab0782b5c43c9bef337d3216c8da">KeepHealthOnReplace()</a>, and <a class="el" href="../../db/d35/_central_economy_8c.html#a42f30a848ede18fd74a20322ba629b27">RF_ORIGINAL</a>.</p>
+<p class="reference">References <a class="el" href="../../db/d35/_central_economy_8c.html#a237dbb4ebe003efc8551d727dd98c525">ECE_OBJECT_SWAP</a>, <a class="el" href="../../de/db7/_animal_base_8c.html#a839948b6f7b99a323f4335d035a93e94">GetDeadItemName()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#a3bae34135b918bcd04b5f8a3d136e313">GetOrientation()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../de/db7/_animal_base_8c.html#ae5ccab0782b5c43c9bef337d3216c8da">KeepHealthOnReplace()</a>, and <a class="el" href="../../db/d35/_central_economy_8c.html#a42f30a848ede18fd74a20322ba629b27">RF_ORIGINAL</a>.</p>
 
 </div>
 </div>
@@ -4547,7 +4637,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#ad9911f0fd9c79325d30c78b4765dd1fb">OnItemAttachmentSlotChanged()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a1320fa5889e47c848cbb7b33a142bda2">OnItemLocationChanged()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#ac49b1cab32f5eab70aab44528726e721">OnWasAttached()</a>, and <a class="el" href="../../dc/dd0/_remote_detonator_8c.html#a9ad76a420042dadc6ab67b7aa821a407">OnWasDetached()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#aa1c9ced75db4a9a643207fac787ce924">EntityAI::Man()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#ad9911f0fd9c79325d30c78b4765dd1fb">OnItemAttachmentSlotChanged()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a1320fa5889e47c848cbb7b33a142bda2">OnItemLocationChanged()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#ac49b1cab32f5eab70aab44528726e721">OnWasAttached()</a>, and <a class="el" href="../../dc/dd0/_remote_detonator_8c.html#a9ad76a420042dadc6ab67b7aa821a407">OnWasDetached()</a>.</p>
 
 </div>
 </div>
@@ -4745,6 +4835,34 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a4ddb31b300964e8ae51630a70ab007cf" name="a4ddb31b300964e8ae51630a70ab007cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ddb31b300964e8ae51630a70ab007cf">&#9670;&#160;</a></span>EnableSmooth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">proto native void EnableSmooth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables the smoothing in interpolation. </p>
+
+</div>
+</div>
 <a id="ab9a37326dfc1d78f6435bf2a446ddb5e" name="ab9a37326dfc1d78f6435bf2a446ddb5e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9a37326dfc1d78f6435bf2a446ddb5e">&#9670;&#160;</a></span>EnableSpecular()</h2>
 
@@ -4794,7 +4912,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../dc/dac/class_script_call_queue.html#a436cc98ddd2565bccd74ef840efaa38a">ScriptCallQueue::CallLater()</a>, <a class="el" href="../../d5/d5c/group___components.html#gabadae4556ccc3142ec8849234a84c083">COMP_TYPE_ENERGY_MANAGER</a>, <a class="el" href="../../d2/de6/class_c_game.html#a899df8cb46eb1cbab2d3084a2c2e51be">CGame::ConfigIsExisting()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a6fc4a6c17be8c60874f4e4a72649a2c1">CGame::GetCallQueue()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#aeb21a678bf81cb11979d821d61eaeeec">InitItemVariables()</a>.</p>
+<p>cache blood infection chance (cfgVehicles-&gt;&lt;entity&gt;-&gt;Skinning-&gt;BloodInfectionSettings) </p>
+
+<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../dc/dac/class_script_call_queue.html#a436cc98ddd2565bccd74ef840efaa38a">ScriptCallQueue::CallLater()</a>, <a class="el" href="../../d5/d5c/group___components.html#gabadae4556ccc3142ec8849234a84c083">COMP_TYPE_ENERGY_MANAGER</a>, <a class="el" href="../../d2/de6/class_c_game.html#a899df8cb46eb1cbab2d3084a2c2e51be">CGame::ConfigIsExisting()</a>, <a class="el" href="../../d5/d36/_land___buoy_8c.html#a3a31485b8285dc5e248d12b49765e506">DeferredInit()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a6fc4a6c17be8c60874f4e4a72649a2c1">CGame::GetCallQueue()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#aeb21a678bf81cb11979d821d61eaeeec">InitItemVariables()</a>.</p>
 
 </div>
 </div>
@@ -7489,6 +7609,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a9d180dfd605e5f61870c45e0d6bf5d59" name="a9d180dfd605e5f61870c45e0d6bf5d59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d180dfd605e5f61870c45e0d6bf5d59">&#9670;&#160;</a></span>GetSkinningBloodInfectionChance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dc3/classfloat.html">float</a> GetSkinningBloodInfectionChance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/dfb/_e_agents_8c.html#a5a5d699a74359c32fabcdcdcbe60c1ae">eAgents</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae28fda63774840599807c7ce914a5cdb" name="ae28fda63774840599807c7ce914a5cdb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae28fda63774840599807c7ce914a5cdb">&#9670;&#160;</a></span>GetSlotsCountCorrect()</h2>
 
@@ -7916,7 +8062,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>.</p>
 
 </div>
 </div>
@@ -8273,7 +8419,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a29b7b8c778e33aa5019d6b77bf1f15e9">GetTemperatureFreezeTime()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a8384edd7de4b8d1c6d87490f78962461">GetTemperatureThawTime()</a>, <a class="el" href="../../d5/d98/group___math.html#gaa6376dcd0f724f11ba0b6bdf66b185ee">Math::Lerp()</a>, <a class="el" href="../../d2/dbc/class_temperature_data.html#a44d5810561af7c3224a38f5798a9c837">TemperatureData::m_InterpolatedFraction</a>, <a class="el" href="../../d2/dbc/class_temperature_data.html#a7bbd23cfe228b3865c9da1a91eb88030">TemperatureData::m_UpdateTimeCoef</a>, <a class="el" href="../../d2/dbc/class_temperature_data.html#a7abc76859c718a4e2121a5ee29baf76f">TemperatureData::m_UpdateTimeInfo</a>, <a class="el" href="../../d5/d98/group___math.html#ga0b79da001711df4f5c5759cc8ac4585b">Math::Max()</a>, <a class="el" href="../../d9/d00/group___entity_temperature.html#ga103ca3421fb2143e4d4313c56ae83658">GameConstants::TEMP_COEF_COOLING_GLOBAL</a>, <a class="el" href="../../d9/d00/group___entity_temperature.html#ga7ca2c4ad2ba88b8f4801b0a7c7735fda">GameConstants::TEMPERATURE_FREEZETHAW_LEGACY_COEF</a>, <a class="el" href="../../d9/d00/group___entity_temperature.html#ga8e24f9f5e919104a84c1ea6d9f8b59e0">GameConstants::TEMPERATURE_RATE_AVERAGE_ABS</a>, <a class="el" href="../../d9/d00/group___entity_temperature.html#ga7180e3dd7a113bc1f1e88b9b26b340d3">GameConstants::TEMPERATURE_SENSITIVITY_THRESHOLD</a>, <a class="el" href="../../d9/d00/group___entity_temperature.html#gabd85a485330fe0c9917902a3d6d24139">GameConstants::TEMPERATURE_TIME_FREEZE_MIN</a>, and <a class="el" href="../../d9/d00/group___entity_temperature.html#gadd28523d183a5aa147cad1a6ce351d96">GameConstants::TEMPERATURE_TIME_THAW_MIN</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a29b7b8c778e33aa5019d6b77bf1f15e9">GetTemperatureFreezeTime()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a8384edd7de4b8d1c6d87490f78962461">GetTemperatureThawTime()</a>, <a class="el" href="../../d5/d98/group___math.html#gaa6376dcd0f724f11ba0b6bdf66b185ee">Math::Lerp()</a>, <a class="el" href="../../d2/dbc/class_temperature_data.html#a44d5810561af7c3224a38f5798a9c837">TemperatureData::m_InterpolatedFraction</a>, <a class="el" href="../../d2/dbc/class_temperature_data.html#a7bbd23cfe228b3865c9da1a91eb88030">TemperatureData::m_UpdateTimeCoef</a>, <a class="el" href="../../d2/dbc/class_temperature_data.html#a7abc76859c718a4e2121a5ee29baf76f">TemperatureData::m_UpdateTimeInfo</a>, <a class="el" href="../../d5/d98/group___math.html#ga0b79da001711df4f5c5759cc8ac4585b">Math::Max()</a>, <a class="el" href="../../d9/d00/group___entity_temperature.html#ga103ca3421fb2143e4d4313c56ae83658">GameConstants::TEMP_COEF_COOLING_GLOBAL</a>, <a class="el" href="../../d9/d00/group___entity_temperature.html#gafb951dfb4437e6811e0b144bd357d18f">GameConstants::TEMPERATURE_FREEZETHAW_ACCELERATION_COEF</a>, <a class="el" href="../../d9/d00/group___entity_temperature.html#ga7ca2c4ad2ba88b8f4801b0a7c7735fda">GameConstants::TEMPERATURE_FREEZETHAW_LEGACY_COEF</a>, <a class="el" href="../../d9/d00/group___entity_temperature.html#ga8e24f9f5e919104a84c1ea6d9f8b59e0">GameConstants::TEMPERATURE_RATE_AVERAGE_ABS</a>, <a class="el" href="../../d9/d00/group___entity_temperature.html#ga7180e3dd7a113bc1f1e88b9b26b340d3">GameConstants::TEMPERATURE_SENSITIVITY_THRESHOLD</a>, <a class="el" href="../../d9/d00/group___entity_temperature.html#gabd85a485330fe0c9917902a3d6d24139">GameConstants::TEMPERATURE_TIME_FREEZE_MIN</a>, and <a class="el" href="../../d9/d00/group___entity_temperature.html#gadd28523d183a5aa147cad1a6ce351d96">GameConstants::TEMPERATURE_TIME_THAW_MIN</a>.</p>
 
 </div>
 </div>
@@ -9289,6 +9435,31 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aa6dea85ca27bb8d682889391ffbc5ab5" name="aa6dea85ca27bb8d682889391ffbc5ab5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6dea85ca27bb8d682889391ffbc5ab5">&#9670;&#160;</a></span>IsCookware()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> IsCookware </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab9146705177ecacd0d2071aece469b91" name="ab9146705177ecacd0d2071aece469b91"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9146705177ecacd0d2071aece469b91">&#9670;&#160;</a></span>IsDestructionBehaviour()</h2>
 
@@ -9486,6 +9657,33 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a9768d0c2e67ae294e8b8afc2f220d858" name="a9768d0c2e67ae294e8b8afc2f220d858"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9768d0c2e67ae294e8b8afc2f220d858">&#9670;&#160;</a></span>IsFreezeThawProgressFinished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> IsFreezeThawProgressFinished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>on server only </p>
+
+</div>
+</div>
 <a id="a2f54f70793258b2f4b2a3236c57a60a8" name="a2f54f70793258b2f4b2a3236c57a60a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f54f70793258b2f4b2a3236c57a60a8">&#9670;&#160;</a></span>IsHeavyBehaviour()</h2>
 
@@ -9616,6 +9814,32 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../d6/db5/_ui_hint_panel_8c.html#a2b24e7702c647888fe97110686cd2330">m_Initialized</a>.</p>
+
+</div>
+</div>
+<a id="ad746b4c04bdb82938b01bbf0f51692b7" name="ad746b4c04bdb82938b01bbf0f51692b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad746b4c04bdb82938b01bbf0f51692b7">&#9670;&#160;</a></span>IsInterpolationComplete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static proto native <a class="el" href="../../d9/db9/classbool.html">bool</a> IsInterpolationComplete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Checks if the current interpolation reached it's end </p>
 
 </div>
 </div>
@@ -10031,6 +10255,34 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Skinning. </p>
+
+</div>
+</div>
+<a id="ab364494e725a168f87ee6b4c06f05f6e" name="ab364494e725a168f87ee6b4c06f05f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab364494e725a168f87ee6b4c06f05f6e">&#9670;&#160;</a></span>IsSlotReserved()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> IsSlotReserved </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td>
+          <td class="paramname"><em>slotID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d8/d86/class_human_inventory.html#ace3dcfe0fb57995ae58409f224afddcc">HumanInventory::FindFirstUserReservedLocationIndexForContainer()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aec280ad00fb591910bbefb89b17cb070">InventoryLocation::GetSlot()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a493b5cec61bbc53021ad098dc934a277">HumanInventory::GetUserReservedLocation()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a04ffeb78249c705d1cf708ee0579903f">HumanInventory::GetUserReservedLocationCount()</a>, and <a class="el" href="../../df/df9/class_entity_a_i.html#aa1c9ced75db4a9a643207fac787ce924">EntityAI::Man()</a>.</p>
 
 </div>
 </div>
@@ -11214,7 +11466,7 @@ Private Attributes</h2></td></tr>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// use m_ElapsedSinceLastUpdate for time-related purposes</span></div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_entity_html_aabfd095f5b9264a3dbd55cfb76e6b227"><div class="ttname"><a href="../../d2/d96/class_entity.html#aabfd095f5b9264a3dbd55cfb76e6b227">Entity::OnCEUpdate</a></div><div class="ttdeci">void OnCEUpdate()</div><div class="ttdoc">Central economy calls this function whenever going over all the entities.</div><div class="ttdef"><b>Definition</b> EntityAI.c:3774</div></div>
+<div class="ttc" id="aclass_entity_html_aabfd095f5b9264a3dbd55cfb76e6b227"><div class="ttname"><a href="../../d2/d96/class_entity.html#aabfd095f5b9264a3dbd55cfb76e6b227">Entity::OnCEUpdate</a></div><div class="ttdeci">void OnCEUpdate()</div><div class="ttdoc">Central economy calls this function whenever going over all the entities.</div><div class="ttdef"><b>Definition</b> EntityAI.c:3818</div></div>
 </div><!-- fragment --> 
 <p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#af7ba31b759c9731da0d692896dc82fc1">CGame::GetTickTime()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a38e2f8357a04e1a21939c73eb58e04ea">ProcessVariables()</a>.</p>
 
@@ -12327,7 +12579,7 @@ Private Attributes</h2></td></tr>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_entity_html_ab8fb9b4105d97f4c7ba4bdd84d6c7de9"><div class="ttname"><a href="../../d2/d96/class_entity.html#ab8fb9b4105d97f4c7ba4bdd84d6c7de9">Entity::OnStoreLoad</a></div><div class="ttdeci">bool OnStoreLoad(ParamsReadContext ctx, int version)</div><div class="ttdoc">Called when data is loaded from persistence (on server side).</div><div class="ttdef"><b>Definition</b> EntityAI.c:2901</div></div>
+<div class="ttc" id="aclass_entity_html_ab8fb9b4105d97f4c7ba4bdd84d6c7de9"><div class="ttname"><a href="../../d2/d96/class_entity.html#ab8fb9b4105d97f4c7ba4bdd84d6c7de9">Entity::OnStoreLoad</a></div><div class="ttdeci">bool OnStoreLoad(ParamsReadContext ctx, int version)</div><div class="ttdoc">Called when data is loaded from persistence (on server side).</div><div class="ttdef"><b>Definition</b> EntityAI.c:2940</div></div>
 <div class="ttc" id="aclass_serializer_html"><div class="ttname"><a href="../../d0/dc2/class_serializer.html">Serializer</a></div><div class="ttdoc">Serialization general interface. Serializer API works with:</div><div class="ttdef"><b>Definition</b> Serializer.c:56</div></div>
 <div class="ttc" id="aclass_serializer_html_a34c68c9c93798008667c773b4818177d"><div class="ttname"><a href="../../d0/dc2/class_serializer.html#a34c68c9c93798008667c773b4818177d">Serializer::Read</a></div><div class="ttdeci">proto bool Read(void value_in)</div></div>
 </div><!-- fragment --> 
@@ -12372,7 +12624,7 @@ Private Attributes</h2></td></tr>
 <div class="line">    ctx.<a class="code hl_function" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Write</a>(a);</div>
 <div class="line">    ctx.<a class="code hl_function" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Write</a>(b);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_entity_html_ad975050d7a080cca462e74c604f404a2"><div class="ttname"><a href="../../d2/d96/class_entity.html#ad975050d7a080cca462e74c604f404a2">Entity::OnStoreSave</a></div><div class="ttdeci">void OnStoreSave(ParamsWriteContext ctx)</div><div class="ttdoc">Engine calls this function to collect data from entity to store for persistence (on server side).</div><div class="ttdef"><b>Definition</b> EntityAI.c:2837</div></div>
+<div class="ttc" id="aclass_entity_html_ad975050d7a080cca462e74c604f404a2"><div class="ttname"><a href="../../d2/d96/class_entity.html#ad975050d7a080cca462e74c604f404a2">Entity::OnStoreSave</a></div><div class="ttdeci">void OnStoreSave(ParamsWriteContext ctx)</div><div class="ttdoc">Engine calls this function to collect data from entity to store for persistence (on server side).</div><div class="ttdef"><b>Definition</b> EntityAI.c:2876</div></div>
 <div class="ttc" id="aclass_serializer_html_a1d68a84f3eba695ac67220b1e071fd6d"><div class="ttname"><a href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write</a></div><div class="ttdeci">proto bool Write(void value_out)</div></div>
 </div><!-- fragment --> 
 <p class="reference">References <a class="el" href="../../d6/de6/class_component_energy_manager.html#a3202b5c78ccc3eb501a5b82ac8b5f584">ComponentEnergyManager::GetEnergy()</a>, <a class="el" href="../../d6/de6/class_component_energy_manager.html#a364ac194d785b1bf0317a9905e9ca12d">ComponentEnergyManager::GetEnergySource()</a>, <a class="el" href="../../d6/de6/class_component_energy_manager.html#ae24c5bf29d1afdf204535da5d5a68dc9">ComponentEnergyManager::IsPassive()</a>, <a class="el" href="../../d6/de6/class_component_energy_manager.html#a280d9208abd359f0d3066bfe160ca23e">ComponentEnergyManager::IsPlugged()</a>, <a class="el" href="../../d6/de6/class_component_energy_manager.html#aff5a3c7129fcda6952366096fbf19e55">ComponentEnergyManager::IsSwitchedOn()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
@@ -15055,6 +15307,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">References <a class="el" href="../../d9/d1a/_bottle___base_8c.html#a079fe8b19fed37c99827b112df751f9e">OnFreezeStateChangeServer()</a>.</p>
+
 </div>
 </div>
 <a id="aeba695a7c990e26bf33695db00317283" name="aeba695a7c990e26bf33695db00317283"></a>
@@ -16234,7 +16488,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#af0e79eb49231c4fb5ae3467be05f43a0">SEffectManager::PlaySound()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af5eacfbd1ed6f18ade3c93953dece0d1">EffectSound::SetAutodestroy()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#af0e79eb49231c4fb5ae3467be05f43a0">SEffectManager::PlaySound()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af5eacfbd1ed6f18ade3c93953dece0d1">EffectSound::SetAutodestroy()</a>.</p>
 
 </div>
 </div>
@@ -16261,7 +16515,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#af0e79eb49231c4fb5ae3467be05f43a0">SEffectManager::PlaySound()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af5eacfbd1ed6f18ade3c93953dece0d1">EffectSound::SetAutodestroy()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#af0e79eb49231c4fb5ae3467be05f43a0">SEffectManager::PlaySound()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af5eacfbd1ed6f18ade3c93953dece0d1">EffectSound::SetAutodestroy()</a>.</p>
 
 </div>
 </div>
@@ -16288,7 +16542,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#af0e79eb49231c4fb5ae3467be05f43a0">SEffectManager::PlaySound()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af5eacfbd1ed6f18ade3c93953dece0d1">EffectSound::SetAutodestroy()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#af0e79eb49231c4fb5ae3467be05f43a0">SEffectManager::PlaySound()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af5eacfbd1ed6f18ade3c93953dece0d1">EffectSound::SetAutodestroy()</a>.</p>
 
 </div>
 </div>
@@ -16315,7 +16569,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d3a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#af0e79eb49231c4fb5ae3467be05f43a0">SEffectManager::PlaySound()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af5eacfbd1ed6f18ade3c93953dece0d1">EffectSound::SetAutodestroy()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#af0e79eb49231c4fb5ae3467be05f43a0">SEffectManager::PlaySound()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af5eacfbd1ed6f18ade3c93953dece0d1">EffectSound::SetAutodestroy()</a>.</p>
 
 </div>
 </div>
@@ -16508,6 +16762,32 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ae39cfa4b89165332326ea495af832c" name="a6ae39cfa4b89165332326ea495af832c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ae39cfa4b89165332326ea495af832c">&#9670;&#160;</a></span>StopInterpolation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">proto native void StopInterpolation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Performs cleanup. Important to call when interpolation run is finished. </p>
 
 </div>
 </div>
@@ -17052,6 +17332,28 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt;<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a>&gt; m_AttachmentsWithCargo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3672f39e90ade4841c85cd8966752f42" name="a3672f39e90ade4841c85cd8966752f42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3672f39e90ade4841c85cd8966752f42">&#9670;&#160;</a></span>m_BloodInfectionChanceCached</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">private ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt;<a class="el" href="../../d3/dfb/_e_agents_8c.html#a5a5d699a74359c32fabcdcdcbe60c1ae">eAgents</a>, <a class="el" href="../../d4/dc3/classfloat.html">float</a>&gt; m_BloodInfectionChanceCached</td>
         </tr>
       </table>
   </td>

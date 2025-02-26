@@ -87,6 +87,8 @@ var _e_r_p_cs_8c =
       [ "DEV_RPC_AGENT_RESET", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37aba4177951f090190d4fa0f367842afb2", null ],
       [ "DEV_RPC_STAT_SET", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37a380a1e0fb1107aa1bec748ccd373b204", null ],
       [ "DEV_RPC_HEALTH_SET", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37a53b5c6a7107118bf7e2e10214ad2c6d9", null ],
+      [ "DEV_RPC_HORTICULTURE_UPDATE", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37aed336cf40d23e026d598cd104fc2db73", null ],
+      [ "DEV_RPC_HORTICULTURE_SPEED", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37a457a4f29ff7899eeabce5f39d7a33283", null ],
       [ "DEV_RPC_SERVER_SCRIPT", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37ab1c23384604ef6cf44903d1be6831fd2", null ],
       [ "DEV_RPC_SERVER_SCRIPT_RESULT", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37ada11a7cdde27def46bc7cbd2ee27529c", null ],
       [ "RPC_SOUND_CONTAMINATION", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37a1c458d909f642cce397e68ac36b3ca20", null ],

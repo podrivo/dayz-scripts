@@ -17,7 +17,6 @@ var class_vicinity_container =
     [ "OnDropReceivedFromHeader", "dc/d12/class_vicinity_container.html#a5f51d12a155546ba924479ffb6436aaa", null ],
     [ "OnDropReceivedFromIcon", "dc/d12/class_vicinity_container.html#a269daa8b432979badd46e8bb11396dea", null ],
     [ "OnLeftPanelDropReceived", "dc/d12/class_vicinity_container.html#a57769d5e7a85c5a5a54bbfd00fffb8a1", null ],
-    [ "SplitItem", "dc/d12/class_vicinity_container.html#af722b11ffb8375871c4dadc84e2aa9e4", null ],
     [ "ToggleContainer", "dc/d12/class_vicinity_container.html#a7ccd3eae9650d039b512a695ff462eac", null ],
     [ "ToggleContainer", "dc/d12/class_vicinity_container.html#a3d4475f1e093b4adaad862b7ab319b4f", null ],
     [ "TraverseShowedItems", "dc/d12/class_vicinity_container.html#af07498a9870d4b2b38f92e5ab88e8b16", null ],

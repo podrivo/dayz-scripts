@@ -44,6 +44,7 @@ var class_day_z_player_implement_aiming =
     [ "m_ProceduralRecoilEnabled", "d5/d80/class_day_z_player_implement_aiming.html#a3e55c2e45114022533e437577d77fa43", null ],
     [ "m_ReferenceTime", "d5/d80/class_day_z_player_implement_aiming.html#acc4b7d92abad66b0865b5626b4bd58d1", null ],
     [ "m_ShakeCount", "d5/d80/class_day_z_player_implement_aiming.html#a3e85faf6948eb5d14ed80cb21cd46982", null ],
+    [ "m_StaminaPercentage", "d5/d80/class_day_z_player_implement_aiming.html#a179d596f4107ca1e83234e9e6678609e", null ],
     [ "m_StateStartSwayMultiplier", "d5/d80/class_day_z_player_implement_aiming.html#a6e00fb8ee2eaaafc9508e1b35a67eaf0", null ],
     [ "m_StealthAimY_Last", "d5/d80/class_day_z_player_implement_aiming.html#abde56001b8ea468044425fa36841e244", null ],
     [ "m_SwayModifier", "d5/d80/class_day_z_player_implement_aiming.html#a19af7f7aed080d401035eb5eb79389eb", null ],

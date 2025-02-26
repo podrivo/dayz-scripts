@@ -26,7 +26,6 @@ var class_zombie_container =
     [ "Select", "d5/d55/class_zombie_container.html#adc0e4e7a01ffbed3fbc88d2c159357e1", null ],
     [ "SetEntity", "d5/d55/class_zombie_container.html#a2ff92854ff6cabfc69b48c402e876b6d", null ],
     [ "SetHeaderName", "d5/d55/class_zombie_container.html#a6d5aeb7764c48431a1bf85c635a07e68", null ],
-    [ "SplitItem", "d5/d55/class_zombie_container.html#af722b11ffb8375871c4dadc84e2aa9e4", null ],
     [ "ToggleContainer", "d5/d55/class_zombie_container.html#a3875efbbff260e830e0d68b03ed8971d", null ],
     [ "TransferItem", "d5/d55/class_zombie_container.html#a46f4ee6c24b7f56695d7bf16ae0755d4", null ],
     [ "TransferItemToVicinity", "d5/d55/class_zombie_container.html#a54a15413583c4819a0c2d6b14f79752b", null ],

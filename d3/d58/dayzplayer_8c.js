@@ -429,7 +429,7 @@ var dayzplayer_8c =
     [ "IsHoldingBreath", "d3/d58/dayzplayer_8c.html#a0904e50fa494aa0972dcd6192122e993", null ],
     [ "IsInThirdPerson", "d3/d58/dayzplayer_8c.html#a10f28b020b134878c8cf94dbf03f8fb4", null ],
     [ "IsPerformingFBGesture", "d3/d58/dayzplayer_8c.html#a3798a1a68902aeb3ba9831616ed67409", null ],
-    [ "IsPlayerInStance", "d3/d58/dayzplayer_8c.html#ae4e18f69b45fc7198283513dc8d8fd55", null ],
+    [ "IsPlayerInStance", "d3/d58/dayzplayer_8c.html#aa0bf24b82f85866336a1ecb546b5e7b2", null ],
     [ "IsPlayerSpeaking", "d3/d58/dayzplayer_8c.html#a6f8d8996194fcd5598be04f5832d1bae", null ],
     [ "IsShootingFromCamera", "d3/d58/dayzplayer_8c.html#ade32f6f1b4b06d98e56133d30d29f734", null ],
     [ "LoadSoundWeaponEvent", "d3/d58/dayzplayer_8c.html#a75d7459010bf214e7250d8f41e3855ea", null ],

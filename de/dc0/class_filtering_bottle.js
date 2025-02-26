@@ -1,6 +1,7 @@
 var class_filtering_bottle =
 [
     [ "AffectLiquidContainerOnFill", "de/dc0/class_filtering_bottle.html#ad193d5b56ad4a6855f0f979cface49e1", null ],
+    [ "AffectLiquidContainerOnTransfer", "de/dc0/class_filtering_bottle.html#abb3d60927ace9b1f953c711970fc903b", null ],
     [ "CanPutInCargo", "de/dc0/class_filtering_bottle.html#a5ea0aaf035a1939c725579219040c481", null ],
     [ "DamageBottleConsume", "de/dc0/class_filtering_bottle.html#a45c3c1a42ba22c6dc8e8aa4513a3bd39", null ],
     [ "FilterAgents", "de/dc0/class_filtering_bottle.html#a21305ca7bb9228e3d6d4066ca57ba5cc", null ],
@@ -14,7 +15,6 @@ var class_filtering_bottle =
     [ "GetPouringSoundset", "de/dc0/class_filtering_bottle.html#a50af78fb1504b0d35390c1090d0fbff6", null ],
     [ "IsOpen", "de/dc0/class_filtering_bottle.html#a05bac627bbb13f7329a1aff6e140219b", null ],
     [ "OnConsume", "de/dc0/class_filtering_bottle.html#acf6de0529395b0fe5163fd9c192f983d", null ],
-    [ "OnItemOverheat", "de/dc0/class_filtering_bottle.html#ae886c34e21cd369b3d86cd27cc513eac", null ],
     [ "DAMAGE_CONSUME_PER_ML", "de/dc0/class_filtering_bottle.html#a37cc10e384f77048ec583639617b8faa", null ],
     [ "DAMAGE_ENVIRO_LIQUID_COEF_MAX", "de/dc0/class_filtering_bottle.html#a642fbea5edea0da0c3006baf54bdf79e", null ],
     [ "DAMAGE_ENVIRO_LIQUID_COEF_MIN", "de/dc0/class_filtering_bottle.html#a8dbcece9df290f8e38060cdf7c3ff3e1", null ],

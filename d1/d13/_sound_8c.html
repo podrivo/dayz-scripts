@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.26.159040</div>
+   <div id="projectbrief">PC Stable v1.27.159420</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -109,11 +109,11 @@ $(document).ready(function(){initNavTree('d1/d13/_sound_8c.html','../../'); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db9/class_sound_object_builder.html">SoundObjectBuilder</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d95/class_abstract_sound_scene.html">AbstractSoundScene</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d6b/class_sound_params.html">SoundParams</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dff/class_sound_object.html">SoundObject</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d52/class_abstract_wave.html">AbstractWave</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d56/class_abstract_wave_events.html">AbstractWaveEvents</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -123,119 +123,200 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a49556304352af6c2cb1c651fbf0e7399"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="../../d1/d13/_sound_8c.html#a31dd9d80d2b7ac9cd189b4a00351ac05">WaveKind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a49556304352af6c2cb1c651fbf0e7399">AbstractSoundScene</a> ()</td></tr>
-<tr class="separator:a49556304352af6c2cb1c651fbf0e7399"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4b4536498d48a9b389aea29a22a6de5"><td class="memItemLeft" align="right" valign="top">private void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#ab4b4536498d48a9b389aea29a22a6de5">~AbstractSoundScene</a> ()</td></tr>
-<tr class="separator:ab4b4536498d48a9b389aea29a22a6de5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ff5cdb7c0d9c592510160880efab780"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d9/d52/class_abstract_wave.html">AbstractWave</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a2ff5cdb7c0d9c592510160880efab780">Play2D</a> (<a class="el" href="../../d1/d13/_sound_8c.html#a88b8e74ab7a8a3d20a2f3f55948b0ed6">SoundObject</a> soundObject, <a class="el" href="../../d5/db9/class_sound_object_builder.html">SoundObjectBuilder</a> soundBuilder)</td></tr>
-<tr class="separator:a2ff5cdb7c0d9c592510160880efab780"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb688ba5faf07148f058fe5bfa55068f"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d9/d52/class_abstract_wave.html">AbstractWave</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#abb688ba5faf07148f058fe5bfa55068f">Play3D</a> (<a class="el" href="../../d1/d13/_sound_8c.html#a88b8e74ab7a8a3d20a2f3f55948b0ed6">SoundObject</a> soundObject, <a class="el" href="../../d5/db9/class_sound_object_builder.html">SoundObjectBuilder</a> soundBuilder)</td></tr>
-<tr class="separator:abb688ba5faf07148f058fe5bfa55068f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83afcb5fd2bf54507978268390aa6d33"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d1/d13/_sound_8c.html#a88b8e74ab7a8a3d20a2f3f55948b0ed6">SoundObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a83afcb5fd2bf54507978268390aa6d33">BuildSoundObject</a> (<a class="el" href="../../d5/db9/class_sound_object_builder.html">SoundObjectBuilder</a> soundObjectbuilder)</td></tr>
-<tr class="separator:a83afcb5fd2bf54507978268390aa6d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb16d3c9ce6cb06666e4530668b91e56"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#aeb16d3c9ce6cb06666e4530668b91e56">GetRadioVolume</a> ()</td></tr>
-<tr class="separator:aeb16d3c9ce6cb06666e4530668b91e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad822b74728c20223a48fc8b718f9f49d"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#ad822b74728c20223a48fc8b718f9f49d">SetRadioVolume</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> vol, <a class="el" href="../../d4/dc3/classfloat.html">float</a> time)</td></tr>
-<tr class="separator:ad822b74728c20223a48fc8b718f9f49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74b181361565fadbc741767c6b098528"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a74b181361565fadbc741767c6b098528">GetSpeechExVolume</a> ()</td></tr>
-<tr class="separator:a74b181361565fadbc741767c6b098528"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ebacba81b3472d3cb5d628b3d73a7b1"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a7ebacba81b3472d3cb5d628b3d73a7b1">SetSpeechExVolume</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> vol, <a class="el" href="../../d4/dc3/classfloat.html">float</a> time)</td></tr>
-<tr class="separator:a7ebacba81b3472d3cb5d628b3d73a7b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76e61776bbf24bff68ea3be824eb98aa"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a76e61776bbf24bff68ea3be824eb98aa">GetMusicVolume</a> ()</td></tr>
-<tr class="separator:a76e61776bbf24bff68ea3be824eb98aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6e9d2cdb87180a0b4fda0d193e4f89c"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#ad6e9d2cdb87180a0b4fda0d193e4f89c">SetMusicVolume</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> vol, <a class="el" href="../../d4/dc3/classfloat.html">float</a> time)</td></tr>
-<tr class="separator:ad6e9d2cdb87180a0b4fda0d193e4f89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bc477fd2ce46423d0134915874870c6"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a7bc477fd2ce46423d0134915874870c6">GetSoundVolume</a> ()</td></tr>
-<tr class="separator:a7bc477fd2ce46423d0134915874870c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ebdfc5f6be147e721df5addab7832f6"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a6ebdfc5f6be147e721df5addab7832f6">SetSoundVolume</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> vol, <a class="el" href="../../d4/dc3/classfloat.html">float</a> time)</td></tr>
-<tr class="separator:a6ebdfc5f6be147e721df5addab7832f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dc75f85023a656395e0f4eaca377b78"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a7dc75f85023a656395e0f4eaca377b78">GetVOIPVolume</a> ()</td></tr>
-<tr class="separator:a7dc75f85023a656395e0f4eaca377b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7fce2e2ba51bab4e570abc208f8a478"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#ad7fce2e2ba51bab4e570abc208f8a478">SetVOIPVolume</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> vol, <a class="el" href="../../d4/dc3/classfloat.html">float</a> time)</td></tr>
-<tr class="separator:ad7fce2e2ba51bab4e570abc208f8a478"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4abfc7b25eb697970a5daab3fd74ee61"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a4abfc7b25eb697970a5daab3fd74ee61">GetSilenceThreshold</a> ()</td></tr>
-<tr class="separator:a4abfc7b25eb697970a5daab3fd74ee61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e144b8ee5730959d6c20068dd395950"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a3e144b8ee5730959d6c20068dd395950">GetAudioLevel</a> ()</td></tr>
-<tr class="separator:a3e144b8ee5730959d6c20068dd395950"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88b8e74ab7a8a3d20a2f3f55948b0ed6"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../d5/db9/class_sound_object_builder.html">SoundObjectBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a88b8e74ab7a8a3d20a2f3f55948b0ed6">SoundObject</a> (<a class="el" href="../../d8/d6b/class_sound_params.html">SoundParams</a> soundParams)</td></tr>
-<tr class="separator:a88b8e74ab7a8a3d20a2f3f55948b0ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf822a6762dbb9d59a6e514b6b7ba894"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#adf822a6762dbb9d59a6e514b6b7ba894">SoundObjectBuilder</a> (<a class="el" href="../../d8/d6b/class_sound_params.html">SoundParams</a> soundParams)</td></tr>
-<tr class="separator:adf822a6762dbb9d59a6e514b6b7ba894"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dd53aeb21ba907a52f8d39ec8916f5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d13/_sound_8c.html#a88b8e74ab7a8a3d20a2f3f55948b0ed6">SoundObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a6dd53aeb21ba907a52f8d39ec8916f5d">BuildSoundObject</a> ()</td></tr>
-<tr class="separator:a6dd53aeb21ba907a52f8d39ec8916f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38455dd8685ec5310cd308700ece8164"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a38455dd8685ec5310cd308700ece8164">Initialize</a> (<a class="el" href="../../d8/d6b/class_sound_params.html">SoundParams</a> soundParams)</td></tr>
-<tr class="separator:a38455dd8685ec5310cd308700ece8164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44805ad91dfd68290920d5aea733b420"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a44805ad91dfd68290920d5aea733b420">AddEnvSoundVariables</a> (<a class="el" href="../../d7/dfc/classvector.html">vector</a> position)</td></tr>
-<tr class="separator:a44805ad91dfd68290920d5aea733b420"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ca1c591baf1b6f80d99187f7775f127"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a1ca1c591baf1b6f80d99187f7775f127">AddVariable</a> (<a class="el" href="../../d5/d92/classstring.html">string</a> <a class="el" href="../../d0/dd4/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>, <a class="el" href="../../d4/dc3/classfloat.html">float</a> value)</td></tr>
-<tr class="separator:a1ca1c591baf1b6f80d99187f7775f127"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b2320496ee339fc0492482d85c10972"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a2b2320496ee339fc0492482d85c10972">AddVariables</a> (notnull <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d5/d92/classstring.html">string</a> &gt; names, <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d4/dc3/classfloat.html">float</a> &gt; values=null)</td></tr>
-<tr class="separator:a2b2320496ee339fc0492482d85c10972"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae85124de23f8cb2771c242d236c96fd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#ae85124de23f8cb2771c242d236c96fd5">UpdateEnvSoundControllers</a> (<a class="el" href="../../d7/dfc/classvector.html">vector</a> position)</td></tr>
-<tr class="memdesc:ae85124de23f8cb2771c242d236c96fd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated - same functionality, just poor naming.  <br /></td></tr>
-<tr class="separator:ae85124de23f8cb2771c242d236c96fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a974f96eab58d3d33d000b8f287fc949b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a974f96eab58d3d33d000b8f287fc949b">SetVariable</a> (<a class="el" href="../../d5/d92/classstring.html">string</a> <a class="el" href="../../d0/dd4/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>, <a class="el" href="../../d4/dc3/classfloat.html">float</a> value)</td></tr>
-<tr class="memdesc:a974f96eab58d3d33d000b8f287fc949b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated - same functionality, just poor naming.  <br /></td></tr>
-<tr class="separator:a974f96eab58d3d33d000b8f287fc949b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa55b5378f64f21cdf1e09df3bd5d3160"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#aa55b5378f64f21cdf1e09df3bd5d3160">UpdateVariables</a> (notnull <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d4/dc3/classfloat.html">float</a> &gt; values)</td></tr>
-<tr class="separator:aa55b5378f64f21cdf1e09df3bd5d3160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a456f046512a6e7ed3f7f5512b5db996a"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a456f046512a6e7ed3f7f5512b5db996a">SetParent</a> (<a class="el" href="../../dc/da9/class_i_entity.html">IEntity</a> parent, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pivot=-1)</td></tr>
-<tr class="separator:a456f046512a6e7ed3f7f5512b5db996a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1d63886deac2f225cc139143f9d79141"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../dc/da9/class_i_entity.html">IEntity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a> ()</td></tr>
-<tr class="memdesc:ga1d63886deac2f225cc139143f9d79141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get parent of the Effect.  <br /></td></tr>
-<tr class="separator:ga1d63886deac2f225cc139143f9d79141"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd9f1e4ab502177724ad40ae5f164def"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#abd9f1e4ab502177724ad40ae5f164def">GetHierarchyPivot</a> ()</td></tr>
-<tr class="separator:abd9f1e4ab502177724ad40ae5f164def"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3aa6cafceab9d573982aa9db5a5d6e34"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dae/group___debug_shape.html#ga3aa6cafceab9d573982aa9db5a5d6e34">SetPosition</a> (<a class="el" href="../../d7/dfc/classvector.html">vector</a> position)</td></tr>
+<tr class="memitem:ga05ebfead717831bde428401fb2e37787"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga05ebfead717831bde428401fb2e37787">SetSoundControllerOverride</a> (<a class="el" href="../../d5/d92/classstring.html">string</a> controllerName, <a class="el" href="../../d4/dc3/classfloat.html">float</a> value, SoundControllerAction action)</td></tr>
+<tr class="separator:ga05ebfead717831bde428401fb2e37787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf3c3ed697e2772a14c5dce4c9140a5fa"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gaf3c3ed697e2772a14c5dce4c9140a5fa">MuteAllSoundControllers</a> ()</td></tr>
+<tr class="separator:gaf3c3ed697e2772a14c5dce4c9140a5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0629889a1a530135e48c4c149869830"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gaf0629889a1a530135e48c4c149869830">ResetAllSoundControllers</a> ()</td></tr>
+<tr class="separator:gaf0629889a1a530135e48c4c149869830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga64e2d161ee236deaf631f4ef1c674063"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../de/d95/class_abstract_sound_scene.html">AbstractSoundScene</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga64e2d161ee236deaf631f4ef1c674063">SoundObjectBuilder</a> (<a class="el" href="../../d7/ddb/group___sound_controller.html#gaa052d52dd43a55f246d1e6612b670291">SoundParams</a> soundParams)</td></tr>
+<tr class="separator:ga64e2d161ee236deaf631f4ef1c674063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48e5eace52690c562b53db5c9ff60a89"><td class="memItemLeft" align="right" valign="top">private void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga48e5eace52690c562b53db5c9ff60a89">AbstractSoundScene</a> ()</td></tr>
+<tr class="separator:ga48e5eace52690c562b53db5c9ff60a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4b4536498d48a9b389aea29a22a6de5"><td class="memItemLeft" align="right" valign="top">private void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gab4b4536498d48a9b389aea29a22a6de5">~AbstractSoundScene</a> ()</td></tr>
+<tr class="separator:gab4b4536498d48a9b389aea29a22a6de5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ff5cdb7c0d9c592510160880efab780"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d7/ddb/group___sound_controller.html#ga80a77266d85badc03dd5f75c3f3b5c95">AbstractWave</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga2ff5cdb7c0d9c592510160880efab780">Play2D</a> (<a class="el" href="../../dc/dff/class_sound_object.html">SoundObject</a> soundObject, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga64e2d161ee236deaf631f4ef1c674063">SoundObjectBuilder</a> soundBuilder)</td></tr>
+<tr class="separator:ga2ff5cdb7c0d9c592510160880efab780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabb688ba5faf07148f058fe5bfa55068f"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d7/ddb/group___sound_controller.html#ga80a77266d85badc03dd5f75c3f3b5c95">AbstractWave</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gabb688ba5faf07148f058fe5bfa55068f">Play3D</a> (<a class="el" href="../../dc/dff/class_sound_object.html">SoundObject</a> soundObject, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga64e2d161ee236deaf631f4ef1c674063">SoundObjectBuilder</a> soundBuilder)</td></tr>
+<tr class="separator:gabb688ba5faf07148f058fe5bfa55068f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83afcb5fd2bf54507978268390aa6d33"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../dc/dff/class_sound_object.html">SoundObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga83afcb5fd2bf54507978268390aa6d33">BuildSoundObject</a> (<a class="el" href="../../d7/ddb/group___sound_controller.html#ga64e2d161ee236deaf631f4ef1c674063">SoundObjectBuilder</a> soundObjectbuilder)</td></tr>
+<tr class="separator:ga83afcb5fd2bf54507978268390aa6d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeb16d3c9ce6cb06666e4530668b91e56"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gaeb16d3c9ce6cb06666e4530668b91e56">GetRadioVolume</a> ()</td></tr>
+<tr class="separator:gaeb16d3c9ce6cb06666e4530668b91e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad822b74728c20223a48fc8b718f9f49d"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gad822b74728c20223a48fc8b718f9f49d">SetRadioVolume</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> vol, <a class="el" href="../../d4/dc3/classfloat.html">float</a> time)</td></tr>
+<tr class="separator:gad822b74728c20223a48fc8b718f9f49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga74b181361565fadbc741767c6b098528"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga74b181361565fadbc741767c6b098528">GetSpeechExVolume</a> ()</td></tr>
+<tr class="separator:ga74b181361565fadbc741767c6b098528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7ebacba81b3472d3cb5d628b3d73a7b1"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga7ebacba81b3472d3cb5d628b3d73a7b1">SetSpeechExVolume</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> vol, <a class="el" href="../../d4/dc3/classfloat.html">float</a> time)</td></tr>
+<tr class="separator:ga7ebacba81b3472d3cb5d628b3d73a7b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga76e61776bbf24bff68ea3be824eb98aa"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga76e61776bbf24bff68ea3be824eb98aa">GetMusicVolume</a> ()</td></tr>
+<tr class="separator:ga76e61776bbf24bff68ea3be824eb98aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad6e9d2cdb87180a0b4fda0d193e4f89c"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gad6e9d2cdb87180a0b4fda0d193e4f89c">SetMusicVolume</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> vol, <a class="el" href="../../d4/dc3/classfloat.html">float</a> time)</td></tr>
+<tr class="separator:gad6e9d2cdb87180a0b4fda0d193e4f89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7bc477fd2ce46423d0134915874870c6"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga7bc477fd2ce46423d0134915874870c6">GetSoundVolume</a> ()</td></tr>
+<tr class="separator:ga7bc477fd2ce46423d0134915874870c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ebdfc5f6be147e721df5addab7832f6"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga6ebdfc5f6be147e721df5addab7832f6">SetSoundVolume</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> vol, <a class="el" href="../../d4/dc3/classfloat.html">float</a> time)</td></tr>
+<tr class="separator:ga6ebdfc5f6be147e721df5addab7832f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7dc75f85023a656395e0f4eaca377b78"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga7dc75f85023a656395e0f4eaca377b78">GetVOIPVolume</a> ()</td></tr>
+<tr class="separator:ga7dc75f85023a656395e0f4eaca377b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7fce2e2ba51bab4e570abc208f8a478"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gad7fce2e2ba51bab4e570abc208f8a478">SetVOIPVolume</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> vol, <a class="el" href="../../d4/dc3/classfloat.html">float</a> time)</td></tr>
+<tr class="separator:gad7fce2e2ba51bab4e570abc208f8a478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4abfc7b25eb697970a5daab3fd74ee61"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga4abfc7b25eb697970a5daab3fd74ee61">GetSilenceThreshold</a> ()</td></tr>
+<tr class="separator:ga4abfc7b25eb697970a5daab3fd74ee61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e144b8ee5730959d6c20068dd395950"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga3e144b8ee5730959d6c20068dd395950">GetAudioLevel</a> ()</td></tr>
+<tr class="separator:ga3e144b8ee5730959d6c20068dd395950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6dd53aeb21ba907a52f8d39ec8916f5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/dff/class_sound_object.html">SoundObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga6dd53aeb21ba907a52f8d39ec8916f5d">BuildSoundObject</a> ()</td></tr>
+<tr class="separator:ga6dd53aeb21ba907a52f8d39ec8916f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga38455dd8685ec5310cd308700ece8164"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga38455dd8685ec5310cd308700ece8164">Initialize</a> (<a class="el" href="../../d7/ddb/group___sound_controller.html#gaa052d52dd43a55f246d1e6612b670291">SoundParams</a> soundParams)</td></tr>
+<tr class="separator:ga38455dd8685ec5310cd308700ece8164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44805ad91dfd68290920d5aea733b420"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga44805ad91dfd68290920d5aea733b420">AddEnvSoundVariables</a> (<a class="el" href="../../d7/dfc/classvector.html">vector</a> position)</td></tr>
+<tr class="separator:ga44805ad91dfd68290920d5aea733b420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ca1c591baf1b6f80d99187f7775f127"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga1ca1c591baf1b6f80d99187f7775f127">AddVariable</a> (<a class="el" href="../../d5/d92/classstring.html">string</a> <a class="el" href="../../d0/dd4/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>, <a class="el" href="../../d4/dc3/classfloat.html">float</a> value)</td></tr>
+<tr class="separator:ga1ca1c591baf1b6f80d99187f7775f127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b2320496ee339fc0492482d85c10972"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga2b2320496ee339fc0492482d85c10972">AddVariables</a> (notnull <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d5/d92/classstring.html">string</a> &gt; names, <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d4/dc3/classfloat.html">float</a> &gt; values=null)</td></tr>
+<tr class="separator:ga2b2320496ee339fc0492482d85c10972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae85124de23f8cb2771c242d236c96fd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gae85124de23f8cb2771c242d236c96fd5">UpdateEnvSoundControllers</a> (<a class="el" href="../../d7/dfc/classvector.html">vector</a> position)</td></tr>
+<tr class="memdesc:gae85124de23f8cb2771c242d236c96fd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated - same functionality, just poor naming.  <br /></td></tr>
+<tr class="separator:gae85124de23f8cb2771c242d236c96fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga974f96eab58d3d33d000b8f287fc949b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga974f96eab58d3d33d000b8f287fc949b">SetVariable</a> (<a class="el" href="../../d5/d92/classstring.html">string</a> <a class="el" href="../../d0/dd4/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>, <a class="el" href="../../d4/dc3/classfloat.html">float</a> value)</td></tr>
+<tr class="memdesc:ga974f96eab58d3d33d000b8f287fc949b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated - same functionality, just poor naming.  <br /></td></tr>
+<tr class="separator:ga974f96eab58d3d33d000b8f287fc949b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa052d52dd43a55f246d1e6612b670291"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../dc/dff/class_sound_object.html">SoundObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gaa052d52dd43a55f246d1e6612b670291">SoundParams</a> (<a class="el" href="../../d5/d92/classstring.html">string</a> <a class="el" href="../../d0/dd4/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>)</td></tr>
+<tr class="separator:gaa052d52dd43a55f246d1e6612b670291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12984bc6570ac63bec058cc9078ac1fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga12984bc6570ac63bec058cc9078ac1fa">SoundObject</a> (<a class="el" href="../../d7/ddb/group___sound_controller.html#gaa052d52dd43a55f246d1e6612b670291">SoundParams</a> soundParams)</td></tr>
+<tr class="separator:ga12984bc6570ac63bec058cc9078ac1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa55b5378f64f21cdf1e09df3bd5d3160"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gaa55b5378f64f21cdf1e09df3bd5d3160">UpdateVariables</a> (notnull <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d4/dc3/classfloat.html">float</a> &gt; values)</td></tr>
+<tr class="separator:gaa55b5378f64f21cdf1e09df3bd5d3160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga456f046512a6e7ed3f7f5512b5db996a"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga456f046512a6e7ed3f7f5512b5db996a">SetParent</a> (<a class="el" href="../../dc/da9/class_i_entity.html">IEntity</a> parent, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pivot=-1)</td></tr>
+<tr class="separator:ga456f046512a6e7ed3f7f5512b5db996a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bc50796cd80879c26c3ffc7533d656e"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../dc/da9/class_i_entity.html">IEntity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga1bc50796cd80879c26c3ffc7533d656e">GetParent</a> ()</td></tr>
+<tr class="memdesc:ga1bc50796cd80879c26c3ffc7533d656e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get parent of the Effect.  <br /></td></tr>
+<tr class="separator:ga1bc50796cd80879c26c3ffc7533d656e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabd9f1e4ab502177724ad40ae5f164def"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gabd9f1e4ab502177724ad40ae5f164def">GetHierarchyPivot</a> ()</td></tr>
+<tr class="separator:gabd9f1e4ab502177724ad40ae5f164def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3aa6cafceab9d573982aa9db5a5d6e34"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga3aa6cafceab9d573982aa9db5a5d6e34">SetPosition</a> (<a class="el" href="../../d7/dfc/classvector.html">vector</a> position)</td></tr>
 <tr class="memdesc:ga3aa6cafceab9d573982aa9db5a5d6e34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Note: Sets the position locally if parented, retrieves globally with the sound offset.  <br /></td></tr>
 <tr class="separator:ga3aa6cafceab9d573982aa9db5a5d6e34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42c3d3a01b261e10d8dd57ed3b5bbb3d"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a> ()</td></tr>
-<tr class="memdesc:a42c3d3a01b261e10d8dd57ed3b5bbb3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the world position of the Effect.  <br /></td></tr>
-<tr class="separator:a42c3d3a01b261e10d8dd57ed3b5bbb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a085f765b308afd06e9c77c5cebaeacbf"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a085f765b308afd06e9c77c5cebaeacbf">SetSpeed</a> (<a class="el" href="../../d7/dfc/classvector.html">vector</a> speed)</td></tr>
-<tr class="memdesc:a085f765b308afd06e9c77c5cebaeacbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Note: Sets the speed locally if parented, retrieves globally with the parent speed.  <br /></td></tr>
-<tr class="separator:a085f765b308afd06e9c77c5cebaeacbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9774b42d23111f4c674a7e3e3bdb97a8"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a9774b42d23111f4c674a7e3e3bdb97a8">GetSpeed</a> ()</td></tr>
-<tr class="separator:a9774b42d23111f4c674a7e3e3bdb97a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbf9b2265798347111718e2fd16c5dad"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#adbf9b2265798347111718e2fd16c5dad">SetOcclusionObstruction</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> occlusion, <a class="el" href="../../d4/dc3/classfloat.html">float</a> obstruction)</td></tr>
-<tr class="separator:adbf9b2265798347111718e2fd16c5dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46d88285c7916a70ae205c016c8ad2fa"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a46d88285c7916a70ae205c016c8ad2fa">SetKind</a> (<a class="el" href="../../d1/d13/_sound_8c.html#a31dd9d80d2b7ac9cd189b4a00351ac05">WaveKind</a> kind)</td></tr>
-<tr class="separator:a46d88285c7916a70ae205c016c8ad2fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga42c3d3a01b261e10d8dd57ed3b5bbb3d"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a> ()</td></tr>
+<tr class="memdesc:ga42c3d3a01b261e10d8dd57ed3b5bbb3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the world position of the Effect.  <br /></td></tr>
+<tr class="separator:ga42c3d3a01b261e10d8dd57ed3b5bbb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga085f765b308afd06e9c77c5cebaeacbf"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga085f765b308afd06e9c77c5cebaeacbf">SetSpeed</a> (<a class="el" href="../../d7/dfc/classvector.html">vector</a> speed)</td></tr>
+<tr class="memdesc:ga085f765b308afd06e9c77c5cebaeacbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Note: Sets the speed locally if parented, retrieves globally with the parent speed.  <br /></td></tr>
+<tr class="separator:ga085f765b308afd06e9c77c5cebaeacbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9774b42d23111f4c674a7e3e3bdb97a8"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga9774b42d23111f4c674a7e3e3bdb97a8">GetSpeed</a> ()</td></tr>
+<tr class="separator:ga9774b42d23111f4c674a7e3e3bdb97a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadbf9b2265798347111718e2fd16c5dad"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gadbf9b2265798347111718e2fd16c5dad">SetOcclusionObstruction</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> occlusion, <a class="el" href="../../d4/dc3/classfloat.html">float</a> obstruction)</td></tr>
+<tr class="separator:gadbf9b2265798347111718e2fd16c5dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46d88285c7916a70ae205c016c8ad2fa"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga46d88285c7916a70ae205c016c8ad2fa">SetKind</a> (<a class="el" href="../../d1/d13/_sound_8c.html#a31dd9d80d2b7ac9cd189b4a00351ac05">WaveKind</a> kind)</td></tr>
+<tr class="separator:ga46d88285c7916a70ae205c016c8ad2fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a95318eb6cf6cfa44d60d2f3ad1948a"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga4a95318eb6cf6cfa44d60d2f3ad1948a">Load</a> (<a class="el" href="../../d5/d92/classstring.html">string</a> <a class="el" href="../../d0/dd4/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>)</td></tr>
+<tr class="separator:ga4a95318eb6cf6cfa44d60d2f3ad1948a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12ac56eacd52df3fe1c19a18046c7c99"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga12ac56eacd52df3fe1c19a18046c7c99">IsValid</a> ()</td></tr>
+<tr class="memdesc:ga12ac56eacd52df3fe1c19a18046c7c99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the ScriptCaller is valid.  <br /></td></tr>
+<tr class="separator:ga12ac56eacd52df3fe1c19a18046c7c99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga19da618d059e592dc31b81f92c3d478c"><td class="memItemLeft" align="right" valign="top">proto <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga19da618d059e592dc31b81f92c3d478c">GetName</a> ()</td></tr>
+<tr class="memdesc:ga19da618d059e592dc31b81f92c3d478c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d1/d9b/class_test.html" title="Attribute used for tests annotation and assignment to Suites.">Test</a> name getter. Strictly for UI porposes!  <br /></td></tr>
+<tr class="separator:ga19da618d059e592dc31b81f92c3d478c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12f8ace1635ef8399597b11b34e55d94"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../d8/d56/class_abstract_wave_events.html">AbstractWaveEvents</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga12f8ace1635ef8399597b11b34e55d94">InitEvents</a> ()</td></tr>
+<tr class="separator:ga12f8ace1635ef8399597b11b34e55d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga80a77266d85badc03dd5f75c3f3b5c95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga80a77266d85badc03dd5f75c3f3b5c95">AbstractWave</a> ()</td></tr>
+<tr class="separator:ga80a77266d85badc03dd5f75c3f3b5c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa7129e924a1bc1860f0c8004507dce80"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gaa7129e924a1bc1860f0c8004507dce80">SetUserData</a> (<a class="el" href="../../dd/d17/class_managed.html">Managed</a> inst)</td></tr>
+<tr class="separator:gaa7129e924a1bc1860f0c8004507dce80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad45c27eb362e15d2734537ce75465189"><td class="memItemLeft" align="right" valign="top">proto <a class="el" href="../../dd/d17/class_managed.html">Managed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gad45c27eb362e15d2734537ce75465189">GetUserData</a> ()</td></tr>
+<tr class="separator:gad45c27eb362e15d2734537ce75465189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1044d828832cd398ac046799915a5136"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga1044d828832cd398ac046799915a5136">Play</a> ()</td></tr>
+<tr class="separator:ga1044d828832cd398ac046799915a5136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1951dd84087221af28a7a519d813c3c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga1951dd84087221af28a7a519d813c3c1">PlayWithOffset</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> offset)</td></tr>
+<tr class="separator:ga1951dd84087221af28a7a519d813c3c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec3d6c69da12025dfcf342c7e5456d46"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gaec3d6c69da12025dfcf342c7e5456d46">Stop</a> ()</td></tr>
+<tr class="memdesc:gaec3d6c69da12025dfcf342c7e5456d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops all elements this effect consists of.  <br /></td></tr>
+<tr class="separator:gaec3d6c69da12025dfcf342c7e5456d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4542581ea9e44853d5cbdb27684dae6"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gab4542581ea9e44853d5cbdb27684dae6">Restart</a> ()</td></tr>
+<tr class="separator:gab4542581ea9e44853d5cbdb27684dae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09431ea3aff6be448d2a08d5467f4be4"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga09431ea3aff6be448d2a08d5467f4be4">SetStartOffset</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> offset)</td></tr>
+<tr class="separator:ga09431ea3aff6be448d2a08d5467f4be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8751f38de5bdc0a086a22751ad2c056"><td class="memItemLeft" align="right" valign="top">proto <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gaf8751f38de5bdc0a086a22751ad2c056">GetLength</a> ()</td></tr>
+<tr class="memdesc:gaf8751f38de5bdc0a086a22751ad2c056"><td class="mdescLeft">&#160;</td><td class="mdescRight">WARNING: Blocking! Waits for header to load.  <br /></td></tr>
+<tr class="separator:gaf8751f38de5bdc0a086a22751ad2c056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93c264b85df0c013ac3d93ddc1bb4fcf"><td class="memItemLeft" align="right" valign="top">proto <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga93c264b85df0c013ac3d93ddc1bb4fcf">GetCurrPosition</a> ()</td></tr>
+<tr class="memdesc:ga93c264b85df0c013ac3d93ddc1bb4fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current position in percentage of total length.  <br /></td></tr>
+<tr class="separator:ga93c264b85df0c013ac3d93ddc1bb4fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7d74739538e1a82c967b542575614784"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga7d74739538e1a82c967b542575614784">Loop</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> setLoop)</td></tr>
+<tr class="separator:ga7d74739538e1a82c967b542575614784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0cd48ebee5fceabf44089f30543ede7b"><td class="memItemLeft" align="right" valign="top">proto <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga0cd48ebee5fceabf44089f30543ede7b">GetVolume</a> ()</td></tr>
+<tr class="separator:ga0cd48ebee5fceabf44089f30543ede7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga061390db2057acffec343b45d54fb8f2"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga061390db2057acffec343b45d54fb8f2">SetVolume</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> value)</td></tr>
+<tr class="separator:ga061390db2057acffec343b45d54fb8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8d0c9d37025db635bd981f6a975371f7"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga8d0c9d37025db635bd981f6a975371f7">SetVolumeRelative</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> value)</td></tr>
+<tr class="separator:ga8d0c9d37025db635bd981f6a975371f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3fb5fbfaa07b0431fbb5399d729e1681"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga3fb5fbfaa07b0431fbb5399d729e1681">SetFrequency</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> value)</td></tr>
+<tr class="separator:ga3fb5fbfaa07b0431fbb5399d729e1681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae75558dad7f7ec05e154aba04b4aa337"><td class="memItemLeft" align="right" valign="top">proto <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gae75558dad7f7ec05e154aba04b4aa337">GetFrequency</a> ()</td></tr>
+<tr class="separator:gae75558dad7f7ec05e154aba04b4aa337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5614f74913bfb4465d03b78f8802c12a"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga5614f74913bfb4465d03b78f8802c12a">SetPosition</a> (<a class="el" href="../../d7/dfc/classvector.html">vector</a> position, <a class="el" href="../../d7/dfc/classvector.html">vector</a> velocity=&quot;0 0 0&quot;)</td></tr>
+<tr class="separator:ga5614f74913bfb4465d03b78f8802c12a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ba3f9d823bdb99eaffa3153a5275cce"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga0ba3f9d823bdb99eaffa3153a5275cce">SetFadeInFactor</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> volume)</td></tr>
+<tr class="separator:ga0ba3f9d823bdb99eaffa3153a5275cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72dfd61d2a34fd971200ed99c2152139"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga72dfd61d2a34fd971200ed99c2152139">SetFadeOutFactor</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> volume)</td></tr>
+<tr class="separator:ga72dfd61d2a34fd971200ed99c2152139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f286c16599126a257df66bf70a5fbc3"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga3f286c16599126a257df66bf70a5fbc3">SetDoppler</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> setDoppler)</td></tr>
+<tr class="separator:ga3f286c16599126a257df66bf70a5fbc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae996b78cf8a368159378256b1e453f10"><td class="memItemLeft" align="right" valign="top">proto void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gae996b78cf8a368159378256b1e453f10">Skip</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> timeSec)</td></tr>
+<tr class="separator:gae996b78cf8a368159378256b1e453f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaccbb35e2ed8e911b1bb2851afa0587c"><td class="memItemLeft" align="right" valign="top">proto <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gaaccbb35e2ed8e911b1bb2851afa0587c">IsHeaderLoaded</a> ()</td></tr>
+<tr class="separator:gaaccbb35e2ed8e911b1bb2851afa0587c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad943fd90e312d2d4a6e441302c650af8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d56/class_abstract_wave_events.html">AbstractWaveEvents</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gad943fd90e312d2d4a6e441302c650af8">GetEvents</a> ()</td></tr>
+<tr class="separator:gad943fd90e312d2d4a6e441302c650af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7d54add953671a92cc94e0c5653e731"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gaf7d54add953671a92cc94e0c5653e731">OnPlay</a> ()</td></tr>
+<tr class="separator:gaf7d54add953671a92cc94e0c5653e731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad671a71077cbdd09d1c7d2379d5a0ef7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gad671a71077cbdd09d1c7d2379d5a0ef7">OnStop</a> ()</td></tr>
+<tr class="separator:gad671a71077cbdd09d1c7d2379d5a0ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadecfdc14eb8a958561993000adc73def"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gadecfdc14eb8a958561993000adc73def">OnLoad</a> ()</td></tr>
+<tr class="separator:gadecfdc14eb8a958561993000adc73def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga91a5ad8640a95ed21b5204d6b672144c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga91a5ad8640a95ed21b5204d6b672144c">OnHeaderLoad</a> ()</td></tr>
+<tr class="separator:ga91a5ad8640a95ed21b5204d6b672144c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ca12a123f18fa2f148a419a7eac5dc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga2ca12a123f18fa2f148a419a7eac5dc8">OnEnd</a> ()</td></tr>
+<tr class="separator:ga2ca12a123f18fa2f148a419a7eac5dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a5a7b41ec1c7cf94406cb5b9df10c4897"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a5a7b41ec1c7cf94406cb5b9df10c4897">WAVEEFFECT</a></td></tr>
-<tr class="separator:a5a7b41ec1c7cf94406cb5b9df10c4897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9ebea3e97054f1727e61f76b2d11af5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#ab9ebea3e97054f1727e61f76b2d11af5">WAVEEFFECTEX</a></td></tr>
-<tr class="separator:ab9ebea3e97054f1727e61f76b2d11af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1e693d8514c56fa1142aa2efb3d4361"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#ae1e693d8514c56fa1142aa2efb3d4361">WAVESPEECH</a></td></tr>
-<tr class="separator:ae1e693d8514c56fa1142aa2efb3d4361"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae872bf8eb0d09d21e068fd7552cc4702"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#ae872bf8eb0d09d21e068fd7552cc4702">WAVEMUSIC</a></td></tr>
-<tr class="separator:ae872bf8eb0d09d21e068fd7552cc4702"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfa8baee3541dfb527e26bd183e95ea6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#acfa8baee3541dfb527e26bd183e95ea6">WAVESPEECHEX</a></td></tr>
-<tr class="separator:acfa8baee3541dfb527e26bd183e95ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2908e4ce19860621afac35b8d25a99aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a2908e4ce19860621afac35b8d25a99aa">WAVEENVIRONMENT</a></td></tr>
-<tr class="separator:a2908e4ce19860621afac35b8d25a99aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a094a43660b3c98486c9173c3d078e55a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a094a43660b3c98486c9173c3d078e55a">WAVEENVIRONMENTEX</a></td></tr>
-<tr class="separator:a094a43660b3c98486c9173c3d078e55a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a0052369c6e9a31cd9bffde337e5d5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a5a0052369c6e9a31cd9bffde337e5d5e">WAVEWEAPONS</a></td></tr>
-<tr class="separator:a5a0052369c6e9a31cd9bffde337e5d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a393c9d184c3da1bfa48c9403f274911a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a393c9d184c3da1bfa48c9403f274911a">WAVEWEAPONSEX</a></td></tr>
-<tr class="separator:a393c9d184c3da1bfa48c9403f274911a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac449e2bfb6304706d4ad842b628a7689"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#ac449e2bfb6304706d4ad842b628a7689">WAVEATTALWAYS</a></td></tr>
-<tr class="separator:ac449e2bfb6304706d4ad842b628a7689"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e1e6702d8a91f364f9ad8f8b84890f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a9e1e6702d8a91f364f9ad8f8b84890f9">WAVEUI</a></td></tr>
-<tr class="separator:a9e1e6702d8a91f364f9ad8f8b84890f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeee9bf19c3275e7ab5ceab2a2fa50225"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../d8/d6b/class_sound_params.html">SoundParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#aeee9bf19c3275e7ab5ceab2a2fa50225">Event_OnSoundWaveStarted</a> = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td></tr>
-<tr class="separator:aeee9bf19c3275e7ab5ceab2a2fa50225"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43f209bd57bc5603be646d5fa2b3485e"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a43f209bd57bc5603be646d5fa2b3485e">Event_OnSoundWaveStopped</a> = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td></tr>
-<tr class="separator:a43f209bd57bc5603be646d5fa2b3485e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3aceb4902e02d03efee7131f918fe5ba"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a3aceb4902e02d03efee7131f918fe5ba">Event_OnSoundWaveLoaded</a> = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td></tr>
-<tr class="separator:a3aceb4902e02d03efee7131f918fe5ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9986b102e97ef33c1a0b233f39907595"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a9986b102e97ef33c1a0b233f39907595">Event_OnSoundWaveHeaderLoaded</a> = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td></tr>
-<tr class="separator:a9986b102e97ef33c1a0b233f39907595"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30792d0380a5b20f9f4a04d5c92a9e89"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d13/_sound_8c.html#a30792d0380a5b20f9f4a04d5c92a9e89">Event_OnSoundWaveEnded</a> = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td></tr>
-<tr class="separator:a30792d0380a5b20f9f4a04d5c92a9e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a7b41ec1c7cf94406cb5b9df10c4897"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga5a7b41ec1c7cf94406cb5b9df10c4897">WAVEEFFECT</a></td></tr>
+<tr class="separator:ga5a7b41ec1c7cf94406cb5b9df10c4897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9ebea3e97054f1727e61f76b2d11af5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gab9ebea3e97054f1727e61f76b2d11af5">WAVEEFFECTEX</a></td></tr>
+<tr class="separator:gab9ebea3e97054f1727e61f76b2d11af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1e693d8514c56fa1142aa2efb3d4361"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gae1e693d8514c56fa1142aa2efb3d4361">WAVESPEECH</a></td></tr>
+<tr class="separator:gae1e693d8514c56fa1142aa2efb3d4361"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae872bf8eb0d09d21e068fd7552cc4702"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gae872bf8eb0d09d21e068fd7552cc4702">WAVEMUSIC</a></td></tr>
+<tr class="separator:gae872bf8eb0d09d21e068fd7552cc4702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacfa8baee3541dfb527e26bd183e95ea6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gacfa8baee3541dfb527e26bd183e95ea6">WAVESPEECHEX</a></td></tr>
+<tr class="separator:gacfa8baee3541dfb527e26bd183e95ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2908e4ce19860621afac35b8d25a99aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga2908e4ce19860621afac35b8d25a99aa">WAVEENVIRONMENT</a></td></tr>
+<tr class="separator:ga2908e4ce19860621afac35b8d25a99aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga094a43660b3c98486c9173c3d078e55a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga094a43660b3c98486c9173c3d078e55a">WAVEENVIRONMENTEX</a></td></tr>
+<tr class="separator:ga094a43660b3c98486c9173c3d078e55a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a0052369c6e9a31cd9bffde337e5d5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga5a0052369c6e9a31cd9bffde337e5d5e">WAVEWEAPONS</a></td></tr>
+<tr class="separator:ga5a0052369c6e9a31cd9bffde337e5d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga393c9d184c3da1bfa48c9403f274911a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga393c9d184c3da1bfa48c9403f274911a">WAVEWEAPONSEX</a></td></tr>
+<tr class="separator:ga393c9d184c3da1bfa48c9403f274911a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac449e2bfb6304706d4ad842b628a7689"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gac449e2bfb6304706d4ad842b628a7689">WAVEATTALWAYS</a></td></tr>
+<tr class="separator:gac449e2bfb6304706d4ad842b628a7689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e1e6702d8a91f364f9ad8f8b84890f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga9e1e6702d8a91f364f9ad8f8b84890f9">WAVEUI</a></td></tr>
+<tr class="separator:ga9e1e6702d8a91f364f9ad8f8b84890f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac7485dcc8d256a6f197ed7802687f252"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gac7485dcc8d256a6f197ed7802687f252">None</a></td></tr>
+<tr class="separator:gac7485dcc8d256a6f197ed7802687f252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52355a6466a0191b48c41bc3521207a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga52355a6466a0191b48c41bc3521207a0">Limit</a></td></tr>
+<tr class="separator:ga52355a6466a0191b48c41bc3521207a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf143afd6fdb06ee0a2ede34f339148b4"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#gaf143afd6fdb06ee0a2ede34f339148b4">Event_OnSoundWaveStarted</a> = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td></tr>
+<tr class="separator:gaf143afd6fdb06ee0a2ede34f339148b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43f209bd57bc5603be646d5fa2b3485e"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga43f209bd57bc5603be646d5fa2b3485e">Event_OnSoundWaveStopped</a> = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td></tr>
+<tr class="separator:ga43f209bd57bc5603be646d5fa2b3485e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3aceb4902e02d03efee7131f918fe5ba"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga3aceb4902e02d03efee7131f918fe5ba">Event_OnSoundWaveLoaded</a> = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td></tr>
+<tr class="separator:ga3aceb4902e02d03efee7131f918fe5ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9986b102e97ef33c1a0b233f39907595"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga9986b102e97ef33c1a0b233f39907595">Event_OnSoundWaveHeaderLoaded</a> = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td></tr>
+<tr class="separator:ga9986b102e97ef33c1a0b233f39907595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30792d0380a5b20f9f4a04d5c92a9e89"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/group___sound_controller.html#ga30792d0380a5b20f9f4a04d5c92a9e89">Event_OnSoundWaveEnded</a> = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td></tr>
+<tr class="separator:ga30792d0380a5b20f9f4a04d5c92a9e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a31dd9d80d2b7ac9cd189b4a00351ac05" name="a31dd9d80d2b7ac9cd189b4a00351ac05"></a>
@@ -246,980 +327,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">enum <a class="el" href="../../d1/d13/_sound_8c.html#a31dd9d80d2b7ac9cd189b4a00351ac05">WaveKind</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a49556304352af6c2cb1c651fbf0e7399" name="a49556304352af6c2cb1c651fbf0e7399"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49556304352af6c2cb1c651fbf0e7399">&#9670;&#160;</a></span>AbstractSoundScene()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="../../d1/d13/_sound_8c.html#a31dd9d80d2b7ac9cd189b4a00351ac05">WaveKind</a> AbstractSoundScene </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a44805ad91dfd68290920d5aea733b420" name="a44805ad91dfd68290920d5aea733b420"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44805ad91dfd68290920d5aea733b420">&#9670;&#160;</a></span>AddEnvSoundVariables()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native void AddEnvSoundVariables </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td>
-          <td class="paramname"><em>position</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1ca1c591baf1b6f80d99187f7775f127" name="a1ca1c591baf1b6f80d99187f7775f127"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ca1c591baf1b6f80d99187f7775f127">&#9670;&#160;</a></span>AddVariable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native void AddVariable </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2b2320496ee339fc0492482d85c10972" name="a2b2320496ee339fc0492482d85c10972"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b2320496ee339fc0492482d85c10972">&#9670;&#160;</a></span>AddVariables()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto void AddVariables </td>
-          <td>(</td>
-          <td class="paramtype">notnull <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d5/d92/classstring.html">string</a> &gt;&#160;</td>
-          <td class="paramname"><em>names</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d4/dc3/classfloat.html">float</a> &gt;&#160;</td>
-          <td class="paramname"><em>values</em> = <code>null</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6dd53aeb21ba907a52f8d39ec8916f5d" name="a6dd53aeb21ba907a52f8d39ec8916f5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dd53aeb21ba907a52f8d39ec8916f5d">&#9670;&#160;</a></span>BuildSoundObject() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d1/d13/_sound_8c.html#a88b8e74ab7a8a3d20a2f3f55948b0ed6">SoundObject</a> BuildSoundObject </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../d1/d13/_sound_8c.html#a5a7b41ec1c7cf94406cb5b9df10c4897">WAVEEFFECT</a>, <a class="el" href="../../d1/d13/_sound_8c.html#ab9ebea3e97054f1727e61f76b2d11af5">WAVEEFFECTEX</a>, <a class="el" href="../../d1/d13/_sound_8c.html#ae872bf8eb0d09d21e068fd7552cc4702">WAVEMUSIC</a>, and <a class="el" href="../../d1/d13/_sound_8c.html#ae1e693d8514c56fa1142aa2efb3d4361">WAVESPEECH</a>.</p>
-
-</div>
-</div>
-<a id="a83afcb5fd2bf54507978268390aa6d33" name="a83afcb5fd2bf54507978268390aa6d33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83afcb5fd2bf54507978268390aa6d33">&#9670;&#160;</a></span>BuildSoundObject() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native <a class="el" href="../../d1/d13/_sound_8c.html#a88b8e74ab7a8a3d20a2f3f55948b0ed6">SoundObject</a> BuildSoundObject </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/db9/class_sound_object_builder.html">SoundObjectBuilder</a>&#160;</td>
-          <td class="paramname"><em>soundObjectbuilder</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3e144b8ee5730959d6c20068dd395950" name="a3e144b8ee5730959d6c20068dd395950"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e144b8ee5730959d6c20068dd395950">&#9670;&#160;</a></span>GetAudioLevel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a> GetAudioLevel </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a1ec7c5bef6e4dfd83821afb01bbf0b89">ScriptedWidgetEventHandler::UpdateAudioLevel()</a>.</p>
-
-</div>
-</div>
-<a id="abd9f1e4ab502177724ad40ae5f164def" name="abd9f1e4ab502177724ad40ae5f164def"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd9f1e4ab502177724ad40ae5f164def">&#9670;&#160;</a></span>GetHierarchyPivot()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> GetHierarchyPivot </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a76e61776bbf24bff68ea3be824eb98aa" name="a76e61776bbf24bff68ea3be824eb98aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76e61776bbf24bff68ea3be824eb98aa">&#9670;&#160;</a></span>GetMusicVolume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a> GetMusicVolume </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a42c3d3a01b261e10d8dd57ed3b5bbb3d" name="a42c3d3a01b261e10d8dd57ed3b5bbb3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42c3d3a01b261e10d8dd57ed3b5bbb3d">&#9670;&#160;</a></span>GetPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native <a class="el" href="../../d7/dfc/classvector.html">vector</a> GetPosition </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the world position of the Effect. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Only gets the cached variable, for immediate effect use GetCurrent variant </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd><code>vector</code> The world position of the Effect </dd></dl>
-
-<p class="reference">References <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#a3fe07e841be8e2b8929644dd3e59984c">m_AreaPosition</a>, and <a class="el" href="../../d5/d2d/_effect_8c.html#af22d84c37bdac40df9bb3124b1724777">m_Position</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../dc/dc1/class_fireplace_base.html#a94e94836ed80bf81df4751938ab00cbc">FireplaceBase::AfterStoreLoad()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a94e94836ed80bf81df4751938ab00cbc">ManBase::AfterStoreLoad()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a9be088ea25c239570b289f917b4d6c8f">UIScriptedMenu::CameraToolsMenu()</a>, <a class="el" href="../../dd/dca/class_day_z_infected.html#a5dc770293e759d5cf8efacef5a533c1f">DayZInfected::ChaseAttackLogic()</a>, <a class="el" href="../../d2/d52/_player_sound_manager_8c.html#a24d4e39d8fa8bd8e99f00c8cd29fdb8b">CheckAllowUpdate()</a>, <a class="el" href="../../dd/dca/class_day_z_infected.html#a8c9c6da9f00befd47d2d9de35e445cc6">DayZInfected::ComputeHitDirectionAngle()</a>, <a class="el" href="../../df/d1b/class_day_z_creature_a_i.html#a2fefdf1bfabd7c4028686353a21ebb87">DayZCreatureAI::ComputeHitDirectionAngleDeg()</a>, <a class="el" href="../../dd/dca/class_day_z_infected.html#a6ddfc563d089e02c6cce9afcb922c730">DayZInfected::ComputeHitDirectionAngleEx()</a>, <a class="el" href="../../d0/d0a/_explosives_base_8c.html#abd9c7ec47e426c5dc398c4699db38936">CreateLight()</a>, <a class="el" href="../../d1/d48/class_grenade___base.html#a50eded2682d997b47c4e9a0fe9d5b0ce">Grenade_Base::CreateLight()</a>, <a class="el" href="../../de/d7a/class_item_base.html#ac598e0a6aa3b5aa8542998ff21963b8b">ItemBase::CreateRope()</a>, <a class="el" href="../../dd/dd8/_trap_base_8c.html#a56e9fba9303f5e86f50ccf4c54562794">CreateTrigger()</a>, <a class="el" href="../../d2/d96/class_entity.html#a4a9db76cd935ead9688340f4e5b2458d">Entity::DeathUpdate()</a>, <a class="el" href="../../d1/dcc/class_day_z_animal.html#a0ee57bd2a707fcaaa09123dc251b8588">DayZAnimal::DeathUpdate()</a>, <a class="el" href="../../d3/d49/class_kit_base.html#a06c1b276a70560d28d60359b87b6cf44">KitBase::DisassembleKit()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a1fed9090379d6a62e4a7aab891fd3071">ItemBase::DoMeasurement()</a>, <a class="el" href="../../d0/db7/class_script_console_items_tab.html#a3c2eb8efa521d17522b1b2604153e033">ScriptConsoleItemsTab::DrawItems()</a>, <a class="el" href="../../d4/d87/class_man_base.html#aeada10a4773a9b7a11143f7b616336d1">ManBase::DropItem()</a>, <a class="el" href="../../d5/db0/class_contaminated_area___dynamic.html#a58793c1561abb560da4377da77ad6dea">ContaminatedArea_Dynamic::EEInit()</a>, <a class="el" href="../../df/d21/class_house.html#a58793c1561abb560da4377da77ad6dea">House::EEInit()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a58793c1561abb560da4377da77ad6dea">GeyserTrigger::EEInit()</a>, <a class="el" href="../../de/d7a/class_item_base.html#ac063b6124c64033d904f29247d8eb45a">ItemBase::EEItemAttached()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a870b0dcd0dfafe4a764232688d9356c0">ItemBase::EEItemDetached()</a>, <a class="el" href="../../d1/d00/class_flammable_base.html#a870b0dcd0dfafe4a764232688d9356c0">FlammableBase::EEItemDetached()</a>, <a class="el" href="../../d5/dfb/class_ammo__40mm___explosive.html#a4de4d414d0cbf15100ab71ec84ca25f7">Ammo_40mm_Explosive::EEKilled()</a>, <a class="el" href="../../d5/db0/class_contaminated_area___dynamic.html#a619b8813fa2383350e7279314acc80a9">ContaminatedArea_Dynamic::EEOnCECreate()</a>, <a class="el" href="../../d7/d5d/class_inventory___base.html#aaf989f9739a4f4e24037a652d09143ac">Inventory_Base::EmptySeedPack()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#a2b98e8895f74933558afebe948377a1e">InventoryItem::EOnContact()</a>, <a class="el" href="../../d1/dd5/class_dynamic_area___flare.html#af518addd8ca6ecba428ecee6b06506a9">DynamicArea_Flare::EOnFrame()</a>, <a class="el" href="../../d2/d65/class_day_z_spectator.html#af518addd8ca6ecba428ecee6b06506a9">DayZSpectator::EOnFrame()</a>, <a class="el" href="../../dc/dc1/class_fireplace_base.html#a48aff4fc92d99edc1843836279de1caa">FireplaceBase::EOnTouch()</a>, <a class="el" href="../../d9/d00/_easter_egg_8c.html#a48aff4fc92d99edc1843836279de1caa">EOnTouch()</a>, <a class="el" href="../../dd/dca/class_day_z_infected.html#a21a2a9dce0fc094bc82db77c83359a9a">DayZInfected::EvaluateCrawlTransitionAnimation()</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#ab00075e81ea48ac2e6b9703cf6835850">DayZPlayer::EvaluateDamageHitAnimation()</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#ac5c1352730593d27cd34a1718e131d52">DayZPlayer::EvaluateDeathAnimation()</a>, <a class="el" href="../../d4/d59/class_hit___meat_bones.html#a6bf8d6a8d8258c5734383795cd01ec36">Hit_MeatBones::Event_OnStarted()</a>, <a class="el" href="../../dc/da9/class_i_entity.html#af4fc84b305ef86ab13cbc5af1d63ead7">IEntity::Explode()</a>, <a class="el" href="../../d7/dc3/_trap___land_mine_8c.html#a26eb4b1cf52c5eef709d65fdb92f90f0">Explode()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a0ad32e3f05135f654e890f2005d37f05">CGame::ExplosionEffects()</a>, <a class="el" href="../../d0/d0a/_explosives_base_8c.html#aee93f0aec8cce6897cf2da6281a3d9ee">ExplosivesBase()</a>, <a class="el" href="../../dd/dca/class_day_z_infected.html#a281c84a5785be50859e7f6871ffdeac8">DayZInfected::FightAttackLogic()</a>, <a class="el" href="../../dd/dca/class_day_z_infected.html#aa6ecd64bd1e0da94b8158506f8159533">DayZInfected::FightLogic()</a>, <a class="el" href="../../d5/d71/_car_script_8c.html#a6cddb812dcc43c260264ba039813e7e7">GenerateCarHornAINoise()</a>, <a class="el" href="../../dd/dca/class_day_z_infected.html#a56c7bf3b382282d8a749f81d50dee76b">DayZInfected::GetAttackPitch()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a427b3b1b091311619f800dcb6b1e37ac">WorldData::GetBaseEnvTemperatureAtObject()</a>, <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#ac23787e537209dd101bfa422a005a006">GetCeilingHeight()</a>, <a class="el" href="../../dc/da9/class_i_entity.html#a44fc364cde8ee06ca7166a1d84f8733b">IEntity::GetCenter()</a>, <a class="el" href="../../d6/d23/class_land___warhead_storage___power_station.html#a5ecd926f62bd74d62f16d4f1f463e357">Land_WarheadStorage_PowerStation::GetClosestBunker()</a>, <a class="el" href="../../dd/dd8/_trap_base_8c.html#a84805c92b8d5792a3f11d2204c941b05">GetClosestCarWheel()</a>, <a class="el" href="../../dc/d7a/_land___underground___panel_8c.html#abfe64504e2812d09e4ee9ad0a03ead7a">GetClosestDoor()</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#a8c3b88ed0d989d1caea1ebe8823c29d7">EffectSound::GetCurrentLocalPosition()</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#a860d90a2ccc72c33bd1888d0299a309d">EffectSound::GetCurrentPosition()</a>, <a class="el" href="../../d9/d1a/_bottle___base_8c.html#a537397b7a95dd3a8ff3e3a0df29cfe95">GetEmptyingEndSoundset()</a>, <a class="el" href="../../d9/d1a/_bottle___base_8c.html#aa3149a30ba1d954b83ee722715263cb1">GetEmptyingLoopSoundset()</a>, <a class="el" href="../../de/d7a/class_item_base.html#aa4c5ea4d4238e90760e7eedc01d7dbca">ItemBase::GetKitSpawnPosition()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#af3275ac3e988d2cdd6dead78d02b9a7a">BaseBuildingBase::GetKitSpawnPosition()</a>, <a class="el" href="../../dc/da9/class_i_entity.html#a3a0e1a6d553ce3279b5e757fbb1df7ae">IEntity::GetSurfaceNoise()</a>, <a class="el" href="../../d2/d96/class_entity.html#af230865a50f09d19eeccb2ebf0c4f397">Entity::GetUniversalTemperatureSourcePosition()</a>, <a class="el" href="../../d6/d37/class_boat_script.html#ab6126f7a0a3546686450118bcc1e8d7b">BoatScript::HandleBoatSplashSound()</a>, <a class="el" href="../../d7/d29/class_entity_light_source.html#ac0762e42e8e7a239ac1dd1e85f33b061">EntityLightSource::HandleDancingShadows()</a>, <a class="el" href="../../d5/d71/_car_script_8c.html#a68250c5dd406bdc66dba346930e21b8f">HandleDoorsSound()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#a1d50b8e42121738185861fcf5e5e48f9">BaseBuildingBase::HandleRefreshers()</a>, <a class="el" href="../../d5/d71/_car_script_8c.html#ab9facc68de512f742765dff0fb8e5a23">HandleSeatAdjustmentSound()</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#a356acc9e5492c1fca4c437668912b743">DayZPlayer::HandleView()</a>, <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#a4120714ca826a868e5c5d11d1b2f2880">Heating()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#ada89ca2ab6cd502bed0ff784b22ea8c9">BaseBuildingBase::InsertRefresherPosition()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#a39eef7b5d731a6380be7899458a25555">BaseBuildingBase::IsFacingCamera()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#a2b5817f09547d432c73f693866054f81">BaseBuildingBase::IsFacingPlayer()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a54f4fdab08b36bef696209cd036cd546">ManBase::IsFacingTarget()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#a6dc051240b87a34e5ac9eac7f4a28046">BaseBuildingBase::IsPlayerInside()</a>, <a class="el" href="../../d9/d6f/class_tent_base.html#a6dc051240b87a34e5ac9eac7f4a28046">TentBase::IsPlayerInside()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a75eea01e5b57e17bbee943528fbc5479">ItemBase::IsPlayerInVicinity()</a>, <a class="el" href="../../d9/d4c/class_remote_detonator_trigger.html#ac03b8faf21665d7257172ff0961ff524">RemoteDetonatorTrigger::OnActivatedByItem()</a>, <a class="el" href="../../de/d59/class_car_script.html#af9642c0dab137a11daebd1ca242be827">CarScript::OnAnimationPhaseStarted()</a>, <a class="el" href="../../d0/d0a/_explosives_base_8c.html#a23d7d40a21ae7945d17f90fe1efd292a">OnCEUpdate()</a>, <a class="el" href="../../d9/d4c/class_remote_detonator_trigger.html#a23d7d40a21ae7945d17f90fe1efd292a">RemoteDetonatorTrigger::OnCEUpdate()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#a23d7d40a21ae7945d17f90fe1efd292a">BaseBuildingBase::OnCEUpdate()</a>, <a class="el" href="../../d4/d87/class_man_base.html#adbb9974ffacde119fccc3ccf4cb600aa">ManBase::OnConnect()</a>, <a class="el" href="../../da/dd4/class_grenade___chem_gas.html#ae518188b38ce01d7e9d1bdf2ee3982f6">Grenade_ChemGas::OnDamageDestroyed()</a>, <a class="el" href="../../dd/dbf/class_claymore_mine.html#a05eab95952a189dc9e08ccecec41b51a">ClaymoreMine::OnDebugSpawn()</a>, <a class="el" href="../../d0/df2/class_rifle_single_shot___base.html#a05eab95952a189dc9e08ccecec41b51a">RifleSingleShot_Base::OnDebugSpawn()</a>, <a class="el" href="../../d3/d49/class_kit_base.html#a05eab95952a189dc9e08ccecec41b51a">KitBase::OnDebugSpawn()</a>, <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#a05eab95952a189dc9e08ccecec41b51a">OnDebugSpawn()</a>, <a class="el" href="../../d9/d26/class_fishing_rod___base___new.html#a05eab95952a189dc9e08ccecec41b51a">FishingRod_Base_New::OnDebugSpawn()</a>, <a class="el" href="../../db/d20/class_crossbow___base.html#a894814ffeaf0a76254404fdde519d756">Crossbow_Base::OnDebugSpawnEx()</a>, <a class="el" href="../../d9/db5/class_fireworks_launcher.html#af64e710cb416235b359afeb6dab02634">FireworksLauncher::OnEventServer()</a>, <a class="el" href="../../d8/d69/class_anniversary___fireworks_launcher.html#af64e710cb416235b359afeb6dab02634">Anniversary_FireworksLauncher::OnEventServer()</a>, <a class="el" href="../../da/dd4/class_grenade___chem_gas.html#a9f591d3b76001bb177ed5601a57cc4b2">Grenade_ChemGas::OnExplode()</a>, <a class="el" href="../../dc/da9/class_i_entity.html#a66b26d84b8afd2cfbb997109e23bc1c5">IEntity::OnExplodeClient()</a>, <a class="el" href="../../db/de5/class_weapon.html#a74753abf6c3a7ed24cfe682902683448">Weapon::OnFireModeChange()</a>, <a class="el" href="../../d9/db5/class_fireworks_launcher.html#a8d003aa88ce7961ff62822427f3aae2a">FireworksLauncher::OnFuseIgnitedClient()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#ae9131ff3a7a350a6fa5ca21f467a67a0">PluginBase::OnGUITimer()</a>, <a class="el" href="../../dc/dc1/class_fireplace_base.html#a89ee9c793503408599f1d172a6278179">FireplaceBase::OnIgnitedThis()</a>, <a class="el" href="../../df/d7e/class_garden_base.html#a6ff31a876fba89e2f0ae6c33af8cd551">GardenBase::OnPlacementComplete()</a>, <a class="el" href="../../d3/d49/class_kit_base.html#a6ff31a876fba89e2f0ae6c33af8cd551">KitBase::OnPlacementComplete()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#a23f886d53b513cd9424769403fbf6866">InventoryItem::OnRPC()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#ad482dbbe14284552629859fd89bad353">DayZPlayer::OnStepEvent()</a>, <a class="el" href="../../d0/d4a/_trap___trip_wire_8c.html#a832179b1b442b1db4376da2693413de5">OnSteppedOn()</a>, <a class="el" href="../../df/d7e/class_garden_base.html#ab311cdf3df0e3547b7d3cd810e61ca61">GardenBase::OnStoreLoad()</a>, <a class="el" href="../../de/d7a/class_item_base.html#ab311cdf3df0e3547b7d3cd810e61ca61">ItemBase::OnStoreLoad()</a>, <a class="el" href="../../d4/d47/class_alarm_clock___color_base.html#a77491714662f827ac632c2eee20f8963">AlarmClock_ColorBase::OnUpdate()</a>, <a class="el" href="../../d0/da1/class_kitchen_timer.html#a77491714662f827ac632c2eee20f8963">KitchenTimer::OnUpdate()</a>, <a class="el" href="../../d6/d45/class_bot_state_base.html#abf66986e08676e65b1e4fbf3c5f69f48">BotStateBase::OnUpdate()</a>, <a class="el" href="../../da/d04/class_anniversary_spot_light.html#ad183155e7592e816863539c54b6fa83f">AnniversarySpotLight::OnVariablesSynchronized()</a>, <a class="el" href="../../dc/da1/class_inventory_item_super.html#ac49b1cab32f5eab70aab44528726e721">InventoryItemSuper::OnWasAttached()</a>, <a class="el" href="../../dc/da1/class_inventory_item_super.html#a9ad76a420042dadc6ab67b7aa821a407">InventoryItemSuper::OnWasDetached()</a>, <a class="el" href="../../d4/d6f/_smoke_grenade_base_8c.html#a8dfedef279732661467a94be3a9374e4">OnWork()</a>, <a class="el" href="../../d4/d6f/_smoke_grenade_base_8c.html#abf45da335d07e3e78aa558714d3c38e8">OnWorkStart()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a548af1d8f940d97753d992d00260b93a">ItemBase::ParticleTest()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#ac0782c11cb28b3f1905fda5abf33dd4b">BaseBuildingBase::PerformRoofCheckForBase()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a6fbd12e9e1cac8613ec3fc6801eaee0f">ItemBase::PlaceOnGround()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#abb320652b7f57b7e063852f7fd5f8b91">InventoryItem::PlayAttachSound()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#ad1f7493e448012dbaab0c792428baa96">InventoryItem::PlayDeployFinishSound()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#ae41d732835cecb5f89e363718d9fde33">InventoryItem::PlayDeployLoopSoundEx()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#a0dba7b83b6a798160faed6d7bf0d77f9">InventoryItem::PlayDeploySound()</a>, <a class="el" href="../../d7/dc3/_trap___land_mine_8c.html#a40a792b7099b4f4b0a44a083c7a73e63">PlayDisarmingLoopSound()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#aac3514ae6c998cfb0dfac38bc377ac11">EntityAI::PlayImpactSound()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#ace823c54d08d003c1d597b7143221487">InventoryItem::PlayPlaceSound()</a>, <a class="el" href="../../d7/d30/_large_tent_8c.html#ad4e378fbfad6f80446403d5da027cb5f">PlayRepackingLoopSound()</a>, <a class="el" href="../../db/dc1/class_backpack___base.html#ad4e378fbfad6f80446403d5da027cb5f">Backpack_Base::PlayRepackingLoopSound()</a>, <a class="el" href="../../d3/de9/class_day_z_creature.html#a2caeed82d3a8e1332e3e4291a4d807f7">DayZCreature::PlaySound()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a2caeed82d3a8e1332e3e4291a4d807f7">EntityAI::PlaySound()</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#a2caeed82d3a8e1332e3e4291a4d807f7">DayZPlayer::PlaySound()</a>, <a class="el" href="../../d6/d37/class_boat_script.html#a4ac17107c7a79654076d6ba75bb37e0d">BoatScript::PlaySound()</a>, <a class="el" href="../../d7/dc3/_trap___land_mine_8c.html#aafbfef1d76a0267d0869ba9678d2fe1e">PlaySoundActivate()</a>, <a class="el" href="../../d8/dec/class_trap_base.html#ad574cd17d2a9f4d5886fe6ef4d101dee">TrapBase::PlaySoundBiteEmpty()</a>, <a class="el" href="../../d8/dec/class_trap_base.html#a3b2498f7846164a3e9a4cefa8688dacf">TrapBase::PlaySoundBiteLeg()</a>, <a class="el" href="../../d5/d71/_car_script_8c.html#a819d60ee5975e8249eb3f2d3dd88cdc3">PlaySoundEx()</a>, <a class="el" href="../../d8/dec/class_trap_base.html#ac4942bf95fa7b72b62738d957830fb2e">TrapBase::PlaySoundOpen()</a>, <a class="el" href="../../d9/d00/_easter_egg_8c.html#aaaa6bca308db9c2958a0ac6367db44fe">PlayVFX()</a>, <a class="el" href="../../dc/d38/class_environment.html#ace56a1ab54c8f1d54a0da8257837afd2">Environment::ProcessItemsDryness()</a>, <a class="el" href="../../d3/de9/class_day_z_creature.html#afd23e700a41f2baa9cad9020c0a01cd4">DayZCreature::ProcessSoundEvent()</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#ab0d50f54b161bf1a836fed289f7a7a2e">DayZPlayer::ProcessSoundEvent()</a>, <a class="el" href="../../d3/de9/class_day_z_creature.html#ac314cca540f21e09e0c512d280f14d6c">DayZCreature::ProcessSoundVoiceEvent()</a>, <a class="el" href="../../dd/dca/class_day_z_infected.html#acd8923ade70fcafd3b204d61b2c1fc1a">DayZInfected::ProcessSoundVoiceEvent()</a>, <a class="el" href="../../d3/de9/class_day_z_creature.html#a86884b06726f45881ded2abffa695e00">DayZCreature::ProcessStepEvent()</a>, <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#a02367cc97e48744403a1008c81c1676a">RefreshFireplaceVisuals()</a>, <a class="el" href="../../de/d7a/class_item_base.html#ad299703d6f7caf24c703551e4ce41ded">ItemBase::RemovePlant()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#a74c02ad925dc1415da9eeaf347d20f8b">BaseBuildingBase::RemoveRefresherPosition()</a>, <a class="el" href="../../df/d21/class_house.html#a3b1cd1019d3f85a01cf3a8fcb2f9c161">House::RequestSoundEvent()</a>, <a class="el" href="../../d4/d87/class_man_base.html#ae0e574eb07b7a95ba231aa3f65b9b5a8">ManBase::SaySoundSet()</a>, <a class="el" href="../../d4/d87/class_man_base.html#aceea08118822141d39dad601d085a610">ManBase::SetContaminatedEffectEx()</a>, <a class="el" href="../../d0/d0a/_explosives_base_8c.html#a85013e65277dff99abed3680cd927d5d">SetParticlePosition()</a>, <a class="el" href="../../dd/d90/class_base_building_base.html#a2af65c7b31f02eb44fc2f28dba04c263">BaseBuildingBase::SetRefresherActive()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a6e69bc59c3ff83d99b5fc1215b093b22">Barrel_ColorBase::SoundBarrelClosePlay()</a>, <a class="el" href="../../dc/dc1/class_fireplace_base.html#a6e69bc59c3ff83d99b5fc1215b093b22">FireplaceBase::SoundBarrelClosePlay()</a>, <a class="el" href="../../de/da3/class_barrel___color_base.html#a3af84f33c7219394a7274688420fadad">Barrel_ColorBase::SoundBarrelOpenPlay()</a>, <a class="el" href="../../dc/dc1/class_fireplace_base.html#a3af84f33c7219394a7274688420fadad">FireplaceBase::SoundBarrelOpenPlay()</a>, <a class="el" href="../../df/d7c/class_edible___base.html#af4208c4c11a8d66b41bb998181d143ff">Edible_Base::SoundCookingStart()</a>, <a class="el" href="../../d2/d96/class_entity.html#a66e7e611d6d2c7b681f4abd4d7770d17">Entity::SoundHardBushFallingPlay()</a>, <a class="el" href="../../d2/d96/class_entity.html#afd83524e1dd8886bbec9e11d7e88c04a">Entity::SoundHardTreeFallingPlay()</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#a81090366ea92bb22b139af2751dd4a73">EffectSound::SoundLoadEx()</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#af0ee18e99ee593abd7ae56f5b9a08274">EffectSound::SoundPlayEx()</a>, <a class="el" href="../../d2/d96/class_entity.html#a1a5ab542a651631d80a79b6a36819296">Entity::SoundSoftBushFallingPlay()</a>, <a class="el" href="../../d2/d96/class_entity.html#a9fe13b0effef568b2b5222678d2e70f3">Entity::SoundSoftTreeFallingPlay()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a6d9f647a14f258b2808c495cfa41df2d">ItemBase::SoundTentClosePlay()</a>, <a class="el" href="../../de/d7a/class_item_base.html#ab351c5b35ddaac1599ebec7809e65c12">ItemBase::SoundTentCloseWindowPlay()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a975505804e7f498267f05e03c7fa6423">ItemBase::SoundTentOpenPlay()</a>, <a class="el" href="../../de/d7a/class_item_base.html#ac5f8dfb6d6611383ff866a7c5ceaded8">ItemBase::SoundTentOpenWindowPlay()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a101d04cf74bed9aa839f31c9aba049d3">ManBase::SpawnEntityOnGroundOnCursorDir()</a>, <a class="el" href="../../d9/d6f/class_tent_base.html#ac096980f3a6554c8305ff9f7dd26cb51">TentBase::SpawnKit()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#acbc52db157b728191da30eaa2f1e335d">PluginBase::SpawnNewInfectedEntity()</a>, <a class="el" href="../../d5/dd5/class_crash_base.html#a53ced6c81ad77efc15eca8d2dbbc009b">CrashBase::SpawnRandomDeers()</a>, <a class="el" href="../../d8/d55/class_underground_trigger_carrier_base.html#ac722c619eb82c7ab3c0b695723006b85">UndergroundTriggerCarrierBase::SpawnTrigger()</a>, <a class="el" href="../../d3/d4f/class_hot_spring_trigger.html#a361bd12e55cb2160644f97882e693b20">HotSpringTrigger::SpawnVaporEffect()</a>, <a class="el" href="../../d4/d29/class_volcanic_trigger.html#a361bd12e55cb2160644f97882e693b20">VolcanicTrigger::SpawnVaporEffect()</a>, <a class="el" href="../../d1/d00/class_flammable_base.html#a5fa4337a5a10c8ae25c859e0f9924b60">FlammableBase::StandUp()</a>, <a class="el" href="../../de/d27/class_effect_particle.html#a80cd06517a8ead35b2f5cd8a9145c7ca">EffectParticle::Start()</a>, <a class="el" href="../../d7/dc3/_trap___land_mine_8c.html#a7061b4e200bcad2499e0afb71cc25ccd">StartActivate()</a>, <a class="el" href="../../de/d85/class_particle.html#aeff8a9e463733a8f5531d5a73872ad3f">Particle::StopParticle()</a>, <a class="el" href="../../de/dbd/_p_m_t_creation_and_cleanup_8c.html#a8878c6aeb911b21eaca3927fa45486a9">TestOwnership()</a>, <a class="el" href="../../d7/d29/class_entity_light_source.html#afbf6bf3490039aee8f2318d023c9580e">EntityLightSource::TryShadowOptimization()</a>, <a class="el" href="../../d1/d00/class_flammable_base.html#a9ffad80be0645125bc612734fd4462f6">FlammableBase::TryTransformIntoStick()</a>, <a class="el" href="../../d3/d0c/class_area_damage_trigger_base.html#abd7f95531e1386daf956fb07690a2157">AreaDamageTriggerBase::UpdateInsiders()</a>, <a class="el" href="../../d2/dcf/_anniversary_music_source_8c.html#aa9b5ed8d8b862906ca7440fd273d10a3">UpdateMusic()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a5f09c0e20354e7077e82998b55bf5e5f">ManBase::UpdatePlayerMeasures()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a4d5a901c97eb843c2d9c443201432972">ScriptedWidgetEventHandler::UpdatePos()</a>, and <a class="el" href="../../de/d7a/class_item_base.html#a56d6dbaa05275ae85e37114a3cf7f960">ItemBase::UpdatePreyPos()</a>.</p>
-
-</div>
-</div>
-<a id="aeb16d3c9ce6cb06666e4530668b91e56" name="aeb16d3c9ce6cb06666e4530668b91e56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb16d3c9ce6cb06666e4530668b91e56">&#9670;&#160;</a></span>GetRadioVolume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a> GetRadioVolume </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4abfc7b25eb697970a5daab3fd74ee61" name="a4abfc7b25eb697970a5daab3fd74ee61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4abfc7b25eb697970a5daab3fd74ee61">&#9670;&#160;</a></span>GetSilenceThreshold()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a> GetSilenceThreshold </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7bc477fd2ce46423d0134915874870c6" name="a7bc477fd2ce46423d0134915874870c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bc477fd2ce46423d0134915874870c6">&#9670;&#160;</a></span>GetSoundVolume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a> GetSoundVolume </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a74b181361565fadbc741767c6b098528" name="a74b181361565fadbc741767c6b098528"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74b181361565fadbc741767c6b098528">&#9670;&#160;</a></span>GetSpeechExVolume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a> GetSpeechExVolume </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9774b42d23111f4c674a7e3e3bdb97a8" name="a9774b42d23111f4c674a7e3e3bdb97a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9774b42d23111f4c674a7e3e3bdb97a8">&#9670;&#160;</a></span>GetSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native <a class="el" href="../../d7/dfc/classvector.html">vector</a> GetSpeed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7dc75f85023a656395e0f4eaca377b78" name="a7dc75f85023a656395e0f4eaca377b78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7dc75f85023a656395e0f4eaca377b78">&#9670;&#160;</a></span>GetVOIPVolume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a> GetVOIPVolume </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a38455dd8685ec5310cd308700ece8164" name="a38455dd8685ec5310cd308700ece8164"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38455dd8685ec5310cd308700ece8164">&#9670;&#160;</a></span>Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native void Initialize </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d8/d6b/class_sound_params.html">SoundParams</a>&#160;</td>
-          <td class="paramname"><em>soundParams</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2ff5cdb7c0d9c592510160880efab780" name="a2ff5cdb7c0d9c592510160880efab780"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ff5cdb7c0d9c592510160880efab780">&#9670;&#160;</a></span>Play2D()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native <a class="el" href="../../d9/d52/class_abstract_wave.html">AbstractWave</a> Play2D </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/d13/_sound_8c.html#a88b8e74ab7a8a3d20a2f3f55948b0ed6">SoundObject</a>&#160;</td>
-          <td class="paramname"><em>soundObject</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d5/db9/class_sound_object_builder.html">SoundObjectBuilder</a>&#160;</td>
-          <td class="paramname"><em>soundBuilder</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abb688ba5faf07148f058fe5bfa55068f" name="abb688ba5faf07148f058fe5bfa55068f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb688ba5faf07148f058fe5bfa55068f">&#9670;&#160;</a></span>Play3D()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native <a class="el" href="../../d9/d52/class_abstract_wave.html">AbstractWave</a> Play3D </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/d13/_sound_8c.html#a88b8e74ab7a8a3d20a2f3f55948b0ed6">SoundObject</a>&#160;</td>
-          <td class="paramname"><em>soundObject</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d5/db9/class_sound_object_builder.html">SoundObjectBuilder</a>&#160;</td>
-          <td class="paramname"><em>soundBuilder</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a46d88285c7916a70ae205c016c8ad2fa" name="a46d88285c7916a70ae205c016c8ad2fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46d88285c7916a70ae205c016c8ad2fa">&#9670;&#160;</a></span>SetKind()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native void SetKind </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/d13/_sound_8c.html#a31dd9d80d2b7ac9cd189b4a00351ac05">WaveKind</a>&#160;</td>
-          <td class="paramname"><em>kind</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad6e9d2cdb87180a0b4fda0d193e4f89c" name="ad6e9d2cdb87180a0b4fda0d193e4f89c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6e9d2cdb87180a0b4fda0d193e4f89c">&#9670;&#160;</a></span>SetMusicVolume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native void SetMusicVolume </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>vol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="adbf9b2265798347111718e2fd16c5dad" name="adbf9b2265798347111718e2fd16c5dad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbf9b2265798347111718e2fd16c5dad">&#9670;&#160;</a></span>SetOcclusionObstruction()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native void SetOcclusionObstruction </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>occlusion</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>obstruction</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a456f046512a6e7ed3f7f5512b5db996a" name="a456f046512a6e7ed3f7f5512b5db996a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a456f046512a6e7ed3f7f5512b5db996a">&#9670;&#160;</a></span>SetParent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native void SetParent </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../dc/da9/class_i_entity.html">IEntity</a>&#160;</td>
-          <td class="paramname"><em>parent</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td>
-          <td class="paramname"><em>pivot</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Note: 'SoundObject' is not an <a class="el" href="../../d2/d96/class_entity.html">Entity</a>, and therefore can not be accessed by using '<a class="el" href="../../d3/d14/group___entity_attributes.html#gab11e151e8e7efc48054a8504ed16d298" title="Returns pointer to first child Entity in hierarchy.">IEntity.GetChildren</a>', though internally 'SoundObject.SetParent' is similiar to '<a class="el" href="../../d3/d14/group___entity_attributes.html#gaa029eb87546b3020587930e78a348152" title="Adds child entity to this entity.">IEntity.AddChild</a>' by creating an 'EntityHierarchyComponent' </p>
-
-</div>
-</div>
-<a id="ad822b74728c20223a48fc8b718f9f49d" name="ad822b74728c20223a48fc8b718f9f49d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad822b74728c20223a48fc8b718f9f49d">&#9670;&#160;</a></span>SetRadioVolume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native void SetRadioVolume </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>vol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6ebdfc5f6be147e721df5addab7832f6" name="a6ebdfc5f6be147e721df5addab7832f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ebdfc5f6be147e721df5addab7832f6">&#9670;&#160;</a></span>SetSoundVolume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native void SetSoundVolume </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>vol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7ebacba81b3472d3cb5d628b3d73a7b1" name="a7ebacba81b3472d3cb5d628b3d73a7b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ebacba81b3472d3cb5d628b3d73a7b1">&#9670;&#160;</a></span>SetSpeechExVolume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native void SetSpeechExVolume </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>vol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a085f765b308afd06e9c77c5cebaeacbf" name="a085f765b308afd06e9c77c5cebaeacbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a085f765b308afd06e9c77c5cebaeacbf">&#9670;&#160;</a></span>SetSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native void SetSpeed </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td>
-          <td class="paramname"><em>speed</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Note: Sets the speed locally if parented, retrieves globally with the parent speed. </p>
-
-</div>
-</div>
-<a id="a974f96eab58d3d33d000b8f287fc949b" name="a974f96eab58d3d33d000b8f287fc949b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a974f96eab58d3d33d000b8f287fc949b">&#9670;&#160;</a></span>SetVariable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SetVariable </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Deprecated - same functionality, just poor naming. </p>
-
-</div>
-</div>
-<a id="ad7fce2e2ba51bab4e570abc208f8a478" name="ad7fce2e2ba51bab4e570abc208f8a478"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7fce2e2ba51bab4e570abc208f8a478">&#9670;&#160;</a></span>SetVOIPVolume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto native void SetVOIPVolume </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>vol</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a88b8e74ab7a8a3d20a2f3f55948b0ed6" name="a88b8e74ab7a8a3d20a2f3f55948b0ed6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88b8e74ab7a8a3d20a2f3f55948b0ed6">&#9670;&#160;</a></span>SoundObject()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">class <a class="el" href="../../d5/db9/class_sound_object_builder.html">SoundObjectBuilder</a> SoundObject </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d8/d6b/class_sound_params.html">SoundParams</a>&#160;</td>
-          <td class="paramname"><em>soundParams</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../db/d2e/class_day_z_player.html#a356acc9e5492c1fca4c437668912b743">DayZPlayer::HandleView()</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#ad482dbbe14284552629859fd89bad353">DayZPlayer::OnStepEvent()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#aac3514ae6c998cfb0dfac38bc377ac11">EntityAI::PlayImpactSound()</a>, <a class="el" href="../../d5/d04/class_mission_base.html#a2d8fb91a096920436a0d045e39895eda">MissionBase::PlayMusic()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#aefec87df2baa6bb84c85a8137f5d3316">EntityAI::PlaySoundByAnimEvent()</a>, <a class="el" href="../../d4/d5c/_dynamic_music_player_8c.html#af3457f1e05514fc337b38caf39283b49">PlayTrack()</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#a098a48cb263c0a628002cf8b83d38e05">DayZPlayer::ProcessAttachmentEvent()</a>, <a class="el" href="../../d3/de9/class_day_z_creature.html#afd23e700a41f2baa9cad9020c0a01cd4">DayZCreature::ProcessSoundEvent()</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#ab0d50f54b161bf1a836fed289f7a7a2e">DayZPlayer::ProcessSoundEvent()</a>, <a class="el" href="../../d3/de9/class_day_z_creature.html#ac314cca540f21e09e0c512d280f14d6c">DayZCreature::ProcessSoundVoiceEvent()</a>, <a class="el" href="../../dd/dca/class_day_z_infected.html#acd8923ade70fcafd3b204d61b2c1fc1a">DayZInfected::ProcessSoundVoiceEvent()</a>, <a class="el" href="../../d3/de9/class_day_z_creature.html#a86884b06726f45881ded2abffa695e00">DayZCreature::ProcessStepEvent()</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#a810ad2c7a9d09977ce9f2e102b5c7141">DayZPlayer::ProcessVoiceEvent()</a>, <a class="el" href="../../dd/dca/class_day_z_infected.html#acbdd6834bc410fd10fb6bce5692ab01e">DayZInfected::ProcessVoiceFX()</a>, and <a class="el" href="../../db/d2e/class_day_z_player.html#ac0762e027d5622d7a33a9864c6b1ff14">DayZPlayer::ProcessWeaponEvent()</a>.</p>
-
-</div>
-</div>
-<a id="adf822a6762dbb9d59a6e514b6b7ba894" name="adf822a6762dbb9d59a6e514b6b7ba894"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf822a6762dbb9d59a6e514b6b7ba894">&#9670;&#160;</a></span>SoundObjectBuilder()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="../../d5/db9/class_sound_object_builder.html">SoundObjectBuilder</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d8/d6b/class_sound_params.html">SoundParams</a>&#160;</td>
-          <td class="paramname"><em>soundParams</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae85124de23f8cb2771c242d236c96fd5" name="ae85124de23f8cb2771c242d236c96fd5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae85124de23f8cb2771c242d236c96fd5">&#9670;&#160;</a></span>UpdateEnvSoundControllers()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void UpdateEnvSoundControllers </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td>
-          <td class="paramname"><em>position</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Deprecated - same functionality, just poor naming. </p>
-
-</div>
-</div>
-<a id="aa55b5378f64f21cdf1e09df3bd5d3160" name="aa55b5378f64f21cdf1e09df3bd5d3160"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa55b5378f64f21cdf1e09df3bd5d3160">&#9670;&#160;</a></span>UpdateVariables()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">proto void UpdateVariables </td>
-          <td>(</td>
-          <td class="paramtype">notnull <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d4/dc3/classfloat.html">float</a> &gt;&#160;</td>
-          <td class="paramname"><em>values</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab4b4536498d48a9b389aea29a22a6de5" name="ab4b4536498d48a9b389aea29a22a6de5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4b4536498d48a9b389aea29a22a6de5">&#9670;&#160;</a></span>~AbstractSoundScene()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">private void ~<a class="el" href="../../d1/d13/_sound_8c.html#a49556304352af6c2cb1c651fbf0e7399">AbstractSoundScene</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a30792d0380a5b20f9f4a04d5c92a9e89" name="a30792d0380a5b20f9f4a04d5c92a9e89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30792d0380a5b20f9f4a04d5c92a9e89">&#9670;&#160;</a></span>Event_OnSoundWaveEnded</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a> Event_OnSoundWaveEnded = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9986b102e97ef33c1a0b233f39907595" name="a9986b102e97ef33c1a0b233f39907595"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9986b102e97ef33c1a0b233f39907595">&#9670;&#160;</a></span>Event_OnSoundWaveHeaderLoaded</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a> Event_OnSoundWaveHeaderLoaded = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3aceb4902e02d03efee7131f918fe5ba" name="a3aceb4902e02d03efee7131f918fe5ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3aceb4902e02d03efee7131f918fe5ba">&#9670;&#160;</a></span>Event_OnSoundWaveLoaded</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a> Event_OnSoundWaveLoaded = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aeee9bf19c3275e7ab5ceab2a2fa50225" name="aeee9bf19c3275e7ab5ceab2a2fa50225"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeee9bf19c3275e7ab5ceab2a2fa50225">&#9670;&#160;</a></span>Event_OnSoundWaveStarted</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">class <a class="el" href="../../d8/d6b/class_sound_params.html">SoundParams</a> Event_OnSoundWaveStarted = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a43f209bd57bc5603be646d5fa2b3485e" name="a43f209bd57bc5603be646d5fa2b3485e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43f209bd57bc5603be646d5fa2b3485e">&#9670;&#160;</a></span>Event_OnSoundWaveStopped</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ref <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a> Event_OnSoundWaveStopped = new <a class="el" href="../../d4/d2d/class_script_invoker.html">ScriptInvoker</a>()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac449e2bfb6304706d4ad842b628a7689" name="ac449e2bfb6304706d4ad842b628a7689"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac449e2bfb6304706d4ad842b628a7689">&#9670;&#160;</a></span>WAVEATTALWAYS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">WAVEATTALWAYS</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5a7b41ec1c7cf94406cb5b9df10c4897" name="a5a7b41ec1c7cf94406cb5b9df10c4897"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a7b41ec1c7cf94406cb5b9df10c4897">&#9670;&#160;</a></span>WAVEEFFECT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">WAVEEFFECT</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../d1/d13/_sound_8c.html#a6dd53aeb21ba907a52f8d39ec8916f5d">BuildSoundObject()</a>.</p>
-
-</div>
-</div>
-<a id="ab9ebea3e97054f1727e61f76b2d11af5" name="ab9ebea3e97054f1727e61f76b2d11af5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9ebea3e97054f1727e61f76b2d11af5">&#9670;&#160;</a></span>WAVEEFFECTEX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">WAVEEFFECTEX</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../d1/d13/_sound_8c.html#a6dd53aeb21ba907a52f8d39ec8916f5d">BuildSoundObject()</a>.</p>
-
-</div>
-</div>
-<a id="a2908e4ce19860621afac35b8d25a99aa" name="a2908e4ce19860621afac35b8d25a99aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2908e4ce19860621afac35b8d25a99aa">&#9670;&#160;</a></span>WAVEENVIRONMENT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">WAVEENVIRONMENT</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a094a43660b3c98486c9173c3d078e55a" name="a094a43660b3c98486c9173c3d078e55a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a094a43660b3c98486c9173c3d078e55a">&#9670;&#160;</a></span>WAVEENVIRONMENTEX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">WAVEENVIRONMENTEX</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae872bf8eb0d09d21e068fd7552cc4702" name="ae872bf8eb0d09d21e068fd7552cc4702"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae872bf8eb0d09d21e068fd7552cc4702">&#9670;&#160;</a></span>WAVEMUSIC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">WAVEMUSIC</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../d1/d13/_sound_8c.html#a6dd53aeb21ba907a52f8d39ec8916f5d">BuildSoundObject()</a>.</p>
-
-</div>
-</div>
-<a id="ae1e693d8514c56fa1142aa2efb3d4361" name="ae1e693d8514c56fa1142aa2efb3d4361"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1e693d8514c56fa1142aa2efb3d4361">&#9670;&#160;</a></span>WAVESPEECH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">WAVESPEECH</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../d1/d13/_sound_8c.html#a6dd53aeb21ba907a52f8d39ec8916f5d">BuildSoundObject()</a>.</p>
-
-</div>
-</div>
-<a id="acfa8baee3541dfb527e26bd183e95ea6" name="acfa8baee3541dfb527e26bd183e95ea6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfa8baee3541dfb527e26bd183e95ea6">&#9670;&#160;</a></span>WAVESPEECHEX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">WAVESPEECHEX</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9e1e6702d8a91f364f9ad8f8b84890f9" name="a9e1e6702d8a91f364f9ad8f8b84890f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e1e6702d8a91f364f9ad8f8b84890f9">&#9670;&#160;</a></span>WAVEUI</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">WAVEUI</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5a0052369c6e9a31cd9bffde337e5d5e" name="a5a0052369c6e9a31cd9bffde337e5d5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a0052369c6e9a31cd9bffde337e5d5e">&#9670;&#160;</a></span>WAVEWEAPONS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">WAVEWEAPONS</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a393c9d184c3da1bfa48c9403f274911a" name="a393c9d184c3da1bfa48c9403f274911a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a393c9d184c3da1bfa48c9403f274911a">&#9670;&#160;</a></span>WAVEWEAPONSEX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">WAVEWEAPONSEX</td>
         </tr>
       </table>
 </div><div class="memdoc">
