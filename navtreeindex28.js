@@ -247,7 +247,7 @@ var NAVTREEINDEX28 =
 "d2/d89/class_cfg_slots_1_1_slot___niva_trunk.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1032,197,2],
 "d2/d89/class_clothing_base.html":[2,0,1075],
 "d2/d89/class_clothing_base.html#abb31df34d18be9cfd04b07d55bba5eec":[2,0,1075,3],
-"d2/d89/class_clothing_base.html#abb31df34d18be9cfd04b07d55bba5eec":[2,0,1075,1],
 "d2/d89/class_clothing_base.html#abb31df34d18be9cfd04b07d55bba5eec":[2,0,1075,2],
+"d2/d89/class_clothing_base.html#abb31df34d18be9cfd04b07d55bba5eec":[2,0,1075,1],
 "d2/d89/class_clothing_base.html#abbd8d4142787998dba20c9b75567c440":[2,0,1075,0]
 };

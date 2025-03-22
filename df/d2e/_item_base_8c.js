@@ -283,6 +283,7 @@ var _item_base_8c =
     [ "SetWet", "df/d2e/_item_base_8c.html#a7705b211e8c1a0fb84c93f9cd4aa788d", null ],
     [ "SetWetMax", "df/d2e/_item_base_8c.html#a681e56007c97915d4b3c01b9c9e25686", null ],
     [ "SetZoneDamageCEInit", "df/d2e/_item_base_8c.html#aa6e2a3775faa9c9337ef98c5e62380cc", null ],
+    [ "ShouldSplitQuantity", "df/d2e/_item_base_8c.html#a4e7bb1abcc0202c58ae34f7c12d54f84", null ],
     [ "SoundSynchRemote", "df/d2e/_item_base_8c.html#a34d2a682de08169eefff122c6c51d59a", null ],
     [ "SoundSynchRemoteReset", "df/d2e/_item_base_8c.html#a43b2ffbf47de0d31b71f8146ced928f6", null ],
     [ "SpawnItemOnLocation", "df/d2e/_item_base_8c.html#a7b3a1a1fa582d50d203771df0a5d6a6d", null ],

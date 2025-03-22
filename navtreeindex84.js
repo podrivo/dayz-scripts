@@ -1,5 +1,6 @@
 var NAVTREEINDEX84 =
 {
+"d6/d46/class_cfg_slots_1_1_slot___vest.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1032,339,0],
 "d6/d46/class_cfg_slots_1_1_slot___vest.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1032,339,1],
 "d6/d46/class_cfg_slots_1_1_slot___vest.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1032,339,2],
 "d6/d46/class_vertical_spacer.html":[2,0,2858],
@@ -64,8 +65,8 @@ var NAVTREEINDEX84 =
 "d6/d52/_cough_state_8c.html":[3,0,0,3,0,21,0,0,0],
 "d6/d52/_inventory_location_8c.html":[3,0,0,2,18,5,22],
 "d6/d52/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23dd":[3,0,0,2,18,5,22,1],
-"d6/d52/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23dda09a276fa7832ff398c171c1ff968c8f9":[3,0,0,2,18,5,22,2,5],
 "d6/d52/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23dda09a276fa7832ff398c171c1ff968c8f9":[3,0,0,2,18,5,22,1,3],
+"d6/d52/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23dda09a276fa7832ff398c171c1ff968c8f9":[3,0,0,2,18,5,22,2,5],
 "d6/d52/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23ddaa00374190265e7b6447db44977a7dff1":[3,0,0,2,18,5,22,1,5],
 "d6/d52/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23ddaaafb42fbc94e821a3a7abc11bc39d47c":[3,0,0,2,18,5,22,1,4],
 "d6/d52/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23ddac3eec710540a3d66749b9c7e0e432df6":[3,0,0,2,18,5,22,2,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX84 =
 "d6/d5a/_action_fishing_new_8c.html#a4554e786a69169f15ff52d754e372fa0":[3,0,0,3,0,30,1,0,77,19],
 "d6/d5a/_action_fishing_new_8c.html#a4a9d1fdaeb45aa35f8a2b1efb753b751":[3,0,0,3,0,30,1,0,77,11],
 "d6/d5a/_action_fishing_new_8c.html#a54c579f92aa50540b1c631e0b4160cb9":[3,0,0,3,0,30,1,0,77,17],
-"d6/d5a/_action_fishing_new_8c.html#a5556bb92878e63a7a5ebbf9417e05708":[3,0,0,3,0,30,1,0,77,15],
-"d6/d5a/_action_fishing_new_8c.html#a57995304ab3c0b9399b7512245f1c0ac":[3,0,0,3,0,30,1,0,77,7]
+"d6/d5a/_action_fishing_new_8c.html#a5556bb92878e63a7a5ebbf9417e05708":[3,0,0,3,0,30,1,0,77,15]
 };

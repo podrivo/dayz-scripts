@@ -1,5 +1,6 @@
 var NAVTREEINDEX120 =
 {
+"d9/d36/class_colors.html#a1849725ee55eae115e3000bf552dee51":[2,0,1084,40],
 "d9/d36/class_colors.html#a18ec02fca6b05d15940cbd266656768e":[2,0,1084,13],
 "d9/d36/class_colors.html#a1b55fd2ab1a2efd84e4b2b4c9a703330":[2,0,1084,8],
 "d9/d36/class_colors.html#a2db88b0cae6c6b4e4f291837a1213c5e":[2,0,1084,35],
@@ -248,6 +249,5 @@ var NAVTREEINDEX120 =
 "d9/d4c/class_remote_detonator_trigger.html#aabae2c5fd3871959ff0c1d57baa2d354":[2,0,2232,14],
 "d9/d4c/class_remote_detonator_trigger.html#aafac0842577356f878e87cbecd8dbdc1":[2,0,2232,1],
 "d9/d4c/class_remote_detonator_trigger.html#ab8e2702adca8f47228f9754f4963455d":[2,0,2232,4],
-"d9/d4c/class_remote_detonator_trigger.html#abeb7b456f7bce00cd5908109de6dd452":[2,0,2232,13],
-"d9/d4c/class_remote_detonator_trigger.html#ac03b8faf21665d7257172ff0961ff524":[2,0,2232,6]
+"d9/d4c/class_remote_detonator_trigger.html#abeb7b456f7bce00cd5908109de6dd452":[2,0,2232,13]
 };

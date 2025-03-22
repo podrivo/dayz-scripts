@@ -1,5 +1,6 @@
 var NAVTREEINDEX178 =
 {
+"dd/db3/_weapon_chambering_8c.html#a8714c06879ff0c6f3a3b75822e24288d":[3,0,0,3,1,6,2,0,9,21],
 "dd/db3/_weapon_chambering_8c.html#a9088984af4ef30aa23a15d4c50db9458":[3,0,0,3,1,6,2,0,9,11],
 "dd/db3/_weapon_chambering_8c.html#aa40f8697dfa587f8adabc8640bc98ad8":[3,0,0,3,1,6,2,0,9,8],
 "dd/db3/_weapon_chambering_8c.html#aab4e9f178608f1b9dc23331725a02f21":[3,0,0,3,1,6,2,0,9,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX178 =
 "dd/dca/class_day_z_infected.html#a37cc199f7b4ad88f9ad0fb4921be8d16":[2,0,1183,80],
 "dd/dca/class_day_z_infected.html#a383b6a07ecf14bd76a8a08320da2a76e":[2,0,1183,26],
 "dd/dca/class_day_z_infected.html#a43307a3052872f38cc517a2e3ac2e8b0":[2,0,1183,33],
-"dd/dca/class_day_z_infected.html#a462eb02f8c8b2a21df93fb430437abd5":[2,0,1183,67],
-"dd/dca/class_day_z_infected.html#a494e59e04df768a283fe1bc3cdd37355":[2,0,1183,37]
+"dd/dca/class_day_z_infected.html#a462eb02f8c8b2a21df93fb430437abd5":[2,0,1183,67]
 };

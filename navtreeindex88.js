@@ -1,5 +1,6 @@
 var NAVTREEINDEX88 =
 {
+"d6/db5/_ui_hint_panel_8c.html#a8b453ddd3205687d3bd59e8e2088354c":[3,0,0,2,10,4,1,35],
 "d6/db5/_ui_hint_panel_8c.html#a8cf71d0cbc01aa7101df92e2bc4a427d":[3,0,0,2,10,4,1,34],
 "d6/db5/_ui_hint_panel_8c.html#a913cd6663f743f4f70102da0fb67d465":[3,0,0,2,10,4,1,29],
 "d6/db5/_ui_hint_panel_8c.html#a9dc8c9e670aa119b7266e3340e752904":[3,0,0,2,10,4,1,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX88 =
 "d6/ddc/class_console_toolbar_widget_handler_base.html#ae778959c4025d3bb21462f251bbe2674":[2,0,1106,4],
 "d6/ddc/class_dead_rabbit.html":[2,0,1220],
 "d6/ddc/class_dead_rabbit.html#a0a52f5a2335e88277887054f8ce4f051":[2,0,1220,3],
-"d6/ddc/class_dead_rabbit.html#a3b6082ea1f51e1c590d3959612824a4c":[2,0,1220,2],
-"d6/ddc/class_dead_rabbit.html#a3dbd208579f9df9f2de07336bd2d1a23":[2,0,1220,1]
+"d6/ddc/class_dead_rabbit.html#a3b6082ea1f51e1c590d3959612824a4c":[2,0,1220,2]
 };

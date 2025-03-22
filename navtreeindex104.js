@@ -1,5 +1,6 @@
 var NAVTREEINDEX104 =
 {
+"d8/d18/gameplay_8c.html#af194843dc9b5d57ac6353cfb09cee131ad3efa59186b0daf28a9aa511e2fbbe3c":[3,0,0,2,47,63,52],
 "d8/d18/gameplay_8c.html#af194843dc9b5d57ac6353cfb09cee131ad6cd0ca1b896f6971070af1c1cb837b2":[3,0,0,2,47,63,20],
 "d8/d18/gameplay_8c.html#af194843dc9b5d57ac6353cfb09cee131ad9f26b1ab2978f6f09906e4d0a282644":[3,0,0,2,47,63,21],
 "d8/d18/gameplay_8c.html#af194843dc9b5d57ac6353cfb09cee131adcb41e278891fe17218f3700261cc5a3":[3,0,0,2,47,63,29],
@@ -248,6 +249,5 @@ var NAVTREEINDEX104 =
 "d8/d39/class_action_base.html#a6d439a83ba8a22d5c6112f814e7a2ab7":[2,0,24,78],
 "d8/d39/class_action_base.html#a6e97c0bcc8e2bad9bd0a55d0e352ad8a":[2,0,24,95],
 "d8/d39/class_action_base.html#a6ef47034ccf5e15482dd0c7431343c12":[2,0,24,53],
-"d8/d39/class_action_base.html#a702ad7d3aaabc5525cf93c4a34a5ba84":[2,0,24,39],
-"d8/d39/class_action_base.html#a70ed3eac79e83fe45326d566a3671e03":[2,0,24,7]
+"d8/d39/class_action_base.html#a702ad7d3aaabc5525cf93c4a34a5ba84":[2,0,24,39]
 };

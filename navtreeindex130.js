@@ -1,5 +1,6 @@
 var NAVTREEINDEX130 =
 {
+"d9/de1/class_day_z_creature_anim_script_debug.html#a651f93e2fd1757357aa6335dbb90d3b8":[2,0,1182,9],
 "d9/de1/class_day_z_creature_anim_script_debug.html#a667e67c2706015acb55823d581213a37":[2,0,1182,8],
 "d9/de1/class_day_z_creature_anim_script_debug.html#a76e87c37df3ea69a0137e2c4e551e454":[2,0,1182,5],
 "d9/de1/class_day_z_creature_anim_script_debug.html#a8b700a7ba21f0757138bac27e2f3f8b5":[2,0,1182,18],
@@ -248,6 +249,5 @@ var NAVTREEINDEX130 =
 "da/d06/class_json_api_struct.html":[2,0,1689],
 "da/d06/class_json_api_struct.html#a079feecb43dd85885e977f4e2652152f":[2,0,1689,40],
 "da/d06/class_json_api_struct.html#a0c244120af455b81aa3673e9e51b3661":[2,0,1689,41],
-"da/d06/class_json_api_struct.html#a0d7487f398f5f296d23d7af8e8efeebd":[2,0,1689,22],
-"da/d06/class_json_api_struct.html#a13a5031607ed93f21e15be6198a2e62d":[2,0,1689,32]
+"da/d06/class_json_api_struct.html#a0d7487f398f5f296d23d7af8e8efeebd":[2,0,1689,22]
 };

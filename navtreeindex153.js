@@ -1,5 +1,6 @@
 var NAVTREEINDEX153 =
 {
+"db/dfc/_o_f_s_m_base_8c.html":[3,0,0,2,18,11],
 "db/dfc/class_cfg_slots_1_1_slot___belt___right.html":[2,0,1032,9],
 "db/dfc/class_cfg_slots_1_1_slot___belt___right.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1032,9,0],
 "db/dfc/class_cfg_slots_1_1_slot___belt___right.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1032,9,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX153 =
 "dc/d11/class_game_inventory.html#ab0b293ce08071b871e6234af573f10e9":[2,0,1428,70],
 "dc/d11/class_game_inventory.html#ab39b1a3d3c2a879ac6abcfdc083fc118":[2,0,1428,50],
 "dc/d11/class_game_inventory.html#ab3ed7d4c263efed18feed0dd64b3fa85":[2,0,1428,127],
-"dc/d11/class_game_inventory.html#ab43c6d4747c71ef971f6172d73ddb734":[2,0,1428,15],
-"dc/d11/class_game_inventory.html#ab4981174f7233626dd3c89d9334b8cb6":[2,0,1428,46]
+"dc/d11/class_game_inventory.html#ab43c6d4747c71ef971f6172d73ddb734":[2,0,1428,15]
 };

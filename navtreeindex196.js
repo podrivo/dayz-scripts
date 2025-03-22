@@ -1,5 +1,6 @@
 var NAVTREEINDEX196 =
 {
+"de/dec/class_truck__01___covered.html#a05eab95952a189dc9e08ccecec41b51a":[2,0,2794,0],
 "de/ded/_police_pants_8c.html":[3,0,0,3,1,10,3,155],
 "de/df0/_construction_8c.html":[3,0,0,3,0,2,0],
 "de/df0/_construction_8c.html#a01316ff7a45a1f02a7c892236e3d2cdc":[3,0,0,3,0,2,0,20],
@@ -248,6 +249,5 @@ var NAVTREEINDEX196 =
 "de/dff/class_weapon_debug.html#acc1f323843ffbd0e318f2565316b5461":[2,0,2895,48],
 "de/dff/class_weapon_debug.html#ad178b0d5ee8a9c005f3d9bc101da5a9a":[2,0,2895,35],
 "de/dff/class_weapon_debug.html#ae124566c6e946b41ec976b1119e3d4c7":[2,0,2895,27],
-"de/dff/class_weapon_debug.html#ae3c965d282038e1a6af1b548ab116588":[2,0,2895,14],
-"de/dff/class_weapon_debug.html#ae647aea7cdb48063e854b8a7da9ec2b5":[2,0,2895,36]
+"de/dff/class_weapon_debug.html#ae3c965d282038e1a6af1b548ab116588":[2,0,2895,14]
 };

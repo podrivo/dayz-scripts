@@ -1,5 +1,6 @@
 var NAVTREEINDEX96 =
 {
+"d7/d7f/group___menu_i_d.html#ga8d49e5c8b714961fdbec0611df758aa7":[1,17,11],
 "d7/d7f/group___menu_i_d.html#ga91c4c093cdf1a675aa289143a0d574b9":[1,17,28],
 "d7/d7f/group___menu_i_d.html#ga966c20296ae73cf74d6842aed27e78d6":[1,17,23],
 "d7/d7f/group___menu_i_d.html#ga9b1a4f2aa35036dab77fe7363759b1a8":[1,17,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX96 =
 "d7/d9b/class_bone.html":[2,0,803],
 "d7/d9b/class_bone.html#afa39b7c4d3d085ef8514a87c32b81a4d":[2,0,803,0],
 "d7/d9c/class_cfg_slots_1_1_slot___bus_wheel__2__1.html":[2,0,1032,25],
-"d7/d9c/class_cfg_slots_1_1_slot___bus_wheel__2__1.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1032,25,0],
-"d7/d9c/class_cfg_slots_1_1_slot___bus_wheel__2__1.html#a79d1b0e96e042367a41a73d13a4a09f1":[2,0,1032,25,3]
+"d7/d9c/class_cfg_slots_1_1_slot___bus_wheel__2__1.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1032,25,0]
 };

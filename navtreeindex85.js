@@ -1,5 +1,6 @@
 var NAVTREEINDEX85 =
 {
+"d6/d5a/_action_fishing_new_8c.html#a57995304ab3c0b9399b7512245f1c0ac":[3,0,0,3,0,30,1,0,77,7],
 "d6/d5a/_action_fishing_new_8c.html#a6cb85f077204570f31803fc43609be4a":[3,0,0,3,0,30,1,0,77,3],
 "d6/d5a/_action_fishing_new_8c.html#a6ed5cba95a3e6dcfa0bf175efec8d575":[3,0,0,3,0,30,1,0,77,20],
 "d6/d5a/_action_fishing_new_8c.html#a945103f39dc30136009c1ce480fefab2":[3,0,0,3,0,30,1,0,77,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX85 =
 "d6/d78/class_pneumonia_mdfr.html#a90a86f8c53f14ceb42838290b978d999":[2,0,2144,10],
 "d6/d78/class_pneumonia_mdfr.html#aa308cde615371bc9547d8541d973188b":[2,0,2144,4],
 "d6/d78/class_pneumonia_mdfr.html#aa90dff020cd66bbaf18b398bed0acfde":[2,0,2144,9],
-"d6/d78/class_pneumonia_mdfr.html#ad38a8b9466e1aa03ea861bc207b281b6":[2,0,2144,0],
-"d6/d78/class_pneumonia_mdfr.html#ae116c968a864af0190401c20ec7f25f3":[2,0,2144,12]
+"d6/d78/class_pneumonia_mdfr.html#ad38a8b9466e1aa03ea861bc207b281b6":[2,0,2144,0]
 };

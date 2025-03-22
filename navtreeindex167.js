@@ -1,5 +1,6 @@
 var NAVTREEINDEX167 =
 {
+"dc/ddc/_action_tune_frequency_8c.html":[3,0,0,3,0,30,1,0,132],
 "dc/ddc/_action_tune_frequency_8c.html#a00cda41fe9dd093059da5c4b83b591bc":[3,0,0,3,0,30,1,0,132,7],
 "dc/ddc/_action_tune_frequency_8c.html#a6b922d3bb1d26f790bc52030566ba2df":[3,0,0,3,0,30,1,0,132,4],
 "dc/ddc/_action_tune_frequency_8c.html#a7204f4dfc860275b303e6b0a0616780c":[3,0,0,3,0,30,1,0,132,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX167 =
 "dc/df1/4___world_2_classes_2_virtual_hud_2__constants_8c.html#a0dc3e1ffa15be624e9d89e0f45626038":[3,0,0,3,0,31,1,34],
 "dc/df1/4___world_2_classes_2_virtual_hud_2__constants_8c.html#a2dc32931726f48f01a093b29d424102b":[3,0,0,3,0,31,1,1],
 "dc/df1/4___world_2_classes_2_virtual_hud_2__constants_8c.html#a33d9be89dde6bb256ae16d484edbaf96":[3,0,0,3,0,31,1,12],
-"dc/df1/4___world_2_classes_2_virtual_hud_2__constants_8c.html#a38b4394725d719dd80efbec01b05d08a":[3,0,0,3,0,31,1,36],
-"dc/df1/4___world_2_classes_2_virtual_hud_2__constants_8c.html#a3e598982c095a69d2286db0a91439139":[3,0,0,3,0,31,1,33]
+"dc/df1/4___world_2_classes_2_virtual_hud_2__constants_8c.html#a38b4394725d719dd80efbec01b05d08a":[3,0,0,3,0,31,1,36]
 };

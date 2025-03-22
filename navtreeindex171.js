@@ -1,5 +1,6 @@
 var NAVTREEINDEX171 =
 {
+"dd/d40/_player_sound_event_base_8c.html#a01a797fe8594065e6c8a1808cfd10568":[3,0,0,3,0,27,1,1,2],
 "dd/d40/_player_sound_event_base_8c.html#a02d16214a182db4c09e09aca5af55153":[3,0,0,3,0,27,1,1,20],
 "dd/d40/_player_sound_event_base_8c.html#a03fabab44037cc492a28d8d962a68ec7":[3,0,0,3,0,27,1,1,29],
 "dd/d40/_player_sound_event_base_8c.html#a09bab0b0aca1f901d45035186c44cd28":[3,0,0,3,0,27,1,1,18],
@@ -248,6 +249,5 @@ var NAVTREEINDEX171 =
 "dd/d5d/class_plugin_recipes_manager_base.html#aacaea7b1186ad831f668783c44be0f1f":[2,0,2138,41],
 "dd/d5d/class_plugin_recipes_manager_base.html#ab33b1623080da8836949f2119554db7e":[2,0,2138,44],
 "dd/d5d/class_plugin_recipes_manager_base.html#ab4f1103abf0a7c6f70e2b93fe7db44af":[2,0,2138,14],
-"dd/d5d/class_plugin_recipes_manager_base.html#abee49feb94f746511d8167a1ad9004d1":[2,0,2138,10],
-"dd/d5d/class_plugin_recipes_manager_base.html#abfe51ee92802ce4bd81cb87739f6c2fc":[2,0,2138,47]
+"dd/d5d/class_plugin_recipes_manager_base.html#abee49feb94f746511d8167a1ad9004d1":[2,0,2138,10]
 };

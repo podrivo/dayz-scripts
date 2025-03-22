@@ -1,5 +1,6 @@
 var NAVTREEINDEX137 =
 {
+"da/da0/class_action_cover_head_target.html#aa9aa4864fae11769c65e644b5fd97c66":[2,0,81,1],
 "da/da1/_action_craft_improvised_torso_cover_8c.html":[3,0,0,3,0,30,1,0,28],
 "da/da1/_action_repair_car_chassis_with_blowtorch_8c.html":[3,0,0,3,0,30,1,0,112],
 "da/da1/_action_repair_car_chassis_with_blowtorch_8c.html#a00cda41fe9dd093059da5c4b83b591bc":[3,0,0,3,0,30,1,0,112,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX137 =
 "da/dbc/class_heavy_metal_agent.html#aee0aab2843a264faad5e13650e245d6f":[2,0,1518,2],
 "da/dbc/class_heavy_metal_agent.html#af7e332db2577c28ed1d83397e18d7ff6":[2,0,1518,1],
 "da/dbc/class_text_widget.html":[1,13,2],
-"da/dbc/class_text_widget.html#ga07c2d179b706e7347604490483712421":[1,13,2,13],
-"da/dbd/_plugin_item_diagnostic_8c.html":[3,0,0,3,2,0,16]
+"da/dbc/class_text_widget.html#ga07c2d179b706e7347604490483712421":[1,13,2,13]
 };

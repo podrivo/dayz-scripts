@@ -1,5 +1,6 @@
 var NAVTREEINDEX127 =
 {
+"d9/dbb/class_frying_pan.html#af4208c4c11a8d66b41bb998181d143ff":[2,0,1417,18],
 "d9/dbb/class_frying_pan.html#af4a59f2b267cc332ceb58fc1aaaa7f34":[2,0,1417,27],
 "d9/dbb/class_frying_pan.html#af9885676afd0121fa770453e93b54789":[2,0,1417,26],
 "d9/dbb/class_frying_pan.html#afa39b7c4d3d085ef8514a87c32b81a4d":[2,0,1417,17],
@@ -248,6 +249,5 @@ var NAVTREEINDEX127 =
 "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336af69f6b2720b2999e57e3a91f540f4bc3":[3,0,0,2,8,12,0,78],
 "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336af6ddd20683ba276ef4f238616bf4a9d2":[3,0,0,2,8,12,0,53],
 "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336af9406c6e0241e0a42c23afdce3ee8ae4":[3,0,0,2,8,12,0,189],
-"d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336afa76b9183b591624a0b509b751fa8afa":[3,0,0,2,8,12,0,142],
-"d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336afae35e960dc1fdd3c99972cfa215beb4":[3,0,0,2,8,12,0,171]
+"d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336afa76b9183b591624a0b509b751fa8afa":[3,0,0,2,8,12,0,142]
 };

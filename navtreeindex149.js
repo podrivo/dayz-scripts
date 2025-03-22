@@ -1,5 +1,6 @@
 var NAVTREEINDEX149 =
 {
+"db/d71/class_action_build_shelter.html#a65c8804fef6652f78ea56960f30d15b1":[2,0,38,0],
 "db/d71/class_action_build_shelter.html#a6b922d3bb1d26f790bc52030566ba2df":[2,0,38,6],
 "db/d71/class_action_build_shelter.html#a841e97dbe0c115fa73c013edcec6efb7":[2,0,38,26],
 "db/d71/class_action_build_shelter.html#a8776280df4c7e336f026407579b68872":[2,0,38,13],
@@ -248,6 +249,5 @@ var NAVTREEINDEX149 =
 "db/d8d/_state_manager_8c.html#a37124f9ba2884eb916018677efb1a6d8":[3,0,0,3,0,21,4,10],
 "db/d8d/_state_manager_8c.html#a3b15cff882af99880d81a87409d96fcc":[3,0,0,3,0,21,4,16],
 "db/d8d/_state_manager_8c.html#a43803a4f76f8e047c690cd333b40c0ad":[3,0,0,3,0,21,4,17],
-"db/d8d/_state_manager_8c.html#a50df02132434602895f64bebbbd8e684":[3,0,0,3,0,21,4,4],
-"db/d8d/_state_manager_8c.html#a5fe1d2246d79520616bcb9aa04cfe3bd":[3,0,0,3,0,21,4,13]
+"db/d8d/_state_manager_8c.html#a50df02132434602895f64bebbbd8e684":[3,0,0,3,0,21,4,4]
 };

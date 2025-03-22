@@ -279,6 +279,7 @@ var class_inventory_item =
     [ "SetWet", "d6/d0e/class_inventory_item.html#a7705b211e8c1a0fb84c93f9cd4aa788d", null ],
     [ "SetWetMax", "d6/d0e/class_inventory_item.html#a681e56007c97915d4b3c01b9c9e25686", null ],
     [ "SetZoneDamageCEInit", "d6/d0e/class_inventory_item.html#aa6e2a3775faa9c9337ef98c5e62380cc", null ],
+    [ "ShouldSplitQuantity", "d6/d0e/class_inventory_item.html#a4e7bb1abcc0202c58ae34f7c12d54f84", null ],
     [ "SoundSynchRemote", "d6/d0e/class_inventory_item.html#a34d2a682de08169eefff122c6c51d59a", null ],
     [ "SoundSynchRemoteReset", "d6/d0e/class_inventory_item.html#a43b2ffbf47de0d31b71f8146ced928f6", null ],
     [ "SplitIntoStackMax", "d6/d0e/class_inventory_item.html#abb69db47b4763cb3e1bedef7583b742d", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX197 =
 {
+"de/dff/class_weapon_debug.html#ae647aea7cdb48063e854b8a7da9ec2b5":[2,0,2895,36],
 "de/dff/class_weapon_debug.html#ae8df24c8b8a4e34e647c8a97705e8cac":[2,0,2895,17],
 "de/dff/class_weapon_debug.html#af19992e257cdc3fa86a950404f2432b0":[2,0,2895,2],
 "de/dff/class_weapon_debug.html#af52c514a615fcd78b493ac98ce005faf":[2,0,2895,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX197 =
 "df/d16/class_cauldron.html#a50af78fb1504b0d35390c1090d0fbff6":[2,0,1000,10],
 "df/d16/class_cauldron.html#a5ea0aaf035a1939c725579219040c481":[2,0,1000,2],
 "df/d16/class_cauldron.html#a7baf475397c8f19312ecdbd53ad1d373":[2,0,1000,9],
-"df/d16/class_cauldron.html#a8d0bc129f099e961bf34d9362c27bdf3":[2,0,1000,6],
-"df/d16/class_cauldron.html#ac3cadebadf7fa591487c571176436613":[2,0,1000,13]
+"df/d16/class_cauldron.html#a8d0bc129f099e961bf34d9362c27bdf3":[2,0,1000,6]
 };

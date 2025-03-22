@@ -1,5 +1,6 @@
 var NAVTREEINDEX145 =
 {
+"db/d2e/class_day_z_player.html#a6775df1dcb35f87430ebd15b94653610":[2,0,1191,235],
 "db/d2e/class_day_z_player.html#a6998c9ffffd04122b56854e8d086aad6":[2,0,1191,60],
 "db/d2e/class_day_z_player.html#a6aefedd02305bc47fdfbb2ff2c0e57e8":[2,0,1191,50],
 "db/d2e/class_day_z_player.html#a6b62a30b83a2a731a12a9a10a7f79398":[2,0,1191,213],
@@ -248,6 +249,5 @@ var NAVTREEINDEX145 =
 "db/d35/_central_economy_8c.html#a3afc385fd86eb7afbcfe8e9c4f744db2":[3,0,0,2,4,0,158],
 "db/d35/_central_economy_8c.html#a3b5a1cf08a7487a971c7761491f11cb6":[3,0,0,2,4,0,91],
 "db/d35/_central_economy_8c.html#a3b6e74d493eba366e54b96c1680754ee":[3,0,0,2,4,0,52],
-"db/d35/_central_economy_8c.html#a3ccbd5dade671e8d228329395ec78ec2":[3,0,0,2,4,0,107],
-"db/d35/_central_economy_8c.html#a3d15c7a3ca17a85b79c29246a5f038c1":[3,0,0,2,4,0,127]
+"db/d35/_central_economy_8c.html#a3ccbd5dade671e8d228329395ec78ec2":[3,0,0,2,4,0,107]
 };

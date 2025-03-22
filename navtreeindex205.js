@@ -1,5 +1,7 @@
 var NAVTREEINDEX205 =
 {
+"df/d9c/class_get_first_server_with_empty_slot_input.html#ac3bf0654ec81ad7fafb6059a0fb13d3f":[2,0,1436,2],
+"df/d9c/class_get_first_server_with_empty_slot_input.html#ac4a8b9bbac911aa6b5b5b3165d9e6144":[2,0,1436,8],
 "df/d9c/class_get_first_server_with_empty_slot_input.html#afe8f3c0f3619cd35910b71ba1c23a06a":[2,0,1436,7],
 "df/d9d/_pain_killers_mdfr_8c.html":[3,0,0,3,0,18,0,20],
 "df/d9d/_u_i_popup_script_scene_delete_8c.html":[3,0,0,4,0,7,0,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX205 =
 "df/dbe/_area_damage_manager_8c.html#ae7b6a32e837ae1ea65011dc40661dc67":[3,0,0,3,0,0,0,5,4],
 "df/dbe/_area_damage_manager_8c.html#ae9d24295a338d4e0ba0c689790faa2d2":[3,0,0,3,0,0,0,5,41],
 "df/dbe/_area_damage_manager_8c.html#aea26ff4778095ac279c69e520084895c":[3,0,0,3,0,0,0,5,8],
-"df/dbe/_area_damage_manager_8c.html#aebe00a4ce8b8df2984819520c6aea71b":[3,0,0,3,0,0,0,5,7],
-"df/dbe/_area_damage_manager_8c.html#af08d674d5d002b9f17ec08497b4106e9":[3,0,0,3,0,0,0,5,18],
-"df/dbe/_area_damage_manager_8c.html#af35565a70e8418b746b36987fafc6c13":[3,0,0,3,0,0,0,5,57]
+"df/dbe/_area_damage_manager_8c.html#aebe00a4ce8b8df2984819520c6aea71b":[3,0,0,3,0,0,0,5,7]
 };

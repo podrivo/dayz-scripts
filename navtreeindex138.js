@@ -1,5 +1,6 @@
 var NAVTREEINDEX138 =
 {
+"da/dbd/_plugin_item_diagnostic_8c.html":[3,0,0,3,2,0,16],
 "da/dbd/_plugin_item_diagnostic_8c.html#a00a2acd9304a88fc7d2d11de1fa034f4":[3,0,0,3,2,0,16,32],
 "da/dbd/_plugin_item_diagnostic_8c.html#a046dac03bfcf1733eab27d78701eb691":[3,0,0,3,2,0,16,43],
 "da/dbd/_plugin_item_diagnostic_8c.html#a080c2a885177df5981f5f6092b101b9a":[3,0,0,3,2,0,16,48],
@@ -248,6 +249,5 @@ var NAVTREEINDEX138 =
 "da/dd4/class_grenade___chem_gas.html#aa55918d7f50e0b6cda68246567b185a4":[2,0,1464,10],
 "da/dd4/class_grenade___chem_gas.html#ae518188b38ce01d7e9d1bdf2ee3982f6":[2,0,1464,6],
 "da/dd4/class_surrender_data.html":[2,0,2529],
-"da/dd4/class_surrender_data.html#aa8692658c2900f1facc6de7d6593eb73":[2,0,2529,1],
-"da/dd4/class_surrender_data.html#afc12d18e19e10b35d361fbb09c7c1d54":[2,0,2529,0]
+"da/dd4/class_surrender_data.html#aa8692658c2900f1facc6de7d6593eb73":[2,0,2529,1]
 };

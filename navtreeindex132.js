@@ -1,5 +1,6 @@
 var NAVTREEINDEX132 =
 {
+"da/d1f/_double_barrel___base_8c.html#a2c9892a54e8a4d19e28c58447ed19a73":[3,0,0,3,1,6,15,16],
 "da/d1f/_double_barrel___base_8c.html#a4ca166e669e5c5ae6c8248d955e695a2":[3,0,0,3,1,6,15,2],
 "da/d1f/_double_barrel___base_8c.html#a4ca166e669e5c5ae6c8248d955e695a2a88ec7d5086d2469ba843c7fcceade8a6":[3,0,0,3,1,6,15,2,0],
 "da/d1f/_double_barrel___base_8c.html#a542cd85c64f82aff28defb5aa94569ac":[3,0,0,3,1,6,15,20],
@@ -248,6 +249,5 @@ var NAVTREEINDEX132 =
 "da/d41/_slot_8c.html#a16deda878fff78b25fcc31c1ef0a1985a58022b77c5a51230d2e95990e4b6c5a9":[3,0,0,3,1,8,2,0,1],
 "da/d41/_slot_8c.html#a16deda878fff78b25fcc31c1ef0a1985ac157bdf0b85a40d2619cbc8bc1ae5fe2":[3,0,0,3,1,8,2,0,0],
 "da/d42/class_plastic___explosive.html":[2,0,2093],
-"da/d42/class_plastic___explosive.html#a0150c9d41d23b6664acb7a61f99d64eb":[2,0,2093,36],
-"da/d42/class_plastic___explosive.html#a08fc35b80c7cbd9a298b4e81841c7c25":[2,0,2093,34]
+"da/d42/class_plastic___explosive.html#a0150c9d41d23b6664acb7a61f99d64eb":[2,0,2093,36]
 };

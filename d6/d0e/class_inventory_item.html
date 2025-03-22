@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.27.159420</div>
+   <div id="projectbrief">PC Stable v1.27.159586</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -272,6 +272,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a013d408d93c67a9cabd34b23fa1579a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ce54e927dda4ba80144b78036e5c44d"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#a2ce54e927dda4ba80144b78036e5c44d">CanBeSplit</a> ()</td></tr>
 <tr class="separator:a2ce54e927dda4ba80144b78036e5c44d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e7bb1abcc0202c58ae34f7c12d54f84"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#a4e7bb1abcc0202c58ae34f7c12d54f84">ShouldSplitQuantity</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> quantity)</td></tr>
+<tr class="separator:a4e7bb1abcc0202c58ae34f7c12d54f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc972d80cc491e58d0b758e4ef894163"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#adc972d80cc491e58d0b758e4ef894163">SplitIntoStackMaxClient</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> destination_entity, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> slot_id)</td></tr>
 <tr class="separator:adc972d80cc491e58d0b758e4ef894163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb69db47b4763cb3e1bedef7583b742d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#abb69db47b4763cb3e1bedef7583b742d">SplitIntoStackMax</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> destination_entity, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> slot_id, <a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player)</td></tr>
@@ -9440,6 +9442,34 @@ explosive</h2>
 
 </div>
 </div>
+<a id="a4e7bb1abcc0202c58ae34f7c12d54f84" name="a4e7bb1abcc0202c58ae34f7c12d54f84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e7bb1abcc0202c58ae34f7c12d54f84">&#9670;&#160;</a></span>ShouldSplitQuantity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/db9/classbool.html">bool</a> ShouldSplitQuantity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>quantity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a013d408d93c67a9cabd34b23fa1579a0">IsSplitable()</a>.</p>
+
+</div>
+</div>
 <a id="a34d2a682de08169eefff122c6c51d59a" name="a34d2a682de08169eefff122c6c51d59a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a34d2a682de08169eefff122c6c51d59a">&#9670;&#160;</a></span>SoundSynchRemote()</h2>
 
@@ -9530,7 +9560,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a2ce54e927dda4ba80144b78036e5c44d">ItemBase::CanBeSplit()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ad5089ad5627dcc3e6096bb3849d934ff">ECE_IN_INVENTORY</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#a4389063907bd8acede7114e3887d6102">ECE_PLACE_ON_SURFACE</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#acffd67619dddfc933cfdd53ce3a25f26">GetTargetQuantityMax()</a>, <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>, <a class="el" href="../../df/d36/class_inventory_slots.html#a208b0e783cceeacfac9262dc84d43be3">InventorySlots::IsSlotIdValid()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ae5cdc0d97e56d85d9f60e2c57c3563bb">RF_DEFAULT</a>, and <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ad5089ad5627dcc3e6096bb3849d934ff">ECE_IN_INVENTORY</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#a4389063907bd8acede7114e3887d6102">ECE_PLACE_ON_SURFACE</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#acffd67619dddfc933cfdd53ce3a25f26">GetTargetQuantityMax()</a>, <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>, <a class="el" href="../../df/d36/class_inventory_slots.html#a208b0e783cceeacfac9262dc84d43be3">InventorySlots::IsSlotIdValid()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ae5cdc0d97e56d85d9f60e2c57c3563bb">RF_DEFAULT</a>, <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a4e7bb1abcc0202c58ae34f7c12d54f84">ShouldSplitQuantity()</a>.</p>
 
 </div>
 </div>
@@ -9580,7 +9610,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a2ce54e927dda4ba80144b78036e5c44d">ItemBase::CanBeSplit()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#acffd67619dddfc933cfdd53ce3a25f26">GetTargetQuantityMax()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#acffd67619dddfc933cfdd53ce3a25f26">GetTargetQuantityMax()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a4e7bb1abcc0202c58ae34f7c12d54f84">ShouldSplitQuantity()</a>.</p>
 
 </div>
 </div>
@@ -9630,7 +9660,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../de/d7a/class_item_base.html#a2ce54e927dda4ba80144b78036e5c44d">ItemBase::CanBeSplit()</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#a54c30fa234201cbc6b05acbe7b7336c4">INPUT_UDT_ITEM_MANIPULATION</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a96d6cc3211119f8b7a3c2ba755ab8a73">ScriptInputUserData::Send()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a828be696ccceaf7efd28ef94549a5145">SplitIntoStackMaxCargo()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#a54c30fa234201cbc6b05acbe7b7336c4">INPUT_UDT_ITEM_MANIPULATION</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a96d6cc3211119f8b7a3c2ba755ab8a73">ScriptInputUserData::Send()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a828be696ccceaf7efd28ef94549a5145">SplitIntoStackMaxCargo()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
 
 </div>
 </div>
@@ -9668,7 +9698,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../de/d7a/class_item_base.html#a2ce54e927dda4ba80144b78036e5c44d">ItemBase::CanBeSplit()</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer()</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#a54c30fa234201cbc6b05acbe7b7336c4">INPUT_UDT_ITEM_MANIPULATION</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a96d6cc3211119f8b7a3c2ba755ab8a73">ScriptInputUserData::Send()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#abb69db47b4763cb3e1bedef7583b742d">SplitIntoStackMax()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer()</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#a54c30fa234201cbc6b05acbe7b7336c4">INPUT_UDT_ITEM_MANIPULATION</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a96d6cc3211119f8b7a3c2ba755ab8a73">ScriptInputUserData::Send()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#abb69db47b4763cb3e1bedef7583b742d">SplitIntoStackMax()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
 
 </div>
 </div>
@@ -9706,7 +9736,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a2ce54e927dda4ba80144b78036e5c44d">ItemBase::CanBeSplit()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ad5089ad5627dcc3e6096bb3849d934ff">ECE_IN_INVENTORY</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#a4389063907bd8acede7114e3887d6102">ECE_PLACE_ON_SURFACE</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#acffd67619dddfc933cfdd53ce3a25f26">GetTargetQuantityMax()</a>, <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>, <a class="el" href="../../df/d36/class_inventory_slots.html#a208b0e783cceeacfac9262dc84d43be3">InventorySlots::IsSlotIdValid()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ae5cdc0d97e56d85d9f60e2c57c3563bb">RF_DEFAULT</a>, and <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ad5089ad5627dcc3e6096bb3849d934ff">ECE_IN_INVENTORY</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#a4389063907bd8acede7114e3887d6102">ECE_PLACE_ON_SURFACE</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#acffd67619dddfc933cfdd53ce3a25f26">GetTargetQuantityMax()</a>, <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>, <a class="el" href="../../df/d36/class_inventory_slots.html#a208b0e783cceeacfac9262dc84d43be3">InventorySlots::IsSlotIdValid()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ae5cdc0d97e56d85d9f60e2c57c3563bb">RF_DEFAULT</a>, <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a4e7bb1abcc0202c58ae34f7c12d54f84">ShouldSplitQuantity()</a>.</p>
 
 </div>
 </div>
@@ -9734,7 +9764,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a2ce54e927dda4ba80144b78036e5c44d">ItemBase::CanBeSplit()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#acffd67619dddfc933cfdd53ce3a25f26">GetTargetQuantityMax()</a>, and <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#acffd67619dddfc933cfdd53ce3a25f26">GetTargetQuantityMax()</a>, <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a4e7bb1abcc0202c58ae34f7c12d54f84">ShouldSplitQuantity()</a>.</p>
 
 </div>
 </div>
@@ -9762,7 +9792,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../de/d7a/class_item_base.html#a2ce54e927dda4ba80144b78036e5c44d">ItemBase::CanBeSplit()</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#a54c30fa234201cbc6b05acbe7b7336c4">INPUT_UDT_ITEM_MANIPULATION</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a96d6cc3211119f8b7a3c2ba755ab8a73">ScriptInputUserData::Send()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a9a9d4b7f1736f8623087508eddfc86da">SplitIntoStackMaxHands()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#a54c30fa234201cbc6b05acbe7b7336c4">INPUT_UDT_ITEM_MANIPULATION</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a96d6cc3211119f8b7a3c2ba755ab8a73">ScriptInputUserData::Send()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a9a9d4b7f1736f8623087508eddfc86da">SplitIntoStackMaxHands()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
 
 </div>
 </div>
@@ -9818,7 +9848,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../de/d7a/class_item_base.html#a2ce54e927dda4ba80144b78036e5c44d">ItemBase::CanBeSplit()</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#a54c30fa234201cbc6b05acbe7b7336c4">INPUT_UDT_ITEM_MANIPULATION</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a96d6cc3211119f8b7a3c2ba755ab8a73">ScriptInputUserData::Send()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a1760a53e7def936265d3ed61a4691445">SplitIntoStackMaxToInventoryLocation()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#a54c30fa234201cbc6b05acbe7b7336c4">INPUT_UDT_ITEM_MANIPULATION</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a96d6cc3211119f8b7a3c2ba755ab8a73">ScriptInputUserData::Send()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a1760a53e7def936265d3ed61a4691445">SplitIntoStackMaxToInventoryLocation()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
 
 </div>
 </div>
@@ -9846,7 +9876,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a2ce54e927dda4ba80144b78036e5c44d">ItemBase::CanBeSplit()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ad5089ad5627dcc3e6096bb3849d934ff">ECE_IN_INVENTORY</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#acffd67619dddfc933cfdd53ce3a25f26">GetTargetQuantityMax()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a227f91ee7af4b100c81970284fc2e4c1">GameInventory::LocationCreateEntity()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ae5cdc0d97e56d85d9f60e2c57c3563bb">RF_DEFAULT</a>, and <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ad5089ad5627dcc3e6096bb3849d934ff">ECE_IN_INVENTORY</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#acffd67619dddfc933cfdd53ce3a25f26">GetTargetQuantityMax()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a227f91ee7af4b100c81970284fc2e4c1">GameInventory::LocationCreateEntity()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ae5cdc0d97e56d85d9f60e2c57c3563bb">RF_DEFAULT</a>, <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a4e7bb1abcc0202c58ae34f7c12d54f84">ShouldSplitQuantity()</a>.</p>
 
 </div>
 </div>
@@ -9874,7 +9904,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a2ce54e927dda4ba80144b78036e5c44d">ItemBase::CanBeSplit()</a>, <a class="el" href="../../d5/d98/group___math.html#gafb455a5c88958a7219b1c63d2d377766">Math::Floor()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956">InventoryLocation::GetType()</a>, <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a126b312186e0481dff1f5980ff24b596">InventoryLocation::IsValid()</a>, and <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../d5/d98/group___math.html#gafb455a5c88958a7219b1c63d2d377766">Math::Floor()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956">InventoryLocation::GetType()</a>, <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a126b312186e0481dff1f5980ff24b596">InventoryLocation::IsValid()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a4e7bb1abcc0202c58ae34f7c12d54f84">ShouldSplitQuantity()</a>.</p>
 
 </div>
 </div>
@@ -9902,7 +9932,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a2ce54e927dda4ba80144b78036e5c44d">ItemBase::CanBeSplit()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ad5089ad5627dcc3e6096bb3849d934ff">ECE_IN_INVENTORY</a>, <a class="el" href="../../d5/d98/group___math.html#gafb455a5c88958a7219b1c63d2d377766">Math::Floor()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a227f91ee7af4b100c81970284fc2e4c1">GameInventory::LocationCreateEntity()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ae5cdc0d97e56d85d9f60e2c57c3563bb">RF_DEFAULT</a>, and <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ad5089ad5627dcc3e6096bb3849d934ff">ECE_IN_INVENTORY</a>, <a class="el" href="../../d5/d98/group___math.html#gafb455a5c88958a7219b1c63d2d377766">Math::Floor()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a227f91ee7af4b100c81970284fc2e4c1">GameInventory::LocationCreateEntity()</a>, <a class="el" href="../../db/d35/_central_economy_8c.html#ae5cdc0d97e56d85d9f60e2c57c3563bb">RF_DEFAULT</a>, <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a4e7bb1abcc0202c58ae34f7c12d54f84">ShouldSplitQuantity()</a>.</p>
 
 </div>
 </div>

@@ -1,5 +1,6 @@
 var NAVTREEINDEX154 =
 {
+"dc/d11/class_game_inventory.html#ab4981174f7233626dd3c89d9334b8cb6":[2,0,1428,46],
 "dc/d11/class_game_inventory.html#ab650856ea70539ec07728fcda4afc6f9":[2,0,1428,48],
 "dc/d11/class_game_inventory.html#ab661a5290966e41508741589563d8626":[2,0,1428,78],
 "dc/d11/class_game_inventory.html#ab67d7e8d97bb86b574f28aff9f5269b6":[2,0,1428,22],
@@ -248,6 +249,5 @@ var NAVTREEINDEX154 =
 "dc/d2a/class_cfg_slots_1_1_slot___material___l1_w2___nails.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1032,148,0],
 "dc/d2a/class_cfg_slots_1_1_slot___material___l1_w2___nails.html#a79d1b0e96e042367a41a73d13a4a09f1":[2,0,1032,148,3],
 "dc/d2a/class_cfg_slots_1_1_slot___material___l1_w2___nails.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1032,148,1],
-"dc/d2a/class_cfg_slots_1_1_slot___material___l1_w2___nails.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1032,148,2],
-"dc/d2b/class_day_z_player_camera3rd_person_erc_raised.html":[2,0,1195]
+"dc/d2a/class_cfg_slots_1_1_slot___material___l1_w2___nails.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1032,148,2]
 };

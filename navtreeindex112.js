@@ -1,5 +1,6 @@
 var NAVTREEINDEX112 =
 {
+"d8/dbb/_fireplace_base_8c.html#a374131802cd607dca5e8d05c60c1ce8c":[3,0,0,3,1,10,56,73],
 "d8/dbb/_fireplace_base_8c.html#a376adcc1f04997708951192e796153de":[3,0,0,3,1,10,56,79],
 "d8/dbb/_fireplace_base_8c.html#a37fa6a45e8dede86b2b16306e2c4bde6":[3,0,0,3,1,10,56,261],
 "d8/dbb/_fireplace_base_8c.html#a385e73c76fb8c6e9ac0e056ca0c2c1a4":[3,0,0,3,1,10,56,26],
@@ -248,6 +249,5 @@ var NAVTREEINDEX112 =
 "d8/dbb/_fireplace_base_8c.html#af00953db24838a33aef77c2933e9b551":[3,0,0,3,1,10,56,131],
 "d8/dbb/_fireplace_base_8c.html#af24e6c7652d34809deae35c05748af5b":[3,0,0,3,1,10,56,150],
 "d8/dbb/_fireplace_base_8c.html#af28474b95c8e69f378d95219fd5d08c7":[3,0,0,3,1,10,56,279],
-"d8/dbb/_fireplace_base_8c.html#af3494d1c61b8dfc0ca4c2a89801cb97e":[3,0,0,3,1,10,56,324],
-"d8/dbb/_fireplace_base_8c.html#af3d485edb2b2d2b1f454bb47454b8269":[3,0,0,3,1,10,56,232]
+"d8/dbb/_fireplace_base_8c.html#af3494d1c61b8dfc0ca4c2a89801cb97e":[3,0,0,3,1,10,56,324]
 };

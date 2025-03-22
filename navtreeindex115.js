@@ -1,5 +1,6 @@
 var NAVTREEINDEX115 =
 {
+"d8/dda/class_bot_test_swap_internal.html#a1d84e4bc3dfbd6160bc232d846f67ca2":[2,0,836,3],
 "d8/dda/class_bot_test_swap_internal.html#a2547db49900818069e8bb828608529f8":[2,0,836,0],
 "d8/dda/class_bot_test_swap_internal.html#aaee13280ad07a33aaa28304b129b1742":[2,0,836,1],
 "d8/dda/class_bot_test_swap_internal.html#abf66986e08676e65b1e4fbf3c5f69f48":[2,0,836,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX115 =
 "d8/df5/_injury_handler_8c.html#a35e0e165ddb8668f9cbcb127fab6b80e":[3,0,0,3,0,46,8],
 "d8/df5/_injury_handler_8c.html#a37495a7d404542b02363adc8c53a2ddb":[3,0,0,3,0,46,25],
 "d8/df5/_injury_handler_8c.html#a43dd85902aef9af267fd4215f52a9186":[3,0,0,3,0,46,23],
-"d8/df5/_injury_handler_8c.html#a4d9b0280090f0265fc1914f3de2c4e98":[3,0,0,3,0,46,20],
-"d8/df5/_injury_handler_8c.html#a5252b3258826274dedbd2d371b18633f":[3,0,0,3,0,46,32]
+"d8/df5/_injury_handler_8c.html#a4d9b0280090f0265fc1914f3de2c4e98":[3,0,0,3,0,46,20]
 };
