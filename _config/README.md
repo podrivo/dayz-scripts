@@ -31,6 +31,7 @@ PC Stable Changelog
 --
 
 Version 1.27
+- [Update 2 · v1.27.159586 · Mar 18, 2025](https://forums.dayz.com/topic/265911-stable-update-127/?tab=comments#comment-2503915)
 - [Update 1 · v1.27.159420 · Feb 25, 2025](https://forums.dayz.com/topic/265911-stable-update-127/)
 
 Version 1.26 - Frostline DLC
