@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.27.159586</div>
+   <div id="projectbrief">PC Stable Documentation</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -896,16 +896,16 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>combo hits - when we are already in Melee command and clicking UseButton </p>
-<p>wait for the previous hit commit before hitting again</p>
 <p>select if the next attack will be light or heavy (based on input/attachment modifier)</p>
 <p>no suitable attack - skip that</p>
 <p>No combos for the finisher command</p>
+<p>wait for the previous hit commit before hitting again if the next attack is heavy and the previous wasn't - otherwise the previous light attack will turn into heavy</p>
 <p>targetting</p>
 <p>continue 'combo' - left hand attacks</p>
 <p>broken legs shock</p>
 <p>stamina depletion per attack</p>
 
-<p class="reference">References <a class="el" href="../../d3/def/class_player_constants.html#abb42ac24770a030ddb314cfb75313b8f">PlayerConstants::BROKEN_LEGS_HEAVY_MELEE_SHOCK</a>, <a class="el" href="../../d3/def/class_player_constants.html#ac65214a01ea384c619421fd1ad6a7f0a">PlayerConstants::BROKEN_LEGS_LIGHT_MELEE_SHOCK</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#a76a54764a70a5f4328e11d863548852f">DayZPlayer::DepleteStamina()</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a3b31c393798ffa332bf16200df21569c">DisableControls()</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#aefbde62ef7117c602425f3713d5903db">GetAttackTypeByDistanceToTarget()</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a2cf7721c2f6a2bf389eaa843c298699f">GetAttackTypeByWeaponAttachments()</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a57c3e4187f709704a70245a1d1aae688">GetAttackTypeFromInputs()</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a8ec237e07a60dd597c20cc309a0779e1">GetTargetData()</a>, <a class="el" href="../../d8/d5d/_day_z_player_implement_melee_combat_8c.html#ac1dd84c7f4b84def8b67c07971cfc8f6">m_HitType</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a112666d96e8fe2fa9b5674917778754b">m_IsInComboRange</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a20295029b3dc0729be7ae4945c331c11">m_MeleeCombat</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, and <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#ac7ad8a53d6edf018f6af179e05eab3db">m_WasPreviousHitProcessed</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/def/class_player_constants.html#abb42ac24770a030ddb314cfb75313b8f">PlayerConstants::BROKEN_LEGS_HEAVY_MELEE_SHOCK</a>, <a class="el" href="../../d3/def/class_player_constants.html#ac65214a01ea384c619421fd1ad6a7f0a">PlayerConstants::BROKEN_LEGS_LIGHT_MELEE_SHOCK</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#a76a54764a70a5f4328e11d863548852f">DayZPlayer::DepleteStamina()</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a3b31c393798ffa332bf16200df21569c">DisableControls()</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#aefbde62ef7117c602425f3713d5903db">GetAttackTypeByDistanceToTarget()</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a2cf7721c2f6a2bf389eaa843c298699f">GetAttackTypeByWeaponAttachments()</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a57c3e4187f709704a70245a1d1aae688">GetAttackTypeFromInputs()</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a8ec237e07a60dd597c20cc309a0779e1">GetTargetData()</a>, <a class="el" href="../../d8/d5d/_day_z_player_implement_melee_combat_8c.html#ac1dd84c7f4b84def8b67c07971cfc8f6">m_HitType</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a20295029b3dc0729be7ae4945c331c11">m_MeleeCombat</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, and <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#ac7ad8a53d6edf018f6af179e05eab3db">m_WasPreviousHitProcessed</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a6bbbf4a646223e8fd3a5328517fefd0b">HandleFightLogic()</a>.</p>
 
@@ -1703,7 +1703,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#aa461dadc3c15235001d8bd88acb1d4ab">HandleComboHit()</a>, and <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a6bbbf4a646223e8fd3a5328517fefd0b">HandleFightLogic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a6bbbf4a646223e8fd3a5328517fefd0b">HandleFightLogic()</a>.</p>
 
 </div>
 </div>

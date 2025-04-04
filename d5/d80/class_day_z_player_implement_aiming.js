@@ -31,6 +31,7 @@ var class_day_z_player_implement_aiming =
     [ "m_CamShakeY", "d5/d80/class_day_z_player_implement_aiming.html#a149409690f3e3800c25fd22b7aa069dc", null ],
     [ "m_CurrentRecoil", "d5/d80/class_day_z_player_implement_aiming.html#aa13e3c18f8f03242ef7de8fb8e44317f", null ],
     [ "m_FilterVelocityStealthAimY", "d5/d80/class_day_z_player_implement_aiming.html#a247db971569c01fb3b0a026ad57e4197", null ],
+    [ "m_HoldBreathSwayCoef", "d5/d80/class_day_z_player_implement_aiming.html#ac20906bc72d0ae33442ba6a764db71aa", null ],
     [ "m_HoldingBreathSet", "d5/d80/class_day_z_player_implement_aiming.html#a99d128eafd8e9ec5b68c6a039271cdf1", null ],
     [ "m_HorizontalNoise", "d5/d80/class_day_z_player_implement_aiming.html#a050b968954ae139b0fb12f5e94ad2c1e", null ],
     [ "m_HorizontalNoiseVelocity", "d5/d80/class_day_z_player_implement_aiming.html#ab57e0d14971e85f74a3baf59fc2cf577", null ],

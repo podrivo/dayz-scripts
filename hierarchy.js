@@ -864,7 +864,8 @@ var hierarchy =
         [ "Land_ContainerLocked_Yellow_DE", "de/d47/class_land___container_locked___yellow___d_e.html", null ]
       ] ],
       [ "Land_Misc_Through_Static", "dd/d9a/class_land___misc___through___static.html", null ],
-      [ "Land_WaterSpring_Sakhal", "d8/db5/class_land___water_spring___sakhal.html", null ]
+      [ "Land_WaterSpring_Sakhal", "d8/db5/class_land___water_spring___sakhal.html", null ],
+      [ "Misc_TirePile_Burning_DE", "d5/d7d/class_misc___tire_pile___burning___d_e.html", null ]
     ] ],
     [ "BulletHide", "da/d0c/class_bullet_hide.html", null ],
     [ "BulletShow", "da/d39/class_bullet_show.html", null ],

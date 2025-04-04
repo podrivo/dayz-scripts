@@ -1934,6 +1934,7 @@ var annotated_dup =
     [ "MindStateSoundEventBase", "d6/daf/class_mind_state_sound_event_base.html", "d6/daf/class_mind_state_sound_event_base" ],
     [ "MineActionData", "d4/d7c/class_mine_action_data.html", "d4/d7c/class_mine_action_data" ],
     [ "MiniDress_ColorBase", "d2/db3/class_mini_dress___color_base.html", null ],
+    [ "Misc_TirePile_Burning_DE", "d5/d7d/class_misc___tire_pile___burning___d_e.html", "d5/d7d/class_misc___tire_pile___burning___d_e" ],
     [ "MiscEffects", "d6/dc7/class_misc_effects.html", "d6/dc7/class_misc_effects" ],
     [ "Miscelaneous", "d7/d52/class_miscelaneous.html", null ],
     [ "Mission", "db/dad/class_mission.html", "db/dad/class_mission" ],

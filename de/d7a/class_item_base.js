@@ -1,6 +1,7 @@
 var class_item_base =
 [
     [ "~Clothing_Base", "de/d7a/class_item_base.html#aa7fa5f3ecf30dd05d0bfe3ac263b61d7", null ],
+    [ "~GardenBase", "de/d7a/class_item_base.html#ae92c75f52d000ce887fd0b51ac6d004b", null ],
     [ "~Defibrillator", "de/d7a/class_item_base.html#ad8cdcabdbfc213830656131d24ba60b1", null ],
     [ "~Flag_Base", "de/d7a/class_item_base.html#aee6a4fc8286512f828385e6699282ac5", null ],
     [ "~RestrainingToolLocked", "de/d7a/class_item_base.html#a12f8887e72f72fbbde4993f42228b6da", null ],

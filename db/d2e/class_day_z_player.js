@@ -23,6 +23,7 @@ var class_day_z_player =
     [ "CompleteWeaponRaise", "db/d2e/class_day_z_player.html#ae0606e62de7719ca61131e3e71ed2f91", null ],
     [ "DayZPlayerImplement", "db/d2e/class_day_z_player.html#a93ef4c57613ab9189e2290a8d997aceb", null ],
     [ "DepleteStamina", "db/d2e/class_day_z_player.html#a76a54764a70a5f4328e11d863548852f", null ],
+    [ "DepleteStaminaEx", "db/d2e/class_day_z_player.html#a4f08f4fb128634a6442eb158557a7121", null ],
     [ "EEHitBy", "db/d2e/class_day_z_player.html#aaa71dbcbf6d68e04387f4b74ad7e90a9", null ],
     [ "EEKilled", "db/d2e/class_day_z_player.html#a4de4d414d0cbf15100ab71ec84ca25f7", null ],
     [ "EOnContact", "db/d2e/class_day_z_player.html#ad70fb93ae4fecf6872c783905d1253de", null ],

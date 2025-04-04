@@ -268,6 +268,7 @@ var class_particle_list =
     [ "SMOKING_HELI_WRECK", "dd/dd2/class_particle_list.html#a9bda60b14ff228ff6af3b29529228f82", null ],
     [ "SPOOKY_MIST", "dd/dd2/class_particle_list.html#a9b39cf2954033f52cee4dd9b6c51e791", null ],
     [ "STEP_SNOW", "dd/dd2/class_particle_list.html#afd30e45d71fc0313b73c813cdbde2997", null ],
+    [ "TIREPILE_FIRE", "dd/dd2/class_particle_list.html#a92a9c7d4fa0da5d8078d7282aa564450", null ],
     [ "TORCH_T1", "dd/dd2/class_particle_list.html#a1bf1886c84c5b7ae1da4fe262beb5caf", null ],
     [ "TORCH_T2", "dd/dd2/class_particle_list.html#a6fa7dc6a742b74a16947587d50ff173e", null ],
     [ "TORCH_T3", "dd/dd2/class_particle_list.html#a756437e8f5889b9fca4bcbc4060af099", null ],

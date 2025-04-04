@@ -17,6 +17,7 @@ var dir_7650077ce641cd6e960faea9eac7ae3d =
     [ "PortableGasLampLight.c", "d1/d27/_portable_gas_lamp_light_8c.html", "d1/d27/_portable_gas_lamp_light_8c" ],
     [ "RoadflareLight.c", "d1/d56/_roadflare_light_8c.html", "d1/d56/_roadflare_light_8c" ],
     [ "StoveLight.c", "da/d11/_stove_light_8c.html", "da/d11/_stove_light_8c" ],
+    [ "TirePileLight.c", "d2/d8f/_tire_pile_light_8c.html", "d2/d8f/_tire_pile_light_8c" ],
     [ "TorchLight.c", "d7/d33/_torch_light_8c.html", "d7/d33/_torch_light_8c" ],
     [ "WarheadStorageLight.c", "d4/d24/_warhead_storage_light_8c.html", "d4/d24/_warhead_storage_light_8c" ],
     [ "XmasSleighLight.c", "d9/df1/_xmas_sleigh_light_8c.html", "d9/df1/_xmas_sleigh_light_8c" ],

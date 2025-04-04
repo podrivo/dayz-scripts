@@ -2,8 +2,8 @@ var searchData=
 [
   ['o00_0',['O00',['../dd/d79/class_rifle___base.html#a5557e0c4608832a5b8eb71d6a2351e36',1,'Rifle_Base']]],
   ['o01_1',['O01',['../dd/d79/class_rifle___base.html#abab3bf2e304315ae5c49112d90f18d14',1,'Rifle_Base']]],
-  ['obj_2',['Obj',['../d8/d52/class_melee_target_data.html#a4468a427008795f37bc3be0ff78a5020',1,'MeleeTargetData']]],
-  ['obj_3',['obj',['../de/d3a/class_raycast_r_v_result.html#a3a6f22968f6ad522baa85c809b856bae',1,'RaycastRVResult::obj'],['../d2/d41/classarray.html#a3a6f22968f6ad522baa85c809b856bae',1,'array::obj']]],
+  ['obj_2',['obj',['../de/d3a/class_raycast_r_v_result.html#a3a6f22968f6ad522baa85c809b856bae',1,'RaycastRVResult::obj'],['../d2/d41/classarray.html#a3a6f22968f6ad522baa85c809b856bae',1,'array::obj']]],
+  ['obj_3',['Obj',['../d8/d52/class_melee_target_data.html#a4468a427008795f37bc3be0ff78a5020',1,'MeleeTargetData']]],
   ['object_4',['object',['../dd/d96/class_surface_detection_result.html#a3cb68a99d2bc17fd15f9d1d1a3a48de2',1,'SurfaceDetectionResult']]],
   ['object_5',['Object',['../d8/d18/gameplay_8c.html#a972f7e85f9ce7a3e402c2ea098cf393c',1,'gameplay.c']]],
   ['object_5fclutter_5fcutter_6',['OBJECT_CLUTTER_CUTTER',['../d8/dbb/_fireplace_base_8c.html#a5567f505f3fb716bcc06c4afaf1a6e85',1,'FireplaceBase.c']]],

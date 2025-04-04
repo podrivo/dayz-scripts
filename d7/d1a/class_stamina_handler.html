@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.27.159586</div>
+   <div id="projectbrief">PC Stable Documentation</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -192,7 +192,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:aed09ca4ca85f052bc1dc68a9cff8bc4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f49d56b76850eb7d706174be6319998"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#a3f49d56b76850eb7d706174be6319998">GetRecoveryMultiplier</a> ()</td></tr>
 <tr class="separator:a3f49d56b76850eb7d706174be6319998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f08f4fb128634a6442eb158557a7121"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#a4f08f4fb128634a6442eb158557a7121">DepleteStaminaEx</a> (<a class="el" href="../../d0/d86/_e_stamina_modifiers_8c.html#a183e748e7ec1eb63d8f8089ca07f69f2">EStaminaModifiers</a> modifier, <a class="el" href="../../d4/dc3/classfloat.html">float</a> dT=-1, <a class="el" href="../../d4/dc3/classfloat.html">float</a> coef=1.0)</td></tr>
+<tr class="separator:a4f08f4fb128634a6442eb158557a7121"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76a54764a70a5f4328e11d863548852f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#a76a54764a70a5f4328e11d863548852f">DepleteStamina</a> (<a class="el" href="../../d0/d86/_e_stamina_modifiers_8c.html#a183e748e7ec1eb63d8f8089ca07f69f2">EStaminaModifiers</a> modifier, <a class="el" href="../../d4/dc3/classfloat.html">float</a> dT=-1)</td></tr>
+<tr class="memdesc:a76a54764a70a5f4328e11d863548852f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated.  <br /></td></tr>
 <tr class="separator:a76a54764a70a5f4328e11d863548852f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -513,9 +516,57 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Deprecated. </p>
+
+<p class="reference">References <a class="el" href="../../d7/d1a/class_stamina_handler.html#a4f08f4fb128634a6442eb158557a7121">DepleteStaminaEx()</a>.</p>
+
+</div>
+</div>
+<a id="a4f08f4fb128634a6442eb158557a7121" name="a4f08f4fb128634a6442eb158557a7121"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f08f4fb128634a6442eb158557a7121">&#9670;&#160;</a></span>DepleteStaminaEx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DepleteStaminaEx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d86/_e_stamina_modifiers_8c.html#a183e748e7ec1eb63d8f8089ca07f69f2">EStaminaModifiers</a>&#160;</td>
+          <td class="paramname"><em>modifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>dT</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>coef</em> = <code>1.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 <p>run cooldown right after depletion</p>
 
 <p class="reference">References <a class="el" href="../../d5/d98/group___math.html#gaae5a8127fc6393d55122ac12f2d16c16">Math::AbsFloat()</a>, <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../d6/dae/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, <a class="el" href="../../d0/d10/class_stamina_modifier_exponential.html#af288bae1e7ed6d16ab674210c998cbfd">StaminaModifierExponential::GetBaseValue()</a>, <a class="el" href="../../d0/d10/class_stamina_modifier_exponential.html#ace12af1bb1491a4b1bf113dfd25a886a">StaminaModifierExponential::GetDurationAdjusted()</a>, <a class="el" href="../../d0/d10/class_stamina_modifier_exponential.html#adb36a4102778493bc4ff626977905e16">StaminaModifierExponential::GetExponent()</a>, <a class="el" href="../../d0/d10/class_stamina_modifier_exponential.html#a1b3ad97f60f30b0624806dbcc0bc5884">StaminaModifierExponential::GetMultiplier()</a>, <a class="el" href="../../d7/dbe/class_cfg_gameplay_handler.html#af7551149dd6e02805b49a51851966cc4">CfgGameplayHandler::GetStaminaMax()</a>, <a class="el" href="../../d0/d10/class_stamina_modifier_exponential.html#ab1c3c237071f52ae4eb3008015f187c6">StaminaModifierExponential::GetStartTimeAdjustment()</a>, <a class="el" href="../../d5/d98/group___math.html#gaa6376dcd0f724f11ba0b6bdf66b185ee">Math::Lerp()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a9dd2585f9b6cb233c97468e2356201f7">m_Player</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a9f963623d82db98287288ec2ce8c90a0">m_StaminaDepletion</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2bb9c953fc02d335cba950124210848f">m_StaminaDepletionMultiplier</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aa570ac66c4948eac26d49752660cb83c">m_StaminaModifiers</a>, <a class="el" href="../../d5/d98/group___math.html#ga0b79da001711df4f5c5759cc8ac4585b">Math::Max()</a>, <a class="el" href="../../d5/d98/group___math.html#gaa0f2c378e27a265cf9eb06121dfb1e19">Math::Min()</a>, <a class="el" href="../../d5/d98/group___math.html#ga46107fe5da70b9f5f33642d643dc813f">Math::Pow()</a>, <a class="el" href="../../d5/d98/group___math.html#ga88747c54aed88a2142b3a22367020993">Math::RandomFloat()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ac99635f5a2f8ecf81c87604e75c37924">SetCooldown()</a>, and <a class="el" href="../../d5/d6b/_stamina_handler_8c.html#a2a6283c4afba2a5e0a3e26dd898a5319">StaminaModifier()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a76a54764a70a5f4328e11d863548852f">DepleteStamina()</a>.</p>
 
 </div>
 </div>
@@ -789,7 +840,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d4/d08/class_stamina_consumers.html#ae842f01cd80e82b53642e9b1db7ce744">StaminaConsumers::HasEnoughStaminaFor()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a194a751b8acfb2ac435f91980cc8b3cd">m_Stamina</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ae0982e67800189788a74fbf82e11dc70">m_StaminaCap</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ac4b54654fbab80ee031276abe3867862">m_StaminaConsumers</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2205b8104f33caaed2a177dcb71f7a05">m_StaminaDepleted</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d08/class_stamina_consumers.html#ae842f01cd80e82b53642e9b1db7ce744">StaminaConsumers::HasEnoughStaminaFor()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ae0982e67800189788a74fbf82e11dc70">m_StaminaCap</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ac4b54654fbab80ee031276abe3867862">m_StaminaConsumers</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2205b8104f33caaed2a177dcb71f7a05">m_StaminaDepleted</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a8d966e00e1b321d2c790a6897949ae60">m_StaminaSynced</a>.</p>
 
 </div>
 </div>
@@ -817,7 +868,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d4/d08/class_stamina_consumers.html#a0f0514fac0c4c0ee3e8c27f559e3ab5a">StaminaConsumers::HasEnoughStaminaToStart()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a194a751b8acfb2ac435f91980cc8b3cd">m_Stamina</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ae0982e67800189788a74fbf82e11dc70">m_StaminaCap</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ac4b54654fbab80ee031276abe3867862">m_StaminaConsumers</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2205b8104f33caaed2a177dcb71f7a05">m_StaminaDepleted</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d08/class_stamina_consumers.html#a0f0514fac0c4c0ee3e8c27f559e3ab5a">StaminaConsumers::HasEnoughStaminaToStart()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ae0982e67800189788a74fbf82e11dc70">m_StaminaCap</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ac4b54654fbab80ee031276abe3867862">m_StaminaConsumers</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2205b8104f33caaed2a177dcb71f7a05">m_StaminaDepleted</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a8d966e00e1b321d2c790a6897949ae60">m_StaminaSynced</a>.</p>
 
 </div>
 </div>
@@ -1153,7 +1204,7 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d7/d1a/class_stamina_handler.html#a59f0475e15fc03f18195a92828d752df">m_IsInCooldown</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a194a751b8acfb2ac435f91980cc8b3cd">m_Stamina</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2205b8104f33caaed2a177dcb71f7a05">m_StaminaDepleted</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a90195d0eb55ae42e0f3937b751d02ee3">m_TimerMap</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aa98e8bbba43315b844fb21ba6b9ff65f">ResetCooldown()</a>, and <a class="el" href="../../d8/d08/class_timer.html#ab7e8b20a4331f044f2ad2f9d86ebffe9">Timer::Stop()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#aadfa5cc529779426c3e9cdf12d7e72ac">CheckStaminaState()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a76a54764a70a5f4328e11d863548852f">DepleteStamina()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a4240692810a420f352ab48ae0fbae872">StaminaProcessor_Ladder()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ab7a557dc38d85c7cf39e4d16a2ef540a">StaminaProcessor_Move()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a87aae50680edaab83b6d9325626ce827">StaminaProcessor_Swimming()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#aadfa5cc529779426c3e9cdf12d7e72ac">CheckStaminaState()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a4f08f4fb128634a6442eb158557a7121">DepleteStaminaEx()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a4240692810a420f352ab48ae0fbae872">StaminaProcessor_Ladder()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ab7a557dc38d85c7cf39e4d16a2ef540a">StaminaProcessor_Move()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a87aae50680edaab83b6d9325626ce827">StaminaProcessor_Swimming()</a>.</p>
 
 </div>
 </div>
@@ -1601,7 +1652,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a910d22c99f7fb0ee3d64428220423177">ApplyExhaustion()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a76a54764a70a5f4328e11d863548852f">DepleteStamina()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aa9f467ca28793891f46ceb7aae086baf">OnSyncJuncture()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2ce45055f32839c53ed593c6ca9951b9">StaminaHandler()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ab7a557dc38d85c7cf39e4d16a2ef540a">StaminaProcessor_Move()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a95681b1a10933db6407b52476bf35d2f">SyncAdditionalStaminaInfo()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a68d5636d12bd620444e0104c571f7cbc">SyncStamina()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a910d22c99f7fb0ee3d64428220423177">ApplyExhaustion()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a4f08f4fb128634a6442eb158557a7121">DepleteStaminaEx()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aa9f467ca28793891f46ceb7aae086baf">OnSyncJuncture()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2ce45055f32839c53ed593c6ca9951b9">StaminaHandler()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ab7a557dc38d85c7cf39e4d16a2ef540a">StaminaProcessor_Move()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a95681b1a10933db6407b52476bf35d2f">SyncAdditionalStaminaInfo()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a68d5636d12bd620444e0104c571f7cbc">SyncStamina()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
 
 </div>
 </div>
@@ -1697,7 +1748,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a910d22c99f7fb0ee3d64428220423177">ApplyExhaustion()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a19730b3b39843ee7f7de4184cef0d1b0">CalcStaminaGainBonus()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aadfa5cc529779426c3e9cdf12d7e72ac">CheckStaminaState()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#af20b88116a93512a0bf52bbd7e00be92">GetStamina()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a59d15eb35258b2a38fc167d610213d7b">GetStaminaNormalized()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a6088ca223b0011198a316eb8986f4bf8">HasEnoughStaminaFor()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ab7839a5e5619e1fb40e99e21953a1791">HasEnoughStaminaToStart()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aa9f467ca28793891f46ceb7aae086baf">OnSyncJuncture()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ac99635f5a2f8ecf81c87604e75c37924">SetCooldown()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a7127f8563d60e099677fdd8928c7eff5">SetStamina()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2ce45055f32839c53ed593c6ca9951b9">StaminaHandler()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a68d5636d12bd620444e0104c571f7cbc">SyncStamina()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a910d22c99f7fb0ee3d64428220423177">ApplyExhaustion()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a19730b3b39843ee7f7de4184cef0d1b0">CalcStaminaGainBonus()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aadfa5cc529779426c3e9cdf12d7e72ac">CheckStaminaState()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#af20b88116a93512a0bf52bbd7e00be92">GetStamina()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a59d15eb35258b2a38fc167d610213d7b">GetStaminaNormalized()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aa9f467ca28793891f46ceb7aae086baf">OnSyncJuncture()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ac99635f5a2f8ecf81c87604e75c37924">SetCooldown()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a7127f8563d60e099677fdd8928c7eff5">SetStamina()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2ce45055f32839c53ed593c6ca9951b9">StaminaHandler()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a68d5636d12bd620444e0104c571f7cbc">SyncStamina()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
 
 </div>
 </div>
@@ -1819,7 +1870,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a19730b3b39843ee7f7de4184cef0d1b0">CalcStaminaGainBonus()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a76a54764a70a5f4328e11d863548852f">DepleteStamina()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2ce45055f32839c53ed593c6ca9951b9">StaminaHandler()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a19730b3b39843ee7f7de4184cef0d1b0">CalcStaminaGainBonus()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a4f08f4fb128634a6442eb158557a7121">DepleteStaminaEx()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2ce45055f32839c53ed593c6ca9951b9">StaminaHandler()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
 
 </div>
 </div>
@@ -1843,7 +1894,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a76a54764a70a5f4328e11d863548852f">DepleteStamina()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aed09ca4ca85f052bc1dc68a9cff8bc4e">GetDepletionMultiplier()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a92b86a29344c9f83c1a14210f93b0d1a">ReadAdditionalStaminaInfo()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a3fe6bce04a31b2300b1aca346e175f3b">RecalculateDepletionMultiplier()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a1a0bfd861f2aad9a1dd551c2f465fb01">SetDepletionMultiplier()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a1b0ab1414fda7e6c5b961ab8cdaefb96">SetRecoveryMultiplier()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2ce45055f32839c53ed593c6ca9951b9">StaminaHandler()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a4f08f4fb128634a6442eb158557a7121">DepleteStaminaEx()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aed09ca4ca85f052bc1dc68a9cff8bc4e">GetDepletionMultiplier()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a92b86a29344c9f83c1a14210f93b0d1a">ReadAdditionalStaminaInfo()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a3fe6bce04a31b2300b1aca346e175f3b">RecalculateDepletionMultiplier()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a1a0bfd861f2aad9a1dd551c2f465fb01">SetDepletionMultiplier()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a1b0ab1414fda7e6c5b961ab8cdaefb96">SetRecoveryMultiplier()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2ce45055f32839c53ed593c6ca9951b9">StaminaHandler()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
 
 </div>
 </div>
@@ -1867,7 +1918,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a76a54764a70a5f4328e11d863548852f">DepleteStamina()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a4b7a5584f50e1e07d23d6514cd8072cc">RegisterStaminaModifiers()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#aa98e8bbba43315b844fb21ba6b9ff65f">ResetCooldown()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a4f08f4fb128634a6442eb158557a7121">DepleteStaminaEx()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a4b7a5584f50e1e07d23d6514cd8072cc">RegisterStaminaModifiers()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#aa98e8bbba43315b844fb21ba6b9ff65f">ResetCooldown()</a>.</p>
 
 </div>
 </div>
@@ -1939,7 +1990,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a6ba12a9e6f7d3c76f4423e6205606c39">GetSyncedStamina()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aa9f467ca28793891f46ceb7aae086baf">OnSyncJuncture()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a6ba12a9e6f7d3c76f4423e6205606c39">GetSyncedStamina()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a6088ca223b0011198a316eb8986f4bf8">HasEnoughStaminaFor()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ab7839a5e5619e1fb40e99e21953a1791">HasEnoughStaminaToStart()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aa9f467ca28793891f46ceb7aae086baf">OnSyncJuncture()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
 
 </div>
 </div>

@@ -81,6 +81,7 @@ var class_man_base =
     [ "DecreaseEffectAreaCount", "d4/d87/class_man_base.html#a52b834f8d10e39916c04bb6e3210b48d", null ],
     [ "DecreaseHealingsCount", "d4/d87/class_man_base.html#a62afb23cf6394f4f1d1239d69571c5e6", null ],
     [ "DepleteStamina", "d4/d87/class_man_base.html#a49999a67d8f049644dc5a1a365ee2e5e", null ],
+    [ "DepleteStaminaEx", "d4/d87/class_man_base.html#a10a930215967182f95e4ccb813732e07", null ],
     [ "dmgDebugPrint", "d4/d87/class_man_base.html#a0ebe191de5d085ec70a862b67b7c0871", null ],
     [ "DropAllItems", "d4/d87/class_man_base.html#a998c5238411a0b325ee68b3cd190df38", null ],
     [ "DropHeavyItem", "d4/d87/class_man_base.html#a5b72a0107af0d91e8ecc956d6a1d99bc", null ],

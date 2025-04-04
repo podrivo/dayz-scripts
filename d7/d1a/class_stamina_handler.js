@@ -9,6 +9,7 @@ var class_stamina_handler =
     [ "DeactivateDepletionModifier", "d7/d1a/class_stamina_handler.html#ae6f75cd5b5a8b5370f42cb264282f71a", null ],
     [ "DeactivateRecoveryModifier", "d7/d1a/class_stamina_handler.html#ae6e6b4f693f01e5796309633fa473b68", null ],
     [ "DepleteStamina", "d7/d1a/class_stamina_handler.html#a76a54764a70a5f4328e11d863548852f", null ],
+    [ "DepleteStaminaEx", "d7/d1a/class_stamina_handler.html#a4f08f4fb128634a6442eb158557a7121", null ],
     [ "GetCooldownTimer", "d7/d1a/class_stamina_handler.html#abb09db4ab5871422ee60a620a891744e", null ],
     [ "GetDepletionMultiplier", "d7/d1a/class_stamina_handler.html#aed09ca4ca85f052bc1dc68a9cff8bc4e", null ],
     [ "GetRecoveryMultiplier", "d7/d1a/class_stamina_handler.html#a3f49d56b76850eb7d706174be6319998", null ],

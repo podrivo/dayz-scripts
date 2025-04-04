@@ -12,6 +12,7 @@ var class_right_area =
     [ "GetPlayerContainer", "d2/d5d/class_right_area.html#a2bab3bb9431fc3b8796055fba8383097", null ],
     [ "GetScrollWidget", "d2/d5d/class_right_area.html#a7b7b9f9a087356d127faf91fc4f50803", null ],
     [ "GetSlotsArea", "d2/d5d/class_right_area.html#a5079c9f8996312df7fa160bda86c7f2c", null ],
+    [ "GetSlotsHeader", "d2/d5d/class_right_area.html#a8c5bb3a532b4633c91d08e803f521761", null ],
     [ "HasEntityContainerVisible", "d2/d5d/class_right_area.html#a145ea618da3cf95e027729e3e0e21ec9", null ],
     [ "InspectItem", "d2/d5d/class_right_area.html#a243d90f12ea7b345a5e0a5921938b1b8", null ],
     [ "IsPlayerEquipmentActive", "d2/d5d/class_right_area.html#a4cdde348daed5ce9c9467421b66dc9e9", null ],
@@ -39,5 +40,6 @@ var class_right_area =
     [ "m_ScrollWidget", "d2/d5d/class_right_area.html#a246c72323939f264057bebf2dfb86d38", null ],
     [ "m_ShouldChangeSize", "d2/d5d/class_right_area.html#a838ce7669d60a7fa23fa45a4c2d51997", null ],
     [ "m_SlotsContent", "d2/d5d/class_right_area.html#a49bd49a5af38d73d171825a5ce9460d1", null ],
+    [ "m_SlotsHeader", "d2/d5d/class_right_area.html#a759e39d2d429be38e6187e59f1179886", null ],
     [ "m_UpIcon", "d2/d5d/class_right_area.html#a694954d9baf48c11be415ddbe7211782", null ]
 ];

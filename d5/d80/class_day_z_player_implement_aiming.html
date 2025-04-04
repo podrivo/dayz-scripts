@@ -35,7 +35,7 @@
   <td id="projectalign">
    <div id="projectname">DayZ Scripts
    </div>
-   <div id="projectbrief">PC Stable v1.27.159586</div>
+   <div id="projectbrief">PC Stable Documentation</div>
   </td>
  </tr>
    <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -105,6 +105,9 @@ $(document).ready(function(){initNavTree('d5/d80/class_day_z_player_implement_ai
   <div class="headertitle"><div class="title">DayZPlayerImplementAiming Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>at which point does the stabilization start to get affected  
+ <a href="../../d5/d80/class_day_z_player_implement_aiming.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -175,7 +178,11 @@ Private Attributes</h2></td></tr>
 <tr class="separator:acc4b7d92abad66b0865b5626b4bd58d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a179d596f4107ca1e83234e9e6678609e"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a179d596f4107ca1e83234e9e6678609e">m_StaminaPercentage</a></td></tr>
 <tr class="separator:a179d596f4107ca1e83234e9e6678609e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac20906bc72d0ae33442ba6a764db71aa"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#ac20906bc72d0ae33442ba6a764db71aa">m_HoldBreathSwayCoef</a> = 1.0</td></tr>
+<tr class="memdesc:ac20906bc72d0ae33442ba6a764db71aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">stamina percentage at hold breath start  <br /></td></tr>
+<tr class="separator:ac20906bc72d0ae33442ba6a764db71aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accf2da0ab6ca1b96d0e603320b76f662"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#accf2da0ab6ca1b96d0e603320b76f662">m_SwayStateStartTime</a></td></tr>
+<tr class="memdesc:accf2da0ab6ca1b96d0e603320b76f662"><td class="mdescLeft">&#160;</td><td class="mdescRight">proportionally shortens de/stabilization process and duration. Also affects stamina consumption (temporary!)  <br /></td></tr>
 <tr class="separator:accf2da0ab6ca1b96d0e603320b76f662"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d28fc8783e70d8423fc4bb8e481b515"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a3d28fc8783e70d8423fc4bb8e481b515">m_LastSwayMultiplier</a> = PlayerSwayConstants.SWAY_MULTIPLIER_DEFAULT</td></tr>
 <tr class="separator:a3d28fc8783e70d8423fc4bb8e481b515"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,7 +228,9 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:af01fcbef0d9da3333d75edb37248d345"><td class="memItemLeft" align="right" valign="top">static protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#af01fcbef0d9da3333d75edb37248d345">m_AimXClampRanges</a> [] = { -180, -20, 90, 0, -50, 90, 180, -20, 90 }</td></tr>
 <tr class="separator:af01fcbef0d9da3333d75edb37248d345"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>at which point does the stabilization start to get affected </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a359ed86527bfdc8cf0eb6fbcd479c34d" name="a359ed86527bfdc8cf0eb6fbcd479c34d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a359ed86527bfdc8cf0eb6fbcd479c34d">&#9670;&#160;</a></span>DayZPlayerImplementAiming()</h2>
 
@@ -490,7 +499,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../d5/d98/group___math.html#gaa6376dcd0f724f11ba0b6bdf66b185ee">Math::Lerp()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a3d28fc8783e70d8423fc4bb8e481b515">m_LastSwayMultiplier</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a633791ca5f93557e14af43883b39a4f3">m_PlayerPb</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#acc4b7d92abad66b0865b5626b4bd58d1">m_ReferenceTime</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a179d596f4107ca1e83234e9e6678609e">m_StaminaPercentage</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#accf2da0ab6ca1b96d0e603320b76f662">m_SwayStateStartTime</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#aa6f415ae13920d9caabc4e443bc9dc19">m_TotalTime</a>, and <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a0f54e00c1c6161773438b7c53a0c8142">UpdateSwayState()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../d5/d98/group___math.html#gaa6376dcd0f724f11ba0b6bdf66b185ee">Math::Lerp()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#ac20906bc72d0ae33442ba6a764db71aa">m_HoldBreathSwayCoef</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a3d28fc8783e70d8423fc4bb8e481b515">m_LastSwayMultiplier</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a633791ca5f93557e14af43883b39a4f3">m_PlayerPb</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#acc4b7d92abad66b0865b5626b4bd58d1">m_ReferenceTime</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#accf2da0ab6ca1b96d0e603320b76f662">m_SwayStateStartTime</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#aa6f415ae13920d9caabc4e443bc9dc19">m_TotalTime</a>, and <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a0f54e00c1c6161773438b7c53a0c8142">UpdateSwayState()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a66c5737f1a6e0a6a59ac21841f5ecda8">ProcessAimFilters()</a>.</p>
 
@@ -818,7 +827,7 @@ Static Private Attributes</h2></td></tr>
 <p>clamp aim ranges</p>
 <p>mouse offset</p>
 
-<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#gaae5a8127fc6393d55122ac12f2d16c16">Math::AbsFloat()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#ae2baf2edabbaf2e5873d13fa03df3c37">ApplyBreathingPattern()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a526ff5151cfa3ed33ca1b68bf79e77aa">ApplyHorizontalNoise()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a02a37b37f126aa3dc2109324c54287e4">ApplyShakes()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a54893943389bcdb5b8ff0fd98cc176f7">CalculateSpeedMultiplier()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a3a01a4d7cf2464e9bd50d94a98c9358a">CalculateSwayMultiplier()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#aad9eac220a1c01e19089db88931f243c">CalculateWeight()</a>, <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../d8/da5/_day_z_player_utils_8c.html#a2eaf62799cb44b4db7b67336fbf4403d">DayZPlayerUtils()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#ab9fce789a77c78f59f8663a2e63ec66b">DbgPrintAimingImplement()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#af01fcbef0d9da3333d75edb37248d345">m_AimXClampRanges</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a947e60bfe3f5ec815292ce2e974481e0">m_BreathingXAxisOffset</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#aa28cff2be25add5b96706d3cea828c69">m_BreathingYAxisOffset</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a08c3b90c312a80454dd892ad892f0c4a">m_CamShakeX</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a149409690f3e3800c25fd22b7aa069dc">m_CamShakeY</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#aa13e3c18f8f03242ef7de8fb8e44317f">m_CurrentRecoil</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#acb3e0d5d706f78c10401a7e1099e5221">SDayZPlayerAimingModel::m_fAimXCamOffset</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#ab3017f1424a99fdbefc5c539cff4d503">SDayZPlayerAimingModel::m_fAimXHandsOffset</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#a2a0b1f754c4173e88ae46b2ee7a8b265">SDayZPlayerAimingModel::m_fAimXMouseShift</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#a54d4f038e007175802dde9502cd1f186">SDayZPlayerAimingModel::m_fAimYCamOffset</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#a1a293dcedc1d2d9c251d7393553e59e2">SDayZPlayerAimingModel::m_fAimYHandsOffset</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#ab613682c60ec7ef42b879085afd7d3a2">SDayZPlayerAimingModel::m_fAimYMouseShift</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#a947c1c11568d2bb7b4edb37c852eb668">SDayZPlayerAimingModel::m_fCurrentAimX</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#a699ef5ab2f292d88b11b4ab8f0f5426c">SDayZPlayerAimingModel::m_fCurrentAimY</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a99d128eafd8e9ec5b68c6a039271cdf1">m_HoldingBreathSet</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a7c7ba7bc942abc8c928c0c9b74561b89">m_HorizontalNoiseXAxisOffset</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a821efee8dd2d64d6ddf8171a76967b70">m_KuruShake</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a3d28fc8783e70d8423fc4bb8e481b515">m_LastSwayMultiplier</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a7fd8cb5d97b5638bb1cd980b06c3dc95">m_PlayerDpi</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a633791ca5f93557e14af43883b39a4f3">m_PlayerPb</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#acc4b7d92abad66b0865b5626b4bd58d1">m_ReferenceTime</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a179d596f4107ca1e83234e9e6678609e">m_StaminaPercentage</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a19af7f7aed080d401035eb5eb79389eb">m_SwayModifier</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a27605b6739ab5baa2341cc4a837ed691">m_SwayWeight</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#aa6f415ae13920d9caabc4e443bc9dc19">m_TotalTime</a>, <a class="el" href="../../d4/d05/class_kuru_shake.html#a4d3dbbc03e89be9faedf8a5b89539773">KuruShake::Update()</a>, and <a class="el" href="../../dc/dd0/class_recoil_base.html#a18964d477967180e79183082af143b8d">RecoilBase::Update()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#gaae5a8127fc6393d55122ac12f2d16c16">Math::AbsFloat()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#ae2baf2edabbaf2e5873d13fa03df3c37">ApplyBreathingPattern()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a526ff5151cfa3ed33ca1b68bf79e77aa">ApplyHorizontalNoise()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a02a37b37f126aa3dc2109324c54287e4">ApplyShakes()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a54893943389bcdb5b8ff0fd98cc176f7">CalculateSpeedMultiplier()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a3a01a4d7cf2464e9bd50d94a98c9358a">CalculateSwayMultiplier()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#aad9eac220a1c01e19089db88931f243c">CalculateWeight()</a>, <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../d8/da5/_day_z_player_utils_8c.html#a2eaf62799cb44b4db7b67336fbf4403d">DayZPlayerUtils()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#ab9fce789a77c78f59f8663a2e63ec66b">DbgPrintAimingImplement()</a>, <a class="el" href="../../d5/d98/group___math.html#ga6530404da328a85a6ff9bd3a37765087">Math::InverseLerp()</a>, <a class="el" href="../../d5/d98/group___math.html#gaa6376dcd0f724f11ba0b6bdf66b185ee">Math::Lerp()</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#af01fcbef0d9da3333d75edb37248d345">m_AimXClampRanges</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a947e60bfe3f5ec815292ce2e974481e0">m_BreathingXAxisOffset</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#aa28cff2be25add5b96706d3cea828c69">m_BreathingYAxisOffset</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a08c3b90c312a80454dd892ad892f0c4a">m_CamShakeX</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a149409690f3e3800c25fd22b7aa069dc">m_CamShakeY</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#aa13e3c18f8f03242ef7de8fb8e44317f">m_CurrentRecoil</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#acb3e0d5d706f78c10401a7e1099e5221">SDayZPlayerAimingModel::m_fAimXCamOffset</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#ab3017f1424a99fdbefc5c539cff4d503">SDayZPlayerAimingModel::m_fAimXHandsOffset</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#a2a0b1f754c4173e88ae46b2ee7a8b265">SDayZPlayerAimingModel::m_fAimXMouseShift</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#a54d4f038e007175802dde9502cd1f186">SDayZPlayerAimingModel::m_fAimYCamOffset</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#a1a293dcedc1d2d9c251d7393553e59e2">SDayZPlayerAimingModel::m_fAimYHandsOffset</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#ab613682c60ec7ef42b879085afd7d3a2">SDayZPlayerAimingModel::m_fAimYMouseShift</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#a947c1c11568d2bb7b4edb37c852eb668">SDayZPlayerAimingModel::m_fCurrentAimX</a>, <a class="el" href="../../de/d4b/class_s_day_z_player_aiming_model.html#a699ef5ab2f292d88b11b4ab8f0f5426c">SDayZPlayerAimingModel::m_fCurrentAimY</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#ac20906bc72d0ae33442ba6a764db71aa">m_HoldBreathSwayCoef</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a99d128eafd8e9ec5b68c6a039271cdf1">m_HoldingBreathSet</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a7c7ba7bc942abc8c928c0c9b74561b89">m_HorizontalNoiseXAxisOffset</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a821efee8dd2d64d6ddf8171a76967b70">m_KuruShake</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a3d28fc8783e70d8423fc4bb8e481b515">m_LastSwayMultiplier</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a7fd8cb5d97b5638bb1cd980b06c3dc95">m_PlayerDpi</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a633791ca5f93557e14af43883b39a4f3">m_PlayerPb</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#acc4b7d92abad66b0865b5626b4bd58d1">m_ReferenceTime</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a179d596f4107ca1e83234e9e6678609e">m_StaminaPercentage</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a19af7f7aed080d401035eb5eb79389eb">m_SwayModifier</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a27605b6739ab5baa2341cc4a837ed691">m_SwayWeight</a>, <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#aa6f415ae13920d9caabc4e443bc9dc19">m_TotalTime</a>, <a class="el" href="../../d4/d05/class_kuru_shake.html#a4d3dbbc03e89be9faedf8a5b89539773">KuruShake::Update()</a>, and <a class="el" href="../../dc/dd0/class_recoil_base.html#a18964d477967180e79183082af143b8d">RecoilBase::Update()</a>.</p>
 
 </div>
 </div>
@@ -1233,6 +1242,32 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac20906bc72d0ae33442ba6a764db71aa" name="ac20906bc72d0ae33442ba6a764db71aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac20906bc72d0ae33442ba6a764db71aa">&#9670;&#160;</a></span>m_HoldBreathSwayCoef</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a> m_HoldBreathSwayCoef = 1.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>stamina percentage at hold breath start </p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a3a01a4d7cf2464e9bd50d94a98c9358a">CalculateSwayMultiplier()</a>, and <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a66c5737f1a6e0a6a59ac21841f5ecda8">ProcessAimFilters()</a>.</p>
+
+</div>
+</div>
 <a id="a99d128eafd8e9ec5b68c6a039271cdf1" name="a99d128eafd8e9ec5b68c6a039271cdf1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a99d128eafd8e9ec5b68c6a039271cdf1">&#9670;&#160;</a></span>m_HoldingBreathSet</h2>
 
@@ -1565,7 +1600,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a3a01a4d7cf2464e9bd50d94a98c9358a">CalculateSwayMultiplier()</a>, and <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a66c5737f1a6e0a6a59ac21841f5ecda8">ProcessAimFilters()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a66c5737f1a6e0a6a59ac21841f5ecda8">ProcessAimFilters()</a>.</p>
 
 </div>
 </div>
@@ -1684,6 +1719,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>proportionally shortens de/stabilization process and duration. Also affects stamina consumption (temporary!) </p>
 
 <p class="reference">Referenced by <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a3a01a4d7cf2464e9bd50d94a98c9358a">CalculateSwayMultiplier()</a>, and <a class="el" href="../../d5/d80/class_day_z_player_implement_aiming.html#a0f54e00c1c6161773438b7c53a0c8142">UpdateSwayState()</a>.</p>
 
