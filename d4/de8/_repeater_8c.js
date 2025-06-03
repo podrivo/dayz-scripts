@@ -1,7 +1,6 @@
 var _repeater_8c =
 [
     [ "WeaponStableState", "dc/dcc/class_weapon_stable_state.html", "dc/dcc/class_weapon_stable_state" ],
-    [ "WeaponStateJammed", "db/d5e/class_weapon_state_jammed.html", "db/d5e/class_weapon_state_jammed" ],
     [ "Rifle_Base", "dd/d79/class_rifle___base.html", "dd/d79/class_rifle___base" ],
     [ "Repeater", "d4/d38/class_repeater.html", "d4/d38/class_repeater" ],
     [ "RPTAnimState", "d4/de8/_repeater_8c.html#ab3064d72f62af4211a3b415db6c70649", [

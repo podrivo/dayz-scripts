@@ -130,6 +130,8 @@ var 3___game_2constants_8c =
     [ "ITEM_DEPLOY_LOOP", "d2/d68/group___emote_i_ds.html#ga698931a05beaaecc9723a06e3db7be28", null ],
     [ "ITEM_EXPLOSIVE_ARM", "d2/d68/group___emote_i_ds.html#ga41ab47d59fa9c5c4d67d6d5c46469de0", null ],
     [ "ITEM_EXPLOSIVE_DISARM", "d2/d68/group___emote_i_ds.html#gaa51dabe6f8a1cb024f4ee1d392ae7da7", null ],
+    [ "ITEM_FOLD", "d2/d68/group___emote_i_ds.html#ga198b481100ef0755ea4d8c8bd2a62c84", null ],
+    [ "ITEM_FOLD_LOOP", "d2/d68/group___emote_i_ds.html#gafc6d9ad242b2df45c0fd0baf0a1d6d81", null ],
     [ "ITEM_KEY_BREAK", "d2/d68/group___emote_i_ds.html#ga090d0500f3a06c63e339b444a2a0dd4e", null ],
     [ "ITEM_PLACE", "d2/d68/group___emote_i_ds.html#ga9993ef61368ce566ec714d59ce7c9e2a", null ],
     [ "ITEM_TENT_CLOSE", "d2/d68/group___emote_i_ds.html#gaa7df4ff23dbb8990707c8f39ae8c7b58", null ],

@@ -39,6 +39,10 @@ var _p_p_e_constants_8c =
       [ "NVLIGHTPARAMS", "d1/d76/_p_p_e_constants_8c.html#a9e272c9bdd16c16284f7871e266096e5af098737c02b2bf7e72f9746fdf7370df", null ]
     ] ],
     [ "PPERequesterCategory", "d1/d76/_p_p_e_constants_8c.html#a4a96ca793cccaa04d0cb4f343305144b", [
+      [ "NONE", "d1/d76/_p_p_e_constants_8c.html#a9e272c9bdd16c16284f7871e266096e5ac157bdf0b85a40d2619cbc8bc1ae5fe2", null ],
+      [ "GAMEPLAY_EFFECTS", "d1/d76/_p_p_e_constants_8c.html#a4a96ca793cccaa04d0cb4f343305144ba3f940d287d91f3d65ea2d86d76b639b6", null ],
+      [ "MENU_EFFECTS", "d1/d76/_p_p_e_constants_8c.html#a4a96ca793cccaa04d0cb4f343305144ba0b911632578000e8eb99c50cb47b494c", null ],
+      [ "MISC_EFFECTS", "d1/d76/_p_p_e_constants_8c.html#a4a96ca793cccaa04d0cb4f343305144bafd7bb7d94fdf7e1d1ef4d63bf65004c9", null ],
       [ "ALL", "d1/d76/_p_p_e_constants_8c.html#a4a96ca793cccaa04d0cb4f343305144bab1d5eac4b1dca480c8056eaea7663b7a", null ]
     ] ],
     [ "PPOperators", "d1/d76/_p_p_e_constants_8c.html#a055fe6645543d5aac6f214277f064eda", [

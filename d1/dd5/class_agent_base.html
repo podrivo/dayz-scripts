@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('d1/dd5/class_agent_base.html','../../'
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:accd97897da9e75943a1f0d789a3b1793"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/class_agent_base.html#accd97897da9e75943a1f0d789a3b1793">AgentBase</a> ()</td></tr>
+<tr class="memdesc:accd97897da9e75943a1f0d789a3b1793"><td class="mdescLeft">&#160;</td><td class="mdescRight">how fast the agent dies off when not potent enough to grow(per sec)  <br /></td></tr>
 <tr class="separator:accd97897da9e75943a1f0d789a3b1793"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e3b6d38df0786ccf7f938d60e386aae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/class_agent_base.html#a1e3b6d38df0786ccf7f938d60e386aae">Init</a> ()</td></tr>
 <tr class="separator:a1e3b6d38df0786ccf7f938d60e386aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,12 +178,16 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a9c723938a444eb304e042ec9cde80e14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/class_agent_base.html#a9c723938a444eb304e042ec9cde80e14">m_Invasibility</a></td></tr>
 <tr class="separator:a9c723938a444eb304e042ec9cde80e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a582f128e02e8139393991684d0d999df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/class_agent_base.html#a582f128e02e8139393991684d0d999df">m_TransferabilityIn</a></td></tr>
+<tr class="memdesc:a582f128e02e8139393991684d0d999df"><td class="mdescLeft">&#160;</td><td class="mdescRight">how fast the agent grows when potent enough to grow  <br /></td></tr>
 <tr class="separator:a582f128e02e8139393991684d0d999df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cca8070d73474a99df59c76bf4c956a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/class_agent_base.html#a4cca8070d73474a99df59c76bf4c956a">m_TransferabilityOut</a></td></tr>
+<tr class="memdesc:a4cca8070d73474a99df59c76bf4c956a"><td class="mdescLeft">&#160;</td><td class="mdescRight">to the player  <br /></td></tr>
 <tr class="separator:a4cca8070d73474a99df59c76bf4c956a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adaab02636ed919689ba916dc70c8714b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/class_agent_base.html#adaab02636ed919689ba916dc70c8714b">m_Digestibility</a> = 0.1</td></tr>
+<tr class="memdesc:adaab02636ed919689ba916dc70c8714b"><td class="mdescLeft">&#160;</td><td class="mdescRight">from the player  <br /></td></tr>
 <tr class="separator:adaab02636ed919689ba916dc70c8714b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61e642345fa0e869fbc9f0dd62584f49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/class_agent_base.html#a61e642345fa0e869fbc9f0dd62584f49">m_MaxCount</a> = 1</td></tr>
+<tr class="memdesc:a61e642345fa0e869fbc9f0dd62584f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">multiplier for agents digested in the player stomach from an infected item(agents_transfered = digested_amount(in grams or mls) * m_Digestibility)  <br /></td></tr>
 <tr class="separator:a61e642345fa0e869fbc9f0dd62584f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cd6f82e6b482bcebdce2e67b30a2e19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/class_agent_base.html#a2cd6f82e6b482bcebdce2e67b30a2e19">m_AutoinfectCount</a> = 1</td></tr>
 <tr class="separator:a2cd6f82e6b482bcebdce2e67b30a2e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,10 +197,13 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a6017f17ad9ec17fd6cf98d35ec795787"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/class_agent_base.html#a6017f17ad9ec17fd6cf98d35ec795787">m_TransferabilityAirOut</a></td></tr>
 <tr class="separator:a6017f17ad9ec17fd6cf98d35ec795787"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae10d3165be9202effad66d0a56b1f982"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/class_agent_base.html#ae10d3165be9202effad66d0a56b1f982">m_AntibioticsResistance</a> = 1</td></tr>
+<tr class="memdesc:ae10d3165be9202effad66d0a56b1f982"><td class="mdescLeft">&#160;</td><td class="mdescRight">transferibility airborne out  <br /></td></tr>
 <tr class="separator:ae10d3165be9202effad66d0a56b1f982"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acee84bb4e99a591c98b50372fc2a73b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/db4/_e_stat_levels_8c.html#a33dd957dac0dffc62424608704bc94a3">EStatLevels</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/class_agent_base.html#acee84bb4e99a591c98b50372fc2a73b4">m_Potency</a> = <a class="el" href="../../da/db4/_e_stat_levels_8c.html#a33dd957dac0dffc62424608704bc94a3a0e0730855a26263eaa0a35bf0d482802">EStatLevels.MEDIUM</a></td></tr>
+<tr class="memdesc:acee84bb4e99a591c98b50372fc2a73b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0..1], 0 means antibiotics have full effect, 1 means no effect  <br /></td></tr>
 <tr class="separator:acee84bb4e99a591c98b50372fc2a73b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8af8abfbc883c2e991c8bbe8dbcef5f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd5/class_agent_base.html#a8af8abfbc883c2e991c8bbe8dbcef5f5">m_DieOffSpeed</a> = 1</td></tr>
+<tr class="memdesc:a8af8abfbc883c2e991c8bbe8dbcef5f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">grow when player's immune system is at this level or lower  <br /></td></tr>
 <tr class="separator:a8af8abfbc883c2e991c8bbe8dbcef5f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -221,6 +229,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>how fast the agent dies off when not potent enough to grow(per sec) </p>
 
 <p class="reference">References <a class="el" href="../../d1/dd5/class_agent_base.html#a1e3b6d38df0786ccf7f938d60e386aae">Init()</a>.</p>
 
@@ -1079,6 +1089,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>transferibility airborne out </p>
+
 <p class="reference">Referenced by <a class="el" href="../../d1/dd5/class_agent_base.html#a44086ab60d2f47788f99ed5ef1f45d85">GetAntiboticsResistance()</a>, <a class="el" href="../../dc/d7d/class_food_poison_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">FoodPoisonAgent::Init()</a>, <a class="el" href="../../da/dbc/class_heavy_metal_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">HeavyMetalAgent::Init()</a>, <a class="el" href="../../d8/d4b/class_influenza_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">InfluenzaAgent::Init()</a>, and <a class="el" href="../../dd/dd8/class_wound_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">WoundAgent::Init()</a>.</p>
 
 </div>
@@ -1153,6 +1165,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>grow when player's immune system is at this level or lower </p>
+
 <p class="reference">Referenced by <a class="el" href="../../d1/dd5/class_agent_base.html#a8723beb6ae31339a59d5004e3ee53983">GetDieOffSpeed()</a>, <a class="el" href="../../dc/d7d/class_food_poison_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">FoodPoisonAgent::Init()</a>, <a class="el" href="../../d8/d4b/class_influenza_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">InfluenzaAgent::Init()</a>, and <a class="el" href="../../dd/dd8/class_wound_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">WoundAgent::Init()</a>.</p>
 
 </div>
@@ -1176,6 +1190,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>from the player </p>
 
 <p class="reference">Referenced by <a class="el" href="../../d1/dd5/class_agent_base.html#acf194706b787bd021218d45495ef3281">GetDigestibility()</a>, <a class="el" href="../../dc/d7d/class_food_poison_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">FoodPoisonAgent::Init()</a>, and <a class="el" href="../../d8/d4b/class_influenza_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">InfluenzaAgent::Init()</a>.</p>
 
@@ -1225,6 +1241,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>multiplier for agents digested in the player stomach from an infected item(agents_transfered = digested_amount(in grams or mls) * m_Digestibility) </p>
+
 <p class="reference">Referenced by <a class="el" href="../../d1/dd5/class_agent_base.html#a657788639011b6615a1967e51bb45a46">GetMaxCount()</a>, <a class="el" href="../../dc/d7d/class_food_poison_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">FoodPoisonAgent::Init()</a>, <a class="el" href="../../da/dbc/class_heavy_metal_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">HeavyMetalAgent::Init()</a>, <a class="el" href="../../d8/d4b/class_influenza_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">InfluenzaAgent::Init()</a>, and <a class="el" href="../../dd/dd8/class_wound_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">WoundAgent::Init()</a>.</p>
 
 </div>
@@ -1248,6 +1266,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>[0..1], 0 means antibiotics have full effect, 1 means no effect </p>
 
 <p class="reference">Referenced by <a class="el" href="../../d1/dd5/class_agent_base.html#a5acfaa59ee0596ccbf98d7480ea29f32">GetPotency()</a>, <a class="el" href="../../da/dbc/class_heavy_metal_agent.html#aee0aab2843a264faad5e13650e245d6f">HeavyMetalAgent::GetPotencyEx()</a>, <a class="el" href="../../dc/d7d/class_food_poison_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">FoodPoisonAgent::Init()</a>, <a class="el" href="../../da/dbc/class_heavy_metal_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">HeavyMetalAgent::Init()</a>, <a class="el" href="../../d8/d4b/class_influenza_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">InfluenzaAgent::Init()</a>, and <a class="el" href="../../dd/dd8/class_wound_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">WoundAgent::Init()</a>.</p>
 
@@ -1297,6 +1317,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>how fast the agent grows when potent enough to grow </p>
+
 <p class="reference">Referenced by <a class="el" href="../../d1/dd5/class_agent_base.html#a56d481630ae561289e76fd87f7b08d60">GetTransferabilityIn()</a>, <a class="el" href="../../dc/d7d/class_food_poison_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">FoodPoisonAgent::Init()</a>, <a class="el" href="../../da/dbc/class_heavy_metal_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">HeavyMetalAgent::Init()</a>, <a class="el" href="../../d8/d4b/class_influenza_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">InfluenzaAgent::Init()</a>, and <a class="el" href="../../dd/dd8/class_wound_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">WoundAgent::Init()</a>.</p>
 
 </div>
@@ -1320,6 +1342,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>to the player </p>
 
 <p class="reference">Referenced by <a class="el" href="../../d1/dd5/class_agent_base.html#a3a55c6a34d8ed1a0ccae3c056e0f8bae">GetTransferabilityOut()</a>, <a class="el" href="../../dc/d7d/class_food_poison_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">FoodPoisonAgent::Init()</a>, <a class="el" href="../../da/dbc/class_heavy_metal_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">HeavyMetalAgent::Init()</a>, <a class="el" href="../../d8/d4b/class_influenza_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">InfluenzaAgent::Init()</a>, and <a class="el" href="../../dd/dd8/class_wound_agent.html#a8045e088b31fe0754fb20cb0a5ff0dc9">WoundAgent::Init()</a>.</p>
 

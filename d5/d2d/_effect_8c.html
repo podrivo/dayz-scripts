@@ -179,12 +179,18 @@ Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Generic API</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Setters and getters for generic data and properties </p>
 </div></td></tr>
+<tr class="memitem:a39a0037e0f67ec59e68803bff0930fea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d2d/_effect_8c.html#a39a0037e0f67ec59e68803bff0930fea">SetParent</a> (<a class="el" href="../../d8/d83/class_object.html">Object</a> parent_obj, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pivot)</td></tr>
+<tr class="memdesc:a39a0037e0f67ec59e68803bff0930fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set parent of the Effect.  <br /></td></tr>
+<tr class="separator:a39a0037e0f67ec59e68803bff0930fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6843146228dbebb875ab8a461976f889"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d2d/_effect_8c.html#a6843146228dbebb875ab8a461976f889">SetParent</a> (<a class="el" href="../../d8/d83/class_object.html">Object</a> parent_obj)</td></tr>
 <tr class="memdesc:a6843146228dbebb875ab8a461976f889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set parent of the Effect.  <br /></td></tr>
 <tr class="separator:a6843146228dbebb875ab8a461976f889"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1d63886deac2f225cc139143f9d79141"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d83/class_object.html">Object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a> ()</td></tr>
 <tr class="memdesc:ga1d63886deac2f225cc139143f9d79141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get parent of the Effect.  <br /></td></tr>
 <tr class="separator:ga1d63886deac2f225cc139143f9d79141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a586b527c4feb52d62978ec71b383dd1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d2d/_effect_8c.html#a586b527c4feb52d62978ec71b383dd1f">GetPivotIndex</a> ()</td></tr>
+<tr class="memdesc:a586b527c4feb52d62978ec71b383dd1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get parent pivot of the Effect, only valid when there is some GetParent.  <br /></td></tr>
+<tr class="separator:a586b527c4feb52d62978ec71b383dd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22e52e6a4a6768f4c4095a4e2e95f6e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d2d/_effect_8c.html#a22e52e6a4a6768f4c4095a4e2e95f6e1">SetCurrentParent</a> (<a class="el" href="../../d8/d83/class_object.html">Object</a> parent_obj, <a class="el" href="../../d9/db9/classbool.html">bool</a> updateCached=true)</td></tr>
 <tr class="memdesc:a22e52e6a4a6768f4c4095a4e2e95f6e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set current parent of the managed effect.  <br /></td></tr>
 <tr class="separator:a22e52e6a4a6768f4c4095a4e2e95f6e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -292,6 +298,9 @@ Variables</h2></td></tr>
 <tr class="memitem:aa0446b53ca909592107765035b145f3a"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d8/d83/class_object.html">Object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d2d/_effect_8c.html#aa0446b53ca909592107765035b145f3a">m_ParentObject</a></td></tr>
 <tr class="memdesc:aa0446b53ca909592107765035b145f3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cached parent.  <br /></td></tr>
 <tr class="separator:aa0446b53ca909592107765035b145f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c320232d020a3652f47aec76e11b1bd"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d2d/_effect_8c.html#a3c320232d020a3652f47aec76e11b1bd">m_PivotIndex</a> = -1</td></tr>
+<tr class="memdesc:a3c320232d020a3652f47aec76e11b1bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cached parent pivot id.  <br /></td></tr>
+<tr class="separator:a3c320232d020a3652f47aec76e11b1bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af22d84c37bdac40df9bb3124b1724777"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d2d/_effect_8c.html#af22d84c37bdac40df9bb3124b1724777">m_Position</a></td></tr>
 <tr class="memdesc:af22d84c37bdac40df9bb3124b1724777"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cached world position.  <br /></td></tr>
 <tr class="separator:af22d84c37bdac40df9bb3124b1724777"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -361,7 +370,7 @@ Variables</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d6/dae/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d5/d2d/_effect_8c.html#a76cc5479abe73368c2da6cdad92cabb6">InitEffect()</a>, and <a class="el" href="../../d5/d2d/_effect_8c.html#a68c0359ebd2d432087c617cac5d86939">m_IsPlaying</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d03/class_s_effect_manager.html#a2eb14aa097905e66a26c178d5d947e85">SEffectManager::Cleanup()</a>, <a class="el" href="../../d5/d71/_car_script_8c.html#a80df9c2dc4b08d79e18d70bb443d9fa0">CleanupEffects()</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#a3ea1b6e9bbfced46fb7b9f16417e5ba6">SEffectManager::EffectUnregister()</a>, <a class="el" href="../../db/d46/class_ammo_effects.html#a0b0d366471178b170065b1fa46fac974">AmmoEffects::PlayAmmoEffect()</a>, and <a class="el" href="../../d2/d03/class_s_effect_manager.html#a126f53beeb00459b65a543852c7f7ca1">SEffectManager::Stop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d03/class_s_effect_manager.html#a2eb14aa097905e66a26c178d5d947e85">SEffectManager::Cleanup()</a>, <a class="el" href="../../d6/d44/class_car.html#a80df9c2dc4b08d79e18d70bb443d9fa0">Car::CleanupEffects()</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#a3ea1b6e9bbfced46fb7b9f16417e5ba6">SEffectManager::EffectUnregister()</a>, <a class="el" href="../../db/d46/class_ammo_effects.html#a0b0d366471178b170065b1fa46fac974">AmmoEffects::PlayAmmoEffect()</a>, and <a class="el" href="../../d2/d03/class_s_effect_manager.html#a126f53beeb00459b65a543852c7f7ca1">SEffectManager::Stop()</a>.</p>
 
 </div>
 </div>
@@ -649,6 +658,29 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a586b527c4feb52d62978ec71b383dd1f" name="a586b527c4feb52d62978ec71b383dd1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a586b527c4feb52d62978ec71b383dd1f">&#9670;&#160;</a></span>GetPivotIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> GetPivotIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get parent pivot of the Effect, only valid when there is some GetParent. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Only gets the cached variable </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>int</code> The parent pivot of the Effect </dd></dl>
+
+<p class="reference">References <a class="el" href="../../d5/d2d/_effect_8c.html#a3c320232d020a3652f47aec76e11b1bd">m_PivotIndex</a>.</p>
+
+</div>
+</div>
 <a id="a76cc5479abe73368c2da6cdad92cabb6" name="a76cc5479abe73368c2da6cdad92cabb6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a76cc5479abe73368c2da6cdad92cabb6">&#9670;&#160;</a></span>InitEffect()</h2>
 
@@ -865,7 +897,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="../../d5/d2d/_effect_8c.html#a6843146228dbebb875ab8a461976f889">SetParent()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d2d/_effect_8c.html#a39a0037e0f67ec59e68803bff0930fea">SetParent()</a>.</p>
 
 </div>
 </div>
@@ -944,7 +976,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="../../d5/d2d/_effect_8c.html#a6843146228dbebb875ab8a461976f889">SetParent()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d2d/_effect_8c.html#a39a0037e0f67ec59e68803bff0930fea">SetParent()</a>.</p>
 
 </div>
 </div>
@@ -1050,7 +1082,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="a6843146228dbebb875ab8a461976f889" name="a6843146228dbebb875ab8a461976f889"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6843146228dbebb875ab8a461976f889">&#9670;&#160;</a></span>SetParent()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6843146228dbebb875ab8a461976f889">&#9670;&#160;</a></span>SetParent() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1075,9 +1107,50 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="../../d5/d2d/_effect_8c.html#aa0446b53ca909592107765035b145f3a">m_ParentObject</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d2d/_effect_8c.html#a39a0037e0f67ec59e68803bff0930fea">SetParent()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d27/class_effect_particle.html#a904f613aca4e7725a0ed09faf49286ae">EffectParticle::AttachTo()</a>, <a class="el" href="../../de/df0/_construction_8c.html#ab5827f036a3bf21fbe63a9de21581172">Construction()</a>, <a class="el" href="../../d5/d2d/_effect_8c.html#aaaeccf9dfd1994f553062320a02cc5e0">SetAttachmentParent()</a>, and <a class="el" href="../../d5/d2d/_effect_8c.html#a22e52e6a4a6768f4c4095a4e2e95f6e1">SetCurrentParent()</a>.</p>
+</div>
+</div>
+<a id="a39a0037e0f67ec59e68803bff0930fea" name="a39a0037e0f67ec59e68803bff0930fea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39a0037e0f67ec59e68803bff0930fea">&#9670;&#160;</a></span>SetParent() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetParent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d83/class_object.html">Object</a>&#160;</td>
+          <td class="paramname"><em>parent_obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td>
+          <td class="paramname"><em>pivot</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set parent of the Effect. </p>
+<dl class="section note"><dt>Note</dt><dd>Same as SetAttachmentParent, but more generic name </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only sets the cached variable, for immediate effect use SetCurrent variant </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent_obj</td><td><code><a class="el" href="../../d8/d83/class_object.html">Object</a></code> The parent </td></tr>
+    <tr><td class="paramname">pivot</td><td><code>int</code> The pivot index </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="../../d5/d2d/_effect_8c.html#aa0446b53ca909592107765035b145f3a">m_ParentObject</a>, and <a class="el" href="../../d5/d2d/_effect_8c.html#a3c320232d020a3652f47aec76e11b1bd">m_PivotIndex</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d27/class_effect_particle.html#a904f613aca4e7725a0ed09faf49286ae">EffectParticle::AttachTo()</a>, <a class="el" href="../../de/df0/_construction_8c.html#ab5827f036a3bf21fbe63a9de21581172">Construction()</a>, <a class="el" href="../../d5/d2d/_effect_8c.html#aaaeccf9dfd1994f553062320a02cc5e0">SetAttachmentParent()</a>, <a class="el" href="../../d5/d2d/_effect_8c.html#a22e52e6a4a6768f4c4095a4e2e95f6e1">SetCurrentParent()</a>, and <a class="el" href="../../d5/d2d/_effect_8c.html#a6843146228dbebb875ab8a461976f889">SetParent()</a>.</p>
 
 </div>
 </div>
@@ -1363,7 +1436,25 @@ Is called from Event_OnStarted invoker after Event_OnStarted has been performed 
 
 <p>Cached parent. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#abfc7d8f6381a073a1b76ff47172ff18f">AreaDamageManager()</a>, <a class="el" href="../../d5/d4e/class_area_damage_base.html#adb96f0500f17fb3673176629189ea616">AreaDamageBase::EvaluateDamage_Common()</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#a860d90a2ccc72c33bd1888d0299a309d">EffectSound::GetCurrentPosition()</a>, <a class="el" href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent()</a>, <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#af741ebe3bfabe480118d7a9d93975aa5">GetParentObject()</a>, <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#a6085a8712370eeea7b7c0a7d4dacadb3">PostDamageActions()</a>, <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#ac2f0985c1c2772c1629effd8aedb99ee">PreDamageActions()</a>, <a class="el" href="../../d5/d2d/_effect_8c.html#a6843146228dbebb875ab8a461976f889">SetParent()</a>, <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#a5b666924f0f240f4bcec9fa49621c21a">SetParentObject()</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#a81090366ea92bb22b139af2751dd4a73">EffectSound::SoundLoadEx()</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#af0ee18e99ee593abd7ae56f5b9a08274">EffectSound::SoundPlayEx()</a>, and <a class="el" href="../../de/d27/class_effect_particle.html#a80cd06517a8ead35b2f5cd8a9145c7ca">EffectParticle::Start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#abfc7d8f6381a073a1b76ff47172ff18f">AreaDamageManager()</a>, <a class="el" href="../../d5/d4e/class_area_damage_base.html#adb96f0500f17fb3673176629189ea616">AreaDamageBase::EvaluateDamage_Common()</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#a860d90a2ccc72c33bd1888d0299a309d">EffectSound::GetCurrentPosition()</a>, <a class="el" href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent()</a>, <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#af741ebe3bfabe480118d7a9d93975aa5">GetParentObject()</a>, <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#a6085a8712370eeea7b7c0a7d4dacadb3">PostDamageActions()</a>, <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#ac2f0985c1c2772c1629effd8aedb99ee">PreDamageActions()</a>, <a class="el" href="../../d5/d2d/_effect_8c.html#a39a0037e0f67ec59e68803bff0930fea">SetParent()</a>, <a class="el" href="../../df/dbe/_area_damage_manager_8c.html#a5b666924f0f240f4bcec9fa49621c21a">SetParentObject()</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#a81090366ea92bb22b139af2751dd4a73">EffectSound::SoundLoadEx()</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#af0ee18e99ee593abd7ae56f5b9a08274">EffectSound::SoundPlayEx()</a>, and <a class="el" href="../../de/d27/class_effect_particle.html#a80cd06517a8ead35b2f5cd8a9145c7ca">EffectParticle::Start()</a>.</p>
+
+</div>
+</div>
+<a id="a3c320232d020a3652f47aec76e11b1bd" name="a3c320232d020a3652f47aec76e11b1bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c320232d020a3652f47aec76e11b1bd">&#9670;&#160;</a></span>m_PivotIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> m_PivotIndex = -1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cached parent pivot id. </p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d2d/_effect_8c.html#a586b527c4feb52d62978ec71b383dd1f">GetPivotIndex()</a>, <a class="el" href="../../d5/d2d/_effect_8c.html#a39a0037e0f67ec59e68803bff0930fea">SetParent()</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#a81090366ea92bb22b139af2751dd4a73">EffectSound::SoundLoadEx()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af0ee18e99ee593abd7ae56f5b9a08274">EffectSound::SoundPlayEx()</a>.</p>
 
 </div>
 </div>
@@ -1381,7 +1472,7 @@ Is called from Event_OnStarted invoker after Event_OnStarted has been performed 
 
 <p>Cached world position. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a0e6a215a13bd523f7ea6f478af2dbc19">ScriptedWidgetEventHandler::CreateFollowedObject()</a>, <a class="el" href="../../da/d2f/class_c_t_object_follower.html#a510c6a2bcd5e03e031bf243ff7b70a65">CTObjectFollower::CTActor()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a4f549a08dbbecd48fd8f6fef48e7585f">ScriptedWidgetEventHandler::CTKeyframe()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a3bfc439b30470095f48b32ce7e22b413">PluginBase::GetPlayerPrefix()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a68c83d319275347dcd1c0c4da8734703">ScriptedWidgetEventHandler::GetPosition()</a>, <a class="el" href="../../de/d48/_contaminated_area_8c.html#a76f4e4b51b4025ee919dcf5fa28b28b4">InitZoneServer()</a>, <a class="el" href="../../d5/db0/class_contaminated_area___dynamic.html#a76f4e4b51b4025ee919dcf5fa28b28b4">ContaminatedArea_Dynamic::InitZoneServer()</a>, <a class="el" href="../../d3/d3a/class_hot_spring_area.html#a76f4e4b51b4025ee919dcf5fa28b28b4">HotSpringArea::InitZoneServer()</a>, <a class="el" href="../../dc/d7e/class_spooky_area.html#a76f4e4b51b4025ee919dcf5fa28b28b4">SpookyArea::InitZoneServer()</a>, <a class="el" href="../../d4/dd2/class_volcanic_area.html#a76f4e4b51b4025ee919dcf5fa28b28b4">VolcanicArea::InitZoneServer()</a>, <a class="el" href="../../df/d7e/_geyser_area_8c.html#aa65144f40657123a11a82a25cca255ab">KillEntitiesInArea()</a>, <a class="el" href="../../d9/db3/class_symptom_base.html#a01f1070c46e4cc24d25a0ea0869bc972">SymptomBase::OnInit()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a58bb45de914f9ba1769fdd2184c4ba20">ScriptedWidgetEventHandler::SetPosition()</a>, <a class="el" href="../../d6/dae/group___debug_shape.html#ga3aa6cafceab9d573982aa9db5a5d6e34">SetPosition()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a9ff0ec1d32bac8fc62fa007737d96b7c">ScriptedWidgetEventHandler::SetPosition()</a>, <a class="el" href="../../d5/db0/class_contaminated_area___dynamic.html#a882a1423f20706c3b71e10988a423386">ContaminatedArea_Dynamic::SpawnItems()</a>, and <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#afa987720726641f19abf9973713646a5">ScriptedWidgetEventHandler::Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a0e6a215a13bd523f7ea6f478af2dbc19">ScriptedWidgetEventHandler::CreateFollowedObject()</a>, <a class="el" href="../../da/d2f/class_c_t_object_follower.html#a510c6a2bcd5e03e031bf243ff7b70a65">CTObjectFollower::CTActor()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a4f549a08dbbecd48fd8f6fef48e7585f">ScriptedWidgetEventHandler::CTKeyframe()</a>, <a class="el" href="../../d0/dd9/_contaminated_area___dynamic_8c.html#a3a31485b8285dc5e248d12b49765e506">DeferredInit()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a3bfc439b30470095f48b32ce7e22b413">PluginBase::GetPlayerPrefix()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a68c83d319275347dcd1c0c4da8734703">ScriptedWidgetEventHandler::GetPosition()</a>, <a class="el" href="../../d8/d0d/_contaminated_area___dynamic_base_8c.html#a89117103e533490810b61c707b33a390">InitZoneClient()</a>, <a class="el" href="../../dc/d7e/class_spooky_area.html#a89117103e533490810b61c707b33a390">SpookyArea::InitZoneClient()</a>, <a class="el" href="../../d3/d3a/class_hot_spring_area.html#a76f4e4b51b4025ee919dcf5fa28b28b4">HotSpringArea::InitZoneServer()</a>, <a class="el" href="../../d4/dd2/class_volcanic_area.html#a76f4e4b51b4025ee919dcf5fa28b28b4">VolcanicArea::InitZoneServer()</a>, <a class="el" href="../../df/d7e/_geyser_area_8c.html#aa65144f40657123a11a82a25cca255ab">KillEntitiesInArea()</a>, <a class="el" href="../../d9/db3/class_symptom_base.html#a01f1070c46e4cc24d25a0ea0869bc972">SymptomBase::OnInit()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a58bb45de914f9ba1769fdd2184c4ba20">ScriptedWidgetEventHandler::SetPosition()</a>, <a class="el" href="../../d6/dae/group___debug_shape.html#ga3aa6cafceab9d573982aa9db5a5d6e34">SetPosition()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a9ff0ec1d32bac8fc62fa007737d96b7c">ScriptedWidgetEventHandler::SetPosition()</a>, <a class="el" href="../../d0/dd9/_contaminated_area___dynamic_8c.html#af9e5bc98754f46cdea80eea0c9b7a5c9">SetupZoneData()</a>, <a class="el" href="../../d0/dd9/_contaminated_area___dynamic_8c.html#a882a1423f20706c3b71e10988a423386">SpawnItems()</a>, and <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#afa987720726641f19abf9973713646a5">ScriptedWidgetEventHandler::Update()</a>.</p>
 
 </div>
 </div>

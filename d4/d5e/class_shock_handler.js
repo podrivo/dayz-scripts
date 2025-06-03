@@ -1,6 +1,8 @@
 var class_shock_handler =
 [
     [ "ShockHandler", "d4/d5e/class_shock_handler.html#a7a448fc4e5c3cebbfaa35f6f12d7fe39", null ],
+    [ "AddEffectBobbing", "d4/d5e/class_shock_handler.html#a46dfe8ed4ef8c2c653ba1ccedb0c84e5", null ],
+    [ "BaseEffectIntensityCalc", "d4/d5e/class_shock_handler.html#ac0433402b229e648545bbc472d0a6867", null ],
     [ "CheckValue", "d4/d5e/class_shock_handler.html#ad8adda3b31ff210bdb9505e2b896b624", null ],
     [ "DealShock", "d4/d5e/class_shock_handler.html#a0c8edcefc5a36eb658199c7bf397974f", null ],
     [ "GetCurrentShock", "d4/d5e/class_shock_handler.html#ac6571b2552642e182d58c6636e19f321", null ],
@@ -16,11 +18,13 @@ var class_shock_handler =
     [ "INTENSITY_FACTOR", "d4/d5e/class_shock_handler.html#a8884d17b1b51b0cdc8e166afbb9b64fb", null ],
     [ "LIGHT_SHOCK_HIT", "d4/d5e/class_shock_handler.html#afc12f50f6f53bb5ccc6fec5b3aa974ba", null ],
     [ "m_CumulatedShock", "d4/d5e/class_shock_handler.html#a0d496646579b4787f2fe476adbb75f04", null ],
+    [ "m_LastEffectIntensityValue", "d4/d5e/class_shock_handler.html#a8c7339f9e4fdd2e426176c59baa77eab", null ],
     [ "m_LerpRes", "d4/d5e/class_shock_handler.html#a692997a2a772d32b40fdb5b435f684a1", null ],
     [ "m_Param", "d4/d5e/class_shock_handler.html#a4ad6dc1a5f38415009b5e185fc9c51dc", null ],
     [ "m_Player", "d4/d5e/class_shock_handler.html#a9dd2585f9b6cb233c97468e2356201f7", null ],
     [ "m_PrevVignette", "d4/d5e/class_shock_handler.html#aa649e71b96294f31d8d00d5a2e5dd256", null ],
     [ "m_PulseTimer", "d4/d5e/class_shock_handler.html#aabc9da661ccc0dcd374f5d137fa65452", null ],
+    [ "m_Requester", "d4/d5e/class_shock_handler.html#ab568b82ba4d7f6bba825ec18daa451e1", null ],
     [ "m_Shock", "d4/d5e/class_shock_handler.html#ab16f5045574a326c711ee94f51949862", null ],
     [ "m_ShockMultiplier", "d4/d5e/class_shock_handler.html#a6f539fbcf6d1354bc5f4f8368c1bef0a", null ],
     [ "m_ShockValueMax", "d4/d5e/class_shock_handler.html#a9360d3d6d9435a8d11663e1e1a122eed", null ],
@@ -29,6 +33,10 @@ var class_shock_handler =
     [ "MID_SHOCK_HIT", "d4/d5e/class_shock_handler.html#a1773b3af4f64bfb5411ed1e52d82a53d", null ],
     [ "PULSE_AMPLITUDE", "d4/d5e/class_shock_handler.html#aa641e82f9617fca5bffa8cd467c9a6de", null ],
     [ "PULSE_PERIOD", "d4/d5e/class_shock_handler.html#a1d00b8cfaf11f54c5be973c4968bafa4", null ],
+    [ "SMOOTHING_MAX_DECR", "d4/d5e/class_shock_handler.html#a16b756238e8556d079dfa661324af03b", null ],
+    [ "SMOOTHING_MAX_INCR", "d4/d5e/class_shock_handler.html#aaf0154b66646f049b8c27301454cbb11", null ],
     [ "UPDATE_THRESHOLD", "d4/d5e/class_shock_handler.html#a46f2e4e33cf18abd5b10ed452073e158", null ],
-    [ "VALUE_CHECK_INTERVAL", "d4/d5e/class_shock_handler.html#abe85c53b3384c122c50e1d6c9d73dacb", null ]
+    [ "VALUE_CHECK_INTERVAL", "d4/d5e/class_shock_handler.html#abe85c53b3384c122c50e1d6c9d73dacb", null ],
+    [ "VIGNETTE_INTENSITY_MAX", "d4/d5e/class_shock_handler.html#ae0cceed2020a6b075a87e3fa1a5d1516", null ],
+    [ "VIGNETTE_INTENSITY_MAX_TOTAL", "d4/d5e/class_shock_handler.html#a6d54c9508b3f5d5f58d85b66efab9f56", null ]
 ];

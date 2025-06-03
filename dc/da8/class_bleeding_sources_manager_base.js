@@ -73,6 +73,7 @@ var class_bleeding_sources_manager_base =
     [ "m_Item", "dc/da8/class_bleeding_sources_manager_base.html#ae3148c4f424352b43964473b052380d8", null ],
     [ "m_Player", "dc/da8/class_bleeding_sources_manager_base.html#a4db3d46d75d2864daed52041fe1f0973", null ],
     [ "m_Point", "dc/da8/class_bleeding_sources_manager_base.html#addf9ceca8031190a7bd6eb00da4ca014", null ],
+    [ "m_ProcessSourcesRemoval", "dc/da8/class_bleeding_sources_manager_base.html#a82fb2f8d9f1cf92a7870619acde8118e", null ],
     [ "m_ShowDiag", "dc/da8/class_bleeding_sources_manager_base.html#a775da340cf04aaca2d775ca78b09dca4", null ],
     [ "m_ShowingDiag", "dc/da8/class_bleeding_sources_manager_base.html#aa3cb0f590b0df33db788eb2ef448aada", null ],
     [ "m_ShowingDiagDraw", "dc/da8/class_bleeding_sources_manager_base.html#a91b2ffe4414e0da86a4b27670c827d68", null ],

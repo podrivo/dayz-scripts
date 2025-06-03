@@ -8,5 +8,6 @@ var class_i_t_e_m___player_data =
     [ "MovementData", "d9/ddf/class_i_t_e_m___player_data.html#ad82dea8bf324015528a01c3af3f6fd3e", null ],
     [ "ShockHandlingData", "d9/ddf/class_i_t_e_m___player_data.html#a1edaa0562f098d32094619fbda6da742", null ],
     [ "spawnGearPresetFiles", "d9/ddf/class_i_t_e_m___player_data.html#abac2b8e480b5c3a38770a5a28ce37b35", null ],
-    [ "StaminaData", "d9/ddf/class_i_t_e_m___player_data.html#afb9d62491dd4891c111cd05373ce708f", null ]
+    [ "StaminaData", "d9/ddf/class_i_t_e_m___player_data.html#afb9d62491dd4891c111cd05373ce708f", null ],
+    [ "WeaponObstructionData", "d9/ddf/class_i_t_e_m___player_data.html#aee6e7da79e5f25911f4826d66f9715c2", null ]
 ];

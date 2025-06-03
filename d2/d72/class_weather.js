@@ -14,6 +14,7 @@ var class_weather =
     [ "GetSnowfall", "d2/d72/class_weather.html#a0a781c413b9ee4a7e76e19d60be8dfd6", null ],
     [ "GetSnowflakeScale", "d2/d72/class_weather.html#a633c53098d1bbcbbeaa72dd6e8c4b258", null ],
     [ "GetTime", "d2/d72/class_weather.html#a169382a36ba6cfac642c58c8233fe7d9", null ],
+    [ "GetWeatherUpdateFrozen", "d2/d72/class_weather.html#a672a51f6fa8d308d14b07277d8c08880", null ],
     [ "GetWind", "d2/d72/class_weather.html#ad78e92c36c02c85736db1c3091c01ecf", null ],
     [ "GetWindDirection", "d2/d72/class_weather.html#ae54ce0a5b73242cafa4634ec35b7151b", null ],
     [ "GetWindFunctionParams", "d2/d72/class_weather.html#a8c32687a517980c7bd082d74c3a38213", null ],
@@ -29,11 +30,13 @@ var class_weather =
     [ "SetSnowfallThresholds", "d2/d72/class_weather.html#abdcf7afcf3c4258d6abccef99f1560d4", null ],
     [ "SetSnowflakeScale", "d2/d72/class_weather.html#a5a948c127505899b1ee257562a37b035", null ],
     [ "SetStorm", "d2/d72/class_weather.html#a13157dfd052fbfe1f64e71d075bf3f11", null ],
+    [ "SetWeatherUpdateFreeze", "d2/d72/class_weather.html#a90b5b2216bad8806af273e37b3458506", null ],
     [ "SetWind", "d2/d72/class_weather.html#acbd16e19394e226270fefc3bc1c3535c", null ],
     [ "SetWindFunctionParams", "d2/d72/class_weather.html#a29c565a44c6ad046fa229ce1d0c4d880", null ],
     [ "SetWindMaximumSpeed", "d2/d72/class_weather.html#a34e458774a4f63610ac0016e696b0c08", null ],
     [ "SetWindSpeed", "d2/d72/class_weather.html#a3631472c3b48533198b282b5e5f1d65f", null ],
     [ "SuppressLightningSimulation", "d2/d72/class_weather.html#a1f583db07f0837a58caa6eb769532179", null ],
     [ "WindDirectionToAngle", "d2/d72/class_weather.html#a556c3d8006606dbb7608e7f0b462928e", null ],
-    [ "m_missionWeather", "d2/d72/class_weather.html#a63e654c9d6e185ad26256d8bb7670d20", null ]
+    [ "m_missionWeather", "d2/d72/class_weather.html#a63e654c9d6e185ad26256d8bb7670d20", null ],
+    [ "m_UpdateFrozen", "d2/d72/class_weather.html#a6b349df7a2e10b1d9471beab860cc8de", null ]
 ];

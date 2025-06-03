@@ -385,10 +385,6 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a72686bc2d0bcd282fb767a41a71d0c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeed3c2c4d3bbcc28673b6082a62739a6"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#aeed3c2c4d3bbcc28673b6082a62739a6">CanReceiveItemIntoHands</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> item_to_hands)</td></tr>
 <tr class="separator:aeed3c2c4d3bbcc28673b6082a62739a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a721e3f37e433e2cc3b01bb8ee2602f"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#a4a721e3f37e433e2cc3b01bb8ee2602f">CanSaveItemInHands</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> item_in_hands)</td></tr>
-<tr class="separator:a4a721e3f37e433e2cc3b01bb8ee2602f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ab3e6cf98dd4634ef213ddac85a2338"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#a8ab3e6cf98dd4634ef213ddac85a2338">CanReleaseFromHands</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> handheld)</td></tr>
-<tr class="separator:a8ab3e6cf98dd4634ef213ddac85a2338"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a889c22e67908876c0f87eb7e58a1fa8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#a889c22e67908876c0f87eb7e58a1fa8a">GetCraftingRecipeID</a> ()</td></tr>
 <tr class="separator:a889c22e67908876c0f87eb7e58a1fa8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac58dc0daf03e4b1f75b5b51e92ed5011"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#ac58dc0daf03e4b1f75b5b51e92ed5011">SetCraftingRecipeID</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> recipeID)</td></tr>
@@ -515,7 +511,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a24efeede65bef37972d0c536180f6ee9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#a24efeede65bef37972d0c536180f6ee9">GetInColdArea</a> ()</td></tr>
 <tr class="separator:a24efeede65bef37972d0c536180f6ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c7d34fa6a72c55568b9206091d4a7eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#a6c7d34fa6a72c55568b9206091d4a7eb">SetInWater</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> pState)</td></tr>
-<tr class="memdesc:a6c7d34fa6a72c55568b9206091d4a7eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">water contact (driven by <a class="el" href="../../dc/d38/class_environment.html">Environment</a>)  <br /></td></tr>
+<tr class="memdesc:a6c7d34fa6a72c55568b9206091d4a7eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">water contact (driven by Environment)  <br /></td></tr>
 <tr class="separator:a6c7d34fa6a72c55568b9206091d4a7eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2f53d01aafa1abe656ca1bb9f85983a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#aa2f53d01aafa1abe656ca1bb9f85983a">IsInWater</a> ()</td></tr>
 <tr class="separator:aa2f53d01aafa1abe656ca1bb9f85983a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1176,15 +1172,19 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a618b52cad201122bc4a67cb006bc3321"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac51affb03e13803598f49557c9552525"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#ac51affb03e13803598f49557c9552525">IsLiftWeapon</a> ()</td></tr>
 <tr class="separator:ac51affb03e13803598f49557c9552525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebfcaf26830b1b22a8b92b0385101ca2"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#aebfcaf26830b1b22a8b92b0385101ca2">GetWeaponObstruction</a> ()</td></tr>
+<tr class="separator:aebfcaf26830b1b22a8b92b0385101ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa928a74cf9775bf286939a143fd5e2a8"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#aa928a74cf9775bf286939a143fd5e2a8">IsWeaponObstructionBlockingADS</a> ()</td></tr>
+<tr class="separator:aa928a74cf9775bf286939a143fd5e2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49488e0449fabe07ad5616bde00c588e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#a49488e0449fabe07ad5616bde00c588e">ReadLiftWeaponRequest</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> userDataType, <a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a> ctx)</td></tr>
 <tr class="separator:a49488e0449fabe07ad5616bde00c588e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d029f8125d03d832b650236fad52444"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#a5d029f8125d03d832b650236fad52444">SetLiftWeapon</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pJunctureID, <a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a> ctx)</td></tr>
 <tr class="separator:a5d029f8125d03d832b650236fad52444"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3e4333f384ed09636862f3871cbf1db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#ab3e4333f384ed09636862f3871cbf1db">SetLiftWeapon</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> state)</td></tr>
-<tr class="separator:ab3e4333f384ed09636862f3871cbf1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5bdbd7fc688607efbf0c5c0a9367dba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#ab5bdbd7fc688607efbf0c5c0a9367dba">SendLiftWeaponSync</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> state)</td></tr>
-<tr class="memdesc:ab5bdbd7fc688607efbf0c5c0a9367dba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Client-side only.  <br /></td></tr>
-<tr class="separator:ab5bdbd7fc688607efbf0c5c0a9367dba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a6b617abb43e0225d15d8bb82e7727c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#a8a6b617abb43e0225d15d8bb82e7727c">SetLiftWeapon</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> state, <a class="el" href="../../d4/dc3/classfloat.html">float</a> obstruct=0)</td></tr>
+<tr class="separator:a8a6b617abb43e0225d15d8bb82e7727c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2e037b16d3b05cd278673c66fd3fea7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#ad2e037b16d3b05cd278673c66fd3fea7">SendLiftWeaponSync</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> state, <a class="el" href="../../d4/dc3/classfloat.html">float</a> obstruct=0)</td></tr>
+<tr class="memdesc:ad2e037b16d3b05cd278673c66fd3fea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Client-side only.  <br /></td></tr>
+<tr class="separator:ad2e037b16d3b05cd278673c66fd3fea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb7e1126d073cdb7e7f81e0ec3cfc2df"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#abb7e1126d073cdb7e7f81e0ec3cfc2df">CheckLiftWeapon</a> ()</td></tr>
 <tr class="separator:abb7e1126d073cdb7e7f81e0ec3cfc2df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade63d4b20c839819ffb8381c80720a76"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#ade63d4b20c839819ffb8381c80720a76">ProcessLiftWeapon</a> ()</td></tr>
@@ -1433,7 +1433,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:afe14d1b2d3cb919ecb7528e3910ac52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0e5fe8f36118434dbd279d8be72d78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#aaf0e5fe8f36118434dbd279d8be72d78">m_Agents</a></td></tr>
 <tr class="separator:aaf0e5fe8f36118434dbd279d8be72d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2aafcbb59ec532efa246282e379a4d6b"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../dc/d38/class_environment.html">Environment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#a2aafcbb59ec532efa246282e379a4d6b">m_Environment</a></td></tr>
+<tr class="memitem:a2aafcbb59ec532efa246282e379a4d6b"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d7/dca/_environment_8c.html#a646e906a2d690c10a1b6f474ae738957">Environment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#a2aafcbb59ec532efa246282e379a4d6b">m_Environment</a></td></tr>
 <tr class="separator:a2aafcbb59ec532efa246282e379a4d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d08e22df189532a61acd8f9080c4284"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../df/d13/_emote_manager_8c.html#a2c606eafce531200c546669485d10e2f">EmoteManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d87/class_man_base.html#a0d08e22df189532a61acd8f9080c4284">m_EmoteManager</a></td></tr>
 <tr class="separator:a0d08e22df189532a61acd8f9080c4284"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2515,7 +2515,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#gae404cb6f8d93f20fded11cad6c2126ab">Math::AbsInt()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a89d583965bbec03c0afff348ff99cbd4">GetCurrentWaterLevel()</a>, and <a class="el" href="../../d3/d58/dayzplayer_8c.html#a6c8b1e269929038a8e1aa40d6f642e9e">GetDayZPlayerType()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#gae404cb6f8d93f20fded11cad6c2126ab">Math::AbsInt()</a>, <a class="el" href="../../d7/d7d/_action_unfold_map_8c.html#accb8190d0d55d223b47c79eda8f8e42d">CanBePerformedWhileChangingStance()</a>, <a class="el" href="../../d4/d9f/_cross_hair_selector_8c.html#a7bfe0daa7710ddfc48f1bc0cc9f3742b">GetActionManager()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a89d583965bbec03c0afff348ff99cbd4">GetCurrentWaterLevel()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a6c8b1e269929038a8e1aa40d6f642e9e">GetDayZPlayerType()</a>, and <a class="el" href="../../d4/d9e/human_8c.html#a17128bfc2e8aa6ede6bade55bd4f1b98">GetRunningAction()</a>.</p>
 
 </div>
 </div>
@@ -2935,32 +2935,6 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a8ab3e6cf98dd4634ef213ddac85a2338" name="a8ab3e6cf98dd4634ef213ddac85a2338"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ab3e6cf98dd4634ef213ddac85a2338">&#9670;&#160;</a></span>CanReleaseFromHands()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">override <a class="el" href="../../d9/db9/classbool.html">bool</a> CanReleaseFromHands </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a>&#160;</td>
-          <td class="paramname"><em>handheld</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a3e78ac36e847e7835aea63d6f36bea3f" name="a3e78ac36e847e7835aea63d6f36bea3f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e78ac36e847e7835aea63d6f36bea3f">&#9670;&#160;</a></span>CanRoll()</h2>
 
@@ -2985,32 +2959,6 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../d3/d58/dayzplayer_8c.html#aa0bf24b82f85866336a1ecb546b5e7b2">IsPlayerInStance()</a>.</p>
-
-</div>
-</div>
-<a id="a4a721e3f37e433e2cc3b01bb8ee2602f" name="a4a721e3f37e433e2cc3b01bb8ee2602f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a721e3f37e433e2cc3b01bb8ee2602f">&#9670;&#160;</a></span>CanSaveItemInHands()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">override <a class="el" href="../../d9/db9/classbool.html">bool</a> CanSaveItemInHands </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a>&#160;</td>
-          <td class="paramname"><em>item_in_hands</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -3387,7 +3335,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/d58/dayzplayer_8c.html#a6f2c5d87b18bf7c31faaf9fa615af4cb">GetInstanceType()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, and <a class="el" href="../../d3/d58/dayzplayer_8c.html#a6f2c5d87b18bf7c31faaf9fa615af4cb">GetInstanceType()</a>.</p>
 
 </div>
 </div>
@@ -3710,11 +3658,8 @@ Static Private Attributes</h2></td></tr>
 <p>protection for a player being broken when attempting to wake them up too early into unconsciousness</p>
 <p>Don't set the stance if we are swimming or in a vehicle, stance change animation could play</p>
 <p>Maybe instead error out or notify of possible desync?</p>
-<p>only run and higher for movement <br  />
-</p>
-<p>SPRINT: enable/disable - based on stamina; disable also when raised</p>
 
-<p class="reference">References <a class="el" href="../../d5/db9/_action_manager_base_8c.html#abbe7cdf44da8aaf4c81ee3b7120ef72e">ActionManagerBase()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#af1a97f6e42770f9a555bc737b83e38a9">HumanInputController::CameraIsFreeLook()</a>, <a class="el" href="../../d4/d9f/_cross_hair_selector_8c.html#a7bfe0daa7710ddfc48f1bc0cc9f3742b">GetActionManager()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a12cef74155564a85f15164eb018f4134">CGame::GetCurrentCameraDirection()</a>, <a class="el" href="../../dd/db0/class_human_command_move.html#a834ad1a63601d63c9cd3d3896c0f6a37">HumanCommandMove::GetCurrentMovementSpeed()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d6/ddd/class_u_a_input_a_p_i.html#a9da5fbbc8efe6e4fb833191f55f6d9aa">UAInputAPI::GetInputByID()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a6f2c5d87b18bf7c31faaf9fa615af4cb">GetInstanceType()</a>, <a class="el" href="../../d1/d1f/class_human_command_vehicle.html#a340bedb37b2a917a5e95ac0c4c5fa02e">HumanCommandVehicle::GetTransport()</a>, <a class="el" href="../../d4/d5a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi()</a>, <a class="el" href="../../d7/dbe/class_cfg_gameplay_handler.html#aa85015abd65395262829c4aba61dc6af">CfgGameplayHandler::GetUse3DMap()</a>, <a class="el" href="../../d1/d1f/class_human_command_vehicle.html#a424bf73b4e5f02a7c8829439e161c332">HumanCommandVehicle::IsGettingIn()</a>, <a class="el" href="../../d1/d1f/class_human_command_vehicle.html#abc46cc163ca056e387fb1baa46431ab9">HumanCommandVehicle::IsGettingOut()</a>, <a class="el" href="../../d4/da1/class_human_command_unconscious.html#a42bbfb7add8ae15721042ab9a68e0404">HumanCommandUnconscious::IsInWater()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a23db0ff8ff62b2136d1a3390fe20ba3d">HumanInputController::IsQuickBarContinuousUseEnd()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a751168bc5f39586a1e3ff84303181bde">HumanInputController::IsQuickBarContinuousUseStart()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a722b4ea19bfbe6602a4091a9a3b42b82">HumanInputController::IsQuickBarSingleUse()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a83ea576e90d7d30c61b63bde28d6263b">HumanInputController::IsQuickBarSlot()</a>, <a class="el" href="../../d1/d1f/class_human_command_vehicle.html#a4f7b0494c027e1e0442cf5678d6aae70">HumanCommandVehicle::IsSwitchSeat()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a68cec5312970b86b93318c9564f8be50">HumanInputController::LimitsDisableSprint()</a>, <a class="el" href="../../d8/dd8/_day_z_player_camera3rd_person_8c.html#aa20c94cf3a51fa5af0ca371fd70a7cd9">m_MovementState</a>, <a class="el" href="../../dd/de6/_stamina_sound_handler_8c.html#adaffc8c6046e309d4791a9a902b7461f">m_StaminaHandler</a>, <a class="el" href="../../d7/d7f/group___menu_i_d.html#ga34225021811630a6a32279c34e72fcfd">MENU_MAP</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a710d687ca4946e0f1fb5be59bef69d1c">HumanInputController::ResetADS()</a>, <a class="el" href="../../d4/d84/class_u_a_input.html#a54ba4e0a7c41141e3f00a056410edb9f">UAInput::Supress()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">StaminaHandler::Update()</a>, <a class="el" href="../../d4/da1/class_human_command_unconscious.html#a0e0635d1bdcf723f7e845355f964e91a">HumanCommandUnconscious::WakeUp()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/db9/_action_manager_base_8c.html#abbe7cdf44da8aaf4c81ee3b7120ef72e">ActionManagerBase()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#af1a97f6e42770f9a555bc737b83e38a9">HumanInputController::CameraIsFreeLook()</a>, <a class="el" href="../../d4/d9f/_cross_hair_selector_8c.html#a7bfe0daa7710ddfc48f1bc0cc9f3742b">GetActionManager()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a12cef74155564a85f15164eb018f4134">CGame::GetCurrentCameraDirection()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d6/ddd/class_u_a_input_a_p_i.html#a9da5fbbc8efe6e4fb833191f55f6d9aa">UAInputAPI::GetInputByID()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a6f2c5d87b18bf7c31faaf9fa615af4cb">GetInstanceType()</a>, <a class="el" href="../../d1/d1f/class_human_command_vehicle.html#a340bedb37b2a917a5e95ac0c4c5fa02e">HumanCommandVehicle::GetTransport()</a>, <a class="el" href="../../d4/d5a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi()</a>, <a class="el" href="../../d7/dbe/class_cfg_gameplay_handler.html#aa85015abd65395262829c4aba61dc6af">CfgGameplayHandler::GetUse3DMap()</a>, <a class="el" href="../../d1/d1f/class_human_command_vehicle.html#a424bf73b4e5f02a7c8829439e161c332">HumanCommandVehicle::IsGettingIn()</a>, <a class="el" href="../../d1/d1f/class_human_command_vehicle.html#abc46cc163ca056e387fb1baa46431ab9">HumanCommandVehicle::IsGettingOut()</a>, <a class="el" href="../../d4/da1/class_human_command_unconscious.html#a42bbfb7add8ae15721042ab9a68e0404">HumanCommandUnconscious::IsInWater()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a23db0ff8ff62b2136d1a3390fe20ba3d">HumanInputController::IsQuickBarContinuousUseEnd()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a751168bc5f39586a1e3ff84303181bde">HumanInputController::IsQuickBarContinuousUseStart()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a722b4ea19bfbe6602a4091a9a3b42b82">HumanInputController::IsQuickBarSingleUse()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a83ea576e90d7d30c61b63bde28d6263b">HumanInputController::IsQuickBarSlot()</a>, <a class="el" href="../../d1/d1f/class_human_command_vehicle.html#a4f7b0494c027e1e0442cf5678d6aae70">HumanCommandVehicle::IsSwitchSeat()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a68cec5312970b86b93318c9564f8be50">HumanInputController::LimitsDisableSprint()</a>, <a class="el" href="../../d8/dd8/_day_z_player_camera3rd_person_8c.html#aa20c94cf3a51fa5af0ca371fd70a7cd9">m_MovementState</a>, <a class="el" href="../../dd/de6/_stamina_sound_handler_8c.html#adaffc8c6046e309d4791a9a902b7461f">m_StaminaHandler</a>, <a class="el" href="../../d7/d7f/group___menu_i_d.html#ga34225021811630a6a32279c34e72fcfd">MENU_MAP</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a710d687ca4946e0f1fb5be59bef69d1c">HumanInputController::ResetADS()</a>, <a class="el" href="../../d4/d84/class_u_a_input.html#a54ba4e0a7c41141e3f00a056410edb9f">UAInput::Supress()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">StaminaHandler::Update()</a>, <a class="el" href="../../d4/da1/class_human_command_unconscious.html#a0e0635d1bdcf723f7e845355f964e91a">HumanCommandUnconscious::WakeUp()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
 
 </div>
 </div>
@@ -8363,6 +8308,31 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aebfcaf26830b1b22a8b92b0385101ca2" name="aebfcaf26830b1b22a8b92b0385101ca2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebfcaf26830b1b22a8b92b0385101ca2">&#9670;&#160;</a></span>GetWeaponObstruction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override <a class="el" href="../../d4/dc3/classfloat.html">float</a> GetWeaponObstruction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a41e39b87ea206cd3cac6f55098406bc1" name="a41e39b87ea206cd3cac6f55098406bc1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41e39b87ea206cd3cac6f55098406bc1">&#9670;&#160;</a></span>GetWeightSpecialized()</h2>
 
@@ -9007,7 +8977,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>sets default hit position and cache it here (mainly for impact particles)</p>
 
-<p class="reference">References <a class="el" href="../../d5/daf/class_client_data.html#a129a4ade3e64ae354677adf476326f29">ClientData::AddPlayerBase()</a>, <a class="el" href="../../db/d04/_breath_vapour_mdfr_8c.html#aa061859a765a5565e766c8a2adaf588d">BREATH_VAPOUR_LEVEL_MAX</a>, <a class="el" href="../../dc/dac/class_script_call_queue.html#a90d46bca4f2fee822c985500e877b926">ScriptCallQueue::Call()</a>, <a class="el" href="../../d9/dc3/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../d3/def/class_player_constants.html#a991a35c819a0dad22b085d29579ffbbc">PlayerConstants::CORPSE_STATE_DECAYED</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a2c606eafce531200c546669485d10e2f">EmoteManager()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a6fc4a6c17be8c60874f4e4a72649a2c1">CGame::GetCallQueue()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a92f5918ec5d632d5159c9d1f52fe7758">GetDayZGame()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a6c8b1e269929038a8e1aa40d6f642e9e">GetDayZPlayerType()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#aa48b09d629def9f52549a5930f919bb2">GetDefaultHitPositionComponent()</a>, <a class="el" href="../../dc/d98/class_enum_tools.html#a99d9135595ce62073d37d753722183f3">EnumTools::GetEnumSize()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../db/dad/class_mission.html#a1b381ca4e050a4a7504e3a0643260359">Mission::GetHud()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../d9/d5d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin()</a>, <a class="el" href="../../d8/df5/_injury_handler_8c.html#ac42ee6aa02a3fdeceac92d7cff3fa90e">InjuryAnimationHandler()</a>, <a class="el" href="../../dd/dfd/_advanced_communication_8c.html#a98dca8629655bb33fc72bb202ca2fb3c">m_ActionsInitialize</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a4ec96549bd05831f453ab0f1723b017a">m_AdminLog</a>, <a class="el" href="../../de/db7/_animal_base_8c.html#a24414454fa862570bcee391a1f000c5f">m_ArrowManager</a>, <a class="el" href="../../d5/d6f/_plugin_lifespan_8c.html#aa6cf8142ec32a8635b0d31ea0bc338c2">m_BloodType</a>, <a class="el" href="../../da/dbd/_plugin_item_diagnostic_8c.html#a3bafe9c209aab14ab27773f900df1836">m_ConfigDebugProfile</a>, <a class="el" href="../../d9/de7/_display_status_8c.html#a7e028b22c7372ffd41bf3287479fdcdb">m_Hud</a>, <a class="el" href="../../de/d0e/_modifier_base_8c.html#af725073fee975b834ffbf029b1e97b70">m_ModulePlayerStatus</a>, <a class="el" href="../../da/daa/_player_stats_8c.html#ac5c4d654a4ace0747b6fec8a2258e988">m_PlayerStats</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a7294c98da272398539b9be0a49a307eb">m_QuickBarBonus</a>, <a class="el" href="../../d5/dc2/_cache_object_8c.html#a4fe8346eb816b9d84f65980d2d83b371">m_Recipes</a>, <a class="el" href="../../dd/de6/_stamina_sound_handler_8c.html#adaffc8c6046e309d4791a9a902b7461f">m_StaminaHandler</a>, <a class="el" href="../../d5/d4d/_notifiers_manager_8c.html#a2d2820816559c61b4530f767dad5e93a">m_VirtualHud</a>, <a class="el" href="../../d5/d26/_map_navigation_behaviour_8c.html#aa49a30df5f07ee8aa6ac9b5ee06698fc">MapNavigationBehaviour()</a>, <a class="el" href="../../d5/d98/group___math.html#ga0b79da001711df4f5c5759cc8ac4585b">Math::Max()</a>, <a class="el" href="../../d3/d3c/_modifiers_manager_8c.html#ac135bf8a3162a3c2d85fa35fdbff1798">ModifiersManager()</a>, <a class="el" href="../../d5/d4d/_notifiers_manager_8c.html#a131baa5cbe699be20bd8ced9ed147f00">NotifiersManager()</a>, <a class="el" href="../../da/d87/class_heat_buffer_mdfr.html#a93a4c24d639a76641f2cb8b84a1c02f7">HeatBufferMdfr::NUMBER_OF_STAGES</a>, <a class="el" href="../../d2/d52/_player_sound_manager_8c.html#a79cd71e5bf0a20d4a138d8bcc9321b79">PlayerSoundManagerClient()</a>, <a class="el" href="../../da/daa/_player_stats_8c.html#a82b07926dca6b178140ed0f8c706b66c">PlayerStats()</a>, <a class="el" href="../../d8/dec/_player_stomach_8c.html#aff6b446cd1b4003ceddae722fc9d96da">PlayerStomach()</a>, <a class="el" href="../../d5/d6f/_plugin_lifespan_8c.html#a40fcf4bf90c76d2b2293d34e798bc531">PluginLifespan()</a>, <a class="el" href="../../da/d4d/_quick_bar_base_8c.html#a1b579ecc02bd0b420a08cfd3c129da76">QuickBarBase()</a>, <a class="el" href="../../d6/dc5/_random_generator_sync_manager_8c.html#a885754c42663e18ad0960d177423b042">RandomGeneratorSyncManager()</a>, and <a class="el" href="../../d9/de7/_display_status_8c.html#af40657bfc756e98261e6771b41805532">VirtualHud()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/daf/class_client_data.html#a129a4ade3e64ae354677adf476326f29">ClientData::AddPlayerBase()</a>, <a class="el" href="../../db/d04/_breath_vapour_mdfr_8c.html#aa061859a765a5565e766c8a2adaf588d">BREATH_VAPOUR_LEVEL_MAX</a>, <a class="el" href="../../dc/dac/class_script_call_queue.html#a90d46bca4f2fee822c985500e877b926">ScriptCallQueue::Call()</a>, <a class="el" href="../../d9/dc3/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../d3/def/class_player_constants.html#a991a35c819a0dad22b085d29579ffbbc">PlayerConstants::CORPSE_STATE_DECAYED</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a2c606eafce531200c546669485d10e2f">EmoteManager()</a>, <a class="el" href="../../d7/dca/_environment_8c.html#a646e906a2d690c10a1b6f474ae738957">Environment()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a6fc4a6c17be8c60874f4e4a72649a2c1">CGame::GetCallQueue()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a92f5918ec5d632d5159c9d1f52fe7758">GetDayZGame()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a6c8b1e269929038a8e1aa40d6f642e9e">GetDayZPlayerType()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#aa48b09d629def9f52549a5930f919bb2">GetDefaultHitPositionComponent()</a>, <a class="el" href="../../dc/d98/class_enum_tools.html#a99d9135595ce62073d37d753722183f3">EnumTools::GetEnumSize()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../db/dad/class_mission.html#a1b381ca4e050a4a7504e3a0643260359">Mission::GetHud()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../d9/d5d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin()</a>, <a class="el" href="../../d8/df5/_injury_handler_8c.html#ac42ee6aa02a3fdeceac92d7cff3fa90e">InjuryAnimationHandler()</a>, <a class="el" href="../../dd/dfd/_advanced_communication_8c.html#a98dca8629655bb33fc72bb202ca2fb3c">m_ActionsInitialize</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a4ec96549bd05831f453ab0f1723b017a">m_AdminLog</a>, <a class="el" href="../../de/db7/_animal_base_8c.html#a24414454fa862570bcee391a1f000c5f">m_ArrowManager</a>, <a class="el" href="../../d5/d6f/_plugin_lifespan_8c.html#aa6cf8142ec32a8635b0d31ea0bc338c2">m_BloodType</a>, <a class="el" href="../../da/dbd/_plugin_item_diagnostic_8c.html#a3bafe9c209aab14ab27773f900df1836">m_ConfigDebugProfile</a>, <a class="el" href="../../d9/de7/_display_status_8c.html#a7e028b22c7372ffd41bf3287479fdcdb">m_Hud</a>, <a class="el" href="../../de/d0e/_modifier_base_8c.html#af725073fee975b834ffbf029b1e97b70">m_ModulePlayerStatus</a>, <a class="el" href="../../da/daa/_player_stats_8c.html#ac5c4d654a4ace0747b6fec8a2258e988">m_PlayerStats</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a7294c98da272398539b9be0a49a307eb">m_QuickBarBonus</a>, <a class="el" href="../../d5/dc2/_cache_object_8c.html#a4fe8346eb816b9d84f65980d2d83b371">m_Recipes</a>, <a class="el" href="../../dd/de6/_stamina_sound_handler_8c.html#adaffc8c6046e309d4791a9a902b7461f">m_StaminaHandler</a>, <a class="el" href="../../d5/d4d/_notifiers_manager_8c.html#a2d2820816559c61b4530f767dad5e93a">m_VirtualHud</a>, <a class="el" href="../../d5/d26/_map_navigation_behaviour_8c.html#aa49a30df5f07ee8aa6ac9b5ee06698fc">MapNavigationBehaviour()</a>, <a class="el" href="../../d5/d98/group___math.html#ga0b79da001711df4f5c5759cc8ac4585b">Math::Max()</a>, <a class="el" href="../../d3/d3c/_modifiers_manager_8c.html#ac135bf8a3162a3c2d85fa35fdbff1798">ModifiersManager()</a>, <a class="el" href="../../d5/d4d/_notifiers_manager_8c.html#a131baa5cbe699be20bd8ced9ed147f00">NotifiersManager()</a>, <a class="el" href="../../da/d87/class_heat_buffer_mdfr.html#a93a4c24d639a76641f2cb8b84a1c02f7">HeatBufferMdfr::NUMBER_OF_STAGES</a>, <a class="el" href="../../d2/d52/_player_sound_manager_8c.html#a79cd71e5bf0a20d4a138d8bcc9321b79">PlayerSoundManagerClient()</a>, <a class="el" href="../../da/daa/_player_stats_8c.html#a82b07926dca6b178140ed0f8c706b66c">PlayerStats()</a>, <a class="el" href="../../d8/dec/_player_stomach_8c.html#aff6b446cd1b4003ceddae722fc9d96da">PlayerStomach()</a>, <a class="el" href="../../d5/d6f/_plugin_lifespan_8c.html#a40fcf4bf90c76d2b2293d34e798bc531">PluginLifespan()</a>, <a class="el" href="../../da/d4d/_quick_bar_base_8c.html#a1b579ecc02bd0b420a08cfd3c129da76">QuickBarBase()</a>, <a class="el" href="../../d6/dc5/_random_generator_sync_manager_8c.html#a885754c42663e18ad0960d177423b042">RandomGeneratorSyncManager()</a>, and <a class="el" href="../../d9/de7/_display_status_8c.html#af40657bfc756e98261e6771b41805532">VirtualHud()</a>.</p>
 
 </div>
 </div>
@@ -9591,6 +9561,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d7/dca/_environment_8c.html#a1694af89e51f295fc163298bcb1a3a57">m_IsInWater</a>.</p>
 
 </div>
 </div>
@@ -10574,6 +10546,33 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aa928a74cf9775bf286939a143fd5e2a8" name="aa928a74cf9775bf286939a143fd5e2a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa928a74cf9775bf286939a143fd5e2a8">&#9670;&#160;</a></span>IsWeaponObstructionBlockingADS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override <a class="el" href="../../d9/db9/classbool.html">bool</a> IsWeaponObstructionBlockingADS </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d4/d9e/human_8c.html#a5f4268ddfbd0ab7f8d1f0915fa45fe6b">GetWeaponObstruction()</a>.</p>
+
+</div>
+</div>
 <a id="ae74160dfbcc9c7c0d11e29de0f512a31" name="ae74160dfbcc9c7c0d11e29de0f512a31"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae74160dfbcc9c7c0d11e29de0f512a31">&#9670;&#160;</a></span>IsWearingSplint()</h2>
 
@@ -11007,6 +11006,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a7ad1a4f2dd9bed6068e112e1646b78d3">CGame::GizmoSelectObject()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#ad2420584174fe100e1afa9a5f9c103b8">CGame::GizmoSelectPhysics()</a>.</p>
 
 </div>
 </div>
@@ -12461,7 +12462,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a15828fc1971d17709525c897d58ae6c8">GameInventory::CanForceSwapEntitiesEx()</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a7f828c6b946c0ad83fb20112aae89a56">GameInventory::CanSwapEntitiesEx()</a>, <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a4ab54f64deca0c3c3a4139ab2afd6b65">InventoryLocation::CopyLocationFrom()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aecedc0dc7274fd6ada907f30627a658a">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d4/d9f/_cross_hair_selector_8c.html#a7bfe0daa7710ddfc48f1bc0cc9f3742b">GetActionManager()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a6f2c5d87b18bf7c31faaf9fa615af4cb">GetInstanceType()</a>, <a class="el" href="../../d4/d9e/human_8c.html#a17128bfc2e8aa6ede6bade55bd4f1b98">GetRunningAction()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aadfe183ed4d51be93c773b744829adb3">IsEmotePlaying()</a>, <a class="el" href="../../d8/d8f/_weapon_stable_state_8c.html#a8ce19f9cc6998a5eacdec013ddce60a4">IsIdle()</a>, <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#a2870ed752542c3455fc24afd015a9b4c">IsProcessing()</a>, <a class="el" href="../../d9/dc3/group___tools.html#ga503e3d34e944eb2100a9b6e26cde2aae">IsRunning()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a94c4d45b595955237d20b8f958b93435">InventoryLocation::SetHands()</a>, and <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a15828fc1971d17709525c897d58ae6c8">GameInventory::CanForceSwapEntitiesEx()</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a7f828c6b946c0ad83fb20112aae89a56">GameInventory::CanSwapEntitiesEx()</a>, <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a4ab54f64deca0c3c3a4139ab2afd6b65">InventoryLocation::CopyLocationFrom()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aecedc0dc7274fd6ada907f30627a658a">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d4/d9f/_cross_hair_selector_8c.html#a7bfe0daa7710ddfc48f1bc0cc9f3742b">GetActionManager()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a6f2c5d87b18bf7c31faaf9fa615af4cb">GetInstanceType()</a>, <a class="el" href="../../d4/d9e/human_8c.html#a17128bfc2e8aa6ede6bade55bd4f1b98">GetRunningAction()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aadfe183ed4d51be93c773b744829adb3">IsEmotePlaying()</a>, <a class="el" href="../../d8/d8f/_weapon_stable_state_8c.html#a8ce19f9cc6998a5eacdec013ddce60a4">IsIdle()</a>, <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#a2870ed752542c3455fc24afd015a9b4c">IsProcessing()</a>, <a class="el" href="../../d9/dc3/group___tools.html#ga503e3d34e944eb2100a9b6e26cde2aae">IsRunning()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a94c4d45b595955237d20b8f958b93435">InventoryLocation::SetHands()</a>, and <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>.</p>
 
 </div>
 </div>
@@ -13379,7 +13380,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>from hands</p>
 
-<p class="reference">References <a class="el" href="../../d2/d9f/_action_targets_8c.html#a2ab3de6f698cb230ae0c129e3e01b341">ActionTarget</a>, <a class="el" href="../../d7/da1/class_action_manager_client.html#a2066ef54b10783470e38e05d893ddfb4">ActionManagerClient::PerformActionStart()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d9f/_action_targets_8c.html#a5700c4bdc4a7c9b4dff279e83e8dfef3">ActionTarget()</a>, <a class="el" href="../../d7/da1/class_action_manager_client.html#a2066ef54b10783470e38e05d893ddfb4">ActionManagerClient::PerformActionStart()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
 
 </div>
 </div>
@@ -13838,7 +13839,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d2/d9f/_action_targets_8c.html#a2ab3de6f698cb230ae0c129e3e01b341">ActionTarget</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956">InventoryLocation::GetType()</a>, <a class="el" href="../../d7/da1/class_action_manager_client.html#a2066ef54b10783470e38e05d893ddfb4">ActionManagerClient::PerformActionStart()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d9f/_action_targets_8c.html#a5700c4bdc4a7c9b4dff279e83e8dfef3">ActionTarget()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956">InventoryLocation::GetType()</a>, <a class="el" href="../../d7/da1/class_action_manager_client.html#a2066ef54b10783470e38e05d893ddfb4">ActionManagerClient::PerformActionStart()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
 
 </div>
 </div>
@@ -13876,7 +13877,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d2/d9f/_action_targets_8c.html#a2ab3de6f698cb230ae0c129e3e01b341">ActionTarget</a>, <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d7/da1/class_action_manager_client.html#a2066ef54b10783470e38e05d893ddfb4">ActionManagerClient::PerformActionStart()</a>, <a class="el" href="../../d0/d62/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d9f/_action_targets_8c.html#a5700c4bdc4a7c9b4dff279e83e8dfef3">ActionTarget()</a>, <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d7/da1/class_action_manager_client.html#a2066ef54b10783470e38e05d893ddfb4">ActionManagerClient::PerformActionStart()</a>, <a class="el" href="../../d0/d62/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
 
 </div>
 </div>
@@ -13904,7 +13905,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d2/d9f/_action_targets_8c.html#a2ab3de6f698cb230ae0c129e3e01b341">ActionTarget</a>, <a class="el" href="../../d7/da1/class_action_manager_client.html#a2066ef54b10783470e38e05d893ddfb4">ActionManagerClient::PerformActionStart()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d9f/_action_targets_8c.html#a5700c4bdc4a7c9b4dff279e83e8dfef3">ActionTarget()</a>, <a class="el" href="../../d7/da1/class_action_manager_client.html#a2066ef54b10783470e38e05d893ddfb4">ActionManagerClient::PerformActionStart()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
 
 </div>
 </div>
@@ -14433,8 +14434,6 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../da/dd0/class_human_command_weapons.html#a0ea6b4ab06074d213be5897662d66d20">HumanCommandWeapons::LiftWeapon()</a>.</p>
-
 </div>
 </div>
 <a id="a79a32a8ac4acacf3d87ac9e2181956d3" name="a79a32a8ac4acacf3d87ac9e2181956d3"></a>
@@ -14719,7 +14718,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d2/d9f/_action_targets_8c.html#a2ab3de6f698cb230ae0c129e3e01b341">ActionTarget</a>, <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d4/d9f/_cross_hair_selector_8c.html#a7bfe0daa7710ddfc48f1bc0cc9f3742b">GetActionManager()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a6f2c5d87b18bf7c31faaf9fa615af4cb">GetInstanceType()</a>, <a class="el" href="../../d7/da1/class_action_manager_client.html#a2066ef54b10783470e38e05d893ddfb4">ActionManagerClient::PerformActionStart()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d9f/_action_targets_8c.html#a5700c4bdc4a7c9b4dff279e83e8dfef3">ActionTarget()</a>, <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d4/d9f/_cross_hair_selector_8c.html#a7bfe0daa7710ddfc48f1bc0cc9f3742b">GetActionManager()</a>, <a class="el" href="../../d3/d58/dayzplayer_8c.html#a6f2c5d87b18bf7c31faaf9fa615af4cb">GetInstanceType()</a>, <a class="el" href="../../d7/da1/class_action_manager_client.html#a2066ef54b10783470e38e05d893ddfb4">ActionManagerClient::PerformActionStart()</a>, and <a class="el" href="../../d7/dfc/classvector.html#a4921dce04a5e8384084c45b51e15419a">vector::Zero</a>.</p>
 
 </div>
 </div>
@@ -15538,8 +15537,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab5bdbd7fc688607efbf0c5c0a9367dba" name="ab5bdbd7fc688607efbf0c5c0a9367dba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5bdbd7fc688607efbf0c5c0a9367dba">&#9670;&#160;</a></span>SendLiftWeaponSync()</h2>
+<a id="ad2e037b16d3b05cd278673c66fd3fea7" name="ad2e037b16d3b05cd278673c66fd3fea7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2e037b16d3b05cd278673c66fd3fea7">&#9670;&#160;</a></span>SendLiftWeaponSync()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -15551,8 +15550,18 @@ Static Private Attributes</h2></td></tr>
           <td class="memname">void SendLiftWeaponSync </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td>
-          <td class="paramname"><em>state</em></td><td>)</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>obstruct</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -15564,7 +15573,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Client-side only. </p>
 
-<p class="reference">References <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#a79b6d39da5d7f675f8f1badb1fb87a3d">INPUT_UDT_WEAPON_LIFT_EVENT</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#a0ea6b4ab06074d213be5897662d66d20">HumanCommandWeapons::LiftWeapon()</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a96d6cc3211119f8b7a3c2ba755ab8a73">ScriptInputUserData::Send()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#gaae5a8127fc6393d55122ac12f2d16c16">Math::AbsFloat()</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#a79b6d39da5d7f675f8f1badb1fb87a3d">INPUT_UDT_WEAPON_LIFT_EVENT</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a96d6cc3211119f8b7a3c2ba755ab8a73">ScriptInputUserData::Send()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
 
 </div>
 </div>
@@ -15709,7 +15718,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d3b/_action_drink_pond_continuous_8c.html#a2dc3111b52094bf647f80b57658a60ad">ActionDrinkPondContinuous()</a>, <a class="el" href="../../da/de4/_action_eat_snow_continuous_8c.html#a4f58925567fd9383b24f776c88e250f8">ActionEatSnowContinuous()</a>, <a class="el" href="../../d1/d48/_action_start_engine_8c.html#a5bbfa3de78cf5097acfca849474272ba">ActionStartEngine()</a>, <a class="el" href="../../dd/d7a/_action_start_engine_boat_8c.html#a997ef32b405eb87ce7148f59747d5a79">ActionStartEngineBoat()</a>, <a class="el" href="../../d4/d61/_action_uncover_head_self_8c.html#a56639e960bfc38b6cbad7e97fea64fe5">ActionUncoverHeadSelf()</a>, <a class="el" href="../../d5/d64/_action_wash_hands_snow_8c.html#a90aa504460be28d351c82a41e5fd736e">ActionWashHandsSnow()</a>, <a class="el" href="../../d9/ded/_action_wash_hands_water_8c.html#a99c8132a1d68c5bcec802c7fe0dc34f0">ActionWashHandsWater()</a>, and <a class="el" href="../../dd/dfd/_advanced_communication_8c.html#a52cdff768ebc148eee5a17e4ebef3408">AddAction()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d3b/_action_drink_pond_continuous_8c.html#a2dc3111b52094bf647f80b57658a60ad">ActionDrinkPondContinuous()</a>, <a class="el" href="../../da/de4/_action_eat_snow_continuous_8c.html#a4f58925567fd9383b24f776c88e250f8">ActionEatSnowContinuous()</a>, <a class="el" href="../../d1/d48/_action_start_engine_8c.html#a17e26410f272a271fd13ab5cff124c61">ActionStartEngine()</a>, <a class="el" href="../../dd/d7a/_action_start_engine_boat_8c.html#a997ef32b405eb87ce7148f59747d5a79">ActionStartEngineBoat()</a>, <a class="el" href="../../d4/d61/_action_uncover_head_self_8c.html#a56639e960bfc38b6cbad7e97fea64fe5">ActionUncoverHeadSelf()</a>, <a class="el" href="../../d5/d64/_action_wash_hands_snow_8c.html#a90aa504460be28d351c82a41e5fd736e">ActionWashHandsSnow()</a>, <a class="el" href="../../d9/ded/_action_wash_hands_water_8c.html#a99c8132a1d68c5bcec802c7fe0dc34f0">ActionWashHandsWater()</a>, and <a class="el" href="../../dd/dfd/_advanced_communication_8c.html#a52cdff768ebc148eee5a17e4ebef3408">AddAction()</a>.</p>
 
 </div>
 </div>
@@ -16197,7 +16206,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d8/d6f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager()</a>, <a class="el" href="../../de/d85/class_particle.html#a02dd479449dbfcb4a5b0ae13fbe5a2f6">Particle::SetParameter()</a>, <a class="el" href="../../d0/d96/class_p_p_e_requester_base.html#af67521bf171fb35393b0dbe54dcdb424">PPERequesterBase::Start()</a>, and <a class="el" href="../../de/d85/class_particle.html#a17a237457e57625296e6b24feb19c60a">Particle::Stop()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../d8/d6f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager()</a>, <a class="el" href="../../de/d85/class_particle.html#a02dd479449dbfcb4a5b0ae13fbe5a2f6">Particle::SetParameter()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga05ebfead717831bde428401fb2e37787">SetSoundControllerOverride()</a>, <a class="el" href="../../d0/d96/class_p_p_e_requester_base.html#af67521bf171fb35393b0dbe54dcdb424">PPERequesterBase::Start()</a>, and <a class="el" href="../../de/d85/class_particle.html#a17a237457e57625296e6b24feb19c60a">Particle::Stop()</a>.</p>
 
 </div>
 </div>
@@ -16662,7 +16671,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>water contact (driven by <a class="el" href="../../dc/d38/class_environment.html">Environment</a>) </p>
+<p>water contact (driven by Environment) </p>
+
+<p class="reference">References <a class="el" href="../../d7/dca/_environment_8c.html#a1694af89e51f295fc163298bcb1a3a57">m_IsInWater</a>.</p>
 
 </div>
 </div>
@@ -16885,8 +16896,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab3e4333f384ed09636862f3871cbf1db" name="ab3e4333f384ed09636862f3871cbf1db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3e4333f384ed09636862f3871cbf1db">&#9670;&#160;</a></span>SetLiftWeapon() <span class="overload">[1/2]</span></h2>
+<a id="a8a6b617abb43e0225d15d8bb82e7727c" name="a8a6b617abb43e0225d15d8bb82e7727c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a6b617abb43e0225d15d8bb82e7727c">&#9670;&#160;</a></span>SetLiftWeapon() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -16898,8 +16909,18 @@ Static Private Attributes</h2></td></tr>
           <td class="memname">void SetLiftWeapon </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td>
-          <td class="paramname"><em>state</em></td><td>)</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>obstruct</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -17060,6 +17081,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d3/de2/group___system.html#ga7b18b38eaf689dea76594dd5e43a1352">IsCLIParam()</a>, and <a class="el" href="../../da/d7d/class_debug.html#ac0a75400c551a91931b86b09125cfa59">Debug::Log()</a>.</p>
 
 </div>
 </div>
@@ -17922,7 +17945,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#ac7e6886eef7485897279cffc48f83fca">CGame::GetUIManager()</a>, <a class="el" href="../../d5/d78/group___enforce.html#ga57f32b036e535bd975e903bb47bc7c3c">PrintString()</a>, <a class="el" href="../../d7/d75/class_u_i_manager.html#a329c5044e37dd2dc559b61cf65dce468">UIManager::ScreenFadeIn()</a>, and <a class="el" href="../../d7/d75/class_u_i_manager.html#af6540ce9d4b2094d064c704b13d0969e">UIManager::ScreenFadeOut()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#ac7e6886eef7485897279cffc48f83fca">CGame::GetUIManager()</a>, <a class="el" href="../../d5/d78/group___enforce.html#gaeea42890f651b66e6816d8142ec8215c">PrintString</a>, <a class="el" href="../../d7/d75/class_u_i_manager.html#a329c5044e37dd2dc559b61cf65dce468">UIManager::ScreenFadeIn()</a>, and <a class="el" href="../../d7/d75/class_u_i_manager.html#af6540ce9d4b2094d064c704b13d0969e">UIManager::ScreenFadeOut()</a>.</p>
 
 </div>
 </div>
@@ -21176,7 +21199,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ref <a class="el" href="../../dc/d38/class_environment.html">Environment</a> m_Environment</td>
+          <td class="memname">ref <a class="el" href="../../d7/dca/_environment_8c.html#a646e906a2d690c10a1b6f474ae738957">Environment</a> m_Environment</td>
         </tr>
       </table>
   </td>

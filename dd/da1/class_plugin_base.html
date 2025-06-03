@@ -106,6 +106,9 @@ $(document).ready(function(){initNavTree('dd/da1/class_plugin_base.html','../../
   <div class="headertitle"><div class="title">PluginBase Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Plugin interface for controlling of agent pool system.  
+ <a href="../../dd/da1/class_plugin_base.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -830,63 +833,87 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a27f63c77d3fa1cb11e7a18b9f28ba030"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a27f63c77d3fa1cb11e7a18b9f28ba030">PluginTransmissionAgents</a> ()</td></tr>
 <tr class="separator:a27f63c77d3fa1cb11e7a18b9f28ba030"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cfe69ff54acdb12b7eecc821ba7b5a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a1cfe69ff54acdb12b7eecc821ba7b5a6">RegisterAgent</a> (<a class="el" href="../../d1/dd5/class_agent_base.html">AgentBase</a> agent)</td></tr>
+<tr class="memdesc:a1cfe69ff54acdb12b7eecc821ba7b5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers new agent into system.  <br /></td></tr>
 <tr class="separator:a1cfe69ff54acdb12b7eecc821ba7b5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f1125c86e9846c31d7e1b82cf1138fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a8f1125c86e9846c31d7e1b82cf1138fd">ConstructSimpleAgentList</a> ()</td></tr>
+<tr class="memdesc:a8f1125c86e9846c31d7e1b82cf1138fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds simplified list of agents in &lt;id, name&gt; format.  <br /></td></tr>
 <tr class="separator:a8f1125c86e9846c31d7e1b82cf1138fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76d1b9462195f21993ac506659d2fa4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt; <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>, ref <a class="el" href="../../d1/dd5/class_agent_base.html">AgentBase</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a76d1b9462195f21993ac506659d2fa4a">GetAgentList</a> ()</td></tr>
+<tr class="memdesc:a76d1b9462195f21993ac506659d2fa4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns map of all registered agent classes.  <br /></td></tr>
 <tr class="separator:a76d1b9462195f21993ac506659d2fa4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe119b05a742f7a767cab03f4e56b561"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt; <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>, <a class="el" href="../../d5/d92/classstring.html">string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#afe119b05a742f7a767cab03f4e56b561">GetSimpleAgentList</a> ()</td></tr>
+<tr class="memdesc:afe119b05a742f7a767cab03f4e56b561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns map of all registered agents in simplified format(for non-gameplay purposas mainly)  <br /></td></tr>
 <tr class="separator:afe119b05a742f7a767cab03f4e56b561"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab442465d8c8f1708a848f3f212d550ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#ab442465d8c8f1708a848f3f212d550ad">RemoveAllAgents</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> target)</td></tr>
+<tr class="memdesc:ab442465d8c8f1708a848f3f212d550ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all agents from given entity.  <br /></td></tr>
 <tr class="separator:ab442465d8c8f1708a848f3f212d550ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6519dc9977f8b0edde85f03109c823e"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#ae6519dc9977f8b0edde85f03109c823e">GetAgentTransferabilityIn</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
+<tr class="memdesc:ae6519dc9977f8b0edde85f03109c823e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns transferabilityIn attribute for given agent.  <br /></td></tr>
 <tr class="separator:ae6519dc9977f8b0edde85f03109c823e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fd92f7cada8d4a98f50afb5ec36e392"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a1fd92f7cada8d4a98f50afb5ec36e392">GrowDuringMedicalDrugsAttack</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agentId, <a class="el" href="../../d9/d10/_e_medical_drugs_type_8c.html#a27ee559c6aca97910d3a0cc087553251">EMedicalDrugsType</a> drugType, <a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player)</td></tr>
 <tr class="separator:a1fd92f7cada8d4a98f50afb5ec36e392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ced413bfe13cd2dc7c5c84cb3527da2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a7ced413bfe13cd2dc7c5c84cb3527da2">GetDieOffSpeed</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
+<tr class="memdesc:a7ced413bfe13cd2dc7c5c84cb3527da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns dieOfSpeed attribute for given agent (see GetDieOffSpeedEx())  <br /></td></tr>
+<tr class="separator:a7ced413bfe13cd2dc7c5c84cb3527da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7d5a9cb36a55be71515476c18ba79b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#aa7d5a9cb36a55be71515476c18ba79b0">GetAgentDieOffSpeedEx</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id, <a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player)</td></tr>
+<tr class="memdesc:aa7d5a9cb36a55be71515476c18ba79b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns dieOfSpeed attribute for given agent.  <br /></td></tr>
 <tr class="separator:aa7d5a9cb36a55be71515476c18ba79b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f12b0faa187222bd7d2ba4354e0c0b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/db4/_e_stat_levels_8c.html#a33dd957dac0dffc62424608704bc94a3">EStatLevels</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a4f12b0faa187222bd7d2ba4354e0c0b2">GetPotency</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
+<tr class="memdesc:a4f12b0faa187222bd7d2ba4354e0c0b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns potency attribute for given agent (see <a class="el" href="../../dd/da1/class_plugin_base.html#aff224492ea5f82917e961b98749c2725" title="Returns potency attribute for given agent.">GetAgentPotencyEx()</a>)  <br /></td></tr>
+<tr class="separator:a4f12b0faa187222bd7d2ba4354e0c0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff224492ea5f82917e961b98749c2725"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/db4/_e_stat_levels_8c.html#a33dd957dac0dffc62424608704bc94a3">EStatLevels</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#aff224492ea5f82917e961b98749c2725">GetAgentPotencyEx</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id, <a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player)</td></tr>
+<tr class="memdesc:aff224492ea5f82917e961b98749c2725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns potency attribute for given agent.  <br /></td></tr>
 <tr class="separator:aff224492ea5f82917e961b98749c2725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ade23a936d65c90807ecdda34a241b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a4ade23a936d65c90807ecdda34a241b5">GetAgentInvasibilityEx</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id, <a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player)</td></tr>
+<tr class="memdesc:a4ade23a936d65c90807ecdda34a241b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns invasibility attribute for given agent.  <br /></td></tr>
 <tr class="separator:a4ade23a936d65c90807ecdda34a241b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af045b91f04dde6de4fb72eb9c25c7742"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#af045b91f04dde6de4fb72eb9c25c7742">GetAgentAntiboticsResistance</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
+<tr class="memdesc:af045b91f04dde6de4fb72eb9c25c7742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns antibiotics resistance attribute for given agent see <a class="el" href="../../dd/da1/class_plugin_base.html#a4670e323e07faa511f0fca93600b036b" title="Returns antibiotics resistance attribute for given agent.">GetAgentAntiboticsResistanceEx()</a>  <br /></td></tr>
 <tr class="separator:af045b91f04dde6de4fb72eb9c25c7742"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4670e323e07faa511f0fca93600b036b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a4670e323e07faa511f0fca93600b036b">GetAgentAntiboticsResistanceEx</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id, <a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player)</td></tr>
+<tr class="memdesc:a4670e323e07faa511f0fca93600b036b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns antibiotics resistance attribute for given agent.  <br /></td></tr>
 <tr class="separator:a4670e323e07faa511f0fca93600b036b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a616e1e2c64cd7d7f9e508007ffa80fbe"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a616e1e2c64cd7d7f9e508007ffa80fbe">GetAgentTransferabilityOut</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
+<tr class="memdesc:a616e1e2c64cd7d7f9e508007ffa80fbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns transferabilityOut attribute for given agent.  <br /></td></tr>
 <tr class="separator:a616e1e2c64cd7d7f9e508007ffa80fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e88981c7a842c8766e91549841fdcfd"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a7e88981c7a842c8766e91549841fdcfd">GetAgentTransferabilityAirOut</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
+<tr class="memdesc:a7e88981c7a842c8766e91549841fdcfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns transferabilitAiryOut attribute for given agent.  <br /></td></tr>
 <tr class="separator:a7e88981c7a842c8766e91549841fdcfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ae099e3ef9f5dbbb69f43534c740238"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a5ae099e3ef9f5dbbb69f43534c740238">GetAgentInvasibility</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
+<tr class="memdesc:a5ae099e3ef9f5dbbb69f43534c740238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns invasibility attribute for given agent.  <br /></td></tr>
 <tr class="separator:a5ae099e3ef9f5dbbb69f43534c740238"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafe54f65d431ff72f0a91453df6216f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#aafe54f65d431ff72f0a91453df6216f3">GetAgentDigestibilityEx</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id, <a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player)</td></tr>
-<tr class="separator:aafe54f65d431ff72f0a91453df6216f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dbc609c8b287acce14072e644bb517d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a3dbc609c8b287acce14072e644bb517d">GetAgentDigestibility</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
+<tr class="memdesc:a3dbc609c8b287acce14072e644bb517d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns stomach digetibility attribute for given agent (see <a class="el" href="../../dd/da1/class_plugin_base.html#aafe54f65d431ff72f0a91453df6216f3" title="Returns stomach digetibility attribute for given agent.">GetAgentDigestibilityEx()</a>)  <br /></td></tr>
 <tr class="separator:a3dbc609c8b287acce14072e644bb517d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ced413bfe13cd2dc7c5c84cb3527da2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a7ced413bfe13cd2dc7c5c84cb3527da2">GetDieOffSpeed</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
-<tr class="separator:a7ced413bfe13cd2dc7c5c84cb3527da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f12b0faa187222bd7d2ba4354e0c0b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/db4/_e_stat_levels_8c.html#a33dd957dac0dffc62424608704bc94a3">EStatLevels</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a4f12b0faa187222bd7d2ba4354e0c0b2">GetPotency</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
-<tr class="separator:a4f12b0faa187222bd7d2ba4354e0c0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafe54f65d431ff72f0a91453df6216f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#aafe54f65d431ff72f0a91453df6216f3">GetAgentDigestibilityEx</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id, <a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player)</td></tr>
+<tr class="memdesc:aafe54f65d431ff72f0a91453df6216f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns stomach digetibility attribute for given agent.  <br /></td></tr>
+<tr class="separator:aafe54f65d431ff72f0a91453df6216f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a882a8e3bfc3f959d0d13f40cf28a4810"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a882a8e3bfc3f959d0d13f40cf28a4810">TransmitAgentsEx</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> source, <a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> target, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pathway, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> dose_size=1000, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agents=0)</td></tr>
+<tr class="memdesc:a882a8e3bfc3f959d0d13f40cf28a4810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process transmission of agents between entities (for specified transmission type)  <br /></td></tr>
 <tr class="separator:a882a8e3bfc3f959d0d13f40cf28a4810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a024e453d4b59b03503a99ffb259fca41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a024e453d4b59b03503a99ffb259fca41">TransmitAgents</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> source, <a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> target, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pathway, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> dose_size=1000)</td></tr>
+<tr class="memdesc:a024e453d4b59b03503a99ffb259fca41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process transmission of agents between entities (for specified transmission type) (see <a class="el" href="../../dd/da1/class_plugin_base.html#a882a8e3bfc3f959d0d13f40cf28a4810" title="Process transmission of agents between entities (for specified transmission type)">TransmitAgentsEx()</a>))  <br /></td></tr>
 <tr class="separator:a024e453d4b59b03503a99ffb259fca41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30ddebefab8770f56dbfa27409005877"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a30ddebefab8770f56dbfa27409005877">InjectAgentsWithoutPlayer</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> target, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agents)</td></tr>
+<tr class="memdesc:a30ddebefab8770f56dbfa27409005877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Injects specified agents directly to target.  <br /></td></tr>
 <tr class="separator:a30ddebefab8770f56dbfa27409005877"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a392925bd5da7504e9f8d417a57744134"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a392925bd5da7504e9f8d417a57744134">InjectAgentsWithPlayer</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> target, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agents, <a class="el" href="../../d4/dc3/classfloat.html">float</a> protection, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> dose_size, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> inject_type)</td></tr>
-<tr class="memdesc:a392925bd5da7504e9f8d417a57744134"><td class="mdescLeft">&#160;</td><td class="mdescRight">will add agents to a given target, using chance of transmission and full dose size if chance succeeds  <br /></td></tr>
+<tr class="memdesc:a392925bd5da7504e9f8d417a57744134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Injects agents to a given target, using chance of transmission and full dose size if chance succeeds.  <br /></td></tr>
 <tr class="separator:a392925bd5da7504e9f8d417a57744134"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf69d98fa3648e63415fecdbc282579e"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#acf69d98fa3648e63415fecdbc282579e">InjectAgentsWithPlayerCount</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> target, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agents, <a class="el" href="../../d4/dc3/classfloat.html">float</a> protection, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> dose_size, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> inject_type)</td></tr>
-<tr class="memdesc:acf69d98fa3648e63415fecdbc282579e"><td class="mdescLeft">&#160;</td><td class="mdescRight">will add agents to a given target, with no probability, but the dose size is modified by m_TransferabilityOut of the agent  <br /></td></tr>
+<tr class="memdesc:acf69d98fa3648e63415fecdbc282579e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Injects agents to a given target, with no probability, but the dose size is modified by m_TransferabilityOut of the agent.  <br /></td></tr>
 <tr class="separator:acf69d98fa3648e63415fecdbc282579e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92fd9045e12e8fe685790c85e998e9de"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a92fd9045e12e8fe685790c85e998e9de">InjectAgentWithPlayerDose</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> target, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent, <a class="el" href="../../d4/dc3/classfloat.html">float</a> protection, <a class="el" href="../../d4/dc3/classfloat.html">float</a> dose_size, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> inject_type)</td></tr>
-<tr class="memdesc:a92fd9045e12e8fe685790c85e998e9de"><td class="mdescLeft">&#160;</td><td class="mdescRight">will add agent to a given target  <br /></td></tr>
+<tr class="memdesc:a92fd9045e12e8fe685790c85e998e9de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Injects agent to a given target.  <br /></td></tr>
 <tr class="separator:a92fd9045e12e8fe685790c85e998e9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3a924d3d6badf59533efa3e021c16e4"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#ae3a924d3d6badf59533efa3e021c16e4">GetProtectionLevel</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> type, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> slot, Man player)</td></tr>
+<tr class="memdesc:ae3a924d3d6badf59533efa3e021c16e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protection level of an attachment against enviromental hazard (mask/filters for example) (see <a class="el" href="../../dd/da1/class_plugin_base.html#a49ecb91c36376a194b4d473d05b9ca89" title="Protection level of an attachment against enviromental hazard (mask/filters for example)">GetProtectionLevelEx()</a>)  <br /></td></tr>
 <tr class="separator:ae3a924d3d6badf59533efa3e021c16e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a215b24ef8142bd8449c7685291de18e6"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a215b24ef8142bd8449c7685291de18e6">CalculateAgentsToTransmit</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id, <a class="el" href="../../d4/dc3/classfloat.html">float</a> protection, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> dose_size, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> inject_type)</td></tr>
+<tr class="memdesc:a215b24ef8142bd8449c7685291de18e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates number of agents that can be transmitted (based on given dose_size)  <br /></td></tr>
 <tr class="separator:a215b24ef8142bd8449c7685291de18e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06eeec7dd2541f8104cb8670fc8472be"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a06eeec7dd2541f8104cb8670fc8472be">DetermineChanceToTransmit</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id, <a class="el" href="../../d4/dc3/classfloat.html">float</a> protection, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> inject_type)</td></tr>
+<tr class="memdesc:a06eeec7dd2541f8104cb8670fc8472be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agent transmission chance processing.  <br /></td></tr>
 <tr class="separator:a06eeec7dd2541f8104cb8670fc8472be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91e23638de296e2a5eb4d78f69849753"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a91e23638de296e2a5eb4d78f69849753">GrowDuringAntibioticsAttack</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id, <a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player)</td></tr>
 <tr class="memdesc:a91e23638de296e2a5eb4d78f69849753"><td class="mdescLeft">&#160;</td><td class="mdescRight">DEPRECATED.  <br /></td></tr>
@@ -921,14 +948,18 @@ Static Private Member Functions</h2></td></tr>
 <tr class="memitem:af976606833aa24d0dc132ddba7f1e535"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/da1/class_plugin_base.html#a9988f05bd1257bec1e035cfb04129c09">PluginSceneManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#af976606833aa24d0dc132ddba7f1e535">GetInstance</a> ()</td></tr>
 <tr class="separator:af976606833aa24d0dc132ddba7f1e535"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4de76ed58b5a0b9d6344347c72119bfa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a4de76ed58b5a0b9d6344347c72119bfa">GetNameByID</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
+<tr class="memdesc:a4de76ed58b5a0b9d6344347c72119bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns agent's name from given id.  <br /></td></tr>
 <tr class="separator:a4de76ed58b5a0b9d6344347c72119bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fe79728e5981c7c78a37513cccd6c7e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a7fe79728e5981c7c78a37513cccd6c7e">RemoveAgent</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> target, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
+<tr class="memdesc:a7fe79728e5981c7c78a37513cccd6c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes given agent from given entity.  <br /></td></tr>
 <tr class="separator:a7fe79728e5981c7c78a37513cccd6c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7019d49edf1a06df1bc65ecd7b59eb32"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a7019d49edf1a06df1bc65ecd7b59eb32">GetAgentMaxCount</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
+<tr class="memdesc:a7019d49edf1a06df1bc65ecd7b59eb32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns max count attribute for given agent.  <br /></td></tr>
 <tr class="separator:a7019d49edf1a06df1bc65ecd7b59eb32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2809fbc6e08890c0325c019a86373f07"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a2809fbc6e08890c0325c019a86373f07">BuildAgentArray</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agents, <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> &gt; agents_out)</td></tr>
 <tr class="separator:a2809fbc6e08890c0325c019a86373f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49ecb91c36376a194b4d473d05b9ca89"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a49ecb91c36376a194b4d473d05b9ca89">GetProtectionLevelEx</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> type, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> slot, Man player, <a class="el" href="../../d9/db9/classbool.html">bool</a> consider_filter=true, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> system=0)</td></tr>
+<tr class="memdesc:a49ecb91c36376a194b4d473d05b9ca89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protection level of an attachment against enviromental hazard (mask/filters for example)  <br /></td></tr>
 <tr class="separator:a49ecb91c36376a194b4d473d05b9ca89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -1273,6 +1304,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a145803e9c0d0e3663be1ee06af919c0c"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt; <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>, <a class="el" href="../../d5/d92/classstring.html">string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a145803e9c0d0e3663be1ee06af919c0c">m_SimpleAgentList</a> = new <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt;<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>, <a class="el" href="../../d5/d92/classstring.html">string</a>&gt;</td></tr>
 <tr class="separator:a145803e9c0d0e3663be1ee06af919c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5895942531e7b176b0f6a459a7197b68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#a5895942531e7b176b0f6a459a7197b68">m_IsConstructed</a> = false</td></tr>
+<tr class="memdesc:a5895942531e7b176b0f6a459a7197b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">simple &lt;eAgents, agentName&gt; pair  <br /></td></tr>
 <tr class="separator:a5895942531e7b176b0f6a459a7197b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae893e7ebf49693649a136e60e3cc4393"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da1/class_plugin_base.html#ae893e7ebf49693649a136e60e3cc4393">m_Id</a></td></tr>
 <tr class="separator:ae893e7ebf49693649a136e60e3cc4393"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1305,7 +1337,12 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:a5d3a2a3b323103c71dc5f8722d09324e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="../../d4/d14/class_class.html" title="Super root of all classes in Enforce script.">Class</a> PluginMessageManager provides some basic Message Distribution mechanics, if you get instance of this plugin class on your object, you can use its methods to broadcast messages. </p>
+<div class="textblock"><p>Plugin interface for controlling of agent pool system. </p>
+<p><a class="el" href="../../d4/d14/class_class.html" title="Super root of all classes in Enforce script.">Class</a> PluginMessageManager provides some basic Message Distribution mechanics, if you get instance of this plugin class on your object, you can use its methods to broadcast messages.</p>
+<ul>
+<li>access to specific agent attributes</li>
+<li>various transmission operations </li>
+</ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a847b5812e1e81882e9861d6b01b1bffb" name="a847b5812e1e81882e9861d6b01b1bffb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a847b5812e1e81882e9861d6b01b1bffb">&#9670;&#160;</a></span>PluginBase()</h2>
@@ -1997,6 +2034,18 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Calculates number of agents that can be transmitted (based on given dose_size) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+    <tr><td class="paramname">protection</td><td>Protection size used for chance generation &lt;0.0; 1.0&gt; </td></tr>
+    <tr><td class="paramname">dose_size</td><td>Number of agents to be transmitted </td></tr>
+    <tr><td class="paramname">inject_type</td><td>Type of transmission </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of agents that will be transmitted based on the processing of attributes </dd></dl>
+
 <p class="reference">References <a class="el" href="../../dd/da1/class_plugin_base.html#a7e88981c7a842c8766e91549841fdcfd">GetAgentTransferabilityAirOut()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#ae6519dc9977f8b0edde85f03109c823e">GetAgentTransferabilityIn()</a>, and <a class="el" href="../../dd/da1/class_plugin_base.html#a616e1e2c64cd7d7f9e508007ffa80fbe">GetAgentTransferabilityOut()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/da1/class_plugin_base.html#acf69d98fa3648e63415fecdbc282579e">InjectAgentsWithPlayerCount()</a>, and <a class="el" href="../../dd/da1/class_plugin_base.html#a92fd9045e12e8fe685790c85e998e9de">InjectAgentWithPlayerDose()</a>.</p>
@@ -2478,6 +2527,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Builds simplified list of agents in &lt;id, name&gt; format. </p>
+
 <p class="reference">References <a class="el" href="../../d1/dd5/class_agent_base.html#a784b208fa07c79edc308d2dfe9d0d8ad">AgentBase::GetAgentType()</a>, and <a class="el" href="../../d1/dd5/class_agent_base.html#ac97112280cc4435c8df3c88070c839b4">AgentBase::GetName()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/da1/class_plugin_base.html#afe119b05a742f7a767cab03f4e56b561">GetSimpleAgentList()</a>.</p>
@@ -2888,6 +2939,17 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Agent transmission chance processing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+    <tr><td class="paramname">protection</td><td>Protection size used for chance generation &lt;0.0; 1.0&gt; </td></tr>
+    <tr><td class="paramname">inject_type</td><td>Type of transmission </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if there is a chance to transmit agent </dd></dl>
+
 <p class="reference">References <a class="el" href="../../dd/da1/class_plugin_base.html#a7e88981c7a842c8766e91549841fdcfd">GetAgentTransferabilityAirOut()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#ae6519dc9977f8b0edde85f03109c823e">GetAgentTransferabilityIn()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a616e1e2c64cd7d7f9e508007ffa80fbe">GetAgentTransferabilityOut()</a>, and <a class="el" href="../../d5/d98/group___math.html#ga990733f5c3d22ee731e6e4d76cc8e6d7">Math::RandomFloat01()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/da1/class_plugin_base.html#a392925bd5da7504e9f8d417a57744134">InjectAgentsWithPlayer()</a>.</p>
@@ -2989,7 +3051,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d7/d90/group___debug_u_i.html#ga1fcadbbfb17cfe0fd958ac850fbaeee7">DbgUI::Begin()</a>, <a class="el" href="../../dd/d13/group___colors.html#ga47541ebd6a462cb65cd01ea38b38f73a">COLOR_BLUE_A</a>, <a class="el" href="../../dd/d13/group___colors.html#gafeaeed5f47ca7e9f11f7e7f31ebae401">COLOR_GREEN_A</a>, <a class="el" href="../../dd/d13/group___colors.html#ga4d15e7681836d9172182f12364a7603f">COLOR_RED_A</a>, <a class="el" href="../../dd/d13/group___colors.html#gab99c2e5fe0809461bf77fd90b9df62a2">COLOR_YELLOW_A</a>, <a class="el" href="../../da/d7d/class_debug.html#a2a65c427bdd00fa64bdd46be8acc68af">Debug::DrawArrow()</a>, <a class="el" href="../../da/d7d/class_debug.html#acfc389f51c601505792beeed275e3840">Debug::DrawCylinder()</a>, <a class="el" href="../../d7/d90/group___debug_u_i.html#gaa84b630b3b32613f49053352ba95c9c2">DbgUI::End()</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#af2d8a5eb8f5d65e27885912c22c66d4e">m_UTemperatureSourceDebugs</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#ab1c39e3d1684631c768e24dee414eec7">ProcessUniversalTemperatureSources()</a>, and <a class="el" href="../../d7/d90/group___debug_u_i.html#ga6b5a45748947842552d1627695abf80b">DbgUI::Text()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d90/group___debug_u_i.html#ga1fcadbbfb17cfe0fd958ac850fbaeee7">DbgUI::Begin()</a>, <a class="el" href="../../dd/d13/group___colors.html#ga47541ebd6a462cb65cd01ea38b38f73a">COLOR_BLUE_A</a>, <a class="el" href="../../dd/d13/group___colors.html#gafeaeed5f47ca7e9f11f7e7f31ebae401">COLOR_GREEN_A</a>, <a class="el" href="../../dd/d13/group___colors.html#ga4d15e7681836d9172182f12364a7603f">COLOR_RED_A</a>, <a class="el" href="../../dd/d13/group___colors.html#gab99c2e5fe0809461bf77fd90b9df62a2">COLOR_YELLOW_A</a>, <a class="el" href="../../da/d7d/class_debug.html#a2a65c427bdd00fa64bdd46be8acc68af">Debug::DrawArrow()</a>, <a class="el" href="../../da/d7d/class_debug.html#acfc389f51c601505792beeed275e3840">Debug::DrawCylinder()</a>, <a class="el" href="../../d7/d90/group___debug_u_i.html#gaa84b630b3b32613f49053352ba95c9c2">DbgUI::End()</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#af2d8a5eb8f5d65e27885912c22c66d4e">m_UTemperatureSourceDebugs</a>, <a class="el" href="../../d7/dca/_environment_8c.html#abc76a24f7b2ac7cecf5c7de0d1193b0c">m_UTSAverageTemperature</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#ab1c39e3d1684631c768e24dee414eec7">ProcessUniversalTemperatureSources()</a>, and <a class="el" href="../../d7/d90/group___debug_u_i.html#ga6b5a45748947842552d1627695abf80b">DbgUI::Text()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/da1/class_plugin_base.html#ada777685abe2f010988b4924f95e76bb">OnUpdate()</a>.</p>
 
@@ -3542,8 +3604,6 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#ae89673d033dffbc2e954c763087083b2">CGame::GetObjectsAtPosition()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/da1/class_plugin_base.html#a780dd0d04f507defba6f37086c303568">SendDebug()</a>.</p>
-
 </div>
 </div>
 <a id="af045b91f04dde6de4fb72eb9c25c7742" name="af045b91f04dde6de4fb72eb9c25c7742"></a>
@@ -3569,6 +3629,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns antibiotics resistance attribute for given agent see <a class="el" href="../../dd/da1/class_plugin_base.html#a4670e323e07faa511f0fca93600b036b" title="Returns antibiotics resistance attribute for given agent.">GetAgentAntiboticsResistanceEx()</a> </p>
 
 </div>
 </div>
@@ -3606,6 +3668,16 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns antibiotics resistance attribute for given agent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+    <tr><td class="paramname">player</td><td>Actual player reference </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d1/dd5/class_agent_base.html#ae10d3165be9202effad66d0a56b1f982" title="transferibility airborne out">AgentBase::m_AntibioticsResistance</a> </dd></dl>
+
 </div>
 </div>
 <a id="aa7d5a9cb36a55be71515476c18ba79b0" name="aa7d5a9cb36a55be71515476c18ba79b0"></a>
@@ -3642,6 +3714,16 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns dieOfSpeed attribute for given agent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+    <tr><td class="paramname">player</td><td>Actual player reference </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d1/dd5/class_agent_base.html#a8af8abfbc883c2e991c8bbe8dbcef5f5" title="grow when player&#39;s immune system is at this level or lower">AgentBase::m_DieOffSpeed</a> </dd></dl>
+
 </div>
 </div>
 <a id="a3dbc609c8b287acce14072e644bb517d" name="a3dbc609c8b287acce14072e644bb517d"></a>
@@ -3667,6 +3749,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns stomach digetibility attribute for given agent (see <a class="el" href="../../dd/da1/class_plugin_base.html#aafe54f65d431ff72f0a91453df6216f3" title="Returns stomach digetibility attribute for given agent.">GetAgentDigestibilityEx()</a>) </p>
 
 </div>
 </div>
@@ -3704,6 +3788,16 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns stomach digetibility attribute for given agent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+    <tr><td class="paramname">player</td><td>Actual player reference </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d1/dd5/class_agent_base.html#adaab02636ed919689ba916dc70c8714b" title="from the player">AgentBase::m_Digestibility</a> </dd></dl>
+
 </div>
 </div>
 <a id="a5ae099e3ef9f5dbbb69f43534c740238" name="a5ae099e3ef9f5dbbb69f43534c740238"></a>
@@ -3729,6 +3823,15 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns invasibility attribute for given agent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d1/dd5/class_agent_base.html#a9c723938a444eb304e042ec9cde80e14">AgentBase::m_Invasibility</a> </dd></dl>
 
 </div>
 </div>
@@ -3766,6 +3869,16 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns invasibility attribute for given agent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+    <tr><td class="paramname">player</td><td>Actual player reference </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d1/dd5/class_agent_base.html#a9c723938a444eb304e042ec9cde80e14">AgentBase::m_Invasibility</a> </dd></dl>
+
 </div>
 </div>
 <a id="a76d1b9462195f21993ac506659d2fa4a" name="a76d1b9462195f21993ac506659d2fa4a"></a>
@@ -3790,6 +3903,9 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns map of all registered agent classes. </p>
+<dl class="section return"><dt>Returns</dt><dd>map&lt;int, ref AgentBase&gt; map of agent classes </dd></dl>
 
 <p class="reference">References <a class="el" href="../../dd/da1/class_plugin_base.html#a5d3a2a3b323103c71dc5f8722d09324e">m_AgentList</a>.</p>
 
@@ -3818,6 +3934,15 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns max count attribute for given agent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d1/dd5/class_agent_base.html#a61e642345fa0e869fbc9f0dd62584f49" title="multiplier for agents digested in the player stomach from an infected item(agents_transfered = digest...">AgentBase::m_MaxCount</a> </dd></dl>
 
 </div>
 </div>
@@ -3855,6 +3980,16 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns potency attribute for given agent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+    <tr><td class="paramname">player</td><td>Actual player reference </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d1/dd5/class_agent_base.html#acee84bb4e99a591c98b50372fc2a73b4" title="[0..1], 0 means antibiotics have full effect, 1 means no effect">AgentBase::m_Potency</a> </dd></dl>
+
 </div>
 </div>
 <a id="a7e88981c7a842c8766e91549841fdcfd" name="a7e88981c7a842c8766e91549841fdcfd"></a>
@@ -3880,6 +4015,15 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns transferabilitAiryOut attribute for given agent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d1/dd5/class_agent_base.html#a6017f17ad9ec17fd6cf98d35ec795787">AgentBase::m_TransferabilityAirOut</a> </dd></dl>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/da1/class_plugin_base.html#a215b24ef8142bd8449c7685291de18e6">CalculateAgentsToTransmit()</a>, and <a class="el" href="../../dd/da1/class_plugin_base.html#a06eeec7dd2541f8104cb8670fc8472be">DetermineChanceToTransmit()</a>.</p>
 
@@ -3909,6 +4053,15 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns transferabilityIn attribute for given agent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d1/dd5/class_agent_base.html#a582f128e02e8139393991684d0d999df" title="how fast the agent grows when potent enough to grow">AgentBase::m_TransferabilityIn</a> </dd></dl>
+
 <p class="reference">Referenced by <a class="el" href="../../dd/da1/class_plugin_base.html#a215b24ef8142bd8449c7685291de18e6">CalculateAgentsToTransmit()</a>, and <a class="el" href="../../dd/da1/class_plugin_base.html#a06eeec7dd2541f8104cb8670fc8472be">DetermineChanceToTransmit()</a>.</p>
 
 </div>
@@ -3936,6 +4089,15 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns transferabilityOut attribute for given agent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d1/dd5/class_agent_base.html#a4cca8070d73474a99df59c76bf4c956a" title="to the player">AgentBase::m_TransferabilityOut</a> </dd></dl>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/da1/class_plugin_base.html#a215b24ef8142bd8449c7685291de18e6">CalculateAgentsToTransmit()</a>, and <a class="el" href="../../dd/da1/class_plugin_base.html#a06eeec7dd2541f8104cb8670fc8472be">DetermineChanceToTransmit()</a>.</p>
 
@@ -4300,6 +4462,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns dieOfSpeed attribute for given agent (see GetDieOffSpeedEx()) </p>
 
 </div>
 </div>
@@ -4894,6 +5058,15 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns agent's name from given id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Agent name </dd></dl>
+
 <p class="reference">References <a class="el" href="../../d5/da2/group___strings.html#ga21170199dd49bb6d4eea60446c15848f">string::Get()</a>.</p>
 
 </div>
@@ -5081,6 +5254,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns potency attribute for given agent (see <a class="el" href="../../dd/da1/class_plugin_base.html#aff224492ea5f82917e961b98749c2725" title="Returns potency attribute for given agent.">GetAgentPotencyEx()</a>) </p>
+
 </div>
 </div>
 <a id="ae3a924d3d6badf59533efa3e021c16e4" name="ae3a924d3d6badf59533efa3e021c16e4"></a>
@@ -5122,6 +5297,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Protection level of an attachment against enviromental hazard (mask/filters for example) (see <a class="el" href="../../dd/da1/class_plugin_base.html#a49ecb91c36376a194b4d473d05b9ca89" title="Protection level of an attachment against enviromental hazard (mask/filters for example)">GetProtectionLevelEx()</a>) </p>
 
 <p class="reference">References <a class="el" href="../../dd/da1/class_plugin_base.html#a49ecb91c36376a194b4d473d05b9ca89">GetProtectionLevelEx()</a>.</p>
 
@@ -5180,6 +5357,19 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Protection level of an attachment against enviromental hazard (mask/filters for example) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Type of protection (see DEF_BIOLOGICAL in constants.c for example) </td></tr>
+    <tr><td class="paramname">slot</td><td>Inventory slot id </td></tr>
+    <tr><td class="paramname">player</td><td>Player reference </td></tr>
+    <tr><td class="paramname">consider_filter</td><td>(unused parameter for now) </td></tr>
+    <tr><td class="paramname">system</td><td>(unused parameter for now) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Attachment protechtion level </dd></dl>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/da1/class_plugin_base.html#ae3a924d3d6badf59533efa3e021c16e4">GetProtectionLevel()</a>.</p>
 
@@ -5544,6 +5734,9 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns map of all registered agents in simplified format(for non-gameplay purposas mainly) </p>
+<dl class="section return"><dt>Returns</dt><dd>map&lt;int, ref AgentBase&gt; map of agent classes </dd></dl>
 
 <p class="reference">References <a class="el" href="../../dd/da1/class_plugin_base.html#a8f1125c86e9846c31d7e1b82cf1138fd">ConstructSimpleAgentList()</a>, and <a class="el" href="../../dd/da1/class_plugin_base.html#a145803e9c0d0e3663be1ee06af919c0c">m_SimpleAgentList</a>.</p>
 
@@ -6154,6 +6347,15 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Injects specified agents directly to target. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td><a class="el" href="../../d2/d96/class_entity.html">Entity</a> to inject agents to </td></tr>
+    <tr><td class="paramname">agents</td><td>Bit mask with information about agents </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">Referenced by <a class="el" href="../../dd/da1/class_plugin_base.html#a882a8e3bfc3f959d0d13f40cf28a4810">TransmitAgentsEx()</a>.</p>
 
 </div>
@@ -6210,7 +6412,17 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>will add agents to a given target, using chance of transmission and full dose size if chance succeeds </p>
+<p>Injects agents to a given target, using chance of transmission and full dose size if chance succeeds. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td><a class="el" href="../../d2/d96/class_entity.html">Entity</a> to inject agents to </td></tr>
+    <tr><td class="paramname">agents</td><td>Bit mask with information about agents </td></tr>
+    <tr><td class="paramname">protection</td><td>Protection size used for chance generation &lt;0.0; 1.0&gt; </td></tr>
+    <tr><td class="paramname">dose_size</td><td>Number of agents to be transmitted </td></tr>
+    <tr><td class="paramname">inject_type</td><td>Type of transmission </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">References <a class="el" href="../../dd/da1/class_plugin_base.html#a06eeec7dd2541f8104cb8670fc8472be">DetermineChanceToTransmit()</a>, <a class="el" href="../../d5/d98/group___math.html#ga95454cf5d547578ac0ae593df9972876">Math::GetNthBitSet()</a>, <a class="el" href="../../d5/d98/group___math.html#gabc04eae54bc6993677a80c58a1944f9c">Math::GetNumberOfSetBits()</a>, and <a class="el" href="../../d5/d98/group___math.html#ga46107fe5da70b9f5f33642d643dc813f">Math::Pow()</a>.</p>
 
@@ -6270,7 +6482,17 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>will add agents to a given target, with no probability, but the dose size is modified by m_TransferabilityOut of the agent </p>
+<p>Injects agents to a given target, with no probability, but the dose size is modified by m_TransferabilityOut of the agent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td><a class="el" href="../../d2/d96/class_entity.html">Entity</a> to inject agents to </td></tr>
+    <tr><td class="paramname">agents</td><td>Bit mask with information about agents </td></tr>
+    <tr><td class="paramname">protection</td><td>Protection size used for chance generation &lt;0.0; 1.0&gt; </td></tr>
+    <tr><td class="paramname">dose_size</td><td>Number of agents to be transmitted </td></tr>
+    <tr><td class="paramname">inject_type</td><td>Type of transmission </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">References <a class="el" href="../../dd/da1/class_plugin_base.html#a215b24ef8142bd8449c7685291de18e6">CalculateAgentsToTransmit()</a>, <a class="el" href="../../d5/d98/group___math.html#ga95454cf5d547578ac0ae593df9972876">Math::GetNthBitSet()</a>, <a class="el" href="../../d5/d98/group___math.html#gabc04eae54bc6993677a80c58a1944f9c">Math::GetNumberOfSetBits()</a>, and <a class="el" href="../../d5/d98/group___math.html#ga46107fe5da70b9f5f33642d643dc813f">Math::Pow()</a>.</p>
 
@@ -6330,7 +6552,18 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>will add agent to a given target </p>
+<p>Injects agent to a given target. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td><a class="el" href="../../d2/d96/class_entity.html">Entity</a> to inject agents to </td></tr>
+    <tr><td class="paramname">agents</td><td>Bit mask with information about agents </td></tr>
+    <tr><td class="paramname">protection</td><td>Protection size used for chance generation &lt;0.0; 1.0&gt; </td></tr>
+    <tr><td class="paramname">dose_size</td><td>Number of agents to be transmitted </td></tr>
+    <tr><td class="paramname">inject_type</td><td>Type of transmission </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>count Number of injected agents (dose_size might be shrinked by chance from protection) </dd></dl>
 
 <p class="reference">References <a class="el" href="../../dd/da1/class_plugin_base.html#a215b24ef8142bd8449c7685291de18e6">CalculateAgentsToTransmit()</a>.</p>
 
@@ -8972,7 +9205,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d0/dd4/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>, and <a class="el" href="../../d5/d78/group___enforce.html#ga57f32b036e535bd975e903bb47bc7c3c">PrintString()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/dd4/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>, and <a class="el" href="../../d5/d78/group___enforce.html#gaeea42890f651b66e6816d8142ec8215c">PrintString</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/da1/class_plugin_base.html#a7dc54ae2b661e3400118838d7e322201">SpawnEntityAsAttachment()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a7f9d6e16232c1e2113702c62961fbfe3">SpawnEntityInPlayerInventory()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#afa4152c435b00c5408197d14dd076392">SpawnEntityOnCursorDir()</a>, and <a class="el" href="../../dd/da1/class_plugin_base.html#a81d14cd927285be3fe1f2477382a01ef">SpawnEntityOnGroundPos()</a>.</p>
 
@@ -10039,7 +10272,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dd/da1/class_plugin_base.html#af2d8a5eb8f5d65e27885912c22c66d4e">m_UTemperatureSourceDebugs</a>, and <a class="el" href="../../d5/d78/group___enforce.html#ga57f32b036e535bd975e903bb47bc7c3c">PrintString()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/da1/class_plugin_base.html#af2d8a5eb8f5d65e27885912c22c66d4e">m_UTemperatureSourceDebugs</a>, and <a class="el" href="../../d5/d78/group___enforce.html#gaeea42890f651b66e6816d8142ec8215c">PrintString</a>.</p>
 
 </div>
 </div>
@@ -10093,9 +10326,9 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>next temp source is too far (not cleaned on server, like in <a class="el" href="../../dc/d38/class_environment.html">Environment</a>, client need to know about all sources in MAXRANGE)</p>
+<p>next temp source is too far (not cleaned on server, like in Environment, client need to know about all sources in MAXRANGE)</p>
 
-<p class="reference">References <a class="el" href="../../dd/da1/class_plugin_base.html#adec03f27e521881e863bbd348b0d2259">CalcTemperatureFromTemperatureSource()</a>, <a class="el" href="../../d7/dfc/classvector.html#ac2655918cffa3c9d24c73f93d40d77a5">vector::DistanceSq()</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#af2d8a5eb8f5d65e27885912c22c66d4e">m_UTemperatureSourceDebugs</a>, and <a class="el" href="../../d5/d98/group___math.html#ga8fb21020a868fa48ab94ae271ea25a11">Math::SqrFloat()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/da1/class_plugin_base.html#adec03f27e521881e863bbd348b0d2259">CalcTemperatureFromTemperatureSource()</a>, <a class="el" href="../../d7/dfc/classvector.html#ac2655918cffa3c9d24c73f93d40d77a5">vector::DistanceSq()</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#af2d8a5eb8f5d65e27885912c22c66d4e">m_UTemperatureSourceDebugs</a>, <a class="el" href="../../d7/dca/_environment_8c.html#abc76a24f7b2ac7cecf5c7de0d1193b0c">m_UTSAverageTemperature</a>, and <a class="el" href="../../d5/d98/group___math.html#ga8fb21020a868fa48ab94ae271ea25a11">Math::SqrFloat()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/da1/class_plugin_base.html#ac803fc51593dac16848ec718c0e557a7">DrawDebugs()</a>.</p>
 
@@ -10214,6 +10447,14 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Registers new agent into system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent</td><td>New agent class </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">References <a class="el" href="../../d1/dd5/class_agent_base.html#a784b208fa07c79edc308d2dfe9d0d8ad">AgentBase::GetAgentType()</a>.</p>
 
@@ -10529,6 +10770,15 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Removes given agent from given entity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td><a class="el" href="../../d2/d96/class_entity.html">Entity</a> to remove agents from </td></tr>
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ab442465d8c8f1708a848f3f212d550ad" name="ab442465d8c8f1708a848f3f212d550ad"></a>
@@ -10554,6 +10804,14 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Removes all agents from given entity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td><a class="el" href="../../d2/d96/class_entity.html">Entity</a> to remove agents from </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -11668,7 +11926,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dd/da1/class_plugin_base.html#a95b4f37120efec0871d7432c2f671245">GatherTemperatureSources()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#ae010e6784ecd1a6ca2929cde50094b93">m_ClientList</a>, <a class="el" href="../../d5/d8a/class_script_r_p_c.html#a1d4dfe14974c47411221cc310e55827e">ScriptRPC::Send()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/dca/_environment_8c.html#a7396d2c3c19393d4120036fbadbe99ff">GatherTemperatureSources()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#ae010e6784ecd1a6ca2929cde50094b93">m_ClientList</a>, <a class="el" href="../../d5/d8a/class_script_r_p_c.html#a1d4dfe14974c47411221cc310e55827e">ScriptRPC::Send()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
 
 </div>
 </div>
@@ -12055,7 +12313,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d2/d9f/_action_targets_8c.html#a2ab3de6f698cb230ae0c129e3e01b341">ActionTarget</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer()</a>, and <a class="el" href="../../dd/da1/class_plugin_base.html#aab2ca3058c63a410fa6f032be26022d6">SetDeveloperItemClientEx()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d9f/_action_targets_8c.html#a5700c4bdc4a7c9b4dff279e83e8dfef3">ActionTarget()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer()</a>, and <a class="el" href="../../dd/da1/class_plugin_base.html#aab2ca3058c63a410fa6f032be26022d6">SetDeveloperItemClientEx()</a>.</p>
 
 </div>
 </div>
@@ -13963,6 +14221,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Process transmission of agents between entities (for specified transmission type) (see <a class="el" href="../../dd/da1/class_plugin_base.html#a882a8e3bfc3f959d0d13f40cf28a4810" title="Process transmission of agents between entities (for specified transmission type)">TransmitAgentsEx()</a>)) </p>
+
 <p class="reference">References <a class="el" href="../../dd/da1/class_plugin_base.html#a882a8e3bfc3f959d0d13f40cf28a4810">TransmitAgentsEx()</a>.</p>
 
 </div>
@@ -14018,6 +14278,19 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Process transmission of agents between entities (for specified transmission type) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td><a class="el" href="../../d2/d96/class_entity.html">Entity</a> to transfer agents from </td></tr>
+    <tr><td class="paramname">target</td><td><a class="el" href="../../d2/d96/class_entity.html">Entity</a> to transfer agents to </td></tr>
+    <tr><td class="paramname">pathway</td><td>Type of transmission used </td></tr>
+    <tr><td class="paramname">dose_size</td><td>Number of agents to be transmitted </td></tr>
+    <tr><td class="paramname">agents</td><td>Bit mask specifing agents to transmit </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>count Number of transmitted agents </dd></dl>
 
 <p class="reference">References <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#ga7564318e4383bccc05bfc7d1fe139049">AGT_AIRBOURNE_BIOLOGICAL</a>, <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#gabdc9117e072708a9cf9098b86f53f485">AGT_AIRBOURNE_CHEMICAL</a>, <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#gafad26eb851b4f87abe16230a5310d895">AGT_INV_IN</a>, <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#gab23b04a7f745e685b275bc94f37ace0e">AGT_INV_OUT</a>, <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#ga419bc2517fecfc87e242469ce5f93ed8">AGT_ITEM_TO_FLESH</a>, <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#gae2f9f4b824e8ba0ee259b9addaa43e5b">AGT_SNOW</a>, <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#ga85c3a07738821bcf7448069749af7ac7">AGT_TRANSFER_COPY</a>, <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#ga1865cd62d4e508dcc1ba6e5409a1e26f">AGT_UACTION_CONSUME</a>, <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#gad086bcb6724486da5bfdda1cabd52af9">AGT_UACTION_TO_ITEM</a>, <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#gab62d7c22fae93ddb7f5a0491c69f4ffc">AGT_UACTION_TO_PLAYER</a>, <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#ga6043c56abe5e33075475162c8db03323">AGT_UACTION_TOUCH</a>, <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#ga8647a206cba6fdd87ace399c82985279">AGT_WATER_HOT_SPRING</a>, <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#ga9d088e55ed90b2549ca5f6e9d3a95e97">AGT_WATER_POND</a>, <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#ga62f28abee83745430d13e2d7b9c7168e">DEF_BIOLOGICAL</a>, <a class="el" href="../../dc/d5f/group___a_g_t_i_ds.html#ga6447e2b7b3c492fe03106adceb63939b">DEF_CHEMICAL</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a20d3d6b18eb7a57a53672e2a3f4af404">WorldData::GetPollution()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#ae3a924d3d6badf59533efa3e021c16e4">GetProtectionLevel()</a>, <a class="el" href="../../db/dad/class_mission.html#a0dbbef234a46bf168875313a8fced8ca">Mission::GetWorldData()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a30ddebefab8770f56dbfa27409005877">InjectAgentsWithoutPlayer()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a392925bd5da7504e9f8d417a57744134">InjectAgentsWithPlayer()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#acf69d98fa3648e63415fecdbc282579e">InjectAgentsWithPlayerCount()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a92fd9045e12e8fe685790c85e998e9de">InjectAgentWithPlayerDose()</a>, and <a class="el" href="../../d5/d98/group___math.html#ga0b79da001711df4f5c5759cc8ac4585b">Math::Max()</a>.</p>
 
@@ -15931,6 +16204,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>simple &lt;eAgents, agentName&gt; pair </p>
 
 </div>
 </div>

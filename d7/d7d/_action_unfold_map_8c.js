@@ -4,6 +4,7 @@ var _action_unfold_map_8c =
     [ "ActionCondition", "d7/d7d/_action_unfold_map_8c.html#aa9aa4864fae11769c65e644b5fd97c66", null ],
     [ "ActionUnfoldMap", "d7/d7d/_action_unfold_map_8c.html#a5c5e84dccfa18f790dae0573bd543c56", null ],
     [ "ActionUnfoldMapCB", "d7/d7d/_action_unfold_map_8c.html#ad4f9db6c65e6345990d338bf347d5f56", null ],
+    [ "CanBePerformedWhileChangingStance", "d7/d7d/_action_unfold_map_8c.html#accb8190d0d55d223b47c79eda8f8e42d", null ],
     [ "CancelCondition", "d7/d7d/_action_unfold_map_8c.html#a972c2ffa4153404dd1fb3983f9103fa0", null ],
     [ "CreateConditionComponents", "d7/d7d/_action_unfold_map_8c.html#a6b922d3bb1d26f790bc52030566ba2df", null ],
     [ "GetActionCategory", "d7/d7d/_action_unfold_map_8c.html#a47916ee46724ba7e9af26a002d3414a8", null ],

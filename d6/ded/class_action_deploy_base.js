@@ -1,6 +1,7 @@
 var class_action_deploy_base =
 [
     [ "ActionDeployBase", "d6/ded/class_action_deploy_base.html#a81f7cb4dda5980fd5fe80dabbbaf83c3", null ],
+    [ "ActionUsesHologram", "d6/ded/class_action_deploy_base.html#af5b900808549ed85ce4df0c3cdfb3d79", null ],
     [ "CreateActionData", "d6/ded/class_action_deploy_base.html#a5e0f63043b33849610c0ad517a105a80", null ],
     [ "CreateConditionComponents", "d6/ded/class_action_deploy_base.html#a6b922d3bb1d26f790bc52030566ba2df", null ],
     [ "DropDuringPlacing", "d6/ded/class_action_deploy_base.html#a7a8a5af5b283c69ccc96f6c245d1f93e", null ],

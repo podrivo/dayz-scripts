@@ -39,6 +39,7 @@ var _underground_handler_client_8c =
     [ "m_AmbientController", "d4/dd4/_underground_handler_client_8c.html#a50ac72bd4185cb25470553a77dd68d3d", null ],
     [ "m_AmbientSound", "d4/dd4/_underground_handler_client_8c.html#adff6917f1b68dd46f30186c796897d51", null ],
     [ "m_AnimTimerLightBlend", "d4/dd4/_underground_handler_client_8c.html#a6b2300203d6d351f83571504dfcd5751", null ],
+    [ "m_BestTrigger", "d4/dd4/_underground_handler_client_8c.html#a83dba52b884a74000447d185e453c70c", null ],
     [ "m_EyeAcco", "d4/dd4/_underground_handler_client_8c.html#a5a273040e6edcc8e74006d143cab3626", null ],
     [ "m_EyeAccoTarget", "d4/dd4/_underground_handler_client_8c.html#a8a6160aecb9d735ff56fc925a22d90fc", null ],
     [ "m_InsideTriggers", "d4/dd4/_underground_handler_client_8c.html#a096396e1453e80d7864a6121178986d1", null ],

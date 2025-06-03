@@ -113,6 +113,8 @@ Static Private Member Functions</h2></td></tr>
 <tr class="separator:ab2c217951b4362bb6661a1e863105320"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0011cc23a871943f347445ac052aa79f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d3b/class_player_spawn_preset.html">PlayerSpawnPreset</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d04/class_player_spawn_handler.html#a0011cc23a871943f347445ac052aa79f">GetRandomCharacterPreset</a> ()</td></tr>
 <tr class="separator:a0011cc23a871943f347445ac052aa79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27d905c78d4105b12d2a6451bd673385"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d3b/class_player_spawn_preset.html">PlayerSpawnPreset</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d04/class_player_spawn_handler.html#a27d905c78d4105b12d2a6451bd673385">GetCharacterPresetByName</a> (<a class="el" href="../../d5/d92/classstring.html">string</a> presetName)</td></tr>
+<tr class="separator:a27d905c78d4105b12d2a6451bd673385"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e46245c5d938e1ace7e50d6b4819a82"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d04/class_player_spawn_handler.html#a3e46245c5d938e1ace7e50d6b4819a82">ProcessEquipmentData</a> (<a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player, <a class="el" href="../../de/d3b/class_player_spawn_preset.html">PlayerSpawnPreset</a> data)</td></tr>
 <tr class="memdesc:a3e46245c5d938e1ace7e50d6b4819a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">equips character with the chosen preset  <br /></td></tr>
 <tr class="separator:a3e46245c5d938e1ace7e50d6b4819a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -231,6 +233,34 @@ Static Private Attributes</h2></td></tr>
 <p class="reference">References <a class="el" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo()</a>, <a class="el" href="../../d7/d7f/group___menu_i_d.html#gaffa280014cd9af91abe74b767cf2a45b">CFG_MAGAZINESPATH</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../da/d7d/class_debug.html#ac0a75400c551a91931b86b09125cfa59">Debug::Log()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d04/class_player_spawn_handler.html#aa5badb5c7191c0496248c980ec47dc35">SpawnComplexChildrenItems()</a>, and <a class="el" href="../../dc/d04/class_player_spawn_handler.html#aeb189bc2d21b9a4a8d7ac3c23e3c2ae0">SpawnSimpleChildrenItems()</a>.</p>
+
+</div>
+</div>
+<a id="a27d905c78d4105b12d2a6451bd673385" name="a27d905c78d4105b12d2a6451bd673385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27d905c78d4105b12d2a6451bd673385">&#9670;&#160;</a></span>GetCharacterPresetByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../de/d3b/class_player_spawn_preset.html">PlayerSpawnPreset</a> GetCharacterPresetByName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td>
+          <td class="paramname"><em>presetName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../dc/d04/class_player_spawn_handler.html#a88e20a3962b424909f2b1dcf73acebb9">m_Data</a>.</p>
 
 </div>
 </div>
@@ -800,7 +830,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d04/class_player_spawn_handler.html#a0011cc23a871943f347445ac052aa79f">GetRandomCharacterPreset()</a>, and <a class="el" href="../../dc/d04/class_player_spawn_handler.html#a3700c46bbcf43becd1b062622661f89d">LoadData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/d04/class_player_spawn_handler.html#a27d905c78d4105b12d2a6451bd673385">GetCharacterPresetByName()</a>, <a class="el" href="../../dc/d04/class_player_spawn_handler.html#a0011cc23a871943f347445ac052aa79f">GetRandomCharacterPreset()</a>, and <a class="el" href="../../dc/d04/class_player_spawn_handler.html#a3700c46bbcf43becd1b062622661f89d">LoadData()</a>.</p>
 
 </div>
 </div>

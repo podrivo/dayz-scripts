@@ -115,6 +115,8 @@ Static Private Member Functions</h2></td></tr>
 <tr class="separator:a9398268ee52d796352429a8cf3e7dc7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38c0d89b647057e1416ff8bbfdcb38c3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d94/class_developer_free_camera.html#a38c0d89b647057e1416ff8bbfdcb38c3">IsFreeCameraEnabled</a> ()</td></tr>
 <tr class="separator:a38c0d89b647057e1416ff8bbfdcb38c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1acdc600801ca514bfce52d1097b6fac"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d94/class_developer_free_camera.html#a1acdc600801ca514bfce52d1097b6fac">IsFreeCameraEnabledNoPlayerMovement</a> ()</td></tr>
+<tr class="separator:a1acdc600801ca514bfce52d1097b6fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72e9d4a58edcf89b08836de23f7b9a1b"><td class="memItemLeft" align="right" valign="top">static protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d94/class_developer_free_camera.html#a72e9d4a58edcf89b08836de23f7b9a1b">EnableFreeCamera</a> (<a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player)</td></tr>
 <tr class="separator:a72e9d4a58edcf89b08836de23f7b9a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b83399800c856ec5f24f25a54df6803"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d94/class_developer_free_camera.html#a3b83399800c856ec5f24f25a54df6803">DisableFreeCamera</a> (<a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> player, <a class="el" href="../../d9/db9/classbool.html">bool</a> teleport_player=false)</td></tr>
@@ -288,7 +290,34 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d6/d94/class_developer_free_camera.html#a5b6a304f029add71ec5df460fed6c372">FreeCameraToggle()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a0a455b3e89879e1905d532dacb208fbd">PluginBase::IsEnabledFreeCamera()</a>, <a class="el" href="../../d0/db7/class_script_console_items_tab.html#aee6a27cad085ec84d5f5dbb765b63b53">ScriptConsoleItemsTab::OnClick()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#ae220a09aca0e4ecb89b52d64fd6306d8">PluginBase::SpawnFromClipboard()</a>, <a class="el" href="../../dd/d2e/class_developer_teleport.html#a40081e940bd8ccab5e3cf122c40207f8">DeveloperTeleport::TeleportAtCursor()</a>, <a class="el" href="../../dd/d2e/class_developer_teleport.html#a9c99aecc4d255ae4423d919eba9da832">DeveloperTeleport::TeleportAtCursorEx()</a>, and <a class="el" href="../../d7/da1/class_action_manager_client.html#a47d07e65dec68c40fc31b18e63954616">ActionManagerClient::Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/d94/class_developer_free_camera.html#a5b6a304f029add71ec5df460fed6c372">FreeCameraToggle()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a0a455b3e89879e1905d532dacb208fbd">PluginBase::IsEnabledFreeCamera()</a>, <a class="el" href="../../d0/db7/class_script_console_items_tab.html#aee6a27cad085ec84d5f5dbb765b63b53">ScriptConsoleItemsTab::OnClick()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#ae220a09aca0e4ecb89b52d64fd6306d8">PluginBase::SpawnFromClipboard()</a>, <a class="el" href="../../dd/d2e/class_developer_teleport.html#a40081e940bd8ccab5e3cf122c40207f8">DeveloperTeleport::TeleportAtCursor()</a>, and <a class="el" href="../../dd/d2e/class_developer_teleport.html#a9c99aecc4d255ae4423d919eba9da832">DeveloperTeleport::TeleportAtCursorEx()</a>.</p>
+
+</div>
+</div>
+<a id="a1acdc600801ca514bfce52d1097b6fac" name="a1acdc600801ca514bfce52d1097b6fac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1acdc600801ca514bfce52d1097b6fac">&#9670;&#160;</a></span>IsFreeCameraEnabledNoPlayerMovement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d9/db9/classbool.html">bool</a> IsFreeCameraEnabledNoPlayerMovement </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d7/da1/class_action_manager_client.html#a47d07e65dec68c40fc31b18e63954616">ActionManagerClient::Update()</a>.</p>
 
 </div>
 </div>

@@ -155,6 +155,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a43ee881b2f5a771a850d43d2bfe6b006"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa39b7c4d3d085ef8514a87c32b81a4d"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d9c/class_weapon___base.html#afa39b7c4d3d085ef8514a87c32b81a4d">SetActions</a> ()</td></tr>
 <tr class="separator:afa39b7c4d3d085ef8514a87c32b81a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6981f5a62ebf08b80e0879285e94b31f"><td class="memItemLeft" align="right" valign="top">protected override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d9c/class_weapon___base.html#a6981f5a62ebf08b80e0879285e94b31f">GetApproximateAimOffsets</a> (<a class="el" href="../../db/d55/_blend2_d_8c.html#a8ea4fca0678a9d7ed2fba8afea1087a5">Blend2DVector</a> dst, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> characterStance)</td></tr>
+<tr class="separator:a6981f5a62ebf08b80e0879285e94b31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a2d8edc91b44b5b7b57a97b16094342"><td class="memItemLeft" align="right" valign="top">protected override <a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d9c/class_weapon___base.html#a5a2d8edc91b44b5b7b57a97b16094342">GetApproximateMovementOffset</a> (<a class="el" href="../../d7/dfc/classvector.html">vector</a> localVelocity, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> characterStance, <a class="el" href="../../d4/dc3/classfloat.html">float</a> lean, <a class="el" href="../../d4/dc3/classfloat.html">float</a> ud11, <a class="el" href="../../d4/dc3/classfloat.html">float</a> lr11)</td></tr>
+<tr class="separator:a5a2d8edc91b44b5b7b57a97b16094342"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66e5504cd801fc2dcb914185e023f362"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d9c/class_weapon___base.html#a66e5504cd801fc2dcb914185e023f362">Rifle_Base</a> ()</td></tr>
 <tr class="separator:a66e5504cd801fc2dcb914185e023f362"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54787499372ae713fe5e1b6b1414a6d8"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d9c/class_weapon___base.html#a54787499372ae713fe5e1b6b1414a6d8">InitStateMachine</a> ()</td></tr>
@@ -379,6 +383,102 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a6981f5a62ebf08b80e0879285e94b31f" name="a6981f5a62ebf08b80e0879285e94b31f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6981f5a62ebf08b80e0879285e94b31f">&#9670;&#160;</a></span>GetApproximateAimOffsets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected override void GetApproximateAimOffsets </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d55/_blend2_d_8c.html#a8ea4fca0678a9d7ed2fba8afea1087a5">Blend2DVector</a>&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td>
+          <td class="paramname"><em>characterStance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../db/de5/class_weapon.html#a792757cd348e11730b65ac12e32d9027">Weapon::ApproximateWeaponLiftTransform()</a>.</p>
+
+</div>
+</div>
+<a id="a5a2d8edc91b44b5b7b57a97b16094342" name="a5a2d8edc91b44b5b7b57a97b16094342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a2d8edc91b44b5b7b57a97b16094342">&#9670;&#160;</a></span>GetApproximateMovementOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected override <a class="el" href="../../d7/dfc/classvector.html">vector</a> GetApproximateMovementOffset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td>
+          <td class="paramname"><em>localVelocity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td>
+          <td class="paramname"><em>characterStance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>lean</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>ud11</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>lr11</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#gaae5a8127fc6393d55122ac12f2d16c16">Math::AbsFloat()</a>, <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../d5/d98/group___math.html#gaa6376dcd0f724f11ba0b6bdf66b185ee">Math::Lerp()</a>, <a class="el" href="../../d5/d98/group___math.html#ga0b79da001711df4f5c5759cc8ac4585b">Math::Max()</a>, <a class="el" href="../../d5/d98/group___math.html#ga46107fe5da70b9f5f33642d643dc813f">Math::Pow()</a>, and <a class="el" href="../../d5/dc8/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/de5/class_weapon.html#a792757cd348e11730b65ac12e32d9027">Weapon::ApproximateWeaponLiftTransform()</a>.</p>
+
+</div>
+</div>
 <a id="a43ee881b2f5a771a850d43d2bfe6b006" name="a43ee881b2f5a771a850d43d2bfe6b006"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a43ee881b2f5a771a850d43d2bfe6b006">&#9670;&#160;</a></span>GetChanceToJam() <span class="overload">[1/2]</span></h2>
 
@@ -566,7 +666,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d8f/_weapon_stable_state_8c.html#a81850a19579d69fbd62d39a8f08a5f38ab199e021998d49b1f09338d8b9b18ecb">E</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d79/class_rifle___base.html#a4b67e84ff79e8693162720c34ff52ecf">Rifle_Base::E</a>.</p>
 
 </div>
 </div>

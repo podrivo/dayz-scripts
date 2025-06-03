@@ -311,6 +311,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a56edaa75fb618ddf0aa2354f005cdd6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ed575236aeacbf94757a6653798cca5"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#a6ed575236aeacbf94757a6653798cca5">OnRightClick</a> ()</td></tr>
 <tr class="separator:a6ed575236aeacbf94757a6653798cca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeadfd83403d8685d513591843921c8d"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#aeeadfd83403d8685d513591843921c8d">SetInventoryLocationToVicinityOrCurrent</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> root, inout <a class="el" href="../../d6/dc5/class_inventory_location.html">InventoryLocation</a> dst)</td></tr>
+<tr class="separator:aeeadfd83403d8685d513591843921c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac029fc15079a4c3a51ba2b5e4f04b2e4"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#ac029fc15079a4c3a51ba2b5e4f04b2e4">CanBeCombined</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> other_item, <a class="el" href="../../d9/db9/classbool.html">bool</a> reservation_check=true, <a class="el" href="../../d9/db9/classbool.html">bool</a> stack_max_limit=false)</td></tr>
 <tr class="separator:ac029fc15079a4c3a51ba2b5e4f04b2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a19be1453bdf15059beebbc2aece327"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#a4a19be1453bdf15059beebbc2aece327">IsCombineAll</a> (<a class="el" href="../../de/d7a/class_item_base.html">ItemBase</a> other_item, <a class="el" href="../../d9/db9/classbool.html">bool</a> use_stack_max=false)</td></tr>
@@ -425,9 +427,9 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a564b0b384cf49852785399de35a996b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86b687f78fe933c6f2a26e954fb6be35"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#a86b687f78fe933c6f2a26e954fb6be35">SetQuantityToMinimum</a> ()</td></tr>
 <tr class="separator:a86b687f78fe933c6f2a26e954fb6be35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8eb7737fc5a7ee5c66b4432c397ed82d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#a8eb7737fc5a7ee5c66b4432c397ed82d">SetQuantityNormalized</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> value, <a class="el" href="../../d9/db9/classbool.html">bool</a> destroy_config=true, <a class="el" href="../../d9/db9/classbool.html">bool</a> destroy_forced=false)</td></tr>
-<tr class="memdesc:a8eb7737fc5a7ee5c66b4432c397ed82d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets quantity in normalized 0..1 form between the item's Min a Max values as defined by item's config(for Min 0 and Max 5000, setting 0.5 will result in value 2500)  <br /></td></tr>
-<tr class="separator:a8eb7737fc5a7ee5c66b4432c397ed82d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00ad90a6d278f306a71dad4c877959ad"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#a00ad90a6d278f306a71dad4c877959ad">SetQuantityNormalized</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> value, <a class="el" href="../../d9/db9/classbool.html">bool</a> destroy_config=true, <a class="el" href="../../d9/db9/classbool.html">bool</a> destroy_forced=false)</td></tr>
+<tr class="memdesc:a00ad90a6d278f306a71dad4c877959ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets quantity in normalized 0..1 form between the item's Min a Max values as defined by item's config(for Min 0 and Max 5000, setting 0.5 will result in value 2500)  <br /></td></tr>
+<tr class="separator:a00ad90a6d278f306a71dad4c877959ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a524c8c4dc4eef9ece8b47351fd5fb497"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#a524c8c4dc4eef9ece8b47351fd5fb497">GetQuantityNormalized</a> ()</td></tr>
 <tr class="memdesc:a524c8c4dc4eef9ece8b47351fd5fb497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets quantity in normalized 0..1 form between the item's Min a Max values as defined by item's config(for Min 0 and Max 5000, value 2500 will result in 0.5)  <br /></td></tr>
 <tr class="separator:a524c8c4dc4eef9ece8b47351fd5fb497"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -457,7 +459,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:aac41089a82b1a29d432c9e1e8206eca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of items in cargo, otherwise returns 0(non-cargo objects). Recursive.  <br /></td></tr>
 <tr class="separator:aac41089a82b1a29d432c9e1e8206eca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b6ce458c65f1dd4d809d6fff53f8ae1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#a7b6ce458c65f1dd4d809d6fff53f8ae1">GetUnitWeight</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> include_wetness=true)</td></tr>
-<tr class="memdesc:a7b6ce458c65f1dd4d809d6fff53f8ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsolete, use GetWeightEx instead.  <br /></td></tr>
+<tr class="memdesc:a7b6ce458c65f1dd4d809d6fff53f8ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../dd/d01/class_obsolete.html">Obsolete</a>, use GetWeightEx instead.  <br /></td></tr>
 <tr class="separator:a7b6ce458c65f1dd4d809d6fff53f8ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1f69d8655519392f852f682ce5e92a3"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#ab1f69d8655519392f852f682ce5e92a3">ClearInventory</a> ()</td></tr>
 <tr class="separator:ab1f69d8655519392f852f682ce5e92a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -624,6 +626,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a5d6d4b3e6ad436df158ce269fb8be220"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa820fe1eea60a9e7c998c90dddad0f4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#aa820fe1eea60a9e7c998c90dddad0f4c">GetDeploySoundset</a> ()</td></tr>
 <tr class="separator:aa820fe1eea60a9e7c998c90dddad0f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c12aeca04a6bcf021ce160d2872bf5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#a0c12aeca04a6bcf021ce160d2872bf5b">GetLoopFoldSoundset</a> ()</td></tr>
+<tr class="separator:a0c12aeca04a6bcf021ce160d2872bf5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7be9334a699d991074e17b777454c9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#aa7be9334a699d991074e17b777454c9a">GetFoldSoundset</a> ()</td></tr>
+<tr class="separator:aa7be9334a699d991074e17b777454c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a440a7d3e8cc4a881fa97c264718c3a19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/daf/_item_sound_handler_8c.html#a3ff7731e26437e20f1d0ffe4e1ce6e3a">ItemSoundHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#a440a7d3e8cc4a881fa97c264718c3a19">GetItemSoundHandler</a> ()</td></tr>
 <tr class="separator:a440a7d3e8cc4a881fa97c264718c3a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af25cfe0b243afbd6c05e0fc75e4478d4"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0e/class_inventory_item.html#af25cfe0b243afbd6c05e0fc75e4478d4">InitItemSounds</a> ()</td></tr>
@@ -2450,7 +2456,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a56d3056aa559e3929873a33d97c5fe1f">HasQuantity()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a8eb7737fc5a7ee5c66b4432c397ed82d">SetQuantityNormalized()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a56d3056aa559e3929873a33d97c5fe1f">HasQuantity()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a00ad90a6d278f306a71dad4c877959ad">SetQuantityNormalized()</a>.</p>
 
 </div>
 </div>
@@ -2587,7 +2593,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d2/de6/class_c_game.html#a61db5176ca7a14fccbb6acdbb2db41e1">CGame::CreateSoundOnObject()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#af941429690c173552c49e81026017f41">ExplodeAmmo()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d5/d98/group___math.html#ga1d451fecaad1377d8477ddb9d9381134">Math::RandomInt()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/de6/class_c_game.html#a61db5176ca7a14fccbb6acdbb2db41e1">CGame::CreateSoundOnObject()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#af941429690c173552c49e81026017f41">ExplodeAmmo()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/dca/_environment_8c.html#a597cefde4775c2427d52c7e88a482745">GetTemperature()</a>, and <a class="el" href="../../d5/d98/group___math.html#ga1d451fecaad1377d8477ddb9d9381134">Math::RandomInt()</a>.</p>
 
 </div>
 </div>
@@ -2801,7 +2807,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>item is able to explode in fire</p>
 
-<p class="reference">References <a class="el" href="../../de/d7a/class_item_base.html#a6b28177ea528659f35679edcfe0bb36f">ItemBase::CanExplodeInFire()</a>, <a class="el" href="../../d7/dc3/_trap___land_mine_8c.html#a26eb4b1cf52c5eef709d65fdb92f90f0">Explode()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#af941429690c173552c49e81026017f41">ExplodeAmmo()</a>, and <a class="el" href="../../d2/d68/group___emote_i_ds.html#ga9b0314b5cf2182e375168c770e6533ab">GameConstants::ITEM_TEMPERATURE_TO_EXPLODE_MIN</a>.</p>
+<p class="reference">References <a class="el" href="../../de/d7a/class_item_base.html#a6b28177ea528659f35679edcfe0bb36f">ItemBase::CanExplodeInFire()</a>, <a class="el" href="../../d7/dc3/_trap___land_mine_8c.html#a26eb4b1cf52c5eef709d65fdb92f90f0">Explode()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#af941429690c173552c49e81026017f41">ExplodeAmmo()</a>, <a class="el" href="../../d7/dca/_environment_8c.html#a597cefde4775c2427d52c7e88a482745">GetTemperature()</a>, and <a class="el" href="../../d2/d68/group___emote_i_ds.html#ga9b0314b5cf2182e375168c770e6533ab">GameConstants::ITEM_TEMPERATURE_TO_EXPLODE_MIN</a>.</p>
 
 </div>
 </div>
@@ -3261,7 +3267,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#a36ae8366b1a04db798ccb33fa19cde49">IsLiquidContainer()</a>, and <a class="el" href="../../d0/d67/group___s_a_t_i_ds.html#gafca98d007a489f007654f7f870ce4749">SAT_DEBUG_ACTION</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956">InventoryLocation::GetType()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a36ae8366b1a04db798ccb33fa19cde49">IsLiquidContainer()</a>, and <a class="el" href="../../d0/d67/group___s_a_t_i_ds.html#gafca98d007a489f007654f7f870ce4749">SAT_DEBUG_ACTION</a>.</p>
 
 </div>
 </div>
@@ -3508,6 +3514,31 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aa7be9334a699d991074e17b777454c9a" name="aa7be9334a699d991074e17b777454c9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7be9334a699d991074e17b777454c9a">&#9670;&#160;</a></span>GetFoldSoundset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d92/classstring.html">string</a> GetFoldSoundset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab950c85bf4ce99c0a689f6da63acfd2c" name="ab950c85bf4ce99c0a689f6da63acfd2c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab950c85bf4ce99c0a689f6da63acfd2c">&#9670;&#160;</a></span>GetFoodStage()</h2>
 
@@ -3725,7 +3756,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#a85f174c6ab9495a46b365f6053c2cf07">GetLiquidType()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a36ae8366b1a04db798ccb33fa19cde49">IsLiquidContainer()</a>, and <a class="el" href="../../d9/da9/group___liquid_types.html#ga401baf9ddb35bebacfa4eb147bc5d786">LIQUID_NONE</a>.</p>
+<p class="reference">References <a class="el" href="../../df/dfe/_c_c_t_water_surface_8c.html#aa2ab2c07e9dacc9fba94d877b4f3e9ee">GetLiquidType()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a36ae8366b1a04db798ccb33fa19cde49">IsLiquidContainer()</a>, and <a class="el" href="../../d9/da9/group___liquid_types.html#ga401baf9ddb35bebacfa4eb147bc5d786">LIQUID_NONE</a>.</p>
 
 </div>
 </div>
@@ -3977,6 +4008,31 @@ Static Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="../../d5/d92/classstring.html">string</a> GetLoopDeploySoundset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c12aeca04a6bcf021ce160d2872bf5b" name="a0c12aeca04a6bcf021ce160d2872bf5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c12aeca04a6bcf021ce160d2872bf5b">&#9670;&#160;</a></span>GetLoopFoldSoundset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d92/classstring.html">string</a> GetLoopFoldSoundset </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -4584,7 +4640,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#a85f174c6ab9495a46b365f6053c2cf07">GetLiquidType()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a36ae8366b1a04db798ccb33fa19cde49">IsLiquidContainer()</a>, and <a class="el" href="../../d9/da9/group___liquid_types.html#ga401baf9ddb35bebacfa4eb147bc5d786">LIQUID_NONE</a>.</p>
+<p class="reference">References <a class="el" href="../../df/dfe/_c_c_t_water_surface_8c.html#aa2ab2c07e9dacc9fba94d877b4f3e9ee">GetLiquidType()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a36ae8366b1a04db798ccb33fa19cde49">IsLiquidContainer()</a>, and <a class="el" href="../../d9/da9/group___liquid_types.html#ga401baf9ddb35bebacfa4eb147bc5d786">LIQUID_NONE</a>.</p>
 
 </div>
 </div>
@@ -4667,7 +4723,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#a85f174c6ab9495a46b365f6053c2cf07">GetLiquidType()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a36ae8366b1a04db798ccb33fa19cde49">IsLiquidContainer()</a>, and <a class="el" href="../../d9/da9/group___liquid_types.html#ga401baf9ddb35bebacfa4eb147bc5d786">LIQUID_NONE</a>.</p>
+<p class="reference">References <a class="el" href="../../df/dfe/_c_c_t_water_surface_8c.html#aa2ab2c07e9dacc9fba94d877b4f3e9ee">GetLiquidType()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a36ae8366b1a04db798ccb33fa19cde49">IsLiquidContainer()</a>, and <a class="el" href="../../d9/da9/group___liquid_types.html#ga401baf9ddb35bebacfa4eb147bc5d786">LIQUID_NONE</a>.</p>
 
 </div>
 </div>
@@ -4722,7 +4778,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Obsolete, use GetWeightEx instead. </p>
+<p><a class="el" href="../../dd/d01/class_obsolete.html">Obsolete</a>, use GetWeightEx instead. </p>
 
 <p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adcd98c14aeef06cfaa0706ecbfffb405">GetWet()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a36ae8366b1a04db798ccb33fa19cde49">IsLiquidContainer()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a013d408d93c67a9cabd34b23fa1579a0">IsSplitable()</a>.</p>
 
@@ -5840,7 +5896,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#a85f174c6ab9495a46b365f6053c2cf07">GetLiquidType()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a56d3056aa559e3929873a33d97c5fe1f">HasQuantity()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/dfe/_c_c_t_water_surface_8c.html#aa2ab2c07e9dacc9fba94d877b4f3e9ee">GetLiquidType()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a56d3056aa559e3929873a33d97c5fe1f">HasQuantity()</a>.</p>
 
 </div>
 </div>
@@ -6564,7 +6620,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#ab64c41354a8f11efe90e6cf0939433e5">AddWet()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a85f174c6ab9495a46b365f6053c2cf07">GetLiquidType()</a>, <a class="el" href="../../d9/d5d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#affca0b44c3ed5294d6e76e056b0c52b0">GetQuantityMax()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a2ec4bcaa8f2626010a37e4524e33f574">GetWetMax()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a27b06ea3c304707a910f2a730f4a89ab">InsertAgent()</a>, <a class="el" href="../../da/dbd/_plugin_item_diagnostic_8c.html#a6d12d7171104399b62406cd06e78c7ec">PluginItemDiagnostic()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a4c0fe133ca537c6281866fe685a01e1b">RemoveAgent()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#af1a962dc0e929651eab62eb42ef611b4">SetLiquidType()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a564b0b384cf49852785399de35a996b5">SetQuantityMax()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#adceeb51f4456342827f65f065885aae4">AddQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#ab64c41354a8f11efe90e6cf0939433e5">AddWet()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/dfe/_c_c_t_water_surface_8c.html#aa2ab2c07e9dacc9fba94d877b4f3e9ee">GetLiquidType()</a>, <a class="el" href="../../d9/d5d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#affca0b44c3ed5294d6e76e056b0c52b0">GetQuantityMax()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a2ec4bcaa8f2626010a37e4524e33f574">GetWetMax()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a7ad1a4f2dd9bed6068e112e1646b78d3">CGame::GizmoSelectObject()</a>, <a class="el" href="../../d2/de6/class_c_game.html#ad2420584174fe100e1afa9a5f9c103b8">CGame::GizmoSelectPhysics()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a27b06ea3c304707a910f2a730f4a89ab">InsertAgent()</a>, <a class="el" href="../../da/dbd/_plugin_item_diagnostic_8c.html#a6d12d7171104399b62406cd06e78c7ec">PluginItemDiagnostic()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a4c0fe133ca537c6281866fe685a01e1b">RemoveAgent()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#af1a962dc0e929651eab62eb42ef611b4">SetLiquidType()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a7cce0ba78e181f7c4567e0096ca62809">ItemBase::SetQuantity()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a564b0b384cf49852785399de35a996b5">SetQuantityMax()</a>.</p>
 
 </div>
 </div>
@@ -7195,7 +7251,7 @@ explosive</h2>
 
 <p>Called on server side when this item's quantity is changed. Call super.OnQuantityChanged(); first when overriding this event. </p>
 
-<p class="reference">References <a class="el" href="../../d6/dae/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a85f174c6ab9495a46b365f6053c2cf07">GetLiquidType()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a6627894a2871d2a1ce7ea36771184d43">GetLiquidTypeInit()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a524c8c4dc4eef9ece8b47351fd5fb497">GetQuantityNormalized()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a36ae8366b1a04db798ccb33fa19cde49">IsLiquidContainer()</a>, <a class="el" href="../../d9/da9/group___liquid_types.html#ga401baf9ddb35bebacfa4eb147bc5d786">LIQUID_NONE</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#af1a962dc0e929651eab62eb42ef611b4">SetLiquidType()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/dae/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, <a class="el" href="../../df/dfe/_c_c_t_water_surface_8c.html#aa2ab2c07e9dacc9fba94d877b4f3e9ee">GetLiquidType()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a6627894a2871d2a1ce7ea36771184d43">GetLiquidTypeInit()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a524c8c4dc4eef9ece8b47351fd5fb497">GetQuantityNormalized()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a36ae8366b1a04db798ccb33fa19cde49">IsLiquidContainer()</a>, <a class="el" href="../../d9/da9/group___liquid_types.html#ga401baf9ddb35bebacfa4eb147bc5d786">LIQUID_NONE</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#af1a962dc0e929651eab62eb42ef611b4">SetLiquidType()</a>.</p>
 
 </div>
 </div>
@@ -7222,7 +7278,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a4c123a8b23bba76c57709919b8ab977d">GameInventory::c_InventoryReservationTimeoutShortMS</a>, <a class="el" href="../../de/d7a/class_item_base.html#a2ce54e927dda4ba80144b78036e5c44d">ItemBase::CanBeSplit()</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a16f949f7b0d6d4503183406f6a4c4131">InventoryLocation::GetCol()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a92f5918ec5d632d5159c9d1f52fe7758">GetDayZGame()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#ae8c59599232e7478a33a3dfe13a5f70f">InventoryLocation::GetFlip()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a78807dc5b4892cb5d30a6789b9528e09">InventoryLocation::GetIdx()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aa4957320ada1b1e401862296fe14370b">InventoryLocation::GetParent()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a5ea16fa19c11f786c7b9f675d8cf8f2e">CGame::GetPlayer()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a2434e6f5d99c9316b1434c1a4f4a064c">InventoryLocation::GetRow()</a>, <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#a54c30fa234201cbc6b05acbe7b7336c4">INPUT_UDT_ITEM_MANIPULATION</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a96d6cc3211119f8b7a3c2ba755ab8a73">ScriptInputUserData::Send()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a481b291b4424f680389ecc3541de7741">InventoryLocation::SetCargo()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a4f3a298ebdc605d72c21b3b3d96cae62">InventoryLocation::SetGround()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#af1535c30942cf96fe0de508ad1ab994c">SplitItem()</a>, <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>, and <a class="el" href="../../d6/dc5/class_inventory_location.html#afccd93e7de53c6fc8050afb5a41bb1f3">InventoryLocation::WriteToContext()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a4c123a8b23bba76c57709919b8ab977d">GameInventory::c_InventoryReservationTimeoutShortMS</a>, <a class="el" href="../../de/d7a/class_item_base.html#a2ce54e927dda4ba80144b78036e5c44d">ItemBase::CanBeSplit()</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a24580cb89957eeb75dfaf8705107d00a">ScriptInputUserData::CanStoreInputUserData()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a16f949f7b0d6d4503183406f6a4c4131">InventoryLocation::GetCol()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a92f5918ec5d632d5159c9d1f52fe7758">GetDayZGame()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#ae8c59599232e7478a33a3dfe13a5f70f">InventoryLocation::GetFlip()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a78807dc5b4892cb5d30a6789b9528e09">InventoryLocation::GetIdx()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aa4957320ada1b1e401862296fe14370b">InventoryLocation::GetParent()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a5ea16fa19c11f786c7b9f675d8cf8f2e">CGame::GetPlayer()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a2434e6f5d99c9316b1434c1a4f4a064c">InventoryLocation::GetRow()</a>, <a class="el" href="../../d9/d17/3___game_2tools_2_component_2__constants_8c.html#a54c30fa234201cbc6b05acbe7b7336c4">INPUT_UDT_ITEM_MANIPULATION</a>, <a class="el" href="../../d4/d2b/class_script_input_user_data.html#a96d6cc3211119f8b7a3c2ba755ab8a73">ScriptInputUserData::Send()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a481b291b4424f680389ecc3541de7741">InventoryLocation::SetCargo()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#aeeadfd83403d8685d513591843921c8d">SetInventoryLocationToVicinityOrCurrent()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#af1535c30942cf96fe0de508ad1ab994c">SplitItem()</a>, <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>, and <a class="el" href="../../d6/dc5/class_inventory_location.html#afccd93e7de53c6fc8050afb5a41bb1f3">InventoryLocation::WriteToContext()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/d7b/class_vicinity_slots_container.html#a89661798da566cad90bd8764f3d15ac4">VicinitySlotsContainer::MouseClick()</a>.</p>
 
@@ -8114,7 +8170,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#adeb38f82748c28d846b5312bd7b6d9b7">CanHaveTemperature()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../de/d7a/class_item_base.html#a1eac97f778a0b671281b1de25e1ba99b">ItemBase::IsSelfAdjustingTemperature()</a>, and <a class="el" href="../../d9/d00/group___entity_temperature.html#ga5bd01eb763f9bfa9cec9cd9873adc4a8">GameConstants::TEMP_COEF_WORLD</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#adeb38f82748c28d846b5312bd7b6d9b7">CanHaveTemperature()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d7/dca/_environment_8c.html#a597cefde4775c2427d52c7e88a482745">GetTemperature()</a>, <a class="el" href="../../de/d7a/class_item_base.html#a1eac97f778a0b671281b1de25e1ba99b">ItemBase::IsSelfAdjustingTemperature()</a>, and <a class="el" href="../../d9/d00/group___entity_temperature.html#ga5bd01eb763f9bfa9cec9cd9873adc4a8">GameConstants::TEMP_COEF_WORLD</a>.</p>
 
 </div>
 </div>
@@ -8818,7 +8874,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/d5c/group___components.html#gabadae4556ccc3142ec8849234a84c083">COMP_TYPE_ENERGY_MANAGER</a>, <a class="el" href="../../d6/de6/class_component_energy_manager.html#ae32a0966a6c02213b2ba4d30d1b98ffb">ComponentEnergyManager::GetEnergyAtSpawn()</a>, <a class="el" href="../../d6/de6/class_component_energy_manager.html#ac4e2e9dcf2c4b16a9562e326cd3e0737">ComponentEnergyManager::GetEnergyMaxPristine()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a56d3056aa559e3929873a33d97c5fe1f">HasQuantity()</a>, <a class="el" href="../../d5/d98/group___math.html#ga7ffb8c4fb175c920b81a73eebc2faa73">Math::RandomFloatInclusive()</a>, <a class="el" href="../../d6/de6/class_component_energy_manager.html#a804115f318d8fee00e34d741008f2804">ComponentEnergyManager::SetEnergy0To1()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a8eb7737fc5a7ee5c66b4432c397ed82d">SetQuantityNormalized()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d5c/group___components.html#gabadae4556ccc3142ec8849234a84c083">COMP_TYPE_ENERGY_MANAGER</a>, <a class="el" href="../../d6/de6/class_component_energy_manager.html#ae32a0966a6c02213b2ba4d30d1b98ffb">ComponentEnergyManager::GetEnergyAtSpawn()</a>, <a class="el" href="../../d6/de6/class_component_energy_manager.html#ac4e2e9dcf2c4b16a9562e326cd3e0737">ComponentEnergyManager::GetEnergyMaxPristine()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a56d3056aa559e3929873a33d97c5fe1f">HasQuantity()</a>, <a class="el" href="../../d5/d98/group___math.html#ga7ffb8c4fb175c920b81a73eebc2faa73">Math::RandomFloatInclusive()</a>, <a class="el" href="../../d6/de6/class_component_energy_manager.html#a804115f318d8fee00e34d741008f2804">ComponentEnergyManager::SetEnergy0To1()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a00ad90a6d278f306a71dad4c877959ad">SetQuantityNormalized()</a>.</p>
 
 </div>
 </div>
@@ -8930,6 +8986,42 @@ explosive</h2>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeeadfd83403d8685d513591843921c8d" name="aeeadfd83403d8685d513591843921c8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeadfd83403d8685d513591843921c8d">&#9670;&#160;</a></span>SetInventoryLocationToVicinityOrCurrent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected void SetInventoryLocationToVicinityOrCurrent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a>&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">inout <a class="el" href="../../d6/dc5/class_inventory_location.html">InventoryLocation</a>&#160;</td>
+          <td class="paramname"><em>dst</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -9167,8 +9259,8 @@ explosive</h2>
 
 </div>
 </div>
-<a id="a8eb7737fc5a7ee5c66b4432c397ed82d" name="a8eb7737fc5a7ee5c66b4432c397ed82d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8eb7737fc5a7ee5c66b4432c397ed82d">&#9670;&#160;</a></span>SetQuantityNormalized()</h2>
+<a id="a00ad90a6d278f306a71dad4c877959ad" name="a00ad90a6d278f306a71dad4c877959ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00ad90a6d278f306a71dad4c877959ad">&#9670;&#160;</a></span>SetQuantityNormalized()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -9177,7 +9269,7 @@ explosive</h2>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void SetQuantityNormalized </td>
+          <td class="memname">override void SetQuantityNormalized </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -10539,7 +10631,7 @@ explosive</h2>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#aea089a011ddb7d15c60f7ad5904b559f">GetCleanness()</a>, <a class="el" href="../../d9/d0e/group___widget_a_p_i.html#ga0323f49a814c327cc2d8f2d4ef562a3a">GetColor()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a85f174c6ab9495a46b365f6053c2cf07">GetLiquidType()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#adcd98c14aeef06cfaa0706ecbfffb405">GetWet()</a>, <a class="el" href="../../d6/d28/group___item_variables.html#ga378e4b479c128e3585d60c4415a3337b">VARIABLE_CLEANNESS</a>, <a class="el" href="../../d6/d28/group___item_variables.html#ga3aefc32289f2e5b317ea4523877cc3cc">VARIABLE_COLOR</a>, <a class="el" href="../../d6/d28/group___item_variables.html#ga11d9c851254497326d46a31b08d5e9f3">VARIABLE_LIQUIDTYPE</a>, <a class="el" href="../../d6/d28/group___item_variables.html#gac367e727c08e9c59aff095a06d3c5207">VARIABLE_QUANTITY</a>, <a class="el" href="../../d6/d28/group___item_variables.html#gac36e5ca4861bb0e0c41d675f48bae4a5">VARIABLE_WET</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#aea089a011ddb7d15c60f7ad5904b559f">GetCleanness()</a>, <a class="el" href="../../d9/d0e/group___widget_a_p_i.html#ga0323f49a814c327cc2d8f2d4ef562a3a">GetColor()</a>, <a class="el" href="../../df/dfe/_c_c_t_water_surface_8c.html#aa2ab2c07e9dacc9fba94d877b4f3e9ee">GetLiquidType()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a549415129bdcaf7b9b217f4d406c119a">GetQuantity()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#adcd98c14aeef06cfaa0706ecbfffb405">GetWet()</a>, <a class="el" href="../../d6/d28/group___item_variables.html#ga378e4b479c128e3585d60c4415a3337b">VARIABLE_CLEANNESS</a>, <a class="el" href="../../d6/d28/group___item_variables.html#ga3aefc32289f2e5b317ea4523877cc3cc">VARIABLE_COLOR</a>, <a class="el" href="../../d6/d28/group___item_variables.html#ga11d9c851254497326d46a31b08d5e9f3">VARIABLE_LIQUIDTYPE</a>, <a class="el" href="../../d6/d28/group___item_variables.html#gac367e727c08e9c59aff095a06d3c5207">VARIABLE_QUANTITY</a>, <a class="el" href="../../d6/d28/group___item_variables.html#gac36e5ca4861bb0e0c41d675f48bae4a5">VARIABLE_WET</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
 
 </div>
 </div>

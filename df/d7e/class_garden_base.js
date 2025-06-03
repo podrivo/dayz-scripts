@@ -5,7 +5,6 @@ var class_garden_base =
     [ "CanPutIntoHands", "df/d7e/class_garden_base.html#a9c46909a8838ed5e1786f94e56237b43", null ],
     [ "CanRemoveFromCargo", "df/d7e/class_garden_base.html#ab1317c2902dfdccdd532892d36bb524c", null ],
     [ "EEDelete", "df/d7e/class_garden_base.html#a83a1e547e0d1e65ad421070058a093a9", null ],
-    [ "EEInit", "df/d7e/class_garden_base.html#a58793c1561abb560da4377da77ad6dea", null ],
     [ "GardenPlot", "df/d7e/class_garden_base.html#a678a43c191e144ddd7a1b13e29c8a26c", null ],
     [ "GetGardenSlotsCount", "df/d7e/class_garden_base.html#a8fab5d6155c085b8cbfc201bc606fa77", null ],
     [ "IsInventoryVisible", "df/d7e/class_garden_base.html#a074d6a8b3ce6d5ed5aebdf1d6efb4952", null ],

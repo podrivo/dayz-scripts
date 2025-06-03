@@ -29,6 +29,7 @@ var dir_c25a636d01fc7302df75679af6f6d439 =
     [ "PlantMaterial.c", "d7/d07/_entities_2_item_base_2_inventory___base_2_plant_material_8c.html", "d7/d07/_entities_2_item_base_2_inventory___base_2_plant_material_8c" ],
     [ "PSO11Optic.c", "d2/d3c/_p_s_o11_optic_8c.html", "d2/d3c/_p_s_o11_optic_8c" ],
     [ "PSO1Optic.c", "d8/d74/_p_s_o1_optic_8c.html", "d8/d74/_p_s_o1_optic_8c" ],
+    [ "PSO6Optic.c", "de/d62/_p_s_o6_optic_8c.html", "de/d62/_p_s_o6_optic_8c" ],
     [ "PUScopeOptic.c", "d0/d24/_p_u_scope_optic_8c.html", "d0/d24/_p_u_scope_optic_8c" ],
     [ "Red9Bttstck.c", "de/de1/_red9_bttstck_8c.html", "de/de1/_red9_bttstck_8c" ],
     [ "SKS_Bayonet.c", "d0/d67/_s_k_s___bayonet_8c.html", "d0/d67/_s_k_s___bayonet_8c" ]

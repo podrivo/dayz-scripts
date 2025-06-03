@@ -1,7 +1,6 @@
 var _rifle_bolt_free___base_8c =
 [
     [ "WeaponStableState", "dc/dcc/class_weapon_stable_state.html", "dc/dcc/class_weapon_stable_state" ],
-    [ "WeaponStateJammed", "db/d5e/class_weapon_state_jammed.html", "db/d5e/class_weapon_state_jammed" ],
     [ "Rifle_Base", "dd/d79/class_rifle___base.html", "dd/d79/class_rifle___base" ],
     [ "RBFAnimState", "d0/d1f/_rifle_bolt_free___base_8c.html#ae44d40e582b12e806f14c136a9fd0477", [
       [ "DEFAULT", "d0/d1f/_rifle_bolt_free___base_8c.html#ae44d40e582b12e806f14c136a9fd0477a88ec7d5086d2469ba843c7fcceade8a6", null ],

@@ -5,6 +5,8 @@ var class_weapon___base =
     [ "CanChamberBullet", "d3/d9c/class_weapon___base.html#aa0fa51a3b918310c3005e5af3e623140", null ],
     [ "CanEjectBullet", "d3/d9c/class_weapon___base.html#addbe1dd4ee885f3621dd3ca4fa751683", null ],
     [ "EEHealthLevelChanged", "d3/d9c/class_weapon___base.html#a56edaa75fb618ddf0aa2354f005cdd6e", null ],
+    [ "GetApproximateAimOffsets", "d3/d9c/class_weapon___base.html#a6981f5a62ebf08b80e0879285e94b31f", null ],
+    [ "GetApproximateMovementOffset", "d3/d9c/class_weapon___base.html#a5a2d8edc91b44b5b7b57a97b16094342", null ],
     [ "GetChanceToJam", "d3/d9c/class_weapon___base.html#a43ee881b2f5a771a850d43d2bfe6b006", null ],
     [ "GetChanceToJam", "d3/d9c/class_weapon___base.html#a43ee881b2f5a771a850d43d2bfe6b006", null ],
     [ "GetCylinderRotation", "d3/d9c/class_weapon___base.html#a49394b3a1eeaf9efc87c49fa2f98fa2b", null ],

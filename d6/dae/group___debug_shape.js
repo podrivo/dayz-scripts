@@ -30,7 +30,7 @@ var group___debug_shape =
     [ "CreateCylinder", "d6/dae/group___debug_shape.html#ga03c2aca770f851754d6c8da6f3e329fe", null ],
     [ "CreateFrustum", "d6/dae/group___debug_shape.html#ga5a835f7dcca2cdb56acc00d6b9d585e1", null ],
     [ "CreateLines", "d6/dae/group___debug_shape.html#gaa95f67bf7e8856e12efb906c9b23573b", null ],
-    [ "CreateMatrix", "d6/dae/group___debug_shape.html#gaee43d58d6f6ad8f59f60e221d03de3b1", null ],
+    [ "CreateMatrix", "d6/dae/group___debug_shape.html#ga35412481134c48c31acb629f0119a00b", null ],
     [ "CreateSphere", "d6/dae/group___debug_shape.html#gaa64b35f24f6656fa7b4c5228771874c5", null ],
     [ "CreateTris", "d6/dae/group___debug_shape.html#gacea01f58b661985dfd3441930ddee13f", null ],
     [ "Destroy", "d6/dae/group___debug_shape.html#ga638a3fcdb049ad795590a910ff04648a", null ],

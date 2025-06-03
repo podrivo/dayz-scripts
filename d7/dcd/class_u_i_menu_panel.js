@@ -19,6 +19,7 @@ var class_u_i_menu_panel =
     [ "InitNoteRead", "d7/dcd/class_u_i_menu_panel.html#a59f2b2bdb945bba236d0c53998d8949c", null ],
     [ "InitNoteWrite", "d7/dcd/class_u_i_menu_panel.html#a797f4ad7c6d7234f9c1c500d2e681ebe", null ],
     [ "IsAnyMenuVisible", "d7/dcd/class_u_i_menu_panel.html#abd510accfa593c1eeb91e06801111728", null ],
+    [ "IsClosing", "d7/dcd/class_u_i_menu_panel.html#a800c43b5adebd7d75355b15c1d23b69f", null ],
     [ "IsHandlingPlayerDeathEvent", "d7/dcd/class_u_i_menu_panel.html#a89e6e186eafb2881b3cdbdac0d6b2876", null ],
     [ "IsVisible", "d7/dcd/class_u_i_menu_panel.html#ac2ed66e4cf8b373808780938860755fe", null ],
     [ "LoadMapMarkers", "d7/dcd/class_u_i_menu_panel.html#a6c7f2e185b2e5596b5e86ed9d790e2ee", null ],

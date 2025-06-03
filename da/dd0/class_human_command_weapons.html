@@ -138,8 +138,17 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:adfe180168f9b5e01c8a7f4c64c67a934"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets head tilt to optics  <br /></td></tr>
 <tr class="separator:adfe180168f9b5e01c8a7f4c64c67a934"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ea6b4ab06074d213be5897662d66d20"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd0/class_human_command_weapons.html#a0ea6b4ab06074d213be5897662d66d20">LiftWeapon</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> pState)</td></tr>
-<tr class="memdesc:a0ea6b4ab06074d213be5897662d66d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">command for lifting weapon near obstacled (works only when weapon is raised)  <br /></td></tr>
+<tr class="memdesc:a0ea6b4ab06074d213be5897662d66d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">command for lifting weapon near obstacles (works only when weapon is raised)  <br /></td></tr>
 <tr class="separator:a0ea6b4ab06074d213be5897662d66d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a340487461579e835ccd4dc060f962b18"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd0/class_human_command_weapons.html#a340487461579e835ccd4dc060f962b18">IsWeaponLifted</a> ()</td></tr>
+<tr class="memdesc:a340487461579e835ccd4dc060f962b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">return if lifting weapon is active  <br /></td></tr>
+<tr class="separator:a340487461579e835ccd4dc060f962b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee3bc35d26dcf68120dbf82e9fb16a5b"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd0/class_human_command_weapons.html#aee3bc35d26dcf68120dbf82e9fb16a5b">ObstructWeapon</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> pState01)</td></tr>
+<tr class="memdesc:aee3bc35d26dcf68120dbf82e9fb16a5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">command for obstruction weapon near obstacles  <br /></td></tr>
+<tr class="separator:aee3bc35d26dcf68120dbf82e9fb16a5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f4268ddfbd0ab7f8d1f0915fa45fe6b"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd0/class_human_command_weapons.html#a5f4268ddfbd0ab7f8d1f0915fa45fe6b">GetWeaponObstruction</a> ()</td></tr>
+<tr class="memdesc:a5f4268ddfbd0ab7f8d1f0915fa45fe6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">return obstruction value  <br /></td></tr>
+<tr class="separator:a5f4268ddfbd0ab7f8d1f0915fa45fe6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fffe435b059ccfb9abfd77ea877ff47"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd0/class_human_command_weapons.html#a9fffe435b059ccfb9abfd77ea877ff47">GetAimingHandsOffsetUD</a> ()</td></tr>
 <tr class="memdesc:a9fffe435b059ccfb9abfd77ea877ff47"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns aiming hands up/down (y) offset angle  <br /></td></tr>
 <tr class="separator:a9fffe435b059ccfb9abfd77ea877ff47"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -309,7 +318,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>returns aiming hands left/right (x) offset angle </p>
 
-<p class="reference">Referenced by <a class="el" href="../../db/de5/class_weapon.html#a4ebfb632182f3f59905fd941989f857d">Weapon::LiftWeaponCheck()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/de5/class_weapon.html#a792757cd348e11730b65ac12e32d9027">Weapon::ApproximateWeaponLiftTransform()</a>, and <a class="el" href="../../db/de5/class_weapon.html#a0e05816e24951ddd8754b7b978ff3307">Weapon::LiftWeaponCheckEx()</a>.</p>
 
 </div>
 </div>
@@ -338,7 +347,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>returns aiming hands up/down (y) offset angle </p>
 
-<p class="reference">Referenced by <a class="el" href="../../db/de5/class_weapon.html#a4ebfb632182f3f59905fd941989f857d">Weapon::LiftWeaponCheck()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/de5/class_weapon.html#a792757cd348e11730b65ac12e32d9027">Weapon::ApproximateWeaponLiftTransform()</a>, and <a class="el" href="../../db/de5/class_weapon.html#a0e05816e24951ddd8754b7b978ff3307">Weapon::LiftWeaponCheckEx()</a>.</p>
 
 </div>
 </div>
@@ -367,7 +376,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>returns base aiming angle LR - without sway/offsets/... </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d9f/_cross_hair_selector_8c.html#a6e10cf8f74e0727c7b6575edd9506b28">FloatingCrossHair()</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a1210cb28bd4c17b04a04f2c976d15a66">HandleProneKick()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ac0dd1a42da302f1113f8204c42fef028">DayZPlayerImplementThrowing::HandleThrowing()</a>, and <a class="el" href="../../db/de5/class_weapon.html#a4ebfb632182f3f59905fd941989f857d">Weapon::LiftWeaponCheck()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/de5/class_weapon.html#a792757cd348e11730b65ac12e32d9027">Weapon::ApproximateWeaponLiftTransform()</a>, <a class="el" href="../../d4/d9f/_cross_hair_selector_8c.html#a6e10cf8f74e0727c7b6575edd9506b28">FloatingCrossHair()</a>, <a class="el" href="../../d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#a1210cb28bd4c17b04a04f2c976d15a66">HandleProneKick()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ac0dd1a42da302f1113f8204c42fef028">DayZPlayerImplementThrowing::HandleThrowing()</a>, and <a class="el" href="../../db/de5/class_weapon.html#a0e05816e24951ddd8754b7b978ff3307">Weapon::LiftWeaponCheckEx()</a>.</p>
 
 </div>
 </div>
@@ -396,7 +405,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>returns base aiming angle UD - without sway/offsets/... </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d9f/_cross_hair_selector_8c.html#a6e10cf8f74e0727c7b6575edd9506b28">FloatingCrossHair()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ac0dd1a42da302f1113f8204c42fef028">DayZPlayerImplementThrowing::HandleThrowing()</a>, <a class="el" href="../../db/de5/class_weapon.html#a4ebfb632182f3f59905fd941989f857d">Weapon::LiftWeaponCheck()</a>, <a class="el" href="../../d3/dd8/_day_z_player_camera___base_8c.html#ae9475fb9f56d8508d7f87d20aae0a5a2">UpdateUDAngle()</a>, and <a class="el" href="../../d3/dd8/_day_z_player_camera___base_8c.html#a40e3bbd2306af3ac9d07884e2f4a0eec">UpdateUDAngleUnlocked()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/de5/class_weapon.html#a792757cd348e11730b65ac12e32d9027">Weapon::ApproximateWeaponLiftTransform()</a>, <a class="el" href="../../d4/d9f/_cross_hair_selector_8c.html#a6e10cf8f74e0727c7b6575edd9506b28">FloatingCrossHair()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ac0dd1a42da302f1113f8204c42fef028">DayZPlayerImplementThrowing::HandleThrowing()</a>, <a class="el" href="../../db/de5/class_weapon.html#a0e05816e24951ddd8754b7b978ff3307">Weapon::LiftWeaponCheckEx()</a>, <a class="el" href="../../d3/dd8/_day_z_player_camera___base_8c.html#ae9475fb9f56d8508d7f87d20aae0a5a2">UpdateUDAngle()</a>, and <a class="el" href="../../d3/dd8/_day_z_player_camera___base_8c.html#a40e3bbd2306af3ac9d07884e2f4a0eec">UpdateUDAngleUnlocked()</a>.</p>
 
 </div>
 </div>
@@ -455,6 +464,35 @@ Static Private Member Functions</h2></td></tr>
 <p>returns -1 when no action is running or appropriate action type </p>
 
 <p class="reference">Referenced by <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#ace1c98fb1485360827f153558e8f1fa7">HandleInventory()</a>, <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#a2bfcec42953387c3d22278a9a7d9d5cb">HandleWeaponEvents()</a>, <a class="el" href="../../d2/d9a/class_hand_state_base.html#a5af9858c011f114ddfd56d0edc6b60c7">HandStateBase::OnEntry()</a>, <a class="el" href="../../d2/db4/class_weapon_state_base.html#a554194fbf83f198e8f8e9ecb7a31e330">WeaponStateBase::OnEntry()</a>, and <a class="el" href="../../dc/de8/class_plugin_dayz_player_debug___weapons.html#af1c2514da5d1f25435a0ca0bfd2a1dcf">PluginDayzPlayerDebug_Weapons::Tick()</a>.</p>
+
+</div>
+</div>
+<a id="a5f4268ddfbd0ab7f8d1f0915fa45fe6b" name="a5f4268ddfbd0ab7f8d1f0915fa45fe6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f4268ddfbd0ab7f8d1f0915fa45fe6b">&#9670;&#160;</a></span>GetWeaponObstruction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a> GetWeaponObstruction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>return obstruction value </p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d2e/class_day_z_player.html#ab6bf010c5edd3a5143cbbb337b1fe938">DayZPlayer::HandleWeapons()</a>, and <a class="el" href="../../db/de5/class_weapon.html#a0e05816e24951ddd8754b7b978ff3307">Weapon::LiftWeaponCheckEx()</a>.</p>
 
 </div>
 </div>
@@ -568,6 +606,35 @@ Static Private Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a340487461579e835ccd4dc060f962b18" name="a340487461579e835ccd4dc060f962b18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a340487461579e835ccd4dc060f962b18">&#9670;&#160;</a></span>IsWeaponLifted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">proto native <a class="el" href="../../d9/db9/classbool.html">bool</a> IsWeaponLifted </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>return if lifting weapon is active </p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d2e/class_day_z_player.html#ab6bf010c5edd3a5143cbbb337b1fe938">DayZPlayer::HandleWeapons()</a>.</p>
+
+</div>
+</div>
 <a id="a0ea6b4ab06074d213be5897662d66d20" name="a0ea6b4ab06074d213be5897662d66d20"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0ea6b4ab06074d213be5897662d66d20">&#9670;&#160;</a></span>LiftWeapon()</h2>
 
@@ -592,9 +659,39 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>command for lifting weapon near obstacled (works only when weapon is raised) </p>
+<p>command for lifting weapon near obstacles (works only when weapon is raised) </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#ade63d4b20c839819ffb8381c80720a76">ManBase::ProcessLiftWeapon()</a>, and <a class="el" href="../../d4/d87/class_man_base.html#ab5bdbd7fc688607efbf0c5c0a9367dba">ManBase::SendLiftWeaponSync()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/d2e/class_day_z_player.html#ab6bf010c5edd3a5143cbbb337b1fe938">DayZPlayer::HandleWeapons()</a>.</p>
+
+</div>
+</div>
+<a id="aee3bc35d26dcf68120dbf82e9fb16a5b" name="aee3bc35d26dcf68120dbf82e9fb16a5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee3bc35d26dcf68120dbf82e9fb16a5b">&#9670;&#160;</a></span>ObstructWeapon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">proto native void ObstructWeapon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>pState01</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>command for obstruction weapon near obstacles </p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d2e/class_day_z_player.html#ab6bf010c5edd3a5143cbbb337b1fe938">DayZPlayer::HandleWeapons()</a>.</p>
 
 </div>
 </div>

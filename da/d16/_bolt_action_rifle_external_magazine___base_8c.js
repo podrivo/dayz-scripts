@@ -1,7 +1,6 @@
 var _bolt_action_rifle_external_magazine___base_8c =
 [
     [ "WeaponStableState", "dc/dcc/class_weapon_stable_state.html", "dc/dcc/class_weapon_stable_state" ],
-    [ "WeaponStateJammed", "db/d5e/class_weapon_state_jammed.html", "db/d5e/class_weapon_state_jammed" ],
     [ "BoltActionRifle_ExternalMagazine_Base", "df/d71/class_bolt_action_rifle___external_magazine___base.html", "df/d71/class_bolt_action_rifle___external_magazine___base" ],
     [ "BAREMAnimState", "da/d16/_bolt_action_rifle_external_magazine___base_8c.html#acaf11a3e90fe14ba9807bd1a6fcabe0e", [
       [ "DEFAULT", "da/d16/_bolt_action_rifle_external_magazine___base_8c.html#acaf11a3e90fe14ba9807bd1a6fcabe0ea88ec7d5086d2469ba843c7fcceade8a6", null ],

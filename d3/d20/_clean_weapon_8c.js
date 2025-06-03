@@ -1,4 +1,4 @@
 var _clean_weapon_8c =
 [
-    [ "RecipeBase", "db/d2a/class_recipe_base.html", "db/d2a/class_recipe_base" ]
+    [ "CleanWeapon", "d3/d69/class_clean_weapon.html", "d3/d69/class_clean_weapon" ]
 ];

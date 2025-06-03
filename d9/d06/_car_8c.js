@@ -1,5 +1,7 @@
 var _car_8c =
 [
+    [ "CarOwnerState", "d2/dca/class_car_owner_state.html", null ],
+    [ "CarMove", "df/d64/class_car_move.html", null ],
     [ "Transport", "d3/d36/class_transport.html", "d3/d36/class_transport" ],
     [ "CarController", "d4/db3/class_car_controller.html", "d4/db3/class_car_controller" ],
     [ "CarAutomaticGearboxMode", "d9/d06/_car_8c.html#a0a634b2934eb4b736fe4d024586a7c45", [

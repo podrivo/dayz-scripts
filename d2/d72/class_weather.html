@@ -201,6 +201,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a43a9ddcd30136fe7cc8a7154ae51d1e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc341a7a111581f084e445bf5ae83129"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d72/class_weather.html#acc341a7a111581f084e445bf5ae83129">GetMissionWeather</a> ()</td></tr>
 <tr class="separator:acc341a7a111581f084e445bf5ae83129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90b5b2216bad8806af273e37b3458506"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d72/class_weather.html#a90b5b2216bad8806af273e37b3458506">SetWeatherUpdateFreeze</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> state)</td></tr>
+<tr class="separator:a90b5b2216bad8806af273e37b3458506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a672a51f6fa8d308d14b07277d8c08880"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d72/class_weather.html#a672a51f6fa8d308d14b07277d8c08880">GetWeatherUpdateFrozen</a> ()</td></tr>
+<tr class="separator:a672a51f6fa8d308d14b07277d8c08880"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a209a6363b74c5188d8764eff1f075f31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d72/class_weather.html#a209a6363b74c5188d8764eff1f075f31">GetNoiseReductionByWeather</a> ()</td></tr>
 <tr class="separator:a209a6363b74c5188d8764eff1f075f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -217,6 +221,8 @@ Static Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a63e654c9d6e185ad26256d8bb7670d20"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d72/class_weather.html#a63e654c9d6e185ad26256d8bb7670d20">m_missionWeather</a></td></tr>
 <tr class="separator:a63e654c9d6e185ad26256d8bb7670d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b349df7a2e10b1d9471beab860cc8de"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d72/class_weather.html#a6b349df7a2e10b1d9471beab860cc8de">m_UpdateFrozen</a></td></tr>
+<tr class="separator:a6b349df7a2e10b1d9471beab860cc8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="../../d2/d72/class_weather.html">Weather</a> controller </p>
@@ -421,7 +427,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns a fog phenomenon object. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d38/class_environment.html#a118355ce8e0c162735f024afd314b219">Environment::CollectAndSetEnvironmentData()</a>, <a class="el" href="../../da/dcf/class_day_z_intro_scene.html#a35f5aa5c673d8b569589667f88c88ef7">DayZIntroScene::DayZIntroScene()</a>, <a class="el" href="../../da/d9b/class_day_z_intro_scene_xbox.html#a5585e469ed87fb9f4f7ac52be749c17e">DayZIntroSceneXbox::DayZIntroSceneXbox()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a2c2466c1daa84e1c948a5aecd6659be2">WorldData::GetTemperature()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a9749e66cdfb4807c8632d515d54cc4c8">WorldData::GetTemperatureComponentValue()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">SakhalData::Init()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#ab5f66e3285c260f555916799090ea650">InitValues()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a0b2a27b5e2351f66f2d8025f4797124c">UIPopupScript::OnChange()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#aee6a27cad085ec84d5f5dbb765b63b53">UIPopupScript::OnClick()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a365ac486f47483e547f9a6e5e0576efd">UIPopupScript::OnClose()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a41bc2ac7f0272901c2387c59101cb112">UIPopupScript::OnOpen()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#afa004214e0d6e895a75520028cfea3f9">UIPopupScript::ResetSliders()</a>, <a class="el" href="../../dd/d60/class_scene_data.html#a1e2b373bbe8babcac47f994ed7ed2863">SceneData::SetInitFog()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#aeae77443c05eab12173651e0027dffc4">UpdateWeatherValues()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a36eac65c1c677546c5dd1ee899e071ae">WorldData::WeatherOnBeforeChange()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a36eac65c1c677546c5dd1ee899e071ae">EnochData::WeatherOnBeforeChange()</a>, and <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/dca/_environment_8c.html#a118355ce8e0c162735f024afd314b219">CollectAndSetEnvironmentData()</a>, <a class="el" href="../../da/dcf/class_day_z_intro_scene.html#a35f5aa5c673d8b569589667f88c88ef7">DayZIntroScene::DayZIntroScene()</a>, <a class="el" href="../../da/d9b/class_day_z_intro_scene_xbox.html#a5585e469ed87fb9f4f7ac52be749c17e">DayZIntroSceneXbox::DayZIntroSceneXbox()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a2c2466c1daa84e1c948a5aecd6659be2">WorldData::GetTemperature()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a9749e66cdfb4807c8632d515d54cc4c8">WorldData::GetTemperatureComponentValue()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">SakhalData::Init()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#ab5f66e3285c260f555916799090ea650">InitValues()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a0b2a27b5e2351f66f2d8025f4797124c">UIPopupScript::OnChange()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#aee6a27cad085ec84d5f5dbb765b63b53">UIPopupScript::OnClick()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a365ac486f47483e547f9a6e5e0576efd">UIPopupScript::OnClose()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a41bc2ac7f0272901c2387c59101cb112">UIPopupScript::OnOpen()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#afa004214e0d6e895a75520028cfea3f9">UIPopupScript::ResetSliders()</a>, <a class="el" href="../../dd/d60/class_scene_data.html#a1e2b373bbe8babcac47f994ed7ed2863">SceneData::SetInitFog()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#aeae77443c05eab12173651e0027dffc4">UpdateWeatherValues()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a36eac65c1c677546c5dd1ee899e071ae">WorldData::WeatherOnBeforeChange()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a36eac65c1c677546c5dd1ee899e071ae">EnochData::WeatherOnBeforeChange()</a>, and <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>.</p>
 
 </div>
 </div>
@@ -508,7 +514,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns an overcast phenomenon object. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/d14/class_sakhal_data.html#a532d1d8c1f9216593de00a3391241e8e">SakhalData::CalculateVolFog()</a>, <a class="el" href="../../d0/d24/class_world_data.html#ac4b7d7e527a356c1ca57f05e2863087d">WorldData::CalculateWind()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#ac4b7d7e527a356c1ca57f05e2863087d">EnochData::CalculateWind()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#ac4b7d7e527a356c1ca57f05e2863087d">SakhalData::CalculateWind()</a>, <a class="el" href="../../dc/d38/class_environment.html#a118355ce8e0c162735f024afd314b219">Environment::CollectAndSetEnvironmentData()</a>, <a class="el" href="../../d0/d24/class_world_data.html#afa6a361992d915941afb8ae4c44d7927">WorldData::ComputeSnowflakeScale()</a>, <a class="el" href="../../da/dcf/class_day_z_intro_scene.html#a35f5aa5c673d8b569589667f88c88ef7">DayZIntroScene::DayZIntroScene()</a>, <a class="el" href="../../da/d9b/class_day_z_intro_scene_xbox.html#a5585e469ed87fb9f4f7ac52be749c17e">DayZIntroSceneXbox::DayZIntroSceneXbox()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a2c2466c1daa84e1c948a5aecd6659be2">WorldData::GetTemperature()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a9749e66cdfb4807c8632d515d54cc4c8">WorldData::GetTemperatureComponentValue()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">WorldData::Init()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">EnochData::Init()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">SakhalData::Init()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#ab5f66e3285c260f555916799090ea650">InitValues()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a0b2a27b5e2351f66f2d8025f4797124c">UIPopupScript::OnChange()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#aee6a27cad085ec84d5f5dbb765b63b53">UIPopupScript::OnClick()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a365ac486f47483e547f9a6e5e0576efd">UIPopupScript::OnClose()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a41bc2ac7f0272901c2387c59101cb112">UIPopupScript::OnOpen()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#afa004214e0d6e895a75520028cfea3f9">UIPopupScript::ResetSliders()</a>, <a class="el" href="../../dd/d60/class_scene_data.html#adef9a8874d2f302880d967066fcf81e5">SceneData::SetInitOvercast()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#aeae77443c05eab12173651e0027dffc4">UpdateWeatherValues()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a36eac65c1c677546c5dd1ee899e071ae">WorldData::WeatherOnBeforeChange()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a36eac65c1c677546c5dd1ee899e071ae">EnochData::WeatherOnBeforeChange()</a>, and <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/d14/class_sakhal_data.html#a532d1d8c1f9216593de00a3391241e8e">SakhalData::CalculateVolFog()</a>, <a class="el" href="../../d0/d24/class_world_data.html#ac4b7d7e527a356c1ca57f05e2863087d">WorldData::CalculateWind()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#ac4b7d7e527a356c1ca57f05e2863087d">EnochData::CalculateWind()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#ac4b7d7e527a356c1ca57f05e2863087d">SakhalData::CalculateWind()</a>, <a class="el" href="../../d7/dca/_environment_8c.html#a118355ce8e0c162735f024afd314b219">CollectAndSetEnvironmentData()</a>, <a class="el" href="../../d0/d24/class_world_data.html#afa6a361992d915941afb8ae4c44d7927">WorldData::ComputeSnowflakeScale()</a>, <a class="el" href="../../da/dcf/class_day_z_intro_scene.html#a35f5aa5c673d8b569589667f88c88ef7">DayZIntroScene::DayZIntroScene()</a>, <a class="el" href="../../da/d9b/class_day_z_intro_scene_xbox.html#a5585e469ed87fb9f4f7ac52be749c17e">DayZIntroSceneXbox::DayZIntroSceneXbox()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a2c2466c1daa84e1c948a5aecd6659be2">WorldData::GetTemperature()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a9749e66cdfb4807c8632d515d54cc4c8">WorldData::GetTemperatureComponentValue()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">WorldData::Init()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">EnochData::Init()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">SakhalData::Init()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#ab5f66e3285c260f555916799090ea650">InitValues()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a0b2a27b5e2351f66f2d8025f4797124c">UIPopupScript::OnChange()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#aee6a27cad085ec84d5f5dbb765b63b53">UIPopupScript::OnClick()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a365ac486f47483e547f9a6e5e0576efd">UIPopupScript::OnClose()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a41bc2ac7f0272901c2387c59101cb112">UIPopupScript::OnOpen()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#afa004214e0d6e895a75520028cfea3f9">UIPopupScript::ResetSliders()</a>, <a class="el" href="../../dd/d60/class_scene_data.html#adef9a8874d2f302880d967066fcf81e5">SceneData::SetInitOvercast()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#aeae77443c05eab12173651e0027dffc4">UpdateWeatherValues()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a36eac65c1c677546c5dd1ee899e071ae">WorldData::WeatherOnBeforeChange()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a36eac65c1c677546c5dd1ee899e071ae">EnochData::WeatherOnBeforeChange()</a>, and <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>.</p>
 
 </div>
 </div>
@@ -537,7 +543,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns a rain phenomenon object. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d7a/class_item_base.html#a927277cddb230029988e7a6f5e54a6cd">ItemBase::CheckRainTick()</a>, <a class="el" href="../../dc/d38/class_environment.html#a118355ce8e0c162735f024afd314b219">Environment::CollectAndSetEnvironmentData()</a>, <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#a8c04dec4feceb454d3401dc9ac7e0a7b">Cooling()</a>, <a class="el" href="../../da/dcf/class_day_z_intro_scene.html#a35f5aa5c673d8b569589667f88c88ef7">DayZIntroScene::DayZIntroScene()</a>, <a class="el" href="../../da/d9b/class_day_z_intro_scene_xbox.html#a5585e469ed87fb9f4f7ac52be749c17e">DayZIntroSceneXbox::DayZIntroSceneXbox()</a>, <a class="el" href="../../dc/d6c/class_rain_procurement_handler.html#a97d7f296ecfa1d5211a499664858d704">RainProcurementHandler::DetermineAmountCoef()</a>, <a class="el" href="../../d2/d72/class_weather.html#a209a6363b74c5188d8764eff1f075f31">GetNoiseReductionByWeather()</a>, <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#a4120714ca826a868e5c5d11d1b2f2880">Heating()</a>, <a class="el" href="../../d3/d82/_plant_base_8c.html#a05909daecc242aa0f17e9629edeab8df">Init()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#ab5f66e3285c260f555916799090ea650">InitValues()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a0b2a27b5e2351f66f2d8025f4797124c">UIPopupScript::OnChange()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#aee6a27cad085ec84d5f5dbb765b63b53">UIPopupScript::OnClick()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a365ac486f47483e547f9a6e5e0576efd">UIPopupScript::OnClose()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a41bc2ac7f0272901c2387c59101cb112">UIPopupScript::OnOpen()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>, <a class="el" href="../../dc/da7/class_rain_procurement_manager.html#a547097d00abee0268821b5d090ae9201">RainProcurementManager::RainProcurementCheck()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#afa004214e0d6e895a75520028cfea3f9">UIPopupScript::ResetSliders()</a>, <a class="el" href="../../dd/d60/class_scene_data.html#a73994e3d48a127e8a1c951bb935db40b">SceneData::SetInitRain()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#aeae77443c05eab12173651e0027dffc4">UpdateWeatherValues()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a36eac65c1c677546c5dd1ee899e071ae">WorldData::WeatherOnBeforeChange()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a36eac65c1c677546c5dd1ee899e071ae">EnochData::WeatherOnBeforeChange()</a>, and <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d7a/class_item_base.html#a927277cddb230029988e7a6f5e54a6cd">ItemBase::CheckRainTick()</a>, <a class="el" href="../../d7/dca/_environment_8c.html#a118355ce8e0c162735f024afd314b219">CollectAndSetEnvironmentData()</a>, <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#a8c04dec4feceb454d3401dc9ac7e0a7b">Cooling()</a>, <a class="el" href="../../da/dcf/class_day_z_intro_scene.html#a35f5aa5c673d8b569589667f88c88ef7">DayZIntroScene::DayZIntroScene()</a>, <a class="el" href="../../da/d9b/class_day_z_intro_scene_xbox.html#a5585e469ed87fb9f4f7ac52be749c17e">DayZIntroSceneXbox::DayZIntroSceneXbox()</a>, <a class="el" href="../../dc/d6c/class_rain_procurement_handler.html#a97d7f296ecfa1d5211a499664858d704">RainProcurementHandler::DetermineAmountCoef()</a>, <a class="el" href="../../d2/d72/class_weather.html#a209a6363b74c5188d8764eff1f075f31">GetNoiseReductionByWeather()</a>, <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#a4120714ca826a868e5c5d11d1b2f2880">Heating()</a>, <a class="el" href="../../d3/d82/_plant_base_8c.html#a05909daecc242aa0f17e9629edeab8df">Init()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#ab5f66e3285c260f555916799090ea650">InitValues()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a0b2a27b5e2351f66f2d8025f4797124c">UIPopupScript::OnChange()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#aee6a27cad085ec84d5f5dbb765b63b53">UIPopupScript::OnClick()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a365ac486f47483e547f9a6e5e0576efd">UIPopupScript::OnClose()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a41bc2ac7f0272901c2387c59101cb112">UIPopupScript::OnOpen()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>, <a class="el" href="../../dc/da7/class_rain_procurement_manager.html#a547097d00abee0268821b5d090ae9201">RainProcurementManager::RainProcurementCheck()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#afa004214e0d6e895a75520028cfea3f9">UIPopupScript::ResetSliders()</a>, <a class="el" href="../../dd/d60/class_scene_data.html#a73994e3d48a127e8a1c951bb935db40b">SceneData::SetInitRain()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#aeae77443c05eab12173651e0027dffc4">UpdateWeatherValues()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a36eac65c1c677546c5dd1ee899e071ae">WorldData::WeatherOnBeforeChange()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a36eac65c1c677546c5dd1ee899e071ae">EnochData::WeatherOnBeforeChange()</a>, and <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>.</p>
 
 </div>
 </div>
@@ -566,7 +572,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns a snowfall phenomenon object. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/d14/class_sakhal_data.html#ac4b7d7e527a356c1ca57f05e2863087d">SakhalData::CalculateWind()</a>, <a class="el" href="../../dc/d38/class_environment.html#a118355ce8e0c162735f024afd314b219">Environment::CollectAndSetEnvironmentData()</a>, <a class="el" href="../../dc/d6c/class_rain_procurement_handler.html#a97d7f296ecfa1d5211a499664858d704">RainProcurementHandler::DetermineAmountCoef()</a>, <a class="el" href="../../d2/d72/class_weather.html#a209a6363b74c5188d8764eff1f075f31">GetNoiseReductionByWeather()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">SakhalData::Init()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#ab5f66e3285c260f555916799090ea650">InitValues()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#aeae77443c05eab12173651e0027dffc4">UpdateWeatherValues()</a>, and <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/d14/class_sakhal_data.html#ac4b7d7e527a356c1ca57f05e2863087d">SakhalData::CalculateWind()</a>, <a class="el" href="../../d7/dca/_environment_8c.html#a118355ce8e0c162735f024afd314b219">CollectAndSetEnvironmentData()</a>, <a class="el" href="../../da/dcf/class_day_z_intro_scene.html#a35f5aa5c673d8b569589667f88c88ef7">DayZIntroScene::DayZIntroScene()</a>, <a class="el" href="../../da/d9b/class_day_z_intro_scene_xbox.html#a5585e469ed87fb9f4f7ac52be749c17e">DayZIntroSceneXbox::DayZIntroSceneXbox()</a>, <a class="el" href="../../dc/d6c/class_rain_procurement_handler.html#a97d7f296ecfa1d5211a499664858d704">RainProcurementHandler::DetermineAmountCoef()</a>, <a class="el" href="../../d2/d72/class_weather.html#a209a6363b74c5188d8764eff1f075f31">GetNoiseReductionByWeather()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">SakhalData::Init()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#ab5f66e3285c260f555916799090ea650">InitValues()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#aeae77443c05eab12173651e0027dffc4">UpdateWeatherValues()</a>, and <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>.</p>
 
 </div>
 </div>
@@ -621,6 +627,35 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns actual time from start of a server (how many seconds elapsed from server start). </p>
+
+</div>
+</div>
+<a id="a672a51f6fa8d308d14b07277d8c08880" name="a672a51f6fa8d308d14b07277d8c08880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a672a51f6fa8d308d14b07277d8c08880">&#9670;&#160;</a></span>GetWeatherUpdateFrozen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> GetWeatherUpdateFrozen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d2/d72/class_weather.html#a6b349df7a2e10b1d9471beab860cc8de">m_UpdateFrozen</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d95/class_weather_phenomenon.html#a0700bbb5cc94fe9762efa19615ee4ee7">WeatherPhenomenon::OnBeforeChange()</a>.</p>
 
 </div>
 </div>
@@ -760,7 +795,7 @@ Private Attributes</h2></td></tr>
 <p>Returns a wind magnitude phenomenon object. </p>
 <dl class="section note"><dt>Note</dt><dd>Wind magnitude is the absolute speed in m/s. </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d38/class_environment.html#a118355ce8e0c162735f024afd314b219">Environment::CollectAndSetEnvironmentData()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#ab5f66e3285c260f555916799090ea650">InitValues()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#aeae77443c05eab12173651e0027dffc4">UpdateWeatherValues()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a36eac65c1c677546c5dd1ee899e071ae">WorldData::WeatherOnBeforeChange()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a36eac65c1c677546c5dd1ee899e071ae">EnochData::WeatherOnBeforeChange()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>, and <a class="el" href="../../d0/d24/class_world_data.html#ab62c979acc6e80f529b486e0ead870a8">WorldData::WindEffectTemperatureValue()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/dca/_environment_8c.html#a118355ce8e0c162735f024afd314b219">CollectAndSetEnvironmentData()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#ab5f66e3285c260f555916799090ea650">InitValues()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>, <a class="el" href="../../d2/d2a/_script_console_weather_tab_8c.html#aeae77443c05eab12173651e0027dffc4">UpdateWeatherValues()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a36eac65c1c677546c5dd1ee899e071ae">WorldData::WeatherOnBeforeChange()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a36eac65c1c677546c5dd1ee899e071ae">EnochData::WeatherOnBeforeChange()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>, and <a class="el" href="../../d0/d24/class_world_data.html#ab62c979acc6e80f529b486e0ead870a8">WorldData::WindEffectTemperatureValue()</a>.</p>
 
 </div>
 </div>
@@ -923,7 +958,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d24/class_world_data.html#a532d1d8c1f9216593de00a3391241e8e">WorldData::CalculateVolFog()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a532d1d8c1f9216593de00a3391241e8e">EnochData::CalculateVolFog()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a532d1d8c1f9216593de00a3391241e8e">SakhalData::CalculateVolFog()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d24/class_world_data.html#a532d1d8c1f9216593de00a3391241e8e">WorldData::CalculateVolFog()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a532d1d8c1f9216593de00a3391241e8e">EnochData::CalculateVolFog()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a532d1d8c1f9216593de00a3391241e8e">SakhalData::CalculateVolFog()</a>, <a class="el" href="../../dd/de6/class_mission_benchmark.html#ad4e9926d524bcfc094fff85d783131b3">MissionBenchmark::DisableWeatherChange()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>.</p>
 
 </div>
 </div>
@@ -970,7 +1005,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d24/class_world_data.html#a532d1d8c1f9216593de00a3391241e8e">WorldData::CalculateVolFog()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a532d1d8c1f9216593de00a3391241e8e">EnochData::CalculateVolFog()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">WorldData::Init()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">EnochData::Init()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">SakhalData::Init()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>, and <a class="el" href="../../d0/d24/class_world_data.html#a36eac65c1c677546c5dd1ee899e071ae">WorldData::WeatherOnBeforeChange()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d24/class_world_data.html#a532d1d8c1f9216593de00a3391241e8e">WorldData::CalculateVolFog()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a532d1d8c1f9216593de00a3391241e8e">EnochData::CalculateVolFog()</a>, <a class="el" href="../../dd/de6/class_mission_benchmark.html#ad4e9926d524bcfc094fff85d783131b3">MissionBenchmark::DisableWeatherChange()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">WorldData::Init()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">EnochData::Init()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">SakhalData::Init()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>, and <a class="el" href="../../d0/d24/class_world_data.html#a36eac65c1c677546c5dd1ee899e071ae">WorldData::WeatherOnBeforeChange()</a>.</p>
 
 </div>
 </div>
@@ -1017,7 +1052,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d24/class_world_data.html#a532d1d8c1f9216593de00a3391241e8e">WorldData::CalculateVolFog()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a532d1d8c1f9216593de00a3391241e8e">EnochData::CalculateVolFog()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">SakhalData::Init()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d24/class_world_data.html#a532d1d8c1f9216593de00a3391241e8e">WorldData::CalculateVolFog()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a532d1d8c1f9216593de00a3391241e8e">EnochData::CalculateVolFog()</a>, <a class="el" href="../../dd/de6/class_mission_benchmark.html#ad4e9926d524bcfc094fff85d783131b3">MissionBenchmark::DisableWeatherChange()</a>, <a class="el" href="../../d1/d14/class_sakhal_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9">SakhalData::Init()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#aa9a0604c3c6c4896ff72498ca55e47a9">CGame::OnRPC()</a>.</p>
 
 </div>
 </div>
@@ -1220,6 +1255,36 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="reference">Referenced by <a class="el" href="../../da/dcf/class_day_z_intro_scene.html#a35f5aa5c673d8b569589667f88c88ef7">DayZIntroScene::DayZIntroScene()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a36eac65c1c677546c5dd1ee899e071ae">WorldData::WeatherOnBeforeChange()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a36eac65c1c677546c5dd1ee899e071ae">EnochData::WeatherOnBeforeChange()</a>, and <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>.</p>
+
+</div>
+</div>
+<a id="a90b5b2216bad8806af273e37b3458506" name="a90b5b2216bad8806af273e37b3458506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90b5b2216bad8806af273e37b3458506">&#9670;&#160;</a></span>SetWeatherUpdateFreeze()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetWeatherUpdateFreeze </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d2/d72/class_weather.html#a6b349df7a2e10b1d9471beab860cc8de">m_UpdateFrozen</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/de6/class_mission_benchmark.html#ad4e9926d524bcfc094fff85d783131b3">MissionBenchmark::DisableWeatherChange()</a>.</p>
 
 </div>
 </div>
@@ -1467,6 +1532,30 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="../../d2/d72/class_weather.html#acc341a7a111581f084e445bf5ae83129">GetMissionWeather()</a>, <a class="el" href="../../d2/d72/class_weather.html#a43a9ddcd30136fe7cc8a7154ae51d1e3">MissionWeather()</a>, and <a class="el" href="../../d2/d72/class_weather.html#ad44442cc01c8af1effc72988dcbb4992">Weather()</a>.</p>
+
+</div>
+</div>
+<a id="a6b349df7a2e10b1d9471beab860cc8de" name="a6b349df7a2e10b1d9471beab860cc8de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b349df7a2e10b1d9471beab860cc8de">&#9670;&#160;</a></span>m_UpdateFrozen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/db9/classbool.html">bool</a> m_UpdateFrozen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d72/class_weather.html#a672a51f6fa8d308d14b07277d8c08880">GetWeatherUpdateFrozen()</a>, and <a class="el" href="../../d2/d72/class_weather.html#a90b5b2216bad8806af273e37b3458506">SetWeatherUpdateFreeze()</a>.</p>
 
 </div>
 </div>

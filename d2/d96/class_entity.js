@@ -478,6 +478,7 @@ var class_entity =
     [ "SetPrepareToDelete", "d2/d96/class_entity.html#af329b0287c73136614aa3369313dbae0", null ],
     [ "SetPulseCoef", "d2/d96/class_entity.html#a0dddd9e458e6ae17f2a2006dc8b4df33", null ],
     [ "SetQuantity", "d2/d96/class_entity.html#ace92be92cf29ae58794f5ab39a6269ec", null ],
+    [ "SetQuantityNormalized", "d2/d96/class_entity.html#a8eb7737fc5a7ee5c66b4432c397ed82d", null ],
     [ "SetQuantityToMinimum", "d2/d96/class_entity.html#ae758a37edd47defa74c66ba7d7b26a8a", null ],
     [ "SetRadius", "d2/d96/class_entity.html#a946a4c7ae37ae9b4c37178fabc770a57", null ],
     [ "SetRoofAbove", "d2/d96/class_entity.html#af03b41c8ebeef2edf4b9c2b76b362fe4", null ],

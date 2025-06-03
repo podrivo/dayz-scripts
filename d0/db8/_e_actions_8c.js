@@ -31,6 +31,8 @@ var _e_actions_8c =
       [ "FOOD_NUTRITIONS_DATA", "d0/db8/_e_actions_8c.html#ab13ea01ba7de7bcacfe6268aeb6b04fdae771a98e12b09a00cb7824a0b25c7a0e", null ],
       [ "MAKE_SPECIAL", "d0/db8/_e_actions_8c.html#ab13ea01ba7de7bcacfe6268aeb6b04fda04da0d18b076542b19e2d6fbe3187c41", null ],
       [ "DELETE", "d0/db8/_e_actions_8c.html#ab13ea01ba7de7bcacfe6268aeb6b04fda9d61e82a9a12752f10aece1b22183913", null ],
+      [ "GIZMO_OBJECT", "d0/db8/_e_actions_8c.html#ab13ea01ba7de7bcacfe6268aeb6b04fdac44dcf6fae050e581e57fc80c215dd5b", null ],
+      [ "GIZMO_PHYSICS", "d0/db8/_e_actions_8c.html#ab13ea01ba7de7bcacfe6268aeb6b04fdad3df1b8dc861f943e5cb96a9a4027500", null ],
       [ "SEPARATOR", "d0/db8/_e_actions_8c.html#ab13ea01ba7de7bcacfe6268aeb6b04fdac22e1a44f0ddbc929cfea45e49d20f84", null ],
       [ "ACTIVATE_ENTITY", "d0/db8/_e_actions_8c.html#ab13ea01ba7de7bcacfe6268aeb6b04fdaa46d1f0d5ce9b33f6d160848cf36228c", null ],
       [ "DEACTIVATE_ENTITY", "d0/db8/_e_actions_8c.html#ab13ea01ba7de7bcacfe6268aeb6b04fdad9b1cbbdd18e51143a21dd95a5ea9108", null ],

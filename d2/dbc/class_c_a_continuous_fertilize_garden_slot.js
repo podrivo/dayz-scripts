@@ -2,6 +2,7 @@ var class_c_a_continuous_fertilize_garden_slot =
 [
     [ "CAContinuousFertilizeGardenSlot", "d2/dbc/class_c_a_continuous_fertilize_garden_slot.html#af2a8c3f2433471654a720fc710488b13", null ],
     [ "Execute", "d2/dbc/class_c_a_continuous_fertilize_garden_slot.html#a7337db7854510148bd0fb5f1f69d8690", null ],
+    [ "FertilizeSlot", "d2/dbc/class_c_a_continuous_fertilize_garden_slot.html#a807681a855287170e5ac90267d3e62ab", null ],
     [ "GetProgress", "d2/dbc/class_c_a_continuous_fertilize_garden_slot.html#a919bbfdb83110534495d9389d67772fd", null ],
     [ "Setup", "d2/dbc/class_c_a_continuous_fertilize_garden_slot.html#afaf420574963aef13ecf2b69b92a81fc", null ],
     [ "m_AlreadyFilledAmount", "d2/dbc/class_c_a_continuous_fertilize_garden_slot.html#a86e8509cff0c917898adbf817f6d4e4d", null ],

@@ -65,6 +65,10 @@ var group___diag_menu =
     [ "ERROR", "dc/d49/group___diag_menu.html#ga9eaada089c4de774cfc8b7aea4b9379a", null ],
     [ "FIRSTCONTACT", "dc/d49/group___diag_menu.html#gaeb6b14a836d8cfc2698d5cc39198434c", null ],
     [ "INFO", "dc/d49/group___diag_menu.html#gab1764b91c3b44a5988564bbfe1d6e352", null ],
+    [ "NEARESTCONTACT", "dc/d49/group___diag_menu.html#ga538c43b1d1fb9404953c268cc157a484", null ],
+    [ "ONLYDYNAMIC", "dc/d49/group___diag_menu.html#gae7f55d2241cb1c9eb608a8b1e9ad01b1", null ],
+    [ "ONLYSTATIC", "dc/d49/group___diag_menu.html#ga5606c6467e989c7f883d9e18836543a9", null ],
+    [ "ONLYWATER", "dc/d49/group___diag_menu.html#ga37fd2b3056b5787d6a519eed65ac1ef9", null ],
     [ "Shape", "dc/d49/group___diag_menu.html#ga6eaf263a07e0b8a8895ed494afceed7d", null ],
     [ "WARNING", "dc/d49/group___diag_menu.html#ga1dfc73ab73898d3f4f348d462a5d126a", null ]
 ];

@@ -263,6 +263,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a740c14805f221e7ad2614f3f54b16e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9304e1907f0d7f4bab96ffe81c377f79"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da8/class_bleeding_sources_manager_base.html#a9304e1907f0d7f4bab96ffe81c377f79">m_DeleteList</a> = new <a class="el" href="../../d2/d41/classarray.html">array</a>&lt;<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&gt;</td></tr>
 <tr class="separator:a9304e1907f0d7f4bab96ffe81c377f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82fb2f8d9f1cf92a7870619acde8118e"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da8/class_bleeding_sources_manager_base.html#a82fb2f8d9f1cf92a7870619acde8118e">m_ProcessSourcesRemoval</a> = false</td></tr>
+<tr class="separator:a82fb2f8d9f1cf92a7870619acde8118e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25a1f5ed25534a65e875f6fde47a1d13"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da8/class_bleeding_sources_manager_base.html#a25a1f5ed25534a65e875f6fde47a1d13">STORAGE_VERSION</a> = 103</td></tr>
 <tr class="separator:a25a1f5ed25534a65e875f6fde47a1d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -411,7 +413,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#af7ba31b759c9731da0d692896dc82fc1">CGame::GetTickTime()</a>, and <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>.</p>
 
 </div>
 </div>
@@ -728,7 +730,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d7/d90/group___debug_u_i.html#ga1fcadbbfb17cfe0fd958ac850fbaeee7">DbgUI::Begin()</a>, <a class="el" href="../../d7/d90/group___debug_u_i.html#ga645f0262f039bf0387cbef4a01d97f9f">DbgUI::BeginCleanupScope()</a>, <a class="el" href="../../d7/db1/_bit_array_8c.html#a1105a596a265ca46eee73e2d8cddbdc3">BIT_INT_SIZE</a>, <a class="el" href="../../d7/d90/group___debug_u_i.html#gaa84b630b3b32613f49053352ba95c9c2">DbgUI::End()</a>, <a class="el" href="../../d7/d90/group___debug_u_i.html#ga79a4f56743729148efd79908662211f6">DbgUI::EndCleanupScope()</a>, <a class="el" href="../../dc/da8/class_bleeding_sources_manager_base.html#a7de01d467a31b7ad8a371010086d18b4">GetBleedingSourceMeta()</a>, <a class="el" href="../../db/d8f/class_bleeding_source_zone.html#ab5fa102eb5d1d64396e7dd008fe15e09">BleedingSourceZone::GetInvLocation()</a>, <a class="el" href="../../dc/da8/class_bleeding_sources_manager_base.html#aeb1a4c7db48c99f1f649717fc5c03986">GetSelectionNameFromBit()</a>, <a class="el" href="../../df/d36/class_inventory_slots.html#a338920c4d5fac6af3b9cc86a85b0a1eb">InventorySlots::GetSlotName()</a>, <a class="el" href="../../d0/dd4/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>, <a class="el" href="../../d5/d98/group___math.html#ga46107fe5da70b9f5f33642d643dc813f">Math::Pow()</a>, and <a class="el" href="../../d7/d90/group___debug_u_i.html#ga6b5a45748947842552d1627695abf80b">DbgUI::Text()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d90/group___debug_u_i.html#ga1fcadbbfb17cfe0fd958ac850fbaeee7">DbgUI::Begin()</a>, <a class="el" href="../../d7/d90/group___debug_u_i.html#ga645f0262f039bf0387cbef4a01d97f9f">DbgUI::BeginCleanupScope()</a>, <a class="el" href="../../d7/db1/_bit_array_8c.html#a1105a596a265ca46eee73e2d8cddbdc3">BIT_INT_SIZE</a>, <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#a301d95dfdab75e9e999bc3ead545a325">BleedingSource()</a>, <a class="el" href="../../d7/d90/group___debug_u_i.html#gaa84b630b3b32613f49053352ba95c9c2">DbgUI::End()</a>, <a class="el" href="../../d7/d90/group___debug_u_i.html#ga79a4f56743729148efd79908662211f6">DbgUI::EndCleanupScope()</a>, <a class="el" href="../../dc/da8/class_bleeding_sources_manager_base.html#a7de01d467a31b7ad8a371010086d18b4">GetBleedingSourceMeta()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../db/d8f/class_bleeding_source_zone.html#ab5fa102eb5d1d64396e7dd008fe15e09">BleedingSourceZone::GetInvLocation()</a>, <a class="el" href="../../db/d8f/class_bleeding_source_zone.html#a679446518cb29a33736357333ec4fef5">BleedingSourceZone::GetMaxTime()</a>, <a class="el" href="../../dc/da8/class_bleeding_sources_manager_base.html#aeb1a4c7db48c99f1f649717fc5c03986">GetSelectionNameFromBit()</a>, <a class="el" href="../../df/d36/class_inventory_slots.html#a338920c4d5fac6af3b9cc86a85b0a1eb">InventorySlots::GetSlotName()</a>, <a class="el" href="../../d2/de6/class_c_game.html#af7ba31b759c9731da0d692896dc82fc1">CGame::GetTickTime()</a>, <a class="el" href="../../d0/dd4/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>, <a class="el" href="../../d5/d98/group___math.html#ga46107fe5da70b9f5f33642d643dc813f">Math::Pow()</a>, <a class="el" href="../../d5/d98/group___math.html#ga508b1867c6e0e338fc793045a4a7680a">Math::Round()</a>, <a class="el" href="../../d7/d90/group___debug_u_i.html#ga6b5a45748947842552d1627695abf80b">DbgUI::Text()</a>, and <a class="el" href="../../d4/dc3/classfloat.html#a20e2e23b58b06712efb8528d14f4c29e">float::ToString()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/da8/class_bleeding_sources_manager_base.html#a77491714662f827ac632c2eee20f8963">OnUpdate()</a>.</p>
 
@@ -1909,7 +1911,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d3/def/class_player_constants.html#a63ea8a1e7e75fc217a8a0443b2cffa12">PlayerConstants::BLEEDING_SOURCE_CLOSE_INFECTION_CHANCE</a>, <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../de/d7a/class_item_base.html#acb5750287d6b28b1cf1c5d022285c836">ItemBase::GetInfectionChance()</a>, <a class="el" href="../../d2/df5/_action_input_8c.html#ae3148c4f424352b43964473b052380d8">m_Item</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../de/d30/class_cached_objects_params.html#a237e75aa08c8a870b89f633bd91bc17b">CachedObjectsParams::PARAM1_BOOL</a>, and <a class="el" href="../../d5/d98/group___math.html#ga990733f5c3d22ee731e6e4d76cc8e6d7">Math::RandomFloat01()</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/def/class_player_constants.html#a63ea8a1e7e75fc217a8a0443b2cffa12">PlayerConstants::BLEEDING_SOURCE_CLOSE_INFECTION_CHANCE</a>, <a class="el" href="../../d6/dae/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, <a class="el" href="../../de/d7a/class_item_base.html#acb5750287d6b28b1cf1c5d022285c836">ItemBase::GetInfectionChance()</a>, <a class="el" href="../../d2/df5/_action_input_8c.html#ae3148c4f424352b43964473b052380d8">m_Item</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../de/d30/class_cached_objects_params.html#a237e75aa08c8a870b89f633bd91bc17b">CachedObjectsParams::PARAM1_BOOL</a>, and <a class="el" href="../../d5/d98/group___math.html#ga990733f5c3d22ee731e6e4d76cc8e6d7">Math::RandomFloat01()</a>.</p>
 
 </div>
 </div>
@@ -2125,8 +2127,6 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../d2/de6/class_c_game.html#a55bc68f6d6db55f9392287a7c8a6fff4">CGame::CreateObject()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d27/class_effect_particle.html#a6c54b4e721237d7766be2b78c44502b7">EffectParticle::GetParticle()</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, and <a class="el" href="../../d2/d03/class_s_effect_manager.html#a17cd7a9def7229fc80835af7376239de">SEffectManager::PlayInWorld()</a>.</p>
 
 </div>
 </div>
@@ -2500,6 +2500,28 @@ Static Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="../../dc/d49/group___diag_menu.html#ga6eaf263a07e0b8a8895ed494afceed7d">Shape</a> m_Point</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82fb2f8d9f1cf92a7870619acde8118e" name="a82fb2f8d9f1cf92a7870619acde8118e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82fb2f8d9f1cf92a7870619acde8118e">&#9670;&#160;</a></span>m_ProcessSourcesRemoval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/db9/classbool.html">bool</a> m_ProcessSourcesRemoval = false</td>
         </tr>
       </table>
   </td>

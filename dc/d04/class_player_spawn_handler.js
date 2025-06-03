@@ -2,6 +2,7 @@ var class_player_spawn_handler =
 [
     [ "ApplyAttributes", "dc/d04/class_player_spawn_handler.html#aff7a584a5f8473846fd36487e34fa978", null ],
     [ "CreateChildItem", "dc/d04/class_player_spawn_handler.html#af501a25f834702655499544daff04063", null ],
+    [ "GetCharacterPresetByName", "dc/d04/class_player_spawn_handler.html#a27d905c78d4105b12d2a6451bd673385", null ],
     [ "GetRandomCharacterPreset", "dc/d04/class_player_spawn_handler.html#a0011cc23a871943f347445ac052aa79f", null ],
     [ "HandleNewItem", "dc/d04/class_player_spawn_handler.html#ada4889715347e799acee7f51073e3a95", null ],
     [ "IsInitialized", "dc/d04/class_player_spawn_handler.html#ab2c217951b4362bb6661a1e863105320", null ],

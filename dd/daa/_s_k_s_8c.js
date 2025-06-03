@@ -1,7 +1,6 @@
 var _s_k_s_8c =
 [
     [ "WeaponStableState", "dc/dcc/class_weapon_stable_state.html", "dc/dcc/class_weapon_stable_state" ],
-    [ "WeaponStateJammed", "db/d5e/class_weapon_state_jammed.html", "db/d5e/class_weapon_state_jammed" ],
     [ "Rifle_Base", "dd/d79/class_rifle___base.html", "dd/d79/class_rifle___base" ],
     [ "SKSAnimState", "dd/daa/_s_k_s_8c.html#acc7b4ee197aa314bd68e0f44f758a78b", [
       [ "DEFAULT", "dd/daa/_s_k_s_8c.html#acc7b4ee197aa314bd68e0f44f758a78ba88ec7d5086d2469ba843c7fcceade8a6", null ],

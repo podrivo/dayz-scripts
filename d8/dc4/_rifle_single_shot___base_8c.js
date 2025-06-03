@@ -1,7 +1,6 @@
 var _rifle_single_shot___base_8c =
 [
     [ "WeaponStableState", "dc/dcc/class_weapon_stable_state.html", "dc/dcc/class_weapon_stable_state" ],
-    [ "WeaponStateJammed", "db/d5e/class_weapon_state_jammed.html", "db/d5e/class_weapon_state_jammed" ],
     [ "Rifle_Base", "dd/d79/class_rifle___base.html", "dd/d79/class_rifle___base" ],
     [ "RSSAnimState", "d8/dc4/_rifle_single_shot___base_8c.html#a88a4ab5aaf0d3b627a1bfa244dfc551d", [
       [ "DEFAULT", "d8/dc4/_rifle_single_shot___base_8c.html#a88a4ab5aaf0d3b627a1bfa244dfc551da88ec7d5086d2469ba843c7fcceade8a6", null ]
@@ -17,7 +16,7 @@ var _rifle_single_shot___base_8c =
     [ "OnExit", "d8/dc4/_rifle_single_shot___base_8c.html#aa40f8697dfa587f8adabc8640bc98ad8", null ],
     [ "Empty", "d8/dc4/_rifle_single_shot___base_8c.html#a891fbec6fb0d74aea9e064d13b59c9e0", null ],
     [ "Fireout", "d8/dc4/_rifle_single_shot___base_8c.html#a992cc98ec5532dbef907470ed75a064f", null ],
-    [ "Jammed", "d8/dc4/_rifle_single_shot___base_8c.html#afaf79e728091911ce906c93dc4ab3535", null ],
+    [ "Jammed", "d8/dc4/_rifle_single_shot___base_8c.html#a4fe852b12d1f0bf3b47863cac3e874f9", null ],
     [ "Loaded", "d8/dc4/_rifle_single_shot___base_8c.html#afae9218a8bc790c8851b8a6e6cada69b", null ],
     [ "OnEntry", "d8/dc4/_rifle_single_shot___base_8c.html#a064c39f2c9d370ba4d2c513f99bf15d1", null ],
     [ "UNKNOWN", "d8/dc4/_rifle_single_shot___base_8c.html#a6ce26a62afab55d7606ad4e92428b30c", null ]

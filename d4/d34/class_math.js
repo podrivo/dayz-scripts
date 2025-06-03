@@ -51,6 +51,7 @@ var class_math =
     [ "SqrInt", "d5/d98/group___math.html#gaa03c24d7719987cad19f8bd9287b1dbf", null ],
     [ "Sqrt", "d5/d98/group___math.html#gaf6caba2d6f3900fd01a0ae6d3df14ccd", null ],
     [ "Tan", "d5/d98/group___math.html#ga751e49e93893a5092a55f5bfc589c1e1", null ],
+    [ "VectorIsEqual", "d5/d98/group___math.html#gaad459f4a10869e29b44837f015357bd6", null ],
     [ "WrapFloat", "d5/d98/group___math.html#gab1a127092443d095b852965456a0b54a", null ],
     [ "WrapFloat0X", "d5/d98/group___math.html#ga3fcc9aa4d97a4fa78a81e29135539aa7", null ],
     [ "WrapFloat0XInclusive", "d5/d98/group___math.html#gae11a21c82242ed84f0bd7f435e57e7ea", null ],

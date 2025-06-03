@@ -1,6 +1,5 @@
 var class_script_console_camera_d_o_f_preset =
 [
-    [ "ScriptConsoleCameraDOFPreset", "d9/d4f/class_script_console_camera_d_o_f_preset.html#a0c8a879b5005d395a39cdc8708ea1fa8", null ],
     [ "Blur", "d9/d4f/class_script_console_camera_d_o_f_preset.html#a8b34809c25a3f8b0b6d8401b81f982da", null ],
     [ "FocusDepthOffset", "d9/d4f/class_script_console_camera_d_o_f_preset.html#a7d2c79254909b1eb2c02a5a9f14fda81", null ],
     [ "FocusDistance", "d9/d4f/class_script_console_camera_d_o_f_preset.html#ad10fec833cb59990c772a7ec656b79af", null ],

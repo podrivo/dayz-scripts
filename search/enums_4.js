@@ -13,7 +13,7 @@ var searchData=
   ['eanimplaystate_10',['EAnimPlayState',['../db/d8d/_state_manager_8c.html#aa2a06f1e5cf7145c2e712d842a8c1da6',1,'StateManager.c']]],
   ['eanimsoundeventid_11',['EAnimSoundEventID',['../d5/df7/_e_anim_sound_event_i_d_8c.html#a10de926578f04cb215fdf8c6fb062006',1,'EAnimSoundEventID.c']]],
   ['eanniversarymusicstates_12',['EAnniversaryMusicStates',['../d2/dcf/_anniversary_music_source_8c.html#ac4e832b20a006144a8c168f8bb4b9d3a',1,'AnniversaryMusicSource.c']]],
-  ['eareadecaystage_13',['eAreaDecayStage',['../d0/dd9/_contaminated_area___dynamic_8c.html#abd1af643088884800b81cf3058ed14cc',1,'ContaminatedArea_Dynamic.c']]],
+  ['eareadecaystage_13',['eAreaDecayStage',['../d8/d0d/_contaminated_area___dynamic_base_8c.html#abd1af643088884800b81cf3058ed14cc',1,'ContaminatedArea_DynamicBase.c']]],
   ['ebackendcredentials_14',['EBackendCredentials',['../d0/d1c/_backend_api_8c.html#a3b20d6edc106a6601cf27f0a94dd2a08',1,'BackendApi.c']]],
   ['ebackenderror_15',['EBackendError',['../d0/d1c/_backend_api_8c.html#ac172886b7966991e5f32d7e502e9fbaa',1,'BackendApi.c']]],
   ['ebackendrequest_16',['EBackendRequest',['../d0/d1c/_backend_api_8c.html#a2c8ca67b2fdeeac6cdfe5cfc731b5322',1,'BackendApi.c']]],
@@ -126,8 +126,9 @@ var searchData=
   ['eundergroundpresence_123',['EUndergroundPresence',['../d4/dd4/_underground_handler_client_8c.html#ad4ecd0babe6f8233807957f56e96fe8b',1,'UndergroundHandlerClient.c']]],
   ['ewaterlevels_124',['EWaterLevels',['../de/da8/_e_water_levels_8c.html#af5f1938837f7b13d024114f64a9753f0',1,'EWaterLevels.c']]],
   ['ewatersourceobjecttype_125',['EWaterSourceObjectType',['../d3/d27/_e_water_source_object_type_8c.html#af6a5f93692a424eb17de4efcf13c206b',1,'EWaterSourceObjectType.c']]],
-  ['eweatherphenomenon_126',['EWeatherPhenomenon',['../d9/d98/_weather_8c.html#a5dca7ad77003ac5339f198b78de6d463',1,'Weather.c']]],
-  ['ewetnesslevel_127',['EWetnessLevel',['../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#af314c3a601e8bcad07a607f60bce1176',1,'EntityAI.c']]],
-  ['ewirematerial_128',['eWireMaterial',['../d0/d4a/_trap___trip_wire_8c.html#a50fcac5bd072363731670c22cefdc8e4',1,'Trap_TripWire.c']]],
-  ['ezonetype_129',['eZoneType',['../de/df7/_effect_area_8c.html#af2ab85552eafbde9a8cd42d20a0a1ebf',1,'EffectArea.c']]]
+  ['eweaponobstructionmode_126',['EWeaponObstructionMode',['../da/d9e/_cfg_gameplay_data_json_8c.html#a155318e0566771adec3e7297786c365a',1,'CfgGameplayDataJson.c']]],
+  ['eweatherphenomenon_127',['EWeatherPhenomenon',['../d9/d98/_weather_8c.html#a5dca7ad77003ac5339f198b78de6d463',1,'Weather.c']]],
+  ['ewetnesslevel_128',['EWetnessLevel',['../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#af314c3a601e8bcad07a607f60bce1176',1,'EntityAI.c']]],
+  ['ewirematerial_129',['eWireMaterial',['../d0/d4a/_trap___trip_wire_8c.html#a50fcac5bd072363731670c22cefdc8e4',1,'Trap_TripWire.c']]],
+  ['ezonetype_130',['eZoneType',['../de/df7/_effect_area_8c.html#af2ab85552eafbde9a8cd42d20a0a1ebf',1,'EffectArea.c']]]
 ];

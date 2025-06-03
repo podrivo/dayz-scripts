@@ -64,6 +64,8 @@ var class_cfg_gameplay_handler =
     [ "GetStaminaMinCap", "d7/dbe/class_cfg_gameplay_handler.html#a1916aa84cfd51662b7a8fd972b77a74d", null ],
     [ "GetStaminaWeightLimitThreshold", "d7/dbe/class_cfg_gameplay_handler.html#ae70b608c6f1867184164f882e25705b2", null ],
     [ "GetUse3DMap", "d7/dbe/class_cfg_gameplay_handler.html#aa85015abd65395262829c4aba61dc6af", null ],
+    [ "GetWeaponObstructionModeDynamic", "d7/dbe/class_cfg_gameplay_handler.html#a333318ca8e370aca85746060ca70fc6a", null ],
+    [ "GetWeaponObstructionModeStatic", "d7/dbe/class_cfg_gameplay_handler.html#a70e16a965616c2752676685865e0ca26", null ],
     [ "GetWetnessWeightModifiers", "d7/dbe/class_cfg_gameplay_handler.html#adba8415a66ba824900ae67d5bbc51e6b", null ],
     [ "InitData", "d7/dbe/class_cfg_gameplay_handler.html#a8b2c768f0d10d4350667b50e23f60b08", null ],
     [ "LoadData", "d7/dbe/class_cfg_gameplay_handler.html#a3700c46bbcf43becd1b062622661f89d", null ],

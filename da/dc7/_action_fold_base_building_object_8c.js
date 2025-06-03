@@ -7,5 +7,7 @@ var _action_fold_base_building_object_8c =
     [ "CreateConditionComponents", "da/dc7/_action_fold_base_building_object_8c.html#a6b922d3bb1d26f790bc52030566ba2df", null ],
     [ "GetAdminLogMessage", "da/dc7/_action_fold_base_building_object_8c.html#a5cf7c0a3bd1ed2154d3b917244047a40", null ],
     [ "GetInputType", "da/dc7/_action_fold_base_building_object_8c.html#ab6eb153abc42e514909126c621d01280", null ],
-    [ "OnFinishProgressServer", "da/dc7/_action_fold_base_building_object_8c.html#a00cda41fe9dd093059da5c4b83b591bc", null ]
+    [ "OnEndServer", "da/dc7/_action_fold_base_building_object_8c.html#a2ebf3855cc8960864124ba5ca4949033", null ],
+    [ "OnFinishProgressServer", "da/dc7/_action_fold_base_building_object_8c.html#a00cda41fe9dd093059da5c4b83b591bc", null ],
+    [ "OnStartServer", "da/dc7/_action_fold_base_building_object_8c.html#af5aa64866cd0cfb7cd9989eb748abbe0", null ]
 ];

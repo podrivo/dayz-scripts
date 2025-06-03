@@ -9,7 +9,6 @@ var _action_drop_item_8c =
     [ "GetInputType", "d1/da6/_action_drop_item_8c.html#ab6eb153abc42e514909126c621d01280", null ],
     [ "HasProneException", "d1/da6/_action_drop_item_8c.html#addc04d3967e021e6b6bd259b82de083e", null ],
     [ "HasTarget", "d1/da6/_action_drop_item_8c.html#ab80733e1a8c145c8ee7b04476d535d72", null ],
-    [ "OnExecuteClient", "d1/da6/_action_drop_item_8c.html#a7c0913512f25d83df6aa6530b769b65e", null ],
     [ "OnExecuteServer", "d1/da6/_action_drop_item_8c.html#a26c6922d796bdf663f49119e83fe26f8", null ],
     [ "PhysicalDropItem", "d1/da6/_action_drop_item_8c.html#a0b14c68b94f52c80edc812974e71c3cc", null ],
     [ "UseAcknowledgment", "d1/da6/_action_drop_item_8c.html#ac6972ef21817121a02b9d590ff2ed3dd", null ],

@@ -123,8 +123,14 @@ Functions</h2></td></tr>
 <tr class="memdesc:a3f28344302adf4813e2c253ae339f7d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets collision sphere for object.  <br /></td></tr>
 <tr class="separator:a3f28344302adf4813e2c253ae339f7d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a209da0fff45d7cf5441f5b7eafe42326"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9f/_scripted_entity_8c.html#a209da0fff45d7cf5441f5b7eafe42326">SetCollisionCylinder</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> radius, <a class="el" href="../../d4/dc3/classfloat.html">float</a> height)</td></tr>
-<tr class="memdesc:a209da0fff45d7cf5441f5b7eafe42326"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets collision cylinder for object.  <br /></td></tr>
+<tr class="memdesc:a209da0fff45d7cf5441f5b7eafe42326"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets collision cylinder for object, representing cylinder from origin(center) up to defined positive height.  <br /></td></tr>
 <tr class="separator:a209da0fff45d7cf5441f5b7eafe42326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aced519cb31456a0e27effa13a5056d9f"><td class="memItemLeft" align="right" valign="top">private proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9f/_scripted_entity_8c.html#aced519cb31456a0e27effa13a5056d9f">SetCollisionCylinderTwoWayNative</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> radius, <a class="el" href="../../d4/dc3/classfloat.html">float</a> negativeHeight, <a class="el" href="../../d4/dc3/classfloat.html">float</a> positiveHeight)</td></tr>
+<tr class="memdesc:aced519cb31456a0e27effa13a5056d9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets collision cylinder for object, representing cylinder from origin(center), height can be defined in both directions.  <br /></td></tr>
+<tr class="separator:aced519cb31456a0e27effa13a5056d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ebe144d46c71ba05e1ae37e82caa5c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9f/_scripted_entity_8c.html#a6ebe144d46c71ba05e1ae37e82caa5c0">SetCollisionCylinderTwoWay</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> radius, <a class="el" href="../../d4/dc3/classfloat.html">float</a> negativeHeight, <a class="el" href="../../d4/dc3/classfloat.html">float</a> positiveHeight)</td></tr>
+<tr class="memdesc:a6ebe144d46c71ba05e1ae37e82caa5c0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d7b/class_input.html">Input</a> value validated version of SetCollisionCylinderTwoWay.  <br /></td></tr>
+<tr class="separator:a6ebe144d46c71ba05e1ae37e82caa5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e515ac98f0e61c4febe77a15b3859d1"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d9f/_scripted_entity_8c.html#a5e515ac98f0e61c4febe77a15b3859d1">SetTriggerShape</a> (<a class="el" href="../../dc/d9f/_scripted_entity_8c.html#aaeebe0cb195464d17884b96356278c39">TriggerShape</a> shape)</td></tr>
 <tr class="memdesc:a5e515ac98f0e61c4febe77a15b3859d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the TriggerShape to be used, default is TriggerShape.BOX.  <br /></td></tr>
 <tr class="separator:a5e515ac98f0e61c4febe77a15b3859d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -312,7 +318,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets collision cylinder for object. </p>
+<p>Sets collision cylinder for object, representing cylinder from origin(center) up to defined positive height. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">radius</td><td><code>float</code> Radius of cylinder </td></tr>
@@ -322,10 +328,109 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>Automatically sets TriggerShape.CYLINDER <br  />
  usage : <div class="fragment"><div class="line"><a class="code hl_function" href="../../dc/d9f/_scripted_entity_8c.html#a209da0fff45d7cf5441f5b7eafe42326">SetCollisionCylinder</a>(3, 6);</div>
-<div class="ttc" id="a_scripted_entity_8c_html_a209da0fff45d7cf5441f5b7eafe42326"><div class="ttname"><a href="../../dc/d9f/_scripted_entity_8c.html#a209da0fff45d7cf5441f5b7eafe42326">SetCollisionCylinder</a></div><div class="ttdeci">proto native void SetCollisionCylinder(float radius, float height)</div><div class="ttdoc">Sets collision cylinder for object.</div></div>
+<div class="ttc" id="a_scripted_entity_8c_html_a209da0fff45d7cf5441f5b7eafe42326"><div class="ttname"><a href="../../dc/d9f/_scripted_entity_8c.html#a209da0fff45d7cf5441f5b7eafe42326">SetCollisionCylinder</a></div><div class="ttdeci">proto native void SetCollisionCylinder(float radius, float height)</div><div class="ttdoc">Sets collision cylinder for object, representing cylinder from origin(center) up to defined positive ...</div></div>
 </div><!-- fragment --> </dd></dl>
 
+</div>
+</div>
+<a id="a6ebe144d46c71ba05e1ae37e82caa5c0" name="a6ebe144d46c71ba05e1ae37e82caa5c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ebe144d46c71ba05e1ae37e82caa5c0">&#9670;&#160;</a></span>SetCollisionCylinderTwoWay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetCollisionCylinderTwoWay </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>negativeHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>positiveHeight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d7b/class_input.html">Input</a> value validated version of SetCollisionCylinderTwoWay. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radius</td><td><code>float</code> Radius of cylinder </td></tr>
+    <tr><td class="paramname">negativeHeigh</td><td><code>float</code> Negative height of cylinder </td></tr>
+    <tr><td class="paramname">positiveHeight</td><td><code>float</code> Positive height of cylinder </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Automatically sets TriggerShape.CYLINDER <br  />
+ usage : <div class="fragment"><div class="line">SetCollisionCylinderTwoWayValidated(3, -3, 3);</div>
+</div><!-- fragment --> </dd></dl>
+
+<p class="reference">References <a class="el" href="../../d6/dae/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, and <a class="el" href="../../dc/d9f/_scripted_entity_8c.html#aced519cb31456a0e27effa13a5056d9f">SetCollisionCylinderTwoWayNative()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="../../d5/de6/class_cylinder_trigger.html#ab9cb1478eb08f9ce33c4549fd6e26b50">CylinderTrigger::EOnInit()</a>.</p>
+
+</div>
+</div>
+<a id="aced519cb31456a0e27effa13a5056d9f" name="aced519cb31456a0e27effa13a5056d9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aced519cb31456a0e27effa13a5056d9f">&#9670;&#160;</a></span>SetCollisionCylinderTwoWayNative()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">private proto native void SetCollisionCylinderTwoWayNative </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>negativeHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>positiveHeight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets collision cylinder for object, representing cylinder from origin(center), height can be defined in both directions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radius</td><td><code>float</code> Radius of cylinder </td></tr>
+    <tr><td class="paramname">negativeHeigh</td><td><code>float</code> Negative height of cylinder </td></tr>
+    <tr><td class="paramname">positiveHeight</td><td><code>float</code> Positive height of cylinder </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Automatically sets TriggerShape.CYLINDER <br  />
+ usage : <div class="fragment"><div class="line"><a class="code hl_function" href="../../dc/d9f/_scripted_entity_8c.html#a6ebe144d46c71ba05e1ae37e82caa5c0">SetCollisionCylinderTwoWay</a>(3, -3, 3);</div>
+<div class="ttc" id="a_scripted_entity_8c_html_a6ebe144d46c71ba05e1ae37e82caa5c0"><div class="ttname"><a href="../../dc/d9f/_scripted_entity_8c.html#a6ebe144d46c71ba05e1ae37e82caa5c0">SetCollisionCylinderTwoWay</a></div><div class="ttdeci">void SetCollisionCylinderTwoWay(float radius, float negativeHeight, float positiveHeight)</div><div class="ttdoc">Input value validated version of SetCollisionCylinderTwoWay.</div><div class="ttdef"><b>Definition</b> ScriptedEntity.c:80</div></div>
+</div><!-- fragment --> </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d9f/_scripted_entity_8c.html#a6ebe144d46c71ba05e1ae37e82caa5c0">SetCollisionCylinderTwoWay()</a>.</p>
 
 </div>
 </div>

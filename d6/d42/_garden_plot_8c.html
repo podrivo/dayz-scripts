@@ -117,6 +117,8 @@ Data Structures</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a8fab5d6155c085b8cbfc201bc606fa77"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d42/_garden_plot_8c.html#a8fab5d6155c085b8cbfc201bc606fa77">GetGardenSlotsCount</a> ()</td></tr>
 <tr class="separator:a8fab5d6155c085b8cbfc201bc606fa77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ff31a876fba89e2f0ae6c33af8cd551"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d42/_garden_plot_8c.html#a6ff31a876fba89e2f0ae6c33af8cd551">OnPlacementComplete</a> (Man player, <a class="el" href="../../d7/dfc/classvector.html">vector</a> position=&quot;0 0 0&quot;, <a class="el" href="../../d7/dfc/classvector.html">vector</a> orientation=&quot;0 0 0&quot;)</td></tr>
+<tr class="separator:a6ff31a876fba89e2f0ae6c33af8cd551"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8209cc890a571f50ffc01dc50b85619"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d42/_garden_plot_8c.html#ae8209cc890a571f50ffc01dc50b85619">RefreshSlots</a> ()</td></tr>
 <tr class="separator:ae8209cc890a571f50ffc01dc50b85619"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7b47351ee701714a38342016223d26a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d28/class_garden_plot_greenhouse.html">GardenPlotGreenhouse</a> GardenPlot&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d42/_garden_plot_8c.html#ad7b47351ee701714a38342016223d26a">EOnInit</a> (<a class="el" href="../../dc/da9/class_i_entity.html">IEntity</a> other, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> extra)</td></tr>
@@ -177,6 +179,42 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a6ff31a876fba89e2f0ae6c33af8cd551" name="a6ff31a876fba89e2f0ae6c33af8cd551"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ff31a876fba89e2f0ae6c33af8cd551">&#9670;&#160;</a></span>OnPlacementComplete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void OnPlacementComplete </td>
+          <td>(</td>
+          <td class="paramtype">Man&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td>
+          <td class="paramname"><em>position</em> = <code>&quot;0&#160;0&#160;0&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td>
+          <td class="paramname"><em>orientation</em> = <code>&quot;0&#160;0&#160;0&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, and <a class="el" href="../../d6/d42/_garden_plot_8c.html#a19a416b2d4b8fce38f900c38a463d22c">SyncSlots()</a>.</p>
+
+</div>
+</div>
 <a id="ae8209cc890a571f50ffc01dc50b85619" name="ae8209cc890a571f50ffc01dc50b85619"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae8209cc890a571f50ffc01dc50b85619">&#9670;&#160;</a></span>RefreshSlots()</h2>
 
@@ -209,7 +247,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../de/d7a/class_item_base.html#a9c119a1ee42750ed67721d9ce4126639">ItemBase::EEOnAfterLoad()</a>, and <a class="el" href="../../de/d7a/class_item_base.html#ad183155e7592e816863539c54b6fa83f">ItemBase::OnVariablesSynchronized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d7a/class_item_base.html#a9c119a1ee42750ed67721d9ce4126639">ItemBase::EEOnAfterLoad()</a>, <a class="el" href="../../df/d7e/class_garden_base.html#a6ff31a876fba89e2f0ae6c33af8cd551">GardenBase::OnPlacementComplete()</a>, <a class="el" href="../../d6/d42/_garden_plot_8c.html#a6ff31a876fba89e2f0ae6c33af8cd551">OnPlacementComplete()</a>, and <a class="el" href="../../d9/d28/class_garden_plot_greenhouse.html#a6ff31a876fba89e2f0ae6c33af8cd551">GardenPlotGreenhouse::OnPlacementComplete()</a>.</p>
 
 </div>
 </div>

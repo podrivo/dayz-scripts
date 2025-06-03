@@ -3,7 +3,7 @@ var class_action_targets =
     [ "ActionTargets", "df/dba/class_action_targets.html#a0cf97773897b72d46df6434efe29ba20", null ],
     [ "CalculateRayStart", "df/dba/class_action_targets.html#a5cc25f3edfe7eac599da76ca591f16c7", null ],
     [ "Clear", "df/dba/class_action_targets.html#aa71d36872f416feaa853788a7a7a7ef8", null ],
-    [ "ComputeUtility", "df/dba/class_action_targets.html#af127f53a1004be733d41fbeaac2b0cd5", null ],
+    [ "ComputeUtility", "df/dba/class_action_targets.html#a8676077bc8cbf3790dba55a655f5c21e", null ],
     [ "DistSqrPoint2Line", "df/dba/class_action_targets.html#ae40c67904a330878f8c58a7d3a84df05", null ],
     [ "FilterObstructedObjects", "df/dba/class_action_targets.html#a84007df1471d21de6607935c29621557", null ],
     [ "FilterObstructedObjectsEx", "df/dba/class_action_targets.html#a4d86b93d3e08aa41d2f2c58ee764f435", null ],
@@ -31,6 +31,7 @@ var class_action_targets =
     [ "m_Player", "df/dba/class_action_targets.html#a37495a7d404542b02363adc8c53a2ddb", null ],
     [ "m_RayEnd", "df/dba/class_action_targets.html#a573dafa1f13191afc770c21dc7863481", null ],
     [ "m_RayStart", "df/dba/class_action_targets.html#aa205718dc5ad53ea0781834d9e4e85e5", null ],
+    [ "m_SurfaceInfo", "df/dba/class_action_targets.html#a199996483b311e5b551dce34912cea2c", null ],
     [ "m_Targets", "df/dba/class_action_targets.html#acbcee90b7c14723706b88ff71842ada5", null ],
     [ "OBSTRUCTED_COUNT_THRESHOLD", "df/dba/class_action_targets.html#a2a575867336ef75a446a26fb0716556d", null ]
 ];

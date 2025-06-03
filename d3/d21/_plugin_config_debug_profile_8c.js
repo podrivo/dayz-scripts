@@ -3,7 +3,6 @@ var _plugin_config_debug_profile_8c =
     [ "ScriptConsoleCameraDOFPreset", "d9/d4f/class_script_console_camera_d_o_f_preset.html", "d9/d4f/class_script_console_camera_d_o_f_preset" ],
     [ "PluginConfigHandler", "d4/d49/class_plugin_config_handler.html", "d4/d49/class_plugin_config_handler" ],
     [ "LocationParams", "d3/d21/_plugin_config_debug_profile_8c.html#a9e4b9d2cf26e38bee6d5399c0edc6284", null ],
-    [ "ScriptConsoleWeatherPreset", "d3/d21/_plugin_config_debug_profile_8c.html#a57a115dabcf7390d232461c3eba0cf1b", null ],
     [ "Name", "d3/d21/_plugin_config_debug_profile_8c.html#ae9c1b0db681d73c0689584d8c747453e", null ],
     [ "WFog", "d3/d21/_plugin_config_debug_profile_8c.html#abcb729d8cd14de177048d5f2f3daf195", null ],
     [ "WOvercast", "d3/d21/_plugin_config_debug_profile_8c.html#ab15d398d5bd0ccfa6bd6fb041edc2664", null ],

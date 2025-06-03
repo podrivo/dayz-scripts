@@ -119,6 +119,8 @@ var _e_diag_menu_i_ds_8c =
       [ "WEAPON_BURST_VERSION", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336a8c63ad00d62a9bc69d8c7d4b6d24d131", null ],
       [ "WEAPON_CLAYMORE_DEBUG", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336a971751efd53ae1393b0da861274fff63", null ],
       [ "WEAPON_LIFT_DEBUG", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336af3b74ca30249c14a54dd1a0c6314f252", null ],
+      [ "WEAPON_FORCEALLOW_OBSTRUCTION", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336ae3d0a4cca0b461779673d0b97ddfc793", null ],
+      [ "WEAPON_DISABLE_OBSTRUCTION_INTERPOLATION", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336a39188195c8ca39fc02cbef8f9e3afd18", null ],
       [ "BLEEDING_MENU", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336ad28461716694aa2de43fb982b5b0f18e", null ],
       [ "BLEEDING_SOURCES", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336a662a63aae8af8c8067c5a8efda88356b", null ],
       [ "BLEEDING_DISABLE_BLOOD_LOSS", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336ad64eaf0aec190abbe239e6d9f73668e5", null ],

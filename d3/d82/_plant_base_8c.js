@@ -50,6 +50,7 @@ var _plant_base_8c =
     [ "RemoveSlot", "d3/d82/_plant_base_8c.html#a8218d5c941647cb741d7af1e0785586c", null ],
     [ "SetActions", "d3/d82/_plant_base_8c.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
     [ "SetDry", "d3/d82/_plant_base_8c.html#a093d253caa24df572390fc961dd43038", null ],
+    [ "SetGarden", "d3/d82/_plant_base_8c.html#a1c93cec81e2914b5a4009b333e81c189", null ],
     [ "SetPlantState", "d3/d82/_plant_base_8c.html#aec2cacf1751230258a58e8bfc6a7e989", null ],
     [ "SetSlot", "d3/d82/_plant_base_8c.html#ad98be649f4379d388b43c0b5f131f61e", null ],
     [ "SetSpoiled", "d3/d82/_plant_base_8c.html#acf5d9214a81123e610cb14e5ad1042e7", null ],

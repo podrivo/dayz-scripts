@@ -3,6 +3,7 @@ var class_action_view_optics =
     [ "ActionViewOptics", "d1/d12/class_action_view_optics.html#a3d2e82ef40fc09ea7450267e0305e9a8", null ],
     [ "ActionCondition", "d1/d12/class_action_view_optics.html#aa9aa4864fae11769c65e644b5fd97c66", null ],
     [ "ActionConditionContinue", "d1/d12/class_action_view_optics.html#a1f7399d8d410ac172ef0e5f4c4bbb4eb", null ],
+    [ "CanBeUsedLeaning", "d1/d12/class_action_view_optics.html#a0a08f55a068e9e74c6e3259b0f97edb5", null ],
     [ "CanWork", "d1/d12/class_action_view_optics.html#a06b379d80427601ac1976317f1115eca", null ],
     [ "CreateConditionComponents", "d1/d12/class_action_view_optics.html#a6b922d3bb1d26f790bc52030566ba2df", null ],
     [ "EnterOptics", "d1/d12/class_action_view_optics.html#a9949c6229fb0b9a58bccbefe761216f0", null ],

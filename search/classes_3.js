@@ -120,11 +120,12 @@ var searchData=
   ['dynamicarea_5fflare_117',['DynamicArea_Flare',['../d1/dd5/class_dynamic_area___flare.html',1,'']]],
   ['dynamicmusiclocationdynamicdata_118',['DynamicMusicLocationDynamicData',['../da/d3c/class_dynamic_music_location_dynamic_data.html',1,'']]],
   ['dynamicmusiclocationtypes_119',['DynamicMusicLocationTypes',['../d4/d30/class_dynamic_music_location_types.html',1,'']]],
-  ['dynamicmusicplayer_120',['DynamicMusicPlayer',['../d4/d79/class_dynamic_music_player.html',1,'']]],
+  ['dynamicmusicplayercategoryplaybackdata_120',['DynamicMusicPlayerCategoryPlaybackData',['../dd/d75/class_dynamic_music_player_category_playback_data.html',1,'']]],
   ['dynamicmusicplayerregistry_121',['DynamicMusicPlayerRegistry',['../da/ddb/class_dynamic_music_player_registry.html',1,'']]],
   ['dynamicmusicplayerregistrychernarus_122',['DynamicMusicPlayerRegistryChernarus',['../db/dc2/class_dynamic_music_player_registry_chernarus.html',1,'']]],
   ['dynamicmusicplayerregistryenoch_123',['DynamicMusicPlayerRegistryEnoch',['../d3/d75/class_dynamic_music_player_registry_enoch.html',1,'']]],
   ['dynamicmusicplayerregistrysakhal_124',['DynamicMusicPlayerRegistrySakhal',['../d0/d23/class_dynamic_music_player_registry_sakhal.html',1,'']]],
-  ['dynamicmusictrackdata_125',['DynamicMusicTrackData',['../d0/dff/class_dynamic_music_track_data.html',1,'']]],
-  ['dz_5fscripts_126',['DZ_Scripts',['../dd/d5b/class_cfg_patches_1_1_d_z___scripts.html',1,'CfgPatches']]]
+  ['dynamicmusicplayertimeofday_125',['DynamicMusicPlayerTimeOfDay',['../d9/db7/class_dynamic_music_player_time_of_day.html',1,'']]],
+  ['dynamicmusictrackdata_126',['DynamicMusicTrackData',['../d0/dff/class_dynamic_music_track_data.html',1,'']]],
+  ['dz_5fscripts_127',['DZ_Scripts',['../dd/d5b/class_cfg_patches_1_1_d_z___scripts.html',1,'CfgPatches']]]
 ];

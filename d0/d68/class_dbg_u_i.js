@@ -11,6 +11,7 @@ var class_dbg_u_i =
     [ "DoUnitTest", "d7/d90/group___debug_u_i.html#ga3567c7e3297e9677517cec8fd5d0b18b", null ],
     [ "End", "d7/d90/group___debug_u_i.html#gaa84b630b3b32613f49053352ba95c9c2", null ],
     [ "EndCleanupScope", "d7/d90/group___debug_u_i.html#ga79a4f56743729148efd79908662211f6", null ],
+    [ "FloatOverride", "d7/d90/group___debug_u_i.html#ga3e461d23d68f9e77f931702f97306cae", null ],
     [ "InputFloat", "d7/d90/group___debug_u_i.html#ga6869d7cfba04ebff0e6f34d3de05fb19", null ],
     [ "InputInt", "d7/d90/group___debug_u_i.html#ga1e6905a6b1d2b40e37a975826df5b940", null ],
     [ "InputText", "d7/d90/group___debug_u_i.html#ga9fa36ff6c3e2a8fa5501acc0f0e9121a", null ],

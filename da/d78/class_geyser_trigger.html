@@ -109,8 +109,8 @@ $(document).ready(function(){initNavTree('da/d78/class_geyser_trigger.html','../
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aa7e0def5ead886e1772212580756a2d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#aa7e0def5ead886e1772212580756a2d3">GeyserTrigger</a> ()</td></tr>
 <tr class="separator:aa7e0def5ead886e1772212580756a2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58793c1561abb560da4377da77ad6dea"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a58793c1561abb560da4377da77ad6dea">EEInit</a> ()</td></tr>
-<tr class="separator:a58793c1561abb560da4377da77ad6dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a31485b8285dc5e248d12b49765e506"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a3a31485b8285dc5e248d12b49765e506">DeferredInit</a> ()</td></tr>
+<tr class="separator:a3a31485b8285dc5e248d12b49765e506"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f38203d9eb8fd850f774fae213eba9a"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a8f38203d9eb8fd850f774fae213eba9a">GetDisplayName</a> ()</td></tr>
 <tr class="separator:a8f38203d9eb8fd850f774fae213eba9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83a1e547e0d1e65ad421070058a093a9"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a83a1e547e0d1e65ad421070058a093a9">EEDelete</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> parent)</td></tr>
@@ -137,6 +137,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:afde20930d1735c271c439d3781c5d474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2847fb84a3f0bc7a177545587e4ed99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#aa2847fb84a3f0bc7a177545587e4ed99">RemoveGeyserState</a> (<a class="el" href="../../df/d7e/_geyser_area_8c.html#af6f1587949027d78ab5b0676f6201fa9">EGeyserState</a> state)</td></tr>
 <tr class="separator:aa2847fb84a3f0bc7a177545587e4ed99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6912d104d02b7f197ef9785a12d4d50c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a6912d104d02b7f197ef9785a12d4d50c">CheckGeyserState</a> (<a class="el" href="../../df/d7e/_geyser_area_8c.html#af6f1587949027d78ab5b0676f6201fa9">EGeyserState</a> state)</td></tr>
+<tr class="separator:a6912d104d02b7f197ef9785a12d4d50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1de039d53a9c8fbd6978e609ad97ec91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d7e/_geyser_area_8c.html#af6f1587949027d78ab5b0676f6201fa9">EGeyserState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a1de039d53a9c8fbd6978e609ad97ec91">GetGeyserState</a> ()</td></tr>
 <tr class="separator:a1de039d53a9c8fbd6978e609ad97ec91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1306306382a90e37590423ed8f96ce9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#ad1306306382a90e37590423ed8f96ce9">IsSubmerged</a> ()</td></tr>
@@ -146,14 +148,22 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a00d67c6b9a65fd1a89f65d75591bf34a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a00d67c6b9a65fd1a89f65d75591bf34a">MOUTH_ADJUST_RADIUS</a> = 0.2</td></tr>
 <tr class="separator:a00d67c6b9a65fd1a89f65d75591bf34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab48a22a34bdcaf48b75146df21f5e3b1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#ab48a22a34bdcaf48b75146df21f5e3b1">SOUND_BUBBLING</a> = &quot;Boiling_Done_SoundSet&quot;</td></tr>
+<tr class="memitem:ab48a22a34bdcaf48b75146df21f5e3b1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#ab48a22a34bdcaf48b75146df21f5e3b1">SOUND_BUBBLING</a> = &quot;Geyser_bubbling_loop_SoundSet&quot;</td></tr>
 <tr class="separator:ab48a22a34bdcaf48b75146df21f5e3b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a543cc9b08c40c4569f9c2d0b0e3d5deb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a543cc9b08c40c4569f9c2d0b0e3d5deb">SOUND_ERUPTION</a> = &quot;pour_Water_Pot_SoundSet&quot;</td></tr>
+<tr class="memitem:a543cc9b08c40c4569f9c2d0b0e3d5deb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a543cc9b08c40c4569f9c2d0b0e3d5deb">SOUND_ERUPTION</a> = &quot;Geyser_eruption_loop_SoundSet&quot;</td></tr>
 <tr class="separator:a543cc9b08c40c4569f9c2d0b0e3d5deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6caf7eb4eb04360b7f62a4b4b1acbcb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#ab6caf7eb4eb04360b7f62a4b4b1acbcb">SOUND_ERUPTION_TALL</a> = &quot;pour_Water_WatterBottle_SoundSet&quot;</td></tr>
+<tr class="memitem:a9061c7fc2ba7fc1b52c8c3432bc0c696"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a9061c7fc2ba7fc1b52c8c3432bc0c696">SOUND_ERUPTION_START</a> = &quot;Geyser_eruption_start_SoundSet&quot;</td></tr>
+<tr class="separator:a9061c7fc2ba7fc1b52c8c3432bc0c696"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6caf7eb4eb04360b7f62a4b4b1acbcb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#ab6caf7eb4eb04360b7f62a4b4b1acbcb">SOUND_ERUPTION_TALL</a> = &quot;Geyser_eruption_tall_loop_SoundSet&quot;</td></tr>
 <tr class="separator:ab6caf7eb4eb04360b7f62a4b4b1acbcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b33b0cf90da4c06ac943cdf9be99edc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a8b33b0cf90da4c06ac943cdf9be99edc">SOUND_ERUPTION_TALL_START</a> = &quot;Geyser_eruption_tall_start_SoundSet&quot;</td></tr>
+<tr class="separator:a8b33b0cf90da4c06ac943cdf9be99edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2068cc4463954e1bcd8042ea88b1b889"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a2068cc4463954e1bcd8042ea88b1b889">SOUND_ERUPTION_TALL_END</a> = &quot;Geyser_eruption_tall_splash_SoundSet&quot;</td></tr>
+<tr class="separator:a2068cc4463954e1bcd8042ea88b1b889"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdcf96b6f206a9693de440611204e4f0"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#acdcf96b6f206a9693de440611204e4f0">m_bIsDormant</a></td></tr>
 <tr class="separator:acdcf96b6f206a9693de440611204e4f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e755c27cc9c9c56682e1222352d94a7"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a0e755c27cc9c9c56682e1222352d94a7">m_bIsEruptingSoon</a></td></tr>
+<tr class="separator:a0e755c27cc9c9c56682e1222352d94a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15540e1e24e0bf8c568a1e6471701da8"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a15540e1e24e0bf8c568a1e6471701da8">m_bIsErupting</a></td></tr>
 <tr class="separator:a15540e1e24e0bf8c568a1e6471701da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14a7bdaa9d38ac45271287cc09872968"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a14a7bdaa9d38ac45271287cc09872968">m_bIsEruptingTall</a></td></tr>
@@ -172,12 +182,20 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ac4e6d83bce0a72aee217f0d34c382874"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2793112dc6c816ca1d7475fbd72d6837"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../de/d38/class_particle_source.html">ParticleSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a2793112dc6c816ca1d7475fbd72d6837">m_GeyserTallParticle</a></td></tr>
 <tr class="separator:a2793112dc6c816ca1d7475fbd72d6837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a214f3e08ef9f5ff93d62a32b0e14a227"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../de/d38/class_particle_source.html">ParticleSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a214f3e08ef9f5ff93d62a32b0e14a227">m_GeyserSplashParticle</a></td></tr>
+<tr class="separator:a214f3e08ef9f5ff93d62a32b0e14a227"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf6a7e8a46b06d7421415b25f031b4fc"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/d89/class_effect_sound.html">EffectSound</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#abf6a7e8a46b06d7421415b25f031b4fc">m_SoundBubbling</a></td></tr>
 <tr class="separator:abf6a7e8a46b06d7421415b25f031b4fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa25cb2d240d35f49b931d1a520584f26"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/d89/class_effect_sound.html">EffectSound</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#aa25cb2d240d35f49b931d1a520584f26">m_SoundEruption</a></td></tr>
 <tr class="separator:aa25cb2d240d35f49b931d1a520584f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7678ec8923affc020dd7a38f9976af24"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/d89/class_effect_sound.html">EffectSound</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a7678ec8923affc020dd7a38f9976af24">m_SoundEruptionStart</a></td></tr>
+<tr class="separator:a7678ec8923affc020dd7a38f9976af24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd554383e52eb0e48a5ecb37506a8ba5"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/d89/class_effect_sound.html">EffectSound</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#afd554383e52eb0e48a5ecb37506a8ba5">m_SoundEruptionSecondary</a></td></tr>
 <tr class="separator:afd554383e52eb0e48a5ecb37506a8ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaff38c9e2d10101fd57034593d7a377f"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/d89/class_effect_sound.html">EffectSound</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#aaff38c9e2d10101fd57034593d7a377f">m_SoundEruptionSecondaryStart</a></td></tr>
+<tr class="separator:aaff38c9e2d10101fd57034593d7a377f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cee54bb5b2b717609b43a91a12d6f3a"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/d89/class_effect_sound.html">EffectSound</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d78/class_geyser_trigger.html#a7cee54bb5b2b717609b43a91a12d6f3a">m_SoundEruptionSecondaryEnd</a></td></tr>
+<tr class="separator:a7cee54bb5b2b717609b43a91a12d6f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa7e0def5ead886e1772212580756a2d3" name="aa7e0def5ead886e1772212580756a2d3"></a>
@@ -236,6 +254,63 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a6912d104d02b7f197ef9785a12d4d50c" name="a6912d104d02b7f197ef9785a12d4d50c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6912d104d02b7f197ef9785a12d4d50c">&#9670;&#160;</a></span>CheckGeyserState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> CheckGeyserState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d7e/_geyser_area_8c.html#af6f1587949027d78ab5b0676f6201fa9">EGeyserState</a>&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../da/d78/class_geyser_trigger.html#a900ab3eaa8800355fdbf97a80b7bbffc">m_GeyserState</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/d7e/_geyser_area_8c.html#ae3713e2aa1ba9fd54abbf911927c4cf9">TickState()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+
+</div>
+</div>
+<a id="a3a31485b8285dc5e248d12b49765e506" name="a3a31485b8285dc5e248d12b49765e506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a31485b8285dc5e248d12b49765e506">&#9670;&#160;</a></span>DeferredInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void DeferredInit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../da/d78/class_geyser_trigger.html#a5e154e8bf4fefc509923ea73a8781df6">GetAdjustedPosition()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ad1306306382a90e37590423ed8f96ce9">IsSubmerged()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a4d53f8b48e1709f5c529b318dda4d13e">m_DefaultPosition</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a0f947d20c74bf42aa0e47f5afa9911c1">RandomizeMouthPos()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+
+</div>
+</div>
 <a id="a83a1e547e0d1e65ad421070058a093a9" name="a83a1e547e0d1e65ad421070058a093a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a83a1e547e0d1e65ad421070058a093a9">&#9670;&#160;</a></span>EEDelete()</h2>
 
@@ -264,33 +339,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a58793c1561abb560da4377da77ad6dea" name="a58793c1561abb560da4377da77ad6dea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58793c1561abb560da4377da77ad6dea">&#9670;&#160;</a></span>EEInit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">override void EEInit </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#acdcf96b6f206a9693de440611204e4f0">m_bIsDormant</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a15540e1e24e0bf8c568a1e6471701da8">m_bIsErupting</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a14a7bdaa9d38ac45271287cc09872968">m_bIsEruptingTall</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a4d53f8b48e1709f5c529b318dda4d13e">m_DefaultPosition</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a0f947d20c74bf42aa0e47f5afa9911c1">RandomizeMouthPos()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#adc794a325ea5c9c429d764e8e2dba6c6">CGame::SurfaceY()</a>.</p>
-
-</div>
-</div>
 <a id="a5e154e8bf4fefc509923ea73a8781df6" name="a5e154e8bf4fefc509923ea73a8781df6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e154e8bf4fefc509923ea73a8781df6">&#9670;&#160;</a></span>GetAdjustedPosition()</h2>
 
@@ -315,9 +363,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../da/d78/class_geyser_trigger.html#ad1306306382a90e37590423ed8f96ce9">IsSubmerged()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a9f60a2b8c03f1d56cc17cc5c378b201c">m_AdjustedX</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#aa0a839c7ae4f0cbba5bd0ed025ce71e3">m_AdjustedY</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#a4d53f8b48e1709f5c529b318dda4d13e">m_DefaultPosition</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, and <a class="el" href="../../d2/de6/class_c_game.html#aa1317c3327a5c2b7da66d1ec6efd597b">CGame::SurfaceRoadY()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a3a31485b8285dc5e248d12b49765e506">DeferredInit()</a>.</p>
 
 </div>
 </div>
@@ -371,8 +419,6 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../da/d78/class_geyser_trigger.html#a900ab3eaa8800355fdbf97a80b7bbffc">m_GeyserState</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7e/_geyser_area_8c.html#ae3713e2aa1ba9fd54abbf911927c4cf9">TickState()</a>.</p>
-
 </div>
 </div>
 <a id="ad1306306382a90e37590423ed8f96ce9" name="ad1306306382a90e37590423ed8f96ce9"></a>
@@ -398,7 +444,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a5e154e8bf4fefc509923ea73a8781df6">GetAdjustedPosition()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a3a31485b8285dc5e248d12b49765e506">DeferredInit()</a>.</p>
 
 </div>
 </div>
@@ -531,7 +577,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d71/_combination_lock_8c.html#a0a548e008de028b2e548ee714fda4367">IsInitialized()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
 
 </div>
 </div>
@@ -560,7 +606,7 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../da/d78/class_geyser_trigger.html#a9f60a2b8c03f1d56cc17cc5c378b201c">m_AdjustedX</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#aa0a839c7ae4f0cbba5bd0ed025ce71e3">m_AdjustedY</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a4d53f8b48e1709f5c529b318dda4d13e">m_DefaultPosition</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a00d67c6b9a65fd1a89f65d75591bf34a">MOUTH_ADJUST_RADIUS</a>, and <a class="el" href="../../d5/d98/group___math.html#ga88747c54aed88a2142b3a22367020993">Math::RandomFloat()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a58793c1561abb560da4377da77ad6dea">EEInit()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a3a31485b8285dc5e248d12b49765e506">DeferredInit()</a>.</p>
 
 </div>
 </div>
@@ -617,7 +663,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../da/d78/class_geyser_trigger.html#acdcf96b6f206a9693de440611204e4f0">m_bIsDormant</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a15540e1e24e0bf8c568a1e6471701da8">m_bIsErupting</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a14a7bdaa9d38ac45271287cc09872968">m_bIsEruptingTall</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ac29e91070d53d09f2b27fe0d8d7f1379">m_GeyserBubblesParticle</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ac4e6d83bce0a72aee217f0d34c382874">m_GeyserParticle</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a2793112dc6c816ca1d7475fbd72d6837">m_GeyserTallParticle</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#abf6a7e8a46b06d7421415b25f031b4fc">m_SoundBubbling</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#aa25cb2d240d35f49b931d1a520584f26">m_SoundEruption</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#afd554383e52eb0e48a5ecb37506a8ba5">m_SoundEruptionSecondary</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#ab7e8b20a4331f044f2ad2f9d86ebffe9">EffectSound::Stop()</a>, and <a class="el" href="../../de/d38/class_particle_source.html#aeff8a9e463733a8f5531d5a73872ad3f">ParticleSource::StopParticle()</a>.</p>
+<p class="reference">References <a class="el" href="../../da/d78/class_geyser_trigger.html#a15540e1e24e0bf8c568a1e6471701da8">m_bIsErupting</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a0e755c27cc9c9c56682e1222352d94a7">m_bIsEruptingSoon</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a14a7bdaa9d38ac45271287cc09872968">m_bIsEruptingTall</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ac29e91070d53d09f2b27fe0d8d7f1379">m_GeyserBubblesParticle</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ac4e6d83bce0a72aee217f0d34c382874">m_GeyserParticle</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a2793112dc6c816ca1d7475fbd72d6837">m_GeyserTallParticle</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#abf6a7e8a46b06d7421415b25f031b4fc">m_SoundBubbling</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#aa25cb2d240d35f49b931d1a520584f26">m_SoundEruption</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#afd554383e52eb0e48a5ecb37506a8ba5">m_SoundEruptionSecondary</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#ab7e8b20a4331f044f2ad2f9d86ebffe9">EffectSound::Stop()</a>, and <a class="el" href="../../de/d38/class_particle_source.html#aeff8a9e463733a8f5531d5a73872ad3f">ParticleSource::StopParticle()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/d7e/_geyser_area_8c.html#a83a1e547e0d1e65ad421070058a093a9">EEDelete()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#a83a1e547e0d1e65ad421070058a093a9">EEDelete()</a>.</p>
 
@@ -646,9 +692,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../da/d78/class_geyser_trigger.html#a5e154e8bf4fefc509923ea73a8781df6">GetAdjustedPosition()</a>, <a class="el" href="../../dd/dd2/class_particle_list.html#a9cfbc6ccd150aca64a4a60b88d3d8195">ParticleList::GEYSER_BUBBLES</a>, <a class="el" href="../../dd/dd2/class_particle_list.html#afcbc42e5cc5f8aad1836bb478eacb85d">ParticleList::GEYSER_NORMAL</a>, <a class="el" href="../../dd/dd2/class_particle_list.html#ac74c3e19034165ac1f723ae2d7d3eacd">ParticleList::GEYSER_STRONG</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ad1306306382a90e37590423ed8f96ce9">IsSubmerged()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#acdcf96b6f206a9693de440611204e4f0">m_bIsDormant</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a15540e1e24e0bf8c568a1e6471701da8">m_bIsErupting</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a14a7bdaa9d38ac45271287cc09872968">m_bIsEruptingTall</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ac29e91070d53d09f2b27fe0d8d7f1379">m_GeyserBubblesParticle</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ac4e6d83bce0a72aee217f0d34c382874">m_GeyserParticle</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a900ab3eaa8800355fdbf97a80b7bbffc">m_GeyserState</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a2793112dc6c816ca1d7475fbd72d6837">m_GeyserTallParticle</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#abf6a7e8a46b06d7421415b25f031b4fc">m_SoundBubbling</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#aa25cb2d240d35f49b931d1a520584f26">m_SoundEruption</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#afd554383e52eb0e48a5ecb37506a8ba5">m_SoundEruptionSecondary</a>, <a class="el" href="../../d8/d6f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager()</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#af0e79eb49231c4fb5ae3467be05f43a0">SEffectManager::PlaySound()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a0f947d20c74bf42aa0e47f5afa9911c1">RandomizeMouthPos()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ab48a22a34bdcaf48b75146df21f5e3b1">SOUND_BUBBLING</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a543cc9b08c40c4569f9c2d0b0e3d5deb">SOUND_ERUPTION</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ab6caf7eb4eb04360b7f62a4b4b1acbcb">SOUND_ERUPTION_TALL</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#ab7e8b20a4331f044f2ad2f9d86ebffe9">EffectSound::Stop()</a>, <a class="el" href="../../de/d85/class_particle.html#a17a237457e57625296e6b24feb19c60a">Particle::Stop()</a>, and <a class="el" href="../../de/d38/class_particle_source.html#aeff8a9e463733a8f5531d5a73872ad3f">ParticleSource::StopParticle()</a>.</p>
+<p class="reference">References <a class="el" href="../../da/d78/class_geyser_trigger.html#a6912d104d02b7f197ef9785a12d4d50c">CheckGeyserState()</a>, <a class="el" href="../../dd/dd2/class_particle_list.html#a9cfbc6ccd150aca64a4a60b88d3d8195">ParticleList::GEYSER_BUBBLES</a>, <a class="el" href="../../dd/dd2/class_particle_list.html#afcbc42e5cc5f8aad1836bb478eacb85d">ParticleList::GEYSER_NORMAL</a>, <a class="el" href="../../dd/dd2/class_particle_list.html#ac6818cd8e634a6e5381f8bc57495c399">ParticleList::GEYSER_SPLASH</a>, <a class="el" href="../../dd/dd2/class_particle_list.html#ac74c3e19034165ac1f723ae2d7d3eacd">ParticleList::GEYSER_STRONG</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#acdcf96b6f206a9693de440611204e4f0">m_bIsDormant</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a15540e1e24e0bf8c568a1e6471701da8">m_bIsErupting</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a0e755c27cc9c9c56682e1222352d94a7">m_bIsEruptingSoon</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a14a7bdaa9d38ac45271287cc09872968">m_bIsEruptingTall</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a4d53f8b48e1709f5c529b318dda4d13e">m_DefaultPosition</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ac29e91070d53d09f2b27fe0d8d7f1379">m_GeyserBubblesParticle</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ac4e6d83bce0a72aee217f0d34c382874">m_GeyserParticle</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a214f3e08ef9f5ff93d62a32b0e14a227">m_GeyserSplashParticle</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a2793112dc6c816ca1d7475fbd72d6837">m_GeyserTallParticle</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#abf6a7e8a46b06d7421415b25f031b4fc">m_SoundBubbling</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#aa25cb2d240d35f49b931d1a520584f26">m_SoundEruption</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#afd554383e52eb0e48a5ecb37506a8ba5">m_SoundEruptionSecondary</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a7cee54bb5b2b717609b43a91a12d6f3a">m_SoundEruptionSecondaryEnd</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#aaff38c9e2d10101fd57034593d7a377f">m_SoundEruptionSecondaryStart</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a7678ec8923affc020dd7a38f9976af24">m_SoundEruptionStart</a>, <a class="el" href="../../d8/d6f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager()</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#af0e79eb49231c4fb5ae3467be05f43a0">SEffectManager::PlaySound()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ab48a22a34bdcaf48b75146df21f5e3b1">SOUND_BUBBLING</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a543cc9b08c40c4569f9c2d0b0e3d5deb">SOUND_ERUPTION</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a9061c7fc2ba7fc1b52c8c3432bc0c696">SOUND_ERUPTION_START</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ab6caf7eb4eb04360b7f62a4b4b1acbcb">SOUND_ERUPTION_TALL</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a2068cc4463954e1bcd8042ea88b1b889">SOUND_ERUPTION_TALL_END</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a8b33b0cf90da4c06ac943cdf9be99edc">SOUND_ERUPTION_TALL_START</a>, <a class="el" href="../../d9/d89/class_effect_sound.html#ab7e8b20a4331f044f2ad2f9d86ebffe9">EffectSound::Stop()</a>, and <a class="el" href="../../de/d38/class_particle_source.html#aeff8a9e463733a8f5531d5a73872ad3f">ParticleSource::StopParticle()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#ad183155e7592e816863539c54b6fa83f">OnVariablesSynchronized()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a3a31485b8285dc5e248d12b49765e506">DeferredInit()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#ad183155e7592e816863539c54b6fa83f">OnVariablesSynchronized()</a>.</p>
 
 </div>
 </div>
@@ -673,7 +719,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a5e154e8bf4fefc509923ea73a8781df6">GetAdjustedPosition()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#a0f947d20c74bf42aa0e47f5afa9911c1">RandomizeMouthPos()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a0f947d20c74bf42aa0e47f5afa9911c1">RandomizeMouthPos()</a>.</p>
 
 </div>
 </div>
@@ -697,7 +743,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a5e154e8bf4fefc509923ea73a8781df6">GetAdjustedPosition()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#a0f947d20c74bf42aa0e47f5afa9911c1">RandomizeMouthPos()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a0f947d20c74bf42aa0e47f5afa9911c1">RandomizeMouthPos()</a>.</p>
 
 </div>
 </div>
@@ -721,7 +767,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a58793c1561abb560da4377da77ad6dea">EEInit()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ac7d5436f311d291da9aa1846c7515cd3">StopEffects()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
 
 </div>
 </div>
@@ -745,7 +791,31 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a58793c1561abb560da4377da77ad6dea">EEInit()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ac7d5436f311d291da9aa1846c7515cd3">StopEffects()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#ac7d5436f311d291da9aa1846c7515cd3">StopEffects()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+
+</div>
+</div>
+<a id="a0e755c27cc9c9c56682e1222352d94a7" name="a0e755c27cc9c9c56682e1222352d94a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e755c27cc9c9c56682e1222352d94a7">&#9670;&#160;</a></span>m_bIsEruptingSoon</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/db9/classbool.html">bool</a> m_bIsEruptingSoon</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#ac7d5436f311d291da9aa1846c7515cd3">StopEffects()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
 
 </div>
 </div>
@@ -769,7 +839,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a58793c1561abb560da4377da77ad6dea">EEInit()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ac7d5436f311d291da9aa1846c7515cd3">StopEffects()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#ac7d5436f311d291da9aa1846c7515cd3">StopEffects()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
 
 </div>
 </div>
@@ -793,7 +863,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a58793c1561abb560da4377da77ad6dea">EEInit()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a5e154e8bf4fefc509923ea73a8781df6">GetAdjustedPosition()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#a0f947d20c74bf42aa0e47f5afa9911c1">RandomizeMouthPos()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#a3a31485b8285dc5e248d12b49765e506">DeferredInit()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a0f947d20c74bf42aa0e47f5afa9911c1">RandomizeMouthPos()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
 
 </div>
 </div>
@@ -845,6 +915,30 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a214f3e08ef9f5ff93d62a32b0e14a227" name="a214f3e08ef9f5ff93d62a32b0e14a227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a214f3e08ef9f5ff93d62a32b0e14a227">&#9670;&#160;</a></span>m_GeyserSplashParticle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../de/d38/class_particle_source.html">ParticleSource</a> m_GeyserSplashParticle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+
+</div>
+</div>
 <a id="a900ab3eaa8800355fdbf97a80b7bbffc" name="a900ab3eaa8800355fdbf97a80b7bbffc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a900ab3eaa8800355fdbf97a80b7bbffc">&#9670;&#160;</a></span>m_GeyserState</h2>
 
@@ -865,7 +959,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#afde20930d1735c271c439d3781c5d474">AddGeyserState()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a1de039d53a9c8fbd6978e609ad97ec91">GetGeyserState()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ad16543cdaa1c85cc80cbb2305c04034b">OnEnterServerEvent()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#aa2847fb84a3f0bc7a177545587e4ed99">RemoveGeyserState()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#afde20930d1735c271c439d3781c5d474">AddGeyserState()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a6912d104d02b7f197ef9785a12d4d50c">CheckGeyserState()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#a1de039d53a9c8fbd6978e609ad97ec91">GetGeyserState()</a>, <a class="el" href="../../da/d78/class_geyser_trigger.html#ad16543cdaa1c85cc80cbb2305c04034b">OnEnterServerEvent()</a>, and <a class="el" href="../../da/d78/class_geyser_trigger.html#aa2847fb84a3f0bc7a177545587e4ed99">RemoveGeyserState()</a>.</p>
 
 </div>
 </div>
@@ -965,6 +1059,78 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a7cee54bb5b2b717609b43a91a12d6f3a" name="a7cee54bb5b2b717609b43a91a12d6f3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cee54bb5b2b717609b43a91a12d6f3a">&#9670;&#160;</a></span>m_SoundEruptionSecondaryEnd</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/d89/class_effect_sound.html">EffectSound</a> m_SoundEruptionSecondaryEnd</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+
+</div>
+</div>
+<a id="aaff38c9e2d10101fd57034593d7a377f" name="aaff38c9e2d10101fd57034593d7a377f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff38c9e2d10101fd57034593d7a377f">&#9670;&#160;</a></span>m_SoundEruptionSecondaryStart</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/d89/class_effect_sound.html">EffectSound</a> m_SoundEruptionSecondaryStart</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+
+</div>
+</div>
+<a id="a7678ec8923affc020dd7a38f9976af24" name="a7678ec8923affc020dd7a38f9976af24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7678ec8923affc020dd7a38f9976af24">&#9670;&#160;</a></span>m_SoundEruptionStart</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/d89/class_effect_sound.html">EffectSound</a> m_SoundEruptionStart</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+
+</div>
+</div>
 <a id="a00d67c6b9a65fd1a89f65d75591bf34a" name="a00d67c6b9a65fd1a89f65d75591bf34a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a00d67c6b9a65fd1a89f65d75591bf34a">&#9670;&#160;</a></span>MOUTH_ADJUST_RADIUS</h2>
 
@@ -999,7 +1165,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="../../d5/d92/classstring.html">string</a> SOUND_BUBBLING = &quot;Boiling_Done_SoundSet&quot;</td>
+          <td class="memname">const <a class="el" href="../../d5/d92/classstring.html">string</a> SOUND_BUBBLING = &quot;Geyser_bubbling_loop_SoundSet&quot;</td>
         </tr>
       </table>
   </td>
@@ -1023,7 +1189,31 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="../../d5/d92/classstring.html">string</a> SOUND_ERUPTION = &quot;pour_Water_Pot_SoundSet&quot;</td>
+          <td class="memname">const <a class="el" href="../../d5/d92/classstring.html">string</a> SOUND_ERUPTION = &quot;Geyser_eruption_loop_SoundSet&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+
+</div>
+</div>
+<a id="a9061c7fc2ba7fc1b52c8c3432bc0c696" name="a9061c7fc2ba7fc1b52c8c3432bc0c696"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9061c7fc2ba7fc1b52c8c3432bc0c696">&#9670;&#160;</a></span>SOUND_ERUPTION_START</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/d92/classstring.html">string</a> SOUND_ERUPTION_START = &quot;Geyser_eruption_start_SoundSet&quot;</td>
         </tr>
       </table>
   </td>
@@ -1047,7 +1237,55 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="../../d5/d92/classstring.html">string</a> SOUND_ERUPTION_TALL = &quot;pour_Water_WatterBottle_SoundSet&quot;</td>
+          <td class="memname">const <a class="el" href="../../d5/d92/classstring.html">string</a> SOUND_ERUPTION_TALL = &quot;Geyser_eruption_tall_loop_SoundSet&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+
+</div>
+</div>
+<a id="a2068cc4463954e1bcd8042ea88b1b889" name="a2068cc4463954e1bcd8042ea88b1b889"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2068cc4463954e1bcd8042ea88b1b889">&#9670;&#160;</a></span>SOUND_ERUPTION_TALL_END</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/d92/classstring.html">string</a> SOUND_ERUPTION_TALL_END = &quot;Geyser_eruption_tall_splash_SoundSet&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c">UpdateGeyserState()</a>.</p>
+
+</div>
+</div>
+<a id="a8b33b0cf90da4c06ac943cdf9be99edc" name="a8b33b0cf90da4c06ac943cdf9be99edc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b33b0cf90da4c06ac943cdf9be99edc">&#9670;&#160;</a></span>SOUND_ERUPTION_TALL_START</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/d92/classstring.html">string</a> SOUND_ERUPTION_TALL_START = &quot;Geyser_eruption_tall_start_SoundSet&quot;</td>
         </tr>
       </table>
   </td>

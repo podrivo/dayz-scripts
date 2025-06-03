@@ -5,6 +5,7 @@ var class_mission_benchmark =
     [ "AdvanceLocation", "dd/de6/class_mission_benchmark.html#a1f7fe876926e7d967113b039bae0a6d7", null ],
     [ "CreateCSVLog", "dd/de6/class_mission_benchmark.html#a8bb7d22b1f9b4400a9c04791f74fe42d", null ],
     [ "CreatePlayer", "dd/de6/class_mission_benchmark.html#a244abb223f34f8a73c956bb2210ba4c0", null ],
+    [ "DisableWeatherChange", "dd/de6/class_mission_benchmark.html#ad4e9926d524bcfc094fff85d783131b3", null ],
     [ "FPSLog", "dd/de6/class_mission_benchmark.html#aaba988592ec9221a36a63d387268f4b8", null ],
     [ "GetConfig", "dd/de6/class_mission_benchmark.html#a8d8530fbec515d7764991cccfb264a68", null ],
     [ "GetInstance", "dd/de6/class_mission_benchmark.html#a8392d7937748edfe7451c999155a1661", null ],

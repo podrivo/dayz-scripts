@@ -223,6 +223,10 @@ var group___enforce =
       [ "SetVar", "d5/d78/group___enforce.html#ga7744e5709b993414b4b96c1ea0777157", null ],
       [ "Watch", "d5/d78/group___enforce.html#ga0bfa4533ad0fb8aff4dbc51ccb28e43e", null ]
     ] ],
+    [ "Obsolete", "dd/d01/class_obsolete.html", [
+      [ "Obsolete", "d5/d78/group___enforce.html#ga9034a220e525d159484ea7683017ac43", null ],
+      [ "m_Msg", "d5/d78/group___enforce.html#gaed9874f48151731f6f2457f002c47d3c", null ]
+    ] ],
     [ "array< Class T >", "d8/d71/classarray_3_01_class_01_t_01_4.html", [
       [ "Clear", "d5/d78/group___enforce.html#ga876976e5d2e9d9aba1aed2c14098e9ff", null ],
       [ "Copy", "d5/d78/group___enforce.html#ga6268a8874fc6f4755a9fe3c7461d72ae", null ],
@@ -418,9 +422,11 @@ var group___enforce =
     [ "LoadScript", "d5/d78/group___enforce.html#gaa1bd9ace760ac1e0257d2638dfae97bd", null ],
     [ "MoveIndex", "d5/d78/group___enforce.html#gac3ba2508030e2fb2b450a188c3eba78e", null ],
     [ "Next", "d5/d78/group___enforce.html#ga5e7b13ff7c3f7dda8cf6d7fb0f4c358f", null ],
+    [ "Obsolete", "d5/d78/group___enforce.html#ga9034a220e525d159484ea7683017ac43", null ],
+    [ "Obsolete", "d5/d78/group___enforce.html#ga9034a220e525d159484ea7683017ac43", null ],
     [ "ParseString", "d5/d78/group___enforce.html#ga012c3b0b9f54478589a250089f7f0e1d", null ],
     [ "ParseStringEx", "d5/d78/group___enforce.html#ga0c937eda722c21f9c16c9250f0464792", null ],
-    [ "PrintString", "d5/d78/group___enforce.html#ga57f32b036e535bd975e903bb47bc7c3c", null ],
+    [ "PrintString", "d5/d78/group___enforce.html#ga678f776057ba8314ac117fec5cd4d959", null ],
     [ "Release", "d5/d78/group___enforce.html#ga6ba65824bd813156ac899cd2d47b67bd", null ],
     [ "Remove", "d5/d78/group___enforce.html#gac27f75176b0a59fe73ecc75e45fd3b14", null ],
     [ "Remove", "d5/d78/group___enforce.html#gac27f75176b0a59fe73ecc75e45fd3b14", null ],
@@ -454,5 +460,8 @@ var group___enforce =
     [ "Type", "d5/d78/group___enforce.html#gaee2e70b9c6607d7afa3dc60ce2426377", null ],
     [ "Watch", "d5/d78/group___enforce.html#ga0bfa4533ad0fb8aff4dbc51ccb28e43e", null ],
     [ "~EnScript", "d5/d78/group___enforce.html#ga0c5ddcbe4ede9efa46a7fbc604b25e98", null ],
-    [ "~ScriptModule", "d5/d78/group___enforce.html#ga9ea8d335f32b6d59a39aeb72e91e74d4", null ]
+    [ "~ScriptModule", "d5/d78/group___enforce.html#ga9ea8d335f32b6d59a39aeb72e91e74d4", null ],
+    [ "m_Msg", "d5/d78/group___enforce.html#gaed9874f48151731f6f2457f002c47d3c", null ],
+    [ "m_Msg", "d5/d78/group___enforce.html#gaed9874f48151731f6f2457f002c47d3c", null ],
+    [ "PrintString", "d5/d78/group___enforce.html#gaeea42890f651b66e6816d8142ec8215c", null ]
 ];

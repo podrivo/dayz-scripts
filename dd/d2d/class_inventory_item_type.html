@@ -117,6 +117,18 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a1f577b8e745d930f0792df0a212cd5c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a826a818d26fb4fe7731ddd6d6b35247f"><td class="memItemLeft" align="right" valign="top">proto native owned <a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d2d/class_inventory_item_type.html#a826a818d26fb4fe7731ddd6d6b35247f">GetName</a> ()</td></tr>
 <tr class="separator:a826a818d26fb4fe7731ddd6d6b35247f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade1131ba63bc64c4c97f975eb39e3e9b"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d2d/class_inventory_item_type.html#ade1131ba63bc64c4c97f975eb39e3e9b">SetOptics2DTexture</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> index, <a class="el" href="../../d5/d92/classstring.html">string</a> textureName)</td></tr>
+<tr class="memdesc:ade1131ba63bc64c4c97f975eb39e3e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set optics 2D model texture at provided selection index.  <br /></td></tr>
+<tr class="separator:ade1131ba63bc64c4c97f975eb39e3e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a568d36eb0a7189ce5dc1b3527b836074"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d2d/class_inventory_item_type.html#a568d36eb0a7189ce5dc1b3527b836074">SetOptics2DMaterial</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> index, <a class="el" href="../../d5/d92/classstring.html">string</a> materialName)</td></tr>
+<tr class="memdesc:a568d36eb0a7189ce5dc1b3527b836074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set optics 2D material at provided selection index.  <br /></td></tr>
+<tr class="separator:a568d36eb0a7189ce5dc1b3527b836074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a473153b2560bbe853c2744716e9c9f83"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d2d/class_inventory_item_type.html#a473153b2560bbe853c2744716e9c9f83">FindOptics2DSelection</a> (<a class="el" href="../../d5/d92/classstring.html">string</a> selectionName, <a class="el" href="../../d9/db9/classbool.html">bool</a> ignoreCase=true)</td></tr>
+<tr class="memdesc:a473153b2560bbe853c2744716e9c9f83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds selection index by name.  <br /></td></tr>
+<tr class="separator:a473153b2560bbe853c2744716e9c9f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa205e03ef092fb692a550fcb9849a115"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d2d/class_inventory_item_type.html#aa205e03ef092fb692a550fcb9849a115">IsUsingOptics2DModel</a> ()</td></tr>
+<tr class="memdesc:aa205e03ef092fb692a550fcb9849a115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether 2D model (<code>modelOptics</code>) is set and used for this type.  <br /></td></tr>
+<tr class="separator:aa205e03ef092fb692a550fcb9849a115"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -180,6 +192,52 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a473153b2560bbe853c2744716e9c9f83" name="a473153b2560bbe853c2744716e9c9f83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a473153b2560bbe853c2744716e9c9f83">&#9670;&#160;</a></span>FindOptics2DSelection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">proto native <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> FindOptics2DSelection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td>
+          <td class="paramname"><em>selectionName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td>
+          <td class="paramname"><em>ignoreCase</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finds selection index by name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">selectionName</td><td>Name of selection to find </td></tr>
+    <tr><td class="paramname">ignoreCase</td><td>Whether search ignores case sensitivity </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Index of selection or -1 when none. </dd></dl>
+
+</div>
+</div>
 <a id="a826a818d26fb4fe7731ddd6d6b35247f" name="a826a818d26fb4fe7731ddd6d6b35247f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a826a818d26fb4fe7731ddd6d6b35247f">&#9670;&#160;</a></span>GetName()</h2>
 
@@ -237,6 +295,33 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aa205e03ef092fb692a550fcb9849a115" name="aa205e03ef092fb692a550fcb9849a115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa205e03ef092fb692a550fcb9849a115">&#9670;&#160;</a></span>IsUsingOptics2DModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">proto native <a class="el" href="../../d9/db9/classbool.html">bool</a> IsUsingOptics2DModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether 2D model (<code>modelOptics</code>) is set and used for this type. </p>
+
+</div>
+</div>
 <a id="a18414e54cb9f1137e4f7848d8cb2ada9" name="a18414e54cb9f1137e4f7848d8cb2ada9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a18414e54cb9f1137e4f7848d8cb2ada9">&#9670;&#160;</a></span>LoadSoundEvents()</h2>
 
@@ -263,6 +348,96 @@ Private Attributes</h2></td></tr>
 <p class="reference">References <a class="el" href="../../d2/de6/class_c_game.html#ab6c4c2ce3d3663185ca650b2a378ceb9">CGame::ConfigGetChildName()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a2ad1af8d533330097cc3ecf36017c386">CGame::ConfigGetChildrenCount()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../dd/d2d/class_inventory_item_type.html#a826a818d26fb4fe7731ddd6d6b35247f">GetName()</a>, and <a class="el" href="../../dd/d2d/class_inventory_item_type.html#a57d8053ecbbb33c353279d4427be256e">m_AnimSoundEvents</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/d2d/class_inventory_item_type.html#a446387466c7ae3811fb4b4098b05ccad">InventoryItemType()</a>.</p>
+
+</div>
+</div>
+<a id="a568d36eb0a7189ce5dc1b3527b836074" name="a568d36eb0a7189ce5dc1b3527b836074"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a568d36eb0a7189ce5dc1b3527b836074">&#9670;&#160;</a></span>SetOptics2DMaterial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">proto native void SetOptics2DMaterial </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td>
+          <td class="paramname"><em>materialName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set optics 2D material at provided selection index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td><a class="el" href="../../dd/d48/class_selection.html" title="Selection class.">Selection</a> index </td></tr>
+    <tr><td class="paramname">materialName</td><td>Name of material to set (/dz/.../*.rvmat) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ade1131ba63bc64c4c97f975eb39e3e9b" name="ade1131ba63bc64c4c97f975eb39e3e9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade1131ba63bc64c4c97f975eb39e3e9b">&#9670;&#160;</a></span>SetOptics2DTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">proto native void SetOptics2DTexture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td>
+          <td class="paramname"><em>textureName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set optics 2D model texture at provided selection index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td><a class="el" href="../../dd/d48/class_selection.html" title="Selection class.">Selection</a> index </td></tr>
+    <tr><td class="paramname">textureName</td><td>Name of texture to set (/dz/.../*.paa) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -315,8 +490,9 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>P:/scripts/3_Game/<a class="el" href="../../d3/de0/3___game_2_inventory_item_type_8c.html">InventoryItemType.c</a></li>
+<li>P:/scripts/4_World/Entities/Core/Inherited/<a class="el" href="../../d6/daa/4___world_2_entities_2_core_2_inherited_2_inventory_item_type_8c.html">InventoryItemType.c</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

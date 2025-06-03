@@ -227,6 +227,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a2b98e8895f74933558afebe948377a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac60de25d314b7c46e1a100993f9798a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/class_fireplace_base.html#ac60de25d314b7c46e1a100993f9798a0">ContactEvent</a> (<a class="el" href="../../dc/da9/class_i_entity.html">IEntity</a> other, <a class="el" href="../../d7/dfc/classvector.html">vector</a> position)</td></tr>
 <tr class="separator:ac60de25d314b7c46e1a100993f9798a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a54db72c3dae2783e68f2dffac4ab39"><td class="memItemLeft" align="right" valign="top">override protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/class_fireplace_base.html#a0a54db72c3dae2783e68f2dffac4ab39">EOnPostSimulate</a> (<a class="el" href="../../dc/da9/class_i_entity.html">IEntity</a> other, <a class="el" href="../../d4/dc3/classfloat.html">float</a> timeSlice)</td></tr>
+<tr class="separator:a0a54db72c3dae2783e68f2dffac4ab39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7bd4d02b82fa1017e3a4cf7e3caba18"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/class_fireplace_base.html#ae7bd4d02b82fa1017e3a4cf7e3caba18">CanReceiveAttachment</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> attachment, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> slotId)</td></tr>
 <tr class="separator:ae7bd4d02b82fa1017e3a4cf7e3caba18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a850b9b0562bb3b88cad1d9d6d0202dc9"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/class_fireplace_base.html#a850b9b0562bb3b88cad1d9d6d0202dc9">CanDisplayAttachmentSlot</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> slot_id)</td></tr>
@@ -359,8 +361,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a3aeb762f90d1d48b3123bb06774b55a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf81298bc6303056015081dc916d816c"><td class="memItemLeft" align="right" valign="top">protected ref <a class="el" href="../../d9/d4b/class_openable_behaviour.html">OpenableBehaviour</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/class_fireplace_base.html#abf81298bc6303056015081dc916d816c">m_Openable</a></td></tr>
 <tr class="separator:abf81298bc6303056015081dc916d816c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41a79d27359132c9ac2188166b0322d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/class_fireplace_base.html#a41a79d27359132c9ac2188166b0322d9">m_ContactEventProcessing</a></td></tr>
+<tr class="memitem:a41a79d27359132c9ac2188166b0322d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/class_fireplace_base.html#a41a79d27359132c9ac2188166b0322d9">m_ContactEventProcessing</a> = false</td></tr>
 <tr class="separator:a41a79d27359132c9ac2188166b0322d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e674a341f78f76656d087544ec611af"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/class_fireplace_base.html#a0e674a341f78f76656d087544ec611af">m_ContactDeletionProcessing</a> = false</td></tr>
+<tr class="separator:a0e674a341f78f76656d087544ec611af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af98c481f7b2fd653f72a4026a08334fd"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/class_fireplace_base.html#af98c481f7b2fd653f72a4026a08334fd">m_SmokePosX</a></td></tr>
 <tr class="separator:af98c481f7b2fd653f72a4026a08334fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6695442b7291c7b20f3669db4889b5b5"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/class_fireplace_base.html#a6695442b7291c7b20f3669db4889b5b5">m_SmokePosY</a></td></tr>
@@ -1694,7 +1698,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#a19c351a594f39566735caa7d0b14f877">CheckForDestroy()</a>, <a class="el" href="../../d7/d1e/group___rigid_body.html#ga6c16eb476b8460d50e036a4fcb386ab2">dBodyIsActive()</a>, and <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d1e/group___rigid_body.html#ga6c16eb476b8460d50e036a4fcb386ab2">dBodyIsActive()</a>, and <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/dc1/class_fireplace_base.html#a2b98e8895f74933558afebe948377a1e">EOnContact()</a>, and <a class="el" href="../../dc/dc1/class_fireplace_base.html#a48aff4fc92d99edc1843836279de1caa">EOnTouch()</a>.</p>
 
@@ -2048,6 +2052,44 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../dc/dc1/class_fireplace_base.html#ac60de25d314b7c46e1a100993f9798a0">ContactEvent()</a>, and <a class="el" href="../../d8/d4e/group___constraints.html#ga5107263e3460033790efeb684e772727">Contact::Position</a>.</p>
+
+</div>
+</div>
+<a id="a0a54db72c3dae2783e68f2dffac4ab39" name="a0a54db72c3dae2783e68f2dffac4ab39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a54db72c3dae2783e68f2dffac4ab39">&#9670;&#160;</a></span>EOnPostSimulate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override protected void EOnPostSimulate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/da9/class_i_entity.html">IEntity</a>&#160;</td>
+          <td class="paramname"><em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>timeSlice</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#a19c351a594f39566735caa7d0b14f877">CheckForDestroy()</a>.</p>
 
 </div>
 </div>
@@ -3347,7 +3389,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d2e/_item_base_8c.html#ae393d84620f6141d6121b5bc2e4ed584">Open()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/d6c/_chamber_first_inner_magazine_semi_automatic___base_8c.html#a456cacdd9edf0455361a7dd2935eb5ff">Open</a>.</p>
 
 </div>
 </div>
@@ -3844,6 +3886,28 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a0e674a341f78f76656d087544ec611af" name="a0e674a341f78f76656d087544ec611af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e674a341f78f76656d087544ec611af">&#9670;&#160;</a></span>m_ContactDeletionProcessing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/db9/classbool.html">bool</a> m_ContactDeletionProcessing = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a41a79d27359132c9ac2188166b0322d9" name="a41a79d27359132c9ac2188166b0322d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41a79d27359132c9ac2188166b0322d9">&#9670;&#160;</a></span>m_ContactEventProcessing</h2>
 
@@ -3854,7 +3918,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> m_ContactEventProcessing</td>
+          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> m_ContactEventProcessing = false</td>
         </tr>
       </table>
   </td>

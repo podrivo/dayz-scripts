@@ -69,11 +69,14 @@ var _en_script_8c =
     [ "copyarray", "d5/d78/group___enforce.html#ga7045f3190b5a0d259ecd1a02d25d04cc", null ],
     [ "Idle", "d5/d78/group___enforce.html#ga85a47449ac58883c3847c07d15624276", null ],
     [ "KillThread", "d5/d78/group___enforce.html#ga3b152a171728676be2c51157448a6125", null ],
+    [ "Obsolete", "d5/d78/group___enforce.html#ga9034a220e525d159484ea7683017ac43", null ],
     [ "ParseString", "d5/d78/group___enforce.html#ga012c3b0b9f54478589a250089f7f0e1d", null ],
     [ "ParseStringEx", "d5/d78/group___enforce.html#ga0c937eda722c21f9c16c9250f0464792", null ],
-    [ "PrintString", "d5/d78/group___enforce.html#ga57f32b036e535bd975e903bb47bc7c3c", null ],
+    [ "PrintString", "d5/d78/group___enforce.html#ga678f776057ba8314ac117fec5cd4d959", null ],
     [ "reversearray", "d5/d78/group___enforce.html#gaa75c760b74308e077562a63867289e63", null ],
     [ "Sort", "d5/d78/group___enforce.html#ga103d3d25634e2d2b24e45c0515bffaa2", null ],
     [ "String", "d5/d78/group___enforce.html#ga7a883b203754a93b0812b058ca80effd", null ],
-    [ "ThreadFunction", "d5/d78/group___enforce.html#ga45b957c2098ba0baae501861a18f0efb", null ]
+    [ "ThreadFunction", "d5/d78/group___enforce.html#ga45b957c2098ba0baae501861a18f0efb", null ],
+    [ "m_Msg", "d5/d78/group___enforce.html#gaed9874f48151731f6f2457f002c47d3c", null ],
+    [ "PrintString", "d5/d78/group___enforce.html#gaeea42890f651b66e6816d8142ec8215c", null ]
 ];

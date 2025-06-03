@@ -8,8 +8,7 @@ var class_action_get_in_transport =
     [ "GetActionCategory", "d3/d30/class_action_get_in_transport.html#a47916ee46724ba7e9af26a002d3414a8", null ],
     [ "GetInputType", "d3/d30/class_action_get_in_transport.html#ab6eb153abc42e514909126c621d01280", null ],
     [ "HasProgress", "d3/d30/class_action_get_in_transport.html#a6201cf1bf986bd9c1f571cb58a6946ed", null ],
-    [ "OnEndClient", "d3/d30/class_action_get_in_transport.html#ad14460f2f68fee5fd0269e919681d80c", null ],
-    [ "OnEndServer", "d3/d30/class_action_get_in_transport.html#a2ebf3855cc8960864124ba5ca4949033", null ],
+    [ "OnEnd", "d3/d30/class_action_get_in_transport.html#aa4e2512c61538ce6fbad115d6b6ebb27", null ],
     [ "OnStartServer", "d3/d30/class_action_get_in_transport.html#af5aa64866cd0cfb7cd9989eb748abbe0", null ],
     [ "OnUpdate", "d3/d30/class_action_get_in_transport.html#a2caf1c030cd197f2ba53cffa0d5b9237", null ],
     [ "Start", "d3/d30/class_action_get_in_transport.html#a41a32155201921d885c85cc4c0bd2962", null ]

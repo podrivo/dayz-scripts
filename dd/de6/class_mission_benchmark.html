@@ -123,6 +123,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a6706345e1a2358820b44bcf44b53db2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62a183ea9ac6e381d5659dc2873f3247"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de6/class_mission_benchmark.html#a62a183ea9ac6e381d5659dc2873f3247">MeasureUpdate</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> timeSlice)</td></tr>
 <tr class="separator:a62a183ea9ac6e381d5659dc2873f3247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4e9926d524bcfc094fff85d783131b3"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de6/class_mission_benchmark.html#ad4e9926d524bcfc094fff85d783131b3">DisableWeatherChange</a> ()</td></tr>
+<tr class="separator:ad4e9926d524bcfc094fff85d783131b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f7fe876926e7d967113b039bae0a6d7"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de6/class_mission_benchmark.html#a1f7fe876926e7d967113b039bae0a6d7">AdvanceLocation</a> ()</td></tr>
 <tr class="separator:a1f7fe876926e7d967113b039bae0a6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f30707ee09f68726d181ccb128fc077"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de6/class_mission_benchmark.html#a4f30707ee09f68726d181ccb128fc077">LerpCamera</a> ()</td></tr>
@@ -325,6 +327,35 @@ Static Private Attributes</h2></td></tr>
 <p class="reference">References <a class="el" href="../../d2/de6/class_c_game.html#ad4cc92bcf24d0832bff7abdcd602c593">CGame::CreatePlayer()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../dd/de6/class_mission_benchmark.html#a3d0ce8788f51009970b4908ffa947de9">m_CurrentLocation</a>, <a class="el" href="../../de/d0d/class_benchmark_location.html#acffea5c43a5b8ae88b3bcec4cd32122c">BenchmarkLocation::m_StartPos</a>, and <a class="el" href="../../d2/de6/class_c_game.html#a4f03cfc84232284447f2bb059cb0833c">CGame::SelectPlayer()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/de6/class_mission_benchmark.html#a74ae605951648d578b19fcd56f3b418c">OnLocationSwitch()</a>.</p>
+
+</div>
+</div>
+<a id="ad4e9926d524bcfc094fff85d783131b3" name="ad4e9926d524bcfc094fff85d783131b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4e9926d524bcfc094fff85d783131b3">&#9670;&#160;</a></span>DisableWeatherChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected void DisableWeatherChange </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#ac9b8e7949206e9c27a2812ba6a4e0b14">CGame::GetWeather()</a>, <a class="el" href="../../d2/d72/class_weather.html#a2385033fa55491499f0f5ccfa5e3e1de">Weather::SetDynVolFogDistanceDensity()</a>, <a class="el" href="../../d2/d72/class_weather.html#a141931443096061b936ed96af6c4dc18">Weather::SetDynVolFogHeightBias()</a>, <a class="el" href="../../d2/d72/class_weather.html#ad045770f4f699fc5d51e25d432884e03">Weather::SetDynVolFogHeightDensity()</a>, and <a class="el" href="../../d2/d72/class_weather.html#a90b5b2216bad8806af273e37b3458506">Weather::SetWeatherUpdateFreeze()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/de6/class_mission_benchmark.html#a07aaf1227e4d645f15e0a964f54ef291">Start()</a>.</p>
 
 </div>
 </div>
@@ -620,7 +651,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dd/de6/class_mission_benchmark.html#a8bb7d22b1f9b4400a9c04791f74fe42d">CreateCSVLog()</a>, <a class="el" href="../../dd/de6/class_mission_benchmark.html#a1501493890179987f333e424b8fd6854">m_Config</a>, <a class="el" href="../../dd/de6/class_mission_benchmark.html#a7d678a2d1cd64c30abe53cc473dcf6d6">m_IsPreloading</a>, <a class="el" href="../../dd/de6/class_mission_benchmark.html#a21db7dfa17d92de88e4c299ce08b638e">OnBenchmarkEnd()</a>, and <a class="el" href="../../dd/de6/class_mission_benchmark.html#a74ae605951648d578b19fcd56f3b418c">OnLocationSwitch()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/de6/class_mission_benchmark.html#a8bb7d22b1f9b4400a9c04791f74fe42d">CreateCSVLog()</a>, <a class="el" href="../../dd/de6/class_mission_benchmark.html#ad4e9926d524bcfc094fff85d783131b3">DisableWeatherChange()</a>, <a class="el" href="../../dd/de6/class_mission_benchmark.html#a1501493890179987f333e424b8fd6854">m_Config</a>, <a class="el" href="../../dd/de6/class_mission_benchmark.html#a7d678a2d1cd64c30abe53cc473dcf6d6">m_IsPreloading</a>, <a class="el" href="../../dd/de6/class_mission_benchmark.html#a21db7dfa17d92de88e4c299ce08b638e">OnBenchmarkEnd()</a>, and <a class="el" href="../../dd/de6/class_mission_benchmark.html#a74ae605951648d578b19fcd56f3b418c">OnLocationSwitch()</a>.</p>
 
 </div>
 </div>

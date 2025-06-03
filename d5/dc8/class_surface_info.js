@@ -1,7 +1,7 @@
 var class_surface_info =
 [
-    [ "SurfaceInfo", "d5/dc8/class_surface_info.html#a7767de93c988c8fc830ff3e21a2184f3", null ],
-    [ "~SurfaceInfo", "d5/dc8/class_surface_info.html#ac5749b892d47fa50ceabe39b2ecf9a41", null ],
+    [ "SurfaceInfo", "d5/dc8/class_surface_info.html#aaa0840e616a358757f191b83b730dbcb", null ],
+    [ "~SurfaceInfo", "d5/dc8/class_surface_info.html#a470b2fe73518799a8028c1ffe3dd5b64", null ],
     [ "GetAudability", "d5/dc8/class_surface_info.html#a8eeb76f7b18bc6b09f40b54751d8ae45", null ],
     [ "GetBulletPenetrability", "d5/dc8/class_surface_info.html#ae508c274fe2e10db152ceb6f78758ef3", null ],
     [ "GetByFile", "d5/dc8/class_surface_info.html#a56513b7320cb89a230e3d6c4fd59c2f5", null ],

@@ -1,7 +1,6 @@
 var _pistol___base_8c =
 [
     [ "WeaponStableState", "dc/dcc/class_weapon_stable_state.html", "dc/dcc/class_weapon_stable_state" ],
-    [ "WeaponStateJammed", "db/d5e/class_weapon_state_jammed.html", "db/d5e/class_weapon_state_jammed" ],
     [ "Weapon_Base", "d3/d9c/class_weapon___base.html", "d3/d9c/class_weapon___base" ],
     [ "PistolAnimState", "d1/daa/_pistol___base_8c.html#a01254921fa7633b3f421796d9b52d45f", [
       [ "DEFAULT", "d1/daa/_pistol___base_8c.html#a01254921fa7633b3f421796d9b52d45fa88ec7d5086d2469ba843c7fcceade8a6", null ],

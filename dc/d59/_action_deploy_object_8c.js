@@ -4,6 +4,7 @@ var _action_deploy_object_8c =
     [ "ActionCondition", "dc/d59/_action_deploy_object_8c.html#aa9aa4864fae11769c65e644b5fd97c66", null ],
     [ "ActionConditionContinue", "dc/d59/_action_deploy_object_8c.html#a1f7399d8d410ac172ef0e5f4c4bbb4eb", null ],
     [ "ActionDeployObject", "dc/d59/_action_deploy_object_8c.html#a1eb6c584b29789b9c360df2d769c22a8", null ],
+    [ "ActionUsesHologram", "dc/d59/_action_deploy_object_8c.html#aee5b049150a9dbf6f67919d97bee908a", null ],
     [ "CanBeUsedWithBrokenLegs", "dc/d59/_action_deploy_object_8c.html#a798699eb2b24d51f4706ebec7debc457", null ],
     [ "HandleReciveData", "dc/d59/_action_deploy_object_8c.html#ae4b8096e050d0a62daa431588f8af715", null ],
     [ "HasAlternativeInterrupt", "dc/d59/_action_deploy_object_8c.html#a8776280df4c7e336f026407579b68872", null ],

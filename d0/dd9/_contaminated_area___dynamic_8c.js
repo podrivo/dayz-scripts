@@ -1,14 +1,28 @@
 var _contaminated_area___dynamic_8c =
 [
-    [ "ContaminatedArea_Dynamic", "d5/db0/class_contaminated_area___dynamic.html", "d5/db0/class_contaminated_area___dynamic" ],
-    [ "eAreaDecayStage", "d0/dd9/_contaminated_area___dynamic_8c.html#abd1af643088884800b81cf3058ed14cc", [
-      [ "INIT", "d0/dd9/_contaminated_area___dynamic_8c.html#abd1af643088884800b81cf3058ed14cca0cb1b2c6a7db1f1084886c98909a3f36", null ],
-      [ "START", "d0/dd9/_contaminated_area___dynamic_8c.html#abd1af643088884800b81cf3058ed14cca13d000b4d7dc70d90239b7430d1eb6b2", null ],
-      [ "LIVE", "d0/dd9/_contaminated_area___dynamic_8c.html#abd1af643088884800b81cf3058ed14cca5810f7a85a06138a19e6f548273a6927", null ],
-      [ "DECAY_START", "d0/dd9/_contaminated_area___dynamic_8c.html#abd1af643088884800b81cf3058ed14cca39d7ff636d74470a52e2a719e1b7dad2", null ],
-      [ "DECAY_END", "d0/dd9/_contaminated_area___dynamic_8c.html#abd1af643088884800b81cf3058ed14cca5689f0a255f90ca188fc7f032b2b20b4", null ]
-    ] ],
-    [ "ShellLight", "d0/dd9/_contaminated_area___dynamic_8c.html#aba6c835c997750547f7cbc773bf32a7b", null ],
-    [ "m_DefaultBrightness", "d0/dd9/_contaminated_area___dynamic_8c.html#a2202cad687ba74d92664106a8b8baee3", null ],
-    [ "m_DefaultRadius", "d0/dd9/_contaminated_area___dynamic_8c.html#ad03bb02d17f63aee0a171b52caadf929", null ]
+    [ "ShellLight", "d8/dbf/class_shell_light.html", "d8/dbf/class_shell_light" ],
+    [ "CreateTrigger", "d0/dd9/_contaminated_area___dynamic_8c.html#a140b01f15fad5ad995c984a602651ddd", null ],
+    [ "DeferredInit", "d0/dd9/_contaminated_area___dynamic_8c.html#a3a31485b8285dc5e248d12b49765e506", null ],
+    [ "EEOnCECreate", "d0/dd9/_contaminated_area___dynamic_8c.html#a619b8813fa2383350e7279314acc80a9", null ],
+    [ "InitZoneServer", "d0/dd9/_contaminated_area___dynamic_8c.html#a76f4e4b51b4025ee919dcf5fa28b28b4", null ],
+    [ "OnVariablesSynchronized", "d0/dd9/_contaminated_area___dynamic_8c.html#ad183155e7592e816863539c54b6fa83f", null ],
+    [ "PlayExplosionLight", "d0/dd9/_contaminated_area___dynamic_8c.html#a73311dd831642ae3a506cadf61fe9de5", null ],
+    [ "PlayFlareVFX", "d0/dd9/_contaminated_area___dynamic_8c.html#a0dbbb160b2d6973f85f605b1d9513081", null ],
+    [ "PlayFX", "d0/dd9/_contaminated_area___dynamic_8c.html#ad352f00bffabae424c55fe790b462db4", null ],
+    [ "SetupZoneData", "d0/dd9/_contaminated_area___dynamic_8c.html#af9e5bc98754f46cdea80eea0c9b7a5c9", null ],
+    [ "SpawnItems", "d0/dd9/_contaminated_area___dynamic_8c.html#a882a1423f20706c3b71e10988a423386", null ],
+    [ "Tick", "d0/dd9/_contaminated_area___dynamic_8c.html#a6da6523dd57cb4ebba0f9a1be0edbe80", null ],
+    [ "AIRBORNE_EXPLOSION_DELAY", "d0/dd9/_contaminated_area___dynamic_8c.html#a22a0db777a95b9a5e176db12fe1bda4c", null ],
+    [ "AIRBORNE_FX_OFFSET", "d0/dd9/_contaminated_area___dynamic_8c.html#a96129ea61c0a5bf85f9b55166e0f9994", null ],
+    [ "AREA_SETUP_DELAY", "d0/dd9/_contaminated_area___dynamic_8c.html#a24306e59d4ef0639e3c621ceeb6ea641", null ],
+    [ "ARTILLERY_SHELL_SPEED", "d0/dd9/_contaminated_area___dynamic_8c.html#ae800ea7a7e0a340752c8c34305ae4db9", null ],
+    [ "m_FlareLight", "d0/dd9/_contaminated_area___dynamic_8c.html#abc23bd7a8bdaa65b21933bef2e28a9c9", null ],
+    [ "m_FXTimer", "d0/dd9/_contaminated_area___dynamic_8c.html#a67df70e3da3ed01e5273b0d794c83e04", null ],
+    [ "m_OffsetPos", "d0/dd9/_contaminated_area___dynamic_8c.html#a74ba2e78e0a562e46d5c97aed62c5314", null ],
+    [ "m_ShellLight", "d0/dd9/_contaminated_area___dynamic_8c.html#a8542344b411387ab5d2a9b1ee0e135bd", null ],
+    [ "m_StartupTimer", "d0/dd9/_contaminated_area___dynamic_8c.html#a4ee4c19b030a233ca41153d38d4bc130", null ],
+    [ "SPAWN_ITEM_COUNT", "d0/dd9/_contaminated_area___dynamic_8c.html#a9db760ba641c72a669dbce6e6915ba4f", null ],
+    [ "SPAWN_ITEM_RAD_MAX", "d0/dd9/_contaminated_area___dynamic_8c.html#ae211d69f41afc6ddc3ea72ecbc85b007", null ],
+    [ "SPAWN_ITEM_RAD_MIN", "d0/dd9/_contaminated_area___dynamic_8c.html#ac00fcfa8ce0df843b592720b1def40d0", null ],
+    [ "SPAWN_ITEM_TYPE", "d0/dd9/_contaminated_area___dynamic_8c.html#a9ab378297c189fba07335b2612c85b97", null ]
 ];

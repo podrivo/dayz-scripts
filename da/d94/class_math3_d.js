@@ -3,6 +3,7 @@ var class_math3_d =
     [ "Math3D", "d5/dc8/group___math3_d_a_p_i.html#ga527fc425a267db428b9dc9a34a700899", null ],
     [ "~Math3D", "d5/dc8/group___math3_d_a_p_i.html#ga08712facf02075c7363dd95ff1a23208", null ],
     [ "AngleFromPosition", "d5/dc8/group___math3_d_a_p_i.html#ga6f069ccdd300b966b511235424d2a826", null ],
+    [ "BlendCartesian", "d5/dc8/group___math3_d_a_p_i.html#ga036e341a30e09222fadea1020d1c01dc", null ],
     [ "CheckBoundBox", "d5/dc8/group___math3_d_a_p_i.html#gaf716e3f5c704b02300f9116434a7c074", null ],
     [ "ClipLine", "d5/dc8/group___math3_d_a_p_i.html#ga20a3cd4c5b715f8ff5236cae3a71165b", null ],
     [ "ConePoints", "d5/dc8/group___math3_d_a_p_i.html#gae14aea0e705c3b91475f7a5fabde5223", null ],

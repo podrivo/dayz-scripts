@@ -1,7 +1,6 @@
 var _m_p133_8c =
 [
     [ "WeaponStableState", "dc/dcc/class_weapon_stable_state.html", "dc/dcc/class_weapon_stable_state" ],
-    [ "WeaponStateJammed", "db/d5e/class_weapon_state_jammed.html", "db/d5e/class_weapon_state_jammed" ],
     [ "Mp133Shotgun_Base", "de/d35/class_mp133_shotgun___base.html", "de/d35/class_mp133_shotgun___base" ],
     [ "PumpShotgunAnimState", "df/d13/_m_p133_8c.html#ac01bfcc0224f0550ebfb80c4ef83c4bd", [
       [ "DEFAULT", "df/d13/_m_p133_8c.html#ac01bfcc0224f0550ebfb80c4ef83c4bda88ec7d5086d2469ba843c7fcceade8a6", null ]

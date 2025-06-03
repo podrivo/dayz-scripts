@@ -25,5 +25,6 @@ var searchData=
   ['notifierbase_22',['NotifierBase',['../d9/d1b/class_notifier_base.html',1,'']]],
   ['nursedress_5fcolorbase_23',['NurseDress_ColorBase',['../d1/d33/class_nurse_dress___color_base.html',1,'']]],
   ['nutritionalprofile_24',['NutritionalProfile',['../d5/de5/class_nutritional_profile.html',1,'']]],
-  ['nylonknifesheath_25',['NylonKnifeSheath',['../d6/d2c/class_nylon_knife_sheath.html',1,'']]]
+  ['nvgheadstrap_25',['NVGHeadstrap',['../d6/d42/class_n_v_g_headstrap.html',1,'']]],
+  ['nylonknifesheath_26',['NylonKnifeSheath',['../d6/d2c/class_nylon_knife_sheath.html',1,'']]]
 ];

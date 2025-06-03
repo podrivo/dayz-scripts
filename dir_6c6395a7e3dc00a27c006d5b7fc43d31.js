@@ -98,6 +98,7 @@ var dir_6c6395a7e3dc00a27c006d5b7fc43d31 =
     [ "KnifeHolster.c", "dd/d14/_knife_holster_8c.html", "dd/d14/_knife_holster_8c" ],
     [ "KnifeSheaths.c", "de/d2d/_knife_sheaths_8c.html", "de/d2d/_knife_sheaths_8c" ],
     [ "LabCoat.c", "d3/d95/_lab_coat_8c.html", "d3/d95/_lab_coat_8c" ],
+    [ "LeafCrown.c", "d3/dc8/_leaf_crown_8c.html", "d3/dc8/_leaf_crown_8c" ],
     [ "LeatherBelt_ColorBase.c", "d7/dd9/_leather_belt___color_base_8c.html", "d7/dd9/_leather_belt___color_base_8c" ],
     [ "LeatherGloves_ColorBase.c", "d6/db7/_leather_gloves___color_base_8c.html", "d6/db7/_leather_gloves___color_base_8c" ],
     [ "LeatherHat_ColorBase.c", "d1/d76/_leather_hat___color_base_8c.html", "d1/d76/_leather_hat___color_base_8c" ],

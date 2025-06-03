@@ -30,7 +30,7 @@ var _en_debug_8c =
     [ "CreateCylinder", "d6/dae/group___debug_shape.html#ga03c2aca770f851754d6c8da6f3e329fe", null ],
     [ "CreateFrustum", "d6/dae/group___debug_shape.html#ga5a835f7dcca2cdb56acc00d6b9d585e1", null ],
     [ "CreateLines", "d6/dae/group___debug_shape.html#gaa95f67bf7e8856e12efb906c9b23573b", null ],
-    [ "CreateMatrix", "d6/dae/group___debug_shape.html#gaee43d58d6f6ad8f59f60e221d03de3b1", null ],
+    [ "CreateMatrix", "d6/dae/group___debug_shape.html#ga35412481134c48c31acb629f0119a00b", null ],
     [ "CreateSphere", "d6/dae/group___debug_shape.html#gaa64b35f24f6656fa7b4c5228771874c5", null ],
     [ "CreateTris", "d6/dae/group___debug_shape.html#gacea01f58b661985dfd3441930ddee13f", null ],
     [ "DebugBreak", "d0/d62/group___debug.html#gac0d90421a3875b8c64b8ea486b83f981", null ],
@@ -56,6 +56,10 @@ var _en_debug_8c =
     [ "ErrorEx", "d6/dae/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5", null ],
     [ "FIRSTCONTACT", "dc/d49/group___diag_menu.html#gaeb6b14a836d8cfc2698d5cc39198434c", null ],
     [ "INFO", "dc/d49/group___diag_menu.html#gab1764b91c3b44a5988564bbfe1d6e352", null ],
+    [ "NEARESTCONTACT", "dc/d49/group___diag_menu.html#ga538c43b1d1fb9404953c268cc157a484", null ],
+    [ "ONLYDYNAMIC", "dc/d49/group___diag_menu.html#gae7f55d2241cb1c9eb608a8b1e9ad01b1", null ],
+    [ "ONLYSTATIC", "dc/d49/group___diag_menu.html#ga5606c6467e989c7f883d9e18836543a9", null ],
+    [ "ONLYWATER", "dc/d49/group___diag_menu.html#ga37fd2b3056b5787d6a519eed65ac1ef9", null ],
     [ "Shape", "dc/d49/group___diag_menu.html#ga6eaf263a07e0b8a8895ed494afceed7d", null ],
     [ "WARNING", "dc/d49/group___diag_menu.html#ga1dfc73ab73898d3f4f348d462a5d126a", null ]
 ];

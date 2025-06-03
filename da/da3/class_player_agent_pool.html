@@ -104,6 +104,9 @@ $(document).ready(function(){initNavTree('da/da3/class_player_agent_pool.html','
   <div class="headertitle"><div class="title">PlayerAgentPool Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Keeps track of agents and their simulation.  
+ <a href="../../da/da3/class_player_agent_pool.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -111,52 +114,70 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:abdcdd4de8e9105680ff1b9b4c0e78514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bf8b2dd2fbfe7e56a7301c85d3ba301"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#a1bf8b2dd2fbfe7e56a7301c85d3ba301">GetStorageVersion</a> ()</td></tr>
 <tr class="separator:a1bf8b2dd2fbfe7e56a7301c85d3ba301"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa752512b2534ddc864840b2ae3a2f465"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#aa752512b2534ddc864840b2ae3a2f465">PrintAgents</a> ()</td></tr>
-<tr class="separator:aa752512b2534ddc864840b2ae3a2f465"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c6f78d28080443f88d68cb9e388e75b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#a4c6f78d28080443f88d68cb9e388e75b">ImmuneSystemTick</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> value, <a class="el" href="../../d4/dc3/classfloat.html">float</a> deltaT)</td></tr>
+<tr class="memdesc:a4c6f78d28080443f88d68cb9e388e75b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agent pool simulation entry point.  <br /></td></tr>
 <tr class="separator:a4c6f78d28080443f88d68cb9e388e75b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0cb452c6489f1eeb3caf88edc48f051"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#ab0cb452c6489f1eeb3caf88edc48f051">GrowAgents</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> deltaT)</td></tr>
+<tr class="memdesc:ab0cb452c6489f1eeb3caf88edc48f051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agent's growth/death simulation.  <br /></td></tr>
 <tr class="separator:ab0cb452c6489f1eeb3caf88edc48f051"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31dc806fa8a1e1bb4c78368e519665eb"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#a31dc806fa8a1e1bb4c78368e519665eb">ProcessTemporaryResistance</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> deltaTime)</td></tr>
+<tr class="memdesc:a31dc806fa8a1e1bb4c78368e519665eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temporary resistance simulation.  <br /></td></tr>
 <tr class="separator:a31dc806fa8a1e1bb4c78368e519665eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad975050d7a080cca462e74c604f404a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#ad975050d7a080cca462e74c604f404a2">OnStoreSave</a> (<a class="el" href="../../d8/d18/gameplay_8c.html#af1d1033fca2ebd02f4ba61051b6341c4">ParamsWriteContext</a> ctx)</td></tr>
 <tr class="separator:ad975050d7a080cca462e74c604f404a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8fb9b4105d97f4c7ba4bdd84d6c7de9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#ab8fb9b4105d97f4c7ba4bdd84d6c7de9">OnStoreLoad</a> (<a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a> ctx, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> version)</td></tr>
 <tr class="separator:ab8fb9b4105d97f4c7ba4bdd84d6c7de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ddbc386be51e07b782e0ecb1f8bfe3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#a9ddbc386be51e07b782e0ecb1f8bfe3c">DigestAgent</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id, <a class="el" href="../../d4/dc3/classfloat.html">float</a> count)</td></tr>
+<tr class="memdesc:a9ddbc386be51e07b782e0ecb1f8bfe3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Digest (add) agent from food/drink in PlayerStomach into Agent Pool.  <br /></td></tr>
 <tr class="separator:a9ddbc386be51e07b782e0ecb1f8bfe3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a478947449c58b729392083f369879b84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#a478947449c58b729392083f369879b84">AddAgent</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id, <a class="el" href="../../d4/dc3/classfloat.html">float</a> count)</td></tr>
+<tr class="memdesc:a478947449c58b729392083f369879b84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add agent into Agent Pool.  <br /></td></tr>
 <tr class="separator:a478947449c58b729392083f369879b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07fbfd43ad0a754dc02ff6dd5ce9b311"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#a07fbfd43ad0a754dc02ff6dd5ce9b311">RemoveAgent</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
+<tr class="memdesc:a07fbfd43ad0a754dc02ff6dd5ce9b311"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove agent from Agent Pool.  <br /></td></tr>
 <tr class="separator:a07fbfd43ad0a754dc02ff6dd5ce9b311"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac072cd154683ec703939b7546db583cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#ac072cd154683ec703939b7546db583cb">RemoveAllAgents</a> ()</td></tr>
+<tr class="memdesc:ac072cd154683ec703939b7546db583cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all agents from Agent Pool.  <br /></td></tr>
 <tr class="separator:ac072cd154683ec703939b7546db583cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9acdc1be8457678e28f6b04a2f6f318"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#aa9acdc1be8457678e28f6b04a2f6f318">ReduceAgent</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> id, <a class="el" href="../../d4/dc3/classfloat.html">float</a> percent)</td></tr>
+<tr class="memdesc:aa9acdc1be8457678e28f6b04a2f6f318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce count of specified agent by a given percentage from Agent Pool.  <br /></td></tr>
 <tr class="separator:aa9acdc1be8457678e28f6b04a2f6f318"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adac4b5411a2da62affc47b3aebe3eadf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#adac4b5411a2da62affc47b3aebe3eadf">GetAgents</a> ()</td></tr>
+<tr class="memdesc:adac4b5411a2da62affc47b3aebe3eadf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce bitmask of currently active agents.  <br /></td></tr>
 <tr class="separator:adac4b5411a2da62affc47b3aebe3eadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0757f6309c7a7a279a9dc4cee11c5ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#ae0757f6309c7a7a279a9dc4cee11c5ee">GetSingleAgentCount</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id)</td></tr>
+<tr class="memdesc:ae0757f6309c7a7a279a9dc4cee11c5ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of agents of specified id.  <br /></td></tr>
 <tr class="separator:ae0757f6309c7a7a279a9dc4cee11c5ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1a5165b2691981e712a5a753c03017e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#af1a5165b2691981e712a5a753c03017e">GetTotalAgentCount</a> ()</td></tr>
+<tr class="memdesc:af1a5165b2691981e712a5a753c03017e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of agents active.  <br /></td></tr>
 <tr class="separator:af1a5165b2691981e712a5a753c03017e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37ac03f86efba7a06de5c8c30b64c3e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#a37ac03f86efba7a06de5c8c30b64c3e1">SpawnAgents</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> deltaT)</td></tr>
+<tr class="memdesc:a37ac03f86efba7a06de5c8c30b64c3e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Autoinfection mechanism for agents with that attribute enabled.  <br /></td></tr>
 <tr class="separator:a37ac03f86efba7a06de5c8c30b64c3e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01fdbde42cfd845144cbf1098930478a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#a01fdbde42cfd845144cbf1098930478a">SetAgentCount</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agent_id, <a class="el" href="../../d4/dc3/classfloat.html">float</a> count)</td></tr>
+<tr class="memdesc:a01fdbde42cfd845144cbf1098930478a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directly set the count of agents for give id in pool.  <br /></td></tr>
 <tr class="separator:a01fdbde42cfd845144cbf1098930478a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf787ddd8b69a71ce4e9b52a66472e85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#aaf787ddd8b69a71ce4e9b52a66472e85">AntibioticsAttack</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> attack_value)</td></tr>
+<tr class="memdesc:aaf787ddd8b69a71ce4e9b52a66472e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Antibiotics treatment agains agents which are not resistent to it (see agent attributes)  <br /></td></tr>
 <tr class="separator:aaf787ddd8b69a71ce4e9b52a66472e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac18f2437d80e9f15fa587741fe52993d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#ac18f2437d80e9f15fa587741fe52993d">DrugsAttack</a> (<a class="el" href="../../d9/d10/_e_medical_drugs_type_8c.html#a27ee559c6aca97910d3a0cc087553251">EMedicalDrugsType</a> drugType, <a class="el" href="../../d4/dc3/classfloat.html">float</a> attackValue)</td></tr>
+<tr class="memdesc:ac18f2437d80e9f15fa587741fe52993d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drugs treatment logic.  <br /></td></tr>
 <tr class="separator:ac18f2437d80e9f15fa587741fe52993d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f978202c0258aa3cc128ec39f161c58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#a7f978202c0258aa3cc128ec39f161c58">SetTemporaryResistance</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agentId, <a class="el" href="../../d4/dc3/classfloat.html">float</a> time)</td></tr>
+<tr class="memdesc:a7f978202c0258aa3cc128ec39f161c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets temporary resistance time against specified agent contraction.  <br /></td></tr>
 <tr class="separator:a7f978202c0258aa3cc128ec39f161c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae70347a2b559a2e1bd9766b8e5f73832"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#ae70347a2b559a2e1bd9766b8e5f73832">GetTemporaryResistance</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> agentId)</td></tr>
+<tr class="memdesc:ae70347a2b559a2e1bd9766b8e5f73832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns remaining temporary resistance time for specified agent.  <br /></td></tr>
 <tr class="separator:ae70347a2b559a2e1bd9766b8e5f73832"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa93754cd2fac1c0b221388dab1e29462"><td class="memItemLeft" align="right" valign="top">private void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#aa93754cd2fac1c0b221388dab1e29462">ResetTemporaryResistance</a> ()</td></tr>
+<tr class="memdesc:aa93754cd2fac1c0b221388dab1e29462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets temporary resistance for all agents (internal usage only)  <br /></td></tr>
 <tr class="separator:aa93754cd2fac1c0b221388dab1e29462"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7195bc99cb0ceeff187f946df56671df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#a7195bc99cb0ceeff187f946df56671df">RemoteGrowRequestDebug</a> (<a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a> ctx)</td></tr>
 <tr class="separator:a7195bc99cb0ceeff187f946df56671df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae41dcf9350a9bbaea31879668d39a00d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#ae41dcf9350a9bbaea31879668d39a00d">GetDebugObject</a> (<a class="el" href="../../d2/d41/classarray.html">array</a>&lt; ref <a class="el" href="../../de/d90/class_param.html">Param</a> &gt; object_out)</td></tr>
 <tr class="separator:ae41dcf9350a9bbaea31879668d39a00d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa752512b2534ddc864840b2ae3a2f465"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#aa752512b2534ddc864840b2ae3a2f465">PrintAgents</a> ()</td></tr>
+<tr class="separator:aa752512b2534ddc864840b2ae3a2f465"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -176,11 +197,19 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a6df726073415b6699a4bc14858ec9e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abacfe9ffc81c801085795846dd36a89e"><td class="memItemLeft" align="right" valign="top">PluginTransmissionAgents&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#abacfe9ffc81c801085795846dd36a89e">m_PluginTransmissionAgents</a> = PluginTransmissionAgents.Cast(<a class="el" href="../../d9/d5d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin</a>(PluginTransmissionAgents))</td></tr>
 <tr class="separator:abacfe9ffc81c801085795846dd36a89e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3983187ed5f3cb455a8a2ff667c651fe"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#a3983187ed5f3cb455a8a2ff667c651fe">m_VirusPoolArray</a></td></tr>
+<tr class="memitem:a3983187ed5f3cb455a8a2ff667c651fe"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/class_player_agent_pool.html#a3983187ed5f3cb455a8a2ff667c651fe">m_VirusPoolArray</a> = new <a class="el" href="../../d2/d41/classarray.html">array</a>&lt;<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&gt;()</td></tr>
 <tr class="memdesc:a3983187ed5f3cb455a8a2ff667c651fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">DEPRECATED.  <br /></td></tr>
 <tr class="separator:a3983187ed5f3cb455a8a2ff667c651fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Keeps track of agents and their simulation. </p>
+<ul>
+<li>adding/reducing of agents</li>
+<li>autoinfection</li>
+<li>temporary resistance for agents</li>
+<li>reaction on drugs </li>
+</ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abdcdd4de8e9105680ff1b9b4c0e78514" name="abdcdd4de8e9105680ff1b9b4c0e78514"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abdcdd4de8e9105680ff1b9b4c0e78514">&#9670;&#160;</a></span>PlayerAgentPool()</h2>
 
@@ -204,9 +233,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>DEPRECATED</p>
 
-<p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#a6df726073415b6699a4bc14858ec9e4c">m_AgentTemporaryResistance</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#a7bc03799dfbe06d5eb54321cf59dfb14">m_LastTicked</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#afcfd31acfe2ada72edea2180aa6a878d">m_VirusPool</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#a3983187ed5f3cb455a8a2ff667c651fe">m_VirusPoolArray</a>.</p>
+<p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#a6df726073415b6699a4bc14858ec9e4c">m_AgentTemporaryResistance</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#a7bc03799dfbe06d5eb54321cf59dfb14">m_LastTicked</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#afcfd31acfe2ada72edea2180aa6a878d">m_VirusPool</a>.</p>
 
 </div>
 </div>
@@ -245,6 +273,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Add agent into Agent Pool. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+    <tr><td class="paramname">count</td><td>Amount of agents to add </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#ae70347a2b559a2e1bd9766b8e5f73832">GetTemporaryResistance()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#abacfe9ffc81c801085795846dd36a89e">m_PluginTransmissionAgents</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#afcfd31acfe2ada72edea2180aa6a878d">m_VirusPool</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#a01fdbde42cfd845144cbf1098930478a">SetAgentCount()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../da/da3/class_player_agent_pool.html#a9ddbc386be51e07b782e0ecb1f8bfe3c">DigestAgent()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#a7195bc99cb0ceeff187f946df56671df">RemoteGrowRequestDebug()</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#a37ac03f86efba7a06de5c8c30b64c3e1">SpawnAgents()</a>.</p>
@@ -274,6 +311,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Antibiotics treatment agains agents which are not resistent to it (see agent attributes) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">attack_value</td><td>Strength of the anitibiotics attack </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#abacfe9ffc81c801085795846dd36a89e">m_PluginTransmissionAgents</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#afcfd31acfe2ada72edea2180aa6a878d">m_VirusPool</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#a01fdbde42cfd845144cbf1098930478a">SetAgentCount()</a>.</p>
 
@@ -315,6 +360,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Digest (add) agent from food/drink in PlayerStomach into Agent Pool. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+    <tr><td class="paramname">count</td><td>Amount of agents to add </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#a478947449c58b729392083f369879b84">AddAgent()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#abacfe9ffc81c801085795846dd36a89e">m_PluginTransmissionAgents</a>.</p>
 
 </div>
@@ -353,6 +407,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Drugs treatment logic. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">drugType</td><td>Type of drug used (see EMedicalDrugsType enum) </td></tr>
+    <tr><td class="paramname">attack_value</td><td>Strength of the drug attack </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#aaf787ddd8b69a71ce4e9b52a66472e85">AntibioticsAttack()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#afcfd31acfe2ada72edea2180aa6a878d">m_VirusPool</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#a01fdbde42cfd845144cbf1098930478a">SetAgentCount()</a>.</p>
 
 </div>
@@ -379,6 +442,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Reduce bitmask of currently active agents. </p>
 
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#aa2c22aa64545fa95c507ec70feb6ce92">m_AgentMask</a>.</p>
 
@@ -435,6 +500,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Number of agents of specified id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent to add into pool (see eAgents) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Count of agents specified in param </dd></dl>
 
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#afcfd31acfe2ada72edea2180aa6a878d">m_VirusPool</a>.</p>
 
@@ -493,6 +567,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns remaining temporary resistance time for specified agent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>param agent_id Id of agent to add into pool (see eAgents) </p><dl class="section return"><dt>Returns</dt><dd>time in seconds </dd></dl>
+
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#a6df726073415b6699a4bc14858ec9e4c">m_AgentTemporaryResistance</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../da/da3/class_player_agent_pool.html#a478947449c58b729392083f369879b84">AddAgent()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#ae41dcf9350a9bbaea31879668d39a00d">GetDebugObject()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#ab0cb452c6489f1eeb3caf88edc48f051">GrowAgents()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#ad975050d7a080cca462e74c604f404a2">OnStoreSave()</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#a31dc806fa8a1e1bb4c78368e519665eb">ProcessTemporaryResistance()</a>.</p>
@@ -522,6 +605,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Total number of agents active. </p>
+<dl class="section return"><dt>Returns</dt><dd>Agents count </dd></dl>
+
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#afcfd31acfe2ada72edea2180aa6a878d">m_VirusPool</a>.</p>
 
 </div>
@@ -549,6 +635,20 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Agent's growth/death simulation. </p>
+<ul>
+<li>based on the potency, invasibility<ul>
+<li>takes into account the temporary resistance <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaT</td><td>tick </td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
 
 <p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#ae70347a2b559a2e1bd9766b8e5f73832">GetTemporaryResistance()</a>, <a class="el" href="../../d9/d5d/_plugin_manager_8c.html#a3524404d2438f6b3f1fa1ee7205992e1">IsPluginManagerExists()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#abacfe9ffc81c801085795846dd36a89e">m_PluginTransmissionAgents</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#a340e7d317e0d33c6d3098c23c857a800">m_TotalAgentCount</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#afcfd31acfe2ada72edea2180aa6a878d">m_VirusPool</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#a01fdbde42cfd845144cbf1098930478a">SetAgentCount()</a>.</p>
 
@@ -589,6 +689,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Agent pool simulation entry point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Immunity value (deprecated, used in previous versions) </td></tr>
+    <tr><td class="paramname">deltaT</td><td>tick </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#ab0cb452c6489f1eeb3caf88edc48f051">GrowAgents()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#a31dc806fa8a1e1bb4c78368e519665eb">ProcessTemporaryResistance()</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#a37ac03f86efba7a06de5c8c30b64c3e1">SpawnAgents()</a>.</p>
 
@@ -711,6 +820,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Temporary resistance simulation. </p>
+
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#ae70347a2b559a2e1bd9766b8e5f73832">GetTemporaryResistance()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#a6df726073415b6699a4bc14858ec9e4c">m_AgentTemporaryResistance</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#a7f978202c0258aa3cc128ec39f161c58">SetTemporaryResistance()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../da/da3/class_player_agent_pool.html#a4c6f78d28080443f88d68cb9e388e75b">ImmuneSystemTick()</a>.</p>
@@ -750,6 +861,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Reduce count of specified agent by a given percentage from Agent Pool. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+    <tr><td class="paramname">percent</td><td>How many percents of the agents should be reduced </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#ae0757f6309c7a7a279a9dc4cee11c5ee">GetSingleAgentCount()</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#a01fdbde42cfd845144cbf1098930478a">SetAgentCount()</a>.</p>
 
@@ -807,6 +927,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Remove agent from Agent Pool. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#a01fdbde42cfd845144cbf1098930478a">SetAgentCount()</a>.</p>
 
 </div>
@@ -834,6 +962,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Remove all agents from Agent Pool. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent (see eAgents enum) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#aa2c22aa64545fa95c507ec70feb6ce92">m_AgentMask</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#afcfd31acfe2ada72edea2180aa6a878d">m_VirusPool</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#aa93754cd2fac1c0b221388dab1e29462">ResetTemporaryResistance()</a>.</p>
 
 </div>
@@ -860,6 +996,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Resets temporary resistance for all agents (internal usage only) </p>
 
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#a6df726073415b6699a4bc14858ec9e4c">m_AgentTemporaryResistance</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#a7f978202c0258aa3cc128ec39f161c58">SetTemporaryResistance()</a>.</p>
 
@@ -901,6 +1039,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Directly set the count of agents for give id in pool. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">agent_id</td><td>Id of agent to add into pool (see eAgents) </td></tr>
+    <tr><td class="paramname">count</td><td>Number of agents to be set </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#aa2c22aa64545fa95c507ec70feb6ce92">m_AgentMask</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#afcfd31acfe2ada72edea2180aa6a878d">m_VirusPool</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../da/da3/class_player_agent_pool.html#a478947449c58b729392083f369879b84">AddAgent()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#aaf787ddd8b69a71ce4e9b52a66472e85">AntibioticsAttack()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#ac18f2437d80e9f15fa587741fe52993d">DrugsAttack()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#ab0cb452c6489f1eeb3caf88edc48f051">GrowAgents()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#ab8fb9b4105d97f4c7ba4bdd84d6c7de9">OnStoreLoad()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#aa9acdc1be8457678e28f6b04a2f6f318">ReduceAgent()</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#a07fbfd43ad0a754dc02ff6dd5ce9b311">RemoveAgent()</a>.</p>
@@ -941,6 +1088,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets temporary resistance time against specified agent contraction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>param agent_id Id of agent to add into pool (see eAgents) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>Length of resistance in seconds </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#a6df726073415b6699a4bc14858ec9e4c">m_AgentTemporaryResistance</a>, and <a class="el" href="../../d0/d13/_en_convert_8c.html#af7dbda7167e22cb3417c16f78061ad80">MAX</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../da/da3/class_player_agent_pool.html#ab8fb9b4105d97f4c7ba4bdd84d6c7de9">OnStoreLoad()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#a31dc806fa8a1e1bb4c78368e519665eb">ProcessTemporaryResistance()</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#aa93754cd2fac1c0b221388dab1e29462">ResetTemporaryResistance()</a>.</p>
@@ -970,6 +1131,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Autoinfection mechanism for agents with that attribute enabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaT</td><td>tick </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="reference">References <a class="el" href="../../da/da3/class_player_agent_pool.html#a478947449c58b729392083f369879b84">AddAgent()</a>, <a class="el" href="../../d1/dd5/class_agent_base.html#adff9a6368d7eb8c2eea5dc4d5785ee9e">AgentBase::AutoinfectCheck()</a>, <a class="el" href="../../d1/dd5/class_agent_base.html#a784b208fa07c79edc308d2dfe9d0d8ad">AgentBase::GetAgentType()</a>, <a class="el" href="../../d1/dd5/class_agent_base.html#ab88feb2730a3c97c8f1def20f79027b6">AgentBase::GetAutoinfectCount()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#ae0757f6309c7a7a279a9dc4cee11c5ee">GetSingleAgentCount()</a>, <a class="el" href="../../da/da3/class_player_agent_pool.html#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>, and <a class="el" href="../../da/da3/class_player_agent_pool.html#abacfe9ffc81c801085795846dd36a89e">m_PluginTransmissionAgents</a>.</p>
 
@@ -1156,7 +1325,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt;<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&gt; m_VirusPoolArray</td>
+          <td class="memname">ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt;<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&gt; m_VirusPoolArray = new <a class="el" href="../../d2/d41/classarray.html">array</a>&lt;<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&gt;()</td>
         </tr>
       </table>
   </td>
@@ -1167,8 +1336,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>DEPRECATED. </p>
-
-<p class="reference">Referenced by <a class="el" href="../../da/da3/class_player_agent_pool.html#abdcdd4de8e9105680ff1b9b4c0e78514">PlayerAgentPool()</a>.</p>
 
 </div>
 </div>

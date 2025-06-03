@@ -183,8 +183,16 @@ Functions</h2></td></tr>
 <tr class="memitem:a28868c99f0b2c251f580457a03d080f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d13/_emote_manager_8c.html#a28868c99f0b2c251f580457a03d080f9">CheckEmoteLockedState</a> ()</td></tr>
 <tr class="separator:a28868c99f0b2c251f580457a03d080f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91e42b78f5cf5515cfa55e41ee35b450"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d13/_emote_manager_8c.html#a91e42b78f5cf5515cfa55e41ee35b450">EndSurrenderRequest</a> (<a class="el" href="../../da/dd4/class_surrender_data.html">SurrenderData</a> data=null)</td></tr>
-<tr class="memdesc:a91e42b78f5cf5515cfa55e41ee35b450"><td class="mdescLeft">&#160;</td><td class="mdescRight">directly force-ends surrender state from outside of normal flow  <br /></td></tr>
+<tr class="memdesc:a91e42b78f5cf5515cfa55e41ee35b450"><td class="mdescLeft">&#160;</td><td class="mdescRight">directly force-ends surrender state AND requests hard cancel  <br /></td></tr>
 <tr class="separator:a91e42b78f5cf5515cfa55e41ee35b450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b19908d1236b2fb3fbb2109ccdaaa9"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d13/_emote_manager_8c.html#a81b19908d1236b2fb3fbb2109ccdaaa9">ClearSurrenderState</a> ()</td></tr>
+<tr class="memdesc:a81b19908d1236b2fb3fbb2109ccdaaa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">clears surrender state only  <br /></td></tr>
+<tr class="separator:a81b19908d1236b2fb3fbb2109ccdaaa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17668d33886f0a26cceccf26d0d65666"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d13/_emote_manager_8c.html#a17668d33886f0a26cceccf26d0d65666">ForceSurrenderState</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> state)</td></tr>
+<tr class="separator:a17668d33886f0a26cceccf26d0d65666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a288aeb450e5d9668d7ee9751b8c9693a"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d13/_emote_manager_8c.html#a288aeb450e5d9668d7ee9751b8c9693a">PostSurrenderRequestServer</a> ()</td></tr>
+<tr class="memdesc:a288aeb450e5d9668d7ee9751b8c9693a"><td class="mdescLeft">&#160;</td><td class="mdescRight">server only  <br /></td></tr>
+<tr class="separator:a288aeb450e5d9668d7ee9751b8c9693a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a885f1b27cca10f365dce998e84f05cfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d13/_emote_manager_8c.html#a885f1b27cca10f365dce998e84f05cfb">ServerRequestEmoteCancel</a> ()</td></tr>
 <tr class="separator:a885f1b27cca10f365dce998e84f05cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa01014fe0d1b48cf498131b948f0daa8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d13/_emote_manager_8c.html#aa01014fe0d1b48cf498131b948f0daa8">InterruptGestureCheck</a> ()</td></tr>
@@ -220,8 +228,8 @@ Variables</h2></td></tr>
 <tr class="separator:aca9103b90ec31675837119de041578e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a379a85d8961dd13154fde800fcd658fc"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d5/d92/classstring.html">string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d13/_emote_manager_8c.html#a379a85d8961dd13154fde800fcd658fc">m_InterruptInputs</a></td></tr>
 <tr class="separator:a379a85d8961dd13154fde800fcd658fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1625fb9fb2a4b15715f042ad9224b4fb"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d4/d84/class_u_a_input.html">UAInput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d13/_emote_manager_8c.html#a1625fb9fb2a4b15715f042ad9224b4fb">m_InterruptInputDirect</a></td></tr>
-<tr class="separator:a1625fb9fb2a4b15715f042ad9224b4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc099f9c14703551fbf0a31abda6fd64"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d0/db6/class_u_a_i_d_wrapper.html">UAIDWrapper</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d13/_emote_manager_8c.html#afc099f9c14703551fbf0a31abda6fd64">m_InterruptInputDirect</a></td></tr>
+<tr class="separator:afc099f9c14703551fbf0a31abda6fd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5021114ef36c43e14dbd31e026f6304b"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d6/dc5/class_inventory_location.html">InventoryLocation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d13/_emote_manager_8c.html#a5021114ef36c43e14dbd31e026f6304b">m_HandInventoryLocation</a></td></tr>
 <tr class="separator:a5021114ef36c43e14dbd31e026f6304b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a594bd84bb0d57998358e4bc03e1235"><td class="memItemLeft" align="right" valign="top">ref <a class="el" href="../../d9/df0/class_emote_launcher.html">EmoteLauncher</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d13/_emote_manager_8c.html#a9a594bd84bb0d57998358e4bc03e1235">m_MenuEmote</a></td></tr>
@@ -407,6 +415,29 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../df/d13/_emote_manager_8c.html#abe0c2dfab73a9cbbbef37deed49642c9">m_EmoteLockState</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a5021114ef36c43e14dbd31e026f6304b">m_HandInventoryLocation</a>, and <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>.</p>
+
+</div>
+</div>
+<a id="a81b19908d1236b2fb3fbb2109ccdaaa9" name="a81b19908d1236b2fb3fbb2109ccdaaa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81b19908d1236b2fb3fbb2109ccdaaa9">&#9670;&#160;</a></span>ClearSurrenderState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected void ClearSurrenderState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>clears surrender state only </p>
+
+<p class="reference">References <a class="el" href="../../df/d13/_emote_manager_8c.html#aadfe183ed4d51be93c773b744829adb3">IsEmotePlaying()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ac473f71b455791f5f853c6f628128706">m_IsSurrendered</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#a9243c72013b80fe35944180a69a83d22">SetEmoteLockState()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/d13/_emote_manager_8c.html#a0944bb36335f2aac59b5d5a46566fa0c">Update()</a>.</p>
 
 </div>
 </div>
@@ -693,11 +724,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>directly force-ends surrender state from outside of normal flow </p>
+<p>directly force-ends surrender state AND requests hard cancel </p>
 
-<p class="reference">References <a class="el" href="../../df/d13/_emote_manager_8c.html#aadfe183ed4d51be93c773b744829adb3">IsEmotePlaying()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ac473f71b455791f5f853c6f628128706">m_IsSurrendered</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#a9243c72013b80fe35944180a69a83d22">SetEmoteLockState()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../df/d13/_emote_manager_8c.html#a0944bb36335f2aac59b5d5a46566fa0c">Update()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d13/_emote_manager_8c.html#ac473f71b455791f5f853c6f628128706">m_IsSurrendered</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#a288aeb450e5d9668d7ee9751b8c9693a">PostSurrenderRequestServer()</a>.</p>
 
 </div>
 </div>
@@ -718,6 +747,26 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../d5/d4b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#a1d85377e18f016d0c80816c505bdc4d5">LogManager::IsInventoryHFSMLogEnable()</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, and <a class="el" href="../../db/d2e/class_day_z_player.html#ab24be46d13d4324f4f971feb645499f0">DayZPlayer::OnItemInHandsChanged()</a>.</p>
+
+</div>
+</div>
+<a id="a17668d33886f0a26cceccf26d0d65666" name="a17668d33886f0a26cceccf26d0d65666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17668d33886f0a26cceccf26d0d65666">&#9670;&#160;</a></span>ForceSurrenderState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ForceSurrenderState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../df/d13/_emote_manager_8c.html#aadfe183ed4d51be93c773b744829adb3">IsEmotePlaying()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ac473f71b455791f5f853c6f628128706">m_IsSurrendered</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#a9243c72013b80fe35944180a69a83d22">SetEmoteLockState()</a>.</p>
 
 </div>
 </div>
@@ -835,7 +884,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d4/d5a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a03825b99f881d82db6aa79c76e2970ae">m_Callback</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a1625fb9fb2a4b15715f042ad9224b4fb">m_InterruptInputDirect</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a379a85d8961dd13154fde800fcd658fc">m_InterruptInputs</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a95731945d07a52b60799fd8e17129a9b">m_InterruptInputsCount</a>, and <a class="el" href="../../d1/d6a/class_emote_c_b.html#a50404ad10184b6a9b3d2257c32918765">EmoteCB::m_IsFullbody</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d5a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a03825b99f881d82db6aa79c76e2970ae">m_Callback</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#afc099f9c14703551fbf0a31abda6fd64">m_InterruptInputDirect</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a379a85d8961dd13154fde800fcd658fc">m_InterruptInputs</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a95731945d07a52b60799fd8e17129a9b">m_InterruptInputsCount</a>, and <a class="el" href="../../d1/d6a/class_emote_c_b.html#a50404ad10184b6a9b3d2257c32918765">EmoteCB::m_IsFullbody</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/d13/_emote_manager_8c.html#a0944bb36335f2aac59b5d5a46566fa0c">Update()</a>.</p>
 
@@ -900,7 +949,7 @@ Variables</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../df/d13/_emote_manager_8c.html#aceee3ec05162d2a440c62e0de398646c">m_bEmoteIsPlaying</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ad6568c57bc0ea020015315c402e13406">m_bEmoteIsRequestPending</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#ac473f71b455791f5f853c6f628128706">m_IsSurrendered</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d13/_emote_manager_8c.html#a426acba25d40533723c97102c9f739db">CanPlayEmote()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a91e42b78f5cf5515cfa55e41ee35b450">EndSurrenderRequest()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a8ca37db27c8ad5c9754858c8c8bdbf09">ManBase::IsInFBEmoteState()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a9880d74a6b7fc9a37f0b8b551cd378a5">ManBase::OnQuickBarSingleUse()</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#ae2584c97b3284501fbd3df050a9022ff">SendEmoteRequestSync()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d13/_emote_manager_8c.html#a426acba25d40533723c97102c9f739db">CanPlayEmote()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a81b19908d1236b2fb3fbb2109ccdaaa9">ClearSurrenderState()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a17668d33886f0a26cceccf26d0d65666">ForceSurrenderState()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a8ca37db27c8ad5c9754858c8c8bdbf09">ManBase::IsInFBEmoteState()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a9880d74a6b7fc9a37f0b8b551cd378a5">ManBase::OnQuickBarSingleUse()</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#ae2584c97b3284501fbd3df050a9022ff">SendEmoteRequestSync()</a>.</p>
 
 </div>
 </div>
@@ -1104,9 +1153,32 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d13/_emote_manager_8c.html#a296c62361bf46ec54bbaafcfe751da7f">CreateEmoteCallback()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#ga932e993a1a303b1da4ce72e2911f2335">EmoteConstants::ID_EMOTE_SURRENDER</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a03825b99f881d82db6aa79c76e2970ae">m_Callback</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a370170c5d8a683ee5dd614a82637a095">m_CurrentGestureID</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a5021114ef36c43e14dbd31e026f6304b">m_HandInventoryLocation</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a55e1ad51e9272f2505b60d58c0ab58e0">m_PreviousGestureID</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a84025fb82d5f7da5b1083eb6ad1bbc3e">OnEmoteEnd()</a>, and <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga89ac8402de337f7ccfbad07f6516bc40">UA_ANIM_EVENT</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d13/_emote_manager_8c.html#a296c62361bf46ec54bbaafcfe751da7f">CreateEmoteCallback()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#ga932e993a1a303b1da4ce72e2911f2335">EmoteConstants::ID_EMOTE_SURRENDER</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a03825b99f881d82db6aa79c76e2970ae">m_Callback</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a370170c5d8a683ee5dd614a82637a095">m_CurrentGestureID</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a5021114ef36c43e14dbd31e026f6304b">m_HandInventoryLocation</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ac473f71b455791f5f853c6f628128706">m_IsSurrendered</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a55e1ad51e9272f2505b60d58c0ab58e0">m_PreviousGestureID</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a84025fb82d5f7da5b1083eb6ad1bbc3e">OnEmoteEnd()</a>, and <a class="el" href="../../dd/d40/group___u_a_i_ds.html#ga89ac8402de337f7ccfbad07f6516bc40">UA_ANIM_EVENT</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/d13/_emote_manager_8c.html#a0944bb36335f2aac59b5d5a46566fa0c">Update()</a>.</p>
+
+</div>
+</div>
+<a id="a288aeb450e5d9668d7ee9751b8c9693a" name="a288aeb450e5d9668d7ee9751b8c9693a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a288aeb450e5d9668d7ee9751b8c9693a">&#9670;&#160;</a></span>PostSurrenderRequestServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected void PostSurrenderRequestServer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>server only </p>
+
+<p class="reference">References <a class="el" href="../../df/d13/_emote_manager_8c.html#a09d44451cde8df2c412c1a42706290fd">CALLBACK_CMD_INSTACANCEL</a>, <a class="el" href="../../d9/df0/class_emote_launcher.html#ac6ee56a9a058c21a9c7a44da653b9864">EmoteLauncher::FORCE_ALL</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../d9/d6e/class_day_z_player_sync_junctures.html#a330e971776abcd5a2a1ef3036c9ad5a0">DayZPlayerSyncJunctures::SJ_GESTURE_REQUEST</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/d13/_emote_manager_8c.html#a91e42b78f5cf5515cfa55e41ee35b450">EndSurrenderRequest()</a>.</p>
 
 </div>
 </div>
@@ -1186,9 +1258,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a2d32bd3904f902585ba499e1890a8ef6">GameInventory::c_InventoryReservationTimeoutMS</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a03825b99f881d82db6aa79c76e2970ae">m_Callback</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a4c1c55c63c07c64b1751a06117045984">m_controllsLocked</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#abe0c2dfab73a9cbbbef37deed49642c9">m_EmoteLockState</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a5021114ef36c43e14dbd31e026f6304b">m_HandInventoryLocation</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a0d693dd919192dda644e0494189e3cca">m_InventoryAccessLocked</a>, <a class="el" href="../../d1/d6a/class_emote_c_b.html#a50404ad10184b6a9b3d2257c32918765">EmoteCB::m_IsFullbody</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, and <a class="el" href="../../d6/dc5/class_inventory_location.html#a94c4d45b595955237d20b8f958b93435">InventoryLocation::SetHands()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a2d32bd3904f902585ba499e1890a8ef6">GameInventory::c_InventoryReservationTimeoutMS</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a03825b99f881d82db6aa79c76e2970ae">m_Callback</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a4c1c55c63c07c64b1751a06117045984">m_controllsLocked</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#abe0c2dfab73a9cbbbef37deed49642c9">m_EmoteLockState</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a5021114ef36c43e14dbd31e026f6304b">m_HandInventoryLocation</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a0d693dd919192dda644e0494189e3cca">m_InventoryAccessLocked</a>, <a class="el" href="../../d1/d6a/class_emote_c_b.html#a50404ad10184b6a9b3d2257c32918765">EmoteCB::m_IsFullbody</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../d7/d7f/group___menu_i_d.html#gab1dbc0e819839e5664c9fd8bd8b31deb">MENU_INVENTORY</a>, and <a class="el" href="../../d6/dc5/class_inventory_location.html#a94c4d45b595955237d20b8f958b93435">InventoryLocation::SetHands()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d13/_emote_manager_8c.html#a91e42b78f5cf5515cfa55e41ee35b450">EndSurrenderRequest()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a84025fb82d5f7da5b1083eb6ad1bbc3e">OnEmoteEnd()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#af59931998eda1e7e190aff2074f74961">PlayEmote()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ae2584c97b3284501fbd3df050a9022ff">SendEmoteRequestSync()</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#a0944bb36335f2aac59b5d5a46566fa0c">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d13/_emote_manager_8c.html#a81b19908d1236b2fb3fbb2109ccdaaa9">ClearSurrenderState()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a17668d33886f0a26cceccf26d0d65666">ForceSurrenderState()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a84025fb82d5f7da5b1083eb6ad1bbc3e">OnEmoteEnd()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#af59931998eda1e7e190aff2074f74961">PlayEmote()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ae2584c97b3284501fbd3df050a9022ff">SendEmoteRequestSync()</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#a0944bb36335f2aac59b5d5a46566fa0c">Update()</a>.</p>
 
 </div>
 </div>
@@ -1249,7 +1321,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../df/d13/_emote_manager_8c.html#aba43a21cbb484aa4f214b04b774ca7d3">CALLBACK_CMD_END</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a604aceee6a36e24c2d9c2ea55ff9a979">CALLBACK_CMD_GESTURE_INTERRUPT</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a09d44451cde8df2c412c1a42706290fd">CALLBACK_CMD_INSTACANCEL</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#af74c845ef049e72592d63aa23bb307aa">CALLBACK_CMD_INVALID</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a19a709bb4f3f66745d5834df5cb7fd20">CommitSuicide()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a2f9a00941fd66718e15fa816f7ab0a46">CreateEmoteCBFromMenu()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a5ca1ea22db73c6f4f60a3a2be200025b">DetermineGestureIndex()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#acde9664c838bcc9825a69e6c382ea54e">EndCallbackCommand()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a91e42b78f5cf5515cfa55e41ee35b450">EndSurrenderRequest()</a>, <a class="el" href="../../d9/df0/class_emote_launcher.html#a0155cea4477ae565be2446efb095b39a">EmoteLauncher::FORCE_NONE</a>, <a class="el" href="../../d9/df0/class_emote_launcher.html#a6cab280818b38e4ead62c8d379442189">EmoteLauncher::GetForced()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d9/df0/class_emote_launcher.html#a2ba77aa3e0b17d2f4b2eb519db6aeaf7">EmoteLauncher::GetID()</a>, <a class="el" href="../../d2/de6/class_c_game.html#ac7e6886eef7485897279cffc48f83fca">CGame::GetUIManager()</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#ga16e56ff42442e5bbe803318fa2fa96a3">EmoteConstants::ID_EMOTE_RPS</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#ga0ed45c02c4acf4b8e598b67c3a8649b4">EmoteConstants::ID_EMOTE_RPS_P</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#ga2c834589ccf4cc1e092a5e550b959728">EmoteConstants::ID_EMOTE_RPS_R</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#gabcca7a2c046da78d8d9ae93decf2fe58">EmoteConstants::ID_EMOTE_RPS_S</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#gadf104caf9763d0632c8cbf127c817f9a">EmoteConstants::ID_EMOTE_SUICIDE</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#ga76bac01ad40a0051ee7832dac73bd286">EmoteConstants::ID_EMOTE_THUMB</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#ga3e4b0e1f008a9a87956560ddff421b42">EmoteConstants::ID_EMOTE_THUMBDOWN</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a506b082a5bde6bca8d2beb55821b0700">InterruptCallbackCommand()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aa01014fe0d1b48cf498131b948f0daa8">InterruptGestureCheck()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aa099a92be0b0a4a5c1d9ac18ece883c1">InterruptWaterCheck()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a0457b13a735636d753c35aed164babfe">HumanInputController::IsContinuousUseStart()</a>, <a class="el" href="../../d7/d75/class_u_i_manager.html#af61e0bb642907dc17a7f6201cd22b9c6">UIManager::IsMenuOpen()</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#afcb62e9f24acad6f62103b79d7ed6b45">DayZPlayer::IsRestrained()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#aa6690f83deed951f44425313cc3d9d1a">HumanInputController::IsSingleUse()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#af8bdee9c161fc37eaabe2b2975160702">HumanInputController::IsWeaponRaised()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aceee3ec05162d2a440c62e0de398646c">m_bEmoteIsPlaying</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ad6568c57bc0ea020015315c402e13406">m_bEmoteIsRequestPending</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a03825b99f881d82db6aa79c76e2970ae">m_Callback</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a3988f81c2e4c337725ffa76e07e1f7dd">m_CancelEmote</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a370170c5d8a683ee5dd614a82637a095">m_CurrentGestureID</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a5c5c00ea1f21528032be5dca598e1f09">m_DeferredEmoteExecution</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#abe0c2dfab73a9cbbbef37deed49642c9">m_EmoteLockState</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a6918b821e4ce771d385edc27eca33576">m_GestureInterruptInput</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aca9103b90ec31675837119de041578e3">m_HIC</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ad2392169e03107a3458df61c2335287d">m_InstantCancelEmote</a>, <a class="el" href="../../d1/d6a/class_emote_c_b.html#a50404ad10184b6a9b3d2257c32918765">EmoteCB::m_IsFullbody</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ac473f71b455791f5f853c6f628128706">m_IsSurrendered</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ac449a0befe84747beff31552cd49c9e0">m_ItemToBeCreated</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#af3066a54cc9fc0ee66c54042c38b34c5">m_LastMask</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a9a594bd84bb0d57998358e4bc03e1235">m_MenuEmote</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#adcf6b777ec3bfc33dc885cd70cd20681">m_RPSOutcome</a>, <a class="el" href="../../d7/d7f/group___menu_i_d.html#ga966c20296ae73cf74d6842aed27e78d6">MENU_GESTURES</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a84025fb82d5f7da5b1083eb6ad1bbc3e">OnEmoteEnd()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#af59931998eda1e7e190aff2074f74961">PlayEmote()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a58c19af9f33578abe8718c3c93eb7f1e">PlaySurrenderInOut()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ae2584c97b3284501fbd3df050a9022ff">SendEmoteRequestSync()</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#a9243c72013b80fe35944180a69a83d22">SetEmoteLockState()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d13/_emote_manager_8c.html#aba43a21cbb484aa4f214b04b774ca7d3">CALLBACK_CMD_END</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a604aceee6a36e24c2d9c2ea55ff9a979">CALLBACK_CMD_GESTURE_INTERRUPT</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a09d44451cde8df2c412c1a42706290fd">CALLBACK_CMD_INSTACANCEL</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#af74c845ef049e72592d63aa23bb307aa">CALLBACK_CMD_INVALID</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a81b19908d1236b2fb3fbb2109ccdaaa9">ClearSurrenderState()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a19a709bb4f3f66745d5834df5cb7fd20">CommitSuicide()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a2f9a00941fd66718e15fa816f7ab0a46">CreateEmoteCBFromMenu()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a5ca1ea22db73c6f4f60a3a2be200025b">DetermineGestureIndex()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#acde9664c838bcc9825a69e6c382ea54e">EndCallbackCommand()</a>, <a class="el" href="../../d9/df0/class_emote_launcher.html#a0155cea4477ae565be2446efb095b39a">EmoteLauncher::FORCE_NONE</a>, <a class="el" href="../../d9/df0/class_emote_launcher.html#a6cab280818b38e4ead62c8d379442189">EmoteLauncher::GetForced()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d9/df0/class_emote_launcher.html#a2ba77aa3e0b17d2f4b2eb519db6aeaf7">EmoteLauncher::GetID()</a>, <a class="el" href="../../d2/de6/class_c_game.html#ac7e6886eef7485897279cffc48f83fca">CGame::GetUIManager()</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#ga16e56ff42442e5bbe803318fa2fa96a3">EmoteConstants::ID_EMOTE_RPS</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#ga0ed45c02c4acf4b8e598b67c3a8649b4">EmoteConstants::ID_EMOTE_RPS_P</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#ga2c834589ccf4cc1e092a5e550b959728">EmoteConstants::ID_EMOTE_RPS_R</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#gabcca7a2c046da78d8d9ae93decf2fe58">EmoteConstants::ID_EMOTE_RPS_S</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#gadf104caf9763d0632c8cbf127c817f9a">EmoteConstants::ID_EMOTE_SUICIDE</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#ga76bac01ad40a0051ee7832dac73bd286">EmoteConstants::ID_EMOTE_THUMB</a>, <a class="el" href="../../d2/d68/group___emote_i_ds.html#ga3e4b0e1f008a9a87956560ddff421b42">EmoteConstants::ID_EMOTE_THUMBDOWN</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a506b082a5bde6bca8d2beb55821b0700">InterruptCallbackCommand()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aa01014fe0d1b48cf498131b948f0daa8">InterruptGestureCheck()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aa099a92be0b0a4a5c1d9ac18ece883c1">InterruptWaterCheck()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a0457b13a735636d753c35aed164babfe">HumanInputController::IsContinuousUseStart()</a>, <a class="el" href="../../d7/d75/class_u_i_manager.html#af61e0bb642907dc17a7f6201cd22b9c6">UIManager::IsMenuOpen()</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#afcb62e9f24acad6f62103b79d7ed6b45">DayZPlayer::IsRestrained()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#aa6690f83deed951f44425313cc3d9d1a">HumanInputController::IsSingleUse()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#af8bdee9c161fc37eaabe2b2975160702">HumanInputController::IsWeaponRaised()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aceee3ec05162d2a440c62e0de398646c">m_bEmoteIsPlaying</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ad6568c57bc0ea020015315c402e13406">m_bEmoteIsRequestPending</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a03825b99f881d82db6aa79c76e2970ae">m_Callback</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a3988f81c2e4c337725ffa76e07e1f7dd">m_CancelEmote</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a370170c5d8a683ee5dd614a82637a095">m_CurrentGestureID</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a5c5c00ea1f21528032be5dca598e1f09">m_DeferredEmoteExecution</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#abe0c2dfab73a9cbbbef37deed49642c9">m_EmoteLockState</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a6918b821e4ce771d385edc27eca33576">m_GestureInterruptInput</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aca9103b90ec31675837119de041578e3">m_HIC</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ad2392169e03107a3458df61c2335287d">m_InstantCancelEmote</a>, <a class="el" href="../../d1/d6a/class_emote_c_b.html#a50404ad10184b6a9b3d2257c32918765">EmoteCB::m_IsFullbody</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ac473f71b455791f5f853c6f628128706">m_IsSurrendered</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ac449a0befe84747beff31552cd49c9e0">m_ItemToBeCreated</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#af3066a54cc9fc0ee66c54042c38b34c5">m_LastMask</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a9a594bd84bb0d57998358e4bc03e1235">m_MenuEmote</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#adcf6b777ec3bfc33dc885cd70cd20681">m_RPSOutcome</a>, <a class="el" href="../../d7/d7f/group___menu_i_d.html#ga966c20296ae73cf74d6842aed27e78d6">MENU_GESTURES</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a84025fb82d5f7da5b1083eb6ad1bbc3e">OnEmoteEnd()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#af59931998eda1e7e190aff2074f74961">PlayEmote()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a58c19af9f33578abe8718c3c93eb7f1e">PlaySurrenderInOut()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#ae2584c97b3284501fbd3df050a9022ff">SendEmoteRequestSync()</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#a9243c72013b80fe35944180a69a83d22">SetEmoteLockState()</a>.</p>
 
 </div>
 </div>
@@ -1317,7 +1389,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../df/d13/_emote_manager_8c.html#a426acba25d40533723c97102c9f739db">CanPlayEmote()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a70d9cd75f20035781d56a136d24dd364">OnInputUserDataProcess()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aa9f467ca28793891f46ceb7aae086baf">OnSyncJuncture()</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#a0944bb36335f2aac59b5d5a46566fa0c">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d13/_emote_manager_8c.html#a426acba25d40533723c97102c9f739db">CanPlayEmote()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a70d9cd75f20035781d56a136d24dd364">OnInputUserDataProcess()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aa9f467ca28793891f46ceb7aae086baf">OnSyncJuncture()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a288aeb450e5d9668d7ee9751b8c9693a">PostSurrenderRequestServer()</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#a0944bb36335f2aac59b5d5a46566fa0c">Update()</a>.</p>
 
 </div>
 </div>
@@ -1625,14 +1697,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a1625fb9fb2a4b15715f042ad9224b4fb" name="a1625fb9fb2a4b15715f042ad9224b4fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1625fb9fb2a4b15715f042ad9224b4fb">&#9670;&#160;</a></span>m_InterruptInputDirect</h2>
+<a id="afc099f9c14703551fbf0a31abda6fd64" name="afc099f9c14703551fbf0a31abda6fd64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc099f9c14703551fbf0a31abda6fd64">&#9670;&#160;</a></span>m_InterruptInputDirect</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt;<a class="el" href="../../d4/d84/class_u_a_input.html">UAInput</a>&gt; m_InterruptInputDirect</td>
+          <td class="memname">ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt;<a class="el" href="../../d0/db6/class_u_a_i_d_wrapper.html">UAIDWrapper</a>&gt; m_InterruptInputDirect</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1701,7 +1773,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../df/d13/_emote_manager_8c.html#a426acba25d40533723c97102c9f739db">CanPlayEmote()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a91e42b78f5cf5515cfa55e41ee35b450">EndSurrenderRequest()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aadfe183ed4d51be93c773b744829adb3">IsEmotePlaying()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a84025fb82d5f7da5b1083eb6ad1bbc3e">OnEmoteEnd()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aa9f467ca28793891f46ceb7aae086baf">OnSyncJuncture()</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#a0944bb36335f2aac59b5d5a46566fa0c">Update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d13/_emote_manager_8c.html#a426acba25d40533723c97102c9f739db">CanPlayEmote()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a81b19908d1236b2fb3fbb2109ccdaaa9">ClearSurrenderState()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a91e42b78f5cf5515cfa55e41ee35b450">EndSurrenderRequest()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a17668d33886f0a26cceccf26d0d65666">ForceSurrenderState()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aadfe183ed4d51be93c773b744829adb3">IsEmotePlaying()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a84025fb82d5f7da5b1083eb6ad1bbc3e">OnEmoteEnd()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#aa9f467ca28793891f46ceb7aae086baf">OnSyncJuncture()</a>, <a class="el" href="../../df/d13/_emote_manager_8c.html#a58c19af9f33578abe8718c3c93eb7f1e">PlaySurrenderInOut()</a>, and <a class="el" href="../../df/d13/_emote_manager_8c.html#a0944bb36335f2aac59b5d5a46566fa0c">Update()</a>.</p>
 
 </div>
 </div>

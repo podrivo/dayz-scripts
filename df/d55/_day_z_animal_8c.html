@@ -176,6 +176,10 @@ Functions</h2></td></tr>
 <tr class="separator:a976344887353977860279d05322e8252"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e53e3e9c829cafac47d8620581de0ce"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d55/_day_z_animal_8c.html#a5e53e3e9c829cafac47d8620581de0ce">HasFixedActionTargetCursorPosition</a> ()</td></tr>
 <tr class="separator:a5e53e3e9c829cafac47d8620581de0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab110c1ad759f395660b0ae9242843731"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d55/_day_z_animal_8c.html#ab110c1ad759f395660b0ae9242843731">GetDebugActions</a> (out TSelectableActionInfoArrayEx outputList)</td></tr>
+<tr class="separator:ab110c1ad759f395660b0ae9242843731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64db4496134a9520c526e341cd13807f"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d55/_day_z_animal_8c.html#a64db4496134a9520c526e341cd13807f">OnAction</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> action_id, Man player, <a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a> ctx)</td></tr>
+<tr class="separator:a64db4496134a9520c526e341cd13807f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad269aaa1cba6b75216920a8130527f05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d55/_day_z_animal_8c.html#ad269aaa1cba6b75216920a8130527f05">ModCommandHandlerBefore</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> pDt, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pCurrentCommandID, <a class="el" href="../../d9/db9/classbool.html">bool</a> pCurrentCommandFinished)</td></tr>
 <tr class="separator:ad269aaa1cba6b75216920a8130527f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d47646c39717e1a8bee2c5886fc2045"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d55/_day_z_animal_8c.html#a2d47646c39717e1a8bee2c5886fc2045">ModCommandHandlerInside</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> pDt, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pCurrentCommandID, <a class="el" href="../../d9/db9/classbool.html">bool</a> pCurrentCommandFinished)</td></tr>
@@ -488,6 +492,26 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ab110c1ad759f395660b0ae9242843731" name="ab110c1ad759f395660b0ae9242843731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab110c1ad759f395660b0ae9242843731">&#9670;&#160;</a></span>GetDebugActions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void GetDebugActions </td>
+          <td>(</td>
+          <td class="paramtype">out TSelectableActionInfoArrayEx&#160;</td>
+          <td class="paramname"><em>outputList</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d0/d67/group___s_a_t_i_ds.html#gafca98d007a489f007654f7f870ce4749">SAT_DEBUG_ACTION</a>.</p>
+
+</div>
+</div>
 <a id="a5e53e3e9c829cafac47d8620581de0ce" name="a5e53e3e9c829cafac47d8620581de0ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e53e3e9c829cafac47d8620581de0ce">&#9670;&#160;</a></span>HasFixedActionTargetCursorPosition()</h2>
 
@@ -700,6 +724,42 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="../../df/d1b/class_day_z_creature_a_i.html#ac1bd1056db23fad453b1ffabe090d89d">DayZCreatureAI::CommandHandler()</a>, <a class="el" href="../../dd/dca/class_day_z_infected.html#a6350a0773d57dbef4c073d8ac3ba7cdf">DayZInfected::CommandHandler()</a>, and <a class="el" href="../../db/d2e/class_day_z_player.html#a0b890527890e27c33ee483d2c4c2a3ae">DayZPlayer::CommandHandler()</a>.</p>
+
+</div>
+</div>
+<a id="a64db4496134a9520c526e341cd13807f" name="a64db4496134a9520c526e341cd13807f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64db4496134a9520c526e341cd13807f">&#9670;&#160;</a></span>OnAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override <a class="el" href="../../d9/db9/classbool.html">bool</a> OnAction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td>
+          <td class="paramname"><em>action_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Man&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a>&#160;</td>
+          <td class="paramname"><em>ctx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a7ad1a4f2dd9bed6068e112e1646b78d3">CGame::GizmoSelectObject()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#ad2420584174fe100e1afa9a5f9c103b8">CGame::GizmoSelectPhysics()</a>.</p>
 
 </div>
 </div>

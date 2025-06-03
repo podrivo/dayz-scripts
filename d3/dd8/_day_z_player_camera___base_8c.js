@@ -3,6 +3,7 @@ var _day_z_player_camera___base_8c =
     [ "NVTypes", "d3/dd8/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773", [
       [ "NONE", "d3/dd8/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773ac157bdf0b85a40d2619cbc8bc1ae5fe2", null ],
       [ "NV_GOGGLES", "d3/dd8/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773acd90043f9adf49fd333cd2109af3f2f5", null ],
+      [ "NV_GOGGLES_2D", "d3/dd8/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773ad9c654afa679e3f3f095a049254f06ed", null ],
       [ "NV_GOGGLES_OFF", "d3/dd8/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773a41ad8219425f89b2de39b86224962add", null ],
       [ "NV_OPTICS_ON", "d3/dd8/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773aaea84b5b180411d8473a3b56054a2bbd", null ],
       [ "NV_OPTICS_OFF", "d3/dd8/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773a7da8eab35d39fa7264027b8cd703e72b", null ],

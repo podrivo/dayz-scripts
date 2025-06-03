@@ -8,5 +8,6 @@ var _action_start_engine_boat_8c =
     [ "CreateConditionComponents", "dd/d7a/_action_start_engine_boat_8c.html#a6b922d3bb1d26f790bc52030566ba2df", null ],
     [ "HasTarget", "dd/d7a/_action_start_engine_boat_8c.html#ab80733e1a8c145c8ee7b04476d535d72", null ],
     [ "OnExecute", "dd/d7a/_action_start_engine_boat_8c.html#a8cd166a68dd6f387d58965b4b20698a5", null ],
-    [ "OnFinishProgress", "dd/d7a/_action_start_engine_boat_8c.html#a0219366b3a3c15c9abf16939b18d7508", null ]
+    [ "OnFinishProgress", "dd/d7a/_action_start_engine_boat_8c.html#a0219366b3a3c15c9abf16939b18d7508", null ],
+    [ "UseMainItem", "dd/d7a/_action_start_engine_boat_8c.html#ab5d3e8801c3fedefb05fa12886e9d9bf", null ]
 ];

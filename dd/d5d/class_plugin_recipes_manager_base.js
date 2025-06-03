@@ -11,6 +11,7 @@ var class_plugin_recipes_manager_base =
     [ "GetIsInstaRecipe", "dd/d5d/class_plugin_recipes_manager_base.html#aeb986f9569bde720e49d996a927d5a78", null ],
     [ "GetIsRepeatable", "dd/d5d/class_plugin_recipes_manager_base.html#a0fdfa4fbf4d0e73b7a319f3406491c4b", null ],
     [ "GetMaxNumberOfRecipes", "dd/d5d/class_plugin_recipes_manager_base.html#abee49feb94f746511d8167a1ad9004d1", null ],
+    [ "GetRecipeAnimationInfo", "dd/d5d/class_plugin_recipes_manager_base.html#a6eb5e5fdd3bff3656de0a46dfeeb236a", null ],
     [ "GetRecipeIntersection", "dd/d5d/class_plugin_recipes_manager_base.html#a939c9b48fefeb10180b32b59878307f8", null ],
     [ "GetRecipeLengthInSecs", "dd/d5d/class_plugin_recipes_manager_base.html#afe244e1e785127374e003d1093451d60", null ],
     [ "GetRecipeName", "dd/d5d/class_plugin_recipes_manager_base.html#ad3eb0815026d8276eb655338a68ae313", null ],
