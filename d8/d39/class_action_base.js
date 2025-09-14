@@ -50,7 +50,6 @@ var class_action_base =
     [ "GetStanceMaskEx", "d8/d39/class_action_base.html#a6169ce9596e380185e7f7b39804acba1", null ],
     [ "GetState", "d8/d39/class_action_base.html#af9d1a2260c86d6e106292cbfce3c5e56", null ],
     [ "GetTargetName", "d8/d39/class_action_base.html#aa6dc417065b39f571176214849cc2033", null ],
-    [ "GetTargetSurfaceInfo", "d8/d39/class_action_base.html#a44c7aea8f703d94b201188f518cd73da", null ],
     [ "GetText", "d8/d39/class_action_base.html#ad37cd855eec1e2636806ff274469540a", null ],
     [ "GetVariantID", "d8/d39/class_action_base.html#a54234aca79bf63056199cd1a284de337", null ],
     [ "GetVariantManager", "d8/d39/class_action_base.html#a2209c8ba06554a31d89f68fda2f09075", null ],

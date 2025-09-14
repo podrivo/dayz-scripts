@@ -1,5 +1,15 @@
 var NAVTREEINDEX63 =
 {
+"d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50a8d2b8ae9cf9c03b17facf0318b620bc7":[3,0,0,2,51,18,20],
+"d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50a8f8130aab0a2afa37026bcd0f14035f4":[3,0,0,2,51,18,1],
+"d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50aa8fc4ef459ed31d13ac7ba8dd9afd5ea":[3,0,0,2,51,18,11],
+"d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50aadd73293bca9a59d86b221f31c5593b0":[3,0,0,2,51,18,22],
+"d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50ab4958fcb0b1da18eb0c080d14b151bbf":[3,0,0,2,51,18,12],
+"d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50ac2e58f5ad079440bc2daed1b265f8256":[3,0,0,2,51,18,9],
+"d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50acb920371a9c30729437055169def6ef9":[3,0,0,2,51,18,5],
+"d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50ad68e70b4c05656896a404bc80c3bdcf8":[3,0,0,2,51,18,15],
+"d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50ae2bcfe1693eceb1f5b8856f2ab130d13":[3,0,0,2,51,18,16],
+"d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50aec5d728dc08ba6043d8dddbdeaca6248":[3,0,0,2,51,18,18],
 "d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50af4c943ef8e11ee4611eda7cb8392a6b2":[3,0,0,2,51,18,13],
 "d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50af8f7efb2ff73971693fc17f1484a1683":[3,0,0,2,51,18,3],
 "d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50af92cf7a11d29c481bcc97590a5cc1883":[3,0,0,2,51,18,6],
@@ -239,15 +249,5 @@ var NAVTREEINDEX63 =
 "d4/da1/class_cfg_slots_1_1_slot___birch_bark.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1038,12,2],
 "d4/da1/class_human_command_unconscious.html":[2,0,1607],
 "d4/da1/class_human_command_unconscious.html#a0e0635d1bdcf723f7e845355f964e91a":[2,0,1607,5],
-"d4/da1/class_human_command_unconscious.html#a42bbfb7add8ae15721042ab9a68e0404":[2,0,1607,2],
-"d4/da1/class_human_command_unconscious.html#a556aa2b9e2324b1af8c15b41004bada3":[2,0,1607,3],
-"d4/da1/class_human_command_unconscious.html#a63494d40b906b19faedbada647f9bb73":[2,0,1607,1],
-"d4/da1/class_human_command_unconscious.html#a7a46080e68d4f30bf5c9b6afe007078c":[2,0,1607,4],
-"d4/da1/class_human_command_unconscious.html#ad0f2316d36069f5f1ed7666262c76a9b":[2,0,1607,0],
-"d4/da1/script_8c.html":[3,0,0,0,4],
-"d4/da1/script_8c.html#a35f05dcf6fef4bb08cad84332188e9b7":[3,0,0,0,4,3],
-"d4/da1/script_8c.html#acc008d4b078fd8843067ad3b522297b8":[3,0,0,0,4,2],
-"d4/da1/script_8c.html#ad027204804963d19e8e6ce9aa3f1bda4":[3,0,0,0,4,1],
-"d4/da2/_hold_breath_events_8c.html":[3,0,0,3,0,27,1,0,3],
-"d4/da2/_hold_breath_events_8c.html#a286474a6b59c193baa69ae5266d4259b":[3,0,0,3,0,27,1,0,3,4]
+"d4/da1/class_human_command_unconscious.html#a42bbfb7add8ae15721042ab9a68e0404":[2,0,1607,2]
 };

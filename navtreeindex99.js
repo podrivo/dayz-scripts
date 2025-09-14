@@ -1,5 +1,15 @@
 var NAVTREEINDEX99 =
 {
+"d7/da5/_impact_effects_8c.html#a95d9484423b4997bf70860a1bb683c32":[3,0,0,2,54,11],
+"d7/da5/_impact_effects_8c.html#aa6a6f4f5501e1938306a8d3da0800888":[3,0,0,2,54,5],
+"d7/da5/_impact_effects_8c.html#aace7082dc70b17e8e6dc14c9a7293015":[3,0,0,2,54,12],
+"d7/da5/_impact_effects_8c.html#aed11197d78b210965b9ae9cc67703b99":[3,0,0,2,54,1],
+"d7/da5/_impact_effects_8c.html#aed11197d78b210965b9ae9cc67703b99a1b41740044a1ece4db11921ae259af0e":[3,0,0,2,54,1,3],
+"d7/da5/_impact_effects_8c.html#aed11197d78b210965b9ae9cc67703b99a50107e424ca94d3a123ebf9760d60118":[3,0,0,2,54,1,4],
+"d7/da5/_impact_effects_8c.html#aed11197d78b210965b9ae9cc67703b99a679ee5320d66c8322e310daeb2ee99b8":[3,0,0,2,54,1,1],
+"d7/da5/_impact_effects_8c.html#aed11197d78b210965b9ae9cc67703b99a6ce26a62afab55d7606ad4e92428b30c":[3,0,0,2,54,1,0],
+"d7/da5/_impact_effects_8c.html#aed11197d78b210965b9ae9cc67703b99ae356defdb957caa0c5055c565224bdbc":[3,0,0,2,54,1,2],
+"d7/da5/class_fal___folding_bttstck.html":[2,0,1360],
 "d7/da6/class_symptom_sound_event_base.html":[2,0,2576],
 "d7/da6/class_symptom_sound_event_base.html#aee071a1a310af05c0b75bb2431ebbbf9":[2,0,2576,0],
 "d7/da6/class_symptom_sound_event_base.html#af35b69f5bbb3b9f4fd40d3177c99fc45":[2,0,2576,1],
@@ -108,8 +118,8 @@ var NAVTREEINDEX99 =
 "d7/db7/class_weapon_event_base.html#a8d598015e77bfb89c06ffe2717e9c1bf":[2,0,2938,24],
 "d7/db7/class_weapon_event_base.html#a91336b0bf9d52079afa4d892a4a5e26a":[2,0,2938,21],
 "d7/db7/class_weapon_event_base.html#aac15526532fd9fe0a3a1d0e61a17467f":[2,0,2938,12],
-"d7/db7/class_weapon_event_base.html#ab73c2ebe376783fdb96d10e5b71f74ba":[2,0,2938,31],
 "d7/db7/class_weapon_event_base.html#ab73c2ebe376783fdb96d10e5b71f74ba":[2,0,2938,30],
+"d7/db7/class_weapon_event_base.html#ab73c2ebe376783fdb96d10e5b71f74ba":[2,0,2938,31],
 "d7/db7/class_weapon_event_base.html#abdf12b70df556dba19c841fbf9220d6e":[2,0,2938,2],
 "d7/db7/class_weapon_event_base.html#abf68c50ff557f0a6efb5e25659b17c70":[2,0,2938,29],
 "d7/db7/class_weapon_event_base.html#acc352afbf7deb15412940a3808911daa":[2,0,2938,5],
@@ -239,15 +249,5 @@ var NAVTREEINDEX99 =
 "d7/dbe/class_world_data_weather_settings.html#a6ccd26c7c0504a39a185b7794c3b5f3d":[2,0,2997,6],
 "d7/dbe/class_world_data_weather_settings.html#a8468dda00acbcdbf05db7d679ea0d8ca":[2,0,2997,0],
 "d7/dbe/class_world_data_weather_settings.html#a922510611118139760255e9d1739d2a4":[2,0,2997,12],
-"d7/dbe/class_world_data_weather_settings.html#a94daae6f24880d3c38752ffa6a5c0f14":[2,0,2997,23],
-"d7/dbe/class_world_data_weather_settings.html#a952981b3b37bde7073f799d873d3c9e7":[2,0,2997,21],
-"d7/dbe/class_world_data_weather_settings.html#a9b3943a47da3dd72303fef96cec307bd":[2,0,2997,14],
-"d7/dbe/class_world_data_weather_settings.html#aa3142d141ab25906f23bca7292ab3f5c":[2,0,2997,7],
-"d7/dbe/class_world_data_weather_settings.html#aa52da9051d9a4ad93399c8b8c8361cd8":[2,0,2997,13],
-"d7/dbe/class_world_data_weather_settings.html#ab9be17333565fae45122c5aa16ecc242":[2,0,2997,16],
-"d7/dbe/class_world_data_weather_settings.html#ac5bc40393e806d1a989ccc8dd3da0614":[2,0,2997,9],
-"d7/dbe/class_world_data_weather_settings.html#aca159ea8936654345679b4e5ffc50db3":[2,0,2997,1],
-"d7/dbe/class_world_data_weather_settings.html#ad40cc0eaee321581f7b944fbed99940c":[2,0,2997,19],
-"d7/dbe/class_world_data_weather_settings.html#ad4f8e01b841f76ad6a22b7d4025d794a":[2,0,2997,11],
-"d7/dbe/class_world_data_weather_settings.html#af98c8aa9040b4e5c77e141fb2b52178f":[2,0,2997,17]
+"d7/dbe/class_world_data_weather_settings.html#a94daae6f24880d3c38752ffa6a5c0f14":[2,0,2997,23]
 };

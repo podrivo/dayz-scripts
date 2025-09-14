@@ -1,5 +1,14 @@
 var NAVTREEINDEX117 =
 {
+"d8/dda/class_tripod_base.html#afa39b7c4d3d085ef8514a87c32b81a4d":[2,0,2824,6],
+"d8/ddb/_action_cover_head_target_8c.html":[3,0,0,3,0,30,1,0,15],
+"d8/ddb/class_cfg_slots_1_1_slot___headgear.html":[2,0,1038,97],
+"d8/ddb/class_cfg_slots_1_1_slot___headgear.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1038,97,1],
+"d8/ddb/class_cfg_slots_1_1_slot___headgear.html#a4b360862eba91e7238060921c66d6b09":[2,0,1038,97,0],
+"d8/ddb/class_cfg_slots_1_1_slot___headgear.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1038,97,2],
+"d8/ddb/class_cfg_slots_1_1_slot___headgear.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1038,97,3],
+"d8/ddb/class_cfg_slots_1_1_slot___material___f_pole___wooden_log.html":[2,0,1038,139],
+"d8/ddb/class_cfg_slots_1_1_slot___material___f_pole___wooden_log.html#a13e8f9b69fe776b7a8ace2f2941de044":[2,0,1038,139,4],
 "d8/ddb/class_cfg_slots_1_1_slot___material___f_pole___wooden_log.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1038,139,0],
 "d8/ddb/class_cfg_slots_1_1_slot___material___f_pole___wooden_log.html#a79d1b0e96e042367a41a73d13a4a09f1":[2,0,1038,139,3],
 "d8/ddb/class_cfg_slots_1_1_slot___material___f_pole___wooden_log.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1038,139,1],
@@ -240,14 +249,5 @@ var NAVTREEINDEX117 =
 "d8/df5/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfa":[3,0,0,3,0,46,2],
 "d8/df5/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfaa10acf7777823e1491dc0ede7d7f8238b":[3,0,0,3,0,46,2,4],
 "d8/df5/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfaa58b3d3ed02142f09d5f86daef4ccb5fc":[3,0,0,3,0,46,2,3],
-"d8/df5/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfaaa511233a495e23b11960850d5b86abe4":[3,0,0,3,0,46,2,2],
-"d8/df5/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfaac64013c4790ae26aab86e76afd9de952":[3,0,0,3,0,46,2,0],
-"d8/df5/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfaae0a44189ca6ba3d03d755c0621b2f9bf":[3,0,0,3,0,46,2,1],
-"d8/df5/_injury_handler_8c.html#ab98e39572918d380fc9fa2ed1d484f22":[3,0,0,3,0,46,15],
-"d8/df5/_injury_handler_8c.html#abff43faeaff2f6c4254513525ac89309":[3,0,0,3,0,46,21],
-"d8/df5/_injury_handler_8c.html#ac42ee6aa02a3fdeceac92d7cff3fa90e":[3,0,0,3,0,46,9],
-"d8/df5/_injury_handler_8c.html#ace85bb1c839a917298250690516e3275":[3,0,0,3,0,46,26],
-"d8/df5/_injury_handler_8c.html#acea0edb7d049bd91d8b22c9f10484ddf":[3,0,0,3,0,46,10],
-"d8/df5/_injury_handler_8c.html#ad16d0042c6289c3cf0b32b17dc4fa073":[3,0,0,3,0,46,30],
-"d8/df5/_injury_handler_8c.html#ae072a2155639222e9b56ef9a57322e20":[3,0,0,3,0,46,19]
+"d8/df5/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfaaa511233a495e23b11960850d5b86abe4":[3,0,0,3,0,46,2,2]
 };

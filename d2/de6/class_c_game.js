@@ -217,6 +217,7 @@ var class_c_game =
     [ "GizmoSelectUser", "d2/de6/class_c_game.html#ab72e575cb95d841cf79b8118b060c32c", null ],
     [ "GlobalsInit", "d2/de6/class_c_game.html#a530f4626fad2bcc4f96601773fcdc215", null ],
     [ "GoBuyWorldDLC", "d2/de6/class_c_game.html#a9afd356e9a22c1bfeebb2522772cf19e", null ],
+    [ "HasInventoryJuncture", "d2/de6/class_c_game.html#ac0ee5d94a9745296d9e782947c671edb", null ],
     [ "HasInventoryJunctureDestination", "d2/de6/class_c_game.html#adb82606052dfb6459e4b04143f3c5a4a", null ],
     [ "HasInventoryJunctureItem", "d2/de6/class_c_game.html#af04b09c13b796f260bc0b00bc818f924", null ],
     [ "InitCharacterMenuDataInfo", "d2/de6/class_c_game.html#aeda903eb4c0e23fb6477d37b3a6dfcbc", null ],
