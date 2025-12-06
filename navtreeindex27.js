@@ -53,7 +53,7 @@ var NAVTREEINDEX27 =
 "d2/d61/class_ammo___flare.html":[2,0,604],
 "d2/d62/class_derringer_recoil.html":[2,0,1248],
 "d2/d62/class_derringer_recoil.html#a8045e088b31fe0754fb20cb0a5ff0dc9":[2,0,1248,0],
-"d2/d63/_craft_watchtower_kit_8c.html":[3,0,0,3,0,22,0,64],
+"d2/d63/_craft_watchtower_kit_8c.html":[3,0,0,3,0,22,0,65],
 "d2/d64/_sweater___color_base_8c.html":[3,0,0,3,1,10,3,185],
 "d2/d64/class_cfg_slots_1_1_slot___s120_wheel__2__1.html":[2,0,1038,236],
 "d2/d64/class_cfg_slots_1_1_slot___s120_wheel__2__1.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1038,236,0],

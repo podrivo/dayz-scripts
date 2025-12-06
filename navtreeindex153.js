@@ -1,5 +1,8 @@
 var NAVTREEINDEX153 =
 {
+"db/dc4/class_hunger_mdfr.html#a8045e088b31fe0754fb20cb0a5ff0dc9":[2,0,1615,2],
+"db/dc4/class_hunger_mdfr.html#a97b1b398e0e2e6cce5972768a7b8f39f":[2,0,1615,0],
+"db/dc4/class_hunger_mdfr.html#aa01f966c294887d529950ac6f08d70ba":[2,0,1615,5],
 "db/dc4/class_hunger_mdfr.html#aa20c94cf3a51fa5af0ca371fd70a7cd9":[2,0,1615,7],
 "db/dc5/_anti_chem_injector_8c.html":[3,0,0,3,1,10,7,7,0],
 "db/dc5/_vicinity_item_manager_8c.html":[3,0,0,4,0,5,11],
@@ -25,7 +28,7 @@ var NAVTREEINDEX153 =
 "db/dc8/class_cfg_slots_1_1_slot___material___l2___nails.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1038,153,2],
 "db/dca/_action_water_garden_slot_8c.html":[3,0,0,3,0,30,1,0,157],
 "db/dca/_hot_state_8c.html":[3,0,0,3,0,21,0,0,3],
-"db/dca/_paint_c_m_a_g40_8c.html":[3,0,0,3,0,22,0,132],
+"db/dca/_paint_c_m_a_g40_8c.html":[3,0,0,3,0,22,0,133],
 "db/dcb/_mosin_sawed_off_recoil_8c.html":[3,0,0,3,0,23,0,31],
 "db/dcd/_action_take_fireplace_indoor_8c.html":[3,0,0,3,0,30,1,2,40],
 "db/dcd/_action_take_fireplace_indoor_8c.html#a117c754c4a223a4c970d14c2261bdddf":[3,0,0,3,0,30,1,2,40,1],
@@ -66,8 +69,8 @@ var NAVTREEINDEX153 =
 "db/dd0/_magnum_8c.html#a8fba6d4213ebbe1820d719974f601736":[3,0,0,3,1,6,5,8,5],
 "db/dd0/_magnum_8c.html#a9c20a170ad58d56f28b10ce98f02cb9c":[3,0,0,3,1,6,5,8,4],
 "db/dd0/_magnum_8c.html#a9c20a170ad58d56f28b10ce98f02cb9ca6ce26a62afab55d7606ad4e92428b30c":[3,0,0,3,1,6,5,8,4,0],
-"db/dd0/_magnum_8c.html#a9c20a170ad58d56f28b10ce98f02cb9ca88ec7d5086d2469ba843c7fcceade8a6":[3,0,0,3,1,6,5,8,3,0],
 "db/dd0/_magnum_8c.html#a9c20a170ad58d56f28b10ce98f02cb9ca88ec7d5086d2469ba843c7fcceade8a6":[3,0,0,3,1,6,5,8,4,1],
+"db/dd0/_magnum_8c.html#a9c20a170ad58d56f28b10ce98f02cb9ca88ec7d5086d2469ba843c7fcceade8a6":[3,0,0,3,1,6,5,8,3,0],
 "db/dd0/_magnum_8c.html#a9f7122d8e57dcec0a8aa49227b8be502":[3,0,0,3,1,6,5,8,13],
 "db/dd0/_magnum_8c.html#aa40f8697dfa587f8adabc8640bc98ad8":[3,0,0,3,1,6,5,8,11],
 "db/dd0/_magnum_8c.html#aac14d196e64cad535c5aa50f0c954df3":[3,0,0,3,1,6,5,8,8],
@@ -98,7 +101,7 @@ var NAVTREEINDEX153 =
 "db/dda/class_cfg_slots_1_1_slot___truck__01___barrel3.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1038,285,0],
 "db/dda/class_cfg_slots_1_1_slot___truck__01___barrel3.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1038,285,1],
 "db/dda/class_cfg_slots_1_1_slot___truck__01___barrel3.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1038,285,2],
-"db/ddb/_craft_leather_sack_8c.html":[3,0,0,3,0,22,0,45],
+"db/ddb/_craft_leather_sack_8c.html":[3,0,0,3,0,22,0,46],
 "db/ddc/class_ammo_box__762x39_tracer__20_rnd.html":[2,0,623],
 "db/ddd/_hit___plastic_8c.html":[3,0,0,2,6,2,0,14],
 "db/ddd/class_press_vest___color_base.html":[2,0,2219],
@@ -206,8 +209,8 @@ var NAVTREEINDEX153 =
 "db/de5/class_weapon.html#a86bfd5735550bb84e4cbac165bb10642":[2,0,2921,137],
 "db/de5/class_weapon.html#a870b0dcd0dfafe4a764232688d9356c0":[2,0,2921,21],
 "db/de5/class_weapon.html#a893525a91cbcd48916cbb28902b5b90e":[2,0,2921,39],
-"db/de5/class_weapon.html#a899edd684c680e7c0a3448fef32f5892":[2,0,2921,44],
 "db/de5/class_weapon.html#a899edd684c680e7c0a3448fef32f5892":[2,0,2921,43],
+"db/de5/class_weapon.html#a899edd684c680e7c0a3448fef32f5892":[2,0,2921,44],
 "db/de5/class_weapon.html#a8d3037afa92ae221a061880116eb6fd0":[2,0,2921,106],
 "db/de5/class_weapon.html#a935c8bf91c4a4874804751a7d1ae4147":[2,0,2921,131],
 "db/de5/class_weapon.html#a94e94836ed80bf81df4751938ab00cbc":[2,0,2921,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX153 =
 "db/de5/class_weapon.html#ad8efe2fa1f2c79d0d469e21e735249a5":[2,0,2921,30],
 "db/de5/class_weapon.html#adabf67ce894c598b5f6559a62541c549":[2,0,2921,31],
 "db/de5/class_weapon.html#adaf6c2b559234908ab57c43c825ce3cb":[2,0,2921,11],
-"db/de5/class_weapon.html#adccf7d1176eec846e1a562d889e7ddd9":[2,0,2921,27],
-"db/de5/class_weapon.html#ae0240a6790df007552a7e4add331ff83":[2,0,2921,24],
-"db/de5/class_weapon.html#ae0d1a50d3504207b5de70c8d79d134f3":[2,0,2921,67],
-"db/de5/class_weapon.html#ae3f96ed8cf7e5404acb3f09b96e48892":[2,0,2921,121]
+"db/de5/class_weapon.html#adccf7d1176eec846e1a562d889e7ddd9":[2,0,2921,27]
 };

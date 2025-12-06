@@ -1,5 +1,6 @@
 var NAVTREEINDEX114 =
 {
+"d8/dbb/_fireplace_base_8c.html#a4928398834d4c814e0dd50a123bac746":[3,0,0,3,1,10,56,33],
 "d8/dbb/_fireplace_base_8c.html#a4bdc714800bd00472c76a86c98ba9b69":[3,0,0,3,1,10,56,193],
 "d8/dbb/_fireplace_base_8c.html#a4c0c04681ef1d8672a16d12f0e26ab5c":[3,0,0,3,1,10,56,63],
 "d8/dbb/_fireplace_base_8c.html#a4d9c8f8f11aa3a5c09c311602f84864f":[3,0,0,3,1,10,56,224],
@@ -248,6 +249,5 @@ var NAVTREEINDEX114 =
 "d8/dbb/class_point_light_base.html#a0c335234ba0f56065dee05db9afa1373":[2,0,2166,53],
 "d8/dbb/class_point_light_base.html#a0c58823b345d06040869f611ef360c1a":[2,0,2166,11],
 "d8/dbb/class_point_light_base.html#a13a53aad6417269350a4ad4fee18f7e8":[2,0,2166,23],
-"d8/dbb/class_point_light_base.html#a156fe2a81f61aa507a827e9ce4a7101f":[2,0,2166,31],
-"d8/dbb/class_point_light_base.html#a15e936203be347c7690dbc085237455b":[2,0,2166,10]
+"d8/dbb/class_point_light_base.html#a156fe2a81f61aa507a827e9ce4a7101f":[2,0,2166,31]
 };

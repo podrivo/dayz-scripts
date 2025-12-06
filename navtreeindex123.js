@@ -1,5 +1,6 @@
 var NAVTREEINDEX123 =
 {
+"d9/d4c/class_remote_detonator_trigger.html#aca481d4aafccf39f0604de8d6e67051e":[2,0,2254,0],
 "d9/d4c/class_remote_detonator_trigger.html#ad183155e7592e816863539c54b6fa83f":[2,0,2254,9],
 "d9/d4c/class_remote_detonator_trigger.html#adbcefdb70c262c7c278ebcdfabf56086":[2,0,2254,17],
 "d9/d4c/class_remote_detonator_trigger.html#af9642c0dab137a11daebd1ca242be827":[2,0,2254,7],
@@ -104,7 +105,7 @@ var NAVTREEINDEX123 =
 "d9/d54/class_get_out_transport_action_data.html#aecd2b902f464f7fe1282cb74489cb749":[2,0,1446,8],
 "d9/d55/_action_give_saline_target_8c.html":[3,0,0,3,0,30,1,0,1,33],
 "d9/d56/class_ski_goggles___color_base.html":[2,0,2404],
-"d9/d57/_sawoff_mosin_painted_8c.html":[3,0,0,3,0,22,0,202],
+"d9/d57/_sawoff_mosin_painted_8c.html":[3,0,0,3,0,22,0,203],
 "d9/d58/_bleeding_sources_manager_remote_8c.html":[3,0,0,3,0,4,3],
 "d9/d5a/class_small_stone.html":[2,0,2419],
 "d9/d5a/class_small_stone.html#afa39b7c4d3d085ef8514a87c32b81a4d":[2,0,2419,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX123 =
 "d9/d65/class_get_servers_input.html#a14f155d2e30ef3ec52b3cecc409d0fb9":[2,0,1447,37],
 "d9/d65/class_get_servers_input.html#a18de304f01ec4eafaa25715691aa613e":[2,0,1447,8],
 "d9/d65/class_get_servers_input.html#a1ad3e438155aa8d2aae3f9204499a383":[2,0,1447,63],
-"d9/d65/class_get_servers_input.html#a1d4fdbafa51dbb01e864af38b9dc36e2":[2,0,1447,40],
-"d9/d65/class_get_servers_input.html#a21c511d24a807185a52ad9811993074e":[2,0,1447,5]
+"d9/d65/class_get_servers_input.html#a1d4fdbafa51dbb01e864af38b9dc36e2":[2,0,1447,40]
 };

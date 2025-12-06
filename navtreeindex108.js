@@ -1,5 +1,6 @@
 var NAVTREEINDEX108 =
 {
+"d8/d49/class_land___tenement___small___brick.html":[2,0,1758],
 "d8/d4b/class_action_empty_bottle_base.html":[2,0,203],
 "d8/d4b/class_action_empty_bottle_base.html#a1f7399d8d410ac172ef0e5f4c4bbb4eb":[2,0,203,2],
 "d8/d4b/class_action_empty_bottle_base.html#a2ebf3855cc8960864124ba5ca4949033":[2,0,203,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX108 =
 "d8/d5d/_day_z_player_implement_melee_combat_8c.html#a24f47aa1d1bce1fdd0f843cb88d20c58":[3,0,0,3,1,26,7],
 "d8/d5d/_day_z_player_implement_melee_combat_8c.html#a26efda52c80c096f14f16224a20a3aa8":[3,0,0,3,1,26,45],
 "d8/d5d/_day_z_player_implement_melee_combat_8c.html#a29bfe4e9c62e3a95ebb8ce1297b6e879":[3,0,0,3,1,26,62],
-"d8/d5d/_day_z_player_implement_melee_combat_8c.html#a2b985e683acab4113a1fd02237b9d8bc":[3,0,0,3,1,26,12],
-"d8/d5d/_day_z_player_implement_melee_combat_8c.html#a2dd3c6489a662411b10b60ce6b71fecf":[3,0,0,3,1,26,64]
+"d8/d5d/_day_z_player_implement_melee_combat_8c.html#a2b985e683acab4113a1fd02237b9d8bc":[3,0,0,3,1,26,12]
 };

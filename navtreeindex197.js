@@ -1,5 +1,8 @@
 var NAVTREEINDEX197 =
 {
+"de/db4/class_attachment_categories_slots_container.html#ade6033ffec8630d45f7003f620088b20":[2,0,691,13],
+"de/db4/class_attachment_categories_slots_container.html#ae1f8b6c1655377c9d528afc512183bf0":[2,0,691,18],
+"de/db4/class_attachment_categories_slots_container.html#aea298266b318cedf96eeba32b3761875":[2,0,691,8],
 "de/db4/class_attachment_categories_slots_container.html#aecd99db99bf3b787de44c6cea9cf0b5e":[2,0,691,12],
 "de/db4/class_attachment_categories_slots_container.html#af722b11ffb8375871c4dadc84e2aa9e4":[2,0,691,19],
 "de/db4/class_attachment_categories_slots_container.html#afff27ed1da2d693ce0641f07d9c970d9":[2,0,691,5],
@@ -39,7 +42,7 @@ var NAVTREEINDEX197 =
 "de/db7/class_a_i_agent.html#a937034eb22c7968c801ec082bc8481de":[2,0,549,1],
 "de/db7/class_action_turn_off_alarm_clock_c_b.html":[2,0,462],
 "de/db7/class_action_turn_off_alarm_clock_c_b.html#accfb238782010198bdb5128a8ee44300":[2,0,462,0],
-"de/db8/_craft_stone_knife_8c.html":[3,0,0,3,0,22,0,57],
+"de/db8/_craft_stone_knife_8c.html":[3,0,0,3,0,22,0,58],
 "de/db8/class_bolt_action_rifle___inner_magazine___base.html":[2,0,801],
 "de/db8/class_bolt_action_rifle___inner_magazine___base.html#a0f1c962310c90d4daf7bf76302192bf5":[2,0,801,0],
 "de/db8/class_bolt_action_rifle___inner_magazine___base.html#aebc4f01579511e3f122f2115872a7b61":[2,0,801,1],
@@ -216,7 +219,7 @@ var NAVTREEINDEX197 =
 "de/dd5/class_cfg_slots_1_1_slot__magazine_fake_weapon.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1038,130,3],
 "de/dd5/class_cfg_slots_1_1_slot__magazine_fake_weapon.html#af4b13ed4028343b1415586b9dabaf48d":[2,0,1038,130,0],
 "de/dd5/class_pen___red.html":[2,0,2096],
-"de/dd8/_paint_ghillie_suit_green_mossy_8c.html":[3,0,0,3,0,22,0,149],
+"de/dd8/_paint_ghillie_suit_green_mossy_8c.html":[3,0,0,3,0,22,0,150],
 "de/dd8/_shelter_kit_8c.html":[3,0,0,3,1,10,119],
 "de/dd9/_player_list_scripted_widget_8c.html":[3,0,0,4,0,3,1],
 "de/dd9/class_action_force_consume_c_b.html":[2,0,253],
@@ -246,8 +249,5 @@ var NAVTREEINDEX197 =
 "de/ddf/_action_disarm_explosive_with_remote_detonator_unpaired_8c.html#accfb238782010198bdb5128a8ee44300":[3,0,0,3,0,30,1,0,45,3],
 "de/ddf/class_male_feet___base.html":[2,0,1899],
 "de/de0/class_cfg_slots_1_1_slot___material___l2_w1___wooden_planks.html":[2,0,1038,158],
-"de/de0/class_cfg_slots_1_1_slot___material___l2_w1___wooden_planks.html#a13e8f9b69fe776b7a8ace2f2941de044":[2,0,1038,158,4],
-"de/de0/class_cfg_slots_1_1_slot___material___l2_w1___wooden_planks.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1038,158,0],
-"de/de0/class_cfg_slots_1_1_slot___material___l2_w1___wooden_planks.html#a79d1b0e96e042367a41a73d13a4a09f1":[2,0,1038,158,3],
-"de/de0/class_cfg_slots_1_1_slot___material___l2_w1___wooden_planks.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1038,158,1]
+"de/de0/class_cfg_slots_1_1_slot___material___l2_w1___wooden_planks.html#a13e8f9b69fe776b7a8ace2f2941de044":[2,0,1038,158,4]
 };

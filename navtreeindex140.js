@@ -1,5 +1,6 @@
 var NAVTREEINDEX140 =
 {
+"da/daf/class_car_horn_action_data.html":[2,0,977],
 "da/daf/class_car_horn_action_data.html#aba190373b9693855c4f738ea98757cd3":[2,0,977,0],
 "da/daf/class_car_horn_action_data.html#afaafd819d98d7078839ff71a4e838d1e":[2,0,977,1],
 "da/db0/_leather_storage_vest___color_base_8c.html":[3,0,0,3,1,10,3,111],
@@ -147,7 +148,7 @@ var NAVTREEINDEX140 =
 "da/dbd/class_action_harvest_crops.html#ab01acd4981eefdcd52c69aa22b4540b8":[2,0,279,0],
 "da/dbd/class_action_harvest_crops.html#ab6eb153abc42e514909126c621d01280":[2,0,279,3],
 "da/dbd/class_action_harvest_crops.html#ac1c91d1bfad7c4e31bbb264064d2d8de":[2,0,279,4],
-"da/dbe/_craft_shelter_kit_8c.html":[3,0,0,3,0,22,0,52],
+"da/dbe/_craft_shelter_kit_8c.html":[3,0,0,3,0,22,0,53],
 "da/dbe/class_catch_yield_bank.html":[2,0,1003],
 "da/dbe/class_catch_yield_bank.html#a0714c8f357d35c444b7a7feb4e721bbc":[2,0,1003,6],
 "da/dbe/class_catch_yield_bank.html#a2650f16d5ad3a5887ef1f1e9a6939c2f":[2,0,1003,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX140 =
 "da/dc7/class_cfg_slots_1_1_slot___plant.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1038,221,1],
 "da/dc7/class_cfg_slots_1_1_slot___plant.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1038,221,2],
 "da/dc8/class_party_tent.html":[2,0,2077],
-"da/dc9/_a_k___plastic_hndgrd_8c.html":[3,0,0,3,1,10,8,2],
-"da/dc9/_head_cover__improvised_8c.html":[3,0,0,3,1,10,3,71]
+"da/dc9/_a_k___plastic_hndgrd_8c.html":[3,0,0,3,1,10,8,2]
 };

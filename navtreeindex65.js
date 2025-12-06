@@ -1,5 +1,6 @@
 var NAVTREEINDEX65 =
 {
+"d4/dc3/classfloat.html#a7b168e749397f2c3614bcc37d69aa72d":[2,0,1416,3],
 "d4/dc4/class_bush_hard__b__prunus_spinosa__2s.html":[2,0,879],
 "d4/dc4/class_starlight_optic.html":[2,0,2475],
 "d4/dc4/class_starlight_optic.html#a862a03ba545d3b10592f5b321fb93843":[2,0,2475,3],
@@ -47,7 +48,7 @@ var NAVTREEINDEX65 =
 "d4/dc9/class_bios_lobby_service.html#aa8d15a1d25c9d69d94dd8b302eb32083":[2,0,761,5],
 "d4/dc9/class_r_d_g2_smoke_grenade___color_base.html":[2,0,2245],
 "d4/dc9/class_r_d_g2_smoke_grenade___color_base.html#aa9ed9537a47e3d0eddc7ebfc40787909":[2,0,2245,0],
-"d4/dca/_de_craft_camo_net_shelter_8c.html":[3,0,0,3,0,22,0,76],
+"d4/dca/_de_craft_camo_net_shelter_8c.html":[3,0,0,3,0,22,0,77],
 "d4/dca/class_cassette.html":[2,0,994],
 "d4/dca/class_weapon_manipulation_action_input.html":[2,0,2945],
 "d4/dca/class_weapon_manipulation_action_input.html#aea007a94d0a41568b7196dd0139de784":[2,0,2945,0],
@@ -110,7 +111,7 @@ var NAVTREEINDEX65 =
 "d4/dd3/class_corpse_data.html#a9f62b9fe12eaa9adfb1ca52362ed0bb1":[2,0,1136,7],
 "d4/dd3/class_corpse_data.html#ae22de8654c65eac729cfcbab8cdec00f":[2,0,1136,6],
 "d4/dd3/class_corpse_data.html#ae41ce96194442e2bbb6fd499a3cac920":[2,0,1136,5],
-"d4/dd4/_craft_truck01_double_wheel_8c.html":[3,0,0,3,0,22,0,63],
+"d4/dd4/_craft_truck01_double_wheel_8c.html":[3,0,0,3,0,22,0,64],
 "d4/dd4/_underground_handler_client_8c.html":[3,0,0,3,0,77],
 "d4/dd4/_underground_handler_client_8c.html#a03b870bed41f8fe5ec6126b0e868ee79":[3,0,0,3,0,77,42],
 "d4/dd4/_underground_handler_client_8c.html#a096396e1453e80d7864a6121178986d1":[3,0,0,3,0,77,37],
@@ -201,7 +202,7 @@ var NAVTREEINDEX65 =
 "d4/ddc/_firearm_action_base_8c.html":[3,0,0,3,0,30,1,4,1],
 "d4/ddc/class_n_b_c_pants_base.html":[2,0,1992],
 "d4/ddf/_cfg_gameplay_handler_8c.html":[3,0,0,2,28],
-"d4/ddf/_refuel_torch_8c.html":[3,0,0,3,0,22,0,188],
+"d4/ddf/_refuel_torch_8c.html":[3,0,0,3,0,22,0,189],
 "d4/ddf/class_dirt_bike_helmet___mouthguard.html":[2,0,1263],
 "d4/ddf/class_dirt_bike_helmet___mouthguard.html#abb31df34d18be9cfd04b07d55bba5eec":[2,0,1263,0],
 "d4/de0/_u_s_m_c_jacket___color_base_8c.html":[3,0,0,3,1,10,3,206],
@@ -248,6 +249,5 @@ var NAVTREEINDEX65 =
 "d4/de8/_repeater_8c.html#a332981bdbabf1fd0ddb26c5c32ca57a9":[3,0,0,3,1,6,6,5,13],
 "d4/de8/_repeater_8c.html#a5505b40857f04731ef377a6be07e9d8c":[3,0,0,3,1,6,6,5,10],
 "d4/de8/_repeater_8c.html#a6ce26a62afab55d7606ad4e92428b30c":[3,0,0,3,1,6,6,5,18],
-"d4/de8/_repeater_8c.html#a7cfb9448314355bc477a5c2776f2946b":[3,0,0,3,1,6,6,5,11],
-"d4/de8/_repeater_8c.html#a8fba6d4213ebbe1820d719974f601736":[3,0,0,3,1,6,6,5,5]
+"d4/de8/_repeater_8c.html#a7cfb9448314355bc477a5c2776f2946b":[3,0,0,3,1,6,6,5,11]
 };

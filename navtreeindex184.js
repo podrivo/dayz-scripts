@@ -1,5 +1,8 @@
 var NAVTREEINDEX184 =
 {
+"dd/de6/_hockey_helmet___color_base_8c.html":[3,0,0,3,1,10,3,0,6],
+"dd/de6/_sedan__02_front_light_8c.html":[3,0,0,3,1,13,2,0,6],
+"dd/de6/_stamina_sound_handler_8c.html":[3,0,0,3,0,72],
 "dd/de6/_stamina_sound_handler_8c.html#a0b13e66fe91a2c98daaac4e6f31458e3":[3,0,0,3,0,72,22],
 "dd/de6/_stamina_sound_handler_8c.html#a19263b7453be99c1cd0d88b4426b0679":[3,0,0,3,0,72,16],
 "dd/de6/_stamina_sound_handler_8c.html#a1e3b6d38df0786ccf7f938d60e386aae":[3,0,0,3,0,72,5],
@@ -246,8 +249,5 @@ var NAVTREEINDEX184 =
 "dd/df5/class_hologram.html#ad59e07a2ac0c80401334aa1e269fcda1":[2,0,1585,42],
 "dd/df5/class_hologram.html#ad79ad5cfa1be9e2badf7c5fc73b0e67b":[2,0,1585,66],
 "dd/df5/class_hologram.html#adb1ffde139d0610599f0edee9c259d79":[2,0,1585,16],
-"dd/df5/class_hologram.html#adbb6ee1ebf326ee707e92dca26716b2a":[2,0,1585,44],
-"dd/df5/class_hologram.html#adc6825f7dfa15623c9efa419e3f474fe":[2,0,1585,55],
-"dd/df5/class_hologram.html#adc75c1a3bd0a7b928016a0df6d49a3ba":[2,0,1585,73],
-"dd/df5/class_hologram.html#add469d928cd48b90f3f2453474d60336":[2,0,1585,52]
+"dd/df5/class_hologram.html#adbb6ee1ebf326ee707e92dca26716b2a":[2,0,1585,44]
 };

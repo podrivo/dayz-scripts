@@ -1,5 +1,6 @@
 var NAVTREEINDEX63 =
 {
+"d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50a6614a30a48f506b6e7addd4d108298f6":[3,0,0,2,51,18,4],
 "d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50a8d2b8ae9cf9c03b17facf0318b620bc7":[3,0,0,2,51,18,20],
 "d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50a8f8130aab0a2afa37026bcd0f14035f4":[3,0,0,2,51,18,1],
 "d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50aa8fc4ef459ed31d13ac7ba8dd9afd5ea":[3,0,0,2,51,18,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX63 =
 "d4/da1/class_cfg_slots_1_1_slot___birch_bark.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1038,12,1],
 "d4/da1/class_cfg_slots_1_1_slot___birch_bark.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1038,12,2],
 "d4/da1/class_human_command_unconscious.html":[2,0,1607],
-"d4/da1/class_human_command_unconscious.html#a0e0635d1bdcf723f7e845355f964e91a":[2,0,1607,5],
-"d4/da1/class_human_command_unconscious.html#a42bbfb7add8ae15721042ab9a68e0404":[2,0,1607,2]
+"d4/da1/class_human_command_unconscious.html#a0e0635d1bdcf723f7e845355f964e91a":[2,0,1607,5]
 };

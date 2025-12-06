@@ -1,5 +1,6 @@
 var NAVTREEINDEX133 =
 {
+"d9/df9/class_cfg_slots_1_1_slot__weapon_optics_acog.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1038,376,0],
 "d9/df9/class_cfg_slots_1_1_slot__weapon_optics_acog.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1038,376,1],
 "d9/df9/class_cfg_slots_1_1_slot__weapon_optics_acog.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1038,376,2],
 "d9/dfa/_cfg_param_type_8c.html":[3,0,0,3,0,6,6],
@@ -11,10 +12,10 @@ var NAVTREEINDEX133 =
 "d9/dfa/class_world_lighting.html#ac5d376ce6881378433cdf878fc6189bd":[2,0,3001,1],
 "d9/dfa/class_world_lighting.html#ac81e986d9487cc185105601065a8c7ee":[2,0,3001,0],
 "d9/dfa/class_world_lighting.html#adca01830e4c03147471b0881ebd052b6":[2,0,3001,4],
-"d9/dfc/_paint_m4_m_p_hndgrd_8c.html":[3,0,0,3,0,22,0,158],
+"d9/dfc/_paint_m4_m_p_hndgrd_8c.html":[3,0,0,3,0,22,0,159],
 "d9/dfd/_a_k_m_8c.html":[3,0,0,3,1,6,1,2],
 "d9/dfe/_c_a_continuous_fertilize_garden_slot_8c.html":[3,0,0,3,0,30,0,6],
-"d9/dff/_craft_wooden_crate_8c.html":[3,0,0,3,0,22,0,66],
+"d9/dff/_craft_wooden_crate_8c.html":[3,0,0,3,0,22,0,67],
 "da/d00/_chelate_water_8c.html":[3,0,0,3,0,22,0,5],
 "da/d00/class_land___ruin___house_small1___no_ivy.html":[2,0,1755],
 "da/d02/class_tactical_gloves___color_base.html":[2,0,2588],
@@ -200,7 +201,7 @@ var NAVTREEINDEX133 =
 "da/d12/class_static_obj___roadblock___wood___small.html#abb348c915964d172be8ca2c31f7eead3":[2,0,2543,2],
 "da/d14/_radio_8c.html":[3,0,0,3,1,10,109],
 "da/d15/_brain_agent_8c.html":[3,0,0,3,0,29,0,1],
-"da/d15/_paint_mosin_camo_black_8c.html":[3,0,0,3,0,22,0,163],
+"da/d15/_paint_mosin_camo_black_8c.html":[3,0,0,3,0,22,0,164],
 "da/d16/_bolt_action_rifle_external_magazine___base_8c.html":[3,0,0,3,1,6,10],
 "da/d16/_bolt_action_rifle_external_magazine___base_8c.html#a092cdf156d5042ef9e7807189f80a2e1":[3,0,0,3,1,6,10,18],
 "da/d16/_bolt_action_rifle_external_magazine___base_8c.html#a25b2604f226f3e32e308ade8fd7a1a9a":[3,0,0,3,1,6,10,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX133 =
 "da/d1c/_weapon_inventory_8c.html#aa701e596d258eef69f6ff0e6d6543ec1":[3,0,0,2,18,5,27,1],
 "da/d1c/_widget_layout_name_8c.html":[3,0,0,2,10,9],
 "da/d1d/_bark___color_base_8c.html":[3,0,0,3,1,10,23],
-"da/d1d/class_c_a_continuous_empty_magazine.html":[2,0,920],
-"da/d1d/class_c_a_continuous_empty_magazine.html#a091fe5a7abd8db8d40e29b60bd7bded8":[2,0,920,2]
+"da/d1d/class_c_a_continuous_empty_magazine.html":[2,0,920]
 };

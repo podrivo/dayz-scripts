@@ -1,5 +1,8 @@
 var NAVTREEINDEX186 =
 {
+"de/d16/_rangefinder_8c.html":[3,0,0,3,1,10,111],
+"de/d16/class_camo_net_shelter.html":[2,0,956],
+"de/d18/class_ingame_hud_heat_buffer.html":[2,0,1637],
 "de/d18/class_ingame_hud_heat_buffer.html#a0302fd59fd2fddcee939ef9ac4d0824a":[2,0,1637,10],
 "de/d18/class_ingame_hud_heat_buffer.html#a0d7def3ca563f3f9de5e86248eebf96a":[2,0,1637,15],
 "de/d18/class_ingame_hud_heat_buffer.html#a2fab8d77f885cb3251c50ba4ed0b8c9e":[2,0,1637,0],
@@ -241,13 +244,10 @@ var NAVTREEINDEX186 =
 "de/d32/class_p_p_e_color_grading.html#a0a0253e448106da22e57bad668d9e479":[2,0,2180,2],
 "de/d32/class_p_p_e_color_grading.html#a26e5b307cc328ce471b08b2f01c82bea":[2,0,2180,0],
 "de/d32/class_p_p_e_color_grading.html#a336ddf5b681ebc6d4de3845ce72d4aa9":[2,0,2180,1],
-"de/d33/_de_craft_wooden_crate_8c.html":[3,0,0,3,0,22,0,100],
+"de/d33/_de_craft_wooden_crate_8c.html":[3,0,0,3,0,22,0,101],
 "de/d34/_p_p_e_distort_8c.html":[3,0,0,2,15,0,0,5],
 "de/d34/class_tree_hard__t___pinus_sylvestris__3s.html":[2,0,2733],
 "de/d35/_day_z_anim_event_maps_8c.html":[3,0,0,2,35],
 "de/d35/_day_z_anim_event_maps_8c.html#a141a6e60fcdd9ee1da8561f10c0fd3ef":[3,0,0,2,35,15],
-"de/d35/_day_z_anim_event_maps_8c.html#a2c625a44476aacc78311c214c977d3b3":[3,0,0,2,35,14],
-"de/d35/_day_z_anim_event_maps_8c.html#a2fef1b7089ac6ac987f60135be3316e3":[3,0,0,2,35,6],
-"de/d35/_day_z_anim_event_maps_8c.html#a331064fdd07bc0cd0e8bb1e7aa1146d1":[3,0,0,2,35,10],
-"de/d35/_day_z_anim_event_maps_8c.html#a3bbd532b0d2f1c72f3cef16889fe1111":[3,0,0,2,35,13]
+"de/d35/_day_z_anim_event_maps_8c.html#a2c625a44476aacc78311c214c977d3b3":[3,0,0,2,35,14]
 };

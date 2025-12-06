@@ -24,6 +24,7 @@ var dir_c9e5006532776e623db86e0e08ec5134 =
     [ "CraftBow.c", "db/dc7/_craft_bow_8c.html", "db/dc7/_craft_bow_8c" ],
     [ "CraftBurlapStrips.c", "d9/d68/_craft_burlap_strips_8c.html", "d9/d68/_craft_burlap_strips_8c" ],
     [ "CraftCamoNetShelter.c", "d3/d57/_craft_camo_net_shelter_8c.html", "d3/d57/_craft_camo_net_shelter_8c" ],
+    [ "CraftChristmasLightsHeadband.c", "d4/d37/_craft_christmas_lights_headband_8c.html", "d4/d37/_craft_christmas_lights_headband_8c" ],
     [ "CraftCookingStand.c", "de/de2/_craft_cooking_stand_8c.html", "de/de2/_craft_cooking_stand_8c" ],
     [ "CraftCourierBag.c", "d8/d8f/_craft_courier_bag_8c.html", "d8/d8f/_craft_courier_bag_8c" ],
     [ "CraftDrysackBag.c", "df/d03/_craft_drysack_bag_8c.html", "df/d03/_craft_drysack_bag_8c" ],

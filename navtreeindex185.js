@@ -1,5 +1,8 @@
 var NAVTREEINDEX185 =
 {
+"dd/df5/class_hologram.html#adc6825f7dfa15623c9efa419e3f474fe":[2,0,1585,55],
+"dd/df5/class_hologram.html#adc75c1a3bd0a7b928016a0df6d49a3ba":[2,0,1585,73],
+"dd/df5/class_hologram.html#add469d928cd48b90f3f2453474d60336":[2,0,1585,52],
 "dd/df5/class_hologram.html#ae0278198c4e60d383d583af84b2f081c":[2,0,1585,90],
 "dd/df5/class_hologram.html#ae06e4d80c40dbf96c1688247e7bbe6c9":[2,0,1585,86],
 "dd/df5/class_hologram.html#ae2bd87fe044d652b70a11fc58c1737bd":[2,0,1585,11],
@@ -111,7 +114,7 @@ var NAVTREEINDEX185 =
 "de/d09/_action_turn_off_transmitter_8c.html#accfb238782010198bdb5128a8ee44300":[3,0,0,3,0,30,1,3,61,3],
 "de/d09/_action_turn_off_transmitter_8c.html#addc04d3967e021e6b6bd259b82de083e":[3,0,0,3,0,30,1,3,61,4],
 "de/d09/_action_turn_off_transmitter_8c.html#afae7d918c5404f98d32c235cccf598af":[3,0,0,3,0,30,1,3,61,2],
-"de/d09/_de_craft_spear_8c.html":[3,0,0,3,0,22,0,96],
+"de/d09/_de_craft_spear_8c.html":[3,0,0,3,0,22,0,97],
 "de/d0b/_balaclava_mask___color_base_8c.html":[3,0,0,3,1,10,3,10],
 "de/d0b/_c_a_single_use_8c.html":[3,0,0,3,0,30,0,35],
 "de/d0b/class_action_load_magazine_quick.html":[2,0,303],
@@ -246,8 +249,5 @@ var NAVTREEINDEX185 =
 "de/d15/_underground_trigger_8c.html#ac9612b86682fc520f7b0279793ca5e5e":[3,0,0,3,1,12,0,14,11],
 "de/d15/_underground_trigger_8c.html#ae507670ac39652b98be588e77103a817":[3,0,0,3,1,12,0,14,8],
 "de/d15/_underground_trigger_8c.html#af890dfc7c0d3559a481d8d3ab075157b":[3,0,0,3,1,12,0,14,1],
-"de/d16/_rag_8c.html":[3,0,0,3,1,10,110],
-"de/d16/_rangefinder_8c.html":[3,0,0,3,1,10,111],
-"de/d16/class_camo_net_shelter.html":[2,0,956],
-"de/d18/class_ingame_hud_heat_buffer.html":[2,0,1637]
+"de/d16/_rag_8c.html":[3,0,0,3,1,10,110]
 };

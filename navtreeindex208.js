@@ -1,5 +1,8 @@
 var NAVTREEINDEX208 =
 {
+"df/db9/class_hud_debug_win_horticulture.html#a7b3bef26919c3dacba92643fc00a6071":[2,0,1598,1],
+"df/db9/class_hud_debug_win_horticulture.html#aa2f15acc6fa5dddc2dce30d2211f5377":[2,0,1598,4],
+"df/db9/class_hud_debug_win_horticulture.html#ab3a769af93cbb13ac262b55be7977c93":[2,0,1598,2],
 "df/db9/class_hud_debug_win_horticulture.html#accf383118946aaf8a037e9533c0d129c":[2,0,1598,5],
 "df/db9/class_hud_debug_win_horticulture.html#ad6bc95444dacd0018ead2577eea4b99d":[2,0,1598,8],
 "df/db9/class_hud_debug_win_horticulture.html#ad7aa077e8ec43260a368e915201010ce":[2,0,1598,10],
@@ -246,8 +249,5 @@ var NAVTREEINDEX208 =
 "df/dd2/_action_activate_trap_8c.html#accfb238782010198bdb5128a8ee44300":[3,0,0,3,0,30,1,0,3,3],
 "df/dd2/_c_z527_recoil_8c.html":[3,0,0,3,0,23,0,8],
 "df/dd2/class_construction_box_trigger.html":[2,0,1117],
-"df/dd2/class_construction_box_trigger.html#a2a738a606496a6b1068aa2efc75871c3":[2,0,1117,1],
-"df/dd2/class_construction_box_trigger.html#a4caf6742d4f88fb3e37860423845cc82":[2,0,1117,2],
-"df/dd2/class_construction_box_trigger.html#abd7f95531e1386daf956fb07690a2157":[2,0,1117,3],
-"df/dd2/class_construction_box_trigger.html#ac3945159236f55ab99fc54e11b98b0e6":[2,0,1117,0]
+"df/dd2/class_construction_box_trigger.html#a2a738a606496a6b1068aa2efc75871c3":[2,0,1117,1]
 };

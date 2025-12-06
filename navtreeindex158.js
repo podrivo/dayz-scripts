@@ -1,5 +1,8 @@
 var NAVTREEINDEX158 =
 {
+"dc/d3f/class_weapon_guard_base.html#a65265c19e14e8b82023c3fe52c69b343":[2,0,2942,57],
+"dc/d3f/class_weapon_guard_base.html#a68853999f83f032ea47464a9d8ba38a2":[2,0,2942,40],
+"dc/d3f/class_weapon_guard_base.html#a6d66fd66fb52def00d8f5a0cd43214da":[2,0,2942,1],
 "dc/d3f/class_weapon_guard_base.html#a76f6b8a7e66e2acfd25d584afa75b636":[2,0,2942,38],
 "dc/d3f/class_weapon_guard_base.html#a78ceeaf9b5a16f8bcf6b18b7da0fd0c9":[2,0,2942,39],
 "dc/d3f/class_weapon_guard_base.html#a7ee6b0f33da432c79ec279c12d9e2e6c":[2,0,2942,47],
@@ -45,7 +48,7 @@ var NAVTREEINDEX158 =
 "dc/d44/class_static__stone8__moss.html":[2,0,2538],
 "dc/d44/class_tree_hard__t__salix_alba__2sb__swamp.html":[2,0,2759],
 "dc/d44/class_tree_hard__t__salix_alba__2sb__swamp.html#a2e46b7dd529aea185159bb5cc6bee628":[2,0,2759,0],
-"dc/d45/_paint_sawedoff_mosin_8c.html":[3,0,0,3,0,22,0,167],
+"dc/d45/_paint_sawedoff_mosin_8c.html":[3,0,0,3,0,22,0,168],
 "dc/d45/class_cfg_slots_1_1_slot__weapon_handguard_m4.html":[2,0,1038,368],
 "dc/d45/class_cfg_slots_1_1_slot__weapon_handguard_m4.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1038,368,0],
 "dc/d45/class_cfg_slots_1_1_slot__weapon_handguard_m4.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1038,368,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX158 =
 "dc/d5a/class_pain_killers_mdfr.html#a77cb9670680e8fd9dc2b6457c73c7952":[2,0,2054,7],
 "dc/d5a/class_pain_killers_mdfr.html#a7ec4b9c53f607b7c09956bd8917b1780":[2,0,2054,9],
 "dc/d5a/class_pain_killers_mdfr.html#a8045e088b31fe0754fb20cb0a5ff0dc9":[2,0,2054,3],
-"dc/d5a/class_pain_killers_mdfr.html#a97b1b398e0e2e6cce5972768a7b8f39f":[2,0,2054,0],
-"dc/d5a/class_pain_killers_mdfr.html#aa123400511540c534d11d2f0771d862e":[2,0,2054,5],
-"dc/d5b/class_ammo__45_a_c_p.html":[2,0,593],
-"dc/d5c/_cargo_container_row_8c.html":[3,0,0,4,0,5,1,2]
+"dc/d5a/class_pain_killers_mdfr.html#a97b1b398e0e2e6cce5972768a7b8f39f":[2,0,2054,0]
 };

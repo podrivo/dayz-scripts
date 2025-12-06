@@ -1,5 +1,6 @@
 var NAVTREEINDEX73 =
 {
+"d5/d80/class_day_z_player_implement_aiming.html#af01fcbef0d9da3333d75edb37248d345":[2,0,1209,24],
 "d5/d80/class_day_z_player_implement_aiming.html#afb7f7d08848cf7c25e130e1217d36c53":[2,0,1209,9],
 "d5/d80/class_day_z_player_implement_aiming.html#afeef355d0894e1f3129d668a504c8774":[2,0,1209,53],
 "d5/d80/class_tree_hard__t___fraxinus_excelsior__2f.html":[2,0,2678],
@@ -104,7 +105,7 @@ var NAVTREEINDEX73 =
 "d5/d8a/class_script_r_p_c.html#a51d5befb8fcfc41c68450a21ac885626":[2,0,2342,1],
 "d5/d8a/class_script_r_p_c.html#a93832f031a26b870b23657fe58d866c2":[2,0,2342,2],
 "d5/d8a/class_script_r_p_c.html#ae4f58170ae23e9ef219c9d7138f89777":[2,0,2342,0],
-"d5/d8b/_disinfect_item_8c.html":[3,0,0,3,0,22,0,101],
+"d5/d8b/_disinfect_item_8c.html":[3,0,0,3,0,22,0,102],
 "d5/d8c/_crooked_nose_8c.html":[3,0,0,3,1,10,3,41],
 "d5/d8c/_mountain_bag___color_base_8c.html":[3,0,0,3,1,10,3,127],
 "d5/d8c/_split_item_utils_8c.html":[3,0,0,4,0,5,10],
@@ -125,7 +126,7 @@ var NAVTREEINDEX73 =
 "d5/d92/class_padded_gloves___brown.html":[2,0,2050],
 "d5/d92/classstring.html":[1,10,0],
 "d5/d93/_bot___test_attach_and_drop_cycle_8c.html":[3,0,0,3,4,1,3],
-"d5/d93/_sawoff_magnum_8c.html":[3,0,0,3,0,22,0,200],
+"d5/d93/_sawoff_magnum_8c.html":[3,0,0,3,0,22,0,201],
 "d5/d93/class_tree_soft__t___fagus_sylvatica__1fd__summer.html":[2,0,2779],
 "d5/d94/_action_de_craft_witch_hood_coif_8c.html":[3,0,0,3,0,30,1,0,34],
 "d5/d94/_action_de_craft_witch_hood_coif_8c.html#a00cda41fe9dd093059da5c4b83b591bc":[3,0,0,3,0,30,1,0,34,6],
@@ -233,7 +234,7 @@ var NAVTREEINDEX73 =
 "d5/d98/group___math.html#gaf6caba2d6f3900fd01a0ae6d3df14ccd":[1,4,49],
 "d5/d98/group___math.html#gaf7ab64e17ea15bbc06c2b0de8d4af6ad":[1,4,4],
 "d5/d98/group___math.html#gafb455a5c88958a7219b1c63d2d377766":[1,4,14],
-"d5/d99/_paint_a_k_wood_bttstck_black_8c.html":[3,0,0,3,0,22,0,125],
+"d5/d99/_paint_a_k_wood_bttstck_black_8c.html":[3,0,0,3,0,22,0,126],
 "d5/d99/class_day_z_creature_anim_interface.html":[2,0,1188],
 "d5/d99/class_day_z_creature_anim_interface.html#a0347bea9cde467ada5dd1cb2d950cd61":[2,0,1188,6],
 "d5/d99/class_day_z_creature_anim_interface.html#a2581e8b3f70aebb86003a64e8c23ac65":[2,0,1188,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX73 =
 "d5/d99/group___car_contact_constants.html#ga33128a57a1e56cba582c5f8820d9059d":[1,24,15,1],
 "d5/d99/group___car_contact_constants.html#ga6317d2fae38dbdcdca43115b5f4b6cec":[1,24,15,0],
 "d5/d99/group___car_contact_constants.html#gaf37a89833b4c918510402091a122b28f":[1,24,15,2],
-"d5/d9a/_blood_test_kit_8c.html":[3,0,0,3,1,10,7,7,1],
-"d5/d9a/class_player_stat_record.html":[2,0,2140]
+"d5/d9a/_blood_test_kit_8c.html":[3,0,0,3,1,10,7,7,1]
 };

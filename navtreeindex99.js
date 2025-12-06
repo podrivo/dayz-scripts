@@ -1,5 +1,6 @@
 var NAVTREEINDEX99 =
 {
+"d7/da5/_impact_effects_8c.html#a82b790dbf15556b6ae21efbf74bfd3f6":[3,0,0,2,54,3],
 "d7/da5/_impact_effects_8c.html#a95d9484423b4997bf70860a1bb683c32":[3,0,0,2,54,11],
 "d7/da5/_impact_effects_8c.html#aa6a6f4f5501e1938306a8d3da0800888":[3,0,0,2,54,5],
 "d7/da5/_impact_effects_8c.html#aace7082dc70b17e8e6dc14c9a7293015":[3,0,0,2,54,12],
@@ -13,7 +14,7 @@ var NAVTREEINDEX99 =
 "d7/da6/class_symptom_sound_event_base.html":[2,0,2576],
 "d7/da6/class_symptom_sound_event_base.html#aee071a1a310af05c0b75bb2431ebbbf9":[2,0,2576,0],
 "d7/da6/class_symptom_sound_event_base.html#af35b69f5bbb3b9f4fd40d3177c99fc45":[2,0,2576,1],
-"d7/da8/_upgrade_torch_with_lard_8c.html":[3,0,0,3,0,22,0,213],
+"d7/da8/_upgrade_torch_with_lard_8c.html":[3,0,0,3,0,22,0,214],
 "d7/da9/_toxicity_8c.html":[3,0,0,3,0,18,0,27],
 "d7/dab/_bandana_mask___color_base_8c.html":[3,0,0,3,1,10,3,13],
 "d7/dab/class_mountain_bag___color_base.html":[2,0,1970],
@@ -88,7 +89,7 @@ var NAVTREEINDEX99 =
 "d7/db3/class_action_animate_seats.html#ac606356eec5274b943e399d1261b3d15":[2,0,9,3],
 "d7/db3/class_hit___undefined.html":[2,0,1573],
 "d7/db3/class_hit___undefined.html#aa02bcd18f1e2f1c1878abec5720d06d1":[2,0,1573,0],
-"d7/db6/_prepare_walleye_pollock_8c.html":[3,0,0,3,0,22,0,185],
+"d7/db6/_prepare_walleye_pollock_8c.html":[3,0,0,3,0,22,0,186],
 "d7/db6/_salmonella_8c.html":[3,0,0,3,0,18,0,1,9],
 "d7/db7/class_cfg_slots_1_1_slot___vest_holster.html":[2,0,1038,345],
 "d7/db7/class_cfg_slots_1_1_slot___vest_holster.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1038,345,0],
@@ -118,8 +119,8 @@ var NAVTREEINDEX99 =
 "d7/db7/class_weapon_event_base.html#a8d598015e77bfb89c06ffe2717e9c1bf":[2,0,2938,24],
 "d7/db7/class_weapon_event_base.html#a91336b0bf9d52079afa4d892a4a5e26a":[2,0,2938,21],
 "d7/db7/class_weapon_event_base.html#aac15526532fd9fe0a3a1d0e61a17467f":[2,0,2938,12],
-"d7/db7/class_weapon_event_base.html#ab73c2ebe376783fdb96d10e5b71f74ba":[2,0,2938,30],
 "d7/db7/class_weapon_event_base.html#ab73c2ebe376783fdb96d10e5b71f74ba":[2,0,2938,31],
+"d7/db7/class_weapon_event_base.html#ab73c2ebe376783fdb96d10e5b71f74ba":[2,0,2938,30],
 "d7/db7/class_weapon_event_base.html#abdf12b70df556dba19c841fbf9220d6e":[2,0,2938,2],
 "d7/db7/class_weapon_event_base.html#abf68c50ff557f0a6efb5e25659b17c70":[2,0,2938,29],
 "d7/db7/class_weapon_event_base.html#acc352afbf7deb15412940a3808911daa":[2,0,2938,5],
@@ -133,7 +134,7 @@ var NAVTREEINDEX99 =
 "d7/db7/class_weapon_event_base.html#aef33c42cd9f2c3506278326238dcc9a6":[2,0,2938,35],
 "d7/db7/class_weapon_event_base.html#af4cba28a3819ff626db27302ade448f9":[2,0,2938,11],
 "d7/db7/class_weapon_event_base.html#af4cd8303af888b07a82edfb09e536a45":[2,0,2938,9],
-"d7/db9/_craft_long_torch_8c.html":[3,0,0,3,0,22,0,46],
+"d7/db9/_craft_long_torch_8c.html":[3,0,0,3,0,22,0,47],
 "d7/db9/_pepper_seeds_pack_8c.html":[3,0,0,3,1,10,10,1],
 "d7/db9/class_cupids_bolt_simulation.html":[2,0,1163],
 "d7/db9/class_cupids_bolt_simulation.html#a55954ae86bcb7da4d3f68a678421d892":[2,0,1163,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX99 =
 "d7/dbe/class_world_data_weather_settings.html#a4ed64efa37c17c786d024892e93bae87":[2,0,2997,10],
 "d7/dbe/class_world_data_weather_settings.html#a6ccd26c7c0504a39a185b7794c3b5f3d":[2,0,2997,6],
 "d7/dbe/class_world_data_weather_settings.html#a8468dda00acbcdbf05db7d679ea0d8ca":[2,0,2997,0],
-"d7/dbe/class_world_data_weather_settings.html#a922510611118139760255e9d1739d2a4":[2,0,2997,12],
-"d7/dbe/class_world_data_weather_settings.html#a94daae6f24880d3c38752ffa6a5c0f14":[2,0,2997,23]
+"d7/dbe/class_world_data_weather_settings.html#a922510611118139760255e9d1739d2a4":[2,0,2997,12]
 };

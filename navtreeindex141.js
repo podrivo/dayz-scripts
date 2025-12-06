@@ -1,5 +1,6 @@
 var NAVTREEINDEX141 =
 {
+"da/dc9/_head_cover__improvised_8c.html":[3,0,0,3,1,10,3,71],
 "da/dca/_weapon_fire_last_8c.html":[3,0,0,3,1,6,2,0,18],
 "da/dcb/_day_z_player_cameras_8c.html":[3,0,0,3,1,11,1,4],
 "da/dcd/_action_fold_bandana_to_head_8c.html":[3,0,0,3,0,30,1,3,23],
@@ -93,7 +94,7 @@ var NAVTREEINDEX141 =
 "da/dd4/group___item_temperature.html#gafc458e18bee5b1e756c8385db0593d2c":[1,24,19,5],
 "da/dd4/group___item_temperature.html#gafc828af0ac77ffc7938473043a042cfe":[1,24,19,8],
 "da/dd4/group___item_temperature.html#gafe470d983e103301a47e0b2b2cdc4345":[1,24,19,3],
-"da/dd5/_paint_ghillie_bushrag_green_8c.html":[3,0,0,3,0,22,0,142],
+"da/dd5/_paint_ghillie_bushrag_green_8c.html":[3,0,0,3,0,22,0,143],
 "da/dd5/class_game_options.html":[2,0,1437],
 "da/dd5/class_game_options.html#a057d9d7daeb210c7341ea522eea7d7f1":[2,0,1437,3],
 "da/dd5/class_game_options.html#a4e153150f9432a7cffa79b887f817680":[2,0,1437,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX141 =
 "da/ddc/_day_z_player_inventory_8c.html#ac7881512061aab4a17eefe7bc5531257":[3,0,0,3,4,2,1,67],
 "da/ddc/_day_z_player_inventory_8c.html#ac7c88135b5bf77cf8dceb109fe075f9c":[3,0,0,3,4,2,1,21],
 "da/ddc/_day_z_player_inventory_8c.html#ac9cdbb9853d88fecd9f1a69608a2232c":[3,0,0,3,4,2,1,50],
-"da/ddc/_day_z_player_inventory_8c.html#ace1c98fb1485360827f153558e8f1fa7":[3,0,0,3,4,2,1,19],
-"da/ddc/_day_z_player_inventory_8c.html#ad0e78b161731222ea7c0f161ea126aba":[3,0,0,3,4,2,1,12]
+"da/ddc/_day_z_player_inventory_8c.html#ace1c98fb1485360827f153558e8f1fa7":[3,0,0,3,4,2,1,19]
 };

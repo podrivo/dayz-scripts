@@ -1,5 +1,6 @@
 var NAVTREEINDEX55 =
 {
+"d4/d49/class_plugin_config_handler.html#ad5490ef30a08797fa34100fdf43a1008":[2,0,2146,125],
 "d4/d49/class_plugin_config_handler.html#ad80257afc6e91c652729fe5f96b00ddf":[2,0,2146,45],
 "d4/d49/class_plugin_config_handler.html#ad8b65c6a0407be8f91da587160f1ed9f":[2,0,2146,188],
 "d4/d49/class_plugin_config_handler.html#ad9ef65391a8a80b71c91be48ed235116":[2,0,2146,190],
@@ -159,7 +160,7 @@ var NAVTREEINDEX55 =
 "d4/d58/class_spawn_data_converter.html#a67c1e53f96cf5aca3cdfbfcc1154e17e":[2,0,2444,0],
 "d4/d58/class_spawn_data_converter.html#a7e41c657801889e4b60c34ce23078180":[2,0,2444,1],
 "d4/d59/_crash_base_8c.html":[3,0,0,3,1,1,7],
-"d4/d59/_de_craft_carrier_holster_8c.html":[3,0,0,3,0,22,0,78],
+"d4/d59/_de_craft_carrier_holster_8c.html":[3,0,0,3,0,22,0,79],
 "d4/d59/class_cfg_slots_1_1_slot__weapon_buttstock_saiga.html":[2,0,1038,364],
 "d4/d59/class_cfg_slots_1_1_slot__weapon_buttstock_saiga.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1038,364,0],
 "d4/d59/class_cfg_slots_1_1_slot__weapon_buttstock_saiga.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1038,364,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX55 =
 "d4/d5c/_dynamic_music_player_8c.html#acec2388084aa3580523b1d494d504f1a":[3,0,0,2,18,4,0,24],
 "d4/d5c/_dynamic_music_player_8c.html#adee56cdf36eabbd3dda5df74bc4af4a0":[3,0,0,2,18,4,0,70],
 "d4/d5c/_dynamic_music_player_8c.html#adfec48d6c278c93ceb3b0a2df52ccb4f":[3,0,0,2,18,4,0,67],
-"d4/d5c/_dynamic_music_player_8c.html#ae51eeca92a0efe73fa38ac08372df80b":[3,0,0,2,18,4,0,34],
-"d4/d5c/_dynamic_music_player_8c.html#ae7459e31b39a95a0d29d6afc274652a9":[3,0,0,2,18,4,0,27]
+"d4/d5c/_dynamic_music_player_8c.html#ae51eeca92a0efe73fa38ac08372df80b":[3,0,0,2,18,4,0,34]
 };

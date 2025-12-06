@@ -1,5 +1,6 @@
 var NAVTREEINDEX117 =
 {
+"d8/dda/class_tripod_base.html#af9e16efe72e6fc062e782c937401fa39":[2,0,2824,1],
 "d8/dda/class_tripod_base.html#afa39b7c4d3d085ef8514a87c32b81a4d":[2,0,2824,6],
 "d8/ddb/_action_cover_head_target_8c.html":[3,0,0,3,0,30,1,0,15],
 "d8/ddb/class_cfg_slots_1_1_slot___headgear.html":[2,0,1038,97],
@@ -248,6 +249,5 @@ var NAVTREEINDEX117 =
 "d8/df5/_injury_handler_8c.html#a8cac4f18c7e786bff4e9f626c363cff2":[3,0,0,3,0,46,31],
 "d8/df5/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfa":[3,0,0,3,0,46,2],
 "d8/df5/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfaa10acf7777823e1491dc0ede7d7f8238b":[3,0,0,3,0,46,2,4],
-"d8/df5/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfaa58b3d3ed02142f09d5f86daef4ccb5fc":[3,0,0,3,0,46,2,3],
-"d8/df5/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfaaa511233a495e23b11960850d5b86abe4":[3,0,0,3,0,46,2,2]
+"d8/df5/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfaa58b3d3ed02142f09d5f86daef4ccb5fc":[3,0,0,3,0,46,2,3]
 };

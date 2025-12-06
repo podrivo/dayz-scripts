@@ -1,5 +1,6 @@
 var NAVTREEINDEX89 =
 {
+"d6/daf/mission_gameplay_8c.html":[3,0,0,4,1,4],
 "d6/db1/_burlap_sack_cover_8c.html":[3,0,0,3,1,10,3,23],
 "d6/db3/_misc___tire_pile___burning_8c.html":[3,0,0,3,1,1,3,6],
 "d6/db4/_credits_department_element_8c.html":[3,0,0,4,0,6,2,0,0],
@@ -122,7 +123,7 @@ var NAVTREEINDEX89 =
 "d6/dbd/_action_eat_8c.html#ab80733e1a8c145c8ee7b04476d535d72":[3,0,0,3,0,30,1,0,60,7],
 "d6/dbd/_action_eat_8c.html#acd48fa84a494b2c36a8ff81dfa773ba4":[3,0,0,3,0,30,1,0,60,5],
 "d6/dbd/class_tree_soft__t__quercus_robur__1s.html":[2,0,2812],
-"d6/dbe/_prepare_fox_8c.html":[3,0,0,3,0,22,0,181],
+"d6/dbe/_prepare_fox_8c.html":[3,0,0,3,0,22,0,182],
 "d6/dc1/_macrolepiota_mushroom_8c.html":[3,0,0,3,1,10,5,37],
 "d6/dc4/_test_framework_8c.html":[3,0,0,2,18,12],
 "d6/dc4/_test_framework_8c.html#a023f5a03e25ac2050fe65109816186ea":[3,0,0,2,18,12,16],
@@ -162,7 +163,7 @@ var NAVTREEINDEX89 =
 "d6/dc5/_random_generator_sync_manager_8c.html#afe3bb26b57097f9a390bb1e8de15d84aa928f33270be19855038d0245a0fa06a1":[3,0,0,3,0,66,0,5],
 "d6/dc5/_random_generator_sync_manager_8c.html#afe3bb26b57097f9a390bb1e8de15d84aaa5c4100a0f1a10b1ac57a4004adf62f3":[3,0,0,3,0,66,0,3],
 "d6/dc5/_random_generator_sync_manager_8c.html#afe3bb26b57097f9a390bb1e8de15d84aaf3f26c2893d0ce8c29311ac5f7cf1cf2":[3,0,0,3,0,66,0,2],
-"d6/dc5/_sawoff_mosin_8c.html":[3,0,0,3,0,22,0,201],
+"d6/dc5/_sawoff_mosin_8c.html":[3,0,0,3,0,22,0,202],
 "d6/dc5/class_inventory_location.html":[2,0,1655],
 "d6/dc5/class_inventory_location.html#a0303845820cf60f72712358eaabe6005":[2,0,1655,22],
 "d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956":[2,0,1655,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX89 =
 "d6/dd3/_p_p_e_f_x_a_a_8c.html":[3,0,0,2,15,0,0,8],
 "d6/dd4/class_action_extinguish_fireplace_by_liquid_c_b.html":[2,0,211],
 "d6/dd4/class_action_extinguish_fireplace_by_liquid_c_b.html#a17426a0b43f924bb524cfe8c57a3e34b":[2,0,211,1],
-"d6/dd4/class_action_extinguish_fireplace_by_liquid_c_b.html#a86d266869cf326793c681309d3fde35e":[2,0,211,2],
-"d6/dd4/class_action_extinguish_fireplace_by_liquid_c_b.html#accfb238782010198bdb5128a8ee44300":[2,0,211,0]
+"d6/dd4/class_action_extinguish_fireplace_by_liquid_c_b.html#a86d266869cf326793c681309d3fde35e":[2,0,211,2]
 };
