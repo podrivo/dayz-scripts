@@ -7,7 +7,7 @@ This is a DayZ Scripts Documentation, made for those wandering in the DayZ moddi
 
 Unfortunately, you won't find an official detailed documentation about this subject. For most of the things you'll need to get started on scripting, the community content is your best friend. Quick tip: once you join a Discord channel, you can check pinned messages for frequently asked questions.
 
-Latest version: [v1.28.161464](https://forums.dayz.com/topic/266370-stable-update-128/?tab=comments#comment-2504706)
+Latest version: [v1.29.162510](https://forums.dayz.com/topic/266379-stable-update-129/)
 
 
 Official links
@@ -31,6 +31,9 @@ Community links
 
 PC Stable Changelog
 --
+
+Version 1.29
+- [Update 1 · v1.29.162510 · Apr 08, 2026](https://forums.dayz.com/topic/266379-stable-update-129/)
 
 Version 1.28
 - [Update 5 · v1.28.161464 · Dec 04, 2025](https://forums.dayz.com/topic/266370-stable-update-128/?tab=comments#comment-2504706)
