@@ -33,7 +33,7 @@ var searchData=
   ['file_30',['FILE',['../d7/d75/_particle_source_8c.html#a315d50e8cc1109eee34384deb978fa27',1,'ParticleSource.c']]],
   ['file_5fname_31',['FILE_NAME',['../d4/d49/class_plugin_config_handler.html#ab09b786a5aa6d3cbee5111fbc4d80df7',1,'PluginConfigHandler']]],
   ['file_5froot_32',['FILE_ROOT',['../dc/dc4/class_plugin_local_profile.html#a723c6c25d245ba5a3f00ad35263df97f',1,'PluginLocalProfile::FILE_ROOT'],['../d4/d49/class_plugin_config_handler.html#a66674d062378251adac51bd46611b964',1,'PluginConfigHandler::FILE_ROOT']]],
-  ['file_5froot_5fscenes_33',['FILE_ROOT_SCENES',['../d4/d49/class_plugin_config_handler.html#a9d81a4eddafb0876db46250cde99621e',1,'PluginConfigHandler::FILE_ROOT_SCENES'],['../dc/dc4/class_plugin_local_profile.html#adcb3859e3815f136cebfd4cdca4d1564',1,'PluginLocalProfile::FILE_ROOT_SCENES']]],
+  ['file_5froot_5fscenes_33',['FILE_ROOT_SCENES',['../dc/dc4/class_plugin_local_profile.html#adcb3859e3815f136cebfd4cdca4d1564',1,'PluginLocalProfile::FILE_ROOT_SCENES'],['../d4/d49/class_plugin_config_handler.html#a9d81a4eddafb0876db46250cde99621e',1,'PluginConfigHandler::FILE_ROOT_SCENES']]],
   ['fill_5fliquid_34',['FILL_LIQUID',['../d9/da2/class_u_a_quantity_consumed.html#af14bfb320b4b75e172020007bc7ce0eb',1,'UAQuantityConsumed']]],
   ['fill_5fsnow_35',['FILL_SNOW',['../d9/da2/class_u_a_quantity_consumed.html#a892ee4773dd70107232273fec289c1dc',1,'UAQuantityConsumed']]],
   ['filled_36',['FILLED',['../d7/d5d/class_inventory___base.html#aeab42a1668856606e45a03c5189ff7ad',1,'Inventory_Base::FILLED'],['../d0/d55/class_action_fill_object.html#a5e9b0590888135969e5f4bd4486ee4b9',1,'ActionFillObject::FILLED']]],
@@ -70,8 +70,8 @@ var searchData=
   ['fireworks_5fexplosion_5fyellow_67',['FIREWORKS_EXPLOSION_YELLOW',['../dd/dd2/class_particle_list.html#a384535c3d0dd6245e37d1491dd1f2dd5',1,'ParticleList']]],
   ['fireworks_5ffuse_68',['FIREWORKS_FUSE',['../dd/dd2/class_particle_list.html#a8194a0bbffcfa8b8c3bc385028d6c044',1,'ParticleList']]],
   ['fireworks_5fshot_69',['FIREWORKS_SHOT',['../dd/dd2/class_particle_list.html#aa0f4ab7599b8390fb49300d6e34a3b72',1,'ParticleList']]],
-  ['first_70',['FIRST',['../d9/d06/_car_8c.html#ab389c83c7858103858a35c23ab0d3425',1,'FIRST:&#160;PluginRecipesManagerBase.c'],['../d1/d9d/_plugin_recipes_manager_base_8c.html#a6a7856cca1833641e731676636b193f1',1,'FIRST:&#160;PluginRecipesManagerBase.c']]],
-  ['first_71',['First',['../da/d1f/_double_barrel___base_8c.html#a7b0705f7424c02739891d0c65447ecc1',1,'DoubleBarrel_Base.c']]],
+  ['first_70',['First',['../da/d1f/_double_barrel___base_8c.html#a7b0705f7424c02739891d0c65447ecc1',1,'DoubleBarrel_Base.c']]],
+  ['first_71',['FIRST',['../d9/d06/_car_8c.html#ab389c83c7858103858a35c23ab0d3425',1,'FIRST:&#160;PluginRecipesManagerBase.c'],['../d1/d9d/_plugin_recipes_manager_base_8c.html#a6a7856cca1833641e731676636b193f1',1,'FIRST:&#160;PluginRecipesManagerBase.c']]],
   ['first_5fevent_5fcheck_5fdelay_72',['FIRST_EVENT_CHECK_DELAY',['../d8/d26/_spooky_area_misc_8c.html#a086dbdac1d90dcc46ce05f76df61ca0c',1,'SpookyAreaMisc.c']]],
   ['firstcontact_73',['FIRSTCONTACT',['../dc/d49/group___diag_menu.html#gaeb6b14a836d8cfc2698d5cc39198434c',1,'EnDebug.c']]],
   ['fish_5fagility_74',['FISH_AGILITY',['../d2/ddb/_fishing_rod___base_8c.html#a3e65526190db71d77a63cb735720e095',1,'FishingRod_Base.c']]],
@@ -124,7 +124,7 @@ var searchData=
   ['fourth_121',['FOURTH',['../d9/d06/_car_8c.html#a39df6567343ac4b4e473b9d418d44a2a',1,'Car.c']]],
   ['fov_122',['FOV',['../dd/da1/class_plugin_base.html#a8f83b1fde5a41ec40b3a5c01d05fb40e',1,'PluginBase']]],
   ['fraction_123',['Fraction',['../df/d60/group___ocean.html#gae2ee62d7437b30ba49c67e1a18305508',1,'TraceContact::Fraction'],['../df/d60/group___ocean.html#gae2ee62d7437b30ba49c67e1a18305508',1,'Fraction:&#160;EnWorld.c']]],
-  ['frame_124',['Frame',['../d8/d4e/group___constraints.html#ga406d378e9919fc736de9df90979c3a7f',1,'PhysicsGeomDef']]],
+  ['frame_124',['Frame',['../d5/d43/class_physics_geom_def.html#a3a00f0819fc309063abc1a1b994e9ec5',1,'PhysicsGeomDef']]],
   ['free_5fcamera_5fcrosshair_125',['FREE_CAMERA_CROSSHAIR',['../d4/d49/class_plugin_config_handler.html#ac8d543ee1829ea87e7a7f448623deb3f',1,'PluginConfigHandler']]],
   ['fresh_126',['FRESH',['../dd/d68/class_u_a_water_type.html#af1b3f8f82c3eaa286956e1345175e71f',1,'UAWaterType']]],
   ['fswap_127',['FSWAP',['../d9/ddf/class_inventory_combination_flags.html#a0556ef17767440421e96c9b79a2ac730',1,'InventoryCombinationFlags::FSWAP'],['../d1/dab/_inventory_combination_flags_8c.html#a0556ef17767440421e96c9b79a2ac730',1,'FSWAP:&#160;InventoryCombinationFlags.c']]],
@@ -138,5 +138,6 @@ var searchData=
   ['full_5fsprint_5fdelay_5fdefault_135',['FULL_SPRINT_DELAY_DEFAULT',['../d3/def/class_player_constants.html#a41e541582946b5592dbb2e3280fc7e2b',1,'PlayerConstants']]],
   ['full_5fsprint_5fdelay_5ffrom_5fcrouch_136',['FULL_SPRINT_DELAY_FROM_CROUCH',['../d3/def/class_player_constants.html#aa875a47cf63db0997e6bd293471ab967',1,'PlayerConstants']]],
   ['full_5fsprint_5fdelay_5ffrom_5fprone_137',['FULL_SPRINT_DELAY_FROM_PRONE',['../d3/def/class_player_constants.html#a9dfef30d913d942a0ae420d29c140fd8',1,'PlayerConstants']]],
-  ['fx_5frange_5fmax_5fmult_138',['FX_RANGE_MAX_MULT',['../d1/d48/class_grenade___base.html#a488a29fb6f29c2735084e6ceb1253977',1,'Grenade_Base']]]
+  ['fullurl_138',['fullUrl',['../dd/d94/class_json_data_news_article.html#a66acadc1ce9a9b17b8dfccebfa2eb182',1,'JsonDataNewsArticle']]],
+  ['fx_5frange_5fmax_5fmult_139',['FX_RANGE_MAX_MULT',['../d1/d48/class_grenade___base.html#a488a29fb6f29c2735084e6ceb1253977',1,'Grenade_Base']]]
 ];

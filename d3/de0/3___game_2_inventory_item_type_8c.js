@@ -1,4 +1,27 @@
 var 3___game_2_inventory_item_type_8c =
 [
-    [ "InventoryItemType", "dd/d2d/class_inventory_item_type.html", "dd/d2d/class_inventory_item_type" ]
+    [ "InventoryItemSoundBase", "d1/d42/class_inventory_item_sound_base.html", "d1/d42/class_inventory_item_sound_base" ],
+    [ "InventoryItemSoundDetach", "d4/dce/class_inventory_item_sound_detach.html", "d4/dce/class_inventory_item_sound_detach" ],
+    [ "GetAttachSoundEvent", "d3/de0/3___game_2_inventory_item_type_8c.html#a7a05ed1e375c6edfe8e58fc90da4ea71", null ],
+    [ "GetAttachSoundSets", "d3/de0/3___game_2_inventory_item_type_8c.html#ac3d99062f99afb7eb2e6f0728070dd1b", null ],
+    [ "GetDetachSoundEvent", "d3/de0/3___game_2_inventory_item_type_8c.html#ab251053bc9f5d1f340d4292a6d75f6ce", null ],
+    [ "GetDetachSoundSets", "d3/de0/3___game_2_inventory_item_type_8c.html#ae5e40898c33e1acdc14ece046f77a0ee", null ],
+    [ "GetSlotAttachSoundSet", "d3/de0/3___game_2_inventory_item_type_8c.html#aeaf8d5b5c9e17f2e5ce52ed32ecbd1df", null ],
+    [ "GetSlotDetachSoundSet", "d3/de0/3___game_2_inventory_item_type_8c.html#a343eed09c19ccccc32fb7683eae0b819", null ],
+    [ "GetSoundEvent", "d3/de0/3___game_2_inventory_item_type_8c.html#a1f577b8e745d930f0792df0a212cd5c3", null ],
+    [ "InventoryItemSoundBase", "d3/de0/3___game_2_inventory_item_type_8c.html#af455645272806adc828e02cecf30bb73", null ],
+    [ "InventoryItemType", "d3/de0/3___game_2_inventory_item_type_8c.html#ab722bcc05abe20b037fd48c43d055d54", null ],
+    [ "LoadSoundEvents", "d3/de0/3___game_2_inventory_item_type_8c.html#a18414e54cb9f1137e4f7848d8cb2ada9", null ],
+    [ "SetAttachSoundEvent", "d3/de0/3___game_2_inventory_item_type_8c.html#a14fd03ec5e75bf4bff6025fc181ff8c7", null ],
+    [ "SetDetachSoundEvent", "d3/de0/3___game_2_inventory_item_type_8c.html#abab30b6a846a115bad91ea7f871f2070", null ],
+    [ "~InventoryItemType", "d3/de0/3___game_2_inventory_item_type_8c.html#a17575311c8f51fd8086434715fa74cee", null ],
+    [ "int", "d3/de0/3___game_2_inventory_item_type_8c.html#aa2bc7913c09449f40513614038e65b8c", null ],
+    [ "m_ActionSoundEvents", "d3/de0/3___game_2_inventory_item_type_8c.html#a2ee587af7b22241d7cf3b13ecbcac9af", null ],
+    [ "m_AnimSoundEvents", "d3/de0/3___game_2_inventory_item_type_8c.html#a58029e16326d96fd3dc25b5dee6bd280", null ],
+    [ "m_animSoundEvents", "d3/de0/3___game_2_inventory_item_type_8c.html#a54b9e7d49865e8ded12dc8581e9753f9", null ],
+    [ "m_AttachSoundSets", "d3/de0/3___game_2_inventory_item_type_8c.html#a59a2fc93cac6c92c0f298f49fdac754d", null ],
+    [ "m_CfgPath", "d3/de0/3___game_2_inventory_item_type_8c.html#a4379bab4161ed54f745515de3e921c3c", null ],
+    [ "m_DetachSoundSets", "d3/de0/3___game_2_inventory_item_type_8c.html#a458a5a271e93fda1fd213d6603ed54e7", null ],
+    [ "m_DropSoundSet", "d3/de0/3___game_2_inventory_item_type_8c.html#a244804790459c6f7916ceb9150e88aa6", null ],
+    [ "m_Name", "d3/de0/3___game_2_inventory_item_type_8c.html#a3053a6d8752e323caa7797c18a0083b0", null ]
 ];

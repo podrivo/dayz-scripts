@@ -26,6 +26,8 @@ var class_hand_event_base =
     [ "GetDst", "d8/d9e/class_hand_event_base.html#aec421888e018948550bc573a1f457bd7", null ],
     [ "GetDst", "d8/d9e/class_hand_event_base.html#aec421888e018948550bc573a1f457bd7", null ],
     [ "GetDst", "d8/d9e/class_hand_event_base.html#aec421888e018948550bc573a1f457bd7", null ],
+    [ "GetSecondDst", "d8/d9e/class_hand_event_base.html#ad9f62886d8a242767b1b1e4e74a11947", null ],
+    [ "GetSecondSrc", "d8/d9e/class_hand_event_base.html#a0c261edf5067908bcd83f0fcadcf67e1", null ],
     [ "GetSecondSrcEntity", "d8/d9e/class_hand_event_base.html#a4bb753078907c702184f3d78a37d20ad", null ],
     [ "HandAnimEventChanged", "d8/d9e/class_hand_event_base.html#a3290d31a2edef0f11671cd12b3e007bd", null ],
     [ "HandEvengReplaceWithNewBase", "d8/d9e/class_hand_event_base.html#a8e2963591bf368d0ff19a4a52cbf9741", null ],

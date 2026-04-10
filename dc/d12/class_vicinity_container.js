@@ -24,10 +24,15 @@ var class_vicinity_container =
     [ "UpdateInterval", "dc/d12/class_vicinity_container.html#a42e4b360bf0d3f641767685cd5089432", null ],
     [ "DISTANCE_TO_ENTITIES", "dc/d12/class_vicinity_container.html#a378c08e7a16c80501f36f4b1051da777", null ],
     [ "DISTANCE_TO_THE_REST", "dc/d12/class_vicinity_container.html#a8eed1e36a608d3a29e3f23ca639ee876", null ],
+    [ "ITEMS_PER_COLUMN_MAX", "dc/d12/class_vicinity_container.html#a61b70abce20ed38afdadeea2ba55c37c", null ],
+    [ "m_CargoScrollWidget", "dc/d12/class_vicinity_container.html#a6e63ebd74bc991012b4ad6162fded511", null ],
     [ "m_IsProcessing", "dc/d12/class_vicinity_container.html#a24d42cb9c782221cc329216d8b4076d4", null ],
     [ "m_ShowedCargos", "dc/d12/class_vicinity_container.html#a9ff9ea661f7f82e4b0f2ac0ee8d976f1", null ],
     [ "m_ShowedItemIcons", "dc/d12/class_vicinity_container.html#ade09e34d41c58f53c612549b9e861ed7", null ],
     [ "m_ShowedItems", "dc/d12/class_vicinity_container.html#a11b445e15dd6f9d689c4ed34fe387656", null ],
     [ "m_ShowedItemsIDs", "dc/d12/class_vicinity_container.html#a107bb497ad5f3303cb5ae3f4010eac45", null ],
-    [ "m_VicinityIconsContainer", "dc/d12/class_vicinity_container.html#a6988181738527ec92676774485d3b3a9", null ]
+    [ "m_VicinityIconsContainer", "dc/d12/class_vicinity_container.html#a6988181738527ec92676774485d3b3a9", null ],
+    [ "VICINITY_CARGO_SCROLLER_HEIGHT_MAX", "dc/d12/class_vicinity_container.html#a47ef1a0cdff5f696d52f7d2f4d62fa2a", null ],
+    [ "VICINITY_CARGO_SCROLLER_HEIGHT_MID", "dc/d12/class_vicinity_container.html#a2c931ba3281e67a2786dc6b7718f78a2", null ],
+    [ "VICINITY_CARGO_SCROLLER_HEIGHT_MIN", "dc/d12/class_vicinity_container.html#afbc1ac66233030245774c042ddef1511", null ]
 ];

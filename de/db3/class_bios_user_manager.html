@@ -135,6 +135,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:af941c65d13611a096b4f85541c77cfe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1db27d1c974a702116b7d779a238607"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/db3/class_bios_user_manager.html#ae1db27d1c974a702116b7d779a238607">SelectUserEx</a> (<a class="el" href="../../d2/d9f/class_bios_user.html">BiosUser</a> user)</td></tr>
 <tr class="separator:ae1db27d1c974a702116b7d779a238607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b0b6c19f9543fb7dac34d23a845c2a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/db3/class_bios_user_manager.html#a3b0b6c19f9543fb7dac34d23a845c2a9">CheckUserSwitchResult</a> (<a class="el" href="../../d2/d9f/class_bios_user.html">BiosUser</a> expectedUser)</td></tr>
+<tr class="separator:a3b0b6c19f9543fb7dac34d23a845c2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad48d82e0f69371af0285c8872888413d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/db3/class_bios_user_manager.html#ad48d82e0f69371af0285c8872888413d">OnUserDatabaseId</a> (<a class="el" href="../../d5/d92/classstring.html">string</a> dbID, <a class="el" href="../../d6/da5/_b_i_o_s_error_module_8c.html#a112301e9d14b76a1669e09f081559cd1">EBiosError</a> error)</td></tr>
 <tr class="memdesc:ad48d82e0f69371af0285c8872888413d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function.  <br /></td></tr>
 <tr class="separator:ad48d82e0f69371af0285c8872888413d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,6 +171,36 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a0c45a69d2c89e86819b56e3b1698cfdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3b0b6c19f9543fb7dac34d23a845c2a9" name="a3b0b6c19f9543fb7dac34d23a845c2a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b0b6c19f9543fb7dac34d23a845c2a9">&#9670;&#160;</a></span>CheckUserSwitchResult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CheckUserSwitchResult </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d9f/class_bios_user.html">BiosUser</a>&#160;</td>
+          <td class="paramname"><em>expectedUser</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d8/d5d/class_notification_system.html#ae5c4b021aa2d40e1a858e47f26014569">NotificationSystem::AddNotification()</a>, <a class="el" href="../../d8/d5d/class_notification_system.html#ae1218d012c905599d4d71b7ecd4148e2">NotificationSystem::DEFAULT_TIME_DISPLAYED</a>, and <a class="el" href="../../de/db3/class_bios_user_manager.html#ad21c93273b447c88260a8ccda5d17f0e">GetSelectedUser()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/db3/class_bios_user_manager.html#ae1db27d1c974a702116b7d779a238607">SelectUserEx()</a>.</p>
+
+</div>
+</div>
 <a id="ad21c93273b447c88260a8ccda5d17f0e" name="ad21c93273b447c88260a8ccda5d17f0e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad21c93273b447c88260a8ccda5d17f0e">&#9670;&#160;</a></span>GetSelectedUser()</h2>
 
@@ -195,7 +227,7 @@ Private Member Functions</h2></td></tr>
 <p>Returns the currently selected user. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d2/d9f/class_bios_user.html">BiosUser</a> the selected user. May be NULL. </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/de6/class_c_game.html#a9a016f43a52a011547500d437514d7db">CGame::CreateTitleScreen()</a>, <a class="el" href="../../d0/d36/class_online_services.html#a809c5e709b2effa7ae01698db34eca8d">OnlineServices::GetClientServices()</a>, <a class="el" href="../../da/dcf/class_day_z_intro_scene.html#a5890ca776063ce7c9bc0ac93e344fdaf">DayZIntroScene::GetSelectedUserName()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ab212fc3a61460b771a18d71f052d31e8">UIScriptedMenu::Init()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a9a55fa3c45738b1337010c3ca363d9c1">ScriptedWidgetEventHandler::IsLocalPlayer()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a78386f068191a778c5ce8d23247d9dcc">UIScriptedMenu::IsLocalPlayer()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a1d9f786734854081fcebac8c2dabf3dd">OnGameNameChanged()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#ab1302ed6f1727047185920755f438518">OnLoggedOn()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a4c2adcdedfe9820384e3ad37fb694876">OnSignedOut()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a3056ff926528b94b606ba7e8617dda3d">UIScriptedMenu::Refresh()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a5a5bf287fc05d40794d1e247b77b23a4">CGame::SelectGamepad()</a>, <a class="el" href="../../d2/de6/class_c_game.html#ad0167f01811250c04907c0c898f198c6">CGame::SelectUser()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#ae1db27d1c974a702116b7d779a238607">SelectUserEx()</a>, <a class="el" href="../../dd/d17/class_managed.html#ae3144664052af367e97a594c70512bf0">Managed::SetupPlayerName()</a>, and <a class="el" href="../../da/d9b/class_day_z_intro_scene_xbox.html#a088a869755db779a2b23849f9a97b4e7">DayZIntroSceneXbox::UpdateSelectedUserName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/db3/class_bios_user_manager.html#a3b0b6c19f9543fb7dac34d23a845c2a9">CheckUserSwitchResult()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a9a016f43a52a011547500d437514d7db">CGame::CreateTitleScreen()</a>, <a class="el" href="../../d0/d36/class_online_services.html#a809c5e709b2effa7ae01698db34eca8d">OnlineServices::GetClientServices()</a>, <a class="el" href="../../da/dcf/class_day_z_intro_scene.html#a5890ca776063ce7c9bc0ac93e344fdaf">DayZIntroScene::GetSelectedUserName()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ab212fc3a61460b771a18d71f052d31e8">UIScriptedMenu::Init()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a1d9f786734854081fcebac8c2dabf3dd">OnGameNameChanged()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#ab1302ed6f1727047185920755f438518">OnLoggedOn()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a4c2adcdedfe9820384e3ad37fb694876">OnSignedOut()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a5a5bf287fc05d40794d1e247b77b23a4">CGame::SelectGamepad()</a>, <a class="el" href="../../d2/de6/class_c_game.html#ad0167f01811250c04907c0c898f198c6">CGame::SelectUser()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#ae1db27d1c974a702116b7d779a238607">SelectUserEx()</a>, <a class="el" href="../../dd/d17/class_managed.html#ae3144664052af367e97a594c70512bf0">Managed::SetupPlayerName()</a>, and <a class="el" href="../../da/d9b/class_day_z_intro_scene_xbox.html#a088a869755db779a2b23849f9a97b4e7">DayZIntroSceneXbox::UpdateSelectedUserName()</a>.</p>
 
 </div>
 </div>
@@ -382,7 +414,7 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/d75/class_u_i_manager.html#a67ce9a10c307353939a4bfbf63b4fb93">UIManager::GetMenu()</a>, <a class="el" href="../../d2/d9f/class_bios_user.html#a826a818d26fb4fe7731ddd6d6b35247f">BiosUser::GetName()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#ad21c93273b447c88260a8ccda5d17f0e">GetSelectedUser()</a>, <a class="el" href="../../d2/de6/class_c_game.html#ac7e6886eef7485897279cffc48f83fca">CGame::GetUIManager()</a>, and <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a3056ff926528b94b606ba7e8617dda3d">UIScriptedMenu::Refresh()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d2/d9f/class_bios_user.html#a826a818d26fb4fe7731ddd6d6b35247f">BiosUser::GetName()</a>, and <a class="el" href="../../de/db3/class_bios_user_manager.html#ad21c93273b447c88260a8ccda5d17f0e">GetSelectedUser()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../de/db3/class_bios_user_manager.html#a0fba844696dcd2fa95d45afb25ef8516">OnUserPicked()</a>.</p>
 
@@ -453,7 +485,7 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="../../d7/d75/class_u_i_manager.html#a3d57c7cf6d023518ed0ed0ef89da4e9d">UIManager::CloseMenu()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a7c901cea67926bb3e9cef87e44f16a80">DISCONNECT_SESSION_FLAGS_JOIN</a>, <a class="el" href="../../d0/d36/class_online_services.html#af8c29f539a99b07f94d652bde535d612">OnlineServices::ErrorCaught()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a4c1aebecffd68fa987e1475c34695774">CGame::GetInput()</a>, <a class="el" href="../../d0/d36/class_online_services.html#a203006166f6219775925095cebfdf703">OnlineServices::GetSession()</a>, <a class="el" href="../../d2/de6/class_c_game.html#ac7e6886eef7485897279cffc48f83fca">CGame::GetUIManager()</a>, <a class="el" href="../../d4/d7b/class_input.html#aa83eeb5c70e056858cedb493682d3f79">Input::IdentifyGamepad()</a>, <a class="el" href="../../d7/d7f/group___menu_i_d.html#ga0dbb176db8d71b105044f7c2b3010b43">MENU_TITLE_SCREEN</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#ae1db27d1c974a702116b7d779a238607">SelectUserEx()</a>, <a class="el" href="../../d0/d36/class_online_services.html#ae94f37caeaa2111f51ec12d3e8fcb1af">OnlineServices::SetBiosUser()</a>, and <a class="el" href="../../d0/d36/class_online_services.html#a031b2ec284e9a27d18a36bd352ca50b1">OnlineServices::SetSessionHandle()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a7c901cea67926bb3e9cef87e44f16a80">DISCONNECT_SESSION_FLAGS_JOIN</a>, <a class="el" href="../../d0/d36/class_online_services.html#af8c29f539a99b07f94d652bde535d612">OnlineServices::ErrorCaught()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d0/d36/class_online_services.html#a203006166f6219775925095cebfdf703">OnlineServices::GetSession()</a>, <a class="el" href="../../d7/d7f/group___menu_i_d.html#ga0dbb176db8d71b105044f7c2b3010b43">MENU_TITLE_SCREEN</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#ae1db27d1c974a702116b7d779a238607">SelectUserEx()</a>, <a class="el" href="../../d0/d36/class_online_services.html#ae94f37caeaa2111f51ec12d3e8fcb1af">OnlineServices::SetBiosUser()</a>, and <a class="el" href="../../d0/d36/class_online_services.html#a031b2ec284e9a27d18a36bd352ca50b1">OnlineServices::SetSessionHandle()</a>.</p>
 
 </div>
 </div>
@@ -513,7 +545,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Callback function. </p>
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../de/db3/class_bios_user_manager.html#ad21c93273b447c88260a8ccda5d17f0e">GetSelectedUser()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, and <a class="el" href="../../de/db3/class_bios_user_manager.html#ad21c93273b447c88260a8ccda5d17f0e">GetSelectedUser()</a>.</p>
 
 </div>
 </div>
@@ -568,7 +600,7 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="../../d7/d75/class_u_i_manager.html#a3d57c7cf6d023518ed0ed0ef89da4e9d">UIManager::CloseMenu()</a>, <a class="el" href="../../d7/d75/class_u_i_manager.html#a7269af37da7c55d8e1ba887ad79906fe">UIManager::EnterScriptedMenu()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d5/d2d/_effect_8c.html#a2ba77aa3e0b17d2f4b2eb519db6aeaf7">GetID()</a>, <a class="el" href="../../d2/de6/class_c_game.html#ac7e6886eef7485897279cffc48f83fca">CGame::GetUIManager()</a>, <a class="el" href="../../d2/d9f/class_bios_user.html#a1aec93efe29d24ca5e8e4542c6fa3f30">BiosUser::IsOnline()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a0b55e5c17a732afe82099dc609eb6a62">LogOnUserAsync()</a>, <a class="el" href="../../d7/d7f/group___menu_i_d.html#ga36415ec61adcccd59c6edd041a4a3809">MENU_MAIN</a>, <a class="el" href="../../d7/d7f/group___menu_i_d.html#ga0dbb176db8d71b105044f7c2b3010b43">MENU_TITLE_SCREEN</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#ae1db27d1c974a702116b7d779a238607">SelectUserEx()</a>, and <a class="el" href="../../d0/d36/class_online_services.html#ae6db3ce3bd24793cd72e3c5a0b898989">OnlineServices::SetPendingInviteList()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d2/d9f/class_bios_user.html#a1aec93efe29d24ca5e8e4542c6fa3f30">BiosUser::IsOnline()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a0b55e5c17a732afe82099dc609eb6a62">LogOnUserAsync()</a>, <a class="el" href="../../d7/d7f/group___menu_i_d.html#ga36415ec61adcccd59c6edd041a4a3809">MENU_MAIN</a>, <a class="el" href="../../d7/d7f/group___menu_i_d.html#ga0dbb176db8d71b105044f7c2b3010b43">MENU_TITLE_SCREEN</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#ae1db27d1c974a702116b7d779a238607">SelectUserEx()</a>, and <a class="el" href="../../d0/d36/class_online_services.html#ae6db3ce3bd24793cd72e3c5a0b898989">OnlineServices::SetPendingInviteList()</a>.</p>
 
 </div>
 </div>
@@ -640,7 +672,7 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a1e518520a52a69c1afeeb8419217fbb3">DISCONNECT_SESSION_FLAGS_FORCE</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a4c1aebecffd68fa987e1475c34695774">CGame::GetInput()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#ad21c93273b447c88260a8ccda5d17f0e">GetSelectedUser()</a>, <a class="el" href="../../d4/d7b/class_input.html#ae4c8352a9f9f0ea80a9a2d10f5ce2e16">Input::ResetActiveGamepad()</a>, and <a class="el" href="../../de/db3/class_bios_user_manager.html#ae1db27d1c974a702116b7d779a238607">SelectUserEx()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a1e518520a52a69c1afeeb8419217fbb3">DISCONNECT_SESSION_FLAGS_FORCE</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#ad21c93273b447c88260a8ccda5d17f0e">GetSelectedUser()</a>, and <a class="el" href="../../de/db3/class_bios_user_manager.html#ae1db27d1c974a702116b7d779a238607">SelectUserEx()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../de/db3/class_bios_user_manager.html#aee0d887e4c93a52336ab61b0441ad5fb">OnLoggedOff()</a>.</p>
 
@@ -725,7 +757,7 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a1e518520a52a69c1afeeb8419217fbb3">DISCONNECT_SESSION_FLAGS_FORCE</a>, <a class="el" href="../../d0/d36/class_online_services.html#af8c29f539a99b07f94d652bde535d612">OnlineServices::ErrorCaught()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a4c1aebecffd68fa987e1475c34695774">CGame::GetInput()</a>, and <a class="el" href="../../d4/d7b/class_input.html#ae4c8352a9f9f0ea80a9a2d10f5ce2e16">Input::ResetActiveGamepad()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a1e518520a52a69c1afeeb8419217fbb3">DISCONNECT_SESSION_FLAGS_FORCE</a>, <a class="el" href="../../d0/d36/class_online_services.html#af8c29f539a99b07f94d652bde535d612">OnlineServices::ErrorCaught()</a>, and <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>
@@ -772,7 +804,7 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="../../d0/d36/class_online_services.html#af8c29f539a99b07f94d652bde535d612">OnlineServices::ErrorCaught()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a4c1aebecffd68fa987e1475c34695774">CGame::GetInput()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a1d9f786734854081fcebac8c2dabf3dd">OnGameNameChanged()</a>, <a class="el" href="../../db/dad/class_mission.html#a372de693ad40b3f42839c8ec6ac845f4">Mission::Reset()</a>, <a class="el" href="../../d4/d7b/class_input.html#ae4c8352a9f9f0ea80a9a2d10f5ce2e16">Input::ResetActiveGamepad()</a>, and <a class="el" href="../../de/db3/class_bios_user_manager.html#ae1db27d1c974a702116b7d779a238607">SelectUserEx()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d36/class_online_services.html#af8c29f539a99b07f94d652bde535d612">OnlineServices::ErrorCaught()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d9/de7/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a1d9f786734854081fcebac8c2dabf3dd">OnGameNameChanged()</a>, <a class="el" href="../../db/dad/class_mission.html#a372de693ad40b3f42839c8ec6ac845f4">Mission::Reset()</a>, and <a class="el" href="../../de/db3/class_bios_user_manager.html#ae1db27d1c974a702116b7d779a238607">SelectUserEx()</a>.</p>
 
 </div>
 </div>
@@ -944,9 +976,9 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d5d/class_notification_system.html#ae5c4b021aa2d40e1a858e47f26014569">NotificationSystem::AddNotification()</a>, <a class="el" href="../../d8/d5d/class_notification_system.html#ae1218d012c905599d4d71b7ecd4148e2">NotificationSystem::DEFAULT_TIME_DISPLAYED</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a1e518520a52a69c1afeeb8419217fbb3">DISCONNECT_SESSION_FLAGS_FORCE</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#ad21c93273b447c88260a8ccda5d17f0e">GetSelectedUser()</a>, and <a class="el" href="../../de/db3/class_bios_user_manager.html#a4d0c22342c3b9b73458b1ac9fc3da2f9">SelectUser()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a3b0b6c19f9543fb7dac34d23a845c2a9">CheckUserSwitchResult()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a1e518520a52a69c1afeeb8419217fbb3">DISCONNECT_SESSION_FLAGS_FORCE</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#af97a1e393eaf2dc010ba59c8e3a5b2d5">GetGame()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#ad21c93273b447c88260a8ccda5d17f0e">GetSelectedUser()</a>, and <a class="el" href="../../de/db3/class_bios_user_manager.html#a4d0c22342c3b9b73458b1ac9fc3da2f9">SelectUser()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a3fc3fd58a4401589a06e1febcf07bc2e">UIScriptedMenu::ChangeAccount()</a>, <a class="el" href="../../d2/de6/class_c_game.html#ab23c19caf3c153b829255569c8698f2c">CGame::ConnectLaunch()</a>, <a class="el" href="../../d2/de6/class_c_game.html#af6f0097b36ac495beaf2806343a70c19">CGame::DisconnectSessionEx()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aceb6bc9c738aa26cf18e19d4128b9b3b">CGame::MainMenuLaunch()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a6a72c8b88382e88a57d25547948dc0ec">CGame::MissionLaunch()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#aae0013c8359dba248a6aec93c7347791">OnJoin()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a699136b6788896eecadf627856302343">OnPartyHost()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a4c2adcdedfe9820384e3ad37fb694876">OnSignedOut()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a0fba844696dcd2fa95d45afb25ef8516">OnUserPicked()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#ad0167f01811250c04907c0c898f198c6">CGame::SelectUser()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a3fc3fd58a4401589a06e1febcf07bc2e">UIScriptedMenu::ChangeAccount()</a>, <a class="el" href="../../d2/de6/class_c_game.html#ab23c19caf3c153b829255569c8698f2c">CGame::ConnectLaunch()</a>, <a class="el" href="../../d2/de6/class_c_game.html#aceb6bc9c738aa26cf18e19d4128b9b3b">CGame::MainMenuLaunch()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a6a72c8b88382e88a57d25547948dc0ec">CGame::MissionLaunch()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#aae0013c8359dba248a6aec93c7347791">OnJoin()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a699136b6788896eecadf627856302343">OnPartyHost()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a4c2adcdedfe9820384e3ad37fb694876">OnSignedOut()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a0fba844696dcd2fa95d45afb25ef8516">OnUserPicked()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#ad0167f01811250c04907c0c898f198c6">CGame::SelectUser()</a>.</p>
 
 </div>
 </div>

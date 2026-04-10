@@ -8,6 +8,7 @@ var class_impact_materials =
     [ "UnregisterIgnoredAmmo", "d2/d47/class_impact_materials.html#a821c2fa14c94df92759e76c3e09952d5", null ],
     [ "UnregisterSurface", "d2/d47/class_impact_materials.html#a50032c7484930ff8bdaf5d48b6e33f8d", null ],
     [ "CONCRETE", "d2/d47/class_impact_materials.html#aa40894dbcbfe678125911f90b4872012", null ],
+    [ "DESERT_SAND", "d2/d47/class_impact_materials.html#a31104aaa52866f200c9a77bb13954ff7", null ],
     [ "DIRT", "d2/d47/class_impact_materials.html#af26bb7a5b838b363a33de971a6edbb29", null ],
     [ "DUMMY", "d2/d47/class_impact_materials.html#a253e27e2f9b4983b7bcd69169a1e6efa", null ],
     [ "DUMMY_HEAVY", "d2/d47/class_impact_materials.html#a4808c65c5f4dd16e26cdb211d95c7627", null ],

@@ -24,5 +24,6 @@ var _hud_debug_win_health_8c =
     [ "m_IsModeSelf", "df/dbf/_hud_debug_win_health_8c.html#a4015925988c7a533705cdfe5bcf06546", null ],
     [ "m_TargetDisplayNameW", "df/dbf/_hud_debug_win_health_8c.html#a45ce32386b75b880fda8bdb819673532", null ],
     [ "m_TargetEntity", "df/dbf/_hud_debug_win_health_8c.html#a1347ecae19b99771f36b7b543cbac3ff", null ],
-    [ "m_WgtPanel", "df/dbf/_hud_debug_win_health_8c.html#a59d30d04a5f6eeb2ea2c804b797bc8e4", null ]
+    [ "m_WgtPanel", "df/dbf/_hud_debug_win_health_8c.html#a59d30d04a5f6eeb2ea2c804b797bc8e4", null ],
+    [ "m_WgtPanelScroll", "df/dbf/_hud_debug_win_health_8c.html#aab72f1b8fc384841d8c7513274cd9148", null ]
 ];

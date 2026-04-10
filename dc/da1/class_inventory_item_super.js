@@ -57,6 +57,7 @@ var class_inventory_item_super =
     [ "GetRandomChamberableAmmoTypeName", "dc/da1/class_inventory_item_super.html#a1386cdea2a57bc3d36d4eb23f949ee7d", null ],
     [ "GetRandomMagazineTypeName", "dc/da1/class_inventory_item_super.html#a588d9d59a5df91a1e01a3f4f15c9271d", null ],
     [ "GetReloadTime", "dc/da1/class_inventory_item_super.html#a4026dc02c961bf2b47299329105d3f3a", null ],
+    [ "GetRuinedReplacement", "dc/da1/class_inventory_item_super.html#a0878aeee66a9152b8593b8367c58c669", null ],
     [ "GetSlotFromMuzzleIndex", "dc/da1/class_inventory_item_super.html#a824cf048e8a9c71fa62a4fe1febc8a4b", null ],
     [ "GetStepZeroing", "dc/da1/class_inventory_item_super.html#a3af56708da57b0e91861e1e410f39506", null ],
     [ "GetStepZoom", "dc/da1/class_inventory_item_super.html#ab6661e3c6f34532f9aa11cf0a47d5352", null ],

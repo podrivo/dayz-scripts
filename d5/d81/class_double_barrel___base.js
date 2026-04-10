@@ -1,6 +1,7 @@
 var class_double_barrel___base =
 [
     [ "CanChamberBullet", "d5/d81/class_double_barrel___base.html#aa0fa51a3b918310c3005e5af3e623140", null ],
+    [ "GetAnimationForChamberingWithEjection", "d5/d81/class_double_barrel___base.html#acf2336ac4ed948c76da6a14e39a7d28b", null ],
     [ "InitStateMachine", "d5/d81/class_double_barrel___base.html#a54787499372ae713fe5e1b6b1414a6d8", null ],
     [ "SetActions", "d5/d81/class_double_barrel___base.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
     [ "SetNextWeaponMode", "d5/d81/class_double_barrel___base.html#a0757bc1c2a2131a8b0221b5e789553da", null ],

@@ -80,5 +80,10 @@ var class_flammable_base =
     [ "m_UTSource", "d1/d00/class_flammable_base.html#a8fb6777a9fde58ec7f4d763424437f16", null ],
     [ "m_UTSSettings", "d1/d00/class_flammable_base.html#a0059eb46cde0e00387c1295f87619a71", null ],
     [ "m_WasLit", "d1/d00/class_flammable_base.html#ad8be9369def05cc7ad6008c9b9072377", null ],
-    [ "m_WaterEvaporationByFireIntensityEx", "d1/d00/class_flammable_base.html#ad5bfed2ab646a6a24c724727e4faea31", null ]
+    [ "m_WaterEvaporationByFireIntensityEx", "d1/d00/class_flammable_base.html#ad5bfed2ab646a6a24c724727e4faea31", null ],
+    [ "PARAM_DRY_MODIFIER", "d1/d00/class_flammable_base.html#a578bfe93e40c33920ae693f3340da4de", null ],
+    [ "PARAM_FULL_HEAT_RADIUS", "d1/d00/class_flammable_base.html#ad7493d593e7d22d247b38e40085f6f7e", null ],
+    [ "PARAM_HEAT_RADIUS", "d1/d00/class_flammable_base.html#a628ae4bfdfa3e364a221e62f0655c908", null ],
+    [ "PARAM_MAX_TRANSFERED_TEMPERATURE", "d1/d00/class_flammable_base.html#a5d54753672ddc95c28d114c0d14e0862", null ],
+    [ "TIMER_HEATING_UPDATE_INTERVAL", "d1/d00/class_flammable_base.html#a1c1efb5702ed3c7dba93e7161fd51e7b", null ]
 ];

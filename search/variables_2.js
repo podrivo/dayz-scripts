@@ -2,7 +2,7 @@ var searchData=
 [
   ['b_0',['b',['../df/d3c/class_colour_clothes_lambda.html#a148e3876077787926724625411d6e7a9',1,'ColourClothesLambda']]],
   ['b_5ftarget_1',['B_TARGET',['../d7/dca/class_p_p_e_requester___gameplay_base.html#aab3a40b9ae0e141446fc4e07a0ce3fe9',1,'PPERequester_GameplayBase']]],
-  ['bad_5fweather_2',['BAD_WEATHER',['../d0/d24/class_world_data.html#ae517b61db5377d4403808f9e47876484',1,'WorldData::BAD_WEATHER'],['../dc/d97/class_enoch_data.html#ae517b61db5377d4403808f9e47876484',1,'EnochData::BAD_WEATHER'],['../d1/d14/class_sakhal_data.html#ae517b61db5377d4403808f9e47876484',1,'SakhalData::BAD_WEATHER'],['../dd/d6a/_world_data_8c.html#ae517b61db5377d4403808f9e47876484',1,'BAD_WEATHER:&#160;WorldData.c']]],
+  ['bad_5fweather_2',['BAD_WEATHER',['../db/dbb/class_chernarus_plus_data.html#ae517b61db5377d4403808f9e47876484',1,'ChernarusPlusData::BAD_WEATHER'],['../dc/d97/class_enoch_data.html#ae517b61db5377d4403808f9e47876484',1,'EnochData::BAD_WEATHER'],['../d1/d14/class_sakhal_data.html#ae517b61db5377d4403808f9e47876484',1,'SakhalData::BAD_WEATHER'],['../dd/d6a/_world_data_8c.html#ae517b61db5377d4403808f9e47876484',1,'BAD_WEATHER:&#160;WorldData.c']]],
   ['badly_5fdamaged_3',['BADLY_DAMAGED',['../d3/de1/class_injury_handler_thresholds.html#abd1b286a89418ef1f7c1ffb35cf045ae',1,'InjuryHandlerThresholds']]],
   ['bait_5ftype_5fempty_4',['BAIT_TYPE_EMPTY',['../db/d9c/_catching_constants_8c.html#adcf870bdcf9780d2da9234c3a6c3a877',1,'CatchingConstants.c']]],
   ['bait_5ftype_5fmeat_5flarge_5',['BAIT_TYPE_MEAT_LARGE',['../db/d9c/_catching_constants_8c.html#a0f72a201d275824182ec12b45dffcb3a',1,'CatchingConstants.c']]],
@@ -128,7 +128,7 @@ var searchData=
   ['border_125',['border',['../d6/d46/class_vertical_spacer.html#a3f2c85d7023eb5153804b429a6d64065',1,'VerticalSpacer::border'],['../de/d63/class_horizontal_spacer_with_fixed_aspect.html#a3f2c85d7023eb5153804b429a6d64065',1,'HorizontalSpacerWithFixedAspect::border']]],
   ['border_126',['Border',['../de/de9/class_horizontal_spacer.html#a5c56cc701bffea3dcb654d769269ef54',1,'HorizontalSpacer']]],
   ['both_127',['BOTH',['../d1/d9d/_plugin_recipes_manager_base_8c.html#aefcc093e62f2ff3c7a087ca9e017a3b6',1,'PluginRecipesManagerBase.c']]],
-  ['box_128',['BOX',['../d4/d5c/_dynamic_music_player_8c.html#a67e7a5f306376403ce708c9a94efc193',1,'BOX:&#160;DynamicMusicPlayer.c'],['../dc/d9f/_scripted_entity_8c.html#a311c29de5b0fd16d11c0cf1f98a73370',1,'BOX:&#160;ScriptedEntity.c']]],
+  ['box_128',['BOX',['../d4/d5c/_dynamic_music_player_8c.html#a67e7a5f306376403ce708c9a94efc193',1,'DynamicMusicPlayer.c']]],
   ['brakes_5fonly_129',['BRAKES_ONLY',['../d5/d71/_car_script_8c.html#ad24f11e923d847d95d079c5adfa7b4c7',1,'CarScript.c']]],
   ['breadcrumbs_130',['Breadcrumbs',['../d1/d13/class_json_underground_area_trigger_data.html#a2869cc7c528ad9e0b0bd849eb95345d4',1,'JsonUndergroundAreaTriggerData']]],
   ['break_5fpull_131',['BREAK_PULL',['../d2/ddb/_fishing_rod___base_8c.html#a582c7f2558752d6f6e1acb669504c810',1,'FishingRod_Base.c']]],

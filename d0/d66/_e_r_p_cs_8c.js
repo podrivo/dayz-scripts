@@ -15,6 +15,7 @@ var _e_r_p_cs_8c =
       [ "RPC_USER_ACTION_PROMPT_SYNCH", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37a50bc6a2f1ff71a927b539f2f46901eb0", null ],
       [ "RPC_USER_ACTION_MESSAGE", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37a7d4b3fd821962894a748c2d83b0f3301", null ],
       [ "RPC_ITEM_DIAG", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37a98ab2c0d532cc0d12efc4dc674829b7d", null ],
+      [ "RPC_ITEM_REPAIR", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37ae79d20564c5f92a012fd9d56aec880e7", null ],
       [ "RPC_ITEM_DIAG_CLOSE", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37addccfae48cdf59a4acadbf10ab6ed741", null ],
       [ "RPC_SET_OBJECT_POSITION", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37a235f1cd0095c69ef2d21fa5773c5ad9c", null ],
       [ "RPC_PLAYER_SYMPTOM_ON", "d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37a3b0306b59f306898a28b21a09d35dea5", null ],

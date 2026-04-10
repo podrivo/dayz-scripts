@@ -3,6 +3,7 @@ var _stamina_handler_8c =
     [ "StaminaConsumers", "d4/d08/class_stamina_consumers.html", "d4/d08/class_stamina_consumers" ],
     [ "StaminaModifierExponential", "d0/d10/class_stamina_modifier_exponential.html", "d0/d10/class_stamina_modifier_exponential" ],
     [ "StaminaHandler", "d7/d1a/class_stamina_handler.html", "d7/d1a/class_stamina_handler" ],
+    [ "StaminaCooldownParams", "d5/d6b/_stamina_handler_8c.html#a8df0a8b5d57f59be0532553407affba7", null ],
     [ "EStaminaMultiplierTypes", "d5/d6b/_stamina_handler_8c.html#a1d00c144634198eca6b5833e07a05c7c", null ],
     [ "AddRunTime", "d5/d6b/_stamina_handler_8c.html#af2b0c67f8f3b10b473ddf3f5c9d6317d", null ],
     [ "GetActivationThreshold", "d5/d6b/_stamina_handler_8c.html#a88c840852dfac6e71db28423b9349871", null ],

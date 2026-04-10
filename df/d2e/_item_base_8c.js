@@ -1,8 +1,10 @@
 var _item_base_8c =
 [
     [ "ItemBase", "de/d7a/class_item_base.html", "de/d7a/class_item_base" ],
+    [ "ItemBaseType", "da/dcd/class_item_base_type.html", null ],
     [ "InventoryItem", "d6/d0e/class_inventory_item.html", "d6/d0e/class_inventory_item" ],
     [ "Inventory_Base", "df/d2e/_item_base_8c.html#aea672e671ca6e8ee4e9439b7d8ca730c", null ],
+    [ "Inventory_BaseType", "df/d2e/_item_base_8c.html#a26adb3fd8f33f10df34e53e923d0aa91", null ],
     [ "TActionAnimOverrideMap", "df/d2e/_item_base_8c.html#a0cf12a8876a98ffee018b3e4bcd1ca19", null ],
     [ "AddAction", "df/d2e/_item_base_8c.html#a52cdff768ebc148eee5a17e4ebef3408", null ],
     [ "AddDebugActionsMask", "df/d2e/_item_base_8c.html#adc2f034edda37c07d686673a4df899aa", null ],
@@ -303,6 +305,7 @@ var _item_base_8c =
     [ "SplitItem", "df/d2e/_item_base_8c.html#af1535c30942cf96fe0de508ad1ab994c", null ],
     [ "SplitItemToInventoryLocation", "df/d2e/_item_base_8c.html#a4342d13a1607fbe5f5d2215f8fad5181", null ],
     [ "StartItemSoundServer", "df/d2e/_item_base_8c.html#abbf7b24a66e5216af2fffe4658a93065", null ],
+    [ "StartItemSoundServer", "df/d2e/_item_base_8c.html#ad88f07778cd80610ac68aac22364b083", null ],
     [ "StartOverheating", "df/d2e/_item_base_8c.html#a6f2fd351e999da0a3fed2bb42ec8a737", null ],
     [ "StopDeployLoopSoundEx", "df/d2e/_item_base_8c.html#ac2a5b925c08bbc4eb9c03c8b3a5ec18d", null ],
     [ "StopItemDynamicPhysics", "df/d2e/_item_base_8c.html#a1f93e59aee5729ff44cf2860e31a82d0", null ],
@@ -391,6 +394,7 @@ var _item_base_8c =
     [ "m_SoundDeployFinish", "df/d2e/_item_base_8c.html#af643bf1677baa9452b0289a1a102e1b7", null ],
     [ "m_SoundPlace", "df/d2e/_item_base_8c.html#a2b804247023ebb965662ed0cd0984a46", null ],
     [ "m_SoundSyncPlay", "df/d2e/_item_base_8c.html#a7e285433af9fea4e8e379ce89ae4ba7a", null ],
+    [ "m_SoundSyncSlotID", "df/d2e/_item_base_8c.html#a16c6b6d06908b40b3ae6b1b7cb63657d", null ],
     [ "m_SoundSyncStop", "df/d2e/_item_base_8c.html#a03205e8340970169f41ae1ca81818e8b", null ],
     [ "m_StoreLoadedQuantity", "df/d2e/_item_base_8c.html#a96025646584fb8ff36d1fb15aaeb47b1", null ],
     [ "m_TemperaturePerQuantityWeight", "df/d2e/_item_base_8c.html#ad1246be1583fd48b7b3296a61440a778", null ],

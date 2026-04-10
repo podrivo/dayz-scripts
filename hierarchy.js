@@ -589,6 +589,8 @@ var hierarchy =
     [ "array< ref DayZCreatureAnimScriptDebugAnimEventData >", "d2/d41/classarray.html", null ],
     [ "array< ref DayZCreatureAnimScriptDebugAnimPredictionData >", "d2/d41/classarray.html", null ],
     [ "array< ref DayZCreatureAnimScriptDebugAnimTagData >", "d2/d41/classarray.html", null ],
+    [ "array< ref DebugTextScreenSpace >", "d2/d41/classarray.html", null ],
+    [ "array< ref DebugTextWorldSpace >", "d2/d41/classarray.html", null ],
     [ "array< ref DynamicMusicTrackData >", "d2/d41/classarray.html", null ],
     [ "array< ref EffWheelSmoke >", "d2/d41/classarray.html", null ],
     [ "array< ref FireworksLauncherClientEventBase >", "d2/d41/classarray.html", null ],
@@ -605,6 +607,7 @@ var hierarchy =
     [ "array< ref JsonDataCreditsDepartment >", "d2/d41/classarray.html", null ],
     [ "array< ref JsonDataCreditsSection >", "d2/d41/classarray.html", null ],
     [ "array< ref JsonDataDLCInfo >", "d2/d41/classarray.html", null ],
+    [ "array< ref JsonDataNewsArticle >", "d2/d41/classarray.html", null ],
     [ "array< ref JsonUndergroundAreaBreadcrumb >", "d2/d41/classarray.html", null ],
     [ "array< ref JsonUndergroundAreaTriggerData >", "d2/d41/classarray.html", null ],
     [ "array< ref KeyBinding >", "d2/d41/classarray.html", null ],
@@ -813,23 +816,9 @@ var hierarchy =
       [ "NailBox", "d9/d7e/class_nail_box.html", null ]
     ] ],
     [ "BoxCollidingParams", "da/d47/class_box_colliding_params.html", null ],
+    [ "BreadcrumbExternalValueController", "d1/d50/class_breadcrumb_external_value_controller.html", null ],
     [ "Breeches_ColorBase", "dc/dc4/class_breeches___color_base.html", null ],
     [ "BudenovkaHat_ColorBase", "d5/dce/class_budenovka_hat___color_base.html", null ],
-    [ "Building", null, [
-      [ "AnniversarySpotLight", "da/d04/class_anniversary_spot_light.html", null ]
-    ] ],
-    [ "BuildingBase", null, [
-      [ "House", "df/d21/class_house.html", [
-        [ "Land_Bilboard_Base", "d1/de0/class_land___bilboard___base.html", null ],
-        [ "Land_Underground_EntranceBase", "d4/d9e/class_land___underground___entrance_base.html", [
-          [ "Land_Underground_Stairs_Exit", "d5/deb/class_land___underground___stairs___exit.html", null ]
-        ] ],
-        [ "Land_WarheadStorage_Main", "d5/dc4/class_land___warhead_storage___main.html", null ],
-        [ "Land_WarheadStorage_PowerStation", "d6/d23/class_land___warhead_storage___power_station.html", null ],
-        [ "StaticObj_Roadblock_Wood_Small", "da/d12/class_static_obj___roadblock___wood___small.html", null ]
-      ] ],
-      [ "Land_Underground_WaterReservoir_Water", "d2/d14/class_land___underground___water_reservoir___water.html", null ]
-    ] ],
     [ "BuildingSuper", "d5/d2c/class_building_super.html", [
       [ "BuildingWithFireplace", "dd/d47/class_building_with_fireplace.html", [
         [ "Land_House_1W13_Dam", "dc/d38/class_land___house__1_w13___dam.html", null ],
@@ -856,6 +845,7 @@ var hierarchy =
         [ "Land_Tenement_Small_Brown", "da/d4f/class_land___tenement___small___brown.html", null ],
         [ "Land_Tenement_Small_Yellow", "d9/d2f/class_land___tenement___small___yellow.html", null ]
       ] ],
+      [ "Church", "dd/d91/class_church.html", null ],
       [ "ClutterCutter2x2", "d0/d5b/class_clutter_cutter2x2.html", null ],
       [ "ClutterCutter6x6", "d1/dd0/class_clutter_cutter6x6.html", null ],
       [ "ClutterCutterFireplace", "d1/da0/class_clutter_cutter_fireplace.html", null ],
@@ -863,6 +853,7 @@ var hierarchy =
         [ "Land_ContainerLocked_Red_DE", "df/dfc/class_land___container_locked___red___d_e.html", null ],
         [ "Land_ContainerLocked_Yellow_DE", "de/d47/class_land___container_locked___yellow___d_e.html", null ]
       ] ],
+      [ "Fountain", "da/d72/class_fountain.html", null ],
       [ "Land_Misc_Through_Static", "dd/d9a/class_land___misc___through___static.html", null ],
       [ "Land_WaterSpring_Sakhal", "d8/db5/class_land___water_spring___sakhal.html", null ],
       [ "Misc_TirePile_Burning_DE", "d5/d7d/class_misc___tire_pile___burning___d_e.html", null ]
@@ -948,6 +939,8 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
+    [ "CachedEquipmentStorageBase", "d7/d75/class_cached_equipment_storage_base.html", null ],
+    [ "CachedEquipmentStorageQuery", "db/dca/class_cached_equipment_storage_query.html", null ],
     [ "CachedObjectsArrays", "d1/d69/class_cached_objects_arrays.html", null ],
     [ "CachedObjectsParams", "de/d30/class_cached_objects_params.html", null ],
     [ "CallQueue", "dc/d22/class_call_queue.html", null ],
@@ -1059,6 +1052,12 @@ var hierarchy =
           [ "ArmyPouch_Black", "df/d03/class_army_pouch___black.html", null ],
           [ "ArmyPouch_Camo", "d4/d58/class_army_pouch___camo.html", null ],
           [ "ArmyPouch_Green", "dd/d70/class_army_pouch___green.html", null ]
+        ] ],
+        [ "Attack2Bag_ColorBase", "db/d59/class_attack2_bag___color_base.html", [
+          [ "Attack2Bag_Black", "df/d50/class_attack2_bag___black.html", null ],
+          [ "Attack2Bag_Green", "d8/d98/class_attack2_bag___green.html", null ],
+          [ "Attack2Bag_Ttsko", "d8/d02/class_attack2_bag___ttsko.html", null ],
+          [ "Attack2Bag_Yeger", "d4/dae/class_attack2_bag___yeger.html", null ]
         ] ],
         [ "CanvasBag_ColorBase", "d2/d6f/class_canvas_bag___color_base.html", [
           [ "CanvasBag_Medical", "d4/d7d/class_canvas_bag___medical.html", null ],
@@ -1185,7 +1184,25 @@ var hierarchy =
         [ "BushlatPoliceJacket_ColorBase", "dc/dbb/class_bushlat_police_jacket___color_base.html", [
           [ "BushlatPoliceJacket_Blue", "d7/dcf/class_bushlat_police_jacket___blue.html", null ]
         ] ],
-        [ "NavyUniformJacket", "d3/d84/class_navy_uniform_jacket.html", null ]
+        [ "GulagJacket_ColorBase", "d6/d05/class_gulag_jacket___color_base.html", [
+          [ "GulagJacket_Grey", "df/dcf/class_gulag_jacket___grey.html", null ]
+        ] ],
+        [ "MilitarySweater_ColorBase", "d8/d6a/class_military_sweater___color_base.html", [
+          [ "MilitarySweater_Chernarus", "de/df1/class_military_sweater___chernarus.html", null ],
+          [ "MilitarySweater_Livonia", "d6/db0/class_military_sweater___livonia.html", null ],
+          [ "MilitarySweater_NoPatch", "d7/dba/class_military_sweater___no_patch.html", null ]
+        ] ],
+        [ "NavyUniformJacket", "d3/d84/class_navy_uniform_jacket.html", null ],
+        [ "PilotJacket_ColorBase", "db/d48/class_pilot_jacket___color_base.html", [
+          [ "PilotJacket_Black", "dc/d3b/class_pilot_jacket___black.html", null ],
+          [ "PilotJacket_Brown", "d3/d2f/class_pilot_jacket___brown.html", null ],
+          [ "PilotJacket_Yellow", "d7/d25/class_pilot_jacket___yellow.html", null ]
+        ] ],
+        [ "WinterMilitaryCoat_ColorBase", "d1/d76/class_winter_military_coat___color_base.html", [
+          [ "WinterMilitaryCoat_Brown", "dc/d9b/class_winter_military_coat___brown.html", null ],
+          [ "WinterMilitaryCoat_DarkGrey", "dc/d02/class_winter_military_coat___dark_grey.html", null ],
+          [ "WinterMilitaryCoat_Grey", "d0/daf/class_winter_military_coat___grey.html", null ]
+        ] ]
       ] ],
       [ "Vest_Base", "d1/d9c/class_vest___base.html", [
         [ "PlateCarrierVest", "d7/df9/class_plate_carrier_vest.html", null ]
@@ -1196,7 +1213,7 @@ var hierarchy =
       [ "DirtBikeHelmet_Mouthguard", "d4/ddf/class_dirt_bike_helmet___mouthguard.html", null ],
       [ "DirtBikeHelmet_Visor", "d9/d68/class_dirt_bike_helmet___visor.html", null ]
     ] ],
-    [ "ClothingType", "d9/d25/class_clothing_type.html", null ],
+    [ "ColdOperationBoots_ColorBase", "d2/da5/class_cold_operation_boots___color_base.html", null ],
     [ "CollisionInfoBase", null, [
       [ "ObjectCollisionInfo", "d8/dbd/class_object_collision_info.html", null ]
     ] ],
@@ -1284,7 +1301,6 @@ var hierarchy =
       [ "DayZAnimalInputController", "d1/d21/class_day_z_animal_input_controller.html", null ],
       [ "DayZInfectedInputController", "d8/d47/class_day_z_infected_input_controller.html", null ]
     ] ],
-    [ "DayZCreatureAIType", "d1/dfe/class_day_z_creature_a_i_type.html", null ],
     [ "DayZCreatureAnimInterface", "d5/d99/class_day_z_creature_anim_interface.html", null ],
     [ "DayZCreatureAnimScriptDebug", "d9/de1/class_day_z_creature_anim_script_debug.html", null ],
     [ "DayZInfected", "dd/dca/class_day_z_infected.html", null ],
@@ -1307,6 +1323,11 @@ var hierarchy =
     [ "DayZPlayerImplementSwimming", "db/d22/class_day_z_player_implement_swimming.html", null ],
     [ "DayZPlayerImplementThrowing", "db/d76/class_day_z_player_implement_throwing.html", null ],
     [ "DayZPlayerSyncJunctures", "d9/d6e/class_day_z_player_sync_junctures.html", null ],
+    [ "DayZPlayerType", null, [
+      [ "PlayerBaseType", "d9/d5e/class_player_base_type.html", [
+        [ "SurvivorBaseType", "d2/dd1/class_survivor_base_type.html", null ]
+      ] ]
+    ] ],
     [ "DayZPlayerTypeAttachmentSoundLookupTable", "d2/d9f/class_day_z_player_type_attachment_sound_lookup_table.html", null ],
     [ "DayZPlayerTypeStepSoundLookupTable", "df/dd2/class_day_z_player_type_step_sound_lookup_table.html", null ],
     [ "DayZPlayerTypeUtils", "d9/df8/class_day_z_player_type_utils.html", null ],
@@ -1449,8 +1470,71 @@ var hierarchy =
     [ "EnProfiler", "db/d2b/class_en_profiler.html", null ],
     [ "EnScript", "de/dbc/class_en_script.html", null ],
     [ "Entity", "d2/d96/class_entity.html", null ],
-    [ "EntityAI", "df/df9/class_entity_a_i.html", null ],
+    [ "EntityAI", "df/df9/class_entity_a_i.html", [
+      [ "Building", "d2/dbd/class_building.html", [
+        [ "AnniversarySpotLight", "da/d04/class_anniversary_spot_light.html", null ],
+        [ "BuildingBase", "d0/d10/class_building_base.html", [
+          [ "House", "df/d21/class_house.html", [
+            [ "Land_Bilboard_Base", "d1/de0/class_land___bilboard___base.html", null ],
+            [ "Land_Underground_EntranceBase", "d4/d9e/class_land___underground___entrance_base.html", [
+              [ "Land_Underground_Stairs_Exit", "d5/deb/class_land___underground___stairs___exit.html", null ]
+            ] ],
+            [ "Land_WarheadStorage_Bunker_Facility", "d3/d91/class_land___warhead_storage___bunker___facility.html", null ],
+            [ "Land_WarheadStorage_Main", "d5/dc4/class_land___warhead_storage___main.html", null ],
+            [ "Land_WarheadStorage_PowerStation", "d6/d23/class_land___warhead_storage___power_station.html", null ],
+            [ "StaticObj_Roadblock_Wood_Small", "da/d12/class_static_obj___roadblock___wood___small.html", null ]
+          ] ],
+          [ "Land_Underground_WaterReservoir_Water", "d2/d14/class_land___underground___water_reservoir___water.html", null ]
+        ] ]
+      ] ],
+      [ "ScriptedEntity", "df/da9/class_scripted_entity.html", [
+        [ "DynamicArea_Flare", "d1/dd5/class_dynamic_area___flare.html", null ],
+        [ "SpookyPlayerStalker", "d6/db7/class_spooky_player_stalker.html", null ],
+        [ "TriggerEvents", "d9/dad/class_trigger_events.html", [
+          [ "Trigger", "d1/d4b/class_trigger.html", [
+            [ "BarbedWireTrigger", "da/db5/class_barbed_wire_trigger.html", null ],
+            [ "CylinderTrigger", "d5/de6/class_cylinder_trigger.html", [
+              [ "EffectTrigger", "d6/d9f/class_effect_trigger.html", [
+                [ "GeyserTrigger", "da/d78/class_geyser_trigger.html", null ],
+                [ "HotSpringTrigger", "d3/d4f/class_hot_spring_trigger.html", null ],
+                [ "VolcanicTrigger", "d4/d29/class_volcanic_trigger.html", null ]
+              ] ]
+            ] ],
+            [ "ManTrigger", "d7/d05/class_man_trigger.html", [
+              [ "ConstructionBoxTrigger", "df/dd2/class_construction_box_trigger.html", null ]
+            ] ],
+            [ "SphereTrigger", "dc/d49/class_sphere_trigger.html", null ],
+            [ "TrapTrigger", "dd/d01/class_trap_trigger.html", null ]
+          ] ]
+        ] ],
+        [ "UndergroundTriggerCarrierBase", "d8/d55/class_underground_trigger_carrier_base.html", [
+          [ "UndergroundTriggerCarrier", "d6/d40/class_underground_trigger_carrier.html", null ]
+        ] ]
+      ] ]
+    ] ],
     [ "EntityLightSource", "d7/d29/class_entity_light_source.html", null ],
+    [ "EntityType", "d1/dbf/class_entity_type.html", [
+      [ "EntityAIType", "da/de3/class_entity_a_i_type.html", [
+        [ "BuildingType", "dc/d44/class_building_type.html", [
+          [ "BuildingBaseType", "d9/d7f/class_building_base_type.html", [
+            [ "HouseType", "db/ded/class_house_type.html", [
+              [ "ChurchType", "d9/d64/class_church_type.html", null ],
+              [ "FountainType", "d4/d68/class_fountain_type.html", null ]
+            ] ]
+          ] ]
+        ] ],
+        [ "DayZCreatureType", "d3/d03/class_day_z_creature_type.html", [
+          [ "DayZCreatureAIType", "d1/dfe/class_day_z_creature_a_i_type.html", null ]
+        ] ],
+        [ "ManType", "d9/d5e/class_man_type.html", null ],
+        [ "TransportType", "de/d49/class_transport_type.html", [
+          [ "BoatType", "d7/d10/class_boat_type.html", null ],
+          [ "CarType", "d7/d49/class_car_type.html", null ],
+          [ "HelicopterType", "dd/d80/class_helicopter_type.html", null ]
+        ] ]
+      ] ],
+      [ "WindSockType", "da/d8a/class_wind_sock_type.html", null ]
+    ] ],
     [ "EntranceLight", null, [
       [ "EntranceLightStairs2", "d6/de4/class_entrance_light_stairs2.html", null ]
     ] ],
@@ -1911,8 +1995,54 @@ var hierarchy =
     [ "InventoryGridController", "d2/df1/class_inventory_grid_controller.html", null ],
     [ "InventoryInputUserData", "d8/d9b/class_inventory_input_user_data.html", null ],
     [ "InventoryItem", "d6/d0e/class_inventory_item.html", null ],
-    [ "InventoryItemSuper", "dc/da1/class_inventory_item_super.html", null ],
-    [ "InventoryItemType", "dd/d2d/class_inventory_item_type.html", null ],
+    [ "InventoryItemSoundBase", "d1/d42/class_inventory_item_sound_base.html", [
+      [ "InventoryItemSoundDetach", "d4/dce/class_inventory_item_sound_detach.html", null ]
+    ] ],
+    [ "InventoryItemSuper", "dc/da1/class_inventory_item_super.html", [
+      [ "ItemOptics", "d2/d29/class_item_optics.html", [
+        [ "ACOGOptic", "dc/d63/class_a_c_o_g_optic.html", null ],
+        [ "ACOGOptic_6x", "d4/db5/class_a_c_o_g_optic__6x.html", null ],
+        [ "AugOptic", "db/d52/class_aug_optic.html", null ],
+        [ "BUISOptic", "d0/d32/class_b_u_i_s_optic.html", null ],
+        [ "Binoculars", "d1/d75/class_binoculars.html", null ],
+        [ "FNP45_MRDSOptic", "df/dd7/class_f_n_p45___m_r_d_s_optic.html", null ],
+        [ "GrozaOptic", "d3/dfd/class_groza_optic.html", null ],
+        [ "KashtanOptic", "d3/d23/class_kashtan_optic.html", null ],
+        [ "KobraOptic", "dd/d85/class_kobra_optic.html", null ],
+        [ "LongrangeOptic", "d4/d53/class_longrange_optic.html", null ],
+        [ "M68Optic", "df/d97/class_m68_optic.html", null ],
+        [ "PistolOptic", "da/d72/class_pistol_optic.html", null ],
+        [ "SSG82Optic", "d1/da4/class_s_s_g82_optic.html", null ],
+        [ "SportingOptic", "df/d7b/class_sporting_optic.html", null ],
+        [ "StarlightOptic", "d4/dc4/class_starlight_optic.html", null ]
+      ] ]
+    ] ],
+    [ "InventoryItemType", null, [
+      [ "ItemBaseType", "da/dcd/class_item_base_type.html", [
+        [ "CarWheelType", "d8/d22/class_car_wheel_type.html", null ],
+        [ "ClothingType", "d9/d25/class_clothing_type.html", [
+          [ "ItemTransmitterType", "d1/df1/class_item_transmitter_type.html", null ]
+        ] ],
+        [ "HeadType", "dc/d7f/class_head_type.html", null ],
+        [ "ItemBarrelType", "df/d34/class_item_barrel_type.html", null ],
+        [ "ItemBookType", "d3/db2/class_item_book_type.html", null ],
+        [ "ItemCompassType", "db/dc0/class_item_compass_type.html", null ],
+        [ "ItemGPSType", "df/d18/class_item_g_p_s_type.html", null ],
+        [ "ItemGrenadeType", "dc/da2/class_item_grenade_type.html", null ],
+        [ "ItemMapType", "d7/d1a/class_item_map_type.html", null ],
+        [ "ItemMegaphoneType", "dd/d60/class_item_megaphone_type.html", null ],
+        [ "ItemOpticsType", "d2/df5/class_item_optics_type.html", null ],
+        [ "ItemRadioType", "d1/d49/class_item_radio_type.html", null ],
+        [ "ItemSuppressorType", "d8/d16/class_item_suppressor_type.html", null ],
+        [ "ItemWatchType", "d0/d56/class_item_watch_type.html", null ],
+        [ "MagazineType", "d3/de8/class_magazine_type.html", null ],
+        [ "WeaponType", "d2/d2a/class_weapon_type.html", [
+          [ "UnderSlugLauncherType", "d4/dae/class_under_slug_launcher_type.html", null ],
+          [ "Weapon_BaseType", "dc/d58/class_weapon___base_type.html", null ]
+        ] ]
+      ] ]
+    ] ],
+    [ "InventoryJunctureSwapValidation", "d4/d8b/class_inventory_juncture_swap_validation.html", null ],
     [ "InventoryLocation", "d6/dc5/class_inventory_location.html", null ],
     [ "InventorySlots", "df/d36/class_inventory_slots.html", null ],
     [ "InventoryValidation", "da/d63/class_inventory_validation.html", null ],
@@ -2076,24 +2206,6 @@ var hierarchy =
     [ "ItemManager", "dc/de1/class_item_manager.html", null ],
     [ "ItemMap", "d1/d17/class_item_map.html", null ],
     [ "ItemMegaphone", "de/d12/class_item_megaphone.html", null ],
-    [ "ItemOptics", "d2/d29/class_item_optics.html", [
-      [ "ACOGOptic", "dc/d63/class_a_c_o_g_optic.html", null ],
-      [ "ACOGOptic_6x", "d4/db5/class_a_c_o_g_optic__6x.html", null ],
-      [ "AugOptic", "db/d52/class_aug_optic.html", null ],
-      [ "BUISOptic", "d0/d32/class_b_u_i_s_optic.html", null ],
-      [ "Binoculars", "d1/d75/class_binoculars.html", null ],
-      [ "Crossbow_RedpointOptic", "df/d4f/class_crossbow___redpoint_optic.html", null ],
-      [ "FNP45_MRDSOptic", "df/dd7/class_f_n_p45___m_r_d_s_optic.html", null ],
-      [ "GrozaOptic", "d3/dfd/class_groza_optic.html", null ],
-      [ "KashtanOptic", "d3/d23/class_kashtan_optic.html", null ],
-      [ "KobraOptic", "dd/d85/class_kobra_optic.html", null ],
-      [ "LongrangeOptic", "d4/d53/class_longrange_optic.html", null ],
-      [ "M68Optic", "df/d97/class_m68_optic.html", null ],
-      [ "PistolOptic", "da/d72/class_pistol_optic.html", null ],
-      [ "SSG82Optic", "d1/da4/class_s_s_g82_optic.html", null ],
-      [ "SportingOptic", "df/d7b/class_sporting_optic.html", null ],
-      [ "StarlightOptic", "d4/dc4/class_starlight_optic.html", null ]
-    ] ],
     [ "ItemRadio", "d3/deb/class_item_radio.html", null ],
     [ "ItemSuppressor", "dd/d0e/class_item_suppressor.html", null ],
     [ "ItemTransmitter", "d7/dd8/class_item_transmitter.html", null ],
@@ -2275,10 +2387,14 @@ var hierarchy =
       [ "Mag_Vikhr_30Rnd", "d2/d4b/class_mag___vikhr__30_rnd.html", null ]
     ] ],
     [ "Magnum_Base", "d5/d08/class_magnum___base.html", null ],
+    [ "MainMenuData", "d1/d93/class_main_menu_data.html", null ],
     [ "MaleFeet_Base", "de/ddf/class_male_feet___base.html", null ],
     [ "MaleHands_Base", "d2/d17/class_male_hands___base.html", null ],
     [ "MaleLegs_Base", "dc/d39/class_male_legs___base.html", null ],
     [ "MaleTorso_Base", "d4/d3d/class_male_torso___base.html", null ],
+    [ "Man", null, [
+      [ "Human", "d9/dc7/class_human.html", null ]
+    ] ],
     [ "Managed", "dd/d17/class_managed.html", [
       [ "AIAgent", "de/db7/class_a_i_agent.html", null ],
       [ "AIGroup", "d3/d85/class_a_i_group.html", null ],
@@ -2300,10 +2416,15 @@ var hierarchy =
         [ "DayZIntroScenePC", "d1/d75/class_day_z_intro_scene_p_c.html", null ]
       ] ],
       [ "DayZIntroSceneXbox", "da/d9b/class_day_z_intro_scene_xbox.html", null ],
+      [ "DebugText", "d3/d82/class_debug_text.html", [
+        [ "DebugTextScreenSpace", "d7/ded/class_debug_text_screen_space.html", null ],
+        [ "DebugTextWorldSpace", "dd/dd6/class_debug_text_world_space.html", null ]
+      ] ],
       [ "FlareSimulation", "d5/d89/class_flare_simulation.html", [
         [ "FlareSimulation_Green", "d2/ddf/class_flare_simulation___green.html", null ]
       ] ],
       [ "GameOptions", "da/dd5/class_game_options.html", null ],
+      [ "GizmoApi", "d2/dea/class_gizmo_api.html", null ],
       [ "Hud", "d5/dbf/class_hud.html", null ],
       [ "IEntity", "dc/da9/class_i_entity.html", null ],
       [ "JsonApiStruct", "da/d06/class_json_api_struct.html", null ],
@@ -2314,6 +2435,8 @@ var hierarchy =
       [ "JsonDataCreditsSection", "d8/dba/class_json_data_credits_section.html", null ],
       [ "JsonDataDLCInfo", "df/d43/class_json_data_d_l_c_info.html", null ],
       [ "JsonDataDLCList", "df/d5a/class_json_data_d_l_c_list.html", null ],
+      [ "JsonDataNewsArticle", "dd/d94/class_json_data_news_article.html", null ],
+      [ "JsonDataNewsList", "da/da7/class_json_data_news_list.html", null ],
       [ "JsonDataPlayerData", "d4/d9b/class_json_data_player_data.html", null ],
       [ "MenuData", "d9/db7/class_menu_data.html", null ],
       [ "MiscEffects", "d6/dc7/class_misc_effects.html", null ],
@@ -2389,12 +2512,154 @@ var hierarchy =
         [ "BoatHud", "dc/d23/class_boat_hud.html", null ],
         [ "CarHud", "db/d4e/class_car_hud.html", null ]
       ] ],
+      [ "WorkbenchPlugin", "d3/d91/class_workbench_plugin.html", [
+        [ "CheckLocalisationPlugin", "da/dfc/class_check_localisation_plugin.html", null ],
+        [ "DayZTool", "de/dc9/class_day_z_tool.html", [
+          [ "KillDayzTool", "d2/d13/class_kill_dayz_tool.html", null ],
+          [ "RestartDayzTool", "d1/d27/class_restart_dayz_tool.html", null ]
+        ] ],
+        [ "OpenDirPlugin", "d4/d1a/class_open_dir_plugin.html", null ],
+        [ "ResavePlugin", "de/ddd/class_resave_plugin.html", null ],
+        [ "SVNBlamePlugin", "d5/d3f/class_s_v_n_blame_plugin.html", null ],
+        [ "SVNDiffPlugin", "df/d72/class_s_v_n_diff_plugin.html", null ],
+        [ "SVNShowLogPlugin", "d1/df5/class_s_v_n_show_log_plugin.html", null ]
+      ] ],
       [ "World", "d3/d21/class_world.html", null ]
     ] ],
     [ "ManBase", "d4/d87/class_man_base.html", null ],
     [ "ManSuit_ColorBase", "d6/db7/class_man_suit___color_base.html", null ],
     [ "ManSuper", "d7/da2/class_man_super.html", null ],
+    [ "map", "d9/d28/classmap.html", null ],
+    [ "map< CargoBase, ref Container >", "d9/d28/classmap.html", null ],
+    [ "map< CheckBoxWidget, Param3 >", "d9/d28/classmap.html", null ],
     [ "map< Class TKey, Class TValue >", "d5/d9d/classmap_3_01_class_01_t_key_00_01_class_01_t_value_01_4.html", null ],
+    [ "map< eAgents, float >", "d9/d28/classmap.html", null ],
+    [ "map< ECachedEquipmentItemCategory, ref array< ref CachedEquipmentItemAttribute > >", "d9/d28/classmap.html", null ],
+    [ "map< ECharGender, ref array< string > >", "d9/d28/classmap.html", null ],
+    [ "map< EDayZProfilesOptions, ref Param3 >", "d9/d28/classmap.html", null ],
+    [ "map< EDynamicMusicPlayerCategory, ref DynamicMusicPlayerSettings >", "d9/d28/classmap.html", null ],
+    [ "map< EEffectAreaType, float >", "d9/d28/classmap.html", null ],
+    [ "map< EEffectAreaType, Param3 >", "d9/d28/classmap.html", null ],
+    [ "map< EMedicalDrugsType, float >", "d9/d28/classmap.html", null ],
+    [ "map< EntityAI, AttachmentsWrapper >", "d9/d28/classmap.html", null ],
+    [ "map< EntityAI, ref Attachments >", "d9/d28/classmap.html", null ],
+    [ "map< EntityAI, ref AttachmentsWrapper >", "d9/d28/classmap.html", null ],
+    [ "map< EntityAI, ref CargoContainer >", "d9/d28/classmap.html", null ],
+    [ "map< EntityAI, ref Container >", "d9/d28/classmap.html", null ],
+    [ "map< EntityAI, ref Param3< ref Icon, Param3, Param3 > >", "d9/d28/classmap.html", null ],
+    [ "map< EPresenceNotifierNoiseEventType, ref PresenceNotifierNoiseEvent >", "d9/d28/classmap.html", null ],
+    [ "map< EStaminaConsumers, ref StaminaConsumer >", "d9/d28/classmap.html", null ],
+    [ "map< EStaminaMultiplierTypes, float >", "d9/d28/classmap.html", null ],
+    [ "map< ETemperatureAccessTypes, ref TemperatureAccessTypeBase >", "d9/d28/classmap.html", null ],
+    [ "map< ImageWidget, Param3 >", "d9/d28/classmap.html", null ],
+    [ "map< Land_WarheadStorage_PowerStation, Land_WarheadStorage_Main >", "d9/d28/classmap.html", null ],
+    [ "map< ModInfo, ref ModsMenuSimpleEntry >", "d9/d28/classmap.html", null ],
+    [ "map< NotificationRuntimeData, Widget >", "d9/d28/classmap.html", null ],
+    [ "map< NotificationType, ref NotificationData >", "d9/d28/classmap.html", null ],
+    [ "map< Object, float >", "d9/d28/classmap.html", null ],
+    [ "map< Object, Object >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, EffecterBase >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, EntityAI >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, float >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ImageWidget >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, KeyBinding >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, Param3 >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, PlayerVoiceLookupTable >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref AgentBase >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref AnimDamageEvent >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref AnimSoundEvent >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref AnimSoundVoiceEvent >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref AnimStepEvent >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref array< bool, Param3 > >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref array< float > >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref array< float, Param3 > >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref array< Param3 > >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref array< Param3, Param3 > >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref array< ref WeaponParticlesOnBulletCasingEject > >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref array< ref WeaponParticlesOnFire > >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref array< ref WeaponParticlesOnOverheating > >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref array< SoundObjectBuilder > >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref BleedingIndicator >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref BleedingSource >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref Container >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref ContainerWithCargo >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref Effect >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref ElementArray >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref Icon >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref KeybindingElement >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref map< Param3, ref PPERequestParamDataBase > >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref Param2 >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref Param2< string, string > >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref Param3 >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref ParticleManager >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref PlayerStatsPCO_Base >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref PlayerVoiceLookupTable >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref PPEMatClassParameterCommandData >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref PPERequesterBase >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref ScriptConsoleTabBase >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref SelectionTranslation >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref set< Param3 > >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref SoundObjectBuilder >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref StaminaCooldownParams >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref StepSoundLookupTable >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref SymptomBase >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref TButtonPairingInfo >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref Timer >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref UIPopupScript >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref Widget >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref WidgetFadeTimer >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, SceneObject >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, SlotsIcon >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, StepSoundLookupTable >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, string >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, SymptomBase >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, typename >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, UIScriptedWindow >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, Widget >", "d9/d28/classmap.html", null ],
+    [ "map< PlayerBase, bool >", "d9/d28/classmap.html", null ],
+    [ "map< PlayerBase, EntityAI >", "d9/d28/classmap.html", null ],
+    [ "map< PlayerBase, ref Param2 >", "d9/d28/classmap.html", null ],
+    [ "map< PlayerBase, ref RegisterPlayerData >", "d9/d28/classmap.html", null ],
+    [ "map< PlayerBase, ref RemotePlayerDamageDebug >", "d9/d28/classmap.html", null ],
+    [ "map< ref EditBoxWidget, string >", "d9/d28/classmap.html", null ],
+    [ "map< ref ModInfo, ref ModsMenuDetailedEntry >", "d9/d28/classmap.html", null ],
+    [ "map< ref SliderWidget, string >", "d9/d28/classmap.html", null ],
+    [ "map< ref ToggleAnimations, bool >", "d9/d28/classmap.html", null ],
+    [ "map< SceneObject, Shape >", "d9/d28/classmap.html", null ],
+    [ "map< string, bool >", "d9/d28/classmap.html", null ],
+    [ "map< string, EntityAI >", "d9/d28/classmap.html", null ],
+    [ "map< string, float >", "d9/d28/classmap.html", null ],
+    [ "map< string, Param3 >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref AreaDamageManager >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref array >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref array< ref map< string, string > > >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref BiosFriendInfo >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref BleedingSourceZone >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref CacheObject >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref CfgParam >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref map >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref map< Param3, vector > >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref map< PlayerBase, Param3 > >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref map< string, Param3 > >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref map< string, string > >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref ModInfo >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref PlantMaterialHealth >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref PlayerListEntryScriptedWidget >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref SoundParams >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref Vector2 >", "d9/d28/classmap.html", null ],
+    [ "map< string, ref VehicleHudBase >", "d9/d28/classmap.html", null ],
+    [ "map< string, string >", "d9/d28/classmap.html", null ],
+    [ "map< string, typename >", "d9/d28/classmap.html", null ],
+    [ "map< string, vector >", "d9/d28/classmap.html", null ],
+    [ "map< string, Widget >", "d9/d28/classmap.html", null ],
+    [ "map< typename, bool >", "d9/d28/classmap.html", null ],
+    [ "map< typename, ref array< ActionBase_Basic > >", "d9/d28/classmap.html", null ],
+    [ "map< typename, ref map >", "d9/d28/classmap.html", null ],
+    [ "map< typename, ref PluginBase >", "d9/d28/classmap.html", null ],
+    [ "map< Widget, OptionSelectorMultistateCharacterMenu >", "d9/d28/classmap.html", null ],
+    [ "map< Widget, ref Param >", "d9/d28/classmap.html", null ],
+    [ "map< Widget, ref ScriptConsoleTabBase >", "d9/d28/classmap.html", null ],
+    [ "map< Widget, string >", "d9/d28/classmap.html", null ],
     [ "MapMarker", "d8/df6/class_map_marker.html", null ],
     [ "MapMarkerTypes", "d7/ddb/class_map_marker_types.html", null ],
     [ "MaskBase", "d5/dbf/class_mask_base.html", null ],
@@ -2690,6 +2955,19 @@ var hierarchy =
     ] ],
     [ "PetushokHat_ColorBase", "d7/d78/class_petushok_hat___color_base.html", null ],
     [ "Physics", "dd/dda/class_physics.html", null ],
+    [ "PhysicsBlock", "dc/db1/class_physics_block.html", null ],
+    [ "PhysicsGeom", "da/d5e/class_physics_geom.html", null ],
+    [ "PhysicsJoint", "d5/db2/class_physics_joint.html", [
+      [ "Physics6DOFJoint", "d4/dc3/class_physics6_d_o_f_joint.html", [
+        [ "Physics6DOFSpringJoint", "de/d60/class_physics6_d_o_f_spring_joint.html", null ]
+      ] ],
+      [ "PhysicsBallSocketJoint", "db/dfc/class_physics_ball_socket_joint.html", null ],
+      [ "PhysicsConeTwistJoint", "d3/d75/class_physics_cone_twist_joint.html", null ],
+      [ "PhysicsFixedJoint", "d9/d77/class_physics_fixed_joint.html", null ],
+      [ "PhysicsHingeJoint", "d3/d6f/class_physics_hinge_joint.html", null ],
+      [ "PhysicsSliderJoint", "d4/d21/class_physics_slider_joint.html", null ]
+    ] ],
+    [ "PhysicsWorld", "d5/d44/class_physics_world.html", null ],
     [ "Pistol_Base", "d2/d5e/class_pistol___base.html", [
       [ "CZ75_Base", "d4/d89/class_c_z75___base.html", null ],
       [ "Colt1911_Base", "d1/d57/class_colt1911___base.html", [
@@ -2952,7 +3230,9 @@ var hierarchy =
     [ "PlateCarrierHolster", "d4/d54/class_plate_carrier_holster.html", null ],
     [ "PlayerAgentPool", "da/da3/class_player_agent_pool.html", null ],
     [ "PlayerBase", "d5/da8/class_player_base.html", null ],
-    [ "PlayerBaseClient", "dc/ddb/class_player_base_client.html", null ],
+    [ "PlayerBaseClient", null, [
+      [ "SurvivorBase", "d5/d5b/class_survivor_base.html", null ]
+    ] ],
     [ "PlayerConstants", "d3/def/class_player_constants.html", null ],
     [ "PlayerConsumeData", "d6/d08/class_player_consume_data.html", null ],
     [ "PlayerRestrictedAreaInstance", "d5/dc2/class_player_restricted_area_instance.html", null ],
@@ -3057,7 +3337,10 @@ var hierarchy =
       [ "CleanWeapon", "d3/d69/class_clean_weapon.html", null ],
       [ "CraftDrysackBag", "db/d13/class_craft_drysack_bag.html", null ],
       [ "CraftTorch", "dd/db4/class_craft_torch.html", null ],
-      [ "CraftWitchHoodCoif", "d6/d72/class_craft_witch_hood_coif.html", null ]
+      [ "CraftWitchHoodCoif", "d6/d72/class_craft_witch_hood_coif.html", null ],
+      [ "RepairWithLeatherSewingKit", "d5/dc0/class_repair_with_leather_sewing_kit.html", null ],
+      [ "RepairWithSewingKit", "d4/d2e/class_repair_with_sewing_kit.html", null ],
+      [ "RepairWithTireKit", "dd/d92/class_repair_with_tire_kit.html", null ]
     ] ],
     [ "RecipeCacheData", "df/dca/class_recipe_cache_data.html", null ],
     [ "RecoilBase", "dc/dd0/class_recoil_base.html", [
@@ -3138,7 +3421,11 @@ var hierarchy =
       [ "UnboxLambda", "d5/d36/class_unbox_lambda.html", null ],
       [ "UnrestrainSelfPlayer", "d6/d8e/class_unrestrain_self_player.html", null ]
     ] ],
-    [ "ReplaceSoundEventBase", "d8/d12/class_replace_sound_event_base.html", null ],
+    [ "ReplaceSoundEventBase", "d8/d12/class_replace_sound_event_base.html", [
+      [ "EatingVoiceOverrideBase", "da/d07/class_eating_voice_override_base.html", [
+        [ "EatingVoiceOverrideDefault", "d2/dd8/class_eating_voice_override_default.html", null ]
+      ] ]
+    ] ],
     [ "RestApi", "d7/d7e/class_rest_api.html", null ],
     [ "RestContext", "d6/d59/class_rest_context.html", null ],
     [ "RichTextWidget", "db/d96/class_rich_text_widget.html", null ],
@@ -3215,27 +3502,6 @@ var hierarchy =
       [ "ScriptConsoleWeatherWindTab", "d8/d67/class_script_console_weather_wind_tab.html", null ]
     ] ],
     [ "ScriptConsoleWeatherValues", "de/d7a/class_script_console_weather_values.html", null ],
-    [ "ScriptedEntity", "df/da9/class_scripted_entity.html", [
-      [ "DynamicArea_Flare", "d1/dd5/class_dynamic_area___flare.html", null ],
-      [ "SpookyPlayerStalker", "d6/db7/class_spooky_player_stalker.html", null ],
-      [ "TriggerEvents", "d9/dad/class_trigger_events.html", [
-        [ "Trigger", "d1/d4b/class_trigger.html", [
-          [ "BarbedWireTrigger", "da/db5/class_barbed_wire_trigger.html", null ],
-          [ "CylinderTrigger", "d5/de6/class_cylinder_trigger.html", [
-            [ "EffectTrigger", "d6/d9f/class_effect_trigger.html", [
-              [ "GeyserTrigger", "da/d78/class_geyser_trigger.html", null ],
-              [ "HotSpringTrigger", "d3/d4f/class_hot_spring_trigger.html", null ],
-              [ "VolcanicTrigger", "d4/d29/class_volcanic_trigger.html", null ]
-            ] ]
-          ] ],
-          [ "ManTrigger", "d7/d05/class_man_trigger.html", [
-            [ "ConstructionBoxTrigger", "df/dd2/class_construction_box_trigger.html", null ]
-          ] ],
-          [ "SphereTrigger", "dc/d49/class_sphere_trigger.html", null ],
-          [ "TrapTrigger", "dd/d01/class_trap_trigger.html", null ]
-        ] ]
-      ] ]
-    ] ],
     [ "ScriptedLightBase", "dd/d33/class_scripted_light_base.html", null ],
     [ "ScriptInvoker", "d4/d2d/class_script_invoker.html", null ],
     [ "ScriptModule", "df/da4/class_script_module.html", null ],
@@ -3715,7 +3981,9 @@ var hierarchy =
     [ "StatsEventScoredKillData", "df/db0/class_stats_event_scored_kill_data.html", null ],
     [ "StatsEventSpawnedData", "d3/d97/class_stats_event_spawned_data.html", null ],
     [ "StomachItem", "d0/d9e/class_stomach_item.html", null ],
-    [ "string", "d5/d92/classstring.html", null ],
+    [ "string", "d5/d92/classstring.html", [
+      [ "ResourceName", "d0/dcf/class_resource_name.html", null ]
+    ] ],
     [ "SuppressorBase", "d1/d1f/class_suppressor_base.html", null ],
     [ "Surface", "d1/d1a/class_surface.html", null ],
     [ "SurfaceDetectionParameters", "d5/d4f/class_surface_detection_parameters.html", null ],
@@ -3791,6 +4059,7 @@ var hierarchy =
     [ "TraceContact", "d7/d5f/class_trace_contact.html", null ],
     [ "TrackSuitJacket_ColorBase", "d1/d6f/class_track_suit_jacket___color_base.html", null ],
     [ "TrackSuitPants_ColorBase", "d0/d0a/class_track_suit_pants___color_base.html", null ],
+    [ "TraditionalBoots_ColorBase", "d7/df8/class_traditional_boots___color_base.html", null ],
     [ "TransmitterBase", "d0/ddb/class_transmitter_base.html", null ],
     [ "Transport", "d3/d36/class_transport.html", null ],
     [ "TransportMove", null, [
@@ -3880,7 +4149,6 @@ var hierarchy =
     [ "UndergroundTrigger", null, [
       [ "UndergroundBunkerTrigger", "d3/da7/class_underground_bunker_trigger.html", null ]
     ] ],
-    [ "UndergroundTriggerCarrierBase", "d8/d55/class_underground_trigger_carrier_base.html", null ],
     [ "UnderObjectDecalSpawnSettings", "d5/da1/class_under_object_decal_spawn_settings.html", null ],
     [ "UniversalTemperatureSourceDebug", "df/d6b/class_universal_temperature_source_debug.html", null ],
     [ "UniversalTemperatureSourceLambdaBase", "da/dfc/class_universal_temperature_source_lambda_base.html", [
@@ -3970,18 +4238,6 @@ var hierarchy =
     [ "WoolGloves_ColorBase", "db/df4/class_wool_gloves___color_base.html", null ],
     [ "WoolGlovesFingerless_ColorBase", "d3/de7/class_wool_gloves_fingerless___color_base.html", null ],
     [ "Workbench", "d6/d1a/class_workbench.html", null ],
-    [ "WorkbenchPlugin", "d3/d91/class_workbench_plugin.html", [
-      [ "CheckLocalisationPlugin", "da/dfc/class_check_localisation_plugin.html", null ],
-      [ "DayZTool", "de/dc9/class_day_z_tool.html", [
-        [ "KillDayzTool", "d2/d13/class_kill_dayz_tool.html", null ],
-        [ "RestartDayzTool", "d1/d27/class_restart_dayz_tool.html", null ]
-      ] ],
-      [ "OpenDirPlugin", "d4/d1a/class_open_dir_plugin.html", null ],
-      [ "ResavePlugin", "de/ddd/class_resave_plugin.html", null ],
-      [ "SVNBlamePlugin", "d5/d3f/class_s_v_n_blame_plugin.html", null ],
-      [ "SVNDiffPlugin", "df/d72/class_s_v_n_diff_plugin.html", null ],
-      [ "SVNShowLogPlugin", "d1/df5/class_s_v_n_show_log_plugin.html", null ]
-    ] ],
     [ "WorkbenchPluginAttribute", "d9/d5e/class_workbench_plugin_attribute.html", [
       [ "WorkbenchToolAttribute", "d2/d99/class_workbench_tool_attribute.html", null ]
     ] ],
@@ -3992,6 +4248,7 @@ var hierarchy =
       [ "RefrigeratorMinsk", "dc/d81/class_refrigerator_minsk.html", null ]
     ] ],
     [ "WorldData", "d0/d24/class_world_data.html", [
+      [ "ChernarusPlusData", "db/dbb/class_chernarus_plus_data.html", null ],
       [ "EnochData", "dc/d97/class_enoch_data.html", null ],
       [ "SakhalData", "d1/d14/class_sakhal_data.html", null ]
     ] ],

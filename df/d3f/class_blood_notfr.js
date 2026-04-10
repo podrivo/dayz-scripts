@@ -1,6 +1,5 @@
 var class_blood_notfr =
 [
-    [ "BloodNotfr", "df/d3f/class_blood_notfr.html#a88cf1bffbf8a4caf1f95fdcd3b8a6c67", null ],
     [ "DisplayTendency", "df/d3f/class_blood_notfr.html#a8755cc6f9e3155300d55f4edd5d8bc80", null ],
     [ "GetNotifierType", "df/d3f/class_blood_notfr.html#ac9c9d4870bfd6bd9870abcec028e48da", null ],
     [ "GetObservedValue", "df/d3f/class_blood_notfr.html#a39c7462ce3e3e196313302d50726ea1e", null ],

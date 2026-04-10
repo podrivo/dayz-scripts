@@ -34,5 +34,7 @@ var class_land___underground___entrance_base =
     [ "m_InteriorLight1", "d4/d9e/class_land___underground___entrance_base.html#a0e399fddd0b6da73f413a85f1e852b87", null ],
     [ "m_InteriorLight2", "d4/d9e/class_land___underground___entrance_base.html#aba661da389f67ea12869251f0547d878", null ],
     [ "m_InteriorLight3", "d4/d9e/class_land___underground___entrance_base.html#abf013ff467c918fac7abe5e7bf41b6c4", null ],
-    [ "m_NavmeshTimer", "d4/d9e/class_land___underground___entrance_base.html#acec515cce6ef9e7acbda972ebdd91bc9", null ]
+    [ "m_NavmeshTimer", "d4/d9e/class_land___underground___entrance_base.html#acec515cce6ef9e7acbda972ebdd91bc9", null ],
+    [ "m_TempHotfixTimer", "d4/d9e/class_land___underground___entrance_base.html#ace8c89ced5923587fe31136f7ea51a79", null ],
+    [ "TEMP_HOTIX_TIMESLICE", "d4/d9e/class_land___underground___entrance_base.html#aca22315c3c319a692b81ed25d39f54f0", null ]
 ];

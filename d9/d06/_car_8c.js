@@ -1,5 +1,6 @@
 var _car_8c =
 [
+    [ "CarType", "d7/d49/class_car_type.html", null ],
     [ "CarOwnerState", "d2/dca/class_car_owner_state.html", null ],
     [ "CarMove", "df/d64/class_car_move.html", null ],
     [ "Transport", "d3/d36/class_transport.html", "d3/d36/class_transport" ],

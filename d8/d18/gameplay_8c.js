@@ -150,7 +150,7 @@ var gameplay_8c =
     [ "GetConfigArrayNames", "d8/d18/gameplay_8c.html#aed6408f73619442d0f70588b0e0c0e7a", null ],
     [ "GetConfigAttachmentTypes", "d8/d18/gameplay_8c.html#a5ae26cba3bd03464540625496726ee21", null ],
     [ "GetDefault", "d8/d18/gameplay_8c.html#ab57e8ac380ab21a489cdf7d36e0e66b6", null ],
-    [ "GetGame", "d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d", null ],
+    [ "GetGame", "d8/d18/gameplay_8c.html#af97a1e393eaf2dc010ba59c8e3a5b2d5", null ],
     [ "GetMax", "d8/d18/gameplay_8c.html#a4cecce86800343add3f994147d3eb2b8", null ],
     [ "GetMin", "d8/d18/gameplay_8c.html#a06d55a22062aba8890aef218d7507e34", null ],
     [ "GetPathFromSlotID", "d8/d18/gameplay_8c.html#a2ea16df0c6db98c6f35432af5793c534", null ],

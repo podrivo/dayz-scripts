@@ -316,6 +316,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:aba18f30a53e010eb9c03f2f6fdcf9e4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da9/class_i_entity.html#aba18f30a53e010eb9c03f2f6fdcf9e4a">OnTreeCutDown</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> cutting_entity)</td></tr>
 <tr class="memdesc:aba18f30a53e010eb9c03f2f6fdcf9e4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when tree is chopped down. 'cutting_entity' can be tool, or player, if cutting bush with bare hands.  <br /></td></tr>
 <tr class="separator:aba18f30a53e010eb9c03f2f6fdcf9e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a467dee5e5377bfe36fdc6419fdc5b37e"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d1/dbf/class_entity_type.html">EntityType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da9/class_i_entity.html#a467dee5e5377bfe36fdc6419fdc5b37e">GetEntityType</a> ()</td></tr>
+<tr class="memdesc:a467dee5e5377bfe36fdc6419fdc5b37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns shared <a class="el" href="../../d1/dbf/class_entity_type.html">EntityType</a>, can be null for some internal/static types.  <br /></td></tr>
+<tr class="separator:a467dee5e5377bfe36fdc6419fdc5b37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26d5ac6b0e2c548907c421d3be7f7b3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d92/classstring.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da9/class_i_entity.html#a26d5ac6b0e2c548907c421d3be7f7b3d">GetType</a> ()</td></tr>
 <tr class="memdesc:a26d5ac6b0e2c548907c421d3be7f7b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get config class of object.  <br /></td></tr>
 <tr class="separator:a26d5ac6b0e2c548907c421d3be7f7b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -396,7 +399,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a6d93c15ef6c8719555ad8a025497c157"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns if this entity is Melee <a class="el" href="../../db/de5/class_weapon.html" title="script counterpart to engine&#39;s class Weapon">Weapon</a>  <br /></td></tr>
 <tr class="separator:a6d93c15ef6c8719555ad8a025497c157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e9ade4859416812062d93bde1f6d259"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da9/class_i_entity.html#a0e9ade4859416812062d93bde1f6d259">IsBuilding</a> ()</td></tr>
-<tr class="memdesc:a0e9ade4859416812062d93bde1f6d259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if this entity is Building.  <br /></td></tr>
+<tr class="memdesc:a0e9ade4859416812062d93bde1f6d259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if this entity is <a class="el" href="../../d2/dbd/class_building.html">Building</a>.  <br /></td></tr>
 <tr class="separator:a0e9ade4859416812062d93bde1f6d259"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa023901c0c11c8b83bd0a419c4b2e524"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d27/_e_water_source_object_type_8c.html#af6a5f93692a424eb17de4efcf13c206b">EWaterSourceObjectType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da9/class_i_entity.html#aa023901c0c11c8b83bd0a419c4b2e524">GetWaterSourceObjectType</a> ()</td></tr>
 <tr class="separator:aa023901c0c11c8b83bd0a419c4b2e524"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -408,7 +411,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a35297a6114f73f7bc36e57e3b2c93f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if this entity is a weapon which can shoot explosive ammo.  <br /></td></tr>
 <tr class="separator:a35297a6114f73f7bc36e57e3b2c93f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a320d91fc563ee0224bd7afc7d0690354"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da9/class_i_entity.html#a320d91fc563ee0224bd7afc7d0690354">IsFuelStation</a> ()</td></tr>
-<tr class="memdesc:a320d91fc563ee0224bd7afc7d0690354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if this entity is Fuel Station (extends Building)  <br /></td></tr>
+<tr class="memdesc:a320d91fc563ee0224bd7afc7d0690354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if this entity is Fuel Station (extends <a class="el" href="../../d2/dbd/class_building.html">Building</a>)  <br /></td></tr>
 <tr class="separator:a320d91fc563ee0224bd7afc7d0690354"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad532f6297cbcd83a008281ef7e63d22e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da9/class_i_entity.html#ad532f6297cbcd83a008281ef7e63d22e">IsTransport</a> ()</td></tr>
 <tr class="memdesc:ad532f6297cbcd83a008281ef7e63d22e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if this entity is transport.  <br /></td></tr>
@@ -720,6 +723,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a05ddf13a52363ac65a6cc5dd3aee3c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d21f761ed0576e89e30669d8669bf3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da9/class_i_entity.html#a5d21f761ed0576e89e30669d8669bf3a">Gizmo_GetWorldTransform</a> (<a class="el" href="../../d7/dfc/classvector.html">vector</a> transform[4])</td></tr>
 <tr class="separator:a5d21f761ed0576e89e30669d8669bf3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad2490cedf91483661342c8b08945154"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da9/class_i_entity.html#aad2490cedf91483661342c8b08945154">Gizmo_IsAllowedTransformMode</a> (<a class="el" href="../../de/de6/_gizmo_api_8c.html#a9a11ee127d76d87702dc7eb6f86bf2c9">GizmoTransformMode</a> mode)</td></tr>
+<tr class="separator:aad2490cedf91483661342c8b08945154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9a3252706506246ef654c8bec5611c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da9/class_i_entity.html#ac9a3252706506246ef654c8bec5611c8">Gizmo_IsAllowedSpaceMode</a> (<a class="el" href="../../de/de6/_gizmo_api_8c.html#ac169b54fb647deaa22603da62d0661ca">GizmoSpaceMode</a> mode)</td></tr>
+<tr class="separator:ac9a3252706506246ef654c8bec5611c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Event methods</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Event method stubs. Reimplement these in inherited entities to receive event calls <br  />
  </p>
@@ -1552,12 +1559,11 @@ Static Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>radius of bounding box <div class="fragment"><div class="line"><a class="code hl_class" href="../../d7/dfc/classvector.html">vector</a> minMax[2];</div>
-<div class="line"><span class="keywordtype">float</span> radius = <a class="code hl_function" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d2/de6/class_c_game.html#a5ea16fa19c11f786c7b9f675d8cf8f2e">GetPlayer</a>().ClippingInfo(minMax);</div>
+<div class="line"><span class="keywordtype">float</span> radius = <a class="code hl_variable" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetPlayer().ClippingInfo(minMax);</div>
 <div class="line"><a class="code hl_function" href="../../d0/d62/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print</a>(minMax);</div>
 <div class="line"><a class="code hl_function" href="../../d0/d62/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print</a>(radius);</div>
-<div class="ttc" id="aclass_c_game_html_a5ea16fa19c11f786c7b9f675d8cf8f2e"><div class="ttname"><a href="../../d2/de6/class_c_game.html#a5ea16fa19c11f786c7b9f675d8cf8f2e">CGame::GetPlayer</a></div><div class="ttdeci">proto native DayZPlayer GetPlayer()</div></div>
-<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/dfc/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> EnConvert.c:106</div></div>
-<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> DayZGame.c:3942</div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/dfc/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> EnConvert.c:119</div></div>
 <div class="ttc" id="agroup___debug_html_gaaa9351d895a1f244a26fd635c378c536"><div class="ttname"><a href="../../d0/d62/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print</a></div><div class="ttdeci">proto void Print(void var)</div><div class="ttdoc">Prints content of variable to console/log.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -2114,7 +2120,7 @@ Static Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="../../dc/dac/class_script_call_queue.html#a90d46bca4f2fee822c985500e877b926">ScriptCallQueue::Call()</a>, <a class="el" href="../../d9/dc3/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../d2/de6/class_c_game.html#a6fc4a6c17be8c60874f4e4a72649a2c1">CGame::GetCallQueue()</a>, and <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>, and <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>
@@ -2181,11 +2187,11 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Delete this object in next frame. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>void</code> </dd></dl>
-<div class="fragment"><div class="line"><a class="code hl_class" href="../../de/d7a/class_item_base.html">ItemBase</a> item = <a class="code hl_function" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d2/de6/class_c_game.html#a5ea16fa19c11f786c7b9f675d8cf8f2e">GetPlayer</a>().CreateInInventory(<span class="stringliteral">&quot;GrenadeRGD5&quot;</span>);</div>
+<div class="fragment"><div class="line"><a class="code hl_class" href="../../de/d7a/class_item_base.html">ItemBase</a> item = <a class="code hl_variable" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetPlayer().CreateInInventory(<span class="stringliteral">&quot;GrenadeRGD5&quot;</span>);</div>
 <div class="line">item.Delete();</div>
-<div class="ttc" id="aclass_item_base_html"><div class="ttname"><a href="../../de/d7a/class_item_base.html">ItemBase</a></div><div class="ttdef"><b>Definition</b> InventoryItem.c:731</div></div>
+<div class="ttc" id="aclass_item_base_html"><div class="ttname"><a href="../../de/d7a/class_item_base.html">ItemBase</a></div><div class="ttdef"><b>Definition</b> InventoryItem.c:742</div></div>
 </div><!-- fragment --> 
-<p class="reference">References <a class="el" href="../../dc/dac/class_script_call_queue.html#a90d46bca4f2fee822c985500e877b926">ScriptCallQueue::Call()</a>, <a class="el" href="../../d9/dc3/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../d2/de6/class_c_game.html#a6fc4a6c17be8c60874f4e4a72649a2c1">CGame::GetCallQueue()</a>, and <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>, and <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>
@@ -2404,7 +2410,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Creates an explosion on this object by its ammoType in config. </p>
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, and <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition()</a>.</p>
 
 </div>
 </div>
@@ -3264,7 +3270,7 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, and <a class="el" href="../../d5/dc8/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition()</a>, and <a class="el" href="../../d5/dc8/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector()</a>.</p>
 
 </div>
 </div>
@@ -3300,10 +3306,8 @@ Static Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if collision box exists, false otherwise <div class="fragment"><div class="line"><a class="code hl_class" href="../../d7/dfc/classvector.html">vector</a> minMax[2];</div>
-<div class="line"><span class="keywordflow">if</span>(<a class="code hl_function" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>().<a class="code hl_function" href="../../dc/da9/class_i_entity.html#a2b8660154cbde21bbce3e214be700449">GetCollisionBox</a>(minMax))</div>
+<div class="line"><span class="keywordflow">if</span>(<a class="code hl_variable" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetPlayer().GetCollisionBox(minMax))</div>
 <div class="line">    <a class="code hl_function" href="../../d0/d62/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print</a>(<span class="stringliteral">&quot;has box&quot;</span>);</div>
-<div class="ttc" id="a_modifier_base_8c_html_aaf6ee4d1f067be1038b7a662af6af1bf"><div class="ttname"><a href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a></div><div class="ttdeci">PlayerBase GetPlayer()</div><div class="ttdef"><b>Definition</b> ModifierBase.c:51</div></div>
-<div class="ttc" id="aclass_i_entity_html_a2b8660154cbde21bbce3e214be700449"><div class="ttname"><a href="../../dc/da9/class_i_entity.html#a2b8660154cbde21bbce3e214be700449">IEntity::GetCollisionBox</a></div><div class="ttdeci">proto native bool GetCollisionBox(out vector minMax[2])</div><div class="ttdoc">Gets collision bounding box.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3651,7 +3655,34 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Get display name of entity. </p>
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#aed369a70e2f29ca3e7141479128fe171">CGame::ObjectGetDisplayName()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
+
+</div>
+</div>
+<a id="a467dee5e5377bfe36fdc6419fdc5b37e" name="a467dee5e5377bfe36fdc6419fdc5b37e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a467dee5e5377bfe36fdc6419fdc5b37e">&#9670;&#160;</a></span>GetEntityType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">proto native <a class="el" href="../../d1/dbf/class_entity_type.html">EntityType</a> GetEntityType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns shared <a class="el" href="../../d1/dbf/class_entity_type.html">EntityType</a>, can be null for some internal/static types. </p>
 
 </div>
 </div>
@@ -4389,7 +4420,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Returns name of the model of this object without the '.p3d' suffix. </p>
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a5f4900e5d252df67874ca66b188c1548">CGame::GetModelName()</a>, and <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, and <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>.</p>
 
 </div>
 </div>
@@ -4814,7 +4845,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Returns noise multiplier of surface under object. </p>
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, and <a class="el" href="../../d2/de6/class_c_game.html#a7e8bd180a3c345f3dc777e82704d1db7">CGame::SurfaceGetNoiseMultiplier()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, and <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition()</a>.</p>
 
 </div>
 </div>
@@ -4843,7 +4874,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Returns type of surface under object. </p>
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#a04f0e233206a83f17a3dd631114536b9">CGame::SurfaceUnderObject()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>
@@ -4918,7 +4949,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Get config class of object. </p>
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#ac181828cd77566c7c585f924a85220e6">CGame::ObjectGetType()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>
@@ -5024,6 +5055,58 @@ Static Private Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ac9a3252706506246ef654c8bec5611c8" name="ac9a3252706506246ef654c8bec5611c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9a3252706506246ef654c8bec5611c8">&#9670;&#160;</a></span>Gizmo_IsAllowedSpaceMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> Gizmo_IsAllowedSpaceMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/de6/_gizmo_api_8c.html#ac169b54fb647deaa22603da62d0661ca">GizmoSpaceMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad2490cedf91483661342c8b08945154" name="aad2490cedf91483661342c8b08945154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad2490cedf91483661342c8b08945154">&#9670;&#160;</a></span>Gizmo_IsAllowedTransformMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> Gizmo_IsAllowedTransformMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/de6/_gizmo_api_8c.html#a9a11ee127d76d87702dc7eb6f86bf2c9">GizmoTransformMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a694ef9c2e8f656cf23c3605c9f94a588" name="a694ef9c2e8f656cf23c3605c9f94a588"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a694ef9c2e8f656cf23c3605c9f94a588">&#9670;&#160;</a></span>Gizmo_IsSupported()</h2>
 
@@ -5047,7 +5130,7 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#abe7eeafe230d96149c5a06881d4d9c25">CGame::IsMultiplayer()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>
@@ -5115,7 +5198,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Searches object's config for the given animation name. Returns true if it was found, or false if not. </p>
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, and <a class="el" href="../../df/dee/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType()</a>.</p>
 
 </div>
 </div>
@@ -5419,7 +5502,7 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns if this entity is Building. </p>
+<p>Returns if this entity is <a class="el" href="../../d2/dbd/class_building.html">Building</a>. </p>
 
 </div>
 </div>
@@ -5764,7 +5847,7 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns if this entity is Fuel Station (extends Building) </p>
+<p>Returns if this entity is Fuel Station (extends <a class="el" href="../../d2/dbd/class_building.html">Building</a>) </p>
 
 </div>
 </div>
@@ -5925,7 +6008,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Check config class name of the object. </p>
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#aa4c04ab2e2b94cbe35b858ec2940dbf9">CGame::ObjectIsKindOf()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>
@@ -6433,7 +6516,7 @@ Static Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns if this entity is <a class="el" href="../../df/dea/class_well.html">Well</a> (extends Building) DEPRECATED by GetWaterSourceObjectType </p>
+<p>Returns if this entity is <a class="el" href="../../df/dea/class_well.html">Well</a> (extends <a class="el" href="../../d2/dbd/class_building.html">Building</a>) DEPRECATED by GetWaterSourceObjectType </p>
 
 </div>
 </div>
@@ -6650,7 +6733,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Called on clients when this object explodes. </p>
 
-<p class="reference">References <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition</a>, <a class="el" href="../../db/d46/class_ammo_effects.html#a0b0d366471178b170065b1fa46fac974">AmmoEffects::PlayAmmoEffect()</a>, and <a class="el" href="../../db/d46/class_ammo_effects.html#aafb94ed4e288820b6285fe624d4dd7da">AmmoEffects::PlayAmmoParticle()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/ddb/group___sound_controller.html#ga42c3d3a01b261e10d8dd57ed3b5bbb3d">GetPosition()</a>, <a class="el" href="../../db/d46/class_ammo_effects.html#a0b0d366471178b170065b1fa46fac974">AmmoEffects::PlayAmmoEffect()</a>, and <a class="el" href="../../db/d46/class_ammo_effects.html#aafb94ed4e288820b6285fe624d4dd7da">AmmoEffects::PlayAmmoParticle()</a>.</p>
 
 </div>
 </div>
@@ -6943,7 +7026,7 @@ Static Private Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -7047,7 +7130,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Plays the given sound once on this object's instance. Range is in meters. Created sound is only local, unless create_local is set to false. Returns the sound itself. </p>
 
-<p class="reference">References <a class="el" href="../../d2/de6/class_c_game.html#a61db5176ca7a14fccbb6acdbb2db41e1">CGame::CreateSoundOnObject()</a>, and <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>
@@ -7093,7 +7176,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Plays the given sound in loop on this object's instance. Range is in meters. Created sound is only local, unless create_local is set to false. Returns the sound itself. </p>
 
-<p class="reference">References <a class="el" href="../../d2/de6/class_c_game.html#a61db5176ca7a14fccbb6acdbb2db41e1">CGame::CreateSoundOnObject()</a>, and <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>
@@ -7151,7 +7234,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p><a class="el" href="../../d9/d89/class_effect_sound.html" title="Wrapper class for managing sound through SEffectManager.">EffectSound</a> - plays soundset on this object and returns state of the sound (true - played, false - not played) </p>
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#a656bc2b0e38dadd2a8969cd1ac46256e">SEffectManager::PlaySoundOnObject()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af5eacfbd1ed6f18ade3c93953dece0d1">EffectSound::SetAutodestroy()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d2/d03/class_s_effect_manager.html#a656bc2b0e38dadd2a8969cd1ac46256e">SEffectManager::PlaySoundOnObject()</a>, and <a class="el" href="../../d9/d89/class_effect_sound.html#af5eacfbd1ed6f18ade3c93953dece0d1">EffectSound::SetAutodestroy()</a>.</p>
 
 </div>
 </div>
@@ -7556,7 +7639,7 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#aac01e4616c94aabb371f87991a26f37f">CGame::ObjectRelease()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>
@@ -7634,7 +7717,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Remote procedure call shortcut, see <a class="el" href="../../d2/de6/class_c_game.html#a2fd98e5859fa46ea6c7f73471a57c026" title="Initiate remote procedure call. When called on client, RPC is evaluated on server; When called on ser...">CGame.RPC</a> / <a class="el" href="../../d2/de6/class_c_game.html#a36adda952415004bdca1e3f04c3f2c14" title="see CGame.RPC">CGame.RPCSingleParam</a>. </p>
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#a2fd98e5859fa46ea6c7f73471a57c026">CGame::RPC()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>
@@ -7686,7 +7769,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Remote procedure call shortcut, see <a class="el" href="../../d2/de6/class_c_game.html#a36adda952415004bdca1e3f04c3f2c14" title="see CGame.RPC">CGame.RPCSingleParam</a> / <a class="el" href="../../d2/de6/class_c_game.html#a2fd98e5859fa46ea6c7f73471a57c026" title="Initiate remote procedure call. When called on client, RPC is evaluated on server; When called on ser...">CGame.RPC</a>. </p>
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#a36adda952415004bdca1e3f04c3f2c14">CGame::RPCSingleParam()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>
@@ -8338,7 +8421,7 @@ Static Private Member Functions</h2></td></tr>
 
 <p><a class="el" href="../../d9/d89/class_effect_sound.html" title="Wrapper class for managing sound through SEffectManager.">EffectSound</a> - stops soundset and returns state of the sound (true - stopped, false - not playing) </p>
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>
@@ -8365,7 +8448,7 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#a36adda952415004bdca1e3f04c3f2c14">CGame::RPCSingleParam()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>

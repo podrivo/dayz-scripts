@@ -1,5 +1,13 @@
 var class_car_script =
 [
+    [ "~CivilianSedan", "de/d59/class_car_script.html#a767915456049e8852fdc929fc5a69898", null ],
+    [ "~Hatchback_02", "de/d59/class_car_script.html#abf9852208655d527225d2374b2bc28dd", null ],
+    [ "~Offroad_02", "de/d59/class_car_script.html#a0195795e93a6ad9345811859e2b20535", null ],
+    [ "~OffroadHatchback", "de/d59/class_car_script.html#a9071f53f3e88cdd8d1a0c37eb4204a02", null ],
+    [ "~Sedan_02", "de/d59/class_car_script.html#a39f0c8e548a463c4c11a4dfbef8f1bd0", null ],
+    [ "~Truck_01_Base", "de/d59/class_car_script.html#a0df2e7a062b7fa8eac842775eea2bf47", null ],
+    [ "~Truck_02", "de/d59/class_car_script.html#aea36971d1e9bd0ec39fe9c673e24738d", null ],
+    [ "~Van_01", "de/d59/class_car_script.html#abce21a398254cd978d6f89b036dcd952", null ],
     [ "CanDisplayAttachmentCategory", "de/d59/class_car_script.html#a06a3db5d716be7ea15854643e758147e", null ],
     [ "CanDisplayAttachmentCategory", "de/d59/class_car_script.html#a06a3db5d716be7ea15854643e758147e", null ],
     [ "CanDisplayAttachmentCategory", "de/d59/class_car_script.html#a06a3db5d716be7ea15854643e758147e", null ],

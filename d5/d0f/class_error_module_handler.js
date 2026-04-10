@@ -6,7 +6,7 @@ var class_error_module_handler =
     [ "GetClientMessage", "d5/d0f/class_error_module_handler.html#ab93a46c361bd53335774513aea4d7166", null ],
     [ "GetClientMessageByCode", "d5/d0f/class_error_module_handler.html#aa94e3b60ebd4ffbb1dfbc41794ce61d2", null ],
     [ "GetCodeFromError", "d5/d0f/class_error_module_handler.html#a1b7d9aefb7738345cc653af776d0b3e0", null ],
-    [ "GetErrorHex", "d5/d0f/class_error_module_handler.html#a0b237be2d93232b757e73572a67aa650", null ],
+    [ "GetErrorHex", "d5/d0f/class_error_module_handler.html#abe7344a0b56485c75450c40c24bbf02e", null ],
     [ "GetErrorModules", "d5/d0f/class_error_module_handler.html#a1ef447206d1894c57af1bf0a744c4931", null ],
     [ "GetInstance", "d5/d0f/class_error_module_handler.html#a26600db40fb4e59edea4b7f5ff22ff66", null ],
     [ "GetLastClientMessage", "d5/d0f/class_error_module_handler.html#ac03fe7b6c8b3600d735dfb9466209353", null ],

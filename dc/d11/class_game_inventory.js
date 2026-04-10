@@ -117,7 +117,6 @@ var class_game_inventory =
     [ "OnInventoryFailure", "dc/d11/class_game_inventory.html#acf12622f99596e7db27151086afd074e", null ],
     [ "OnInventoryJunctureFailureFromServer", "dc/d11/class_game_inventory.html#addec6bad8fe4a66253816aa477c11dab", null ],
     [ "OnInventoryJunctureFromServer", "dc/d11/class_game_inventory.html#a14bcd88013fb5c585af6da1064610561", null ],
-    [ "OnInventoryJunctureRepairFromServer", "dc/d11/class_game_inventory.html#aecf56353b99619c6a61b69aa9aa94ef6", null ],
     [ "OnServerInventoryCommand", "dc/d11/class_game_inventory.html#a5a8b83de1fc0289ef1f46a930ddd0941", null ],
     [ "OnServerInventoryCommandStatic", "dc/d11/class_game_inventory.html#a691d9c2a8bc98e58606a254545efb659", null ],
     [ "OnStoreLoad", "dc/d11/class_game_inventory.html#ab8fb9b4105d97f4c7ba4bdd84d6c7de9", null ],

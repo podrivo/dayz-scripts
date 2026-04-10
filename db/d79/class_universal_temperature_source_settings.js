@@ -5,6 +5,7 @@ var class_universal_temperature_source_settings =
     [ "m_EnableOnTemperatureControl", "db/d79/class_universal_temperature_source_settings.html#abf0841ba1f408eb09775ea9dc81f3218", null ],
     [ "m_InactiveTemperatureThreshold", "db/d79/class_universal_temperature_source_settings.html#aa717176973afafaa18eb81240ce5858f", null ],
     [ "m_IsWorldOverriden", "db/d79/class_universal_temperature_source_settings.html#ae810b9ed0f73fcda0d42360bdc12f3ed", null ],
+    [ "m_ItemDryModifier", "db/d79/class_universal_temperature_source_settings.html#aac95f035f9499c235da078bd6215b692", null ],
     [ "m_ManualUpdate", "db/d79/class_universal_temperature_source_settings.html#aa73915ce094d8a7e65a02b1b78aab6ec", null ],
     [ "m_Parent", "db/d79/class_universal_temperature_source_settings.html#a9bd83a26bbdee02d9de9c76e851b16da", null ],
     [ "m_Position", "db/d79/class_universal_temperature_source_settings.html#a95d9484423b4997bf70860a1bb683c32", null ],

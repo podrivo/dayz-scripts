@@ -1,5 +1,7 @@
 var _bios_lobby_service_8c =
 [
+    [ "JsonDataNewsArticle", "dd/d94/class_json_data_news_article.html", "dd/d94/class_json_data_news_article" ],
+    [ "JsonDataNewsList", "da/da7/class_json_data_news_list.html", "da/da7/class_json_data_news_list" ],
     [ "ServerBrowserHelperFunctions", "d1/d83/class_server_browser_helper_functions.html", "d1/d83/class_server_browser_helper_functions" ],
     [ "GetServersResultRow", "d5/d36/class_get_servers_result_row.html", "d5/d36/class_get_servers_result_row" ],
     [ "GetFirstServerWithEmptySlotResult", "d6/d6d/class_get_first_server_with_empty_slot_result.html", "d6/d6d/class_get_first_server_with_empty_slot_result" ],

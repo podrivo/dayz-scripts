@@ -332,8 +332,6 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d4/d7b/class_input.html#af49c04d103f4bf217a469a37ed7609ed" title="Check if game should have focus.">HasGameFocus()</a> </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/da1/class_plugin_base.html#afe2558164cf490b46cff0d90e28b5593">PluginBase::CaptureFocus()</a>, <a class="el" href="../../da/d69/_plugin_dayz_player_debug_8c.html#afe2558164cf490b46cff0d90e28b5593">CaptureFocus()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#ac0b6fa8eeb19c44498669ccfe6d83a5c">PluginBase::FreeCameraControlDisable()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a12c8b75226f25acf07eb193d6293f3d9">PluginBase::FreeCameraControlEnable()</a>, <a class="el" href="../../d7/dcd/class_u_i_menu_panel.html#a97f7627862b14979def8291cec33634e">UIMenuPanel::LockControls()</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#afbdd9ad08400d01cc7baf13b3df2ad50">DayZPlayer::LockControls()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ace7ae525ee4f8faba35d4fb1aa51b8c3">UIScriptedMenu::OnMouseButtonDown()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#ab47cea609e063ab2b8fe4eb7fa5e53c9">PluginBase::ReleaseFocus()</a>, <a class="el" href="../../da/d69/_plugin_dayz_player_debug_8c.html#ab47cea609e063ab2b8fe4eb7fa5e53c9">ReleaseFocus()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#aab2ca3058c63a410fa6f032be26022d6">PluginBase::SetDeveloperItemClientEx()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a3a12fb34a4c69bc09fd75fa0216ae933">PluginBase::ToggleFocus()</a>, and <a class="el" href="../../d7/dcd/class_u_i_menu_panel.html#aac63556d72825d3de4b6b43c904941df">UIMenuPanel::UnlockControls()</a>.</p>
-
 </div>
 </div>
 <a id="a4bdcb49e4ca921a7e93d841b0fb7a4c6" name="a4bdcb49e4ca921a7e93d841b0fb7a4c6"></a>
@@ -363,10 +361,8 @@ Private Member Functions</h2></td></tr>
 <p>Disable key until end of frame. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>id of key, defined in <a class="el" href="../../de/d48/group___keyboard.html#ga7885f47644a0388f981f416fa20389b2">KeyCode</a> <div class="fragment"><div class="line"><a class="code hl_function" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d2/de6/class_c_game.html#a4c1aebecffd68fa987e1475c34695774">GetInput</a>().<a class="code hl_function" href="../../d4/d7b/class_input.html#a4bdcb49e4ca921a7e93d841b0fb7a4c6">DisableKey</a>(<a class="code hl_enumeration" href="../../de/d48/group___keyboard.html#ga7885f47644a0388f981f416fa20389b2">KeyCode</a>.KC_RETURN);</div>
-<div class="ttc" id="aclass_c_game_html_a4c1aebecffd68fa987e1475c34695774"><div class="ttname"><a href="../../d2/de6/class_c_game.html#a4c1aebecffd68fa987e1475c34695774">CGame::GetInput</a></div><div class="ttdeci">proto native Input GetInput()</div></div>
-<div class="ttc" id="aclass_input_html_a4bdcb49e4ca921a7e93d841b0fb7a4c6"><div class="ttname"><a href="../../d4/d7b/class_input.html#a4bdcb49e4ca921a7e93d841b0fb7a4c6">Input::DisableKey</a></div><div class="ttdeci">proto native void DisableKey(int key)</div><div class="ttdoc">Disable key until end of frame.</div></div>
-<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+    <tr><td class="paramname">key</td><td>id of key, defined in <a class="el" href="../../de/d48/group___keyboard.html#ga7885f47644a0388f981f416fa20389b2">KeyCode</a> <div class="fragment"><div class="line"><a class="code hl_variable" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetInput().DisableKey(<a class="code hl_enumeration" href="../../de/d48/group___keyboard.html#ga7885f47644a0388f981f416fa20389b2">KeyCode</a>.KC_RETURN);</div>
+<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> DayZGame.c:3942</div></div>
 <div class="ttc" id="agroup___keyboard_html_ga7885f47644a0388f981f416fa20389b2"><div class="ttname"><a href="../../de/d48/group___keyboard.html#ga7885f47644a0388f981f416fa20389b2">KeyCode</a></div><div class="ttdeci">KeyCode</div><div class="ttdef"><b>Definition</b> EnSystem.c:157</div></div>
 </div><!-- fragment --> </td></tr>
   </table>
@@ -402,8 +398,6 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Enable gamepad (on PC) </p>
-
-<p class="reference">Referenced by <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ab212fc3a61460b771a18d71f052d31e8">UIScriptedMenu::Init()</a>, and <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#aefb022cfac7fc96ed129dd0dbc0a872b">UIScriptedMenu::~ServerBrowserMenuNew()</a>.</p>
 
 </div>
 </div>
@@ -506,8 +500,6 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a7c6d9cfe80065438024b2055c8cf0a04">ScriptedWidgetEventHandler::Reload()</a>, and <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#acba7df3409f4bba6a97e8e86007b5703">ScriptedWidgetEventHandler::TutorialKeybinds()</a>.</p>
 
 </div>
 </div>
@@ -624,8 +616,6 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d4/d7b/class_input.html">Input</a> device, with the last input event ('mouse and keyboard', 'controller' or 'unknown' if none input event was fired from the beginning). </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../de/daf/_console_toolbar_handler_8c.html#ac9034ba076104c95baf3cb9b8d0ee90a">OnWidgetScriptInit()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a94d93dda6d38c0f127ef64dabed938bf">UIScriptedMenu::UpdateControlsElements()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ae3503031015ddbc47a821779ebd77ea5">UIScriptedMenu::UpdateControlsElementVisibility()</a>, <a class="el" href="../../d8/d68/class_warning_menu_base.html#ae3503031015ddbc47a821779ebd77ea5">WarningMenuBase::UpdateControlsElementVisibility()</a>, <a class="el" href="../../dd/dbc/class_action_targets_cursor.html#aca5c9003f38d531a42e4e890b930f789">ActionTargetsCursor::UpdatePCIconsVisibility()</a>, and <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#aca5c9003f38d531a42e4e890b930f789">ScriptedWidgetEventHandler::UpdatePCIconsVisibility()</a>.</p>
-
 </div>
 </div>
 <a id="a15fa78ad0a5d5d0f6370e1cca951f3cb" name="a15fa78ad0a5d5d0f6370e1cca951f3cb"></a>
@@ -653,7 +643,7 @@ Private Member Functions</h2></td></tr>
 
 <p>gets currently selected profile </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ab212fc3a61460b771a18d71f052d31e8">UIScriptedMenu::Init()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#acc125877629e099e0222d525dfb72714">ScriptedWidgetEventHandler::InitPresets()</a>, and <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#acc125877629e099e0222d525dfb72714">UIScriptedMenu::InitPresets()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#acc125877629e099e0222d525dfb72714">ScriptedWidgetEventHandler::InitPresets()</a>, and <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#acc125877629e099e0222d525dfb72714">UIScriptedMenu::InitPresets()</a>.</p>
 
 </div>
 </div>
@@ -929,7 +919,7 @@ Private Member Functions</h2></td></tr>
 
 <p>gets profile by index </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a3b546485b8faa695d132f6ef3c4dd182">UIScriptedMenu::GetControlMappingInfo()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ab212fc3a61460b771a18d71f052d31e8">UIScriptedMenu::Init()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#acc125877629e099e0222d525dfb72714">ScriptedWidgetEventHandler::InitPresets()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#acc125877629e099e0222d525dfb72714">UIScriptedMenu::InitPresets()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a076ea54974db92087c28905f2ecccda0">ScriptedWidgetEventHandler::OnSelectConsolePreset()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#aa8b7f9958b0cda95740aca20e5829d2b">ScriptedWidgetEventHandler::OnSelectKBPreset()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#aa8b7f9958b0cda95740aca20e5829d2b">UIScriptedMenu::OnSelectKBPreset()</a>, and <a class="el" href="../../d8/d11/class_input_utils.html#a605c0e1d02621f8873deab1474df3b82">InputUtils::UpdateConsolePresetID()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#acc125877629e099e0222d525dfb72714">ScriptedWidgetEventHandler::InitPresets()</a>, and <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#acc125877629e099e0222d525dfb72714">UIScriptedMenu::InitPresets()</a>.</p>
 
 </div>
 </div>
@@ -958,7 +948,7 @@ Private Member Functions</h2></td></tr>
 
 <p>gets profile by name </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ab212fc3a61460b771a18d71f052d31e8">UIScriptedMenu::Init()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#acc125877629e099e0222d525dfb72714">ScriptedWidgetEventHandler::InitPresets()</a>, and <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#acc125877629e099e0222d525dfb72714">UIScriptedMenu::InitPresets()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#acc125877629e099e0222d525dfb72714">ScriptedWidgetEventHandler::InitPresets()</a>, and <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#acc125877629e099e0222d525dfb72714">UIScriptedMenu::InitPresets()</a>.</p>
 
 </div>
 </div>
@@ -1059,7 +1049,7 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/de6/class_c_game.html#afd769d66e989c92625a6b8e0b18ff82d">CGame::GamepadCheck()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#aae0013c8359dba248a6aec93c7347791">BiosUserManager::OnJoin()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#ad0167f01811250c04907c0c898f198c6">CGame::SelectUser()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/de6/class_c_game.html#afd769d66e989c92625a6b8e0b18ff82d">CGame::GamepadCheck()</a>.</p>
 
 </div>
 </div>
@@ -1223,7 +1213,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>state of support mouse and keyboard (on consoles) </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d7b/class_input.html#a1094126b9d8ec24f54ad5b6ec7a783c3">AreAllAllowedInputDevicesActive()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a0a531bf6982fbb39856a50501095d713">UIScriptedMenu::OnInputDeviceChanged()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a44c86b20c27f7a8ddb7c1337e9538f80">UIScriptedMenu::OnShow()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ae3503031015ddbc47a821779ebd77ea5">UIScriptedMenu::UpdateControlsElementVisibility()</a>, and <a class="el" href="../../d8/d68/class_warning_menu_base.html#ae3503031015ddbc47a821779ebd77ea5">WarningMenuBase::UpdateControlsElementVisibility()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d7b/class_input.html#a1094126b9d8ec24f54ad5b6ec7a783c3">AreAllAllowedInputDevicesActive()</a>.</p>
 
 </div>
 </div>
@@ -1251,7 +1241,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>state of support mouse and keyboard. If client playing on server where mouse and keyboard is disabled, then return false. (on consoles) </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d7b/class_input.html#a1094126b9d8ec24f54ad5b6ec7a783c3">AreAllAllowedInputDevicesActive()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a0a531bf6982fbb39856a50501095d713">UIScriptedMenu::OnInputDeviceChanged()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a44c86b20c27f7a8ddb7c1337e9538f80">UIScriptedMenu::OnShow()</a>, <a class="el" href="../../d5/d04/class_mission_base.html#a7ab491bf0e44a0d24c1709d8822652d8">MissionBase::OnUpdate()</a>, <a class="el" href="../../de/daf/_console_toolbar_handler_8c.html#ac9034ba076104c95baf3cb9b8d0ee90a">OnWidgetScriptInit()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a4f45d7d483f72d2dbd8a0deed2b76ac4">ScriptedWidgetEventHandler::OptionsMenuControls()</a>, <a class="el" href="../../d7/dc2/_radial_menu_8c.html#af0ff4961c99118d131d496db3648359d">RadialMenu()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a94d93dda6d38c0f127ef64dabed938bf">UIScriptedMenu::UpdateControlsElements()</a>, <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ae3503031015ddbc47a821779ebd77ea5">UIScriptedMenu::UpdateControlsElementVisibility()</a>, <a class="el" href="../../dd/dbc/class_action_targets_cursor.html#aca5c9003f38d531a42e4e890b930f789">ActionTargetsCursor::UpdatePCIconsVisibility()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#aca5c9003f38d531a42e4e890b930f789">ScriptedWidgetEventHandler::UpdatePCIconsVisibility()</a>, <a class="el" href="../../d7/dcd/class_u_i_menu_panel.html#afc4269557ed46b945f2afbd41cdb93a1">UIMenuPanel::UseKeyboard()</a>, and <a class="el" href="../../d7/dcd/class_u_i_menu_panel.html#a51fcac989e51c4efd4040224412cf15e">UIMenuPanel::UseMouse()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d7b/class_input.html#a1094126b9d8ec24f54ad5b6ec7a783c3">AreAllAllowedInputDevicesActive()</a>, <a class="el" href="../../d5/d04/class_mission_base.html#a7ab491bf0e44a0d24c1709d8822652d8">MissionBase::OnUpdate()</a>, and <a class="el" href="../../d7/dc2/_radial_menu_8c.html#af0ff4961c99118d131d496db3648359d">RadialMenu()</a>.</p>
 
 </div>
 </div>
@@ -1279,7 +1269,7 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d4/d7b/class_input.html#a85127fe66d2db76e4ff2239d30ec7163">GetGamepadUser()</a>, and <a class="el" href="../../d4/d7b/class_input.html#af61d504a21c47319b99db90fe3117ee5">IsActiveGamepadSelected()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d4/d7b/class_input.html#a85127fe66d2db76e4ff2239d30ec7163">GetGamepadUser()</a>, and <a class="el" href="../../d4/d7b/class_input.html#af61d504a21c47319b99db90fe3117ee5">IsActiveGamepadSelected()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d4/d7b/class_input.html#a5c3c7ebac1262c833b338792ecef5ca9">OnGamepadDisconnected()</a>.</p>
 
@@ -1784,7 +1774,7 @@ Private Member Functions</h2></td></tr>
 
 <p>callback that is fired when a new gamepad is connected </p>
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d4/d7b/class_input.html#a85127fe66d2db76e4ff2239d30ec7163">GetGamepadUser()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../db/dad/class_mission.html#a779703271152986baa168e6420f8d091">Mission::GetOnInputDeviceConnected()</a>, <a class="el" href="../../d4/d2d/class_script_invoker.html#a6107d02fb358e9d4b2d87fa2885f5b96">ScriptInvoker::Invoke()</a>, and <a class="el" href="../../d4/d7b/class_input.html#a6bfcf914fcf04670bc0b5be5f19c2091">SelectActiveGamepad()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d4/d7b/class_input.html#a85127fe66d2db76e4ff2239d30ec7163">GetGamepadUser()</a>, <a class="el" href="../../db/dad/class_mission.html#a779703271152986baa168e6420f8d091">Mission::GetOnInputDeviceConnected()</a>, <a class="el" href="../../d4/d2d/class_script_invoker.html#a6107d02fb358e9d4b2d87fa2885f5b96">ScriptInvoker::Invoke()</a>, <a class="el" href="../../d9/de7/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>, and <a class="el" href="../../d4/d7b/class_input.html#a6bfcf914fcf04670bc0b5be5f19c2091">SelectActiveGamepad()</a>.</p>
 
 </div>
 </div>
@@ -1814,7 +1804,7 @@ Private Member Functions</h2></td></tr>
 
 <p>callback that is fired when gamepad is disconnected </p>
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../db/dad/class_mission.html#ac1e986a6bcd5b2e89562e74792d62f98">Mission::GetOnInputDeviceDisconnected()</a>, <a class="el" href="../../d4/d2d/class_script_invoker.html#a6107d02fb358e9d4b2d87fa2885f5b96">ScriptInvoker::Invoke()</a>, <a class="el" href="../../d4/d7b/class_input.html#aa0d16fe655688ed89cf4256ca7e2fdd0">IsInactiveGamepadOrUserSelected()</a>, and <a class="el" href="../../d4/d7b/class_input.html#a680d6f31bb45eb2af0836281bf5e6cf4">UpdateConnectedInputDeviceList()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../db/dad/class_mission.html#ac1e986a6bcd5b2e89562e74792d62f98">Mission::GetOnInputDeviceDisconnected()</a>, <a class="el" href="../../d4/d2d/class_script_invoker.html#a6107d02fb358e9d4b2d87fa2885f5b96">ScriptInvoker::Invoke()</a>, <a class="el" href="../../d4/d7b/class_input.html#aa0d16fe655688ed89cf4256ca7e2fdd0">IsInactiveGamepadOrUserSelected()</a>, <a class="el" href="../../d9/de7/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>, and <a class="el" href="../../d4/d7b/class_input.html#a680d6f31bb45eb2af0836281bf5e6cf4">UpdateConnectedInputDeviceList()</a>.</p>
 
 </div>
 </div>
@@ -1844,7 +1834,7 @@ Private Member Functions</h2></td></tr>
 
 <p>callback that is fired when identification was requested </p>
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../db/dad/class_mission.html#a779703271152986baa168e6420f8d091">Mission::GetOnInputDeviceConnected()</a>, <a class="el" href="../../d4/d2d/class_script_invoker.html#a6107d02fb358e9d4b2d87fa2885f5b96">ScriptInvoker::Invoke()</a>, <a class="el" href="../../db/dad/class_mission.html#a372de693ad40b3f42839c8ec6ac845f4">Mission::Reset()</a>, <a class="el" href="../../d4/d7b/class_input.html#a6bfcf914fcf04670bc0b5be5f19c2091">SelectActiveGamepad()</a>, and <a class="el" href="../../d4/d7b/class_input.html#a680d6f31bb45eb2af0836281bf5e6cf4">UpdateConnectedInputDeviceList()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../db/dad/class_mission.html#a779703271152986baa168e6420f8d091">Mission::GetOnInputDeviceConnected()</a>, <a class="el" href="../../d4/d2d/class_script_invoker.html#a6107d02fb358e9d4b2d87fa2885f5b96">ScriptInvoker::Invoke()</a>, <a class="el" href="../../d9/de7/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>, <a class="el" href="../../db/dad/class_mission.html#a372de693ad40b3f42839c8ec6ac845f4">Mission::Reset()</a>, <a class="el" href="../../d4/d7b/class_input.html#a6bfcf914fcf04670bc0b5be5f19c2091">SelectActiveGamepad()</a>, and <a class="el" href="../../d4/d7b/class_input.html#a680d6f31bb45eb2af0836281bf5e6cf4">UpdateConnectedInputDeviceList()</a>.</p>
 
 </div>
 </div>
@@ -1872,7 +1862,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>callback that is fired when keyboard is connected (PS: and assigned to the user) does not fire on PC - mouse/keyboard assumed to always be connected </p>
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../db/dad/class_mission.html#a779703271152986baa168e6420f8d091">Mission::GetOnInputDeviceConnected()</a>, <a class="el" href="../../d4/d2d/class_script_invoker.html#a6107d02fb358e9d4b2d87fa2885f5b96">ScriptInvoker::Invoke()</a>, and <a class="el" href="../../d4/d7b/class_input.html#a680d6f31bb45eb2af0836281bf5e6cf4">UpdateConnectedInputDeviceList()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, and <a class="el" href="../../d4/d7b/class_input.html#a680d6f31bb45eb2af0836281bf5e6cf4">UpdateConnectedInputDeviceList()</a>.</p>
 
 </div>
 </div>
@@ -1900,7 +1890,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>callback that is fired when keyboard is disconnected does not fire on PC - mouse/keyboard assumed to always be connected </p>
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../db/dad/class_mission.html#ac1e986a6bcd5b2e89562e74792d62f98">Mission::GetOnInputDeviceDisconnected()</a>, <a class="el" href="../../d4/d2d/class_script_invoker.html#a6107d02fb358e9d4b2d87fa2885f5b96">ScriptInvoker::Invoke()</a>, and <a class="el" href="../../d4/d7b/class_input.html#a680d6f31bb45eb2af0836281bf5e6cf4">UpdateConnectedInputDeviceList()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, and <a class="el" href="../../d4/d7b/class_input.html#a680d6f31bb45eb2af0836281bf5e6cf4">UpdateConnectedInputDeviceList()</a>.</p>
 
 </div>
 </div>
@@ -1930,7 +1920,7 @@ Private Member Functions</h2></td></tr>
 
 <p>called from code on different input device use </p>
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../db/dad/class_mission.html#ad13e1cf13cf12ed1108941d9dddb8948">Mission::GetOnInputDeviceChanged()</a>, and <a class="el" href="../../d4/d2d/class_script_invoker.html#a6107d02fb358e9d4b2d87fa2885f5b96">ScriptInvoker::Invoke()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.</p>
 
 </div>
 </div>
@@ -1958,7 +1948,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>callback that is fired when mouse is connected (PS: and assigned to the user) does not fire on PC - mouse/keyboard assumed to always be connected </p>
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../db/dad/class_mission.html#a779703271152986baa168e6420f8d091">Mission::GetOnInputDeviceConnected()</a>, <a class="el" href="../../d4/d2d/class_script_invoker.html#a6107d02fb358e9d4b2d87fa2885f5b96">ScriptInvoker::Invoke()</a>, and <a class="el" href="../../d4/d7b/class_input.html#a680d6f31bb45eb2af0836281bf5e6cf4">UpdateConnectedInputDeviceList()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, and <a class="el" href="../../d4/d7b/class_input.html#a680d6f31bb45eb2af0836281bf5e6cf4">UpdateConnectedInputDeviceList()</a>.</p>
 
 </div>
 </div>
@@ -1986,7 +1976,7 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>callback that is fired when mouse is disconnected does not fire on PC - mouse/keyboard assumed to always be connected </p>
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a283dae9ebf4a1b966f37da39bc7b9ce3">CGame::GetMission()</a>, <a class="el" href="../../db/dad/class_mission.html#ac1e986a6bcd5b2e89562e74792d62f98">Mission::GetOnInputDeviceDisconnected()</a>, <a class="el" href="../../d4/d2d/class_script_invoker.html#a6107d02fb358e9d4b2d87fa2885f5b96">ScriptInvoker::Invoke()</a>, and <a class="el" href="../../d4/d7b/class_input.html#a680d6f31bb45eb2af0836281bf5e6cf4">UpdateConnectedInputDeviceList()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, and <a class="el" href="../../d4/d7b/class_input.html#a680d6f31bb45eb2af0836281bf5e6cf4">UpdateConnectedInputDeviceList()</a>.</p>
 
 </div>
 </div>
@@ -2015,7 +2005,7 @@ Private Member Functions</h2></td></tr>
 
 <p>clears active gamepad </p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/db3/class_bios_user_manager.html#a4c2adcdedfe9820384e3ad37fb694876">BiosUserManager::OnSignedOut()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a0b6828f3dce26a1e5499ddbcb6d7f936">BiosUserManager::OnUserLoggedOn()</a>, <a class="el" href="../../de/db3/class_bios_user_manager.html#a0fba844696dcd2fa95d45afb25ef8516">BiosUserManager::OnUserPicked()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#ad0167f01811250c04907c0c898f198c6">CGame::SelectUser()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/de6/class_c_game.html#ad0167f01811250c04907c0c898f198c6">CGame::SelectUser()</a>.</p>
 
 </div>
 </div>
@@ -2051,8 +2041,6 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d4/d7b/class_input.html#af49c04d103f4bf217a469a37ed7609ed" title="Check if game should have focus.">HasGameFocus()</a> </dd></dl>
-
-<p class="reference">Referenced by <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ace7ae525ee4f8faba35d4fb1aa51b8c3">UIScriptedMenu::OnMouseButtonDown()</a>, <a class="el" href="../../da/dbd/_plugin_item_diagnostic_8c.html#ab47cea609e063ab2b8fe4eb7fa5e53c9">ReleaseFocus()</a>, and <a class="el" href="../../dd/da1/class_plugin_base.html#a3a12fb34a4c69bc09fd75fa0216ae933">PluginBase::ToggleFocus()</a>.</p>
 
 </div>
 </div>
@@ -2145,8 +2133,6 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>setting active profile </p>
-
-<p class="reference">Referenced by <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#aee6a27cad085ec84d5f5dbb765b63b53">UIScriptedMenu::OnClick()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a076ea54974db92087c28905f2ecccda0">ScriptedWidgetEventHandler::OnSelectConsolePreset()</a>, <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#aa8b7f9958b0cda95740aca20e5829d2b">ScriptedWidgetEventHandler::OnSelectKBPreset()</a>, and <a class="el" href="../../d0/d7f/_controls_xbox_8c.html#a91748f1dda9bccd133382c69b066a1ac">SwitchPreset()</a>.</p>
 
 </div>
 </div>

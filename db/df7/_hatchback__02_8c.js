@@ -25,6 +25,7 @@ var _hatchback__02_8c =
     [ "OnEngineStart", "db/df7/_hatchback__02_8c.html#a7ece25b0525b60f831b8f84e402b6f50", null ],
     [ "OnEngineStop", "db/df7/_hatchback__02_8c.html#aff5f5c56f35ec1a3c873d73571e50a92", null ],
     [ "OnSound", "db/df7/_hatchback__02_8c.html#a5c37be465cc6e029402bf4ef0895b6bf", null ],
+    [ "~Hatchback_02", "db/df7/_hatchback__02_8c.html#abf9852208655d527225d2374b2bc28dd", null ],
     [ "m_UTSLEngine", "db/df7/_hatchback__02_8c.html#aebe1a74c9502b2dd3cc887aa0ded415d", null ],
     [ "m_UTSource", "db/df7/_hatchback__02_8c.html#a8fb6777a9fde58ec7f4d763424437f16", null ],
     [ "m_UTSSettings", "db/df7/_hatchback__02_8c.html#a0059eb46cde0e00387c1295f87619a71", null ],

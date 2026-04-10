@@ -39,6 +39,7 @@ var class_hologram =
     [ "IsColliding", "dd/df5/class_hologram.html#a2a738a606496a6b1068aa2efc75871c3", null ],
     [ "IsCollidingAngle", "dd/df5/class_hologram.html#a054d9f3b17cb7501542a979bac3305e4", null ],
     [ "IsCollidingBBox", "dd/df5/class_hologram.html#aba1bdf86cf8945de1fc07438c2d4a6a1", null ],
+    [ "IsCollidingGeometryProxy", "dd/df5/class_hologram.html#a03d1932502ca58058d1d8be201b04123", null ],
     [ "IsCollidingGPlot", "dd/df5/class_hologram.html#aed6c9b753ea4640ca9c49abdfaf6be77", null ],
     [ "IsCollidingPlayer", "dd/df5/class_hologram.html#a4c0cebda7e6fa9231aca78d3f8b97a4f", null ],
     [ "IsCollidingZeroPos", "dd/df5/class_hologram.html#a2ce2c99ef75cbbdc0c59ddec9b0a1bdd", null ],

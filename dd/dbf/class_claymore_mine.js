@@ -10,6 +10,7 @@ var class_claymore_mine =
     [ "GetArmSoundset", "dd/dbf/class_claymore_mine.html#aad0b5e73498908b9fd9ad33410b8bb3a", null ],
     [ "GetDeploySoundset", "dd/dbf/class_claymore_mine.html#a14046891600537e83da30eb2e7a1f4d5", null ],
     [ "GetDisarmSoundset", "dd/dbf/class_claymore_mine.html#afbc20fc6b7eb22024c510ef6b2bc1e05", null ],
+    [ "GetDisarmSoundsetUnpaired", "dd/dbf/class_claymore_mine.html#af7d29b930c9e708ceee25b01f514b8b4", null ],
     [ "GetLoopDeploySoundset", "dd/dbf/class_claymore_mine.html#a4403b4f304acf2affb04880ba46a1313", null ],
     [ "GetPairDevice", "dd/dbf/class_claymore_mine.html#a264ad0dff1969b21c2227e848737433b", null ],
     [ "GetRemotelyActivatedItemBehaviour", "dd/dbf/class_claymore_mine.html#a6a44e5a23c3274292af0d521d345f12f", null ],

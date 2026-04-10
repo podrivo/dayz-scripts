@@ -26,6 +26,7 @@ var _sedan__02_8c =
     [ "OnEngineStop", "de/d02/_sedan__02_8c.html#aff5f5c56f35ec1a3c873d73571e50a92", null ],
     [ "OnSound", "de/d02/_sedan__02_8c.html#a5c37be465cc6e029402bf4ef0895b6bf", null ],
     [ "Sedan_02", "de/d02/_sedan__02_8c.html#a59ba01bbeb65546ebd1746905d543d8e", null ],
+    [ "~Sedan_02", "de/d02/_sedan__02_8c.html#a39f0c8e548a463c4c11a4dfbef8f1bd0", null ],
     [ "m_UTSLEngine", "de/d02/_sedan__02_8c.html#aebe1a74c9502b2dd3cc887aa0ded415d", null ],
     [ "m_UTSource", "de/d02/_sedan__02_8c.html#a8fb6777a9fde58ec7f4d763424437f16", null ],
     [ "m_UTSSettings", "de/d02/_sedan__02_8c.html#a0059eb46cde0e00387c1295f87619a71", null ]

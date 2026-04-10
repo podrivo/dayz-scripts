@@ -139,10 +139,10 @@ Static Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:acab9c350f71ea7e40cc0556cf0a6795a"><td class="memItemLeft" align="right" valign="top">static ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt; <a class="el" href="../../d5/d92/classstring.html">string</a>, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d46/class_ammo_effects.html#acab9c350f71ea7e40cc0556cf0a6795a">m_AmmoParticles</a></td></tr>
+<tr class="memitem:acab9c350f71ea7e40cc0556cf0a6795a"><td class="memItemLeft" align="right" valign="top">static ref <a class="el" href="../../d9/d28/classmap.html">map</a>&lt; <a class="el" href="../../d5/d92/classstring.html">string</a>, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d46/class_ammo_effects.html#acab9c350f71ea7e40cc0556cf0a6795a">m_AmmoParticles</a></td></tr>
 <tr class="memdesc:acab9c350f71ea7e40cc0556cf0a6795a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key: Ammo class name; Data: <a class="el" href="../../dd/dd2/class_particle_list.html">ParticleList</a> ID.  <br /></td></tr>
 <tr class="separator:acab9c350f71ea7e40cc0556cf0a6795a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cfc2edc419961051a3d4ba5b711f047"><td class="memItemLeft" align="right" valign="top">static ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt; <a class="el" href="../../d5/d92/classstring.html">string</a>, <a class="el" href="../../d2/db4/classtypename.html">typename</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d46/class_ammo_effects.html#a7cfc2edc419961051a3d4ba5b711f047">m_AmmoEffects</a></td></tr>
+<tr class="memitem:a7cfc2edc419961051a3d4ba5b711f047"><td class="memItemLeft" align="right" valign="top">static ref <a class="el" href="../../d9/d28/classmap.html">map</a>&lt; <a class="el" href="../../d5/d92/classstring.html">string</a>, <a class="el" href="../../d2/db4/classtypename.html">typename</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d46/class_ammo_effects.html#a7cfc2edc419961051a3d4ba5b711f047">m_AmmoEffects</a></td></tr>
 <tr class="memdesc:a7cfc2edc419961051a3d4ba5b711f047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key: Ammo class name; Data: <a class="el" href="../../dd/dd2/class_particle_list.html">ParticleList</a> ID.  <br /></td></tr>
 <tr class="separator:a7cfc2edc419961051a3d4ba5b711f047"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -205,7 +205,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Get the typename for the effect for this ammoType. </p>
 
-<p class="reference">References <a class="el" href="../../d2/de6/class_c_game.html#a5ffe1614b5936229aa803eee3d4d99d7">CGame::ConfigGetText()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../db/d46/class_ammo_effects.html#a7cfc2edc419961051a3d4ba5b711f047">m_AmmoEffects</a>, and <a class="el" href="../../d5/da2/group___strings.html#ga0afa93899a3e95fcfea4b9d83d0cc042">string::ToType()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../db/d46/class_ammo_effects.html#a7cfc2edc419961051a3d4ba5b711f047">m_AmmoEffects</a>, and <a class="el" href="../../d5/da2/group___strings.html#ga0afa93899a3e95fcfea4b9d83d0cc042">string::ToType()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/d46/class_ammo_effects.html#a0b0d366471178b170065b1fa46fac974">PlayAmmoEffect()</a>.</p>
 
@@ -237,7 +237,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Get the <a class="el" href="../../dd/dd2/class_particle_list.html">ParticleList</a> ID for the particle for this ammoType. </p>
 
-<p class="reference">References <a class="el" href="../../d2/de6/class_c_game.html#a5ffe1614b5936229aa803eee3d4d99d7">CGame::ConfigGetText()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../dd/dd2/class_particle_list.html#a9a7550746a45a15914065ae710310c19">ParticleList::GetParticleIDByName()</a>, and <a class="el" href="../../db/d46/class_ammo_effects.html#acab9c350f71ea7e40cc0556cf0a6795a">m_AmmoParticles</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../dd/dd2/class_particle_list.html#a9a7550746a45a15914065ae710310c19">ParticleList::GetParticleIDByName()</a>, and <a class="el" href="../../db/d46/class_ammo_effects.html#acab9c350f71ea7e40cc0556cf0a6795a">m_AmmoParticles</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/d46/class_ammo_effects.html#aafb94ed4e288820b6285fe624d4dd7da">PlayAmmoParticle()</a>.</p>
 
@@ -369,7 +369,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt;<a class="el" href="../../d5/d92/classstring.html">string</a>, <a class="el" href="../../d2/db4/classtypename.html">typename</a>&gt; m_AmmoEffects</td>
+          <td class="memname">ref <a class="el" href="../../d9/d28/classmap.html">map</a>&lt;<a class="el" href="../../d5/d92/classstring.html">string</a>, <a class="el" href="../../d2/db4/classtypename.html">typename</a>&gt; m_AmmoEffects</td>
         </tr>
       </table>
   </td>
@@ -395,7 +395,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt;<a class="el" href="../../d5/d92/classstring.html">string</a>, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&gt; m_AmmoParticles</td>
+          <td class="memname">ref <a class="el" href="../../d9/d28/classmap.html">map</a>&lt;<a class="el" href="../../d5/d92/classstring.html">string</a>, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&gt; m_AmmoParticles</td>
         </tr>
       </table>
   </td>

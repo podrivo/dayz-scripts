@@ -4,7 +4,6 @@ var class_g_p_s_receiver =
     [ "GetHiddenSelection", "dc/daa/class_g_p_s_receiver.html#aab07e0fdb9247c0fa47007dfd7354ba9", null ],
     [ "IsTurnedOn", "dc/daa/class_g_p_s_receiver.html#a8bc949301f8258ae214950a546337f0e", null ],
     [ "OnDebugSpawn", "dc/daa/class_g_p_s_receiver.html#a05eab95952a189dc9e08ccecec41b51a", null ],
-    [ "OnMovedInsideCargo", "dc/daa/class_g_p_s_receiver.html#ab8e92721ee40fa824c550bf17c70b212", null ],
     [ "OnWork", "dc/daa/class_g_p_s_receiver.html#a8dfedef279732661467a94be3a9374e4", null ],
     [ "OnWorkStart", "dc/daa/class_g_p_s_receiver.html#abf45da335d07e3e78aa558714d3c38e8", null ],
     [ "OnWorkStop", "dc/daa/class_g_p_s_receiver.html#a64ad8752dcd35c4be3998612aeb61bfc", null ],
@@ -13,11 +12,15 @@ var class_g_p_s_receiver =
     [ "UpdateDisplayElevation", "dc/daa/class_g_p_s_receiver.html#a5949ed6aa054d0f487971c397ee9c8e0", null ],
     [ "UpdateDisplayPosition", "dc/daa/class_g_p_s_receiver.html#a67204024981818197df1e900fc78be99", null ],
     [ "UpdateDisplayState", "dc/daa/class_g_p_s_receiver.html#a49d165b22293b3af719b03bb84fde896", null ],
-    [ "ANIM_PHASE_DISPLAY_HIDE", "dc/daa/class_g_p_s_receiver.html#a3e0b8bb8833e9c7369c2fde818c06e9f", null ],
-    [ "DISPLAY_TEXTURE_PATH_FORMAT", "dc/daa/class_g_p_s_receiver.html#afc70fad7f12cd31ff1af20423c973a46", null ],
+    [ "UpdateDisplayState", "dc/daa/class_g_p_s_receiver.html#a243ec8bc85a329d4717dedcc1ac388ec", null ],
+    [ "ANIM_PHASE_DISPLAY_HIDE", "dc/daa/class_g_p_s_receiver.html#a66a2e5bdbe3b6e3914be39f64176d623", null ],
+    [ "DISPLAY_TEXTURE_PATH_FORMAT", "dc/daa/class_g_p_s_receiver.html#a6d10f887916b1e1d2874f9345395cedd", null ],
     [ "m_AltitudeNumbersLast", "dc/daa/class_g_p_s_receiver.html#a502bb4119f5a4b5df250f8ac5a3b4378", null ],
     [ "m_DisplayAltSelections", "dc/daa/class_g_p_s_receiver.html#a2f623450aab15862c25be8bf9024bae9", null ],
     [ "m_DisplayGridSelections", "dc/daa/class_g_p_s_receiver.html#a67c17c50f0ba426cf6a08573640db023", null ],
     [ "m_DisplayNumericSignTextureMap", "dc/daa/class_g_p_s_receiver.html#ad8c8b72a77883ab9a6d13565fb97e9a0", null ],
-    [ "m_OrderedPositionNumbersLast", "dc/daa/class_g_p_s_receiver.html#a65fdc16eb4cb00953ec59859b11e7876", null ]
+    [ "m_InitGPS", "dc/daa/class_g_p_s_receiver.html#ae8be942e51d1714ce6d054a88a7b84b5", null ],
+    [ "m_OrderedPositionNumbersLast", "dc/daa/class_g_p_s_receiver.html#a65fdc16eb4cb00953ec59859b11e7876", null ],
+    [ "PHASE_OFF", "dc/daa/class_g_p_s_receiver.html#a2a562699fe3c44823abb671ec8dfd12b", null ],
+    [ "PHASE_ON", "dc/daa/class_g_p_s_receiver.html#a137751311498727a5ffaf721c4582b62", null ]
 ];

@@ -136,6 +136,8 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d0e/class_human_command_script.html">HumanCommandScript</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../dd/d0e/class_human_command_script.html" title="HumanCommandScript fully scriptable command.">HumanCommandScript</a> fully scriptable command.  <a href="../../dd/d0e/class_human_command_script.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc7/class_human.html">Human</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -243,6 +245,7 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="../../d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50a8d2b8ae9cf9c03b17facf0318b620bc7">CHAMBERING_CROSSBOW_OPENED</a> = 21
 , <a class="el" href="../../d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50a4055b00f0d9f9847b8a9f22dc5551325">CHAMBERING_CROSSBOW_CLOSED</a> = 22
 , <a class="el" href="../../d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50aadd73293bca9a59d86b221f31c5593b0">CHAMBERING_CROSSBOW_FULL</a> = 23
+, <a class="el" href="../../d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50ad39ef9994c069a39bedd470c2d6b2abf">CHAMBERING_DOUBLE_FIREOUT_EJECT</a> = 24
 <br />
  }</td></tr>
 <tr class="separator:a6a33c0b8bed2b0654c3a8b8edd8acc50"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -340,7 +343,7 @@ Functions</h2></td></tr>
 <tr class="separator:a2581e8b3f70aebb86003a64e8c23ac65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ece0da5f4c0c981155530988d4913e6"><td class="memItemLeft" align="right" valign="top">private void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a4ece0da5f4c0c981155530988d4913e6">~HumanCommandActionCallback</a> ()</td></tr>
 <tr class="separator:a4ece0da5f4c0c981155530988d4913e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4ef96401215bedf0eb3457a3f10454a"><td class="memItemLeft" align="right" valign="top">proto native Human&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#ad4ef96401215bedf0eb3457a3f10454a">GetHuman</a> ()</td></tr>
+<tr class="memitem:ad4ef96401215bedf0eb3457a3f10454a"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d9/dc7/class_human.html">Human</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#ad4ef96401215bedf0eb3457a3f10454a">GetHuman</a> ()</td></tr>
 <tr class="memdesc:ad4ef96401215bedf0eb3457a3f10454a"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the human this cb belongs to  <br /></td></tr>
 <tr class="separator:ad4ef96401215bedf0eb3457a3f10454a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3a38fb122c5a5a14f6447caf9406a3f"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#aa3a38fb122c5a5a14f6447caf9406a3f">Cancel</a> ()</td></tr>
@@ -524,7 +527,7 @@ Functions</h2></td></tr>
 <tr class="separator:a08436cfbb6ca576c94db44597ef22f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3651ad977d64822eb5858c0bf083028f"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a3651ad977d64822eb5858c0bf083028f">Exit</a> ()</td></tr>
 <tr class="separator:a3651ad977d64822eb5858c0bf083028f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65239e419e4ab512dc52cebbc13879ed"><td class="memItemLeft" align="right" valign="top">proto static native <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a65239e419e4ab512dc52cebbc13879ed">DebugDrawLadder</a> (Building pBuilding, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pLadderIndex)</td></tr>
+<tr class="memitem:a65239e419e4ab512dc52cebbc13879ed"><td class="memItemLeft" align="right" valign="top">proto static native <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a65239e419e4ab512dc52cebbc13879ed">DebugDrawLadder</a> (<a class="el" href="../../d2/dbd/class_building.html">Building</a> pBuilding, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pLadderIndex)</td></tr>
 <tr class="memdesc:a65239e419e4ab512dc52cebbc13879ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">debug draws any ladder  <br /></td></tr>
 <tr class="separator:a65239e419e4ab512dc52cebbc13879ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0eb9b7fb9e3c0d14a544dbf3af3beb93"><td class="memItemLeft" align="right" valign="top">proto static native <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a0eb9b7fb9e3c0d14a544dbf3af3beb93">DebugGetLadderIndex</a> (<a class="el" href="../../d5/d92/classstring.html">string</a> pComponentName)</td></tr>
@@ -535,7 +538,7 @@ Functions</h2></td></tr>
 <tr class="separator:a52c6536e632c2b4a374f4d8e1b482668"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45e8c8f464420e0592dd716a7686db60"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a45e8c8f464420e0592dd716a7686db60">StopSwimming</a> ()</td></tr>
 <tr class="separator:a45e8c8f464420e0592dd716a7686db60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bef2e8fddea082d5921bcf1089b9fa8"><td class="memItemLeft" align="right" valign="top">proto static native <a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a0bef2e8fddea082d5921bcf1089b9fa8">WaterLevelCheck</a> (Human pHuman, <a class="el" href="../../d7/dfc/classvector.html">vector</a> pPosition)</td></tr>
+<tr class="memitem:a0bef2e8fddea082d5921bcf1089b9fa8"><td class="memItemLeft" align="right" valign="top">proto static native <a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a0bef2e8fddea082d5921bcf1089b9fa8">WaterLevelCheck</a> (<a class="el" href="../../d9/dc7/class_human.html">Human</a> pHuman, <a class="el" href="../../d7/dfc/classvector.html">vector</a> pPosition)</td></tr>
 <tr class="separator:a0bef2e8fddea082d5921bcf1089b9fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af28c9582d2feb0c26e175182080c22db"><td class="memItemLeft" align="right" valign="top">private void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#af28c9582d2feb0c26e175182080c22db">HumanCommandClimb</a> ()</td></tr>
 <tr class="separator:af28c9582d2feb0c26e175182080c22db"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -547,11 +550,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a53bead9db11ce13f4e818890ce72bd8d"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a53bead9db11ce13f4e818890ce72bd8d">GetClimbOverStandPointWS</a> ()</td></tr>
 <tr class="memdesc:a53bead9db11ce13f4e818890ce72bd8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns world space position of landspot after climbing over  <br /></td></tr>
 <tr class="separator:a53bead9db11ce13f4e818890ce72bd8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2524c03f013ab71da58a5276416618f5"><td class="memItemLeft" align="right" valign="top">proto static native <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a2524c03f013ab71da58a5276416618f5">DoClimbTest</a> (Human pHuman, SHumanCommandClimbResult pResult, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pDebugDrawLevel)</td></tr>
+<tr class="memitem:a2524c03f013ab71da58a5276416618f5"><td class="memItemLeft" align="right" valign="top">proto static native <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a2524c03f013ab71da58a5276416618f5">DoClimbTest</a> (<a class="el" href="../../d9/dc7/class_human.html">Human</a> pHuman, SHumanCommandClimbResult pResult, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pDebugDrawLevel)</td></tr>
 <tr class="separator:a2524c03f013ab71da58a5276416618f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a288f0f5fd041b40cb63c1d507e6b2172"><td class="memItemLeft" align="right" valign="top">proto static native <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a288f0f5fd041b40cb63c1d507e6b2172">DoPerformClimbTest</a> (Human pHuman, SHumanCommandClimbResult pResult, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pDebugDrawLevel)</td></tr>
+<tr class="memitem:a288f0f5fd041b40cb63c1d507e6b2172"><td class="memItemLeft" align="right" valign="top">proto static native <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a288f0f5fd041b40cb63c1d507e6b2172">DoPerformClimbTest</a> (<a class="el" href="../../d9/dc7/class_human.html">Human</a> pHuman, SHumanCommandClimbResult pResult, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pDebugDrawLevel)</td></tr>
 <tr class="separator:a288f0f5fd041b40cb63c1d507e6b2172"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b274397770e043ef2392f1b06c4734c"><td class="memItemLeft" align="right" valign="top">proto static native <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a8b274397770e043ef2392f1b06c4734c">DebugDrawClimb</a> (Human pHuman, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pLevel)</td></tr>
+<tr class="memitem:a8b274397770e043ef2392f1b06c4734c"><td class="memItemLeft" align="right" valign="top">proto static native <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a8b274397770e043ef2392f1b06c4734c">DebugDrawClimb</a> (<a class="el" href="../../d9/dc7/class_human.html">Human</a> pHuman, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pLevel)</td></tr>
 <tr class="separator:a8b274397770e043ef2392f1b06c4734c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cbff203e590800a0430887918479641"><td class="memItemLeft" align="right" valign="top">private void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a1cbff203e590800a0430887918479641">~HumanCommandFullBodyDamage</a> ()</td></tr>
 <tr class="separator:a1cbff203e590800a0430887918479641"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -611,7 +614,7 @@ Functions</h2></td></tr>
 <tr class="separator:a773e9d46165a5a5be54d59c19916f41f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5362ba224721810d109c25ea28a3b9f3"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a5362ba224721810d109c25ea28a3b9f3">SetInitState</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pFrameIndex)</td></tr>
 <tr class="separator:a5362ba224721810d109c25ea28a3b9f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af90780ed3d854549bd999ff734200ed1"><td class="memItemLeft" align="right" valign="top">proto static native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#af90780ed3d854549bd999ff734200ed1">StaticSetInitState</a> (Human pHuman, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pFrameIdx)</td></tr>
+<tr class="memitem:af90780ed3d854549bd999ff734200ed1"><td class="memItemLeft" align="right" valign="top">proto static native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#af90780ed3d854549bd999ff734200ed1">StaticSetInitState</a> (<a class="el" href="../../d9/dc7/class_human.html">Human</a> pHuman, <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pFrameIdx)</td></tr>
 <tr class="memdesc:af90780ed3d854549bd999ff734200ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">just static version of SetInitState  <br /></td></tr>
 <tr class="separator:af90780ed3d854549bd999ff734200ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96e80198781e2bd6e30b1bbc3bc185bd"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a96e80198781e2bd6e30b1bbc3bc185bd">GetBaseAimingAngleUD</a> ()</td></tr>
@@ -769,9 +772,11 @@ Variables</h2></td></tr>
 <tr class="separator:a027aa6973547ba0a45cda006706fc374"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96f9b6ed3401788557e9a53ba9ae6e2d"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../dd/d0e/class_human_command_script.html">HumanCommandScript</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a96f9b6ed3401788557e9a53ba9ae6e2d">CommandActionFullbody</a> = 4096</td></tr>
 <tr class="separator:a96f9b6ed3401788557e9a53ba9ae6e2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a314b5a2eed9614f515e4dc5497ce7bc6"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../dd/d0e/class_human_command_script.html">HumanCommandScript</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/human_8c.html#a314b5a2eed9614f515e4dc5497ce7bc6">CommandActionAdditive</a></td></tr>
+<tr class="separator:a314b5a2eed9614f515e4dc5497ce7bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>this file is interface to Human </p>
+<div class="textblock"><p>this file is interface to <a class="el" href="../../d9/dc7/class_human.html">Human</a> </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="aee8da4733bfcda0e97f18f43ff0ec49f" name="aee8da4733bfcda0e97f18f43ff0ec49f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee8da4733bfcda0e97f18f43ff0ec49f">&#9670;&#160;</a></span>TAnimGraphEvent</h2>
@@ -913,6 +918,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a6a33c0b8bed2b0654c3a8b8edd8acc50a8d2b8ae9cf9c03b17facf0318b620bc7" name="a6a33c0b8bed2b0654c3a8b8edd8acc50a8d2b8ae9cf9c03b17facf0318b620bc7"></a>CHAMBERING_CROSSBOW_OPENED&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a6a33c0b8bed2b0654c3a8b8edd8acc50a4055b00f0d9f9847b8a9f22dc5551325" name="a6a33c0b8bed2b0654c3a8b8edd8acc50a4055b00f0d9f9847b8a9f22dc5551325"></a>CHAMBERING_CROSSBOW_CLOSED&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a6a33c0b8bed2b0654c3a8b8edd8acc50aadd73293bca9a59d86b221f31c5593b0" name="a6a33c0b8bed2b0654c3a8b8edd8acc50aadd73293bca9a59d86b221f31c5593b0"></a>CHAMBERING_CROSSBOW_FULL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6a33c0b8bed2b0654c3a8b8edd8acc50ad39ef9994c069a39bedd470c2d6b2abf" name="a6a33c0b8bed2b0654c3a8b8edd8acc50ad39ef9994c069a39bedd470c2d6b2abf"></a>CHAMBERING_DOUBLE_FIREOUT_EJECT&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -1356,7 +1362,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">proto static native <a class="el" href="../../d9/db9/classbool.html">bool</a> DebugDrawClimb </td>
           <td>(</td>
-          <td class="paramtype">Human&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d9/dc7/class_human.html">Human</a>&#160;</td>
           <td class="paramname"><em>pHuman</em>, </td>
         </tr>
         <tr>
@@ -1393,7 +1399,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">proto static native <a class="el" href="../../d9/db9/classbool.html">bool</a> DebugDrawLadder </td>
           <td>(</td>
-          <td class="paramtype">Building&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/dbd/class_building.html">Building</a>&#160;</td>
           <td class="paramname"><em>pBuilding</em>, </td>
         </tr>
         <tr>
@@ -1514,7 +1520,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">proto static native <a class="el" href="../../d9/db9/classbool.html">bool</a> DoClimbTest </td>
           <td>(</td>
-          <td class="paramtype">Human&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d9/dc7/class_human.html">Human</a>&#160;</td>
           <td class="paramname"><em>pHuman</em>, </td>
         </tr>
         <tr>
@@ -1557,7 +1563,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">proto static native <a class="el" href="../../d9/db9/classbool.html">bool</a> DoPerformClimbTest </td>
           <td>(</td>
-          <td class="paramtype">Human&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d9/dc7/class_human.html">Human</a>&#160;</td>
           <td class="paramname"><em>pHuman</em>, </td>
         </tr>
         <tr>
@@ -1605,7 +1611,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>enables calling cancel condition default is disabled when enabled - there must be a function "bool CancelCondition()" implemented </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d86/class_action_unfold_map_c_b.html#ad4f9db6c65e6345990d338bf347d5f56">ActionUnfoldMapCB::ActionUnfoldMapCB()</a>, <a class="el" href="../../dc/d02/class_human_command_action_callback.html#af91367ade43aae6d407109f93888060b">HumanCommandActionCallback::Init()</a>, <a class="el" href="../../d0/dcc/class_action_continuous_base_c_b.html#aba102feb8b95d3539c145469351091c2">ActionContinuousBaseCB::InitActionComponent()</a>, and <a class="el" href="../../d5/db1/class_action_interact_loop_base_c_b.html#aba102feb8b95d3539c145469351091c2">ActionInteractLoopBaseCB::InitActionComponent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d86/class_action_unfold_map_c_b.html#ad4f9db6c65e6345990d338bf347d5f56">ActionUnfoldMapCB::ActionUnfoldMapCB()</a>, <a class="el" href="../../d4/d6b/class_action_drop_item_c_b.html#accfb238782010198bdb5128a8ee44300">ActionDropItemCB::CreateActionComponent()</a>, <a class="el" href="../../dc/d02/class_human_command_action_callback.html#af91367ade43aae6d407109f93888060b">HumanCommandActionCallback::Init()</a>, <a class="el" href="../../d0/dcc/class_action_continuous_base_c_b.html#aba102feb8b95d3539c145469351091c2">ActionContinuousBaseCB::InitActionComponent()</a>, and <a class="el" href="../../d5/db1/class_action_interact_loop_base_c_b.html#aba102feb8b95d3539c145469351091c2">ActionInteractLoopBaseCB::InitActionComponent()</a>.</p>
 
 </div>
 </div>
@@ -1900,7 +1906,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">proto native Human GetHuman </td>
+          <td class="memname">proto native <a class="el" href="../../d9/dc7/class_human.html">Human</a> GetHuman </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -3453,7 +3459,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">proto static native void StaticSetInitState </td>
           <td>(</td>
-          <td class="paramtype">Human&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d9/dc7/class_human.html">Human</a>&#160;</td>
           <td class="paramname"><em>pHuman</em>, </td>
         </tr>
         <tr>
@@ -3580,7 +3586,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">proto static native <a class="el" href="../../d7/dfc/classvector.html">vector</a> WaterLevelCheck </td>
           <td>(</td>
-          <td class="paramtype">Human&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d9/dc7/class_human.html">Human</a>&#160;</td>
           <td class="paramname"><em>pHuman</em>, </td>
         </tr>
         <tr>
@@ -3891,6 +3897,27 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a314b5a2eed9614f515e4dc5497ce7bc6" name="a314b5a2eed9614f515e4dc5497ce7bc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a314b5a2eed9614f515e4dc5497ce7bc6">&#9670;&#160;</a></span>CommandActionAdditive</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">class <a class="el" href="../../dd/d0e/class_human_command_script.html">HumanCommandScript</a> CommandActionAdditive</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= 8192</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>HumanType : <a class="code hl_class" href="../../d9/d5e/class_man_type.html">ManType</a></div>
+<div class="line">{</div>
+<div class="line">}</div>
+<div class="ttc" id="aclass_man_type_html"><div class="ttname"><a href="../../d9/d5e/class_man_type.html">ManType</a></div><div class="ttdef"><b>Definition</b> Man.c:9</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a96f9b6ed3401788557e9a53ba9ae6e2d" name="a96f9b6ed3401788557e9a53ba9ae6e2d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a96f9b6ed3401788557e9a53ba9ae6e2d">&#9670;&#160;</a></span>CommandActionFullbody</h2>
 

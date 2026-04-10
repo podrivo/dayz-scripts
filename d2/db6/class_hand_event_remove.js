@@ -11,5 +11,6 @@ var class_hand_event_remove =
     [ "WriteToContext", "d2/db6/class_hand_event_remove.html#ab73c2ebe376783fdb96d10e5b71f74ba", null ],
     [ "WriteToContext", "d2/db6/class_hand_event_remove.html#ab73c2ebe376783fdb96d10e5b71f74ba", null ],
     [ "m_CanPerformDrop", "d2/db6/class_hand_event_remove.html#a59b86b594dbfcb9def0845844e6de8c3", null ],
-    [ "m_Force", "d2/db6/class_hand_event_remove.html#aacd407717230fe63ad9c865858de2cf8", null ]
+    [ "m_Force", "d2/db6/class_hand_event_remove.html#aacd407717230fe63ad9c865858de2cf8", null ],
+    [ "m_IsSet", "d2/db6/class_hand_event_remove.html#af2dea1c6825b89c2415a31e0ca615e8f", null ]
 ];

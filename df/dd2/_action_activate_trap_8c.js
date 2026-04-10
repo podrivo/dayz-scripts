@@ -11,5 +11,6 @@ var _action_activate_trap_8c =
     [ "OnEnd", "df/dd2/_action_activate_trap_8c.html#aa4e2512c61538ce6fbad115d6b6ebb27", null ],
     [ "OnEndAnimationLoop", "df/dd2/_action_activate_trap_8c.html#a96f6c70fa07399099d3710af7d502d6c", null ],
     [ "OnFinishProgressServer", "df/dd2/_action_activate_trap_8c.html#a00cda41fe9dd093059da5c4b83b591bc", null ],
-    [ "OnStartAnimationLoop", "df/dd2/_action_activate_trap_8c.html#a3b45d0586cb87b4484a292e8510bf509", null ]
+    [ "OnStartAnimationLoop", "df/dd2/_action_activate_trap_8c.html#a3b45d0586cb87b4484a292e8510bf509", null ],
+    [ "OnStartServer", "df/dd2/_action_activate_trap_8c.html#af5aa64866cd0cfb7cd9989eb748abbe0", null ]
 ];

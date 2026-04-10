@@ -3,6 +3,7 @@ var class_mod_info =
     [ "GetAction", "d3/dfe/class_mod_info.html#aee785144ec3899afcb5df2413d119465", null ],
     [ "GetAuthor", "d3/dfe/class_mod_info.html#ab6f5936942d9df5de100f46fb232b75e", null ],
     [ "GetDefault", "d3/dfe/class_mod_info.html#a577c8b8609aaa7843fa2c9775642cbd0", null ],
+    [ "GetDLCImage", "d3/dfe/class_mod_info.html#a10d63866f5a66f046d56eeeb2e507a69", null ],
     [ "GetIsDLC", "d3/dfe/class_mod_info.html#ac759632cbecfd5c45ffe46a22fdd3783", null ],
     [ "GetIsOwned", "d3/dfe/class_mod_info.html#aebb0cdd2e92d759d557c8c8934ef2cf7", null ],
     [ "GetLogo", "d3/dfe/class_mod_info.html#a11e638cc2a6ca8a38924de546cd1bbd1", null ],

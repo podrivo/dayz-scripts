@@ -135,7 +135,7 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aaf27791d4ed6027a2d1381493f2e7e8d"><td class="memItemLeft" align="right" valign="top">private ref <a class="el" href="../../d2/d41/classarray.html">array</a>&lt; <a class="el" href="../../d2/db4/classtypename.html">typename</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df1/class_plugin_manager.html#aaf27791d4ed6027a2d1381493f2e7e8d">m_PluginRegister</a></td></tr>
 <tr class="separator:aaf27791d4ed6027a2d1381493f2e7e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af28c00020d6533e27d58d28361d9c10c"><td class="memItemLeft" align="right" valign="top">private ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt; <a class="el" href="../../d2/db4/classtypename.html">typename</a>, ref <a class="el" href="../../dd/da1/class_plugin_base.html">PluginBase</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df1/class_plugin_manager.html#af28c00020d6533e27d58d28361d9c10c">m_PluginsPtrs</a></td></tr>
+<tr class="memitem:af28c00020d6533e27d58d28361d9c10c"><td class="memItemLeft" align="right" valign="top">private ref <a class="el" href="../../d9/d28/classmap.html">map</a>&lt; <a class="el" href="../../d2/db4/classtypename.html">typename</a>, ref <a class="el" href="../../dd/da1/class_plugin_base.html">PluginBase</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df1/class_plugin_manager.html#af28c00020d6533e27d58d28361d9c10c">m_PluginsPtrs</a></td></tr>
 <tr class="separator:af28c00020d6533e27d58d28361d9c10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -189,7 +189,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#ga32e05515215d4ff50969513ff6d88310">CALL_CATEGORY_GAMEPLAY</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a9b74a5ec02b2feede9913c77d3471b97">CGame::GetUpdateQueue()</a>, <a class="el" href="../../d8/df1/class_plugin_manager.html#af28c00020d6533e27d58d28361d9c10c">m_PluginsPtrs</a>, <a class="el" href="../../d8/df1/class_plugin_manager.html#a1d3e15412ad2d72fb7e3cc4157093f6d">MainOnUpdate()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#ac54ce402cec4f1d67a1cef4db841d26d">PluginBase::OnDestroy()</a>, and <a class="el" href="../../d4/d2d/class_script_invoker.html#a0a18c16f75eba3f8429c07129476b5d8">ScriptInvoker::Remove()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#ga32e05515215d4ff50969513ff6d88310">CALL_CATEGORY_GAMEPLAY</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/df1/class_plugin_manager.html#af28c00020d6533e27d58d28361d9c10c">m_PluginsPtrs</a>, <a class="el" href="../../d8/df1/class_plugin_manager.html#a1d3e15412ad2d72fb7e3cc4157093f6d">MainOnUpdate()</a>, and <a class="el" href="../../dd/da1/class_plugin_base.html#ac54ce402cec4f1d67a1cef4db841d26d">PluginBase::OnDestroy()</a>.</p>
 
 </div>
 </div>
@@ -226,13 +226,13 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code><a class="el" href="../../dd/da1/class_plugin_base.html" title="Plugin interface for controlling of agent pool system.">PluginBase</a></code> <div class="fragment"><div class="line">PluginRepairing plugin = <a class="code hl_function" href="../../d9/d5d/_plugin_manager_8c.html#a1322f1088b91cadee4e6db295eec0492">GetPluginManager</a>().<a class="code hl_function" href="../../d8/df1/class_plugin_manager.html#a31e8a62d207cb1884dd6e6e69652ea34">GetPluginByType</a>(PluginRepairing);</div>
-<div class="ttc" id="a_plugin_manager_8c_html_a1322f1088b91cadee4e6db295eec0492"><div class="ttname"><a href="../../d9/d5d/_plugin_manager_8c.html#a1322f1088b91cadee4e6db295eec0492">GetPluginManager</a></div><div class="ttdeci">PluginManager GetPluginManager()</div><div class="ttdoc">Returns registred plugin by class type, better is to use global funtion GetPlugin(typename plugin_typ...</div><div class="ttdef"><b>Definition</b> PluginManager.c:274</div></div>
-<div class="ttc" id="aclass_plugin_manager_html_a31e8a62d207cb1884dd6e6e69652ea34"><div class="ttname"><a href="../../d8/df1/class_plugin_manager.html#a31e8a62d207cb1884dd6e6e69652ea34">PluginManager::GetPluginByType</a></div><div class="ttdeci">PluginBase GetPluginByType(typename plugin_type)</div><div class="ttdoc">Returns registred plugin by class type, better is to use global funtion GetPlugin(typename plugin_typ...</div><div class="ttdef"><b>Definition</b> PluginManager.c:157</div></div>
+<div class="ttc" id="a_plugin_manager_8c_html_a1322f1088b91cadee4e6db295eec0492"><div class="ttname"><a href="../../d9/d5d/_plugin_manager_8c.html#a1322f1088b91cadee4e6db295eec0492">GetPluginManager</a></div><div class="ttdeci">PluginManager GetPluginManager()</div><div class="ttdoc">Returns registred plugin by class type, better is to use global funtion GetPlugin(typename plugin_typ...</div><div class="ttdef"><b>Definition</b> PluginManager.c:283</div></div>
+<div class="ttc" id="aclass_plugin_manager_html_a31e8a62d207cb1884dd6e6e69652ea34"><div class="ttname"><a href="../../d8/df1/class_plugin_manager.html#a31e8a62d207cb1884dd6e6e69652ea34">PluginManager::GetPluginByType</a></div><div class="ttdeci">PluginBase GetPluginByType(typename plugin_type)</div><div class="ttdoc">Returns registred plugin by class type, better is to use global funtion GetPlugin(typename plugin_typ...</div><div class="ttdef"><b>Definition</b> PluginManager.c:166</div></div>
 </div><!-- fragment --> </dd></dl>
 
 <p class="reference">References <a class="el" href="../../d8/df1/class_plugin_manager.html#af28c00020d6533e27d58d28361d9c10c">m_PluginsPtrs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/d5d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin()</a>, and <a class="el" href="../../d8/df1/class_plugin_manager.html#a2abf2dc70967fe6ce9793f2785f2cec0">PluginsInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/d5d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin()</a>, <a class="el" href="../../d9/d5d/_plugin_manager_8c.html#a5e4807f2af62719c102811374110d267">GetPluginSafe()</a>, and <a class="el" href="../../d8/df1/class_plugin_manager.html#a2abf2dc70967fe6ce9793f2785f2cec0">PluginsInit()</a>.</p>
 
 </div>
 </div>
@@ -259,7 +259,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#ga32e05515215d4ff50969513ff6d88310">CALL_CATEGORY_GAMEPLAY</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a9b74a5ec02b2feede9913c77d3471b97">CGame::GetUpdateQueue()</a>, <a class="el" href="../../d4/d2d/class_script_invoker.html#a97ed19e1e143a0863889e8ec011af969">ScriptInvoker::Insert()</a>, <a class="el" href="../../d8/df1/class_plugin_manager.html#a1d3e15412ad2d72fb7e3cc4157093f6d">MainOnUpdate()</a>, <a class="el" href="../../d8/df1/class_plugin_manager.html#a329103303a8e62eb4d767621d29b40eb">RegisterPlugin()</a>, <a class="el" href="../../d8/df1/class_plugin_manager.html#aec5223f392c7dd880768f8eb05b2ec6b">RegisterPluginDebug()</a>, and <a class="el" href="../../d8/df1/class_plugin_manager.html#a8143ab12034e12d8015829e1ebe98d48">RegisterPluginDiag()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#ga32e05515215d4ff50969513ff6d88310">CALL_CATEGORY_GAMEPLAY</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/df1/class_plugin_manager.html#a1d3e15412ad2d72fb7e3cc4157093f6d">MainOnUpdate()</a>, <a class="el" href="../../d8/df1/class_plugin_manager.html#a329103303a8e62eb4d767621d29b40eb">RegisterPlugin()</a>, <a class="el" href="../../d8/df1/class_plugin_manager.html#aec5223f392c7dd880768f8eb05b2ec6b">RegisterPluginDebug()</a>, and <a class="el" href="../../d8/df1/class_plugin_manager.html#a8143ab12034e12d8015829e1ebe98d48">RegisterPluginDiag()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d9/d5d/_plugin_manager_8c.html#ab03dcab68d958e9707d9f00ccdb3b5d3">PluginManagerInit()</a>.</p>
 
@@ -384,10 +384,10 @@ Private Attributes</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><a class="code hl_function" href="../../d8/df1/class_plugin_manager.html#a329103303a8e62eb4d767621d29b40eb">RegisterPlugin</a>(PluginRepairing);</div>
 <div class="ttc" id="aclass_plugin_base_html"><div class="ttname"><a href="../../dd/da1/class_plugin_base.html">PluginBase</a></div><div class="ttdoc">Plugin interface for controlling of agent pool system.</div><div class="ttdef"><b>Definition</b> PluginBase.c:2</div></div>
-<div class="ttc" id="aclass_plugin_manager_html_a329103303a8e62eb4d767621d29b40eb"><div class="ttname"><a href="../../d8/df1/class_plugin_manager.html#a329103303a8e62eb4d767621d29b40eb">PluginManager::RegisterPlugin</a></div><div class="ttdeci">protected void RegisterPlugin(string plugin_class_name, bool reg_on_client, bool reg_on_server, bool reg_on_release=true)</div><div class="ttdoc">Register new PluginBase to PluginManager for storing and handling plugin.</div><div class="ttdef"><b>Definition</b> PluginManager.c:183</div></div>
+<div class="ttc" id="aclass_plugin_manager_html_a329103303a8e62eb4d767621d29b40eb"><div class="ttname"><a href="../../d8/df1/class_plugin_manager.html#a329103303a8e62eb4d767621d29b40eb">PluginManager::RegisterPlugin</a></div><div class="ttdeci">protected void RegisterPlugin(string plugin_class_name, bool reg_on_client, bool reg_on_server, bool reg_on_release=true)</div><div class="ttdoc">Register new PluginBase to PluginManager for storing and handling plugin.</div><div class="ttdef"><b>Definition</b> PluginManager.c:192</div></div>
 </div><!-- fragment --> </dd></dl>
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d8/df1/class_plugin_manager.html#aaf27791d4ed6027a2d1381493f2e7e8d">m_PluginRegister</a>, and <a class="el" href="../../d5/da2/group___strings.html#ga0afa93899a3e95fcfea4b9d83d0cc042">string::ToType()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d8/df1/class_plugin_manager.html#aaf27791d4ed6027a2d1381493f2e7e8d">m_PluginRegister</a>, and <a class="el" href="../../d5/da2/group___strings.html#ga0afa93899a3e95fcfea4b9d83d0cc042">string::ToType()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/df1/class_plugin_manager.html#a1e3b6d38df0786ccf7f938d60e386aae">Init()</a>, <a class="el" href="../../d8/df1/class_plugin_manager.html#aec5223f392c7dd880768f8eb05b2ec6b">RegisterPluginDebug()</a>, and <a class="el" href="../../d8/df1/class_plugin_manager.html#a8143ab12034e12d8015829e1ebe98d48">RegisterPluginDiag()</a>.</p>
 
@@ -563,7 +563,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">private ref <a class="el" href="../../d6/d7f/_controls_xbox_new_8c.html#a9ec9dda576db2a36c42c1c3af155d07c">map</a>&lt;<a class="el" href="../../d2/db4/classtypename.html">typename</a>, ref <a class="el" href="../../dd/da1/class_plugin_base.html">PluginBase</a>&gt; m_PluginsPtrs</td>
+          <td class="memname">private ref <a class="el" href="../../d9/d28/classmap.html">map</a>&lt;<a class="el" href="../../d2/db4/classtypename.html">typename</a>, ref <a class="el" href="../../dd/da1/class_plugin_base.html">PluginBase</a>&gt; m_PluginsPtrs</td>
         </tr>
       </table>
   </td>

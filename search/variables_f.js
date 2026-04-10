@@ -86,7 +86,7 @@ var searchData=
   ['originalmaterialname_83',['OriginalMaterialName',['../df/d60/group___ocean.html#ga16af7a49fd97d6f48f518ea5e7f43d80',1,'TraceContact::OriginalMaterialName'],['../df/d60/group___ocean.html#ga16af7a49fd97d6f48f518ea5e7f43d80',1,'OriginalMaterialName:&#160;EnWorld.c']]],
   ['out_5farea_5fconsume_5ffilter_5fquantity_5fper_5fsec_84',['OUT_AREA_CONSUME_FILTER_QUANTITY_PER_SEC',['../d6/d0f/class_mask_mdfr.html#ac71ae4f0c05de29a6e5244a210cb0250',1,'MaskMdfr']]],
   ['outdoor_85',['Outdoor',['../d1/d0d/_day_z_anim_events_8c.html#a5accf7378d0c4b41e40289e8256d7470',1,'DayZAnimEvents.c']]],
-  ['outer_86',['OUTER',['../de/d15/_underground_trigger_8c.html#a363aa51841dae3fc710a3655b28a9ebd',1,'UndergroundTrigger.c']]],
+  ['outer_86',['OUTER',['../de/d15/_underground_trigger_8c.html#aa605cc61cd6cd5a78930ddea600791a3',1,'UndergroundTrigger.c']]],
   ['outeroffset_87',['OuterOffset',['../d8/dc8/class_json_data_area_data.html#a6e27057ccdf74b8bae098cd470ad6737',1,'JsonDataAreaData']]],
   ['outerpartdist_88',['OuterPartDist',['../d8/dc8/class_json_data_area_data.html#adb805bb1330a0a8d2f8a140208000ca2',1,'JsonDataAreaData']]],
   ['outerringtoggle_89',['OuterRingToggle',['../d8/dc8/class_json_data_area_data.html#af37f0dd860b33354e74c56b588420bf3',1,'JsonDataAreaData']]],
@@ -98,7 +98,7 @@ var searchData=
   ['ovenpoint_5ffire_5fposition_95',['OVENPOINT_FIRE_POSITION',['../dc/dc1/class_fireplace_base.html#aa2282efb4732786e5f14fc9bf641c339',1,'FireplaceBase']]],
   ['ovenpoint_5fplace_5frot_96',['OVENPOINT_PLACE_ROT',['../dc/dc1/class_fireplace_base.html#a3e1eb9317e46913e99b0af1bea18fb59',1,'FireplaceBase']]],
   ['ovenpoint_5fsmoke_5fposition_97',['OVENPOINT_SMOKE_POSITION',['../dc/dc1/class_fireplace_base.html#ac7a9f96ca94df6448936e389201311d2',1,'FireplaceBase']]],
-  ['overcast_5fmax_5ftime_98',['OVERCAST_MAX_TIME',['../dc/d97/class_enoch_data.html#aa19ba4f3c34bca2e8b270c571fa750aa',1,'EnochData::OVERCAST_MAX_TIME'],['../d0/d24/class_world_data.html#aa19ba4f3c34bca2e8b270c571fa750aa',1,'WorldData::OVERCAST_MAX_TIME']]],
-  ['overcast_5fmin_5ftime_99',['OVERCAST_MIN_TIME',['../dc/d97/class_enoch_data.html#a8842dc10fc49ec81486740e11432104a',1,'EnochData::OVERCAST_MIN_TIME'],['../d0/d24/class_world_data.html#a8842dc10fc49ec81486740e11432104a',1,'WorldData::OVERCAST_MIN_TIME']]],
+  ['overcast_5fmax_5ftime_98',['OVERCAST_MAX_TIME',['../dc/d97/class_enoch_data.html#aa19ba4f3c34bca2e8b270c571fa750aa',1,'EnochData::OVERCAST_MAX_TIME'],['../db/dbb/class_chernarus_plus_data.html#aa19ba4f3c34bca2e8b270c571fa750aa',1,'ChernarusPlusData::OVERCAST_MAX_TIME']]],
+  ['overcast_5fmin_5ftime_99',['OVERCAST_MIN_TIME',['../dc/d97/class_enoch_data.html#a8842dc10fc49ec81486740e11432104a',1,'EnochData::OVERCAST_MIN_TIME'],['../db/dbb/class_chernarus_plus_data.html#a8842dc10fc49ec81486740e11432104a',1,'ChernarusPlusData::OVERCAST_MIN_TIME']]],
   ['overload_5flimit_100',['OVERLOAD_LIMIT',['../d4/d87/class_man_base.html#aa6cbd773a4294b3d9a73003526c9ed41',1,'ManBase']]]
 ];

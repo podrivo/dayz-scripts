@@ -31,6 +31,7 @@ var _offroad_hatchback_8c =
     [ "OnEngineStop", "d6/d62/_offroad_hatchback_8c.html#aff5f5c56f35ec1a3c873d73571e50a92", null ],
     [ "OnSound", "d6/d62/_offroad_hatchback_8c.html#a5c37be465cc6e029402bf4ef0895b6bf", null ],
     [ "SetActions", "d6/d62/_offroad_hatchback_8c.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
+    [ "~OffroadHatchback", "d6/d62/_offroad_hatchback_8c.html#a9071f53f3e88cdd8d1a0c37eb4204a02", null ],
     [ "m_UTSLEngine", "d6/d62/_offroad_hatchback_8c.html#aebe1a74c9502b2dd3cc887aa0ded415d", null ],
     [ "m_UTSource", "d6/d62/_offroad_hatchback_8c.html#a8fb6777a9fde58ec7f4d763424437f16", null ],
     [ "m_UTSSettings", "d6/d62/_offroad_hatchback_8c.html#a0059eb46cde0e00387c1295f87619a71", null ]

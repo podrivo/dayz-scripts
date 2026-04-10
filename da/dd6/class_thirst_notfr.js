@@ -1,11 +1,8 @@
 var class_thirst_notfr =
 [
-    [ "ThirstNotfr", "da/dd6/class_thirst_notfr.html#a5425d8974834cfc8878ea0105daf723b", null ],
-    [ "DisplayBadge", "da/dd6/class_thirst_notfr.html#ab58e8a94f41c38e3ab9f2160cbffae2d", null ],
     [ "DisplayTendency", "da/dd6/class_thirst_notfr.html#a8755cc6f9e3155300d55f4edd5d8bc80", null ],
     [ "GetNotifierType", "da/dd6/class_thirst_notfr.html#ac9c9d4870bfd6bd9870abcec028e48da", null ],
     [ "GetObservedValue", "da/dd6/class_thirst_notfr.html#a513e235f0dda3336227785b6964d37e4", null ],
-    [ "HideBadge", "da/dd6/class_thirst_notfr.html#a4f19400da63afed1f709dc1fb8289187", null ],
     [ "DEC_TRESHOLD_HIGH", "da/dd6/class_thirst_notfr.html#a46d42be7aae59c549ae704f0c892ab87", null ],
     [ "DEC_TRESHOLD_LOW", "da/dd6/class_thirst_notfr.html#a1ee6d6b42068fa25fd9b190b0ba6ffbf", null ],
     [ "DEC_TRESHOLD_MED", "da/dd6/class_thirst_notfr.html#aa8e86a4078cabf2056567ffddd2f4ffe", null ],

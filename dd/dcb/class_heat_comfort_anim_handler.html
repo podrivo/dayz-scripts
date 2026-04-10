@@ -111,10 +111,16 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:add0de2a5afeda13d141c084ed5a97651"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac3017eb13891cfb6f2fa614ab1879bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#aac3017eb13891cfb6f2fa614ab1879bd">Update</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> delta_time, <a class="el" href="../../d2/d1b/class_human_movement_state.html">HumanMovementState</a> hms)</td></tr>
 <tr class="separator:aac3017eb13891cfb6f2fa614ab1879bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93f7d0e635c89aa60a665cdbe902bcc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a93f7d0e635c89aa60a665cdbe902bcc0">GetEventTime</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> hc_value, <a class="el" href="../../d4/dc3/classfloat.html">float</a> threshold_low, <a class="el" href="../../d4/dc3/classfloat.html">float</a> threshold_high, <a class="el" href="../../d4/dc3/classfloat.html">float</a> low_min, <a class="el" href="../../d4/dc3/classfloat.html">float</a> high_min, <a class="el" href="../../d4/dc3/classfloat.html">float</a> low_max, <a class="el" href="../../d4/dc3/classfloat.html">float</a> high_max)</td></tr>
-<tr class="separator:a93f7d0e635c89aa60a665cdbe902bcc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acadb92ff1201dbdc285f75ab2a15dadd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> delta_time)</td></tr>
 <tr class="separator:acadb92ff1201dbdc285f75ab2a15dadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ffbcc7ed4e90fd3b72c8238e17a1490"><td class="memItemLeft" align="right" valign="top">private void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a9ffbcc7ed4e90fd3b72c8238e17a1490">ProcessHot</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> hcValue)</td></tr>
+<tr class="separator:a9ffbcc7ed4e90fd3b72c8238e17a1490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1b63bf792f5e404e6544e915ae596b8"><td class="memItemLeft" align="right" valign="top">private void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#af1b63bf792f5e404e6544e915ae596b8">ProcessFreeze</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> hcValue)</td></tr>
+<tr class="separator:af1b63bf792f5e404e6544e915ae596b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf4ea48646c1731d4131fe32196b8056"><td class="memItemLeft" align="right" valign="top">private void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#aaf4ea48646c1731d4131fe32196b8056">ProcessFreezeRattle</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> hcValue)</td></tr>
+<tr class="separator:aaf4ea48646c1731d4131fe32196b8056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af850058b777617ea297903d2bde1b268"><td class="memItemLeft" align="right" valign="top">private <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#af850058b777617ea297903d2bde1b268">GetEventTime</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> hcValue, <a class="el" href="../../d4/dc3/classfloat.html">float</a> threshold_low, <a class="el" href="../../d4/dc3/classfloat.html">float</a> thresholdHigh, <a class="el" href="../../d4/dc3/classfloat.html">float</a> lowMin, <a class="el" href="../../d4/dc3/classfloat.html">float</a> highMin, <a class="el" href="../../d4/dc3/classfloat.html">float</a> lowMax, <a class="el" href="../../d4/dc3/classfloat.html">float</a> highMax)</td></tr>
+<tr class="separator:af850058b777617ea297903d2bde1b268"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -130,29 +136,29 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a89144ccebd95ff4d036ea842237d3917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4db3d46d75d2864daed52041fe1f0973"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a4db3d46d75d2864daed52041fe1f0973">m_Player</a></td></tr>
 <tr class="separator:a4db3d46d75d2864daed52041fe1f0973"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e3f6ea9c3c8fdca8da6510b6d10ebc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a3e3f6ea9c3c8fdca8da6510b6d10ebc3">m_EventTimeFreeze</a> = -1</td></tr>
-<tr class="separator:a3e3f6ea9c3c8fdca8da6510b6d10ebc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8a642a8e5523be9b6c23cad52592f77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ab8a642a8e5523be9b6c23cad52592f77">m_EventTimeFreezeRattle</a> = -1</td></tr>
 <tr class="separator:ab8a642a8e5523be9b6c23cad52592f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e3f6ea9c3c8fdca8da6510b6d10ebc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a3e3f6ea9c3c8fdca8da6510b6d10ebc3">m_EventTimeFreeze</a> = -1</td></tr>
+<tr class="separator:a3e3f6ea9c3c8fdca8da6510b6d10ebc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbfecdf2f7c5d0a4f0a6d23f57563789"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#afbfecdf2f7c5d0a4f0a6d23f57563789">m_EventTimeHot</a> = -1</td></tr>
 <tr class="separator:afbfecdf2f7c5d0a4f0a6d23f57563789"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec76214f1076507391fa3280f8b04d56"><td class="memItemLeft" align="right" valign="top">protected ref <a class="el" href="../../d2/d1b/class_human_movement_state.html">HumanMovementState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#aec76214f1076507391fa3280f8b04d56">m_MovementState</a> = new <a class="el" href="../../d2/d1b/class_human_movement_state.html">HumanMovementState</a>()</td></tr>
 <tr class="separator:aec76214f1076507391fa3280f8b04d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a184f281b06d2b6f2d545a00b0b6e7b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a0a184f281b06d2b6f2d545a00b0b6e7b">TIME_INTERVAL_HC_MINUS_LOW_MIN</a> = 12</td></tr>
 <tr class="separator:a0a184f281b06d2b6f2d545a00b0b6e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50c46476920d292d3ece2a78020c4ee1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a50c46476920d292d3ece2a78020c4ee1">TIME_INTERVAL_HC_MINUS_LOW_MAX</a> = 20</td></tr>
-<tr class="separator:a50c46476920d292d3ece2a78020c4ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe03607bbda991baf463d893c4d73da4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#abe03607bbda991baf463d893c4d73da4">TIME_INTERVAL_HC_MINUS_HIGH_MIN</a> = 25</td></tr>
 <tr class="separator:abe03607bbda991baf463d893c4d73da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50c46476920d292d3ece2a78020c4ee1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a50c46476920d292d3ece2a78020c4ee1">TIME_INTERVAL_HC_MINUS_LOW_MAX</a> = 20</td></tr>
+<tr class="separator:a50c46476920d292d3ece2a78020c4ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad89646c76a4eab0bbbbea2e906ac8a8a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ad89646c76a4eab0bbbbea2e906ac8a8a">TIME_INTERVAL_HC_MINUS_HIGH_MAX</a> = 40</td></tr>
 <tr class="separator:ad89646c76a4eab0bbbbea2e906ac8a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09abe17131f362d18cc8ff077072af89"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a09abe17131f362d18cc8ff077072af89">TIME_INTERVAL_HC_PLUS_LOW_MIN</a> = 5</td></tr>
+<tr class="memitem:a09abe17131f362d18cc8ff077072af89"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a09abe17131f362d18cc8ff077072af89">TIME_INTERVAL_HC_PLUS_LOW_MIN</a> = 12</td></tr>
 <tr class="separator:a09abe17131f362d18cc8ff077072af89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac929478ca4c1d69855f2a086b8ded820"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ac929478ca4c1d69855f2a086b8ded820">TIME_INTERVAL_HC_PLUS_LOW_MAX</a> = 12</td></tr>
-<tr class="separator:ac929478ca4c1d69855f2a086b8ded820"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad88e1576bb7f8c36e277a7a111723bdb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ad88e1576bb7f8c36e277a7a111723bdb">TIME_INTERVAL_HC_PLUS_HIGH_MIN</a> = 15</td></tr>
+<tr class="memitem:ad88e1576bb7f8c36e277a7a111723bdb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ad88e1576bb7f8c36e277a7a111723bdb">TIME_INTERVAL_HC_PLUS_HIGH_MIN</a> = 25</td></tr>
 <tr class="separator:ad88e1576bb7f8c36e277a7a111723bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f53bc53591e29aef6f0fd3b6d7eb9eb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a4f53bc53591e29aef6f0fd3b6d7eb9eb">TIME_INTERVAL_HC_PLUS_HIGH_MAX</a> = 25</td></tr>
+<tr class="memitem:ac929478ca4c1d69855f2a086b8ded820"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ac929478ca4c1d69855f2a086b8ded820">TIME_INTERVAL_HC_PLUS_LOW_MAX</a> = 20</td></tr>
+<tr class="separator:ac929478ca4c1d69855f2a086b8ded820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f53bc53591e29aef6f0fd3b6d7eb9eb"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a4f53bc53591e29aef6f0fd3b6d7eb9eb">TIME_INTERVAL_HC_PLUS_HIGH_MAX</a> = 40</td></tr>
 <tr class="separator:a4f53bc53591e29aef6f0fd3b6d7eb9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -180,13 +186,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a93f7d0e635c89aa60a665cdbe902bcc0" name="a93f7d0e635c89aa60a665cdbe902bcc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93f7d0e635c89aa60a665cdbe902bcc0">&#9670;&#160;</a></span>GetEventTime()</h2>
+<a id="af850058b777617ea297903d2bde1b268" name="af850058b777617ea297903d2bde1b268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af850058b777617ea297903d2bde1b268">&#9670;&#160;</a></span>GetEventTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,10 +199,10 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d4/dc3/classfloat.html">float</a> GetEventTime </td>
+          <td class="memname">private <a class="el" href="../../d4/dc3/classfloat.html">float</a> GetEventTime </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>hc_value</em>, </td>
+          <td class="paramname"><em>hcValue</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -210,31 +214,31 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>threshold_high</em>, </td>
+          <td class="paramname"><em>thresholdHigh</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>low_min</em>, </td>
+          <td class="paramname"><em>lowMin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>high_min</em>, </td>
+          <td class="paramname"><em>highMin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>low_max</em>, </td>
+          <td class="paramname"><em>lowMax</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
-          <td class="paramname"><em>high_max</em>&#160;</td>
+          <td class="paramname"><em>highMax</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -249,9 +253,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga6530404da328a85a6ff9bd3a37765087">Math::InverseLerp()</a>, <a class="el" href="../../d5/d98/group___math.html#gaa6376dcd0f724f11ba0b6bdf66b185ee">Math::Lerp()</a>, and <a class="el" href="../../d5/d98/group___math.html#ga7ffb8c4fb175c920b81a73eebc2faa73">Math::RandomFloatInclusive()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga51ca3f3ae316fedcb232472d8979f2a9">Math::Clamp()</a>, <a class="el" href="../../d5/d98/group___math.html#ga6530404da328a85a6ff9bd3a37765087">Math::InverseLerp()</a>, <a class="el" href="../../d5/d98/group___math.html#gaa6376dcd0f724f11ba0b6bdf66b185ee">Math::Lerp()</a>, and <a class="el" href="../../d5/d98/group___math.html#ga7ffb8c4fb175c920b81a73eebc2faa73">Math::RandomFloatInclusive()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#af1b63bf792f5e404e6544e915ae596b8">ProcessFreeze()</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#aaf4ea48646c1731d4131fe32196b8056">ProcessFreezeRattle()</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a9ffbcc7ed4e90fd3b72c8238e17a1490">ProcessHot()</a>.</p>
 
 </div>
 </div>
@@ -279,7 +283,97 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a93f7d0e635c89aa60a665cdbe902bcc0">GetEventTime()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a3e3f6ea9c3c8fdca8da6510b6d10ebc3">m_EventTimeFreeze</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ab8a642a8e5523be9b6c23cad52592f77">m_EventTimeFreezeRattle</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#afbfecdf2f7c5d0a4f0a6d23f57563789">m_EventTimeHot</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a5a6c1b8a181a09bba9b2887866ac5854">m_ProcessTimeAccuFreeze</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ae1a1b34ef781ba3c26af51b6822a13e4">m_ProcessTimeAccuFreezeRattle</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a89144ccebd95ff4d036ea842237d3917">m_ProcessTimeAccuHot</a>, <a class="el" href="../../d3/def/class_player_constants.html#ab6adb001a9e4eba1fb0e704d5378c099">PlayerConstants::THRESHOLD_HEAT_COMFORT_MINUS_CRITICAL</a>, <a class="el" href="../../d3/def/class_player_constants.html#adfb5a21c670f2b3c610c7d686aecbdba">PlayerConstants::THRESHOLD_HEAT_COMFORT_MINUS_EMPTY</a>, <a class="el" href="../../d3/def/class_player_constants.html#a3971175e5761fd345f928aa59b394d8b">PlayerConstants::THRESHOLD_HEAT_COMFORT_MINUS_WARNING</a>, <a class="el" href="../../d3/def/class_player_constants.html#a6c0673dfb1227639ecf22c921bedc608">PlayerConstants::THRESHOLD_HEAT_COMFORT_PLUS_EMPTY</a>, <a class="el" href="../../d3/def/class_player_constants.html#a6911f7e3b3ee54c35b1106ea07a85258">PlayerConstants::THRESHOLD_HEAT_COMFORT_PLUS_WARNING</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ad89646c76a4eab0bbbbea2e906ac8a8a">TIME_INTERVAL_HC_MINUS_HIGH_MAX</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#abe03607bbda991baf463d893c4d73da4">TIME_INTERVAL_HC_MINUS_HIGH_MIN</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a50c46476920d292d3ece2a78020c4ee1">TIME_INTERVAL_HC_MINUS_LOW_MAX</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a0a184f281b06d2b6f2d545a00b0b6e7b">TIME_INTERVAL_HC_MINUS_LOW_MIN</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a4f53bc53591e29aef6f0fd3b6d7eb9eb">TIME_INTERVAL_HC_PLUS_HIGH_MAX</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ac929478ca4c1d69855f2a086b8ded820">TIME_INTERVAL_HC_PLUS_LOW_MAX</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a09abe17131f362d18cc8ff077072af89">TIME_INTERVAL_HC_PLUS_LOW_MIN</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#ga6f2b8e486d3a17f2d087f005ab4f3aff">Math::IsInRange()</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a3e3f6ea9c3c8fdca8da6510b6d10ebc3">m_EventTimeFreeze</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ab8a642a8e5523be9b6c23cad52592f77">m_EventTimeFreezeRattle</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#afbfecdf2f7c5d0a4f0a6d23f57563789">m_EventTimeHot</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a5a6c1b8a181a09bba9b2887866ac5854">m_ProcessTimeAccuFreeze</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ae1a1b34ef781ba3c26af51b6822a13e4">m_ProcessTimeAccuFreezeRattle</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a89144ccebd95ff4d036ea842237d3917">m_ProcessTimeAccuHot</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#af1b63bf792f5e404e6544e915ae596b8">ProcessFreeze()</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#aaf4ea48646c1731d4131fe32196b8056">ProcessFreezeRattle()</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a9ffbcc7ed4e90fd3b72c8238e17a1490">ProcessHot()</a>, <a class="el" href="../../d3/def/class_player_constants.html#ab6adb001a9e4eba1fb0e704d5378c099">PlayerConstants::THRESHOLD_HEAT_COMFORT_MINUS_CRITICAL</a>, <a class="el" href="../../d3/def/class_player_constants.html#a3971175e5761fd345f928aa59b394d8b">PlayerConstants::THRESHOLD_HEAT_COMFORT_MINUS_WARNING</a>, and <a class="el" href="../../d3/def/class_player_constants.html#a6911f7e3b3ee54c35b1106ea07a85258">PlayerConstants::THRESHOLD_HEAT_COMFORT_PLUS_WARNING</a>.</p>
+
+</div>
+</div>
+<a id="af1b63bf792f5e404e6544e915ae596b8" name="af1b63bf792f5e404e6544e915ae596b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1b63bf792f5e404e6544e915ae596b8">&#9670;&#160;</a></span>ProcessFreeze()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">private void ProcessFreeze </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>hcValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#af850058b777617ea297903d2bde1b268">GetEventTime()</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a3e3f6ea9c3c8fdca8da6510b6d10ebc3">m_EventTimeFreeze</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a5a6c1b8a181a09bba9b2887866ac5854">m_ProcessTimeAccuFreeze</a>, <a class="el" href="../../d3/def/class_player_constants.html#adfb5a21c670f2b3c610c7d686aecbdba">PlayerConstants::THRESHOLD_HEAT_COMFORT_MINUS_EMPTY</a>, <a class="el" href="../../d3/def/class_player_constants.html#a3971175e5761fd345f928aa59b394d8b">PlayerConstants::THRESHOLD_HEAT_COMFORT_MINUS_WARNING</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ad89646c76a4eab0bbbbea2e906ac8a8a">TIME_INTERVAL_HC_MINUS_HIGH_MAX</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#abe03607bbda991baf463d893c4d73da4">TIME_INTERVAL_HC_MINUS_HIGH_MIN</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a50c46476920d292d3ece2a78020c4ee1">TIME_INTERVAL_HC_MINUS_LOW_MAX</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a0a184f281b06d2b6f2d545a00b0b6e7b">TIME_INTERVAL_HC_MINUS_LOW_MIN</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+
+</div>
+</div>
+<a id="aaf4ea48646c1731d4131fe32196b8056" name="aaf4ea48646c1731d4131fe32196b8056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf4ea48646c1731d4131fe32196b8056">&#9670;&#160;</a></span>ProcessFreezeRattle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">private void ProcessFreezeRattle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>hcValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#af850058b777617ea297903d2bde1b268">GetEventTime()</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ab8a642a8e5523be9b6c23cad52592f77">m_EventTimeFreezeRattle</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ae1a1b34ef781ba3c26af51b6822a13e4">m_ProcessTimeAccuFreezeRattle</a>, <a class="el" href="../../d3/def/class_player_constants.html#ab6adb001a9e4eba1fb0e704d5378c099">PlayerConstants::THRESHOLD_HEAT_COMFORT_MINUS_CRITICAL</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ad89646c76a4eab0bbbbea2e906ac8a8a">TIME_INTERVAL_HC_MINUS_HIGH_MAX</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#abe03607bbda991baf463d893c4d73da4">TIME_INTERVAL_HC_MINUS_HIGH_MIN</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a50c46476920d292d3ece2a78020c4ee1">TIME_INTERVAL_HC_MINUS_LOW_MAX</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a0a184f281b06d2b6f2d545a00b0b6e7b">TIME_INTERVAL_HC_MINUS_LOW_MIN</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+
+</div>
+</div>
+<a id="a9ffbcc7ed4e90fd3b72c8238e17a1490" name="a9ffbcc7ed4e90fd3b72c8238e17a1490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ffbcc7ed4e90fd3b72c8238e17a1490">&#9670;&#160;</a></span>ProcessHot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">private void ProcessHot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td>
+          <td class="paramname"><em>hcValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#af850058b777617ea297903d2bde1b268">GetEventTime()</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#afbfecdf2f7c5d0a4f0a6d23f57563789">m_EventTimeHot</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a89144ccebd95ff4d036ea842237d3917">m_ProcessTimeAccuHot</a>, <a class="el" href="../../d3/def/class_player_constants.html#a6c0673dfb1227639ecf22c921bedc608">PlayerConstants::THRESHOLD_HEAT_COMFORT_PLUS_EMPTY</a>, <a class="el" href="../../d3/def/class_player_constants.html#a6911f7e3b3ee54c35b1106ea07a85258">PlayerConstants::THRESHOLD_HEAT_COMFORT_PLUS_WARNING</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a4f53bc53591e29aef6f0fd3b6d7eb9eb">TIME_INTERVAL_HC_PLUS_HIGH_MAX</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ad88e1576bb7f8c36e277a7a111723bdb">TIME_INTERVAL_HC_PLUS_HIGH_MIN</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ac929478ca4c1d69855f2a086b8ded820">TIME_INTERVAL_HC_PLUS_LOW_MAX</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a09abe17131f362d18cc8ff077072af89">TIME_INTERVAL_HC_PLUS_LOW_MIN</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
 
 </div>
 </div>
@@ -317,7 +411,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ace85bb1c839a917298250690516e3275">m_TimeSinceLastTick</a>, <a class="el" href="../../d9/d4d/_effect_manager_8c.html#adc95ed7b2ed00267008a4582165481f7">Process()</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ac13da884573e6187a54e91f76f0cf586">TICK_INTERVAL</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ace85bb1c839a917298250690516e3275">m_TimeSinceLastTick</a>, <a class="el" href="../../d9/d4d/_effect_manager_8c.html#adc95ed7b2ed00267008a4582165481f7">Process()</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#ac13da884573e6187a54e91f76f0cf586">TICK_INTERVAL</a>.</p>
 
 </div>
 </div>
@@ -342,7 +436,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#af1b63bf792f5e404e6544e915ae596b8">ProcessFreeze()</a>.</p>
 
 </div>
 </div>
@@ -366,7 +460,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#aaf4ea48646c1731d4131fe32196b8056">ProcessFreezeRattle()</a>.</p>
 
 </div>
 </div>
@@ -390,7 +484,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a9ffbcc7ed4e90fd3b72c8238e17a1490">ProcessHot()</a>.</p>
 
 </div>
 </div>
@@ -426,7 +520,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> m_Player</td>
+          <td class="memname"><a class="el" href="../../d5/da8/class_player_base.html">PlayerBase</a> <a class="el" href="../../d2/d38/_cached_equipment_storage_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a></td>
         </tr>
       </table>
   </td>
@@ -435,8 +529,6 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#add0de2a5afeda13d141c084ed5a97651">HeatComfortAnimHandler()</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
 
 </div>
 </div>
@@ -460,7 +552,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#af1b63bf792f5e404e6544e915ae596b8">ProcessFreeze()</a>.</p>
 
 </div>
 </div>
@@ -484,7 +576,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#aaf4ea48646c1731d4131fe32196b8056">ProcessFreezeRattle()</a>.</p>
 
 </div>
 </div>
@@ -508,7 +600,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a9ffbcc7ed4e90fd3b72c8238e17a1490">ProcessHot()</a>.</p>
 
 </div>
 </div>
@@ -580,7 +672,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#af1b63bf792f5e404e6544e915ae596b8">ProcessFreeze()</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#aaf4ea48646c1731d4131fe32196b8056">ProcessFreezeRattle()</a>.</p>
 
 </div>
 </div>
@@ -604,7 +696,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#af1b63bf792f5e404e6544e915ae596b8">ProcessFreeze()</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#aaf4ea48646c1731d4131fe32196b8056">ProcessFreezeRattle()</a>.</p>
 
 </div>
 </div>
@@ -628,7 +720,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#af1b63bf792f5e404e6544e915ae596b8">ProcessFreeze()</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#aaf4ea48646c1731d4131fe32196b8056">ProcessFreezeRattle()</a>.</p>
 
 </div>
 </div>
@@ -652,7 +744,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#af1b63bf792f5e404e6544e915ae596b8">ProcessFreeze()</a>, and <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#aaf4ea48646c1731d4131fe32196b8056">ProcessFreezeRattle()</a>.</p>
 
 </div>
 </div>
@@ -666,7 +758,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="../../d4/dc3/classfloat.html">float</a> TIME_INTERVAL_HC_PLUS_HIGH_MAX = 25</td>
+          <td class="memname">const <a class="el" href="../../d4/dc3/classfloat.html">float</a> TIME_INTERVAL_HC_PLUS_HIGH_MAX = 40</td>
         </tr>
       </table>
   </td>
@@ -676,7 +768,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a9ffbcc7ed4e90fd3b72c8238e17a1490">ProcessHot()</a>.</p>
 
 </div>
 </div>
@@ -690,7 +782,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="../../d4/dc3/classfloat.html">float</a> TIME_INTERVAL_HC_PLUS_HIGH_MIN = 15</td>
+          <td class="memname">const <a class="el" href="../../d4/dc3/classfloat.html">float</a> TIME_INTERVAL_HC_PLUS_HIGH_MIN = 25</td>
         </tr>
       </table>
   </td>
@@ -699,6 +791,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a9ffbcc7ed4e90fd3b72c8238e17a1490">ProcessHot()</a>.</p>
 
 </div>
 </div>
@@ -712,7 +806,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="../../d4/dc3/classfloat.html">float</a> TIME_INTERVAL_HC_PLUS_LOW_MAX = 12</td>
+          <td class="memname">const <a class="el" href="../../d4/dc3/classfloat.html">float</a> TIME_INTERVAL_HC_PLUS_LOW_MAX = 20</td>
         </tr>
       </table>
   </td>
@@ -722,7 +816,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a9ffbcc7ed4e90fd3b72c8238e17a1490">ProcessHot()</a>.</p>
 
 </div>
 </div>
@@ -736,7 +830,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="../../d4/dc3/classfloat.html">float</a> TIME_INTERVAL_HC_PLUS_LOW_MIN = 5</td>
+          <td class="memname">const <a class="el" href="../../d4/dc3/classfloat.html">float</a> TIME_INTERVAL_HC_PLUS_LOW_MIN = 12</td>
         </tr>
       </table>
   </td>
@@ -746,7 +840,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd">Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dcb/class_heat_comfort_anim_handler.html#a9ffbcc7ed4e90fd3b72c8238e17a1490">ProcessHot()</a>.</p>
 
 </div>
 </div>

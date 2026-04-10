@@ -1,11 +1,9 @@
 var class_health_notfr =
 [
     [ "HealthNotfr", "d0/d33/class_health_notfr.html#ac84ed2abf0e2c0abd78169f5c7e1cad9", null ],
-    [ "DisplayBadge", "d0/d33/class_health_notfr.html#ab58e8a94f41c38e3ab9f2160cbffae2d", null ],
     [ "DisplayTendency", "d0/d33/class_health_notfr.html#a8755cc6f9e3155300d55f4edd5d8bc80", null ],
     [ "GetNotifierType", "d0/d33/class_health_notfr.html#ac9c9d4870bfd6bd9870abcec028e48da", null ],
     [ "GetObservedValue", "d0/d33/class_health_notfr.html#a513e235f0dda3336227785b6964d37e4", null ],
-    [ "HideBadge", "d0/d33/class_health_notfr.html#a4f19400da63afed1f709dc1fb8289187", null ],
     [ "DEC_TRESHOLD_HIGH", "d0/d33/class_health_notfr.html#a46d42be7aae59c549ae704f0c892ab87", null ],
     [ "DEC_TRESHOLD_LOW", "d0/d33/class_health_notfr.html#a1ee6d6b42068fa25fd9b190b0ba6ffbf", null ],
     [ "DEC_TRESHOLD_MED", "d0/d33/class_health_notfr.html#aa8e86a4078cabf2056567ffddd2f4ffe", null ],

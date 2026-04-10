@@ -336,8 +336,6 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if mute request was sent successfully to server. If false, then was problem with sent request or missing player idendity. </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d36/class_online_services.html#ae61284f879e2b057c34b9185670f890e">OnlineServices::OnLoadVoicePrivilege()</a>.</p>
-
 </div>
 </div>
 <a id="aab1ca6fe8c8dac90e9c77edf632771f3" name="aab1ca6fe8c8dac90e9c77edf632771f3"></a>
@@ -369,8 +367,6 @@ Private Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="reference">Referenced by <a class="el" href="../../d0/d36/class_online_services.html#ae61284f879e2b057c34b9185670f890e">OnlineServices::OnLoadVoicePrivilege()</a>.</p>
 
 </div>
 </div>
@@ -793,16 +789,12 @@ Private Member Functions</h2></td></tr>
     <tr><td class="paramname">day</td><td>in range &lt;1, 31&gt; </td></tr>
     <tr><td class="paramname">hour</td><td>in range &lt;0, 23&gt; </td></tr>
     <tr><td class="paramname">minute</td><td>in range &lt;0, 59&gt; <div class="fragment"><div class="line"><span class="keywordtype">int</span> year, month, day, hour, minute;</div>
-<div class="line"><a class="code hl_function" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d2/de6/class_c_game.html#a86452ae125fd078b6e74c3786051968c">GetWorld</a>().<a class="code hl_function" href="../../d3/d21/class_world.html#a9b39feca16897807aaf79052f1492eca">GetDate</a>(year, month, day, hour, minute);</div>
-<div class="ttc" id="aclass_c_game_html_a86452ae125fd078b6e74c3786051968c"><div class="ttname"><a href="../../d2/de6/class_c_game.html#a86452ae125fd078b6e74c3786051968c">CGame::GetWorld</a></div><div class="ttdeci">proto native World GetWorld()</div></div>
-<div class="ttc" id="aclass_world_html_a9b39feca16897807aaf79052f1492eca"><div class="ttname"><a href="../../d3/d21/class_world.html#a9b39feca16897807aaf79052f1492eca">World::GetDate</a></div><div class="ttdeci">proto void GetDate(out int year, out int month, out int day, out int hour, out int minute)</div><div class="ttdoc">Get actual ingame world time.</div></div>
-<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="line"><a class="code hl_variable" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetWorld().GetDate(year, month, day, hour, minute);</div>
+<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> DayZGame.c:3942</div></div>
 </div><!-- fragment --> </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="reference">Referenced by <a class="el" href="../../d0/d24/class_world_data.html#a532d1d8c1f9216593de00a3391241e8e">WorldData::CalculateVolFog()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a532d1d8c1f9216593de00a3391241e8e">EnochData::CalculateVolFog()</a>, <a class="el" href="../../d9/dbc/_clock_base_8c.html#aeb5e7352e58e743a3f01e916c9624baa">GetAlarmInMin()</a>, <a class="el" href="../../d0/d24/class_world_data.html#ac7f335b68d8e6f4a9ed2e2a4fe7a8af4">WorldData::GetDaytime()</a>, <a class="el" href="../../d8/dc4/class_script_console_general_tab.html#a2865dcd0243804f3b1b93c982130e8c3">ScriptConsoleGeneralTab::Init()</a>, <a class="el" href="../../d4/d49/class_plugin_config_handler.html#ab2f241a4d5a607ca7ed7de1deca4fe78">PluginConfigHandler::LoadSceneSettings()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a41bc2ac7f0272901c2387c59101cb112">UIPopupScript::OnOpen()</a>, <a class="el" href="../../d4/d47/class_alarm_clock___color_base.html#a77491714662f827ac632c2eee20f8963">AlarmClock_ColorBase::OnUpdate()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#afa004214e0d6e895a75520028cfea3f9">UIPopupScript::ResetSliders()</a>, <a class="el" href="../../d9/dbc/_clock_base_8c.html#a504d3a4628fd86cbad5d9032455a1866">SetAlarmInXMins()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a6968f21f4784246bebe54b8274dec66b">WorldData::UpdateBaseEnvTemperature()</a>, <a class="el" href="../../d0/d24/class_world_data.html#a36eac65c1c677546c5dd1ee899e071ae">WorldData::WeatherOnBeforeChange()</a>, <a class="el" href="../../dc/d97/class_enoch_data.html#a36eac65c1c677546c5dd1ee899e071ae">EnochData::WeatherOnBeforeChange()</a>, and <a class="el" href="../../d1/d14/class_sakhal_data.html#a36eac65c1c677546c5dd1ee899e071ae">SakhalData::WeatherOnBeforeChange()</a>.</p>
 
 </div>
 </div>
@@ -884,17 +876,12 @@ Private Member Functions</h2></td></tr>
     <tr><td class="paramname">size</td><td>of grid in meters </td></tr>
     <tr><td class="paramname">x</td><td>grid position result [out] </td></tr>
     <tr><td class="paramname">z</td><td>grid position result [out] <div class="fragment"><div class="line"><span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d4b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>,z;</div>
-<div class="line"><a class="code hl_function" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d2/de6/class_c_game.html#a86452ae125fd078b6e74c3786051968c">GetWorld</a>().<a class="code hl_function" href="../../d3/d21/class_world.html#ab58d7b23325157a08b8a0292f21177dc">GetGridCoords</a>(<a class="code hl_function" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>().<a class="code hl_function" href="../../dd/d17/class_managed.html#a68c83d319275347dcd1c0c4da8734703">GetPosition</a>(), 100, <a class="code hl_variable" href="../../dd/d4b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, z);</div>
+<div class="line"><a class="code hl_variable" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetWorld().GetGridCoords(<a class="code hl_variable" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetPlayer().GetPosition(), 100, <a class="code hl_variable" href="../../dd/d4b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, z);</div>
 <div class="ttc" id="a_icon_8c_html_a2970c38de5fbde060cc7a0ed546e674f"><div class="ttname"><a href="../../dd/d4b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a></div><div class="ttdeci">Icon x</div></div>
-<div class="ttc" id="a_modifier_base_8c_html_aaf6ee4d1f067be1038b7a662af6af1bf"><div class="ttname"><a href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a></div><div class="ttdeci">PlayerBase GetPlayer()</div><div class="ttdef"><b>Definition</b> ModifierBase.c:51</div></div>
-<div class="ttc" id="aclass_managed_html_a68c83d319275347dcd1c0c4da8734703"><div class="ttname"><a href="../../dd/d17/class_managed.html#a68c83d319275347dcd1c0c4da8734703">Managed::GetPosition</a></div><div class="ttdeci">vector GetPosition()</div><div class="ttdef"><b>Definition</b> IntroSceneCharacter.c:129</div></div>
-<div class="ttc" id="aclass_world_html_ab58d7b23325157a08b8a0292f21177dc"><div class="ttname"><a href="../../d3/d21/class_world.html#ab58d7b23325157a08b8a0292f21177dc">World::GetGridCoords</a></div><div class="ttdeci">proto void GetGridCoords(vector pos, float gridSize, out int gridX, out int gridZ)</div><div class="ttdoc">Translates world coordinates to a grid coordinates(map grid)</div></div>
 </div><!-- fragment --> </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="reference">Referenced by <a class="el" href="../../d5/d26/_map_navigation_behaviour_8c.html#a5fe7dd3e3365f0071cb1c889367f45f8">OrderedPositionNumbersFromGridCoords()</a>.</p>
 
 </div>
 </div>
@@ -971,7 +958,7 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a class="code hl_class" href="../../dc/dee/class_material.html">Material</a> matColors = <a class="code hl_function" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d2/de6/class_c_game.html#a86452ae125fd078b6e74c3786051968c">GetWorld</a>().<a class="code hl_function" href="../../d3/d21/class_world.html#ad1d05269617f7279ff342507d0882678">GetMaterial</a>(<span class="stringliteral">&quot;postprocess/glow&quot;</span>);</div>
+<div class="fragment"><div class="line"><a class="code hl_class" href="../../dc/dee/class_material.html">Material</a> matColors = <a class="code hl_variable" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetWorld().GetMaterial(<span class="stringliteral">&quot;postprocess/glow&quot;</span>);</div>
 <div class="line">SetMaterialParam(matColors, <span class="stringliteral">&quot;Saturation&quot;</span>, 0.8);</div>
 <div class="line"><span class="keywordtype">float</span> color[4];</div>
 <div class="line">color[0] = 0.5;</div>
@@ -980,10 +967,7 @@ Private Member Functions</h2></td></tr>
 <div class="line">color[3] = 0.6;</div>
 <div class="line">SetMaterialParam(matColors, <span class="stringliteral">&quot;OverlayColor&quot;</span>, color);</div>
 <div class="ttc" id="aclass_material_html"><div class="ttname"><a href="../../dc/dee/class_material.html">Material</a></div><div class="ttdef"><b>Definition</b> proto.c:268</div></div>
-<div class="ttc" id="aclass_world_html_ad1d05269617f7279ff342507d0882678"><div class="ttname"><a href="../../d3/d21/class_world.html#ad1d05269617f7279ff342507d0882678">World::GetMaterial</a></div><div class="ttdeci">proto native Material GetMaterial(string materialName)</div></div>
 </div><!-- fragment --> 
-<p class="reference">Referenced by <a class="el" href="../../d3/ddf/class_p_p_e_class_base.html#af8736df713331b3bb6407529fe27c3a8">PPEClassBase::CreateMaterial()</a>, <a class="el" href="../../db/d83/class_p_p_effects.html#a1716946dffd7f7f6a9c8f46406ab0732">PPEffects::Init()</a>, <a class="el" href="../../db/d83/class_p_p_effects.html#a1c1817c30b758f1e050c9507a1440d92">PPEffects::SetBlur()</a>, and <a class="el" href="../../db/d83/class_p_p_effects.html#a41a2b069188000f1e039ddf4d4843b35">PPEffects::SetNVParams()</a>.</p>
-
 </div>
 </div>
 <a id="abe085fb5b5bb833386575b5704230614" name="abe085fb5b5bb833386575b5704230614"></a>
@@ -1087,8 +1071,6 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../de/d7a/class_item_base.html#aeea26be799db157ac6032a093ff09e3c">ItemBase::FullyBuild()</a>, and <a class="el" href="../../d5/d04/class_mission_base.html#aa60be1e6720fd64571258f60bc3667eb">MissionBase::TickScheduler()</a>.</p>
-
 </div>
 </div>
 <a id="a1a98699c0d8deb0782f437a075cfb2c2" name="a1a98699c0d8deb0782f437a075cfb2c2"></a>
@@ -1191,8 +1173,6 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d16/class_debug_monitor.html#ac847524527d3e4bb1327f02ba55fcd57">DebugMonitor::CalculateMapTile()</a>.</p>
-
 </div>
 </div>
 <a id="a9585a43712eb5e9de7f1ec46ed0a43da" name="a9585a43712eb5e9de7f1ec46ed0a43da"></a>
@@ -1218,8 +1198,6 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>checks if 3rd person camera is disabled from server </p>
-
-<p class="reference">Referenced by <a class="el" href="../../db/d2e/class_day_z_player.html#a93ef4c57613ab9189e2290a8d997aceb">DayZPlayer::DayZPlayerImplement()</a>.</p>
 
 </div>
 </div>
@@ -1273,8 +1251,6 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true, if receiving voice over network is disabled, so player can not listen anybody </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#ab212fc3a61460b771a18d71f052d31e8">UIScriptedMenu::Init()</a>, and <a class="el" href="../../d1/d5b/class_u_i_scripted_menu.html#a3056ff926528b94b606ba7e8617dda3d">UIScriptedMenu::Refresh()</a>.</p>
-
 </div>
 </div>
 <a id="ab6677a9b86d9a2b144c8ba41ac97345e" name="ab6677a9b86d9a2b144c8ba41ac97345e"></a>
@@ -1326,8 +1302,6 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>checks if mouse and keyboard is enabled from server (only on console) </p>
-
-<p class="reference">Referenced by <a class="el" href="../../df/df4/class_scripted_widget_event_handler.html#a4f45d7d483f72d2dbd8a0deed2b76ac4">ScriptedWidgetEventHandler::OptionsMenuControls()</a>.</p>
 
 </div>
 </div>
@@ -1381,8 +1355,6 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>load light config </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/dfa/class_world_lighting.html#a0ec903588debb81268ad20e4b1cc978f">WorldLighting::SetGlobalLighting()</a>.</p>
-
 </div>
 </div>
 <a id="ae84cd1678b72f38ca5b410d403ffd9ed" name="ae84cd1678b72f38ca5b410d403ffd9ed"></a>
@@ -1419,8 +1391,6 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>load user light config (just first item is used) </p>
-
-<p class="reference">Referenced by <a class="el" href="../../d4/dd4/_underground_handler_client_8c.html#a141b632094639a683d407af561b8e325">UndergroundHandlerClient()</a>.</p>
 
 </div>
 </div>
@@ -1472,8 +1442,6 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/class_object_spawner_handler.html#a2bcdfed0281a3beac67ea9cec2d9d5dd">ObjectSpawnerHandler::OnGameplayDataHandlerLoad()</a>.</p>
 
 </div>
 </div>
@@ -1652,14 +1620,13 @@ Private Member Functions</h2></td></tr>
 <div class="line"><span class="keywordtype">int</span> day = 4;</div>
 <div class="line"><span class="keywordtype">int</span> hour = 14;</div>
 <div class="line"><span class="keywordtype">int</span> minute = 57;</div>
-<div class="line"><a class="code hl_function" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d2/de6/class_c_game.html#a86452ae125fd078b6e74c3786051968c">GetWorld</a>().<a class="code hl_function" href="../../d3/d21/class_world.html#aaa7d33ace056086e5ed3f90a71edd1e2">SetDate</a>(year, month, day, hour, minute);</div>
-<div class="ttc" id="aclass_world_html_aaa7d33ace056086e5ed3f90a71edd1e2"><div class="ttname"><a href="../../d3/d21/class_world.html#aaa7d33ace056086e5ed3f90a71edd1e2">World::SetDate</a></div><div class="ttdeci">proto native void SetDate(int year, int month, int day, int hour, int minute)</div><div class="ttdoc">Sets actual ingame world time.</div></div>
+<div class="line"><a class="code hl_variable" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetWorld().SetDate(year, month, day, hour, minute);</div>
 </div><!-- fragment --> </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="../../da/dcf/class_day_z_intro_scene.html#a35f5aa5c673d8b569589667f88c88ef7">DayZIntroScene::DayZIntroScene()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a1dc91eb7efa942be7e6db97c7c4804e7">PluginBase::HandleSetTime()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a0b2a27b5e2351f66f2d8025f4797124c">UIPopupScript::OnChange()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#aee6a27cad085ec84d5f5dbb765b63b53">UIPopupScript::OnClick()</a>, <a class="el" href="../../d3/da3/class_u_i_popup_script.html#a365ac486f47483e547f9a6e5e0576efd">UIPopupScript::OnClose()</a>, <a class="el" href="../../dd/d60/class_scene_data.html#a8f1990d6156194f92dfbfe69fa8434eb">SceneData::SetInitDay()</a>, <a class="el" href="../../dd/d60/class_scene_data.html#a5e163aa283e0d7947f4b91fdb985bea7">SceneData::SetInitHour()</a>, <a class="el" href="../../dd/d60/class_scene_data.html#a1bb15b24cbbf16996ce4f1718ca467e0">SceneData::SetInitMinute()</a>, <a class="el" href="../../dd/d60/class_scene_data.html#a5c2f3e10b5104efba0d36d67ab45060f">SceneData::SetInitMonth()</a>, <a class="el" href="../../dd/d60/class_scene_data.html#afce29d2fd0d52660bc5414e9e98270fe">SceneData::SetInitYear()</a>, and <a class="el" href="../../d8/dc4/class_script_console_general_tab.html#a40480c6ed1d7f93a1fafd3cf08ff843f">ScriptConsoleGeneralTab::UpdateTime()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/dcf/class_day_z_intro_scene.html#a35f5aa5c673d8b569589667f88c88ef7">DayZIntroScene::DayZIntroScene()</a>.</p>
 
 </div>
 </div>
@@ -1696,8 +1663,6 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="../../d2/d3a/class_underground_bunker_handler_client.html#a540f75343565caddf499910f4ca01417">UndergroundBunkerHandlerClient::ProcessSound()</a>, <a class="el" href="../../d4/dd4/_underground_handler_client_8c.html#a3adea1274bd821c3b09788d4b0f72f73">ProcessSound()</a>, and <a class="el" href="../../d4/dd4/_underground_handler_client_8c.html#a9486e864aab9016b7bc893ad7cce62dd">~UndergroundHandlerClient()</a>.</p>
 
 </div>
 </div>
@@ -1848,8 +1813,6 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>set lerp to user lighting cfg </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/dd4/_underground_handler_client_8c.html#ae71056751298f15c8e36314b75e9ae0e">OnUndergroundPresenceUpdate()</a>, <a class="el" href="../../d4/dd4/_underground_handler_client_8c.html#aa1f4b8beb1eddbd0d9d2d981194208b4">ProcessLighting()</a>, and <a class="el" href="../../d4/dd4/_underground_handler_client_8c.html#a9486e864aab9016b7bc893ad7cce62dd">~UndergroundHandlerClient()</a>.</p>
-
 </div>
 </div>
 <a id="a4385a281d6c5ddfecade18c1e6160aac" name="a4385a281d6c5ddfecade18c1e6160aac"></a>
@@ -1918,8 +1881,6 @@ Private Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="reference">Referenced by <a class="el" href="../../db/d2e/class_day_z_player.html#a43307a3052872f38cc517a2e3ac2e8b0">DayZPlayer::HandleDeath()</a>.</p>
 
 </div>
 </div>
@@ -2119,8 +2080,6 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>For entities that aren't a house, any animation source that contains "door" is treated as a door by the pathgraph. Using the phase value where 0=CLOSED, 1=OPENED, we can update the state of the door without regenerating the tile </p>
-
-<p class="reference">Referenced by <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#ab2e3dce1b5fcac5b762c95561fe25bfd">Land_Underground_EntranceBase::OnUpdateServer()</a>.</p>
 
 </div>
 </div>

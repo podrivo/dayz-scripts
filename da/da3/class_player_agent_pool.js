@@ -3,6 +3,7 @@ var class_player_agent_pool =
     [ "PlayerAgentPool", "da/da3/class_player_agent_pool.html#abdcdd4de8e9105680ff1b9b4c0e78514", null ],
     [ "AddAgent", "da/da3/class_player_agent_pool.html#a478947449c58b729392083f369879b84", null ],
     [ "AntibioticsAttack", "da/da3/class_player_agent_pool.html#aaf787ddd8b69a71ce4e9b52a66472e85", null ],
+    [ "AntibioticsAttackEx", "da/da3/class_player_agent_pool.html#a6fa52b26c77aeae7b5f452bfd9ba7acf", null ],
     [ "DigestAgent", "da/da3/class_player_agent_pool.html#a9ddbc386be51e07b782e0ecb1f8bfe3c", null ],
     [ "DrugsAttack", "da/da3/class_player_agent_pool.html#ac18f2437d80e9f15fa587741fe52993d", null ],
     [ "GetAgents", "da/da3/class_player_agent_pool.html#adac4b5411a2da62affc47b3aebe3eadf", null ],

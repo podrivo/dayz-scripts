@@ -6,7 +6,8 @@ var searchData=
   ['setfreecameraeventparams_3',['SetFreeCameraEventParams',['../d8/d18/gameplay_8c.html#af12e04c22088ac0f7591f699a5b6a429',1,'gameplay.c']]],
   ['snowfall_4',['Snowfall',['../d9/d98/_weather_8c.html#aacabca253993198d685d2d5ee74f4103',1,'Weather.c']]],
   ['sqfconsoleeventparams_5',['SQFConsoleEventParams',['../d8/d18/gameplay_8c.html#a1189f36c21a3bab9acaab25a7e9a3ca2',1,'gameplay.c']]],
-  ['suppressorbase_6',['SuppressorBase',['../d5/d82/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c.html#a8247ce48374ddd1f23ac05787424f3c2',1,'InventoryItem.c']]],
-  ['surfaceinfo_7',['SurfaceInfo',['../d3/d62/_surface_info_8c.html#a4ca8d9e629f8006263c22f239b63a359',1,'SurfaceInfo.c']]],
-  ['surfaceproperties_8',['SurfaceProperties',['../d8/d4e/group___constraints.html#ga4560a9b879ffee141b923c527f28f221',1,'EnPhysics.c']]]
+  ['staminacooldownparams_6',['StaminaCooldownParams',['../d5/d6b/_stamina_handler_8c.html#a8df0a8b5d57f59be0532553407affba7',1,'StaminaHandler.c']]],
+  ['suppressorbase_7',['SuppressorBase',['../d5/d82/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c.html#a8247ce48374ddd1f23ac05787424f3c2',1,'InventoryItem.c']]],
+  ['surfaceinfo_8',['SurfaceInfo',['../d3/d62/_surface_info_8c.html#a4ca8d9e629f8006263c22f239b63a359',1,'SurfaceInfo.c']]],
+  ['surfaceproperties_9',['SurfaceProperties',['../d5/d74/group___physics.html#ga4560a9b879ffee141b923c527f28f221',1,'SurfaceProperties.c']]]
 ];

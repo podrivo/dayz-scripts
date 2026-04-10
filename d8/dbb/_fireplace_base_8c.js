@@ -292,6 +292,7 @@ var _fireplace_base_8c =
     [ "PARAM_COOKING_EQUIP_MAX_TEMP", "d8/dbb/_fireplace_base_8c.html#ac253be1f3b84d24ffeb6b85e4edcf24d", null ],
     [ "PARAM_COOKING_EQUIP_TEMP_INCREASE", "d8/dbb/_fireplace_base_8c.html#ad991485123f0ed0a7be6993aff52761a", null ],
     [ "PARAM_COOKING_TEMP_THRESHOLD", "d8/dbb/_fireplace_base_8c.html#af28474b95c8e69f378d95219fd5d08c7", null ],
+    [ "PARAM_DRY_MODIFIER", "d8/dbb/_fireplace_base_8c.html#a578bfe93e40c33920ae693f3340da4de", null ],
     [ "PARAM_FIRE_CONSUM_RATE_AMOUNT", "d8/dbb/_fireplace_base_8c.html#a290044e2af4dbaa4f8a0336b022b985b", null ],
     [ "PARAM_FULL_HEAT_RADIUS", "d8/dbb/_fireplace_base_8c.html#ad7493d593e7d22d247b38e40085f6f7e", null ],
     [ "PARAM_HEAT_RADIUS", "d8/dbb/_fireplace_base_8c.html#a628ae4bfdfa3e364a221e62f0655c908", null ],

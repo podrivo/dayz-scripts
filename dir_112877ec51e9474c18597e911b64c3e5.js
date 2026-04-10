@@ -16,6 +16,8 @@ var dir_112877ec51e9474c18597e911b64c3e5 =
     [ "PluginDeveloperSync.c", "d1/d87/_plugin_developer_sync_8c.html", "d1/d87/_plugin_developer_sync_8c" ],
     [ "PluginFileHandler.c", "d4/d41/_plugin_file_handler_8c.html", "d4/d41/_plugin_file_handler_8c" ],
     [ "PluginHorticulture.c", "da/d0d/_plugin_horticulture_8c.html", "da/d0d/_plugin_horticulture_8c" ],
+    [ "PluginInventoryDebug.c", "d7/dd6/_plugin_inventory_debug_8c.html", null ],
+    [ "PluginInventoryRepair.c", "de/d70/_plugin_inventory_repair_8c.html", "de/d70/_plugin_inventory_repair_8c" ],
     [ "PluginItemDiagnostic.c", "da/dbd/_plugin_item_diagnostic_8c.html", "da/dbd/_plugin_item_diagnostic_8c" ],
     [ "PluginKeyBinding.c", "d3/d8c/_plugin_key_binding_8c.html", "d3/d8c/_plugin_key_binding_8c" ],
     [ "PluginLifespan.c", "d5/d6f/_plugin_lifespan_8c.html", "d5/d6f/_plugin_lifespan_8c" ],

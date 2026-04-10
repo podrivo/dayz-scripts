@@ -1,10 +1,10 @@
 var _server_browser_tab_8c =
 [
     [ "TabType", "d7/de3/_server_browser_tab_8c.html#a6d0b33e703e1291d0b60d4fe5a5e12cc", [
+      [ "FAVORITE", "d7/de3/_server_browser_tab_8c.html#a6d0b33e703e1291d0b60d4fe5a5e12ccafd3a8854adbf848c406058efeac956c9", null ],
       [ "OFFICIAL", "d7/de3/_server_browser_tab_8c.html#a6d0b33e703e1291d0b60d4fe5a5e12ccae6a89801fa65bf125610f158661adcdf", null ],
       [ "COMMUNITY", "d7/de3/_server_browser_tab_8c.html#a6d0b33e703e1291d0b60d4fe5a5e12cca16cecdea3983f8f2f13ff3f22623862c", null ],
       [ "LAN", "d7/de3/_server_browser_tab_8c.html#a6d0b33e703e1291d0b60d4fe5a5e12ccad5f2ea377dbc6b7b909dda25f40ee742", null ],
-      [ "FAVORITE", "d7/de3/_server_browser_tab_8c.html#a6d0b33e703e1291d0b60d4fe5a5e12ccafd3a8854adbf848c406058efeac956c9", null ],
       [ "NONE", "d7/de3/_server_browser_tab_8c.html#a6d0b33e703e1291d0b60d4fe5a5e12ccac157bdf0b85a40d2619cbc8bc1ae5fe2", null ]
     ] ],
     [ "AddFavoritesToFilter", "d7/de3/_server_browser_tab_8c.html#ac209d95b7df6fd3eb3149de74356fd4c", null ],
@@ -33,6 +33,7 @@ var _server_browser_tab_8c =
     [ "GetSortOption", "d7/de3/_server_browser_tab_8c.html#a81956199ba0b564d500d80ca48a1486a", null ],
     [ "GetTabType", "d7/de3/_server_browser_tab_8c.html#a155ffd171751df40df31c19faba5c511", null ],
     [ "IsFocusable", "d7/de3/_server_browser_tab_8c.html#ac94a6887c1e2a63f96e20d67c097d98b", null ],
+    [ "IsLoadingServers", "d7/de3/_server_browser_tab_8c.html#af079ff7241dd47ca3f2703f6e1c2e71a", null ],
     [ "IsNotInitialized", "d7/de3/_server_browser_tab_8c.html#abb0e465896bb139ba4f3d12460b95b88", null ],
     [ "IsPingInRange", "d7/de3/_server_browser_tab_8c.html#a5206973a5e692e05b8e58a8145890337", null ],
     [ "Left", "d7/de3/_server_browser_tab_8c.html#ac268cc4e608aa0068c30f2e4a652b084", null ],

@@ -18,8 +18,8 @@ var group___debug_shape =
     [ "ShapeType", "d6/dae/group___debug_shape.html#ga5a4538eeab397888d88a4eefcc5a1345", [
       [ "BBOX", "d6/dae/group___debug_shape.html#gga5a4538eeab397888d88a4eefcc5a1345ab8f3e2bf90a8b9b9bacedf4df58a6fde", null ],
       [ "LINE", "d6/dae/group___debug_shape.html#gga5a4538eeab397888d88a4eefcc5a1345ab023460c84f774a219d46ccf4665994c", null ],
-      [ "SPHERE", "d6/dae/group___debug_shape.html#gga5a4538eeab397888d88a4eefcc5a1345a1748edc4234d3c494e228da3c0156b7a", null ],
-      [ "CYLINDER", "d6/dae/group___debug_shape.html#gga5a4538eeab397888d88a4eefcc5a1345acf0ef7e103c398e454109aa1a65962aa", null ],
+      [ "SPHERE", "d6/dae/group___debug_shape.html#gga5a4538eeab397888d88a4eefcc5a1345aae4f0962d104ea473feec5598689316d", null ],
+      [ "CYLINDER", "d6/dae/group___debug_shape.html#gga5a4538eeab397888d88a4eefcc5a1345a888b08e657c6e46ad6f758e66b4e6bd2", null ],
       [ "DIAMOND", "d6/dae/group___debug_shape.html#gga5a4538eeab397888d88a4eefcc5a1345a714f2cc5c292a305e2da3c03bd63916a", null ],
       [ "PYRAMID", "d6/dae/group___debug_shape.html#gga5a4538eeab397888d88a4eefcc5a1345a3fcd053f6577a9c10a59c3d3595658eb", null ]
     ] ],

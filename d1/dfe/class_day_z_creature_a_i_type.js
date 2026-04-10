@@ -1,8 +1,7 @@
 var class_day_z_creature_a_i_type =
 [
-    [ "DayZCreatureAIType", "d1/dfe/class_day_z_creature_a_i_type.html#a01bb6239679a17c9f3a65230e101a632", null ],
+    [ "DayZCreatureAIType", "d1/dfe/class_day_z_creature_a_i_type.html#a873218cb13938e63ff6ebdff7ab26d5a", null ],
     [ "GetDamageEvent", "d1/dfe/class_day_z_creature_a_i_type.html#ae619da6eb5432859cf0585ce894d8869", null ],
-    [ "GetName", "d1/dfe/class_day_z_creature_a_i_type.html#a826a818d26fb4fe7731ddd6d6b35247f", null ],
     [ "GetSoundEvent", "d1/dfe/class_day_z_creature_a_i_type.html#a1f577b8e745d930f0792df0a212cd5c3", null ],
     [ "GetSoundVoiceEvent", "d1/dfe/class_day_z_creature_a_i_type.html#abc274259a9c83e2a4ba8253a20d7b422", null ],
     [ "GetStepEvent", "d1/dfe/class_day_z_creature_a_i_type.html#ac683d29189626250134ccf91a104669e", null ],

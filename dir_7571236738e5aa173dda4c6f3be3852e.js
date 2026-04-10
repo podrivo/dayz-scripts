@@ -29,5 +29,6 @@ var dir_7571236738e5aa173dda4c6f3be3852e =
     [ "SingleShotPistol_Base.c", "d2/db3/_single_shot_pistol___base_8c.html", "d2/db3/_single_shot_pistol___base_8c" ],
     [ "SmokeSimulation.c", "db/d9c/_smoke_simulation_8c.html", "db/d9c/_smoke_simulation_8c" ],
     [ "Weapon_Base.c", "de/df2/_weapon___base_8c.html", "de/df2/_weapon___base_8c" ],
+    [ "Weapon_BaseType.c", "d4/d19/_weapon___base_type_8c.html", "d4/d19/_weapon___base_type_8c" ],
     [ "WeaponFSM.c", "dd/d89/_weapon_f_s_m_8c.html", "dd/d89/_weapon_f_s_m_8c" ]
 ];

@@ -2,7 +2,7 @@ var group___ocean =
 [
     [ "AMBIENT", "da/d73/group___light.html#ggadc3ec8293e6a97ebe43f0196b9a7f638a01eaec024a78f1d2e73b59e5d281251e", null ],
     [ "BONES", "de/d65/group___world_trace.html#ggae6702e9d0693293d048382c4f6547bcdaead851b5b23db979e66454d9b280b157", null ],
-    [ "BOX", "de/d65/group___world_trace.html#ggae06cbef09a3e547e760f978fa8bcfc70a222ba4e85f6d98ac78a02975d71bb945", null ],
+    [ "BOX", "de/d65/group___world_trace.html#ggae06cbef09a3e547e760f978fa8bcfc70a311c29de5b0fd16d11c0cf1f98a73370", null ],
     [ "CASTSHADOW", "da/d73/group___light.html#ggace01d340b1da85787dd2732051859928aaad233af6cd05e2cdc79ecb71f2f9051", null ],
     [ "CHEAP", "da/d73/group___light.html#ggace01d340b1da85787dd2732051859928adeee0554b2ec74cbea99ec48afc9988a", null ],
     [ "ChromAber", "dd/dd2/group___camera.html#ggac5442d940bdd247b908f1f02efd643eca9ce940b6eb268a14f54b5312381a0e5f", null ],

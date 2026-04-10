@@ -39,6 +39,8 @@ var class_item_optics =
     [ "IsInOptics", "d2/d29/class_item_optics.html#a9c5f33caff2258b14c8e4cb2707d7083", null ],
     [ "IsNVOptic", "d2/d29/class_item_optics.html#ab72681a1d3231b8506dbcc8cde93af4a", null ],
     [ "IsSightOnly", "d2/d29/class_item_optics.html#adabd9049854a1801486a3fc456584b04", null ],
+    [ "IsSightOnly", "d2/d29/class_item_optics.html#a53249bbd13f69ea4abf1222789528637", null ],
+    [ "IsUsableWithNV", "d2/d29/class_item_optics.html#a8576fe9ea3e4dc4af4c2ba184ffbee0b", null ],
     [ "IsUsingOptics2DModel", "d2/d29/class_item_optics.html#aa17356d80317de2c1183f4742db3eeb2", null ],
     [ "IsUsingWeaponIronsightsOverride", "d2/d29/class_item_optics.html#a102b11e63c261536541d41143465254a", null ],
     [ "IsWorking", "d2/d29/class_item_optics.html#a70e803bf1a3e9436a508c4c7260deda8", null ],

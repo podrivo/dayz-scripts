@@ -1,16 +1,8 @@
 var _en_physics_8c =
 [
     [ "dBlock", "d5/d74/group___physics.html#gad51c7e632eea3484979c15b45b72b9e8", null ],
-    [ "dGeom", "d5/d74/group___physics.html#ga9ca13b27dc56ce2e9000b2559caac2a6", null ],
     [ "dJoint", "d5/d74/group___physics.html#ga6d47f47008739e6c80167e43e17ab1bf", null ],
     [ "dMaterial", "d8/d4e/group___constraints.html#ga1b6b76a37b2bf8682bc7f76ecde89554", null ],
-    [ "Physics", "d8/d4e/group___constraints.html#ga4962c03e48ec6c7cc4d46fe285ce7c16", null ],
-    [ "SurfaceProperties", "d8/d4e/group___constraints.html#ga4560a9b879ffee141b923c527f28f221", null ],
-    [ "ActiveState", "d7/d1e/group___rigid_body.html#gaefc8378ef88030349d44d0da88a3a834", [
-      [ "ACTIVE", "d7/d1e/group___rigid_body.html#ggaefc8378ef88030349d44d0da88a3a834a33cf1d8ef1d06ee698a7fabf40eb3a7f", null ],
-      [ "INACTIVE", "d7/d1e/group___rigid_body.html#ggaefc8378ef88030349d44d0da88a3a834a3ff8ba88da6f8947ab7c22b7825c6bb6", null ],
-      [ "ALWAYS_ACTIVE", "d7/d1e/group___rigid_body.html#ggaefc8378ef88030349d44d0da88a3a834ad468937383ff5cbd3e39d3086a6548ee", null ]
-    ] ],
     [ "dBodyActive", "d7/d1e/group___rigid_body.html#ga699b9ff8b31798bbcbe6c34bdbb1db01", null ],
     [ "dBodyApplyForce", "d7/d1e/group___rigid_body.html#gaee159dad70841eb973ee00c1036d85e4", null ],
     [ "dBodyApplyForceAt", "d7/d1e/group___rigid_body.html#gaf970d5fa1837edf7b2dcc310dc94e0ea", null ],

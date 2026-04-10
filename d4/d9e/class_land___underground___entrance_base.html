@@ -180,6 +180,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aba661da389f67ea12869251f0547d878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf013ff467c918fac7abe5e7bf41b6c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d4e/_entrance_light_8c.html#a3a2935ee4507ef7b83df85a0e712d102">EntranceLight</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#abf013ff467c918fac7abe5e7bf41b6c4">m_InteriorLight3</a></td></tr>
 <tr class="separator:abf013ff467c918fac7abe5e7bf41b6c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace8c89ced5923587fe31136f7ea51a79"><td class="memItemLeft" align="right" valign="top">private ref <a class="el" href="../../d8/d08/class_timer.html">Timer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#ace8c89ced5923587fe31136f7ea51a79">m_TempHotfixTimer</a></td></tr>
+<tr class="separator:ace8c89ced5923587fe31136f7ea51a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca22315c3c319a692b81ed25d39f54f0"><td class="memItemLeft" align="right" valign="top">private const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#aca22315c3c319a692b81ed25d39f54f0">TEMP_HOTIX_TIMESLICE</a> = 0.01</td></tr>
+<tr class="separator:aca22315c3c319a692b81ed25d39f54f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a772c29b9f652564176e01c8bd1492305" name="a772c29b9f652564176e01c8bd1492305"></a>
@@ -204,8 +208,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Temporary hotfix for EOnPostSimulate/EOnFrame methods not beeing called on static objects</p>
 
-<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../dc/dac/class_script_call_queue.html#a436cc98ddd2565bccd74ef840efaa38a">ScriptCallQueue::CallLater()</a>, <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#afe239966e096868ff11ccf787822f7dc">CreateLights()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a6fc4a6c17be8c60874f4e4a72649a2c1">CGame::GetCallQueue()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../dc/d98/class_enum_tools.html#a0d1c8e0d8dfc83ba7a9fdcd66f71c810">EnumTools::GetLastEnumValue()</a>, <a class="el" href="../../dc/d7a/_land___underground___panel_8c.html#a393bea3350b27d48372aa0a9fe9f0f60">Land_Underground_Panel()</a>, and <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a56a9c2392f7810da84a2683cb2278c38">m_DoorType</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#afe239966e096868ff11ccf787822f7dc">CreateLights()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../dc/d98/class_enum_tools.html#a0d1c8e0d8dfc83ba7a9fdcd66f71c810">EnumTools::GetLastEnumValue()</a>, <a class="el" href="../../dc/d7a/_land___underground___panel_8c.html#a393bea3350b27d48372aa0a9fe9f0f60">Land_Underground_Panel()</a>, <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a56a9c2392f7810da84a2683cb2278c38">m_DoorType</a>, <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#ace8c89ced5923587fe31136f7ea51a79">m_TempHotfixTimer</a>, and <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#aca22315c3c319a692b81ed25d39f54f0">TEMP_HOTIX_TIMESLICE</a>.</p>
 
 </div>
 </div>
@@ -232,7 +237,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#abcd34daf6043511e659211c7b7628676">CleanUpOnDeleteClient()</a>, and <a class="el" href="../../dc/d7a/_land___underground___panel_8c.html#a393bea3350b27d48372aa0a9fe9f0f60">Land_Underground_Panel()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#abcd34daf6043511e659211c7b7628676">CleanUpOnDeleteClient()</a>, <a class="el" href="../../dc/d7a/_land___underground___panel_8c.html#a393bea3350b27d48372aa0a9fe9f0f60">Land_Underground_Panel()</a>, <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#ace8c89ced5923587fe31136f7ea51a79">m_TempHotfixTimer</a>, and <a class="el" href="../../d8/d08/class_timer.html#ab7e8b20a4331f044f2ad2f9d86ebffe9">Timer::Stop()</a>.</p>
 
 </div>
 </div>
@@ -462,7 +467,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a4b3423ecb405c243a86e0204171b7022">OnUpdateClient()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a4b3423ecb405c243a86e0204171b7022">OnUpdateClient()</a>, and <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#aca22315c3c319a692b81ed25d39f54f0">TEMP_HOTIX_TIMESLICE</a>.</p>
 
 </div>
 </div>
@@ -829,7 +834,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a33aa0e896f99778ecc133763c5100837">AdjustTime()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#ad934b5927c4ef4896be357e36a9e9b60">GetOpeningTime()</a>, <a class="el" href="../../dd/d2d/class_animation_timer.html#a6c2d6c55e1ab5f699d156219a9bb84fc">AnimationTimer::GetValue()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a86452ae125fd078b6e74c3786051968c">CGame::GetWorld()</a>, <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#acdcd9070a774b0466aa70bc676c66488">m_AnimPhase</a>, <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a71248e686c962d5221d8928073c99777">m_AnimTimerDoorServer</a>, and <a class="el" href="../../d3/d21/class_world.html#a575c0204a70b1c1aa9997fa3ba5a6759">World::UpdatePathgraphDoorByAnimationSourceName()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a33aa0e896f99778ecc133763c5100837">AdjustTime()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#ad934b5927c4ef4896be357e36a9e9b60">GetOpeningTime()</a>, <a class="el" href="../../dd/d2d/class_animation_timer.html#a6c2d6c55e1ab5f699d156219a9bb84fc">AnimationTimer::GetValue()</a>, <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#acdcd9070a774b0466aa70bc676c66488">m_AnimPhase</a>, and <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a71248e686c962d5221d8928073c99777">m_AnimTimerDoorServer</a>.</p>
 
 </div>
 </div>
@@ -884,7 +889,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a346c6c7383868a0038693486bfcdfee8">m_DoorState</a>, <a class="el" href="../../d2/de6/class_c_game.html#a035f619cb5f2ad5eeab2f9621614241b">CGame::RegisterNetworkStaticObject()</a>, and <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a8288b21911e6988051d3676326cfa555">SetDoorStateServer()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a346c6c7383868a0038693486bfcdfee8">m_DoorState</a>, and <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a8288b21911e6988051d3676326cfa555">SetDoorStateServer()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#adbf86876de6aa081cc3ed624f3fc7c66">Manipulate()</a>.</p>
 
@@ -924,7 +929,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../dc/dac/class_script_call_queue.html#a436cc98ddd2565bccd74ef840efaa38a">ScriptCallQueue::CallLater()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a6fc4a6c17be8c60874f4e4a72649a2c1">CGame::GetCallQueue()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a346c6c7383868a0038693486bfcdfee8">m_DoorState</a>, and <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a8288b21911e6988051d3676326cfa555">SetDoorStateServer()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/dc3/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a346c6c7383868a0038693486bfcdfee8">m_DoorState</a>, and <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a8288b21911e6988051d3676326cfa555">SetDoorStateServer()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d1/dae/_land___underground___entrance_8c.html#a51b32c34182ff182acb1c17c2508774e">OnDoorStateChangedServer()</a>, and <a class="el" href="../../d5/deb/class_land___underground___stairs___exit.html#a51b32c34182ff182acb1c17c2508774e">Land_Underground_Stairs_Exit::OnDoorStateChangedServer()</a>.</p>
 
@@ -1194,6 +1199,54 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace8c89ced5923587fe31136f7ea51a79" name="ace8c89ced5923587fe31136f7ea51a79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace8c89ced5923587fe31136f7ea51a79">&#9670;&#160;</a></span>m_TempHotfixTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">private ref <a class="el" href="../../d8/d08/class_timer.html">Timer</a> m_TempHotfixTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a772c29b9f652564176e01c8bd1492305">Land_Underground_EntranceBase()</a>, and <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a3481f2464279da850337d2e32b21915b">~Land_Underground_EntranceBase()</a>.</p>
+
+</div>
+</div>
+<a id="aca22315c3c319a692b81ed25d39f54f0" name="aca22315c3c319a692b81ed25d39f54f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca22315c3c319a692b81ed25d39f54f0">&#9670;&#160;</a></span>TEMP_HOTIX_TIMESLICE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">private const <a class="el" href="../../d4/dc3/classfloat.html">float</a> TEMP_HOTIX_TIMESLICE = 0.01</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a07f9b8f0e51242525d4c618354a03fe0">EOnPostSimulate()</a>, and <a class="el" href="../../d4/d9e/class_land___underground___entrance_base.html#a772c29b9f652564176e01c8bd1492305">Land_Underground_EntranceBase()</a>.</p>
 
 </div>
 </div>

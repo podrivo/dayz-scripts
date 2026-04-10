@@ -4,6 +4,7 @@ var class_powered_optic___base =
     [ "DoMeasurement", "d8/d3c/class_powered_optic___base.html#a1fed9090379d6a62e4a7aab891fd3071", null ],
     [ "EEItemAttached", "d8/d3c/class_powered_optic___base.html#ac063b6124c64033d904f29247d8eb45a", null ],
     [ "EEItemDetached", "d8/d3c/class_powered_optic___base.html#a870b0dcd0dfafe4a764232688d9356c0", null ],
+    [ "GetCachedEquipmentCategory", "d8/d3c/class_powered_optic___base.html#a9e88af3e2829c4a303d8962bbfb87d49", null ],
     [ "GetCurrentNVType", "d8/d3c/class_powered_optic___base.html#ac1e86f9f8240aa963d3f1017295d5424", null ],
     [ "GetMeasurementUpdateInterval", "d8/d3c/class_powered_optic___base.html#ababc78e33200f63e503587d956dd6fab", null ],
     [ "InitRangeFinderData", "d8/d3c/class_powered_optic___base.html#ace39ab81698e64e271c1a8420acf9c39", null ],

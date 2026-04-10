@@ -45,6 +45,7 @@ var _player_sound_event_handler_8c =
     [ "PlayRequest", "d5/d1b/_player_sound_event_handler_8c.html#a0a6e663098fb4b5d1b228ad930e9c86e", null ],
     [ "PlayRequestEx", "d5/d1b/_player_sound_event_handler_8c.html#a69457de8322c541f2671e4df95fe891b", null ],
     [ "RegisterState", "d5/d1b/_player_sound_event_handler_8c.html#a7ba8cb68065f9f1b712536da6aa7e4c0", null ],
+    [ "StopRequest", "d5/d1b/_player_sound_event_handler_8c.html#a58e448873b0d0f9306e38ccb172a9489", null ],
     [ "m_AvailableStates", "d5/d1b/_player_sound_event_handler_8c.html#a02f59ef50a8dc63bfc40130dae0a1001", null ],
     [ "m_ConfigIDToScriptIDmapping", "d5/d1b/_player_sound_event_handler_8c.html#accde710d7b23016f91131f9f52584b24", null ],
     [ "m_CurrentState", "d5/d1b/_player_sound_event_handler_8c.html#a179f3bbad6a8ab6a21185ac9a238fe29", null ],

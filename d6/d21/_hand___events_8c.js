@@ -37,6 +37,8 @@ var _hand___events_8c =
     [ "GetAnimationID", "d6/d21/_hand___events_8c.html#a31032b0cdcda8af12b24b7d9171156cd", null ],
     [ "GetDst", "d6/d21/_hand___events_8c.html#ae799fe43f04b0cec3a66a69471ef718b", null ],
     [ "GetEventID", "d6/d21/_hand___events_8c.html#ac4e09da4612d59f9d374c73534237583", null ],
+    [ "GetSecondDst", "d6/d21/_hand___events_8c.html#a548c35365585c507146daf5c3e355ab1", null ],
+    [ "GetSecondSrc", "d6/d21/_hand___events_8c.html#aa089814a68be8d58648b447419a328b0", null ],
     [ "GetSecondSrcEntity", "d6/d21/_hand___events_8c.html#a1d9ba1c58577c1eecd6d984a937f01c9", null ],
     [ "GetSrc", "d6/d21/_hand___events_8c.html#a35cf91a8e3f7c257bf8585545ee106e9", null ],
     [ "GetSrcEntity", "d6/d21/_hand___events_8c.html#ae5c8cce374dfad27f9e3b3a132f78db3", null ],
@@ -58,6 +60,6 @@ var _hand___events_8c =
     [ "m_EventID", "d6/d21/_hand___events_8c.html#ab4215c09806526ec1b8651c3fe1d94d0", null ],
     [ "m_IsJuncture", "d6/d21/_hand___events_8c.html#a599b5d9d7a36d94792f853d248ffdd48", null ],
     [ "m_IsRemote", "d6/d21/_hand___events_8c.html#a0e6be58035858799a108f80b94afd542", null ],
-    [ "m_Player", "d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354", null ],
+    [ "m_Player", "d6/d21/_hand___events_8c.html#a39c9c884bca3aa4e9ad2d29b0795d534", null ],
     [ "m_Src", "d6/d21/_hand___events_8c.html#a504ab69882d7085a6f9891ddb5154d0f", null ]
 ];

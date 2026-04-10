@@ -361,8 +361,6 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a4033897fc5520726f84a127d30ed6c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14bcd88013fb5c585af6da1064610561"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d11/class_game_inventory.html#a14bcd88013fb5c585af6da1064610561">OnInventoryJunctureFromServer</a> (<a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a> ctx)</td></tr>
 <tr class="separator:a14bcd88013fb5c585af6da1064610561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecf56353b99619c6a61b69aa9aa94ef6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d11/class_game_inventory.html#aecf56353b99619c6a61b69aa9aa94ef6">OnInventoryJunctureRepairFromServer</a> (<a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a> ctx)</td></tr>
-<tr class="separator:aecf56353b99619c6a61b69aa9aa94ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addec6bad8fe4a66253816aa477c11dab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d11/class_game_inventory.html#addec6bad8fe4a66253816aa477c11dab">OnInventoryJunctureFailureFromServer</a> (<a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a> ctx)</td></tr>
 <tr class="separator:addec6bad8fe4a66253816aa477c11dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a8b83de1fc0289ef1f46a930ddd0941"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d11/class_game_inventory.html#a5a8b83de1fc0289ef1f46a930ddd0941">OnServerInventoryCommand</a> (<a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a> ctx)</td></tr>
@@ -632,9 +630,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a87c957675bae7a68df3b4c03bbd03b25">AddInventoryReservation()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aecedc0dc7274fd6ada907f30627a658a">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a5ea16fa19c11f786c7b9f675d8cf8f2e">CGame::GetPlayer()</a>, <a class="el" href="../../da/d7d/class_debug.html#ab54637591becd391f9c834bd1411aed6">Debug::InventoryMoveLog()</a>, and <a class="el" href="../../d9/df7/class_log_manager.html#aa95b9f69fa7c3317cf8ddff9a611b5c7">LogManager::IsInventoryReservationLogEnable()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a87c957675bae7a68df3b4c03bbd03b25">AddInventoryReservation()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aecedc0dc7274fd6ada907f30627a658a">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../da/d7d/class_debug.html#a7ea493e6bf9dc306c1a9a4cab98a8b32">Debug::InventoryReservationLog()</a>, and <a class="el" href="../../d9/df7/class_log_manager.html#aa95b9f69fa7c3317cf8ddff9a611b5c7">LogManager::IsInventoryReservationLogEnable()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#a3565a13462fbb9f0baf1aaacf0375438">ReserveInventory()</a>, and <a class="el" href="../../de/d96/class_deferred_swap_entities.html#a3565a13462fbb9f0baf1aaacf0375438">DeferredSwapEntities::ReserveInventory()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d9b/class_weapon_manager.html#abd5d6922ab117fdee3028bc79da18419">WeaponManager::InventoryReservation()</a>, <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#a3565a13462fbb9f0baf1aaacf0375438">ReserveInventory()</a>, and <a class="el" href="../../de/d96/class_deferred_swap_entities.html#a3565a13462fbb9f0baf1aaacf0375438">DeferredSwapEntities::ReserveInventory()</a>.</p>
 
 </div>
 </div>
@@ -692,7 +690,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Returns count of attachments attached to this item. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dd8/_trap_base_8c.html#a84805c92b8d5792a3f11d2204c941b05">GetClosestCarWheel()</a>, and <a class="el" href="../../d7/d00/class_closable_container.html#a3ce34bf5d926c0a3051b92f8b15bac83">ClosableContainer::RecomputeContainers()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/dca/_environment_8c.html#ac1e344239adbdc7dbaf58bc5a47a0314">BodyPartHeatProperties()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#ad56f102385cc668ad0d1032eb2c457f6">InventoryItem::DamageItemAttachments()</a>, <a class="el" href="../../d2/d96/class_entity.html#a7e81c5490265cd9b569d6b17a5277a1d">Entity::EEInit()</a>, <a class="el" href="../../d4/d87/class_man_base.html#aefe736cb628dbe41bb7eb96953fb3d6c">ManBase::FindCargoByBaseType()</a>, <a class="el" href="../../d2/d96/class_entity.html#a5d80a4f1f7bb7ec4597cb21ee6d0da08">Entity::GetAttachmentByConfigTypeName()</a>, <a class="el" href="../../d2/d96/class_entity.html#a1fe30975a923e6eecfae25b479142660">Entity::GetAttachmentByType()</a>, <a class="el" href="../../dd/dd8/_trap_base_8c.html#a84805c92b8d5792a3f11d2204c941b05">GetClosestCarWheel()</a>, <a class="el" href="../../d2/d96/class_entity.html#add69c0b3b1833dba4ee444b470ce1ab8">Entity::GetInventoryAndCargoWeight()</a>, <a class="el" href="../../d4/d87/class_man_base.html#ab5cc59f4182b6e7114619b5b6f08eaf3">ManBase::GetMagazineToReload()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#aac41089a82b1a29d432c9e1e8206eca3">InventoryItem::GetNumberOfItems()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a3ce34bf5d926c0a3051b92f8b15bac83">ClosableContainer::RecomputeContainers()</a>, <a class="el" href="../../d0/d4a/_trap___trip_wire_8c.html#a7fd5a669e6eaaaeeae8a27282c448a49">SetInactive()</a>, <a class="el" href="../../d2/d96/class_entity.html#abfd6a8f8740d34fcf8434e26e18dfe6c">Entity::SetInvisibleRecursive()</a>, and <a class="el" href="../../dc/d98/_misc_gameplay_functions_8c.html#af5ca1e23035798fe2f034cdd5f36f702">ThrowAllItemsInInventory()</a>.</p>
 
 </div>
 </div>
@@ -723,7 +721,7 @@ Static Private Attributes</h2></td></tr>
 <p>Check if attachment can be added to any slot. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if entity can be added as attachment </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../da/d7b/class_action_attach_on_selection.html#a07ae9f8c51d872182103afd2c1f6ea2a">ActionAttachOnSelection::FindSlotIdToAttachOrCombine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d00/class_closable_container.html#a9d744b9914ac440bf316cb39e33adb3f">ClosableContainer::DraggingOverHeader()</a>, <a class="el" href="../../da/d7b/class_action_attach_on_selection.html#a07ae9f8c51d872182103afd2c1f6ea2a">ActionAttachOnSelection::FindSlotIdToAttachOrCombine()</a>, <a class="el" href="../../d0/d82/class_attachment_categories_container.html#a5f51d12a155546ba924479ffb6436aaa">AttachmentCategoriesContainer::OnDropReceivedFromHeader()</a>, and <a class="el" href="../../d7/d00/class_closable_container.html#a23b778e27fb6c2b7fa73843f831ca87f">ClosableContainer::TakeAsAttachment()</a>.</p>
 
 </div>
 </div>
@@ -763,6 +761,8 @@ Static Private Attributes</h2></td></tr>
 
 <p>Check if attachment can be added to slot @NOTE: Note that slot index IS NOT slot ID! Slot ID is defined in DZ/data/config.cpp. </p>
 
+<p class="reference">Referenced by <a class="el" href="../../d6/d93/class_attachment_categories_row.html#a639624b9df1cb4b65cd897c2dfc949fb">AttachmentCategoriesRow::CanCombine()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#aa2acb04588ab948a8893be1d95f9cd1f">AttachmentCategoriesRow::Combine()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#a9d744b9914ac440bf316cb39e33adb3f">AttachmentCategoriesRow::DraggingOverHeader()</a>, and <a class="el" href="../../d6/d93/class_attachment_categories_row.html#adc0e4e7a01ffbed3fbc88d2c159357e1">AttachmentCategoriesRow::Select()</a>.</p>
+
 </div>
 </div>
 <a id="a35a2daa8cde756ccbeef9c8917e082a0" name="a35a2daa8cde756ccbeef9c8917e082a0"></a>
@@ -798,6 +798,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d00/class_closable_container.html#a1a6aa4d5271b2cd868b12c55847f4ecc">ClosableContainer::DraggingOver()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a9d744b9914ac440bf316cb39e33adb3f">ClosableContainer::DraggingOverHeader()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a5f51d12a155546ba924479ffb6436aaa">ClosableContainer::OnDropReceivedFromHeader()</a>, <a class="el" href="../../d4/d8f/class_container.html#adc0e4e7a01ffbed3fbc88d2c159357e1">Container::Select()</a>, and <a class="el" href="../../d7/d00/class_closable_container.html#a23b778e27fb6c2b7fa73843f831ca87f">ClosableContainer::TakeAsAttachment()</a>.</p>
 
 </div>
 </div>
@@ -960,6 +962,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a62ef3882e2c24526888d5b336d1837b6">CanAddEntityInto()</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#a9880d74a6b7fc9a37f0b8b551cd378a5">ManBase::OnQuickBarSingleUse()</a>.</p>
+
 </div>
 </div>
 <a id="aa753315ee45ddebbbbb9a2163ec04bc8" name="aa753315ee45ddebbbbb9a2163ec04bc8"></a>
@@ -1037,6 +1041,8 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if item can be added, false otherwise </dd></dl>
 
 <p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a87682203c95ebdcb5be8a0d84c3dbdb9">FindFreeLocationFor()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d82/class_attachment_categories_container.html#a5f51d12a155546ba924479ffb6436aaa">AttachmentCategoriesContainer::OnDropReceivedFromHeader()</a>.</p>
 
 </div>
 </div>
@@ -1198,7 +1204,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#ab43c6d4747c71ef971f6172d73ddb734">CanForceSwapEntities()</a>, and <a class="el" href="../../d6/dc5/class_inventory_location.html#aec280ad00fb591910bbefb89b17cb070">InventoryLocation::GetSlot()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d9e/class_hand_event_base.html#a7ffb00d2ed9636101bbd0a9ea260682e">HandEventBase::CanPerformEvent()</a>, <a class="el" href="../../d1/d52/class_hand_event_swap.html#a7ffb00d2ed9636101bbd0a9ea260682e">HandEventSwap::CanPerformEvent()</a>, <a class="el" href="../../d3/d9b/class_weapon_manager.html#a883e84ab13c119833e1c5b845cc57479">WeaponManager::CanSwapMagazine()</a>, <a class="el" href="../../d5/d08/class_layout_holder.html#a996cd00eded464d26ad7e1f02aca00c7">LayoutHolder::CanSwapOrTakeToHandsEx()</a>, <a class="el" href="../../db/d60/class_icon.html#ad405facb4aedc376e80ee73711f33362">Icon::DraggingOverSwap()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#ab4b6afa3b02516211dca510fc199f89b">ItemManager::GetChosenCombinationFlag()</a>, <a class="el" href="../../d3/d96/class_hand_guard_base.html#a06c9b67406ed592984213963466592c5">HandGuardBase::GuardCondition()</a>, <a class="el" href="../../d5/ded/class_hand_start_action.html#a5af9858c011f114ddfd56d0edc6b60c7">HandStartAction::OnEntry()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a9880d74a6b7fc9a37f0b8b551cd378a5">ManBase::OnQuickBarSingleUse()</a>, <a class="el" href="../../d3/d9b/class_weapon_manager.html#a168565527670015e347100970b4edbec">WeaponManager::PrepareInventoryLocationForMagazineSwap()</a>, <a class="el" href="../../db/d60/class_icon.html#aabdf788ebe905fc18f3ec7222e363170">Icon::Swap()</a>, and <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#ac7881512061aab4a17eefe7bc5531257">ValidateSwap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d9e/class_hand_event_base.html#a7ffb00d2ed9636101bbd0a9ea260682e">HandEventBase::CanPerformEvent()</a>, <a class="el" href="../../d1/d52/class_hand_event_swap.html#a7ffb00d2ed9636101bbd0a9ea260682e">HandEventSwap::CanPerformEvent()</a>, <a class="el" href="../../d3/d9b/class_weapon_manager.html#a883e84ab13c119833e1c5b845cc57479">WeaponManager::CanSwapMagazine()</a>, <a class="el" href="../../d5/d08/class_layout_holder.html#a996cd00eded464d26ad7e1f02aca00c7">LayoutHolder::CanSwapOrTakeToHandsEx()</a>, <a class="el" href="../../db/d60/class_icon.html#ad405facb4aedc376e80ee73711f33362">Icon::DraggingOverSwap()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#ab4b6afa3b02516211dca510fc199f89b">ItemManager::GetChosenCombinationFlag()</a>, <a class="el" href="../../d3/d96/class_hand_guard_base.html#a06c9b67406ed592984213963466592c5">HandGuardBase::GuardCondition()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a9880d74a6b7fc9a37f0b8b551cd378a5">ManBase::OnQuickBarSingleUse()</a>, <a class="el" href="../../d3/d9b/class_weapon_manager.html#a168565527670015e347100970b4edbec">WeaponManager::PrepareInventoryLocationForMagazineSwap()</a>, <a class="el" href="../../db/d60/class_icon.html#aabdf788ebe905fc18f3ec7222e363170">Icon::Swap()</a>, and <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#ac7881512061aab4a17eefe7bc5531257">ValidateSwap()</a>.</p>
 
 </div>
 </div>
@@ -1480,7 +1486,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#aea4d503455996e7eb0a19e514c03045e">CanSwapEntities()</a>, and <a class="el" href="../../d6/dc5/class_inventory_location.html#aec280ad00fb591910bbefb89b17cb070">InventoryLocation::GetSlot()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/d9b/class_weapon_manager.html#a883e84ab13c119833e1c5b845cc57479">WeaponManager::CanSwapMagazine()</a>, <a class="el" href="../../d5/d08/class_layout_holder.html#a996cd00eded464d26ad7e1f02aca00c7">LayoutHolder::CanSwapOrTakeToHandsEx()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#aa2acb04588ab948a8893be1d95f9cd1f">AttachmentCategoriesRow::Combine()</a>, <a class="el" href="../../d7/d9c/class_player_container.html#a1a6aa4d5271b2cd868b12c55847f4ecc">PlayerContainer::DraggingOver()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#a9d744b9914ac440bf316cb39e33adb3f">HandsContainer::DraggingOverHeader()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#a9d744b9914ac440bf316cb39e33adb3f">AttachmentCategoriesRow::DraggingOverHeader()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a9d744b9914ac440bf316cb39e33adb3f">ClosableContainer::DraggingOverHeader()</a>, <a class="el" href="../../dc/d12/class_vicinity_container.html#a341432628ffc67aa15e2498e37e5cfc0">VicinityContainer::DraggingOverIcon()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#ab4b6afa3b02516211dca510fc199f89b">ItemManager::GetChosenCombinationFlag()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#ad09ffd9cc9fb004cc56f30faedb833ed">HandsContainer::GetCombinationFlags()</a>, <a class="el" href="../../d2/df1/class_inventory_grid_controller.html#ab135af346f2e0184f34acfdb9dd32c0f">InventoryGridController::GetQuickbarItemColor()</a>, <a class="el" href="../../d3/d96/class_hand_guard_base.html#a06c9b67406ed592984213963466592c5">HandGuardBase::GuardCondition()</a>, <a class="el" href="../../d7/d9c/class_player_container.html#a424f5540cee1b56b57c7937186bdfc90">PlayerContainer::OnDropReceivedFromGhostArea()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#a5f51d12a155546ba924479ffb6436aaa">AttachmentCategoriesRow::OnDropReceivedFromHeader()</a>, <a class="el" href="../../dc/d12/class_vicinity_container.html#a269daa8b432979badd46e8bb11396dea">VicinityContainer::OnDropReceivedFromIcon()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a9880d74a6b7fc9a37f0b8b551cd378a5">ManBase::OnQuickBarSingleUse()</a>, <a class="el" href="../../d3/d9b/class_weapon_manager.html#a168565527670015e347100970b4edbec">WeaponManager::PrepareInventoryLocationForMagazineSwap()</a>, <a class="el" href="../../d8/d6f/class_attachments.html#ad4cd16702ebf6c8e97791c2f84d54cf9">Attachments::Select()</a>, <a class="el" href="../../d4/d8f/class_container.html#adc0e4e7a01ffbed3fbc88d2c159357e1">Container::Select()</a>, <a class="el" href="../../d1/d25/class_hands_preview.html#adc0e4e7a01ffbed3fbc88d2c159357e1">HandsPreview::Select()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#adc0e4e7a01ffbed3fbc88d2c159357e1">AttachmentCategoriesRow::Select()</a>, <a class="el" href="../../d7/d9c/class_player_container.html#adc0e4e7a01ffbed3fbc88d2c159357e1">PlayerContainer::Select()</a>, <a class="el" href="../../d8/d7b/class_vicinity_slots_container.html#adc0e4e7a01ffbed3fbc88d2c159357e1">VicinitySlotsContainer::Select()</a>, <a class="el" href="../../d5/d55/class_zombie_container.html#adc0e4e7a01ffbed3fbc88d2c159357e1">ZombieContainer::Select()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a00640a1a7f1797d1a626e3259f73af41">EntityAI::SwapEntitiesImpl()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a249d74fa886466f0e65f2a303d413c37">HumanInventory::SwappingToPreviousLocation()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#a23b778e27fb6c2b7fa73843f831ca87f">HandsContainer::TakeAsAttachment()</a>, and <a class="el" href="../../d7/d00/class_closable_container.html#a23b778e27fb6c2b7fa73843f831ca87f">ClosableContainer::TakeAsAttachment()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d9b/class_weapon_manager.html#a883e84ab13c119833e1c5b845cc57479">WeaponManager::CanSwapMagazine()</a>, <a class="el" href="../../d5/d08/class_layout_holder.html#a996cd00eded464d26ad7e1f02aca00c7">LayoutHolder::CanSwapOrTakeToHandsEx()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#aa2acb04588ab948a8893be1d95f9cd1f">AttachmentCategoriesRow::Combine()</a>, <a class="el" href="../../d7/d9c/class_player_container.html#a1a6aa4d5271b2cd868b12c55847f4ecc">PlayerContainer::DraggingOver()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#a9d744b9914ac440bf316cb39e33adb3f">HandsContainer::DraggingOverHeader()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#a9d744b9914ac440bf316cb39e33adb3f">AttachmentCategoriesRow::DraggingOverHeader()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a9d744b9914ac440bf316cb39e33adb3f">ClosableContainer::DraggingOverHeader()</a>, <a class="el" href="../../dc/d12/class_vicinity_container.html#a341432628ffc67aa15e2498e37e5cfc0">VicinityContainer::DraggingOverIcon()</a>, <a class="el" href="../../dc/de1/class_item_manager.html#ab4b6afa3b02516211dca510fc199f89b">ItemManager::GetChosenCombinationFlag()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#ad09ffd9cc9fb004cc56f30faedb833ed">HandsContainer::GetCombinationFlags()</a>, <a class="el" href="../../d2/df1/class_inventory_grid_controller.html#ab135af346f2e0184f34acfdb9dd32c0f">InventoryGridController::GetQuickbarItemColor()</a>, <a class="el" href="../../d3/d96/class_hand_guard_base.html#a06c9b67406ed592984213963466592c5">HandGuardBase::GuardCondition()</a>, <a class="el" href="../../d7/d9c/class_player_container.html#a424f5540cee1b56b57c7937186bdfc90">PlayerContainer::OnDropReceivedFromGhostArea()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#a5f51d12a155546ba924479ffb6436aaa">AttachmentCategoriesRow::OnDropReceivedFromHeader()</a>, <a class="el" href="../../dc/d12/class_vicinity_container.html#a269daa8b432979badd46e8bb11396dea">VicinityContainer::OnDropReceivedFromIcon()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a9880d74a6b7fc9a37f0b8b551cd378a5">ManBase::OnQuickBarSingleUse()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#acbcf12a911ae7aa931a216da346631e0">EntityAI::PredictiveTakeOrSwapAttachment()</a>, <a class="el" href="../../d3/d9b/class_weapon_manager.html#a168565527670015e347100970b4edbec">WeaponManager::PrepareInventoryLocationForMagazineSwap()</a>, <a class="el" href="../../d8/d6f/class_attachments.html#ad4cd16702ebf6c8e97791c2f84d54cf9">Attachments::Select()</a>, <a class="el" href="../../d4/d8f/class_container.html#adc0e4e7a01ffbed3fbc88d2c159357e1">Container::Select()</a>, <a class="el" href="../../d1/d25/class_hands_preview.html#adc0e4e7a01ffbed3fbc88d2c159357e1">HandsPreview::Select()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#adc0e4e7a01ffbed3fbc88d2c159357e1">AttachmentCategoriesRow::Select()</a>, <a class="el" href="../../d7/d9c/class_player_container.html#adc0e4e7a01ffbed3fbc88d2c159357e1">PlayerContainer::Select()</a>, <a class="el" href="../../d8/d7b/class_vicinity_slots_container.html#adc0e4e7a01ffbed3fbc88d2c159357e1">VicinitySlotsContainer::Select()</a>, <a class="el" href="../../d5/d55/class_zombie_container.html#adc0e4e7a01ffbed3fbc88d2c159357e1">ZombieContainer::Select()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#a00640a1a7f1797d1a626e3259f73af41">EntityAI::SwapEntitiesImpl()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a249d74fa886466f0e65f2a303d413c37">HumanInventory::SwappingToPreviousLocation()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#a23b778e27fb6c2b7fa73843f831ca87f">HandsContainer::TakeAsAttachment()</a>, and <a class="el" href="../../d7/d00/class_closable_container.html#a23b778e27fb6c2b7fa73843f831ca87f">ClosableContainer::TakeAsAttachment()</a>.</p>
 
 </div>
 </div>
@@ -1872,9 +1878,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d6/d21/_hand___events_8c.html#aea3531b2f1c16dd2d81d229576f33d69">ClearInventoryReservation()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aecedc0dc7274fd6ada907f30627a658a">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a5ea16fa19c11f786c7b9f675d8cf8f2e">CGame::GetPlayer()</a>, <a class="el" href="../../da/d7d/class_debug.html#ab54637591becd391f9c834bd1411aed6">Debug::InventoryMoveLog()</a>, and <a class="el" href="../../d9/df7/class_log_manager.html#aa95b9f69fa7c3317cf8ddff9a611b5c7">LogManager::IsInventoryReservationLogEnable()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d21/_hand___events_8c.html#aea3531b2f1c16dd2d81d229576f33d69">ClearInventoryReservation()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aecedc0dc7274fd6ada907f30627a658a">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../da/d7d/class_debug.html#a7ea493e6bf9dc306c1a9a4cab98a8b32">Debug::InventoryReservationLog()</a>, and <a class="el" href="../../d9/df7/class_log_manager.html#aa95b9f69fa7c3317cf8ddff9a611b5c7">LogManager::IsInventoryReservationLogEnable()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#aa250d323a295571d539deeecffce6674">ClearInventoryReservation()</a>, <a class="el" href="../../de/d96/class_deferred_swap_entities.html#aa250d323a295571d539deeecffce6674">DeferredSwapEntities::ClearInventoryReservation()</a>, and <a class="el" href="../../de/d96/class_deferred_swap_entities.html#a3565a13462fbb9f0baf1aaacf0375438">DeferredSwapEntities::ReserveInventory()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#aa250d323a295571d539deeecffce6674">ClearInventoryReservation()</a>, <a class="el" href="../../de/d96/class_deferred_swap_entities.html#aa250d323a295571d539deeecffce6674">DeferredSwapEntities::ClearInventoryReservation()</a>, <a class="el" href="../../d3/d9b/class_weapon_manager.html#abd5d6922ab117fdee3028bc79da18419">WeaponManager::InventoryReservation()</a>, <a class="el" href="../../d3/d9b/class_weapon_manager.html#aa9f467ca28793891f46ceb7aae086baf">WeaponManager::OnSyncJuncture()</a>, <a class="el" href="../../d3/d9b/class_weapon_manager.html#a4e7eb1e2b3d6848a8caaebe1f4972bd6">WeaponManager::OnWeaponActionEnd()</a>, and <a class="el" href="../../de/d96/class_deferred_swap_entities.html#a3565a13462fbb9f0baf1aaacf0375438">DeferredSwapEntities::ReserveInventory()</a>.</p>
 
 </div>
 </div>
@@ -1932,6 +1938,8 @@ Static Private Attributes</h2></td></tr>
 
 <p>Create <a class="el" href="../../d2/d96/class_entity.html">Entity</a> of specified type as attachment of entity. </p>
 
+<p class="reference">Referenced by <a class="el" href="../../d8/dda/class_bot_test_swap_internal.html#aaee13280ad07a33aaa28304b129b1742">BotTestSwapInternal::OnEntry()</a>.</p>
+
 </div>
 </div>
 <a id="a090e7bd1a5e068b30cb5fd87605140a8" name="a090e7bd1a5e068b30cb5fd87605140a8"></a>
@@ -1976,6 +1984,8 @@ Static Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d9c/class_menu_default_character_data.html#a7dbeaa22b044e4acf6c03568350fef56">MenuDefaultCharacterData::EquipDefaultCharacter()</a>.</p>
 
 </div>
 </div>
@@ -2106,7 +2116,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#ab39b1a3d3c2a879ac6abcfdc083fc118">FindFirstFreeLocationForNewEntity()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a16f949f7b0d6d4503183406f6a4c4131">InventoryLocation::GetCol()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#ae8c59599232e7478a33a3dfe13a5f70f">InventoryLocation::GetFlip()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a78807dc5b4892cb5d30a6789b9528e09">InventoryLocation::GetIdx()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aa4957320ada1b1e401862296fe14370b">InventoryLocation::GetParent()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a2434e6f5d99c9316b1434c1a4f4a064c">InventoryLocation::GetRow()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aec280ad00fb591910bbefb89b17cb070">InventoryLocation::GetSlot()</a>, and <a class="el" href="../../d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956">InventoryLocation::GetType()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/dea/class_a_k101___base.html#a05eab95952a189dc9e08ccecec41b51a">AK101_Base::OnDebugSpawn()</a>, <a class="el" href="../../df/d31/class_a_k74___base.html#a05eab95952a189dc9e08ccecec41b51a">AK74_Base::OnDebugSpawn()</a>, <a class="el" href="../../d6/de1/class_a_k_m___base.html#a05eab95952a189dc9e08ccecec41b51a">AKM_Base::OnDebugSpawn()</a>, <a class="el" href="../../d1/d90/class_aug___base.html#a05eab95952a189dc9e08ccecec41b51a">Aug_Base::OnDebugSpawn()</a>, <a class="el" href="../../d0/d58/class_f_a_l___base.html#a05eab95952a189dc9e08ccecec41b51a">FAL_Base::OnDebugSpawn()</a>, <a class="el" href="../../dd/df5/class_m14___base.html#a05eab95952a189dc9e08ccecec41b51a">M14_Base::OnDebugSpawn()</a>, <a class="el" href="../../d3/dad/class_m4_a1___base.html#a05eab95952a189dc9e08ccecec41b51a">M4A1_Base::OnDebugSpawn()</a>, <a class="el" href="../../dd/d79/class_rifle___base.html#a05eab95952a189dc9e08ccecec41b51a">Rifle_Base::OnDebugSpawn()</a>, <a class="el" href="../../d1/d57/class_colt1911___base.html#a05eab95952a189dc9e08ccecec41b51a">Colt1911_Base::OnDebugSpawn()</a>, <a class="el" href="../../d4/d89/class_c_z75___base.html#a05eab95952a189dc9e08ccecec41b51a">CZ75_Base::OnDebugSpawn()</a>, <a class="el" href="../../dc/d39/class_deagle___base.html#a05eab95952a189dc9e08ccecec41b51a">Deagle_Base::OnDebugSpawn()</a>, <a class="el" href="../../de/d71/class_f_n_x45___base.html#a05eab95952a189dc9e08ccecec41b51a">FNX45_Base::OnDebugSpawn()</a>, <a class="el" href="../../d9/dca/class_glock19___base.html#a05eab95952a189dc9e08ccecec41b51a">Glock19_Base::OnDebugSpawn()</a>, <a class="el" href="../../da/ddc/class_makarov_i_j70___base.html#a05eab95952a189dc9e08ccecec41b51a">MakarovIJ70_Base::OnDebugSpawn()</a>, <a class="el" href="../../dd/d7c/class_b95__base.html#a05eab95952a189dc9e08ccecec41b51a">B95_base::OnDebugSpawn()</a>, <a class="el" href="../../db/d69/class_mosin9130___base.html#a05eab95952a189dc9e08ccecec41b51a">Mosin9130_Base::OnDebugSpawn()</a>, <a class="el" href="../../db/da8/class_ruger1022___base.html#a05eab95952a189dc9e08ccecec41b51a">Ruger1022_Base::OnDebugSpawn()</a>, <a class="el" href="../../d3/d7d/class_s_v_d___base.html#a05eab95952a189dc9e08ccecec41b51a">SVD_Base::OnDebugSpawn()</a>, <a class="el" href="../../de/d35/class_mp133_shotgun___base.html#a05eab95952a189dc9e08ccecec41b51a">Mp133Shotgun_Base::OnDebugSpawn()</a>, <a class="el" href="../../d2/dc8/class_r12___base.html#a05eab95952a189dc9e08ccecec41b51a">R12_Base::OnDebugSpawn()</a>, <a class="el" href="../../d4/d97/class_saiga___base.html#a05eab95952a189dc9e08ccecec41b51a">Saiga_Base::OnDebugSpawn()</a>, <a class="el" href="../../d1/d93/class_c_z61___base.html#a05eab95952a189dc9e08ccecec41b51a">CZ61_Base::OnDebugSpawn()</a>, <a class="el" href="../../d6/d69/class_m_p5_k___base.html#a05eab95952a189dc9e08ccecec41b51a">MP5K_Base::OnDebugSpawn()</a>, <a class="el" href="../../d8/d17/class_p_p19___base.html#a05eab95952a189dc9e08ccecec41b51a">PP19_Base::OnDebugSpawn()</a>, <a class="el" href="../../db/d5c/class_u_m_p45___base.html#a05eab95952a189dc9e08ccecec41b51a">UMP45_Base::OnDebugSpawn()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a7dc54ae2b661e3400118838d7e322201">PluginBase::SpawnEntityAsAttachment()</a>, and <a class="el" href="../../d2/d96/class_entity.html#a8401a36b1c67b19ae9a161d02185f2d8">Entity::SpawnInInventoryOrGroundPos()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/dea/class_a_k101___base.html#a05eab95952a189dc9e08ccecec41b51a">AK101_Base::OnDebugSpawn()</a>, <a class="el" href="../../df/d31/class_a_k74___base.html#a05eab95952a189dc9e08ccecec41b51a">AK74_Base::OnDebugSpawn()</a>, <a class="el" href="../../d6/de1/class_a_k_m___base.html#a05eab95952a189dc9e08ccecec41b51a">AKM_Base::OnDebugSpawn()</a>, <a class="el" href="../../d1/d90/class_aug___base.html#a05eab95952a189dc9e08ccecec41b51a">Aug_Base::OnDebugSpawn()</a>, <a class="el" href="../../d0/d58/class_f_a_l___base.html#a05eab95952a189dc9e08ccecec41b51a">FAL_Base::OnDebugSpawn()</a>, <a class="el" href="../../dd/df5/class_m14___base.html#a05eab95952a189dc9e08ccecec41b51a">M14_Base::OnDebugSpawn()</a>, <a class="el" href="../../d3/dad/class_m4_a1___base.html#a05eab95952a189dc9e08ccecec41b51a">M4A1_Base::OnDebugSpawn()</a>, <a class="el" href="../../dd/d79/class_rifle___base.html#a05eab95952a189dc9e08ccecec41b51a">Rifle_Base::OnDebugSpawn()</a>, <a class="el" href="../../d1/d57/class_colt1911___base.html#a05eab95952a189dc9e08ccecec41b51a">Colt1911_Base::OnDebugSpawn()</a>, <a class="el" href="../../d4/d89/class_c_z75___base.html#a05eab95952a189dc9e08ccecec41b51a">CZ75_Base::OnDebugSpawn()</a>, <a class="el" href="../../dc/d39/class_deagle___base.html#a05eab95952a189dc9e08ccecec41b51a">Deagle_Base::OnDebugSpawn()</a>, <a class="el" href="../../de/d71/class_f_n_x45___base.html#a05eab95952a189dc9e08ccecec41b51a">FNX45_Base::OnDebugSpawn()</a>, <a class="el" href="../../d9/dca/class_glock19___base.html#a05eab95952a189dc9e08ccecec41b51a">Glock19_Base::OnDebugSpawn()</a>, <a class="el" href="../../da/ddc/class_makarov_i_j70___base.html#a05eab95952a189dc9e08ccecec41b51a">MakarovIJ70_Base::OnDebugSpawn()</a>, <a class="el" href="../../dd/d7c/class_b95__base.html#a05eab95952a189dc9e08ccecec41b51a">B95_base::OnDebugSpawn()</a>, <a class="el" href="../../db/d69/class_mosin9130___base.html#a05eab95952a189dc9e08ccecec41b51a">Mosin9130_Base::OnDebugSpawn()</a>, <a class="el" href="../../db/da8/class_ruger1022___base.html#a05eab95952a189dc9e08ccecec41b51a">Ruger1022_Base::OnDebugSpawn()</a>, <a class="el" href="../../d3/d7d/class_s_v_d___base.html#a05eab95952a189dc9e08ccecec41b51a">SVD_Base::OnDebugSpawn()</a>, <a class="el" href="../../de/d35/class_mp133_shotgun___base.html#a05eab95952a189dc9e08ccecec41b51a">Mp133Shotgun_Base::OnDebugSpawn()</a>, <a class="el" href="../../d2/dc8/class_r12___base.html#a05eab95952a189dc9e08ccecec41b51a">R12_Base::OnDebugSpawn()</a>, <a class="el" href="../../d4/d97/class_saiga___base.html#a05eab95952a189dc9e08ccecec41b51a">Saiga_Base::OnDebugSpawn()</a>, <a class="el" href="../../d1/d93/class_c_z61___base.html#a05eab95952a189dc9e08ccecec41b51a">CZ61_Base::OnDebugSpawn()</a>, <a class="el" href="../../d6/d69/class_m_p5_k___base.html#a05eab95952a189dc9e08ccecec41b51a">MP5K_Base::OnDebugSpawn()</a>, <a class="el" href="../../d8/d17/class_p_p19___base.html#a05eab95952a189dc9e08ccecec41b51a">PP19_Base::OnDebugSpawn()</a>, <a class="el" href="../../db/d5c/class_u_m_p45___base.html#a05eab95952a189dc9e08ccecec41b51a">UMP45_Base::OnDebugSpawn()</a>, <a class="el" href="../../de/d59/class_car_script.html#a05eab95952a189dc9e08ccecec41b51a">CarScript::OnDebugSpawn()</a>, <a class="el" href="../../de/dec/class_truck__01___covered.html#a05eab95952a189dc9e08ccecec41b51a">Truck_01_Covered::OnDebugSpawn()</a>, <a class="el" href="../../d8/dda/class_bot_test_swap_internal.html#aaee13280ad07a33aaa28304b129b1742">BotTestSwapInternal::OnEntry()</a>, <a class="el" href="../../d6/d44/class_car.html#a711e82f8ea86507728016eeccc63a941">Car::SpawnAdditionalItems()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a7dc54ae2b661e3400118838d7e322201">PluginBase::SpawnEntityAsAttachment()</a>, <a class="el" href="../../d2/d96/class_entity.html#a8401a36b1c67b19ae9a161d02185f2d8">Entity::SpawnInInventoryOrGroundPos()</a>, and <a class="el" href="../../d6/d44/class_car.html#a1cf5c9473925377e91c4289c6b14b5b0">Car::SpawnUniversalParts()</a>.</p>
 
 </div>
 </div>
@@ -2151,6 +2161,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a495fdd739a049800016ad80fef717c4b">inventoryDebugPrint()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#a400422b608b8a983acf68cee66b72604">LogManager::IsInventoryMoveLogEnable()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#acf12622f99596e7db27151086afd074e">OnInventoryFailure()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a5cf92074c4a3c978ffbaa1325fefcf4d">SetGroundPosByOwner()</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#a68d1174ab68ea89d2edbe81c172611c2">TakeToDst()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d4a/_trap___trip_wire_8c.html#a7fd5a669e6eaaaeeae8a27282c448a49">SetInactive()</a>, and <a class="el" href="../../dc/d98/_misc_gameplay_functions_8c.html#abfa8e9fb82ef57cd8a70bb6afda4e24a">ThrowEntityFromInventory()</a>.</p>
 
 </div>
 </div>
@@ -2219,6 +2231,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a495fdd739a049800016ad80fef717c4b">inventoryDebugPrint()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#a400422b608b8a983acf68cee66b72604">LogManager::IsInventoryMoveLogEnable()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a3aab0e4158a94a83595886574fe38c0a">SetGroundPosByOwnerBounds()</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#a68d1174ab68ea89d2edbe81c172611c2">TakeToDst()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d98/_misc_gameplay_functions_8c.html#a4ed7de29993696c94f1d6a08e84acac1">DropAllItemsInInventoryInBounds()</a>.</p>
 
 </div>
 </div>
@@ -2325,6 +2339,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a6c0c87dbbb79dab9325f71b08f0316db">GetCurrentInventoryLocation()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aa4957320ada1b1e401862296fe14370b">InventoryLocation::GetParent()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956">InventoryLocation::GetType()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a495fdd739a049800016ad80fef717c4b">inventoryDebugPrint()</a>, and <a class="el" href="../../d9/df7/class_log_manager.html#a400422b608b8a983acf68cee66b72604">LogManager::IsInventoryMoveLogEnable()</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d96/class_entity.html#a7e81c5490265cd9b569d6b17a5277a1d">Entity::EEInit()</a>.</p>
+
 </div>
 </div>
 <a id="a7b5d0efef914aea298211f52f8f8da24" name="a7b5d0efef914aea298211f52f8f8da24"></a>
@@ -2371,7 +2387,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if found any, false otherwise </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#abb42e065e394aa15aa960a16f0032d50">AddDamageToItemByFireEx()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#ab1f69d8655519392f852f682ce5e92a3">InventoryItem::ClearInventory()</a>, <a class="el" href="../../d4/d87/class_man_base.html#ab1f69d8655519392f852f682ce5e92a3">ManBase::ClearInventory()</a>, and <a class="el" href="../../de/d4c/3___game_2tools_2_debug_8c.html#a24a57a453a627ebfd692380e00b27a95">PrintAll()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#abb42e065e394aa15aa960a16f0032d50">AddDamageToItemByFireEx()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#ab1f69d8655519392f852f682ce5e92a3">InventoryItem::ClearInventory()</a>, <a class="el" href="../../d4/d87/class_man_base.html#ab1f69d8655519392f852f682ce5e92a3">ManBase::ClearInventory()</a>, <a class="el" href="../../dc/d98/_misc_gameplay_functions_8c.html#a4ed7de29993696c94f1d6a08e84acac1">DropAllItemsInInventoryInBounds()</a>, <a class="el" href="../../de/d4c/3___game_2tools_2_debug_8c.html#a24a57a453a627ebfd692380e00b27a95">PrintAll()</a>, and <a class="el" href="../../d4/d87/class_man_base.html#a593df19d1c80444b78f952c89255ec9f">ManBase::RemoveAllItems()</a>.</p>
 
 </div>
 </div>
@@ -2459,7 +2475,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d6/dc5/class_inventory_location.html#aecedc0dc7274fd6ada907f30627a658a">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#ab4981174f7233626dd3c89d9334b8cb6">ExtendInventoryReservation()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/de6/class_c_game.html#a5ea16fa19c11f786c7b9f675d8cf8f2e">CGame::GetPlayer()</a>, <a class="el" href="../../da/d7d/class_debug.html#ab54637591becd391f9c834bd1411aed6">Debug::InventoryMoveLog()</a>, and <a class="el" href="../../d9/df7/class_log_manager.html#aa95b9f69fa7c3317cf8ddff9a611b5c7">LogManager::IsInventoryReservationLogEnable()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/dc5/class_inventory_location.html#aecedc0dc7274fd6ada907f30627a658a">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#ab4981174f7233626dd3c89d9334b8cb6">ExtendInventoryReservation()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../da/d7d/class_debug.html#a7ea493e6bf9dc306c1a9a4cab98a8b32">Debug::InventoryReservationLog()</a>, and <a class="el" href="../../d9/df7/class_log_manager.html#aa95b9f69fa7c3317cf8ddff9a611b5c7">LogManager::IsInventoryReservationLogEnable()</a>.</p>
 
 </div>
 </div>
@@ -2489,7 +2505,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Returns attached entity in slot (you can use InventorySlots.GetSlotIdFromString(name) to get slot id) </p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/d7b/class_action_attach_on_selection.html#a07ae9f8c51d872182103afd2c1f6ea2a">ActionAttachOnSelection::FindSlotIdToAttachOrCombine()</a>, and <a class="el" href="../../d8/d3e/class_analytics_manager_client.html#a2ad5aee217665b25584d7c8539cd9d70">AnalyticsManagerClient::OnItemAttachedAtPlayer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#a1d638f4a8a63e4b6502d659d22239e6b">ManBase::CheckForGag()</a>, <a class="el" href="../../d6/d44/class_car.html#a7ea3623216c98c0144ae3e36a333406f">Car::CheckVitalItem()</a>, <a class="el" href="../../da/d9c/class_menu_default_character_data.html#a7dbeaa22b044e4acf6c03568350fef56">MenuDefaultCharacterData::EquipDefaultCharacter()</a>, <a class="el" href="../../d2/d96/class_entity.html#ab0db911d659e6c7703cd3ead16d7044b">Entity::FindAttachmentBySlotName()</a>, <a class="el" href="../../da/d7b/class_action_attach_on_selection.html#a07ae9f8c51d872182103afd2c1f6ea2a">ActionAttachOnSelection::FindSlotIdToAttachOrCombine()</a>, <a class="el" href="../../d6/d45/class_bot_state_base.html#aaee13280ad07a33aaa28304b129b1742">BotStateBase::OnEntry()</a>, <a class="el" href="../../d8/d3e/class_analytics_manager_client.html#a2ad5aee217665b25584d7c8539cd9d70">AnalyticsManagerClient::OnItemAttachedAtPlayer()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#acbcf12a911ae7aa931a216da346631e0">EntityAI::PredictiveTakeOrSwapAttachment()</a>, <a class="el" href="../../db/d2e/class_day_z_player.html#a810ad2c7a9d09977ce9f2e102b5c7141">DayZPlayer::ProcessVoiceEvent()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#a5b22e451ee52be73d1bcf2e398e545e6">AttachmentCategoriesRow::RefreshSlot()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#aee93b387a75419d7f609fbbe542211e8">ClosableContainer::SetEntity()</a>, <a class="el" href="../../d2/d96/class_entity.html#abfd6a8f8740d34fcf8434e26e18dfe6c">Entity::SetInvisibleRecursive()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#aeba517f5bcac433dfad9ae42a8cc369c">HandsContainer::ShowAtt()</a>, and <a class="el" href="../../d4/d87/class_man_base.html#abfebc802fb6bb8ed9962e4bbcdbd2e5e">ManBase::UpdateCorpseStateVisual()</a>.</p>
 
 </div>
 </div>
@@ -2518,6 +2534,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns attached entity in slot (you can use EntityAI.GetActionComponentName to get slot id) </p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d2a/class_recipe_base.html#aa490e88beed14a470881387f1c00955e">RecipeBase::Do()</a>.</p>
 
 </div>
 </div>
@@ -2571,7 +2589,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if found any, false otherwise </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d11/class_game_inventory.html#a0a02895f04c49d2c421c30b945e676af">CreateInInventory()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#a8773d9a81108551ca2de53fe97c63896">ManBase::CreateCopyOfItemInInventory()</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#a0a02895f04c49d2c421c30b945e676af">CreateInInventory()</a>.</p>
 
 </div>
 </div>
@@ -2625,7 +2643,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if found any, false otherwise </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d11/class_game_inventory.html#a7040711e6cd2802738bbd0d5f86b7316">AddEntityToInventory()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a62ef3882e2c24526888d5b336d1837b6">CanAddEntityInto()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#ae25c9179c6a435912f812a6df50074a9">CanAddEntityToInventory()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a605a34f248da9ce4f3715f29fb7ed63e">HumanInventory::TakeEntityToInventory()</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#a9993644ed14b38bc48f67834735cdd1f">TakeEntityToInventory()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/d11/class_game_inventory.html#a7040711e6cd2802738bbd0d5f86b7316">AddEntityToInventory()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a62ef3882e2c24526888d5b336d1837b6">CanAddEntityInto()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#ae25c9179c6a435912f812a6df50074a9">CanAddEntityToInventory()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#ad7aaabb06d5c1d734167247f0b684a0e">ClosableContainer::DraggingOverGrid()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a20048343d6c2c47d93965e9fc6d9de4f">ClosableContainer::DropReceived()</a>, <a class="el" href="../../d4/d87/class_man_base.html#aadd0c42dcd4745ff0fba7ee9d85a9196">ManBase::HandleRemoteItemManipulation()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a5f51d12a155546ba924479ffb6436aaa">ClosableContainer::OnDropReceivedFromHeader()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#abbe50e1ae9704b47d7ac8ec53f3b9b16">EntityAI::PredictiveMoveItemFromHandsToInventory()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#abb69db47b4763cb3e1bedef7583b742d">InventoryItem::SplitIntoStackMax()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#a36a696ee1d8c458d6c598c6d585d4bb7">InventoryItem::SplitIntoStackMaxEx()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a23b778e27fb6c2b7fa73843f831ca87f">ClosableContainer::TakeAsAttachment()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a605a34f248da9ce4f3715f29fb7ed63e">HumanInventory::TakeEntityToInventory()</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#a9993644ed14b38bc48f67834735cdd1f">TakeEntityToInventory()</a>.</p>
 
 </div>
 </div>
@@ -2743,7 +2761,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>number of suitable inventory locations</dd></dl>
-<p>Example: </p><div class="fragment"><div class="line"><a class="code hl_class" href="../../d2/d96/class_entity.html">Entity</a> bino = <a class="code hl_function" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d2/de6/class_c_game.html#a55bc68f6d6db55f9392287a7c8a6fff4">CreateObject</a>(<span class="stringliteral">&quot;Binoculars&quot;</span>, <span class="stringliteral">&quot;3312 0 854&quot;</span>);</div>
+<p>Example: </p><div class="fragment"><div class="line"><a class="code hl_class" href="../../d2/d96/class_entity.html">Entity</a> bino = <a class="code hl_variable" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.CreateObject(<span class="stringliteral">&quot;Binoculars&quot;</span>, <span class="stringliteral">&quot;3312 0 854&quot;</span>);</div>
 <div class="line"><a class="code hl_class" href="../../df/df9/class_entity_a_i.html">EntityAI</a> bino2;</div>
 <div class="line"><span class="keywordflow">if</span> (<a class="code hl_class" href="../../d4/d14/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">CastTo</a>(bino2, bino))</div>
 <div class="line">{</div>
@@ -2764,14 +2782,13 @@ Static Private Attributes</h2></td></tr>
 <div class="line">    ... use src and dst</div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="a_inventory_location_8c_html_a71733d54d455853550df7ae602bf23dd"><div class="ttname"><a href="../../d6/d52/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23dd">FindInventoryLocationType</a></div><div class="ttdeci">FindInventoryLocationType</div><div class="ttdoc">flags for searching locations in inventory</div><div class="ttdef"><b>Definition</b> InventoryLocation.c:17</div></div>
-<div class="ttc" id="aclass_c_game_html_a55bc68f6d6db55f9392287a7c8a6fff4"><div class="ttname"><a href="../../d2/de6/class_c_game.html#a55bc68f6d6db55f9392287a7c8a6fff4">CGame::CreateObject</a></div><div class="ttdeci">proto native Object CreateObject(string type, vector pos, bool create_local=false, bool init_ai=false, bool create_physics=true)</div><div class="ttdoc">Creates object of certain type.</div></div>
+<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> DayZGame.c:3942</div></div>
+<div class="ttc" id="a_inventory_location_8c_html_a71733d54d455853550df7ae602bf23dd"><div class="ttname"><a href="../../d6/d52/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23dd">FindInventoryLocationType</a></div><div class="ttdeci">FindInventoryLocationType</div><div class="ttdoc">flags for searching locations in inventory</div><div class="ttdef"><b>Definition</b> InventoryLocation.c:18</div></div>
 <div class="ttc" id="aclass_class_html"><div class="ttname"><a href="../../d4/d14/class_class.html">Class</a></div><div class="ttdoc">Super root of all classes in Enforce script.</div><div class="ttdef"><b>Definition</b> EnScript.c:11</div></div>
-<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/df9/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> Building.c:6</div></div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/df9/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> InventoryItem.c:2</div></div>
 <div class="ttc" id="aclass_entity_html"><div class="ttname"><a href="../../d2/d96/class_entity.html">Entity</a></div><div class="ttdef"><b>Definition</b> Camera.c:2</div></div>
-<div class="ttc" id="aclass_inventory_location_html"><div class="ttname"><a href="../../d6/dc5/class_inventory_location.html">InventoryLocation</a></div><div class="ttdoc">InventoryLocation.</div><div class="ttdef"><b>Definition</b> InventoryLocation.c:29</div></div>
+<div class="ttc" id="aclass_inventory_location_html"><div class="ttname"><a href="../../d6/dc5/class_inventory_location.html">InventoryLocation</a></div><div class="ttdoc">InventoryLocation.</div><div class="ttdef"><b>Definition</b> InventoryLocation.c:30</div></div>
 <div class="ttc" id="aclassarray_html"><div class="ttname"><a href="../../d2/d41/classarray.html">array</a></div><div class="ttdoc">Result for an object found in CGame.IsBoxCollidingGeometryProxy.</div><div class="ttdef"><b>Definition</b> IsBoxCollidingGeometryProxyClasses.c:28</div></div>
-<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
 <div class="ttc" id="agroup___enforce_html_ga197a8c75a3c7d301e8782009d86b30b4"><div class="ttname"><a href="../../d5/d78/group___enforce.html#ga197a8c75a3c7d301e8782009d86b30b4">Class::CastTo</a></div><div class="ttdeci">static proto bool CastTo(out Class to, Class from)</div><div class="ttdoc">Try to safely down-cast base class to child class.</div></div>
 </div><!-- fragment --> 
 </div>
@@ -2801,6 +2818,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns placeholder entity for slot (naked arms, legs etc) </p>
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#abfebc802fb6bb8ed9962e4bbcdbd2e5e">ManBase::UpdateCorpseStateVisual()</a>.</p>
 
 </div>
 </div>
@@ -2927,7 +2946,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>attached entity by attachment index @NOTE: index is not slot! for getting attachment by slot use FindAttachment </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dd8/_trap_base_8c.html#a84805c92b8d5792a3f11d2204c941b05">GetClosestCarWheel()</a>, and <a class="el" href="../../d7/d00/class_closable_container.html#a3ce34bf5d926c0a3051b92f8b15bac83">ClosableContainer::RecomputeContainers()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/dca/_environment_8c.html#ac1e344239adbdc7dbaf58bc5a47a0314">BodyPartHeatProperties()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#ad56f102385cc668ad0d1032eb2c457f6">InventoryItem::DamageItemAttachments()</a>, <a class="el" href="../../d2/d96/class_entity.html#a7e81c5490265cd9b569d6b17a5277a1d">Entity::EEInit()</a>, <a class="el" href="../../d4/d87/class_man_base.html#aefe736cb628dbe41bb7eb96953fb3d6c">ManBase::FindCargoByBaseType()</a>, <a class="el" href="../../d2/d96/class_entity.html#a5d80a4f1f7bb7ec4597cb21ee6d0da08">Entity::GetAttachmentByConfigTypeName()</a>, <a class="el" href="../../d2/d96/class_entity.html#a1fe30975a923e6eecfae25b479142660">Entity::GetAttachmentByType()</a>, <a class="el" href="../../dd/dd8/_trap_base_8c.html#a84805c92b8d5792a3f11d2204c941b05">GetClosestCarWheel()</a>, <a class="el" href="../../d2/d96/class_entity.html#add69c0b3b1833dba4ee444b470ce1ab8">Entity::GetInventoryAndCargoWeight()</a>, <a class="el" href="../../d4/d87/class_man_base.html#ab5cc59f4182b6e7114619b5b6f08eaf3">ManBase::GetMagazineToReload()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#aac41089a82b1a29d432c9e1e8206eca3">InventoryItem::GetNumberOfItems()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a3ce34bf5d926c0a3051b92f8b15bac83">ClosableContainer::RecomputeContainers()</a>, <a class="el" href="../../d0/d4a/_trap___trip_wire_8c.html#a7fd5a669e6eaaaeeae8a27282c448a49">SetInactive()</a>, and <a class="el" href="../../dc/d98/_misc_gameplay_functions_8c.html#af5ca1e23035798fe2f034cdd5f36f702">ThrowAllItemsInInventory()</a>.</p>
 
 </div>
 </div>
@@ -2963,7 +2982,7 @@ Static Private Attributes</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d11/class_game_inventory.html#aab05fc95f4c1901fe25e90f0cd24a7bd">GetAttachmentSlotsCount</a>) </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>slot for attachment </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d11/class_game_inventory.html#a2b41e6b26e39190fe65fe4877e55fc5f">HasAttachmentSlot()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d96/class_entity.html#a1cefb0cf629993057da8a75078b18248">Entity::CanDisplayAnyAttachmentSlot()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a2b41e6b26e39190fe65fe4877e55fc5f">HasAttachmentSlot()</a>, and <a class="el" href="../../d2/d96/class_entity.html#abfd6a8f8740d34fcf8434e26e18dfe6c">Entity::SetInvisibleRecursive()</a>.</p>
 
 </div>
 </div>
@@ -2991,7 +3010,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>number of slots for attachments </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d11/class_game_inventory.html#a2b41e6b26e39190fe65fe4877e55fc5f">HasAttachmentSlot()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d96/class_entity.html#a1cefb0cf629993057da8a75078b18248">Entity::CanDisplayAnyAttachmentSlot()</a>, <a class="el" href="../../d2/d96/class_entity.html#a7e81c5490265cd9b569d6b17a5277a1d">Entity::EEInit()</a>, <a class="el" href="../../d2/d96/class_entity.html#afb503ac6f23631cb9eded64e68d845cf">Entity::EEItemAttached()</a>, <a class="el" href="../../d2/d96/class_entity.html#ae28fda63774840599807c7ce914a5cdb">Entity::GetSlotsCountCorrect()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a2b41e6b26e39190fe65fe4877e55fc5f">HasAttachmentSlot()</a>, and <a class="el" href="../../d2/d96/class_entity.html#abfd6a8f8740d34fcf8434e26e18dfe6c">Entity::SetInvisibleRecursive()</a>.</p>
 
 </div>
 </div>
@@ -3020,7 +3039,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>cargo </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d6/d0e/class_inventory_item.html#ae7bd4d02b82fa1017e3a4cf7e3caba18">InventoryItem::CanReceiveAttachment()</a>, and <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#ae4079e105bd7b90a75b8f6f24483e13c">StopCooling()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/dca/_environment_8c.html#ac1e344239adbdc7dbaf58bc5a47a0314">BodyPartHeatProperties()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#ae7bd4d02b82fa1017e3a4cf7e3caba18">InventoryItem::CanReceiveAttachment()</a>, <a class="el" href="../../d2/d96/class_entity.html#ab69b295c610ba947998631b50837d3b5">Entity::CanReceiveItemIntoCargo()</a>, <a class="el" href="../../d2/d96/class_entity.html#a75cd19d41f172dfc4fac39a5c875c154">Entity::CanSwapItemInCargo()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#ac45546f13fe2421c26f7a9337573bbea">ClosableContainer::DraggingOverGrid()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#a2a77ae263203758a44be6bab02496fcd">HandsContainer::DropReceived()</a>, <a class="el" href="../../d2/d96/class_entity.html#a7e81c5490265cd9b569d6b17a5277a1d">Entity::EEInit()</a>, <a class="el" href="../../d2/d96/class_entity.html#afb503ac6f23631cb9eded64e68d845cf">Entity::EEItemAttached()</a>, <a class="el" href="../../d2/d96/class_entity.html#add69c0b3b1833dba4ee444b470ce1ab8">Entity::GetInventoryAndCargoWeight()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#aac41089a82b1a29d432c9e1e8206eca3">InventoryItem::GetNumberOfItems()</a>, <a class="el" href="../../d0/d82/class_attachment_categories_container.html#aec56dd258d9cbd9591c16b7e96b8d9c8">AttachmentCategoriesContainer::InitGhostSlots()</a>, <a class="el" href="../../d0/d82/class_attachment_categories_container.html#a24f2af721898be3215874e0f58cae4d2">AttachmentCategoriesContainer::InitIconsContainers()</a>, <a class="el" href="../../dc/d98/_misc_gameplay_functions_8c.html#ac7aeb216309b5429c5253d8bfc334114">IsObjectObstructedProxy()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#aee93b387a75419d7f609fbbe542211e8">ClosableContainer::SetEntity()</a>, <a class="el" href="../../d8/dbb/_fireplace_base_8c.html#ae4079e105bd7b90a75b8f6f24483e13c">StopCooling()</a>, <a class="el" href="../../dc/d98/_misc_gameplay_functions_8c.html#af5ca1e23035798fe2f034cdd5f36f702">ThrowAllItemsInInventory()</a>, and <a class="el" href="../../d4/d8f/class_container.html#a780386fdc90e67a7763deaaf98123249">Container::UpdateRadialIcon()</a>.</p>
 
 </div>
 </div>
@@ -3047,6 +3066,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d00/class_closable_container.html#ad7aaabb06d5c1d734167247f0b684a0e">ClosableContainer::DraggingOverGrid()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a20048343d6c2c47d93965e9fc6d9de4f">ClosableContainer::DropReceived()</a>, <a class="el" href="../../d4/d8f/class_container.html#adbdc64609c9c488155804544baa0ea2b">Container::InitGridHeight()</a>, and <a class="el" href="../../d4/d8f/class_container.html#a9611e67d424a538992371c947bcaa21f">Container::UpdateHeaderText()</a>.</p>
 
 </div>
 </div>
@@ -3088,6 +3109,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a6c0c87dbbb79dab9325f71b08f0316db">GetCurrentInventoryLocation()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aec280ad00fb591910bbefb89b17cb070">InventoryLocation::GetSlot()</a>, <a class="el" href="../../df/d36/class_inventory_slots.html#a338920c4d5fac6af3b9cc86a85b0a1eb">InventorySlots::GetSlotName()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956">InventoryLocation::GetType()</a>, and <a class="el" href="../../df/d36/class_inventory_slots.html#a9e7c0b2080f92c6a4c05c28f85d46046">InventorySlots::INVALID</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#ac64aadd1f51188a89cc560b6c2d9b450">ManBase::HideHairSelections()</a>.</p>
+
 </div>
 </div>
 <a id="a6c0c87dbbb79dab9325f71b08f0316db" name="a6c0c87dbbb79dab9325f71b08f0316db"></a>
@@ -3123,7 +3146,7 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if current location retrieved (and is valid) </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d11/class_game_inventory.html#a286c08efe42ca1e94723067c41d58463">CanRemoveEntity()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a7e81c5490265cd9b569d6b17a5277a1d">EEInit()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#add69fae2830e337d3b36804330877c53">GetCurrentAttachmentSlotInfo()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#af9b3b35cda78baef9e124852cd4b5477">IsAttachment()</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#ad3a614a8b9ebc3a0e81f1a19ab6bd3f7">IsInCargo()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d96/class_entity.html#a8766b77ac1a6ec1af711dff0c1e7bf5f">Entity::CanReleaseAttachment()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a286c08efe42ca1e94723067c41d58463">CanRemoveEntity()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a68194eaeace064f84414b9ac8b24b909">HumanInventory::DropEntity()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a7e81c5490265cd9b569d6b17a5277a1d">EEInit()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#add69fae2830e337d3b36804330877c53">GetCurrentAttachmentSlotInfo()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#affca0b44c3ed5294d6e76e056b0c52b0">InventoryItem::GetQuantityMax()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#af9b3b35cda78baef9e124852cd4b5477">IsAttachment()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#ad3a614a8b9ebc3a0e81f1a19ab6bd3f7">IsInCargo()</a>, <a class="el" href="../../d4/d8f/class_container.html#a2ddb3eb926a755cf6cb7434320ea00c0">Container::MoveContainerDown()</a>, <a class="el" href="../../d4/d8f/class_container.html#ad7b62ad23e783ef0ad8d63f1834191ad">Container::MoveContainerUp()</a>, <a class="el" href="../../d6/d45/class_bot_state_base.html#aaee13280ad07a33aaa28304b129b1742">BotStateBase::OnEntry()</a>, <a class="el" href="../../d6/d45/class_bot_state_base.html#abf66986e08676e65b1e4fbf3c5f69f48">BotStateBase::OnUpdate()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a249d74fa886466f0e65f2a303d413c37">HumanInventory::SwappingToPreviousLocation()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#ab2484567ef006718a626100499f186b6">HumanInventory::TakeEntityToCargoEx()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a69e3bdd8c05f8afdb502800d2ba58351">TakeEntityToCargoEx()</a>, <a class="el" href="../../d8/d86/class_human_inventory.html#a8a70504f37285e34e6201981dc6954c8">HumanInventory::ThrowEntity()</a>, and <a class="el" href="../../dc/d98/_misc_gameplay_functions_8c.html#abfa8e9fb82ef57cd8a70bb6afda4e24a">ThrowEntityFromInventory()</a>.</p>
 
 </div>
 </div>
@@ -3149,6 +3172,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d86/class_human_inventory.html#ab2484567ef006718a626100499f186b6">HumanInventory::TakeEntityToCargoEx()</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#a69e3bdd8c05f8afdb502800d2ba58351">TakeEntityToCargoEx()</a>.</p>
 
 </div>
 </div>
@@ -3306,6 +3331,8 @@ Static Private Attributes</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/d11/class_game_inventory.html#adc2958428a473ce3b2cef2938fb29767">GetSlotIdCount</a>) </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>slot where this item belongs </dd></dl>
 
+<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#ac64aadd1f51188a89cc560b6c2d9b450">ManBase::HideHairSelections()</a>, <a class="el" href="../../d2/d96/class_entity.html#a5f2169fb76529267b7f5107e80f333d5">Entity::InitInherentSlotExclusionMap()</a>, <a class="el" href="../../d2/d96/class_entity.html#a4f4e2de4b7b8d605c8d5be47076c562c">Entity::InitLegacySlotExclusionValuesDerived()</a>, <a class="el" href="../../d2/d96/class_entity.html#a428c461bf40af57702d6255d97195e50">Entity::InitLegacySlotExclusionValuesImplicit()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#acbcf12a911ae7aa931a216da346631e0">EntityAI::PredictiveTakeOrSwapAttachment()</a>, and <a class="el" href="../../d8/d86/class_human_inventory.html#a249d74fa886466f0e65f2a303d413c37">HumanInventory::SwappingToPreviousLocation()</a>.</p>
+
 </div>
 </div>
 <a id="adc2958428a473ce3b2cef2938fb29767" name="adc2958428a473ce3b2cef2938fb29767"></a>
@@ -3332,6 +3359,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>number of slots this item can belong to </dd></dl>
 
+<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#ac64aadd1f51188a89cc560b6c2d9b450">ManBase::HideHairSelections()</a>, <a class="el" href="../../d2/d96/class_entity.html#a5f2169fb76529267b7f5107e80f333d5">Entity::InitInherentSlotExclusionMap()</a>, <a class="el" href="../../d2/d96/class_entity.html#a4f4e2de4b7b8d605c8d5be47076c562c">Entity::InitLegacySlotExclusionValuesDerived()</a>, <a class="el" href="../../d2/d96/class_entity.html#a428c461bf40af57702d6255d97195e50">Entity::InitLegacySlotExclusionValuesImplicit()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#acbcf12a911ae7aa931a216da346631e0">EntityAI::PredictiveTakeOrSwapAttachment()</a>, and <a class="el" href="../../d8/d86/class_human_inventory.html#a249d74fa886466f0e65f2a303d413c37">HumanInventory::SwappingToPreviousLocation()</a>.</p>
+
 </div>
 </div>
 <a id="ab989be883a172f933c5e49636a9f421f" name="ab989be883a172f933c5e49636a9f421f"></a>
@@ -3357,6 +3386,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d96/class_entity.html#a8766b77ac1a6ec1af711dff0c1e7bf5f">Entity::CanReleaseAttachment()</a>, <a class="el" href="../../d6/d93/class_attachment_categories_row.html#a9136df4f7ed866294bb073b8ad7fb30e">AttachmentCategoriesRow::DoubleClick()</a>, and <a class="el" href="../../d6/d93/class_attachment_categories_row.html#a5b22e451ee52be73d1bcf2e398e545e6">AttachmentCategoriesRow::RefreshSlot()</a>.</p>
 
 </div>
 </div>
@@ -3478,6 +3509,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d00/class_closable_container.html#a1a6aa4d5271b2cd868b12c55847f4ecc">ClosableContainer::DraggingOver()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a9d744b9914ac440bf316cb39e33adb3f">ClosableContainer::DraggingOverHeader()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a5f51d12a155546ba924479ffb6436aaa">ClosableContainer::OnDropReceivedFromHeader()</a>, <a class="el" href="../../d4/d8f/class_container.html#adc0e4e7a01ffbed3fbc88d2c159357e1">Container::Select()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#a23b778e27fb6c2b7fa73843f831ca87f">HandsContainer::TakeAsAttachment()</a>, and <a class="el" href="../../d7/d00/class_closable_container.html#a23b778e27fb6c2b7fa73843f831ca87f">ClosableContainer::TakeAsAttachment()</a>.</p>
 
 </div>
 </div>
@@ -3601,7 +3634,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Internally: HasInventoryReservationEx(item, dst, FindInventoryReservationMode.LEGACY, FindInventoryReservationMode.LEGACY) </p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d78/class_hand_state_equipped.html#a5af9858c011f114ddfd56d0edc6b60c7">HandStateEquipped::OnEntry()</a>, <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#a3565a13462fbb9f0baf1aaacf0375438">ReserveInventory()</a>, and <a class="el" href="../../de/d96/class_deferred_swap_entities.html#a3565a13462fbb9f0baf1aaacf0375438">DeferredSwapEntities::ReserveInventory()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d9b/class_weapon_manager.html#abd5d6922ab117fdee3028bc79da18419">WeaponManager::InventoryReservation()</a>, <a class="el" href="../../dc/d78/class_hand_state_equipped.html#a5af9858c011f114ddfd56d0edc6b60c7">HandStateEquipped::OnEntry()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a9880d74a6b7fc9a37f0b8b551cd378a5">ManBase::OnQuickBarSingleUse()</a>, <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#a3565a13462fbb9f0baf1aaacf0375438">ReserveInventory()</a>, and <a class="el" href="../../de/d96/class_deferred_swap_entities.html#a3565a13462fbb9f0baf1aaacf0375438">DeferredSwapEntities::ReserveInventory()</a>.</p>
 
 </div>
 </div>
@@ -3717,6 +3750,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true if this entity has inventory slot with id=slotId </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d47/_hand_animated___guards_8c.html#a9641120be0ec933c3dfe2e4315ed4a94">SlotToAnimType()</a>.</p>
 
 </div>
 </div>
@@ -3887,6 +3922,8 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#a9880d74a6b7fc9a37f0b8b551cd378a5">ManBase::OnQuickBarSingleUse()</a>.</p>
+
 </div>
 </div>
 <a id="a042a95b663f3782f5134103c7cf05887" name="a042a95b663f3782f5134103c7cf05887"></a>
@@ -3912,6 +3949,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d00/class_closable_container.html#aee93b387a75419d7f609fbbe542211e8">ClosableContainer::SetEntity()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a26356055514cd79c784f06bcbd74b3c8">ClosableContainer::SetEntity()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#aeba517f5bcac433dfad9ae42a8cc369c">HandsContainer::ShowAtt()</a>, <a class="el" href="../../d3/d1c/class_hands_container.html#a42e4b360bf0d3f641767685cd5089432">HandsContainer::UpdateInterval()</a>, <a class="el" href="../../d0/d82/class_attachment_categories_container.html#a42e4b360bf0d3f641767685cd5089432">AttachmentCategoriesContainer::UpdateInterval()</a>, <a class="el" href="../../d7/d00/class_closable_container.html#a42e4b360bf0d3f641767685cd5089432">ClosableContainer::UpdateInterval()</a>, and <a class="el" href="../../d4/d8f/class_container.html#a780386fdc90e67a7763deaaf98123249">Container::UpdateRadialIcon()</a>.</p>
 
 </div>
 </div>
@@ -3992,7 +4031,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#ad37f6c4c223534539549bd4ff51da844">InventoryLocation::GetItem()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956">InventoryLocation::GetType()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a495fdd739a049800016ad80fef717c4b">inventoryDebugPrint()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#a400422b608b8a983acf68cee66b72604">LogManager::IsInventoryMoveLogEnable()</a>, and <a class="el" href="../../d2/de6/class_c_game.html#a0ab8424d70855c45efb89d6e7bd823a1">CGame::ObjectDelete()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#ad37f6c4c223534539549bd4ff51da844">InventoryLocation::GetItem()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a0a4e944cf0e3e550e14551705c70e956">InventoryLocation::GetType()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a495fdd739a049800016ad80fef717c4b">inventoryDebugPrint()</a>, and <a class="el" href="../../d9/df7/class_log_manager.html#a400422b608b8a983acf68cee66b72604">LogManager::IsInventoryMoveLogEnable()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#a593df19d1c80444b78f952c89255ec9f">ManBase::RemoveAllItems()</a>.</p>
 
 </div>
 </div>
@@ -4087,6 +4128,8 @@ entity at the location, null otherwise </dd></dl>
 
 <p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#aecfabcf8edc9ed8f8ed8a4e246d1c488">LocationCanAddEntity()</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d7/d00/class_closable_container.html#ad7aaabb06d5c1d734167247f0b684a0e">ClosableContainer::DraggingOverGrid()</a>, and <a class="el" href="../../d7/d00/class_closable_container.html#a20048343d6c2c47d93965e9fc6d9de4f">ClosableContainer::DropReceived()</a>.</p>
+
 </div>
 </div>
 <a id="a82163714d3b8fa9114c36b4c324237a4" name="a82163714d3b8fa9114c36b4c324237a4"></a>
@@ -4126,7 +4169,7 @@ entity at the location, null otherwise </dd></dl>
 <p>queries if the entity contained in inv_loc.m_item can be moved to another location This is a shorthand for CanRemove + CanAdd query </p>
 <dl class="section return"><dt>Returns</dt><dd>true if can be moved, false otherwise </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d9e/class_hand_event_base.html#a7ffb00d2ed9636101bbd0a9ea260682e">HandEventBase::CanPerformEvent()</a>, <a class="el" href="../../d8/d9e/class_hand_event_base.html#ad9db17b93bcf26ef54a3f1ddb267bc26">HandEventBase::CanPerformEventEx()</a>, <a class="el" href="../../d3/d96/class_hand_guard_base.html#a06c9b67406ed592984213963466592c5">HandGuardBase::GuardCondition()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#af3339d1a03343926b3c70dad8f484ebf">LocationCanMoveEntitySyncCheck()</a>, <a class="el" href="../../d2/db4/class_weapon_state_base.html#a832fd16d806aa9791c4e3eefa9849d21">WeaponStateBase::OnAbort()</a>, <a class="el" href="../../d2/db4/class_weapon_state_base.html#aa40f8697dfa587f8adabc8640bc98ad8">WeaponStateBase::OnExit()</a>, and <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#a10df1fd150c7c0fcdd437c246cddcd01">ValidateSyncMove()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d9e/class_hand_event_base.html#a7ffb00d2ed9636101bbd0a9ea260682e">HandEventBase::CanPerformEvent()</a>, <a class="el" href="../../d8/d9e/class_hand_event_base.html#ad9db17b93bcf26ef54a3f1ddb267bc26">HandEventBase::CanPerformEventEx()</a>, <a class="el" href="../../d3/d96/class_hand_guard_base.html#a06c9b67406ed592984213963466592c5">HandGuardBase::GuardCondition()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#af3339d1a03343926b3c70dad8f484ebf">LocationCanMoveEntitySyncCheck()</a>, <a class="el" href="../../d2/db4/class_weapon_state_base.html#a832fd16d806aa9791c4e3eefa9849d21">WeaponStateBase::OnAbort()</a>, <a class="el" href="../../d2/db4/class_weapon_state_base.html#aa40f8697dfa587f8adabc8640bc98ad8">WeaponStateBase::OnExit()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#abbe50e1ae9704b47d7ac8ec53f3b9b16">EntityAI::PredictiveMoveItemFromHandsToInventory()</a>, and <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#a10df1fd150c7c0fcdd437c246cddcd01">ValidateSyncMove()</a>.</p>
 
 </div>
 </div>
@@ -4256,7 +4299,7 @@ entity at the location, null otherwise </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>created entity, null otherwise </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/de4/class_replace_item_with_new_lambda_base.html#a83a4a0ef3bb8112da0d44e938f896bf2">ReplaceItemWithNewLambdaBase::CreateNewEntity()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#ac50edf093053519a9bc7e5b331690175">SpawnEntity()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#ae5146c73133a552176272f846187a99a">InventoryItem::SplitIntoStackMaxToInventoryLocationEx()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#a4342d13a1607fbe5f5d2215f8fad5181">InventoryItem::SplitItemToInventoryLocation()</a>, <a class="el" href="../../dc/d98/_misc_gameplay_functions_8c.html#abfa8e9fb82ef57cd8a70bb6afda4e24a">ThrowEntityFromInventory()</a>, and <a class="el" href="../../d6/d30/class_action_uncover_head_base.html#a120657c81fc2964e3664925470f8c74f">ActionUncoverHeadBase::UncoverHead()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/de4/class_replace_item_with_new_lambda_base.html#a83a4a0ef3bb8112da0d44e938f896bf2">ReplaceItemWithNewLambdaBase::CreateNewEntity()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#ac50edf093053519a9bc7e5b331690175">SpawnEntity()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#abb69db47b4763cb3e1bedef7583b742d">InventoryItem::SplitIntoStackMax()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#a36a696ee1d8c458d6c598c6d585d4bb7">InventoryItem::SplitIntoStackMaxEx()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#ae5146c73133a552176272f846187a99a">InventoryItem::SplitIntoStackMaxToInventoryLocationEx()</a>, <a class="el" href="../../d6/d0e/class_inventory_item.html#a4342d13a1607fbe5f5d2215f8fad5181">InventoryItem::SplitItemToInventoryLocation()</a>, <a class="el" href="../../dc/d98/_misc_gameplay_functions_8c.html#abfa8e9fb82ef57cd8a70bb6afda4e24a">ThrowEntityFromInventory()</a>, and <a class="el" href="../../d6/d30/class_action_uncover_head_base.html#a120657c81fc2964e3664925470f8c74f">ActionUncoverHeadBase::UncoverHead()</a>.</p>
 
 </div>
 </div>
@@ -4315,7 +4358,7 @@ entity at the location, null otherwise </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>created entity, null otherwise </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/de4/class_replace_item_with_new_lambda_base.html#a83a4a0ef3bb8112da0d44e938f896bf2">ReplaceItemWithNewLambdaBase::CreateNewEntity()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#a8773d9a81108551ca2de53fe97c63896">ManBase::CreateCopyOfItemInInventory()</a>, and <a class="el" href="../../d5/de4/class_replace_item_with_new_lambda_base.html#a83a4a0ef3bb8112da0d44e938f896bf2">ReplaceItemWithNewLambdaBase::CreateNewEntity()</a>.</p>
 
 </div>
 </div>
@@ -4507,7 +4550,7 @@ entity at the location, null otherwise </dd></dl>
 <p>synchronously removes item from current inventory location and adds it to destination no anims involved </p>
 <dl class="section return"><dt>Returns</dt><dd>true if success, false otherwise </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d49/class_hand_action_base.html#aa48f7d7786ad8088b84720add04ea1d8">HandActionBase::Action()</a>, <a class="el" href="../../d8/da5/_day_z_player_utils_8c.html#adc7e0debf7c8bfb55e543dae23d1c1a8">HandleDropMagazine()</a>, <a class="el" href="../../d2/db4/class_weapon_state_base.html#a832fd16d806aa9791c4e3eefa9849d21">WeaponStateBase::OnAbort()</a>, <a class="el" href="../../d2/d9a/class_hand_state_base.html#a5af9858c011f114ddfd56d0edc6b60c7">HandStateBase::OnEntry()</a>, <a class="el" href="../../d5/ded/class_hand_start_action.html#a5af9858c011f114ddfd56d0edc6b60c7">HandStartAction::OnEntry()</a>, <a class="el" href="../../d2/db4/class_weapon_state_base.html#a554194fbf83f198e8f8e9ecb7a31e330">WeaponStateBase::OnEntry()</a>, <a class="el" href="../../d2/db4/class_weapon_state_base.html#aa40f8697dfa587f8adabc8640bc98ad8">WeaponStateBase::OnExit()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a691d9c2a8bc98e58606a254545efb659">OnServerInventoryCommandStatic()</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#a68d1174ab68ea89d2edbe81c172611c2">TakeToDst()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d49/class_hand_action_base.html#aa48f7d7786ad8088b84720add04ea1d8">HandActionBase::Action()</a>, <a class="el" href="../../d8/da5/_day_z_player_utils_8c.html#adc7e0debf7c8bfb55e543dae23d1c1a8">HandleDropMagazine()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#aa1930e012bcc96eff93d2cd62dd90f6e">PluginBase::MoveItemToCorrectPosition()</a>, <a class="el" href="../../d2/db4/class_weapon_state_base.html#a832fd16d806aa9791c4e3eefa9849d21">WeaponStateBase::OnAbort()</a>, <a class="el" href="../../d2/d9a/class_hand_state_base.html#a5af9858c011f114ddfd56d0edc6b60c7">HandStateBase::OnEntry()</a>, <a class="el" href="../../d5/ded/class_hand_start_action.html#a5af9858c011f114ddfd56d0edc6b60c7">HandStartAction::OnEntry()</a>, <a class="el" href="../../d2/db4/class_weapon_state_base.html#a554194fbf83f198e8f8e9ecb7a31e330">WeaponStateBase::OnEntry()</a>, <a class="el" href="../../d2/db4/class_weapon_state_base.html#aa40f8697dfa587f8adabc8640bc98ad8">WeaponStateBase::OnExit()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a691d9c2a8bc98e58606a254545efb659">OnServerInventoryCommandStatic()</a>, <a class="el" href="../../dd/da1/class_plugin_base.html#a9997b0bc510ad4512d7a5bf3192598e8">PluginBase::RepairItem()</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#a68d1174ab68ea89d2edbe81c172611c2">TakeToDst()</a>.</p>
 
 </div>
 </div>
@@ -4605,6 +4648,8 @@ entity at the location, null otherwise </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#a3febdf9e0b1f5ca03ca176cc0055ee31">ManBase::OnCommandClimbStart()</a>, <a class="el" href="../../d4/d87/class_man_base.html#af114793bef30acad47bfac4ad338f815">ManBase::OnCommandFallStart()</a>, <a class="el" href="../../d4/d87/class_man_base.html#a7cf181477ae31980af8312b4eb3b81e6">ManBase::OnCommandLadderStart()</a>, <a class="el" href="../../d4/d87/class_man_base.html#aa746c0ea0f37b0e801b291a3f3848ca0">ManBase::OnCommandSwimStart()</a>, and <a class="el" href="../../d4/d87/class_man_base.html#a847cec006a2073ce40fb97a28a70f1f8">ManBase::OnCommandVehicleStart()</a>.</p>
 
 </div>
 </div>
@@ -4971,32 +5016,6 @@ entity at the location, null otherwise </dd></dl>
 
 </div>
 </div>
-<a id="aecf56353b99619c6a61b69aa9aa94ef6" name="aecf56353b99619c6a61b69aa9aa94ef6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecf56353b99619c6a61b69aa9aa94ef6">&#9670;&#160;</a></span>OnInventoryJunctureRepairFromServer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> OnInventoryJunctureRepairFromServer </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d8/d18/gameplay_8c.html#a4ff67286551fc6c18504752a277c8bc1">ParamsReadContext</a>&#160;</td>
-          <td class="paramname"><em>ctx</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a5a8b83de1fc0289ef1f46a930ddd0941" name="a5a8b83de1fc0289ef1f46a930ddd0941"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5a8b83de1fc0289ef1f46a930ddd0941">&#9670;&#160;</a></span>OnServerInventoryCommand()</h2>
 
@@ -5047,7 +5066,7 @@ entity at the location, null otherwise </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/d9e/class_hand_event_base.html#a6a35bf420d250a3462833ece0c701c7c">HandEventBase::DumpToString()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aecedc0dc7274fd6ada907f30627a658a">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#ad37f6c4c223534539549bd4ff51da844">InventoryLocation::GetItem()</a>, <a class="el" href="../../d5/d74/_notification_system_8c.html#a8a5888c845f10608a75d9bfd5009089e">GetTime()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a126b312186e0481dff1f5980ff24b596">InventoryLocation::IsValid()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a296fcf3908f65f510974b132a4adfaf2">LocationSwap()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a91ef090771c6de4e0c80c064f2e309fd">LocationSyncMoveEntity()</a>, <a class="el" href="../../d0/dc2/class_serializer.html#a34c68c9c93798008667c773b4818177d">Serializer::Read()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aa9396024855a073fd1765c0a698da88d">InventoryLocation::ReadFromContext()</a>, and <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d9e/class_hand_event_base.html#a6a35bf420d250a3462833ece0c701c7c">HandEventBase::DumpToString()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aecedc0dc7274fd6ada907f30627a658a">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#ad37f6c4c223534539549bd4ff51da844">InventoryLocation::GetItem()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#ac646c41da825ab3f8871fd94137898c2">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a126b312186e0481dff1f5980ff24b596">InventoryLocation::IsValid()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a296fcf3908f65f510974b132a4adfaf2">LocationSwap()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a91ef090771c6de4e0c80c064f2e309fd">LocationSyncMoveEntity()</a>, <a class="el" href="../../d0/dc2/class_serializer.html#a34c68c9c93798008667c773b4818177d">Serializer::Read()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#aa9396024855a073fd1765c0a698da88d">InventoryLocation::ReadFromContext()</a>, and <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint()</a>.</p>
 
 </div>
 </div>
@@ -5243,6 +5262,8 @@ entity at the location, null otherwise </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d96/class_entity.html#a05bbadc09de54534d39b0f24ab98902d">Entity::EEInventoryOut()</a>.</p>
 
 </div>
 </div>
@@ -6002,7 +6023,7 @@ entity at the location, null otherwise </dd></dl>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#adaa83e67dcb707c725c5332ab0efd213">GetInventoryOwner()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a495fdd739a049800016ad80fef717c4b">inventoryDebugPrint()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#a400422b608b8a983acf68cee66b72604">LogManager::IsInventoryMoveLogEnable()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a481b291b4424f680389ecc3541de7741">InventoryLocation::SetCargo()</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#a68d1174ab68ea89d2edbe81c172611c2">TakeToDst()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a6c0c87dbbb79dab9325f71b08f0316db">GetCurrentInventoryLocation()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a19f92a07d9f16aa7a82a57825f247715">GetFlipCargo()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#adaa83e67dcb707c725c5332ab0efd213">GetInventoryOwner()</a>, <a class="el" href="../../d9/df6/3___game_2_systems_2_inventory_2_debug_8c.html#a495fdd739a049800016ad80fef717c4b">inventoryDebugPrint()</a>, <a class="el" href="../../d9/df7/class_log_manager.html#a400422b608b8a983acf68cee66b72604">LogManager::IsInventoryMoveLogEnable()</a>, <a class="el" href="../../d6/dc5/class_inventory_location.html#a481b291b4424f680389ecc3541de7741">InventoryLocation::SetCargo()</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#a68d1174ab68ea89d2edbe81c172611c2">TakeToDst()</a>.</p>
 
 </div>
 </div>
@@ -6281,7 +6302,7 @@ entity at the location, null otherwise </dd></dl>
 
 <p class="reference">References <a class="el" href="../../dc/d11/class_game_inventory.html#a91ef090771c6de4e0c80c064f2e309fd">LocationSyncMoveEntity()</a>, and <a class="el" href="../../d8/d9b/class_inventory_input_user_data.html#a5d02180f46fa9475cb472999b1d8cdf1">InventoryInputUserData::SendServerMove()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d11/class_game_inventory.html#a06573709448321c614a10cd7095ab494">DropEntity()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a46c00da8fcf454d78f2d72bdcf63cb7f">DropEntityInBounds()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#ae030806d30d2f7f4f39aca038eb14b87">DropEntityWithTransform()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#ae81fc03675f8ad2e9a0778e45b19c0ce">TakeEntityAsTargetAttachmentEx()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a69e3bdd8c05f8afdb502800d2ba58351">TakeEntityToCargoEx()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a9993644ed14b38bc48f67834735cdd1f">TakeEntityToInventory()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a01d5c57b1de038e10f6660a923211219">TakeEntityToTargetCargoEx()</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#ad7b775742a9cf3c1199f0bf267afb1ee">TakeEntityToTargetInventory()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/d11/class_game_inventory.html#a06573709448321c614a10cd7095ab494">DropEntity()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a46c00da8fcf454d78f2d72bdcf63cb7f">DropEntityInBounds()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#ae030806d30d2f7f4f39aca038eb14b87">DropEntityWithTransform()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#ae81fc03675f8ad2e9a0778e45b19c0ce">TakeEntityAsTargetAttachmentEx()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a69e3bdd8c05f8afdb502800d2ba58351">TakeEntityToCargoEx()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a9993644ed14b38bc48f67834735cdd1f">TakeEntityToInventory()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#a01d5c57b1de038e10f6660a923211219">TakeEntityToTargetCargoEx()</a>, <a class="el" href="../../dc/d11/class_game_inventory.html#ad7b775742a9cf3c1199f0bf267afb1ee">TakeEntityToTargetInventory()</a>, and <a class="el" href="../../dc/d98/_misc_gameplay_functions_8c.html#abfa8e9fb82ef57cd8a70bb6afda4e24a">ThrowEntityFromInventory()</a>.</p>
 
 </div>
 </div>
@@ -6519,6 +6540,8 @@ entity at the location, null otherwise </dd></dl>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#a252026488329b3b86ef6650adeed1e6a">ManBase::OnCommandClimbFinish()</a>, <a class="el" href="../../d4/d87/class_man_base.html#aaa049b2c321962bcce8674af2801f131">ManBase::OnCommandFallFinish()</a>, <a class="el" href="../../d4/d87/class_man_base.html#afbbb8a66be44d45884b239d90393316b">ManBase::OnCommandLadderFinish()</a>, <a class="el" href="../../d4/d87/class_man_base.html#aa4a05145486f6ee10fe9220ef87f83e7">ManBase::OnCommandSwimFinish()</a>, and <a class="el" href="../../d4/d87/class_man_base.html#a33e48dbafbe249ab5b01206ea8143415">ManBase::OnCommandVehicleFinish()</a>.</p>
+
 </div>
 </div>
 <a id="a3023e2e89ccee42b2d971cf17039acc1" name="a3023e2e89ccee42b2d971cf17039acc1"></a>
@@ -6620,7 +6643,7 @@ entity at the location, null otherwise </dd></dl>
 
 <p>anti-cheats </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d9e/class_hand_event_base.html#a6141b536ee3fd98e33ff7ce4e2970137">HandEventBase::CheckRequest()</a>, <a class="el" href="../../d1/d52/class_hand_event_swap.html#a6141b536ee3fd98e33ff7ce4e2970137">HandEventSwap::CheckRequest()</a>, <a class="el" href="../../d8/d9e/class_hand_event_base.html#ade1be49963b6307b1eeeeb69363c5924">HandEventBase::CheckRequestSrc()</a>, <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#ac9cdbb9853d88fecd9f1a69608a2232c">PlayerCheckSwapItemsRequest()</a>, <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#a49c7c290f03e2efca046ca273df2b3c9">ValidateDestroy()</a>, <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#ac7881512061aab4a17eefe7bc5531257">ValidateSwap()</a>, and <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#a10df1fd150c7c0fcdd437c246cddcd01">ValidateSyncMove()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d9e/class_hand_event_base.html#a6141b536ee3fd98e33ff7ce4e2970137">HandEventBase::CheckRequest()</a>, <a class="el" href="../../d1/d52/class_hand_event_swap.html#a6141b536ee3fd98e33ff7ce4e2970137">HandEventSwap::CheckRequest()</a>, <a class="el" href="../../d8/d9e/class_hand_event_base.html#ade1be49963b6307b1eeeeb69363c5924">HandEventBase::CheckRequestSrc()</a>, <a class="el" href="../../d4/d87/class_man_base.html#aadd0c42dcd4745ff0fba7ee9d85a9196">ManBase::HandleRemoteItemManipulation()</a>, <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#ac9cdbb9853d88fecd9f1a69608a2232c">PlayerCheckSwapItemsRequest()</a>, <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#a49c7c290f03e2efca046ca273df2b3c9">ValidateDestroy()</a>, <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#ac7881512061aab4a17eefe7bc5531257">ValidateSwap()</a>, and <a class="el" href="../../da/ddc/_day_z_player_inventory_8c.html#a10df1fd150c7c0fcdd437c246cddcd01">ValidateSyncMove()</a>.</p>
 
 </div>
 </div>

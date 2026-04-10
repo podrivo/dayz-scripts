@@ -37,5 +37,6 @@ var _player_sound_event_base_8c =
     [ "m_Player", "dd/d40/_player_sound_event_base_8c.html#a90bab4299bbbbdc7ab5641586dbbdb26", null ],
     [ "m_PlayTime", "dd/d40/_player_sound_event_base_8c.html#a345b4073a42fbecf0fda79144f978142", null ],
     [ "m_ProcessPlaybackEvent", "dd/d40/_player_sound_event_base_8c.html#a73f0ffb48450fa7fbab683cfc2a63c9f", null ],
-    [ "SKIP_CONTROLLED_PLAYER", "dd/d40/_player_sound_event_base_8c.html#a03fabab44037cc492a28d8d962a68ec7", null ]
+    [ "SKIP_CONTROLLED_PLAYER", "dd/d40/_player_sound_event_base_8c.html#a03fabab44037cc492a28d8d962a68ec7", null ],
+    [ "STOP_PLAYBACK", "dd/d40/_player_sound_event_base_8c.html#a4fe50d0a297d46b72fe8c1b7128b7f2c", null ]
 ];

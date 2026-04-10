@@ -1,20 +1,6 @@
 var group___rigid_body =
 [
     [ "Geometry API definition", "d2/d3b/group___geometry.html", "d2/d3b/group___geometry" ],
-    [ "PhysicsGeomDef", "d5/d43/class_physics_geom_def.html", [
-      [ "PhysicsGeomDef", "d8/d4e/group___constraints.html#ga82ca0e672c0c5c1e3d9c99c25eb8c756", null ],
-      [ "Frame", "d8/d4e/group___constraints.html#ga406d378e9919fc736de9df90979c3a7f", null ],
-      [ "Geometry", "d8/d4e/group___constraints.html#gaf1294d9511b4c24f758d568962157b2e", null ],
-      [ "LayerMask", "d8/d4e/group___constraints.html#gaefe51ae139732424fc828409b638e8b6", null ],
-      [ "MaterialName", "d8/d4e/group___constraints.html#gaeca1af44d78ca24bc3409a668aacc326", null ],
-      [ "Name", "d8/d4e/group___constraints.html#ga7ee9065718e6628dc7791b756fa6c0f9", null ],
-      [ "ParentNode", "d8/d4e/group___constraints.html#gad637ce85af31198951195e993595b8a9", null ]
-    ] ],
-    [ "ActiveState", "d7/d1e/group___rigid_body.html#gaefc8378ef88030349d44d0da88a3a834", [
-      [ "ACTIVE", "d7/d1e/group___rigid_body.html#ggaefc8378ef88030349d44d0da88a3a834a33cf1d8ef1d06ee698a7fabf40eb3a7f", null ],
-      [ "INACTIVE", "d7/d1e/group___rigid_body.html#ggaefc8378ef88030349d44d0da88a3a834a3ff8ba88da6f8947ab7c22b7825c6bb6", null ],
-      [ "ALWAYS_ACTIVE", "d7/d1e/group___rigid_body.html#ggaefc8378ef88030349d44d0da88a3a834ad468937383ff5cbd3e39d3086a6548ee", null ]
-    ] ],
     [ "dBodyActive", "d7/d1e/group___rigid_body.html#ga699b9ff8b31798bbcbe6c34bdbb1db01", null ],
     [ "dBodyApplyForce", "d7/d1e/group___rigid_body.html#gaee159dad70841eb973ee00c1036d85e4", null ],
     [ "dBodyApplyForceAt", "d7/d1e/group___rigid_body.html#gaf970d5fa1837edf7b2dcc310dc94e0ea", null ],

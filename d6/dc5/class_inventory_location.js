@@ -33,6 +33,7 @@ var class_inventory_location =
     [ "SetProxyCargo", "d6/dc5/class_inventory_location.html#a7b8a69b2f5a94bc276a0ff17be976d23", null ],
     [ "SetRow", "d6/dc5/class_inventory_location.html#a14060b492f86a2e640d221087271e6da", null ],
     [ "SetSlot", "d6/dc5/class_inventory_location.html#a9b4c82fa6303ff7f6037057dcb162074", null ],
+    [ "SetTemporary", "d6/dc5/class_inventory_location.html#ad06d7232762036aac2079596a6d3771d", null ],
     [ "SetVehicle", "d6/dc5/class_inventory_location.html#a7428f61f07bb93f87c14171b5440dff8", null ],
     [ "WriteToContext", "d6/dc5/class_inventory_location.html#afccd93e7de53c6fc8050afb5a41bb1f3", null ]
 ];

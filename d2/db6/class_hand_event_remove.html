@@ -132,6 +132,8 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a59b86b594dbfcb9def0845844e6de8c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/db6/class_hand_event_remove.html#a59b86b594dbfcb9def0845844e6de8c3">m_CanPerformDrop</a></td></tr>
 <tr class="separator:a59b86b594dbfcb9def0845844e6de8c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2dea1c6825b89c2415a31e0ca615e8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/db6/class_hand_event_remove.html#af2dea1c6825b89c2415a31e0ca615e8f">m_IsSet</a></td></tr>
+<tr class="separator:af2dea1c6825b89c2415a31e0ca615e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacd407717230fe63ad9c865858de2cf8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/dfc/classvector.html">vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/db6/class_hand_event_remove.html#aacd407717230fe63ad9c865858de2cf8">m_Force</a></td></tr>
 <tr class="separator:aacd407717230fe63ad9c865858de2cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -162,7 +164,7 @@ Private Attributes</h2></td></tr>
 <p>On multiplayer client, if this is the initial call then we are waiting for the server to setup this event still</p>
 <p>Singleplayer or server was initial caller</p>
 
-<p class="reference">References <a class="el" href="../../d6/d21/_hand___events_8c.html#ae799fe43f04b0cec3a66a69471ef718b">GetDst()</a>, <a class="el" href="../../d8/d18/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#ae5c8cce374dfad27f9e3b3a132f78db3">GetSrcEntity()</a>, <a class="el" href="../../da/d63/class_inventory_validation.html#a599b5d9d7a36d94792f853d248ffdd48">InventoryValidation::m_IsJuncture</a>, <a class="el" href="../../da/d63/class_inventory_validation.html#a0e6be58035858799a108f80b94afd542">InventoryValidation::m_IsRemote</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../da/d63/class_inventory_validation.html#af65702ce262024144eeb88bb75053076">InventoryValidation::m_Reason</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#a5cf92074c4a3c978ffbaa1325fefcf4d">GameInventory::SetGroundPosByOwner()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#ae5c8cce374dfad27f9e3b3a132f78db3">GetSrcEntity()</a>, <a class="el" href="../../da/d63/class_inventory_validation.html#a599b5d9d7a36d94792f853d248ffdd48">InventoryValidation::m_IsJuncture</a>, <a class="el" href="../../da/d63/class_inventory_validation.html#a0e6be58035858799a108f80b94afd542">InventoryValidation::m_IsRemote</a>, <a class="el" href="../../da/d63/class_inventory_validation.html#a0017c0957f8da5e56ff44a57c1a64ede">InventoryValidation::m_Mode</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#a5cf92074c4a3c978ffbaa1325fefcf4d">GameInventory::SetGroundPosByOwner()</a>.</p>
 
 </div>
 </div>
@@ -191,7 +193,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Check to see if this is the initial call from the server (but the event originated from a client)</p>
 
-<p class="reference">References <a class="el" href="../../d6/d21/_hand___events_8c.html#ae5c8cce374dfad27f9e3b3a132f78db3">GetSrcEntity()</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a343132994eed35019de7370cbc9aeb61">IsAuthoritative()</a>, <a class="el" href="../../da/d63/class_inventory_validation.html#a599b5d9d7a36d94792f853d248ffdd48">InventoryValidation::m_IsJuncture</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="el" href="../../da/d63/class_inventory_validation.html#af65702ce262024144eeb88bb75053076">InventoryValidation::m_Reason</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#a5cf92074c4a3c978ffbaa1325fefcf4d">GameInventory::SetGroundPosByOwner()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d21/_hand___events_8c.html#ae5c8cce374dfad27f9e3b3a132f78db3">GetSrcEntity()</a>, <a class="el" href="../../d6/d21/_hand___events_8c.html#a343132994eed35019de7370cbc9aeb61">IsAuthoritative()</a>, <a class="el" href="../../da/d63/class_inventory_validation.html#a599b5d9d7a36d94792f853d248ffdd48">InventoryValidation::m_IsJuncture</a>, <a class="el" href="../../da/d63/class_inventory_validation.html#a0017c0957f8da5e56ff44a57c1a64ede">InventoryValidation::m_Mode</a>, <a class="el" href="../../da/d63/class_inventory_validation.html#af65702ce262024144eeb88bb75053076">InventoryValidation::m_Reason</a>, and <a class="el" href="../../dc/d11/class_game_inventory.html#a5cf92074c4a3c978ffbaa1325fefcf4d">GameInventory::SetGroundPosByOwner()</a>.</p>
 
 </div>
 </div>
@@ -480,6 +482,28 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="../../d2/db6/class_hand_event_remove.html#abcf54bbee63c96aecc19aa2311a25788">GetForce()</a>.</p>
+
+</div>
+</div>
+<a id="af2dea1c6825b89c2415a31e0ca615e8f" name="af2dea1c6825b89c2415a31e0ca615e8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2dea1c6825b89c2415a31e0ca615e8f">&#9670;&#160;</a></span>m_IsSet</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/db9/classbool.html">bool</a> m_IsSet</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

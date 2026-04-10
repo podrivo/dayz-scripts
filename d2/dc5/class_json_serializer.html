@@ -133,7 +133,7 @@ Private Member Functions</h2></td></tr>
 <div class="line">    <a class="code hl_class" href="../../d2/d41/classarray.html">array&lt;float&gt;</a> farray = {1.2, 5.6, 8.1};</div>
 <div class="line">    rpc.<a class="code hl_function" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Write</a>(farray);</div>
 <div class="line"> </div>
-<div class="line">    rpc.<a class="code hl_function" href="../../d5/d8a/class_script_r_p_c.html#a1d4dfe14974c47411221cc310e55827e">Send</a>(<a class="code hl_variable" href="../../dd/d17/class_managed.html#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>, <a class="code hl_enumeration" href="../../d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.RPC_TEST, <span class="keyword">true</span>, <a class="code hl_variable" href="../../dd/d17/class_managed.html#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>.GetIdentity());</div>
+<div class="line">    rpc.<a class="code hl_function" href="../../d5/d8a/class_script_r_p_c.html#a1d4dfe14974c47411221cc310e55827e">Send</a>(<a class="code hl_class" href="../../d9/d28/classmap.html">m_Player</a>, <a class="code hl_enumeration" href="../../d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.RPC_TEST, <span class="keyword">true</span>, <a class="code hl_class" href="../../d9/d28/classmap.html">m_Player</a>.GetIdentity());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// example receive</span></div>
@@ -148,7 +148,6 @@ Private Member Functions</h2></td></tr>
 <div class="line">    ctx.<a class="code hl_function" href="../../d0/dc2/class_serializer.html#a34c68c9c93798008667c773b4818177d">Read</a>(farray);</div>
 <div class="line">}</div>
 <div class="ttc" id="a_e_r_p_cs_8c_html_a6ce2d98a3b8fbdba5b450abf2d6eab37"><div class="ttname"><a href="../../d0/d66/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a></div><div class="ttdeci">ERPCs</div><div class="ttdef"><b>Definition</b> ERPCs.c:2</div></div>
-<div class="ttc" id="aclass_managed_html_a4db3d46d75d2864daed52041fe1f0973"><div class="ttname"><a href="../../dd/d17/class_managed.html#a4db3d46d75d2864daed52041fe1f0973">Managed::m_Player</a></div><div class="ttdeci">PlayerBase m_Player</div><div class="ttdef"><b>Definition</b> TransferValues.c:10</div></div>
 <div class="ttc" id="aclass_managed_html_abdc765142c7d9fa2c017982090949738"><div class="ttname"><a href="../../dd/d17/class_managed.html#abdc765142c7d9fa2c017982090949738">Managed::OnRPC</a></div><div class="ttdeci">void OnRPC(ParamsReadContext ctx)</div><div class="ttdef"><b>Definition</b> TransferValues.c:165</div></div>
 <div class="ttc" id="aclass_script_r_p_c_html"><div class="ttname"><a href="../../d5/d8a/class_script_r_p_c.html">ScriptRPC</a></div><div class="ttdef"><b>Definition</b> gameplay.c:105</div></div>
 <div class="ttc" id="aclass_script_r_p_c_html_a1d4dfe14974c47411221cc310e55827e"><div class="ttname"><a href="../../d5/d8a/class_script_r_p_c.html#a1d4dfe14974c47411221cc310e55827e">ScriptRPC::Send</a></div><div class="ttdeci">proto native void Send(Object target, int rpc_type, bool guaranteed, PlayerIdentity recipient=NULL)</div><div class="ttdoc">Initiate remote procedure call. When called on client, RPC is evaluated on server; When called on ser...</div></div>
@@ -156,6 +155,7 @@ Private Member Functions</h2></td></tr>
 <div class="ttc" id="aclass_serializer_html_a1d68a84f3eba695ac67220b1e071fd6d"><div class="ttname"><a href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write</a></div><div class="ttdeci">proto bool Write(void value_out)</div></div>
 <div class="ttc" id="aclass_serializer_html_a34c68c9c93798008667c773b4818177d"><div class="ttname"><a href="../../d0/dc2/class_serializer.html#a34c68c9c93798008667c773b4818177d">Serializer::Read</a></div><div class="ttdeci">proto bool Read(void value_in)</div></div>
 <div class="ttc" id="aclassarray_html"><div class="ttname"><a href="../../d2/d41/classarray.html">array</a></div><div class="ttdoc">Result for an object found in CGame.IsBoxCollidingGeometryProxy.</div><div class="ttdef"><b>Definition</b> IsBoxCollidingGeometryProxyClasses.c:28</div></div>
+<div class="ttc" id="aclassmap_html"><div class="ttname"><a href="../../d9/d28/classmap.html">map</a></div><div class="ttdef"><b>Definition</b> CachedEquipmentStorage.c:4</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9a69af73d088dd037f3b08a821d67561" name="a9a69af73d088dd037f3b08a821d67561"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9a69af73d088dd037f3b08a821d67561">&#9670;&#160;</a></span>JsonSerializer()</h2>

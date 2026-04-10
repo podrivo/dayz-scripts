@@ -50,7 +50,7 @@ var group___world_trace =
     ] ],
     [ "TraceShape", "de/d65/group___world_trace.html#gae06cbef09a3e547e760f978fa8bcfc70", [
       [ "LINE", "de/d65/group___world_trace.html#ggae06cbef09a3e547e760f978fa8bcfc70ab023460c84f774a219d46ccf4665994c", null ],
-      [ "BOX", "de/d65/group___world_trace.html#ggae06cbef09a3e547e760f978fa8bcfc70a222ba4e85f6d98ac78a02975d71bb945", null ],
+      [ "BOX", "de/d65/group___world_trace.html#ggae06cbef09a3e547e760f978fa8bcfc70a311c29de5b0fd16d11c0cf1f98a73370", null ],
       [ "OBB", "de/d65/group___world_trace.html#ggae06cbef09a3e547e760f978fa8bcfc70ad75d316d241119efa8cc6da3772675b4", null ],
       [ "SPHERE", "de/d65/group___world_trace.html#ggae06cbef09a3e547e760f978fa8bcfc70aae4f0962d104ea473feec5598689316d", null ]
     ] ],

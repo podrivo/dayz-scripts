@@ -12,6 +12,7 @@ var _en_convert_8c =
     ] ],
     [ "AsciiToString", "d0/d13/_en_convert_8c.html#aef31fc9a98236ee1c7c49fc49fa01314", null ],
     [ "InRange", "d0/d13/_en_convert_8c.html#a712c1f9f7f2253982b40f12e4919350d", null ],
+    [ "ToHex", "d0/d13/_en_convert_8c.html#a6901ca79234cf63e033fa0d706fcded2", null ],
     [ "ToString", "d0/d13/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef", null ],
     [ "ToStringLen", "d0/d13/_en_convert_8c.html#aba54ae529e59850e3c56a0acdf6f51c6", null ],
     [ "m_ZeroPad", "d0/d13/_en_convert_8c.html#ab730950cbfb3a5e8b01b48990cb5d248", null ],

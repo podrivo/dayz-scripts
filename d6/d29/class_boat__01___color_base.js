@@ -1,6 +1,5 @@
 var class_boat__01___color_base =
 [
-    [ "Boat_01", "d6/d29/class_boat__01___color_base.html#a5c5ea1111e35d7b5f5992450bb59fc5a", null ],
     [ "CanDisplayAttachmentCategory", "d6/d29/class_boat__01___color_base.html#a06a3db5d716be7ea15854643e758147e", null ],
     [ "CanDisplayCargo", "d6/d29/class_boat__01___color_base.html#a332464243d88767eb38b990e5aa6e1a0", null ],
     [ "CanReachSeatFromSeat", "d6/d29/class_boat__01___color_base.html#a8c6990654d6a47f32b4e930a66cfad2d", null ],

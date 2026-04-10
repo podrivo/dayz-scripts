@@ -25,7 +25,8 @@ var _en_widgets_8c =
       [ "ON_LOAD", "d9/d0e/group___widget_a_p_i.html#gga322f4df297eed804e122e05824f12d42a97c150b6c6f8e0f07034f169d623589f", null ],
       [ "ON_SEEK", "d9/d0e/group___widget_a_p_i.html#gga322f4df297eed804e122e05824f12d42a57160a68ae8603dc5a64df48f966f264", null ],
       [ "ON_BUFFERING_START", "d9/d0e/group___widget_a_p_i.html#gga322f4df297eed804e122e05824f12d42a22818b188fdbea53f286074f2f4be227", null ],
-      [ "ON_BUFFERING_END", "d9/d0e/group___widget_a_p_i.html#gga322f4df297eed804e122e05824f12d42abbda6ef00389cc31511719201653b8d5", null ]
+      [ "ON_BUFFERING_END", "d9/d0e/group___widget_a_p_i.html#gga322f4df297eed804e122e05824f12d42abbda6ef00389cc31511719201653b8d5", null ],
+      [ "ON_ERROR", "d9/d0e/group___widget_a_p_i.html#gga322f4df297eed804e122e05824f12d42a3843b14ebca509f1f21f4fc05b311c74", null ]
     ] ],
     [ "VideoCommand", "d9/d0e/group___widget_a_p_i.html#ga04c094810fbccc908d892a0f9007f4c8", [
       [ "PLAY", "d9/d0e/group___widget_a_p_i.html#gga04c094810fbccc908d892a0f9007f4c8a0352906d1ea1dfcd663c918f3a86755b", null ],

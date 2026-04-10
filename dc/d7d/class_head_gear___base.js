@@ -8,8 +8,9 @@ var class_head_gear___base =
     [ "GetAttachmentExclusionInitSlotValue", "dc/d7d/class_head_gear___base.html#a513801d0273246e55305d36225ab0418", null ],
     [ "GetAttachmentExclusionInitSlotValue", "dc/d7d/class_head_gear___base.html#a513801d0273246e55305d36225ab0418", null ],
     [ "GetAttachmentExclusionInitSlotValue", "dc/d7d/class_head_gear___base.html#a513801d0273246e55305d36225ab0418", null ],
+    [ "HandleAttachedToHead", "dc/d7d/class_head_gear___base.html#a96050272f3657bfa4919c755230f51a1", null ],
     [ "InitGlobalExclusionValues", "dc/d7d/class_head_gear___base.html#abb31df34d18be9cfd04b07d55bba5eec", null ],
-    [ "OnRemovedFromHead", "dc/d7d/class_head_gear___base.html#a2c876c6e958d26237a91126f419d7267", null ],
+    [ "OnRemovedFromHead", "dc/d7d/class_head_gear___base.html#a665cca1bb04e572e72573654dde026a6", null ],
     [ "OnWasAttached", "dc/d7d/class_head_gear___base.html#ac49b1cab32f5eab70aab44528726e721", null ],
     [ "SetActions", "dc/d7d/class_head_gear___base.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
     [ "SetActions", "dc/d7d/class_head_gear___base.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
@@ -30,5 +31,6 @@ var class_head_gear___base =
     [ "SetActions", "dc/d7d/class_head_gear___base.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
     [ "SetActions", "dc/d7d/class_head_gear___base.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
     [ "SetActions", "dc/d7d/class_head_gear___base.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
-    [ "m_Player", "dc/d7d/class_head_gear___base.html#a4db3d46d75d2864daed52041fe1f0973", null ]
+    [ "SetActions", "dc/d7d/class_head_gear___base.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
+    [ "m_Player", "dc/d7d/class_head_gear___base.html#a9dd2585f9b6cb233c97468e2356201f7", null ]
 ];

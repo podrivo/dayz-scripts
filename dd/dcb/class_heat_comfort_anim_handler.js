@@ -1,8 +1,11 @@
 var class_heat_comfort_anim_handler =
 [
     [ "HeatComfortAnimHandler", "dd/dcb/class_heat_comfort_anim_handler.html#add0de2a5afeda13d141c084ed5a97651", null ],
-    [ "GetEventTime", "dd/dcb/class_heat_comfort_anim_handler.html#a93f7d0e635c89aa60a665cdbe902bcc0", null ],
+    [ "GetEventTime", "dd/dcb/class_heat_comfort_anim_handler.html#af850058b777617ea297903d2bde1b268", null ],
     [ "Process", "dd/dcb/class_heat_comfort_anim_handler.html#acadb92ff1201dbdc285f75ab2a15dadd", null ],
+    [ "ProcessFreeze", "dd/dcb/class_heat_comfort_anim_handler.html#af1b63bf792f5e404e6544e915ae596b8", null ],
+    [ "ProcessFreezeRattle", "dd/dcb/class_heat_comfort_anim_handler.html#aaf4ea48646c1731d4131fe32196b8056", null ],
+    [ "ProcessHot", "dd/dcb/class_heat_comfort_anim_handler.html#a9ffbcc7ed4e90fd3b72c8238e17a1490", null ],
     [ "Update", "dd/dcb/class_heat_comfort_anim_handler.html#aac3017eb13891cfb6f2fa614ab1879bd", null ],
     [ "m_EventTimeFreeze", "dd/dcb/class_heat_comfort_anim_handler.html#a3e3f6ea9c3c8fdca8da6510b6d10ebc3", null ],
     [ "m_EventTimeFreezeRattle", "dd/dcb/class_heat_comfort_anim_handler.html#ab8a642a8e5523be9b6c23cad52592f77", null ],

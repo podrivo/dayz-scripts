@@ -10,11 +10,12 @@ var searchData=
   ['dayzplayerconstants_7',['DayZPlayerConstants',['../d3/d58/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881',1,'dayzplayer.c']]],
   ['dayzplayerinstancetype_8',['DayZPlayerInstanceType',['../d3/d58/dayzplayer_8c.html#a6bf3172c861dd775de5c544fed868499',1,'dayzplayer.c']]],
   ['debugactiontype_9',['DebugActionType',['../d3/d13/_plugin_diag_menu_8c.html#a4d452a0b8b1cbbea4f29aac39d4aa529',1,'PluginDiagMenu.c']]],
-  ['defaultanimstate_10',['DefaultAnimState',['../d5/dcf/_rifle___base_8c.html#a532c7c848384b8db47d58161af1d602c',1,'Rifle_Base.c']]],
-  ['diagmenuids_11',['DiagMenuIDs',['../d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336',1,'EDiagMenuIDs.c']]],
-  ['direction_12',['Direction',['../d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a224b9163917ac32fc95a60d8c1eec3aa',1,'Inventory.c']]],
-  ['disconnectsessionflags_13',['DisconnectSessionFlags',['../d8/dc8/_day_z_game_8c.html#a5f3d094e70be84a89279ef9498ca62ca',1,'DayZGame.c']]],
-  ['doublebarrelanimstate_14',['DoubleBarrelAnimState',['../da/d1f/_double_barrel___base_8c.html#a4ca166e669e5c5ae6c8248d955e695a2',1,'DoubleBarrel_Base.c']]],
-  ['doublebarrelstablestateid_15',['DoubleBarrelStableStateID',['../da/d1f/_double_barrel___base_8c.html#ab188dca2aadc5be2bca374a36cce9c02',1,'DoubleBarrel_Base.c']]],
-  ['dslevels_16',['DSLevels',['../d9/de7/_display_status_8c.html#ac4601b1e14d51ce2d21de765c8ec7d6c',1,'DisplayStatus.c']]]
+  ['debugtextflags_10',['DebugTextFlags',['../d0/d62/group___debug.html#gac95a356476ef34d969e43f510b50ba95',1,'DebugTextFlags:&#160;DebugTextFlags.c'],['../d0/d62/group___debug.html#gac95a356476ef34d969e43f510b50ba95',1,'DebugTextFlags:&#160;DebugTextFlags.c']]],
+  ['defaultanimstate_11',['DefaultAnimState',['../d5/dcf/_rifle___base_8c.html#a532c7c848384b8db47d58161af1d602c',1,'Rifle_Base.c']]],
+  ['diagmenuids_12',['DiagMenuIDs',['../d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336',1,'EDiagMenuIDs.c']]],
+  ['direction_13',['Direction',['../d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a224b9163917ac32fc95a60d8c1eec3aa',1,'Inventory.c']]],
+  ['disconnectsessionflags_14',['DisconnectSessionFlags',['../d8/dc8/_day_z_game_8c.html#a5f3d094e70be84a89279ef9498ca62ca',1,'DayZGame.c']]],
+  ['doublebarrelanimstate_15',['DoubleBarrelAnimState',['../da/d1f/_double_barrel___base_8c.html#a4ca166e669e5c5ae6c8248d955e695a2',1,'DoubleBarrel_Base.c']]],
+  ['doublebarrelstablestateid_16',['DoubleBarrelStableStateID',['../da/d1f/_double_barrel___base_8c.html#ab188dca2aadc5be2bca374a36cce9c02',1,'DoubleBarrel_Base.c']]],
+  ['dslevels_17',['DSLevels',['../d9/de7/_display_status_8c.html#ac4601b1e14d51ce2d21de765c8ec7d6c',1,'DisplayStatus.c']]]
 ];

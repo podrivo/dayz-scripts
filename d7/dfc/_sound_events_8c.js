@@ -16,6 +16,7 @@ var _sound_events_8c =
     [ "PlayRequest", "d7/dfc/_sound_events_8c.html#a7b3266351c7452a10159372d3fe2b4af", null ],
     [ "PlayRequestEx", "d7/dfc/_sound_events_8c.html#aac23c22dc2fdd1663403a6837d635517", null ],
     [ "Stop", "d7/ddb/group___sound_controller.html#gaec3d6c69da12025dfcf342c7e5456d46", null ],
+    [ "StopRequest", "d7/dfc/_sound_events_8c.html#afc5c7d52a427a5d7aa15d5f516d8ea73", null ],
     [ "Tick", "d7/dfc/_sound_events_8c.html#af1c2514da5d1f25435a0ca0bfd2a1dcf", null ],
     [ "~SoundEventBase", "d7/dfc/_sound_events_8c.html#a019d2ac4273738979227a9e7f3565643", null ],
     [ "m_ID", "d7/dfc/_sound_events_8c.html#a70b4d873a188ec1c1cf110e668108020", null ],

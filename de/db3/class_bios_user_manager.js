@@ -1,5 +1,6 @@
 var class_bios_user_manager =
 [
+    [ "CheckUserSwitchResult", "de/db3/class_bios_user_manager.html#a3b0b6c19f9543fb7dac34d23a845c2a9", null ],
     [ "GetSelectedUser", "de/db3/class_bios_user_manager.html#ad21c93273b447c88260a8ccda5d17f0e", null ],
     [ "GetTitleInitiator", "de/db3/class_bios_user_manager.html#acaf09c1adf6e25a61e109f04cf0be5a5", null ],
     [ "GetUser", "de/db3/class_bios_user_manager.html#a0c45a69d2c89e86819b56e3b1698cfdb", null ],

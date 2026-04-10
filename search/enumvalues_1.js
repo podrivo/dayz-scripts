@@ -67,7 +67,7 @@ var searchData=
   ['bool_64',['BOOL',['../d4/de2/_day_z_creature_8c.html#a2c907f81daf49e6e56ae7fdce0764dbeae663dbb8f8244e122acb5bd6b2c216e1',1,'DayZCreature.c']]],
   ['boots_65',['Boots',['../d1/d0d/_day_z_anim_events_8c.html#abf5c5e3e198bab13b000991b2ea0bf8ba271b3ae6e26ac24d7b2bc802a932ce7e',1,'DayZAnimEvents.c']]],
   ['bottom_66',['BOTTOM',['../d6/d49/_e_transformation_axis_8c.html#acb95b6b3abdc25869b1293fad700bda5a8c371f4e766fb2c49c219bbc88989461',1,'ETransformationAxis.c']]],
-  ['box_67',['BOX',['../de/d65/group___world_trace.html#ggae06cbef09a3e547e760f978fa8bcfc70a222ba4e85f6d98ac78a02975d71bb945',1,'EnWorld.c']]],
+  ['box_67',['BOX',['../de/d65/group___world_trace.html#ggae06cbef09a3e547e760f978fa8bcfc70a311c29de5b0fd16d11c0cf1f98a73370',1,'BOX:&#160;EnWorld.c'],['../dc/d9f/_scripted_entity_8c.html#aaeebe0cb195464d17884b96356278c39a311c29de5b0fd16d11c0cf1f98a73370',1,'BOX:&#160;ScriptedEntity.c']]],
   ['brain_68',['BRAIN',['../d3/dfb/_e_agents_8c.html#a5a5d699a74359c32fabcdcdcbe60c1aea76f9fe311671ea68238ad7a0e8c88e5d',1,'EAgents.c']]],
   ['brake_69',['BRAKE',['../d9/d06/_car_8c.html#a7e3ece2c12d3089c67bc1cc511b5fd3ea8b23c50cc938e0b366df8d8eeeb1bf9f',1,'Car.c']]],
   ['brightening_70',['BRIGHTENING',['../d5/dfd/_light_dimming_8c.html#ab7aeccb70c1dde6ccb5d75b31d881b10ac200f55138a7d8f185ee666f982e760f',1,'LightDimming.c']]],

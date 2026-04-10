@@ -1,5 +1,6 @@
 var _boat_8c =
 [
+    [ "BoatType", "d7/d10/class_boat_type.html", null ],
     [ "BoatOwnerState", "d6/de4/class_boat_owner_state.html", null ],
     [ "BoatMove", "df/dd6/class_boat_move.html", null ],
     [ "Transport", "d3/d36/class_transport.html", "d3/d36/class_transport" ],

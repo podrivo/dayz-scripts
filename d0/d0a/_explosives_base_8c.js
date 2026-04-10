@@ -19,6 +19,7 @@ var _explosives_base_8c =
     [ "GetArmSoundset", "d0/d0a/_explosives_base_8c.html#ab04cbdee7e2e559fb20ae44f5f1376eb", null ],
     [ "GetDefused", "d0/d0a/_explosives_base_8c.html#a8ba8a611614b1f2598e88da15e7c4e46", null ],
     [ "GetDisarmSoundset", "d0/d0a/_explosives_base_8c.html#a08518f10219db5a004e26b8bbb35ce42", null ],
+    [ "GetDisarmSoundsetUnpaired", "d0/d0a/_explosives_base_8c.html#ad9edb4066886eca37561bfa73927e18f", null ],
     [ "GetParticleExplosionID", "d0/d0a/_explosives_base_8c.html#affc7280b62cb5a15f6c56c87732873f3", null ],
     [ "HasLockedTriggerSlots", "d0/d0a/_explosives_base_8c.html#ad92d68b9fe0fe2710f5ae8bf4c2373d4", null ],
     [ "Init", "d0/d0a/_explosives_base_8c.html#a1e3b6d38df0786ccf7f938d60e386aae", null ],

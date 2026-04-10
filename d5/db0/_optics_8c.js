@@ -1,6 +1,5 @@
 var _optics_8c =
 [
-    [ "Crossbow_RedpointOptic", "df/d4f/class_crossbow___redpoint_optic.html", null ],
     [ "LongrangeOptic", "d4/d53/class_longrange_optic.html", null ],
     [ "SportingOptic", "df/d7b/class_sporting_optic.html", null ],
     [ "PistolOptic", "da/d72/class_pistol_optic.html", null ],
@@ -18,6 +17,7 @@ var _optics_8c =
     [ "GetCurrentNVType", "d5/db0/_optics_8c.html#ac1e86f9f8240aa963d3f1017295d5424", null ],
     [ "InitOpticMode", "d5/db0/_optics_8c.html#ab62d58cd4b99bb7a04da7d2a581d669d", null ],
     [ "IsSightOnly", "d5/db0/_optics_8c.html#a53249bbd13f69ea4abf1222789528637", null ],
+    [ "IsUsableWithNV", "d5/db0/_optics_8c.html#ab01937cd6ef32f8dbe60b7a6377f5318", null ],
     [ "OnOpticEnter", "d5/db0/_optics_8c.html#abd3a4a614a190f02d393a9a6a7ae7425", null ],
     [ "OnOpticModeChange", "d5/db0/_optics_8c.html#a862a03ba545d3b10592f5b321fb93843", null ],
     [ "SetActions", "d5/db0/_optics_8c.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],

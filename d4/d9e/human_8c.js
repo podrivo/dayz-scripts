@@ -12,6 +12,7 @@ var human_8c =
     [ "HumanCommandWeapons", "da/dd0/class_human_command_weapons.html", "da/dd0/class_human_command_weapons" ],
     [ "HumanMovementState", "d2/d1b/class_human_movement_state.html", "d2/d1b/class_human_movement_state" ],
     [ "HumanCommandScript", "dd/d0e/class_human_command_script.html", "dd/d0e/class_human_command_script" ],
+    [ "Human", "d9/dc7/class_human.html", "d9/dc7/class_human" ],
     [ "TAnimGraphEvent", "d4/d9e/human_8c.html#aee8da4733bfcda0e97f18f43ff0ec49f", null ],
     [ "TAnimGraphTag", "d4/d9e/human_8c.html#a7d9756f7b32f53d63ff4c7d403a5bd71", null ],
     [ "TAnimGraphVariable", "d4/d9e/human_8c.html#a07b0f6aa2f618d217893f74ea864a174", null ],
@@ -54,7 +55,8 @@ var human_8c =
       [ "CHAMBERING_DOUBLE_4", "d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50a1dfd6793699a59ea3973ed0eaf85d579", null ],
       [ "CHAMBERING_CROSSBOW_OPENED", "d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50a8d2b8ae9cf9c03b17facf0318b620bc7", null ],
       [ "CHAMBERING_CROSSBOW_CLOSED", "d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50a4055b00f0d9f9847b8a9f22dc5551325", null ],
-      [ "CHAMBERING_CROSSBOW_FULL", "d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50aadd73293bca9a59d86b221f31c5593b0", null ]
+      [ "CHAMBERING_CROSSBOW_FULL", "d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50aadd73293bca9a59d86b221f31c5593b0", null ],
+      [ "CHAMBERING_DOUBLE_FIREOUT_EJECT", "d4/d9e/human_8c.html#a6a33c0b8bed2b0654c3a8b8edd8acc50ad39ef9994c069a39bedd470c2d6b2abf", null ]
     ] ],
     [ "WeaponActionFireTypes", "d4/d9e/human_8c.html#afb47cd06a4c376f519f3881f5ebeec9a", [
       [ "FIRE_NORMAL", "d4/d9e/human_8c.html#afb47cd06a4c376f519f3881f5ebeec9aa02e98c4cbb9a725a9a5af49b6cda1ff9", null ],
@@ -279,6 +281,7 @@ var human_8c =
     [ "~HumanCommandSwim", "d4/d9e/human_8c.html#a52c6536e632c2b4a374f4d8e1b482668", null ],
     [ "~HumanCommandUnconscious", "d4/d9e/human_8c.html#a63494d40b906b19faedbada647f9bb73", null ],
     [ "~HumanCommandWeapons", "d4/d9e/human_8c.html#aa373d084f08673d499172825fbb6702e", null ],
+    [ "CommandActionAdditive", "d4/d9e/human_8c.html#a314b5a2eed9614f515e4dc5497ce7bc6", null ],
     [ "CommandActionFullbody", "d4/d9e/human_8c.html#a96f9b6ed3401788557e9a53ba9ae6e2d", null ],
     [ "CommandClimb", "d4/d9e/human_8c.html#a7eb2e18747bd8a94a99c1e012d79a406", null ],
     [ "CommandDamageAdditive", "d4/d9e/human_8c.html#ad68baefd2184f587a64ac1acc5cc19d6", null ],

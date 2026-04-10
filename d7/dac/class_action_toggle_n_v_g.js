@@ -1,6 +1,5 @@
 var class_action_toggle_n_v_g =
 [
-    [ "ActionToggleNVG", "d7/dac/class_action_toggle_n_v_g.html#afac8dc31c75a1f9bf6363153e115a9d7", null ],
     [ "ActionCondition", "d7/dac/class_action_toggle_n_v_g.html#aa9aa4864fae11769c65e644b5fd97c66", null ],
     [ "CreateConditionComponents", "d7/dac/class_action_toggle_n_v_g.html#a6b922d3bb1d26f790bc52030566ba2df", null ],
     [ "GetInputType", "d7/dac/class_action_toggle_n_v_g.html#ab6eb153abc42e514909126c621d01280", null ],

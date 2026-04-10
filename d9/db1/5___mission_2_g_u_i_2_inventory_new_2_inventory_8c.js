@@ -23,6 +23,7 @@ var 5___mission_2_g_u_i_2_inventory_new_2_inventory_8c =
     [ "GetProperControllerStickAngle", "d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a753b64485f14092f223e71a844bd1b5d", null ],
     [ "GetStringVariant", "d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#aafd67307c5b7a2b43d7227c1d47f0f1c", null ],
     [ "Init", "d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a1e3b6d38df0786ccf7f938d60e386aae", null ],
+    [ "InitDragAndDropEvents", "d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a580229a77728a934d00dd53214eb1610", null ],
     [ "InitInputWrapperData", "d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#afec572a93ffca654507fd1171b1e3e04", null ],
     [ "Inventory", "d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#aa4d6b438c3e5510ab9a2b402bd0149b9", null ],
     [ "InventoryMovementButtonTickHandler", "d9/db1/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c.html#a815c53a79f35d26889ddeb55e635686b", null ],

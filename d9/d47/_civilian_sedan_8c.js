@@ -28,6 +28,7 @@ var _civilian_sedan_8c =
     [ "OnEngineStart", "d9/d47/_civilian_sedan_8c.html#a7ece25b0525b60f831b8f84e402b6f50", null ],
     [ "OnEngineStop", "d9/d47/_civilian_sedan_8c.html#aff5f5c56f35ec1a3c873d73571e50a92", null ],
     [ "OnSound", "d9/d47/_civilian_sedan_8c.html#a5c37be465cc6e029402bf4ef0895b6bf", null ],
+    [ "~CivilianSedan", "d9/d47/_civilian_sedan_8c.html#a767915456049e8852fdc929fc5a69898", null ],
     [ "m_UTSLEngine", "d9/d47/_civilian_sedan_8c.html#aebe1a74c9502b2dd3cc887aa0ded415d", null ],
     [ "m_UTSource", "d9/d47/_civilian_sedan_8c.html#a8fb6777a9fde58ec7f4d763424437f16", null ],
     [ "m_UTSSettings", "d9/d47/_civilian_sedan_8c.html#a0059eb46cde0e00387c1295f87619a71", null ]
