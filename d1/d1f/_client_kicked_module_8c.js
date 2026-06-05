@@ -25,6 +25,7 @@ var _client_kicked_module_8c =
       [ "INPUT_HACK", "d1/d1f/_client_kicked_module_8c.html#adb5510e10479c41057efebabbed5d0c4a828bc809bde9a88b37ed35d47140ef8d", null ],
       [ "QUIT", "d1/d1f/_client_kicked_module_8c.html#adb5510e10479c41057efebabbed5d0c4a76bdc8adfd6c6463ab269ff4c06be9b4", null ],
       [ "LEAVE", "d1/d1f/_client_kicked_module_8c.html#adb5510e10479c41057efebabbed5d0c4ae09e07839103de682cb13fa773793fc0", null ],
+      [ "PLATFORM_NOT_SUPPORTED", "d1/d1f/_client_kicked_module_8c.html#adb5510e10479c41057efebabbed5d0c4a591340fc75536fe077f5aeb90a1f54f8", null ],
       [ "LOGIN_MACHINE_ERROR", "d1/d1f/_client_kicked_module_8c.html#adb5510e10479c41057efebabbed5d0c4af0b9fd770f55e9307d1c2ab96ee9e9d8", null ],
       [ "PLAYER_STATE_TIMEOUT", "d1/d1f/_client_kicked_module_8c.html#adb5510e10479c41057efebabbed5d0c4a2af1839669a31efde99bf9ec5d1810be", null ],
       [ "IDENTITY_NOT_CREATED", "d1/d1f/_client_kicked_module_8c.html#adb5510e10479c41057efebabbed5d0c4a1a82a2c16c3267f3619fd4c165ec5dec", null ],

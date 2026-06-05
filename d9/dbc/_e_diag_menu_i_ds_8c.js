@@ -209,6 +209,7 @@ var _e_diag_menu_i_ds_8c =
       [ "FEATURE_TIME_ACCEL_DYNAMIC_MUSIC_PLAYER", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336a78e8f3debb59a6e30737fdf63e8df8be", null ],
       [ "MATERIALDIAG_MENU", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336a71c901bcc8a7d6a7175006c04fd9838f", null ],
       [ "MATERIALDIAG_GHOSTPP", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336aca6b646546c41c0b9f86fb58bfae7a5a", null ],
+      [ "SERVER_BROWSER_DUMMY_SERVERS", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336a6da37fd2393a341c16fbc556f9321275", null ],
       [ "MODDED_MENU", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336af9406c6e0241e0a42c23afdce3ee8ae4", null ]
     ] ]
 ];

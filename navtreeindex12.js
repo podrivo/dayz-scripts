@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"d1/d33/class_handcuff_keys.html#afa39b7c4d3d085ef8514a87c32b81a4d":[2,0,1508,0],
 "d1/d33/class_nurse_dress___color_base.html":[2,0,2066],
 "d1/d33/class_payday_mask___color_base.html":[2,0,2144],
 "d1/d33/class_payday_mask___color_base.html#a513801d0273246e55305d36225ab0418":[2,0,2144,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "d1/d48/class_grenade___base.html#a8101a6c3a5c28d889a4ed277a1c835a6":[2,0,1500,22],
 "d1/d48/class_grenade___base.html#a86436899f551bf991adc435fd991c8bb":[2,0,1500,17],
 "d1/d48/class_grenade___base.html#a8d890470681b5857b600cb950b0a1744":[2,0,1500,42],
-"d1/d48/class_grenade___base.html#aabc61918930d189d63a9314ad8eb14da":[2,0,1500,18],
-"d1/d48/class_grenade___base.html#aacae40a2ecdbf8245c9877991e8d3e3f":[2,0,1500,4]
+"d1/d48/class_grenade___base.html#aabc61918930d189d63a9314ad8eb14da":[2,0,1500,18]
 };

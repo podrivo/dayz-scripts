@@ -111,6 +111,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a4fac4e6fb69ccadcb6af752d64cb34ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0dd1a42da302f1113f8204c42fef028"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ac0dd1a42da302f1113f8204c42fef028">HandleThrowing</a> (<a class="el" href="../../d7/d1b/class_human_input_controller.html">HumanInputController</a> pHic, <a class="el" href="../../da/dd0/class_human_command_weapons.html">HumanCommandWeapons</a> pHcw, <a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> pEntityInHands, <a class="el" href="../../d4/dc3/classfloat.html">float</a> pDt)</td></tr>
 <tr class="separator:ac0dd1a42da302f1113f8204c42fef028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7e2cb12337e5a8c60d330ce9beff043"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#af7e2cb12337e5a8c60d330ce9beff043">CancelThrowing</a> (<a class="el" href="../../d7/d1b/class_human_input_controller.html">HumanInputController</a> pHic, <a class="el" href="../../da/dd0/class_human_command_weapons.html">HumanCommandWeapons</a> pHcw)</td></tr>
+<tr class="separator:af7e2cb12337e5a8c60d330ce9beff043"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3017f5ad030037b662318e0721746e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ad3017f5ad030037b662318e0721746e1">ResetState</a> ()</td></tr>
 <tr class="separator:ad3017f5ad030037b662318e0721746e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d1ff3871cbb91614eb400895ec8e07f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a6d1ff3871cbb91614eb400895ec8e07f">SetThrowingModeEnabled</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> enable)</td></tr>
@@ -181,6 +183,46 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af7e2cb12337e5a8c60d330ce9beff043" name="af7e2cb12337e5a8c60d330ce9beff043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7e2cb12337e5a8c60d330ce9beff043">&#9670;&#160;</a></span>CancelThrowing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CancelThrowing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d1b/class_human_input_controller.html">HumanInputController</a>&#160;</td>
+          <td class="paramname"><em>pHic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/dd0/class_human_command_weapons.html">HumanCommandWeapons</a>&#160;</td>
+          <td class="paramname"><em>pHcw</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ad3017f5ad030037b662318e0721746e1">ResetState()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a96df61cc36a29a27e49e6f096c80ad09">HumanInputController::ResetThrowingMode()</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#a3c437c2db48c4adfa0ed581a16642901">HumanCommandWeapons::SetActionProgressParams()</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#a3ccd6f9e7a03bccf94cb41bd3d8525eb">HumanCommandWeapons::SetThrowingMode()</a>, and <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a6d1ff3871cbb91614eb400895ec8e07f">SetThrowingModeEnabled()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ac0dd1a42da302f1113f8204c42fef028">HandleThrowing()</a>.</p>
+
+</div>
+</div>
 <a id="ad7b0019a897d667e3f865e9518e7d77d" name="ad7b0019a897d667e3f865e9518e7d77d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad7b0019a897d667e3f865e9518e7d77d">&#9670;&#160;</a></span>CanChangeThrowingStance()</h2>
 
@@ -235,7 +277,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a3e109f989087b1d071deef0c77f2f95b">CheckFreeSpace()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#af8bdee9c161fc37eaabe2b2975160702">HumanInputController::IsWeaponRaised()</a>, <a class="el" href="../../d1/d74/class_human_item_behavior_cfg.html#ab6abd4eddbf0cd895b02788ee5b796eb">HumanItemBehaviorCfg::m_iType</a>, and <a class="el" href="../../d3/d86/class_u_a_interface.html#a2646b46a647e7eaf020eee0af662c831">UAInterface::SyncedPress()</a>.</p>
+<p class="reference">References <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a3e109f989087b1d071deef0c77f2f95b">CheckFreeSpace()</a>, <a class="el" href="../../dd/db0/class_human_command_move.html#aa644dd348335ef79db4a10fc8416c870">HumanCommandMove::IsChangingStance()</a>, <a class="el" href="../../dd/db0/class_human_command_move.html#a6c8c7494afbf83f1e61d9bbfdcaa36a6">HumanCommandMove::IsStandingFromBack()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#af8bdee9c161fc37eaabe2b2975160702">HumanInputController::IsWeaponRaised()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a56f36807400b537dc6aa4b5a9e45beb5">m_bThrowingInProgress</a>, <a class="el" href="../../d1/d74/class_human_item_behavior_cfg.html#ab6abd4eddbf0cd895b02788ee5b796eb">HumanItemBehaviorCfg::m_iType</a>, and <a class="el" href="../../d3/d86/class_u_a_interface.html#a2646b46a647e7eaf020eee0af662c831">UAInterface::SyncedPress()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ae64e25c2300b8f317d71aff90c3a4a6b">CanContinueThrowingEx()</a>.</p>
 
@@ -361,8 +403,9 @@ Private Attributes</h2></td></tr>
 <p>cancel throwing in case of raising hands or heavy item in hands</p>
 <p>check event for throw</p>
 <p>handle throw force</p>
+<p>bad transition: prone-on-back -&gt; crouch/stand while throw wind-up is active</p>
 
-<p class="reference">References <a class="el" href="../../d7/dfc/classvector.html#a62993545b7e0017e827ba3627da347f3">vector::AnglesToVector()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a2926f09640e27fd83d144907cbfb73cc">c_fThrowingForceCoef</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a88156b71e0642b920e6b7ef3a00319ef">c_fThrowingForceMax</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a5f8def9cb00d6ce773858575a0a6d54a">c_fThrowingForceMin</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ad7b0019a897d667e3f865e9518e7d77d">CanChangeThrowingStance()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ae64e25c2300b8f317d71aff90c3a4a6b">CanContinueThrowingEx()</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#aa3d07983643d95f8ca32f5bd47627d4d">HumanCommandWeapons::GetBaseAimingAngleLR()</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#a96e80198781e2bd6e30b1bbc3bc185bd">HumanCommandWeapons::GetBaseAimingAngleUD()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a422fac91511179cb5d4e5dfbd29829a1">HumanInputController::IsAttackButton()</a>, <a class="el" href="../../dd/db0/class_human_command_move.html#a6c8c7494afbf83f1e61d9bbfdcaa36a6">HumanCommandMove::IsStandingFromBack()</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#a43c60b32542ae528fb2bdcce8eb591a9">HumanCommandWeapons::IsThrowingMode()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#aeaf3a83c1c911e7b6fc6449d1618e1d7">HumanInputController::IsThrowingModeChange()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a304d528dc36d2d72e89dd042fc5262b3">m_bThrowingAnimationPlaying</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a56f36807400b537dc6aa4b5a9e45beb5">m_bThrowingInProgress</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a623672aa3011bee4c3b6703365b9d21f">m_bThrowingModeEnabled</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#afae572c04e120c156f72a4afc5697611">m_fThrowingForce01</a>, <a class="el" href="../../d1/d74/class_human_item_behavior_cfg.html#ab6abd4eddbf0cd895b02788ee5b796eb">HumanItemBehaviorCfg::m_iType</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ad3017f5ad030037b662318e0721746e1">ResetState()</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#a3c437c2db48c4adfa0ed581a16642901">HumanCommandWeapons::SetActionProgressParams()</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#a3ccd6f9e7a03bccf94cb41bd3d8525eb">HumanCommandWeapons::SetThrowingMode()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a6d1ff3871cbb91614eb400895ec8e07f">SetThrowingModeEnabled()</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#a1ca462d0131f92c7f48c8f322ce0c54b">HumanCommandWeapons::ThrowItem()</a>, and <a class="el" href="../../da/dd0/class_human_command_weapons.html#a134b31e7f44e4c9a7e2646ea0446c81c">HumanCommandWeapons::WasItemLeaveHandsEvent()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/dfc/classvector.html#a62993545b7e0017e827ba3627da347f3">vector::AnglesToVector()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a2926f09640e27fd83d144907cbfb73cc">c_fThrowingForceCoef</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a88156b71e0642b920e6b7ef3a00319ef">c_fThrowingForceMax</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a5f8def9cb00d6ce773858575a0a6d54a">c_fThrowingForceMin</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#af7e2cb12337e5a8c60d330ce9beff043">CancelThrowing()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ad7b0019a897d667e3f865e9518e7d77d">CanChangeThrowingStance()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ae64e25c2300b8f317d71aff90c3a4a6b">CanContinueThrowingEx()</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#aa3d07983643d95f8ca32f5bd47627d4d">HumanCommandWeapons::GetBaseAimingAngleLR()</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#a96e80198781e2bd6e30b1bbc3bc185bd">HumanCommandWeapons::GetBaseAimingAngleUD()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#a422fac91511179cb5d4e5dfbd29829a1">HumanInputController::IsAttackButton()</a>, <a class="el" href="../../dd/db0/class_human_command_move.html#a6c8c7494afbf83f1e61d9bbfdcaa36a6">HumanCommandMove::IsStandingFromBack()</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#a43c60b32542ae528fb2bdcce8eb591a9">HumanCommandWeapons::IsThrowingMode()</a>, <a class="el" href="../../d7/d1b/class_human_input_controller.html#aeaf3a83c1c911e7b6fc6449d1618e1d7">HumanInputController::IsThrowingModeChange()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a304d528dc36d2d72e89dd042fc5262b3">m_bThrowingAnimationPlaying</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a56f36807400b537dc6aa4b5a9e45beb5">m_bThrowingInProgress</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a623672aa3011bee4c3b6703365b9d21f">m_bThrowingModeEnabled</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#afae572c04e120c156f72a4afc5697611">m_fThrowingForce01</a>, <a class="el" href="../../d1/d74/class_human_item_behavior_cfg.html#ab6abd4eddbf0cd895b02788ee5b796eb">HumanItemBehaviorCfg::m_iType</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ad3017f5ad030037b662318e0721746e1">ResetState()</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#a3c437c2db48c4adfa0ed581a16642901">HumanCommandWeapons::SetActionProgressParams()</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#a3ccd6f9e7a03bccf94cb41bd3d8525eb">HumanCommandWeapons::SetThrowingMode()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a6d1ff3871cbb91614eb400895ec8e07f">SetThrowingModeEnabled()</a>, <a class="el" href="../../da/dd0/class_human_command_weapons.html#a1ca462d0131f92c7f48c8f322ce0c54b">HumanCommandWeapons::ThrowItem()</a>, and <a class="el" href="../../da/dd0/class_human_command_weapons.html#a134b31e7f44e4c9a7e2646ea0446c81c">HumanCommandWeapons::WasItemLeaveHandsEvent()</a>.</p>
 
 </div>
 </div>
@@ -476,7 +519,7 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a304d528dc36d2d72e89dd042fc5262b3">m_bThrowingAnimationPlaying</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a56f36807400b537dc6aa4b5a9e45beb5">m_bThrowingInProgress</a>, and <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#afae572c04e120c156f72a4afc5697611">m_fThrowingForce01</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a4fac4e6fb69ccadcb6af752d64cb34ba">DayZPlayerImplementThrowing()</a>, and <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ac0dd1a42da302f1113f8204c42fef028">HandleThrowing()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#af7e2cb12337e5a8c60d330ce9beff043">CancelThrowing()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a4fac4e6fb69ccadcb6af752d64cb34ba">DayZPlayerImplementThrowing()</a>, and <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ac0dd1a42da302f1113f8204c42fef028">HandleThrowing()</a>.</p>
 
 </div>
 </div>
@@ -506,7 +549,7 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a623672aa3011bee4c3b6703365b9d21f">m_bThrowingModeEnabled</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a4fac4e6fb69ccadcb6af752d64cb34ba">DayZPlayerImplementThrowing()</a>, and <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ac0dd1a42da302f1113f8204c42fef028">HandleThrowing()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#af7e2cb12337e5a8c60d330ce9beff043">CancelThrowing()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a4fac4e6fb69ccadcb6af752d64cb34ba">DayZPlayerImplementThrowing()</a>, and <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ac0dd1a42da302f1113f8204c42fef028">HandleThrowing()</a>.</p>
 
 </div>
 </div>
@@ -627,7 +670,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ac0dd1a42da302f1113f8204c42fef028">HandleThrowing()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a19ad2e3fa5e65049c93446d0ef0ed21d">IsThrowingInProgress()</a>, and <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ad3017f5ad030037b662318e0721746e1">ResetState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ab3968ce2a27e58c2d8a3d8c2ec88414c">CanContinueThrowing()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ac0dd1a42da302f1113f8204c42fef028">HandleThrowing()</a>, <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#a19ad2e3fa5e65049c93446d0ef0ed21d">IsThrowingInProgress()</a>, and <a class="el" href="../../db/d76/class_day_z_player_implement_throwing.html#ad3017f5ad030037b662318e0721746e1">ResetState()</a>.</p>
 
 </div>
 </div>

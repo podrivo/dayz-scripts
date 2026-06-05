@@ -4,6 +4,7 @@ var _action_drop_item_8c =
     [ "ActionCondition", "d1/da6/_action_drop_item_8c.html#aa9aa4864fae11769c65e644b5fd97c66", null ],
     [ "ActionConditionContinue", "d1/da6/_action_drop_item_8c.html#a1f7399d8d410ac172ef0e5f4c4bbb4eb", null ],
     [ "ActionDropItem", "d1/da6/_action_drop_item_8c.html#a374607551aefc1bc61dad1b9ce7c32dd", null ],
+    [ "CanBePerformedWhileChangingStance", "d1/da6/_action_drop_item_8c.html#accb8190d0d55d223b47c79eda8f8e42d", null ],
     [ "CanBeUsedThrowing", "d1/da6/_action_drop_item_8c.html#a37aad43791d628a6b1e2735bcea2ad45", null ],
     [ "CreateConditionComponents", "d1/da6/_action_drop_item_8c.html#a6b922d3bb1d26f790bc52030566ba2df", null ],
     [ "GetInputType", "d1/da6/_action_drop_item_8c.html#ab6eb153abc42e514909126c621d01280", null ],

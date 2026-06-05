@@ -1,12 +1,12 @@
 var class_server_browser_tab =
 [
-    [ "~ServerBrowserTabPc", "d9/de0/class_server_browser_tab.html#a9332c7c83501739b9a7b23ece510e949", null ],
     [ "AddSorted", "d9/de0/class_server_browser_tab.html#a6d353b175d28790f5b2dce0a104af91b", null ],
     [ "ApplyFilters", "d9/de0/class_server_browser_tab.html#a91289e01e13839a15bde6f268a686696", null ],
     [ "ApplyFilters", "d9/de0/class_server_browser_tab.html#a91289e01e13839a15bde6f268a686696", null ],
     [ "ApplyFilters", "d9/de0/class_server_browser_tab.html#a91289e01e13839a15bde6f268a686696", null ],
     [ "ButtonCancelToRefresh", "d9/de0/class_server_browser_tab.html#ae657f37c1d7fe4236fd93d33ba5916a3", null ],
     [ "ButtonRefreshToCancel", "d9/de0/class_server_browser_tab.html#a371fe7f0686e12e2fadc136a4641089f", null ],
+    [ "CanNavigatePages", "d9/de0/class_server_browser_tab.html#ab0eb39bce367863e3ad6398bbd2888b1", null ],
     [ "CanRefreshServerList", "d9/de0/class_server_browser_tab.html#a5bd87f7345d6a54ebbf1d80ea1083123", null ],
     [ "ColorDisable", "d9/de0/class_server_browser_tab.html#a1b1e080697e8227329c74c0c47972433", null ],
     [ "ColorDisable", "d9/de0/class_server_browser_tab.html#a1b1e080697e8227329c74c0c47972433", null ],
@@ -19,6 +19,7 @@ var class_server_browser_tab =
     [ "Construct", "d9/de0/class_server_browser_tab.html#aa26620c8decf025d04cd1e4c6e1ea9ea", null ],
     [ "Focus", "d9/de0/class_server_browser_tab.html#abcb3ce015f8fe4e4dc6db7f8de9649b8", null ],
     [ "Focus", "d9/de0/class_server_browser_tab.html#abcb3ce015f8fe4e4dc6db7f8de9649b8", null ],
+    [ "GetPagesCount", "d9/de0/class_server_browser_tab.html#a1dc0ad61b3da5feb57ba91f03777baca", null ],
     [ "GetServerEntryByIndex", "d9/de0/class_server_browser_tab.html#a0aad47780d30d6f995b381bba9209602", null ],
     [ "GetServerEntryByIndex", "d9/de0/class_server_browser_tab.html#a5cc3be6bdc9a766509458eb837cafef4", null ],
     [ "GetTimeOfDayEnum", "d9/de0/class_server_browser_tab.html#ae8aff89c634b255acfa0da85a747b4aa", null ],
