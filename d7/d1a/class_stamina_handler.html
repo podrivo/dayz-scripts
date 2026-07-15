@@ -212,6 +212,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a47285463bfe4d8b3ac25c4f463358cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a035dcf4a834241f8d795464f8d0320"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#a8a035dcf4a834241f8d795464f8d0320">ReplayMove</a> (PlayerBaseMove move)</td></tr>
 <tr class="separator:a8a035dcf4a834241f8d795464f8d0320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02da7e7e25f33b91bb139f105baf4097"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#a02da7e7e25f33b91bb139f105baf4097">MarkLoadDirty</a> ()</td></tr>
+<tr class="separator:a02da7e7e25f33b91bb139f105baf4097"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76a54764a70a5f4328e11d863548852f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#a76a54764a70a5f4328e11d863548852f">DepleteStamina</a> (<a class="el" href="../../d0/d86/_e_stamina_modifiers_8c.html#a183e748e7ec1eb63d8f8089ca07f69f2">EStaminaModifiers</a> modifier, <a class="el" href="../../d4/dc3/classfloat.html">float</a> dT=-1)</td></tr>
 <tr class="separator:a76a54764a70a5f4328e11d863548852f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a971ea67ff4c3c8c5e203de03274c5db2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#a971ea67ff4c3c8c5e203de03274c5db2">OnRPC</a> (<a class="el" href="../../d4/dc3/classfloat.html">float</a> stamina, <a class="el" href="../../d4/dc3/classfloat.html">float</a> stamina_cap, <a class="el" href="../../d9/db9/classbool.html">bool</a> cooldown)</td></tr>
@@ -223,6 +225,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:adf0b6bbc0c7d5c848a675ca938e62ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ab80df1d5c1e006ef141403babb1764"><td class="memItemLeft" align="right" valign="top">protected const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#a0ab80df1d5c1e006ef141403babb1764">STAMINA_GAIN_MODIFIER</a> = 10.0</td></tr>
 <tr class="separator:a0ab80df1d5c1e006ef141403babb1764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16969b7351dfab38e33bfb0b13dd28ad"><td class="memItemLeft" align="right" valign="top">protected const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#a16969b7351dfab38e33bfb0b13dd28ad">LOAD_DIFF_UPDATE_THRESHOLD</a> = 1.0</td></tr>
+<tr class="separator:a16969b7351dfab38e33bfb0b13dd28ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fc6239fdd348b27afc1ffde933e157d"><td class="memItemLeft" align="right" valign="top">protected const <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#a2fc6239fdd348b27afc1ffde933e157d">LOAD_DIFF_CAP_UPDATE_THRESHOLD</a> = 0.01</td></tr>
+<tr class="separator:a2fc6239fdd348b27afc1ffde933e157d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabfbab7933cf627cb48af009cf0e58d8"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#aabfbab7933cf627cb48af009cf0e58d8">m_InitUpdate</a></td></tr>
 <tr class="separator:aabfbab7933cf627cb48af009cf0e58d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a150ae3ff94eb32d3baabda0c6213e131"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#a150ae3ff94eb32d3baabda0c6213e131">m_PlayerLoad</a></td></tr>
@@ -289,6 +295,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a835cfe379d2b7f07e73814e61566c9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40c874c41138a9c3f3b5f71eed2a0188"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#a40c874c41138a9c3f3b5f71eed2a0188">m_MovementStateChanged</a> = true</td></tr>
 <tr class="separator:a40c874c41138a9c3f3b5f71eed2a0188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a084cadfdd397ec524858daaf79396a89"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#a084cadfdd397ec524858daaf79396a89">m_ForceLoadRecheck</a></td></tr>
+<tr class="separator:a084cadfdd397ec524858daaf79396a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe8f1adf44fe8362e05d28db314c024d"><td class="memItemLeft" align="right" valign="top">protected <a class="el" href="../../d9/db9/classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/class_stamina_handler.html#afe8f1adf44fe8362e05d28db314c024d">m_Debug</a></td></tr>
 <tr class="separator:afe8f1adf44fe8362e05d28db314c024d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -317,7 +325,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d7/dbe/class_cfg_gameplay_handler.html#af7551149dd6e02805b49a51851966cc4">CfgGameplayHandler::GetStaminaMax()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a1e3b6d38df0786ccf7f938d60e386aae">Init()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aa6bf6764cb8f8b7410b67388ca8f6deb">m_ActiveDepletionModifiers</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#af722aadfc96405efe2a4b7bc6941bc19">m_ActiveRecoveryModifiers</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a71b6c02fe0d102a7ec7e1a3d57dae728">m_CooldownMap</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a1330b8cc9d4ec824151ba301f96b7454">m_HumanMoveSettings</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aabfbab7933cf627cb48af009cf0e58d8">m_InitUpdate</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a59f0475e15fc03f18195a92828d752df">m_IsInCooldown</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ab4f1e14d03df4da22dbaf8f09f5ed0ea">m_IsStaminaGainBonusCached</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a0aef03d2d4f2db9aea634262e2f48b16">m_RegisteredDepletionModifiers</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a9b544a5af2054bda7068fb0c8445cb50">m_RegisteredRecoveryModifiers</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a194a751b8acfb2ac435f91980cc8b3cd">m_Stamina</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ae0982e67800189788a74fbf82e11dc70">m_StaminaCap</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a94fb92834d7d192ba7cd6c00df1305cd">m_StaminaCapSynced</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2205b8104f33caaed2a177dcb71f7a05">m_StaminaDepleted</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a9f963623d82db98287288ec2ce8c90a0">m_StaminaDepletion</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2bb9c953fc02d335cba950124210848f">m_StaminaDepletionMultiplier</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#acd888af8a9f94b702f6789d2028a5dd5">m_StaminaDepletionMultiplierNext</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#adaedc52f280c3f5db36bbe12dd7f03f6">m_StaminaParams</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aaf48908dc1a51cb5ed706216da23ad25">m_StaminaRecoveryMultiplier</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aba033be1ab2526b6c8a96f26b7157874">m_StaminaRecoveryMultiplierNext</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a8d966e00e1b321d2c790a6897949ae60">m_StaminaSynced</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aff669510956ec2c2cc6c60ed37ca7d63">m_State</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2d2e872d4a5c7f9c28009b5890ecca76">m_Time</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2c04e3e6af0b62353ad1e54edd74ab86">RegisterStaminaConsumers()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a4b7a5584f50e1e07d23d6514cd8072cc">RegisterStaminaModifiers()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, <a class="el" href="../../d7/dbe/class_cfg_gameplay_handler.html#af7551149dd6e02805b49a51851966cc4">CfgGameplayHandler::GetStaminaMax()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a1e3b6d38df0786ccf7f938d60e386aae">Init()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aa6bf6764cb8f8b7410b67388ca8f6deb">m_ActiveDepletionModifiers</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#af722aadfc96405efe2a4b7bc6941bc19">m_ActiveRecoveryModifiers</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a71b6c02fe0d102a7ec7e1a3d57dae728">m_CooldownMap</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a1330b8cc9d4ec824151ba301f96b7454">m_HumanMoveSettings</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aabfbab7933cf627cb48af009cf0e58d8">m_InitUpdate</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a59f0475e15fc03f18195a92828d752df">m_IsInCooldown</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ab4f1e14d03df4da22dbaf8f09f5ed0ea">m_IsStaminaGainBonusCached</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a0aef03d2d4f2db9aea634262e2f48b16">m_RegisteredDepletionModifiers</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a9b544a5af2054bda7068fb0c8445cb50">m_RegisteredRecoveryModifiers</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a194a751b8acfb2ac435f91980cc8b3cd">m_Stamina</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ae0982e67800189788a74fbf82e11dc70">m_StaminaCap</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a94fb92834d7d192ba7cd6c00df1305cd">m_StaminaCapSynced</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2205b8104f33caaed2a177dcb71f7a05">m_StaminaDepleted</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a9f963623d82db98287288ec2ce8c90a0">m_StaminaDepletion</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2bb9c953fc02d335cba950124210848f">m_StaminaDepletionMultiplier</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#acd888af8a9f94b702f6789d2028a5dd5">m_StaminaDepletionMultiplierNext</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#adaedc52f280c3f5db36bbe12dd7f03f6">m_StaminaParams</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aaf48908dc1a51cb5ed706216da23ad25">m_StaminaRecoveryMultiplier</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aba033be1ab2526b6c8a96f26b7157874">m_StaminaRecoveryMultiplierNext</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a8d966e00e1b321d2c790a6897949ae60">m_StaminaSynced</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aff669510956ec2c2cc6c60ed37ca7d63">m_State</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2d2e872d4a5c7f9c28009b5890ecca76">m_Time</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a02da7e7e25f33b91bb139f105baf4097">MarkLoadDirty()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2c04e3e6af0b62353ad1e54edd74ab86">RegisterStaminaConsumers()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a4b7a5584f50e1e07d23d6514cd8072cc">RegisterStaminaModifiers()</a>.</p>
 
 </div>
 </div>
@@ -344,7 +352,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d7/d1a/class_stamina_handler.html#a71b6c02fe0d102a7ec7e1a3d57dae728">m_CooldownMap</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d1a/class_stamina_handler.html#a71b6c02fe0d102a7ec7e1a3d57dae728">m_CooldownMap</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a02da7e7e25f33b91bb139f105baf4097">MarkLoadDirty()</a>.</p>
 
 </div>
 </div>
@@ -997,6 +1005,35 @@ Private Attributes</h2></td></tr>
 <p class="reference">References <a class="el" href="../../d7/d1a/class_stamina_handler.html#a0aef03d2d4f2db9aea634262e2f48b16">m_RegisteredDepletionModifiers</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a9b544a5af2054bda7068fb0c8445cb50">m_RegisteredRecoveryModifiers</a>, <a class="el" href="../../d6/d0f/class_mask_mdfr.html#a6c260cc560323e19d1baf9aa56207459">MaskMdfr::STAMINA_DEPLETION_MODIFIER</a>, <a class="el" href="../../d3/d85/class_fatigue_mdfr.html#a90a86f8c53f14ceb42838290b978d999">FatigueMdfr::STAMINA_DEPLETION_MULTIPLIER</a>, <a class="el" href="../../d6/d78/class_pneumonia_mdfr.html#a90a86f8c53f14ceb42838290b978d999">PneumoniaMdfr::STAMINA_DEPLETION_MULTIPLIER</a>, <a class="el" href="../../de/d92/class_epinephrine_mdfr.html#a90a86f8c53f14ceb42838290b978d999">EpinephrineMdfr::STAMINA_DEPLETION_MULTIPLIER</a>, <a class="el" href="../../d1/d67/class_vomit_symptom.html#a90a86f8c53f14ceb42838290b978d999">VomitSymptom::STAMINA_DEPLETION_MULTIPLIER</a>, <a class="el" href="../../d6/d0f/class_mask_mdfr.html#aae6e0c0499bfc8e8c751ee521189651e">MaskMdfr::STAMINA_RECOVERY_MODIFIER</a>, <a class="el" href="../../d3/d85/class_fatigue_mdfr.html#af7eb103197c4e07f2ade53ee4e3c8d26">FatigueMdfr::STAMINA_RECOVERY_MULTIPLIER</a>, <a class="el" href="../../d6/d78/class_pneumonia_mdfr.html#af7eb103197c4e07f2ade53ee4e3c8d26">PneumoniaMdfr::STAMINA_RECOVERY_MULTIPLIER</a>, <a class="el" href="../../df/d8b/class_drowning_mdfr.html#af7eb103197c4e07f2ade53ee4e3c8d26">DrowningMdfr::STAMINA_RECOVERY_MULTIPLIER</a>, and <a class="el" href="../../d1/d67/class_vomit_symptom.html#af7eb103197c4e07f2ade53ee4e3c8d26">VomitSymptom::STAMINA_RECOVERY_MULTIPLIER</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2ce45055f32839c53ed593c6ca9951b9">StaminaHandler()</a>.</p>
+
+</div>
+</div>
+<a id="a02da7e7e25f33b91bb139f105baf4097" name="a02da7e7e25f33b91bb139f105baf4097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02da7e7e25f33b91bb139f105baf4097">&#9670;&#160;</a></span>MarkLoadDirty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MarkLoadDirty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../d7/d1a/class_stamina_handler.html#a084cadfdd397ec524858daaf79396a89">m_ForceLoadRecheck</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2ce45055f32839c53ed593c6ca9951b9">StaminaHandler()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a14d88c3124d2641cdf8fa1202622dc1b">~StaminaHandler()</a>.</p>
 
 </div>
 </div>
@@ -1809,7 +1846,7 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d7/d1a/class_stamina_handler.html#a59f0475e15fc03f18195a92828d752df">m_IsInCooldown</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a194a751b8acfb2ac435f91980cc8b3cd">m_Stamina</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ae0982e67800189788a74fbf82e11dc70">m_StaminaCap</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a68d5636d12bd620444e0104c571f7cbc">SyncStamina()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a738b8af3ee981db1de0e5473814bcd56">ProcessStaminaChanges()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a7127f8563d60e099677fdd8928c7eff5">SetStamina()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a738b8af3ee981db1de0e5473814bcd56">ProcessStaminaChanges()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a7127f8563d60e099677fdd8928c7eff5">SetStamina()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
 
 </div>
 </div>
@@ -1846,15 +1883,62 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>gets the actual players load</p>
 
-<p class="reference">References <a class="el" href="../../d7/d1a/class_stamina_handler.html#a910d22c99f7fb0ee3d64428220423177">ApplyExhaustion()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aadfa5cc529779426c3e9cdf12d7e72ac">CheckStaminaState()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a0a5a8709c1189de277faa1f7b646b476">HasMovementStateChanged()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a71b6c02fe0d102a7ec7e1a3d57dae728">m_CooldownMap</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aabfbab7933cf627cb48af009cf0e58d8">m_InitUpdate</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a59f0475e15fc03f18195a92828d752df">m_IsInCooldown</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ab4f1e14d03df4da22dbaf8f09f5ed0ea">m_IsStaminaGainBonusCached</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a37fc9359bae4d90cebec00ab45bcac4a">m_LastPlayerLoad</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a40c874c41138a9c3f3b5f71eed2a0188">m_MovementStateChanged</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a150ae3ff94eb32d3baabda0c6213e131">m_PlayerLoad</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a194a751b8acfb2ac435f91980cc8b3cd">m_Stamina</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ae0982e67800189788a74fbf82e11dc70">m_StaminaCap</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a94fb92834d7d192ba7cd6c00df1305cd">m_StaminaCapSynced</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ab5fdbe04bfce87a19966a53b0fc1d51d">m_StaminaDelta</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a9f963623d82db98287288ec2ce8c90a0">m_StaminaDepletion</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a8d966e00e1b321d2c790a6897949ae60">m_StaminaSynced</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a1865e1ad1222661797b8ddd213118699">ProcessMovementState()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a738b8af3ee981db1de0e5473814bcd56">ProcessStaminaChanges()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ab9a768ee41a57f7124119d34d7c475dd">RecalculateStaminaCap()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#aa98e8bbba43315b844fb21ba6b9ff65f">ResetCooldown()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d98/group___math.html#gaae5a8127fc6393d55122ac12f2d16c16">Math::AbsFloat()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a910d22c99f7fb0ee3d64428220423177">ApplyExhaustion()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aadfa5cc529779426c3e9cdf12d7e72ac">CheckStaminaState()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a0a5a8709c1189de277faa1f7b646b476">HasMovementStateChanged()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2fc6239fdd348b27afc1ffde933e157d">LOAD_DIFF_CAP_UPDATE_THRESHOLD</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a16969b7351dfab38e33bfb0b13dd28ad">LOAD_DIFF_UPDATE_THRESHOLD</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a71b6c02fe0d102a7ec7e1a3d57dae728">m_CooldownMap</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a084cadfdd397ec524858daaf79396a89">m_ForceLoadRecheck</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aabfbab7933cf627cb48af009cf0e58d8">m_InitUpdate</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a59f0475e15fc03f18195a92828d752df">m_IsInCooldown</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ab4f1e14d03df4da22dbaf8f09f5ed0ea">m_IsStaminaGainBonusCached</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a37fc9359bae4d90cebec00ab45bcac4a">m_LastPlayerLoad</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a40c874c41138a9c3f3b5f71eed2a0188">m_MovementStateChanged</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a150ae3ff94eb32d3baabda0c6213e131">m_PlayerLoad</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a194a751b8acfb2ac435f91980cc8b3cd">m_Stamina</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ae0982e67800189788a74fbf82e11dc70">m_StaminaCap</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a94fb92834d7d192ba7cd6c00df1305cd">m_StaminaCapSynced</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ab5fdbe04bfce87a19966a53b0fc1d51d">m_StaminaDelta</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a9f963623d82db98287288ec2ce8c90a0">m_StaminaDepletion</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a8d966e00e1b321d2c790a6897949ae60">m_StaminaSynced</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2d2e872d4a5c7f9c28009b5890ecca76">m_Time</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a1865e1ad1222661797b8ddd213118699">ProcessMovementState()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a738b8af3ee981db1de0e5473814bcd56">ProcessStaminaChanges()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#ab9a768ee41a57f7124119d34d7c475dd">RecalculateStaminaCap()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#aa98e8bbba43315b844fb21ba6b9ff65f">ResetCooldown()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#ac6b67a9ec8914dc1865dc65befb7add7">SyncStaminaEx()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d4/d87/class_man_base.html#a0b890527890e27c33ee483d2c4c2a3ae">ManBase::CommandHandler()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
+<a id="a2fc6239fdd348b27afc1ffde933e157d" name="a2fc6239fdd348b27afc1ffde933e157d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fc6239fdd348b27afc1ffde933e157d">&#9670;&#160;</a></span>LOAD_DIFF_CAP_UPDATE_THRESHOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected const <a class="el" href="../../d4/dc3/classfloat.html">float</a> LOAD_DIFF_CAP_UPDATE_THRESHOLD = 0.01</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
+
+</div>
+</div>
+<a id="a16969b7351dfab38e33bfb0b13dd28ad" name="a16969b7351dfab38e33bfb0b13dd28ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16969b7351dfab38e33bfb0b13dd28ad">&#9670;&#160;</a></span>LOAD_DIFF_UPDATE_THRESHOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected const <a class="el" href="../../d4/dc3/classfloat.html">float</a> LOAD_DIFF_UPDATE_THRESHOLD = 1.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
+
+</div>
+</div>
 <a id="aa6bf6764cb8f8b7410b67388ca8f6deb" name="aa6bf6764cb8f8b7410b67388ca8f6deb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa6bf6764cb8f8b7410b67388ca8f6deb">&#9670;&#160;</a></span>m_ActiveDepletionModifiers</h2>
 
@@ -1970,6 +2054,30 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a084cadfdd397ec524858daaf79396a89" name="a084cadfdd397ec524858daaf79396a89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a084cadfdd397ec524858daaf79396a89">&#9670;&#160;</a></span>m_ForceLoadRecheck</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected <a class="el" href="../../d9/db9/classbool.html">bool</a> m_ForceLoadRecheck</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a02da7e7e25f33b91bb139f105baf4097">MarkLoadDirty()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
 
 </div>
 </div>
@@ -2663,7 +2771,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a738b8af3ee981db1de0e5473814bcd56">ProcessStaminaChanges()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2ce45055f32839c53ed593c6ca9951b9">StaminaHandler()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d1a/class_stamina_handler.html#a738b8af3ee981db1de0e5473814bcd56">ProcessStaminaChanges()</a>, <a class="el" href="../../d7/d1a/class_stamina_handler.html#a2ce45055f32839c53ed593c6ca9951b9">StaminaHandler()</a>, and <a class="el" href="../../d7/d1a/class_stamina_handler.html#a237cc0dea8ce2b079ca86c2c37f85a84">Update()</a>.</p>
 
 </div>
 </div>

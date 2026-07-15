@@ -549,6 +549,7 @@ var class_u_i_scripted_menu =
     [ "OpenMenuServerBrowser", "d1/d5b/class_u_i_scripted_menu.html#a2da80f3f3f3a604152c9c4b6f1296878", null ],
     [ "OpenMenuTutorials", "d1/d5b/class_u_i_scripted_menu.html#a6fcf1b32030b6fe6a47335c7c42acec8", null ],
     [ "OpenMessages", "d1/d5b/class_u_i_scripted_menu.html#ab0c6aa6fec9267a4372de10869087c2f", null ],
+    [ "OpenOnline", "d1/d5b/class_u_i_scripted_menu.html#acb84e4918217c061d6fa0eea75ae1c99", null ],
     [ "OpenSettings", "d1/d5b/class_u_i_scripted_menu.html#a7424de6e27cdde333a6c08572ae0e5c5", null ],
     [ "OpenStats", "d1/d5b/class_u_i_scripted_menu.html#a2bf52c1337dec9c42a3b280521635c91", null ],
     [ "OpenTutorials", "d1/d5b/class_u_i_scripted_menu.html#a968fedb0df8ba7842ffc10c81bea5509", null ],

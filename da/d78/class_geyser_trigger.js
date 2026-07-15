@@ -17,6 +17,7 @@ var class_geyser_trigger =
     [ "RandomizeMouthPos", "da/d78/class_geyser_trigger.html#a0f947d20c74bf42aa0e47f5afa9911c1", null ],
     [ "RemoveGeyserState", "da/d78/class_geyser_trigger.html#aa2847fb84a3f0bc7a177545587e4ed99", null ],
     [ "StopEffects", "da/d78/class_geyser_trigger.html#ac7d5436f311d291da9aa1846c7515cd3", null ],
+    [ "StopEruption", "da/d78/class_geyser_trigger.html#a7689f5d8b4f79715e705b9629f93120e", null ],
     [ "UpdateGeyserState", "da/d78/class_geyser_trigger.html#aab60fd8d66ef7ba1db00c8e1ba91942c", null ],
     [ "m_AdjustedX", "da/d78/class_geyser_trigger.html#a9f60a2b8c03f1d56cc17cc5c378b201c", null ],
     [ "m_AdjustedY", "da/d78/class_geyser_trigger.html#aa0a839c7ae4f0cbba5bd0ed025ce71e3", null ],

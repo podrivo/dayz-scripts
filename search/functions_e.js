@@ -46,7 +46,9 @@ var searchData=
   ['notificationui_43',['NotificationUI',['../da/da7/class_notification_u_i.html#a1a13c5e5df76e25a4da6e6954bc607ef',1,'NotificationUI']]],
   ['notifierbase_44',['NotifierBase',['../d9/d1b/class_notifier_base.html#a826ffb6be1e2737449440adcf69f375a',1,'NotifierBase']]],
   ['notifiersmanager_45',['NotifiersManager',['../d5/d4d/_notifiers_manager_8c.html#a131baa5cbe699be20bd8ced9ed147f00',1,'NotifiersManager.c']]],
-  ['ntfr_46',['NTFR',['../d6/dc4/_test_framework_8c.html#a4c750cc81b1a53839d18342ca28e0a03',1,'TestFramework.c']]],
-  ['nutritionalprofile_47',['NutritionalProfile',['../d5/de5/class_nutritional_profile.html#af68a5e0985e4b28b5836945296740357',1,'NutritionalProfile']]],
-  ['nvgoggles_48',['NVGoggles',['../d8/d3c/class_powered_optic___base.html#a693bfb80c9b1a9fa8bdbe1091d681f50',1,'PoweredOptic_Base']]]
+  ['notifyplayerinventoryloadchanged_46',['NotifyPlayerInventoryLoadChanged',['../d2/d96/class_entity.html#ac24efddb53cb1c236cae5d01479e9103',1,'Entity']]],
+  ['notifyplayerloadchanged_47',['NotifyPlayerLoadChanged',['../d2/d96/class_entity.html#ac40fbd38f8c75c133dfd16ca521c460c',1,'Entity::NotifyPlayerLoadChanged()'],['../d6/d0e/class_inventory_item.html#a1fb814ec008c46d132c805d1c3055754',1,'InventoryItem::NotifyPlayerLoadChanged()'],['../d4/d87/class_man_base.html#acdea1b15a9f67ad6f972d8382f213736',1,'ManBase::NotifyPlayerLoadChanged()'],['../df/d2e/_item_base_8c.html#a1fb814ec008c46d132c805d1c3055754',1,'NotifyPlayerLoadChanged(EntityAI owner):&#160;ItemBase.c']]],
+  ['ntfr_48',['NTFR',['../d6/dc4/_test_framework_8c.html#a4c750cc81b1a53839d18342ca28e0a03',1,'TestFramework.c']]],
+  ['nutritionalprofile_49',['NutritionalProfile',['../d5/de5/class_nutritional_profile.html#af68a5e0985e4b28b5836945296740357',1,'NutritionalProfile']]],
+  ['nvgoggles_50',['NVGoggles',['../d8/d3c/class_powered_optic___base.html#a693bfb80c9b1a9fa8bdbe1091d681f50',1,'PoweredOptic_Base']]]
 ];

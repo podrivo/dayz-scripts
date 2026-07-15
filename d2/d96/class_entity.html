@@ -996,8 +996,6 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a04ff6e802d1700d727d868ecbaf95f7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a04ff6e802d1700d727d868ecbaf95f7e">GetWeightEx</a> (<a class="el" href="../../d9/db9/classbool.html">bool</a> forceRecalc=false)</td></tr>
 <tr class="memdesc:a04ff6e802d1700d727d868ecbaf95f7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns overall weight of the entity, 'forceRecalc = true' is meant to be used only when debugging, using it in gameplay code is higly inadvisable as it bypasses the weight caching and has adverse effect on performance  <br /></td></tr>
 <tr class="separator:a04ff6e802d1700d727d868ecbaf95f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6022367a30b5d423171cf161be94cbe5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a6022367a30b5d423171cf161be94cbe5">UpdateWeight</a> (WeightUpdateType updateType=WeightUpdateType.FULL, <a class="el" href="../../d4/dc3/classfloat.html">float</a> weightAdjustment=0)</td></tr>
-<tr class="separator:a6022367a30b5d423171cf161be94cbe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1eab7dcc39e1ae87c0127ac552e03d62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc3/classfloat.html">float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a1eab7dcc39e1ae87c0127ac552e03d62">GetSingleInventoryItemWeightEx</a> ()</td></tr>
 <tr class="separator:a1eab7dcc39e1ae87c0127ac552e03d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8afb582069249a4290b5de636f898f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#ad8afb582069249a4290b5de636f898f3">GetDebugActions</a> (out TSelectableActionInfoArrayEx outputList)</td></tr>
@@ -1194,6 +1192,12 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a403b79c13bf10a9d576230ef207454dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13120125048b2160c18c5f20ad35a368"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a13120125048b2160c18c5f20ad35a368">ClearInventory</a> ()</td></tr>
 <tr class="separator:a13120125048b2160c18c5f20ad35a368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac24efddb53cb1c236cae5d01479e9103"><td class="memItemLeft" align="right" valign="top">protected void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#ac24efddb53cb1c236cae5d01479e9103">NotifyPlayerInventoryLoadChanged</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> entity)</td></tr>
+<tr class="separator:ac24efddb53cb1c236cae5d01479e9103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac40fbd38f8c75c133dfd16ca521c460c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#ac40fbd38f8c75c133dfd16ca521c460c">NotifyPlayerLoadChanged</a> (<a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a> owner)</td></tr>
+<tr class="separator:ac40fbd38f8c75c133dfd16ca521c460c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6022367a30b5d423171cf161be94cbe5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a6022367a30b5d423171cf161be94cbe5">UpdateWeight</a> (WeightUpdateType updateType=WeightUpdateType.FULL, <a class="el" href="../../d4/dc3/classfloat.html">float</a> weightAdjustment=0)</td></tr>
+<tr class="separator:a6022367a30b5d423171cf161be94cbe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e1713a78e658ae59d1cb514a92c8691"><td class="memItemLeft" align="right" valign="top">proto native void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a7e1713a78e658ae59d1cb514a92c8691">SetLightType</a> (<a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a> pType)</td></tr>
 <tr class="separator:a7e1713a78e658ae59d1cb514a92c8691"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a681b0a873cd0a3a7631d07301e3d6800"><td class="memItemLeft" align="right" valign="top">proto native <a class="el" href="../../da/dc2/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/class_entity.html#a681b0a873cd0a3a7631d07301e3d6800">GetLightType</a> ()</td></tr>
@@ -3905,7 +3909,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>void</code> </dd></dl>
 <div class="fragment"><div class="line"><a class="code hl_class" href="../../de/d7a/class_item_base.html">ItemBase</a> item = <a class="code hl_variable" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetPlayer().CreateInInventory(<span class="stringliteral">&quot;GrenadeRGD5&quot;</span>);</div>
 <div class="line">item.Delete();</div>
-<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> DayZGame.c:3942</div></div>
+<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> DayZGame.c:3971</div></div>
 <div class="ttc" id="aclass_item_base_html"><div class="ttname"><a href="../../de/d7a/class_item_base.html">ItemBase</a></div><div class="ttdef"><b>Definition</b> InventoryItem.c:742</div></div>
 </div><!-- fragment --> 
 </div>
@@ -4662,7 +4666,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#aa1c9ced75db4a9a643207fac787ce924">EntityAI::Man()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#ad9911f0fd9c79325d30c78b4765dd1fb">OnItemAttachmentSlotChanged()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a1320fa5889e47c848cbb7b33a142bda2">OnItemLocationChanged()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#ac49b1cab32f5eab70aab44528726e721">OnWasAttached()</a>, and <a class="el" href="../../dc/dd0/_remote_detonator_8c.html#a9ad76a420042dadc6ab67b7aa821a407">OnWasDetached()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d62/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error()</a>, <a class="el" href="../../df/df9/class_entity_a_i.html#aa1c9ced75db4a9a643207fac787ce924">EntityAI::Man()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a1fb814ec008c46d132c805d1c3055754">NotifyPlayerLoadChanged()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#ad9911f0fd9c79325d30c78b4765dd1fb">OnItemAttachmentSlotChanged()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#a1320fa5889e47c848cbb7b33a142bda2">OnItemLocationChanged()</a>, <a class="el" href="../../df/d2e/_item_base_8c.html#ac49b1cab32f5eab70aab44528726e721">OnWasAttached()</a>, and <a class="el" href="../../dc/dd0/_remote_detonator_8c.html#a9ad76a420042dadc6ab67b7aa821a407">OnWasDetached()</a>.</p>
 
 </div>
 </div>
@@ -11399,6 +11403,60 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac24efddb53cb1c236cae5d01479e9103" name="ac24efddb53cb1c236cae5d01479e9103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac24efddb53cb1c236cae5d01479e9103">&#9670;&#160;</a></span>NotifyPlayerInventoryLoadChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">protected void NotifyPlayerInventoryLoadChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a>&#160;</td>
+          <td class="paramname"><em>entity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="../../df/df9/class_entity_a_i.html#aa1c9ced75db4a9a643207fac787ce924">EntityAI::Man()</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a1fb814ec008c46d132c805d1c3055754">NotifyPlayerLoadChanged()</a>.</p>
+
+</div>
+</div>
+<a id="ac40fbd38f8c75c133dfd16ca521c460c" name="ac40fbd38f8c75c133dfd16ca521c460c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac40fbd38f8c75c133dfd16ca521c460c">&#9670;&#160;</a></span>NotifyPlayerLoadChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NotifyPlayerLoadChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/df9/class_entity_a_i.html">EntityAI</a>&#160;</td>
+          <td class="paramname"><em>owner</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2d15a1b2d6f62805222acab67d3f557a" name="a2d15a1b2d6f62805222acab67d3f557a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2d15a1b2d6f62805222acab67d3f557a">&#9670;&#160;</a></span>OnAction()</h2>
 
@@ -11579,7 +11637,7 @@ Private Attributes</h2></td></tr>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// use m_ElapsedSinceLastUpdate for time-related purposes</span></div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_entity_html_aabfd095f5b9264a3dbd55cfb76e6b227"><div class="ttname"><a href="../../d2/d96/class_entity.html#aabfd095f5b9264a3dbd55cfb76e6b227">Entity::OnCEUpdate</a></div><div class="ttdeci">void OnCEUpdate()</div><div class="ttdoc">Central economy calls this function whenever going over all the entities.</div><div class="ttdef"><b>Definition</b> EntityAI.c:3866</div></div>
+<div class="ttc" id="aclass_entity_html_aabfd095f5b9264a3dbd55cfb76e6b227"><div class="ttname"><a href="../../d2/d96/class_entity.html#aabfd095f5b9264a3dbd55cfb76e6b227">Entity::OnCEUpdate</a></div><div class="ttdeci">void OnCEUpdate()</div><div class="ttdoc">Central economy calls this function whenever going over all the entities.</div><div class="ttdef"><b>Definition</b> EntityAI.c:3869</div></div>
 </div><!-- fragment --> 
 <p class="reference">References <a class="el" href="../../d8/dc8/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>, and <a class="el" href="../../df/d2e/_item_base_8c.html#a38e2f8357a04e1a21939c73eb58e04ea">ProcessVariables()</a>.</p>
 
@@ -12692,7 +12750,7 @@ Private Attributes</h2></td></tr>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_entity_html_ab8fb9b4105d97f4c7ba4bdd84d6c7de9"><div class="ttname"><a href="../../d2/d96/class_entity.html#ab8fb9b4105d97f4c7ba4bdd84d6c7de9">Entity::OnStoreLoad</a></div><div class="ttdeci">bool OnStoreLoad(ParamsReadContext ctx, int version)</div><div class="ttdoc">Called when data is loaded from persistence (on server side).</div><div class="ttdef"><b>Definition</b> EntityAI.c:2989</div></div>
+<div class="ttc" id="aclass_entity_html_ab8fb9b4105d97f4c7ba4bdd84d6c7de9"><div class="ttname"><a href="../../d2/d96/class_entity.html#ab8fb9b4105d97f4c7ba4bdd84d6c7de9">Entity::OnStoreLoad</a></div><div class="ttdeci">bool OnStoreLoad(ParamsReadContext ctx, int version)</div><div class="ttdoc">Called when data is loaded from persistence (on server side).</div><div class="ttdef"><b>Definition</b> EntityAI.c:2994</div></div>
 <div class="ttc" id="aclass_serializer_html"><div class="ttname"><a href="../../d0/dc2/class_serializer.html">Serializer</a></div><div class="ttdoc">Serialization general interface. Serializer API works with:</div><div class="ttdef"><b>Definition</b> Serializer.c:56</div></div>
 <div class="ttc" id="aclass_serializer_html_a34c68c9c93798008667c773b4818177d"><div class="ttname"><a href="../../d0/dc2/class_serializer.html#a34c68c9c93798008667c773b4818177d">Serializer::Read</a></div><div class="ttdeci">proto bool Read(void value_in)</div></div>
 </div><!-- fragment --> 
@@ -12737,7 +12795,7 @@ Private Attributes</h2></td></tr>
 <div class="line">    ctx.<a class="code hl_function" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Write</a>(a);</div>
 <div class="line">    ctx.<a class="code hl_function" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Write</a>(b);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_entity_html_ad975050d7a080cca462e74c604f404a2"><div class="ttname"><a href="../../d2/d96/class_entity.html#ad975050d7a080cca462e74c604f404a2">Entity::OnStoreSave</a></div><div class="ttdeci">void OnStoreSave(ParamsWriteContext ctx)</div><div class="ttdoc">Engine calls this function to collect data from entity to store for persistence (on server side).</div><div class="ttdef"><b>Definition</b> EntityAI.c:2925</div></div>
+<div class="ttc" id="aclass_entity_html_ad975050d7a080cca462e74c604f404a2"><div class="ttname"><a href="../../d2/d96/class_entity.html#ad975050d7a080cca462e74c604f404a2">Entity::OnStoreSave</a></div><div class="ttdeci">void OnStoreSave(ParamsWriteContext ctx)</div><div class="ttdoc">Engine calls this function to collect data from entity to store for persistence (on server side).</div><div class="ttdef"><b>Definition</b> EntityAI.c:2930</div></div>
 <div class="ttc" id="aclass_serializer_html_a1d68a84f3eba695ac67220b1e071fd6d"><div class="ttname"><a href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write</a></div><div class="ttdeci">proto bool Write(void value_out)</div></div>
 </div><!-- fragment --> 
 <p class="reference">References <a class="el" href="../../d6/de6/class_component_energy_manager.html#a3202b5c78ccc3eb501a5b82ac8b5f584">ComponentEnergyManager::GetEnergy()</a>, <a class="el" href="../../d6/de6/class_component_energy_manager.html#a364ac194d785b1bf0317a9905e9ca12d">ComponentEnergyManager::GetEnergySource()</a>, <a class="el" href="../../d6/de6/class_component_energy_manager.html#ae24c5bf29d1afdf204535da5d5a68dc9">ComponentEnergyManager::IsPassive()</a>, <a class="el" href="../../d6/de6/class_component_energy_manager.html#a280d9208abd359f0d3066bfe160ca23e">ComponentEnergyManager::IsPlugged()</a>, <a class="el" href="../../d6/de6/class_component_energy_manager.html#aff5a3c7129fcda6952366096fbf19e55">ComponentEnergyManager::IsSwitchedOn()</a>, and <a class="el" href="../../d0/dc2/class_serializer.html#a1d68a84f3eba695ac67220b1e071fd6d">Serializer::Write()</a>.</p>

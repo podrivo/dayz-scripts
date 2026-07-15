@@ -11,5 +11,6 @@ var dir_8dd39ec69c2eda0c4f5b7dc4eaf8a5f8 =
     [ "MotoHelmet_ColorBase.c", "d1/da4/_moto_helmet___color_base_8c.html", "d1/da4/_moto_helmet___color_base_8c" ],
     [ "SkateHelmet_ColorBase.c", "d4/d96/_skate_helmet___color_base_8c.html", "d4/d96/_skate_helmet___color_base_8c" ],
     [ "Ssh68Helmet.c", "dc/d78/_ssh68_helmet_8c.html", "dc/d78/_ssh68_helmet_8c" ],
+    [ "T56TankerHelmet.c", "d3/de0/_t56_tanker_helmet_8c.html", "d3/de0/_t56_tanker_helmet_8c" ],
     [ "ZSh3PilotHelmet.c", "d8/d50/_z_sh3_pilot_helmet_8c.html", "d8/d50/_z_sh3_pilot_helmet_8c" ]
 ];

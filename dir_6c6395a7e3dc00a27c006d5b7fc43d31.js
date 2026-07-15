@@ -128,6 +128,7 @@ var dir_6c6395a7e3dc00a27c006d5b7fc43d31 =
     [ "MilitaryBelt.c", "d8/df0/_military_belt_8c.html", "d8/df0/_military_belt_8c" ],
     [ "MilitaryBeret_ColorBase.c", "d0/d06/_military_beret___color_base_8c.html", "d0/d06/_military_beret___color_base_8c" ],
     [ "MilitaryBoots_ColorBase.c", "d4/d76/_military_boots___color_base_8c.html", "d4/d76/_military_boots___color_base_8c" ],
+    [ "MilitaryCap_ColorBase.c", "d2/d80/_military_cap___color_base_8c.html", "d2/d80/_military_cap___color_base_8c" ],
     [ "MilitarySweater_ColorBase.c", "d6/d7b/_military_sweater___color_base_8c.html", "d6/d7b/_military_sweater___color_base_8c" ],
     [ "MimeMask.c", "db/dbc/_mime_mask_8c.html", "db/dbc/_mime_mask_8c" ],
     [ "MiniDress_ColorBase.c", "db/d74/_mini_dress___color_base_8c.html", "db/d74/_mini_dress___color_base_8c" ],

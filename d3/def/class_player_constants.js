@@ -106,6 +106,7 @@ var class_player_constants =
     [ "LOW_ENERGY_THRESHOLD", "d3/def/class_player_constants.html#a77af26f53de5e60dad74242fcc32ba7e", null ],
     [ "LOW_WATER_DAMAGE_PER_SEC", "d3/def/class_player_constants.html#af8b88e945f36e0dc2cbea765643a83f0", null ],
     [ "LOW_WATER_THRESHOLD", "d3/def/class_player_constants.html#af8952b49fc3f610e5f6b4c7e5dce7a1f", null ],
+    [ "MAX_FINISHER_RANGE", "d3/def/class_player_constants.html#a9f41ea9d5cab94f567761869e550102e", null ],
     [ "MELEE2_MOVEMENT_BLEND_DELAY", "d3/def/class_player_constants.html#a4d0372035ddc62f76ec0a9b24d61ec19", null ],
     [ "METABOLIC_SPEED_ENERGY_BASAL", "d3/def/class_player_constants.html#a27da4fa75f7c269a61b9b6c978cf10eb", null ],
     [ "METABOLIC_SPEED_ENERGY_JOG", "d3/def/class_player_constants.html#a8da95403648e97ba3419e1dbeaae7e7f", null ],

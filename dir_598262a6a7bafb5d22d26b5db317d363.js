@@ -49,6 +49,7 @@ var dir_598262a6a7bafb5d22d26b5db317d363 =
     [ "game.c", "d1/dcb/game_8c.html", "d1/dcb/game_8c" ],
     [ "gameplay.c", "d8/d18/gameplay_8c.html", "d8/d18/gameplay_8c" ],
     [ "GameplayEffectWidgets_base.c", "d0/d2e/_gameplay_effect_widgets__base_8c.html", null ],
+    [ "GeyserDebugData.c", "d1/d2c/_geyser_debug_data_8c.html", null ],
     [ "HiddenSelectionsData.c", "d4/d0b/_hidden_selections_data_8c.html", "d4/d0b/_hidden_selections_data_8c" ],
     [ "HitInfo.c", "d7/d7d/_hit_info_8c.html", "d7/d7d/_hit_info_8c" ],
     [ "human.c", "d4/d9e/human_8c.html", "d4/d9e/human_8c" ],

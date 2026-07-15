@@ -2,6 +2,7 @@ var containers_8c =
 [
     [ "AmmoBox", "d2/dd8/class_ammo_box.html", "d2/dd8/class_ammo_box" ],
     [ "PlateCarrierPouches", "df/dd3/class_plate_carrier_pouches.html", "df/dd3/class_plate_carrier_pouches" ],
+    [ "PlateCarrierPouches_Desert", "d3/d85/class_plate_carrier_pouches___desert.html", null ],
     [ "Refrigerator", "de/d72/class_refrigerator.html", null ],
     [ "RefrigeratorMinsk", "dc/d81/class_refrigerator_minsk.html", null ],
     [ "SmallProtectorCase", "df/d8d/class_small_protector_case.html", "df/d8d/class_small_protector_case" ],

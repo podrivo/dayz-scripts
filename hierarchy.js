@@ -816,6 +816,11 @@ var hierarchy =
       [ "NailBox", "d9/d7e/class_nail_box.html", null ]
     ] ],
     [ "BoxCollidingParams", "da/d47/class_box_colliding_params.html", null ],
+    [ "BrassKnuckles_ColorBase", null, [
+      [ "BrassKnuckles_Dull", "d1/d8e/class_brass_knuckles___dull.html", null ],
+      [ "BrassKnuckles_MenAtArms", "d9/d84/class_brass_knuckles___men_at_arms.html", null ],
+      [ "BrassKnuckles_Shiny", "d9/d87/class_brass_knuckles___shiny.html", null ]
+    ] ],
     [ "BreadcrumbExternalValueController", "d1/d50/class_breadcrumb_external_value_controller.html", null ],
     [ "Breeches_ColorBase", "dc/dc4/class_breeches___color_base.html", null ],
     [ "BudenovkaHat_ColorBase", "d5/dce/class_budenovka_hat___color_base.html", null ],
@@ -883,6 +888,8 @@ var hierarchy =
       [ "M4_OEBttstck", "db/d89/class_m4___o_e_bttstck.html", null ],
       [ "MP5k_StockBttstck", "d1/d30/class_m_p5k___stock_bttstck.html", null ],
       [ "PP19_Bttstck", "d0/d8a/class_p_p19___bttstck.html", null ],
+      [ "SCAR_PrecisionBttstck", "d1/d37/class_s_c_a_r___precision_bttstck.html", null ],
+      [ "SCAR_StockBttstck", "d9/d6e/class_s_c_a_r___stock_bttstck.html", null ],
       [ "Saiga_Bttstck", "de/da4/class_saiga___bttstck.html", null ]
     ] ],
     [ "CABase", "d0/df0/class_c_a_base.html", [
@@ -1085,7 +1092,9 @@ var hierarchy =
           [ "SlingBag_Brown", "dd/d6d/class_sling_bag___brown.html", null ],
           [ "SlingBag_Gray", "d1/d1e/class_sling_bag___gray.html", null ]
         ] ],
-        [ "TortillaBag", "de/dab/class_tortilla_bag.html", null ]
+        [ "TortillaBag", "de/dab/class_tortilla_bag.html", [
+          [ "TortillaBag_Desert", "d7/ded/class_tortilla_bag___desert.html", null ]
+        ] ]
       ] ],
       [ "Bandana_ColorBase", "d9/dc6/class_bandana___color_base.html", [
         [ "Bandana_BlackPattern", "dc/d7e/class_bandana___black_pattern.html", null ],
@@ -1205,7 +1214,9 @@ var hierarchy =
         ] ]
       ] ],
       [ "Vest_Base", "d1/d9c/class_vest___base.html", [
-        [ "PlateCarrierVest", "d7/df9/class_plate_carrier_vest.html", null ]
+        [ "PlateCarrierVest", "d7/df9/class_plate_carrier_vest.html", [
+          [ "PlateCarrierVest_Desert", "d2/daf/class_plate_carrier_vest___desert.html", null ]
+        ] ]
       ] ]
     ] ],
     [ "Clothing_Base", "d7/ddf/class_clothing___base.html", null ],
@@ -1665,7 +1676,11 @@ var hierarchy =
     [ "Helicopter", "dd/d84/class_helicopter.html", null ],
     [ "HelicopterAuto", "d2/d09/class_helicopter_auto.html", null ],
     [ "HelmetBase", "d2/d41/class_helmet_base.html", [
-      [ "PumpkinHelmet", "de/dc5/class_pumpkin_helmet.html", null ]
+      [ "PumpkinHelmet", "de/dc5/class_pumpkin_helmet.html", null ],
+      [ "T56TankerHelmet_Colorbase", "d7/dca/class_t56_tanker_helmet___colorbase.html", [
+        [ "T56TankerHelmet_Olive", "dd/daa/class_t56_tanker_helmet___olive.html", null ],
+        [ "T56TankerHelmet_Tan", "d4/dae/class_t56_tanker_helmet___tan.html", null ]
+      ] ]
     ] ],
     [ "HFSMBase", "dd/d73/class_h_f_s_m_base.html", null ],
     [ "HFSMBase< BotStateBase, BotEventBase, BotActionBase, BotGuardBase >", "df/dd6/class_h_f_s_m_base_3_01_bot_state_base_00_01_bot_event_base_00_01_bot_action_base_00_01_bot_guard_base_01_4.html", null ],
@@ -2007,8 +2022,9 @@ var hierarchy =
         [ "Binoculars", "d1/d75/class_binoculars.html", null ],
         [ "FNP45_MRDSOptic", "df/dd7/class_f_n_p45___m_r_d_s_optic.html", null ],
         [ "GrozaOptic", "d3/dfd/class_groza_optic.html", null ],
+        [ "HoloOptic", "df/d54/class_holo_optic.html", null ],
         [ "KashtanOptic", "d3/d23/class_kashtan_optic.html", null ],
-        [ "KobraOptic", "dd/d85/class_kobra_optic.html", null ],
+        [ "KazuarOptic", "d0/d20/class_kazuar_optic.html", null ],
         [ "LongrangeOptic", "d4/d53/class_longrange_optic.html", null ],
         [ "M68Optic", "df/d97/class_m68_optic.html", null ],
         [ "PistolOptic", "da/d72/class_pistol_optic.html", null ],
@@ -2081,7 +2097,9 @@ var hierarchy =
       ] ],
       [ "Container_Base", "d1/dc4/class_container___base.html", [
         [ "AmmoBox", "d2/dd8/class_ammo_box.html", null ],
-        [ "PlateCarrierPouches", "df/dd3/class_plate_carrier_pouches.html", null ],
+        [ "PlateCarrierPouches", "df/dd3/class_plate_carrier_pouches.html", [
+          [ "PlateCarrierPouches_Desert", "d3/d85/class_plate_carrier_pouches___desert.html", null ]
+        ] ],
         [ "ScientificBriefcase", "d7/d53/class_scientific_briefcase.html", null ],
         [ "SmallProtectorCase", "df/d8d/class_small_protector_case.html", null ],
         [ "WaterproofBag_ColorBase", "de/dd2/class_waterproof_bag___color_base.html", [
@@ -2370,6 +2388,7 @@ var hierarchy =
       [ "Mag_Ruger1022_10Rnd", "d5/d3a/class_mag___ruger1022__10_rnd.html", null ],
       [ "Mag_Ruger1022_15Rnd", "d6/dc9/class_mag___ruger1022__15_rnd.html", null ],
       [ "Mag_Ruger1022_30Rnd", "d6/d7f/class_mag___ruger1022__30_rnd.html", null ],
+      [ "Mag_SCARH_20Rnd", "d7/d99/class_mag___s_c_a_r_h__20_rnd.html", null ],
       [ "Mag_SSG82_5rnd", "d7/d41/class_mag___s_s_g82__5rnd.html", null ],
       [ "Mag_STANAGCoupled_30Rnd", "d4/dce/class_mag___s_t_a_n_a_g_coupled__30_rnd.html", null ],
       [ "Mag_STANAG_30Rnd", "d3/db0/class_mag___s_t_a_n_a_g__30_rnd.html", null ],
@@ -2575,6 +2594,7 @@ var hierarchy =
     [ "map< Param3, ref array< float, Param3 > >", "d9/d28/classmap.html", null ],
     [ "map< Param3, ref array< Param3 > >", "d9/d28/classmap.html", null ],
     [ "map< Param3, ref array< Param3, Param3 > >", "d9/d28/classmap.html", null ],
+    [ "map< Param3, ref array< RaycastRVResult > >", "d9/d28/classmap.html", null ],
     [ "map< Param3, ref array< ref WeaponParticlesOnBulletCasingEject > >", "d9/d28/classmap.html", null ],
     [ "map< Param3, ref array< ref WeaponParticlesOnFire > >", "d9/d28/classmap.html", null ],
     [ "map< Param3, ref array< ref WeaponParticlesOnOverheating > >", "d9/d28/classmap.html", null ],
@@ -2685,6 +2705,7 @@ var hierarchy =
     ] ],
     [ "MilitaryBeret_ColorBase", "d2/d29/class_military_beret___color_base.html", null ],
     [ "MilitaryBoots_ColorBase", "dc/d95/class_military_boots___color_base.html", null ],
+    [ "MilitaryCap_ColorBase", "dd/de9/class_military_cap___color_base.html", null ],
     [ "MindStateSoundEventBase", "d6/daf/class_mind_state_sound_event_base.html", null ],
     [ "MiniDress_ColorBase", "d2/db3/class_mini_dress___color_base.html", null ],
     [ "Miscelaneous", "d7/d52/class_miscelaneous.html", null ],
@@ -2762,6 +2783,11 @@ var hierarchy =
     [ "ModInfo", "d3/dfe/class_mod_info.html", null ],
     [ "ModLoader", "da/d34/class_mod_loader.html", null ],
     [ "ModStructure", "d0/dce/class_mod_structure.html", null ],
+    [ "MorsecodeLeaflet_ColorBase", null, [
+      [ "MorsecodeLeaflet_blood", "dc/dd6/class_morsecode_leaflet__blood.html", null ],
+      [ "MorsecodeLeaflet_coffee", "de/d79/class_morsecode_leaflet__coffee.html", null ],
+      [ "MorsecodeLeaflet_fire", "de/de0/class_morsecode_leaflet__fire.html", null ]
+    ] ],
     [ "Mosin9130", "d6/d62/class_mosin9130.html", null ],
     [ "Mosin9130_Base", "db/d69/class_mosin9130___base.html", null ],
     [ "MotoHelmet_ColorBase", "d3/d96/class_moto_helmet___color_base.html", null ],
@@ -3227,7 +3253,9 @@ var hierarchy =
         [ "TreeSoft_t_town_1sb", "d4/db7/class_tree_soft__t__town__1sb.html", null ]
       ] ]
     ] ],
-    [ "PlateCarrierHolster", "d4/d54/class_plate_carrier_holster.html", null ],
+    [ "PlateCarrierHolster", "d4/d54/class_plate_carrier_holster.html", [
+      [ "PlateCarrierHolster_Desert", "dc/d7a/class_plate_carrier_holster___desert.html", null ]
+    ] ],
     [ "PlayerAgentPool", "da/da3/class_player_agent_pool.html", null ],
     [ "PlayerBase", "d5/da8/class_player_base.html", null ],
     [ "PlayerBaseClient", null, [
@@ -3385,6 +3413,7 @@ var hierarchy =
       [ "R12Recoil", "d2/def/class_r12_recoil.html", null ],
       [ "RepeaterRecoil", "d2/dac/class_repeater_recoil.html", null ],
       [ "Ruger1022Recoil", "dc/d71/class_ruger1022_recoil.html", null ],
+      [ "SCARHRecoil", "d6/d7b/class_s_c_a_r_h_recoil.html", null ],
       [ "SKSRecoil", "da/dd1/class_s_k_s_recoil.html", null ],
       [ "SSG82Recoil", "dc/d70/class_s_s_g82_recoil.html", null ],
       [ "SV98Recoil", "d0/dc3/class_s_v98_recoil.html", null ],
@@ -3478,6 +3507,7 @@ var hierarchy =
       [ "M14_Base", "dd/df5/class_m14___base.html", null ],
       [ "M16A2_Base", "df/d96/class_m16_a2___base.html", null ],
       [ "M4A1_Base", "d3/dad/class_m4_a1___base.html", null ],
+      [ "SCARH_Base", "df/dd2/class_s_c_a_r_h___base.html", null ],
       [ "SVD_Base", "d3/d7d/class_s_v_d___base.html", null ],
       [ "UMP45_Base", "db/d5c/class_u_m_p45___base.html", null ]
     ] ],
@@ -3778,6 +3808,7 @@ var hierarchy =
     [ "Slot_S120Wheel_1_2", "df/dd3/class_cfg_slots_1_1_slot___s120_wheel__1__2.html", null ],
     [ "Slot_S120Wheel_2_1", "d2/d64/class_cfg_slots_1_1_slot___s120_wheel__2__1.html", null ],
     [ "Slot_S120Wheel_2_2", "d3/d2e/class_cfg_slots_1_1_slot___s120_wheel__2__2.html", null ],
+    [ "Slot_Scarh_FrontSight", "d2/d12/class_cfg_slots_1_1_slot___scarh___front_sight.html", null ],
     [ "Slot_Sedan_02_Door_1_1", "d4/d8f/class_cfg_slots_1_1_slot___sedan__02___door__1__1.html", null ],
     [ "Slot_Sedan_02_Door_1_2", "d5/de2/class_cfg_slots_1_1_slot___sedan__02___door__1__2.html", null ],
     [ "Slot_Sedan_02_Door_2_1", "df/d5f/class_cfg_slots_1_1_slot___sedan__02___door__2__1.html", null ],
@@ -3905,6 +3936,7 @@ var hierarchy =
     [ "Slot_weaponButtstockPP19", "d3/df6/class_cfg_slots_1_1_slot__weapon_buttstock_p_p19.html", null ],
     [ "Slot_weaponButtstockRed9", "dc/d65/class_cfg_slots_1_1_slot__weapon_buttstock_red9.html", null ],
     [ "Slot_weaponButtstockSaiga", "d4/d59/class_cfg_slots_1_1_slot__weapon_buttstock_saiga.html", null ],
+    [ "Slot_weaponButtstockSCAR", "d3/ddf/class_cfg_slots_1_1_slot__weapon_buttstock_s_c_a_r.html", null ],
     [ "Slot_weaponFlashlight", "d6/d60/class_cfg_slots_1_1_slot__weapon_flashlight.html", null ],
     [ "Slot_weaponHandguardAK", "d3/d61/class_cfg_slots_1_1_slot__weapon_handguard_a_k.html", null ],
     [ "Slot_weaponHandguardM249", "d4/d2f/class_cfg_slots_1_1_slot__weapon_handguard_m249.html", null ],

@@ -11,5 +11,6 @@ var dir_e75a2d8e98ad6e25dd4e1d61a8d3f09b =
     [ "M16A2.c", "d7/d42/_m16_a2_8c.html", "d7/d42/_m16_a2_8c" ],
     [ "M4A1.c", "d7/de3/_m4_a1_8c.html", "d7/de3/_m4_a1_8c" ],
     [ "OTS14.c", "de/d53/_o_t_s14_8c.html", "de/d53/_o_t_s14_8c" ],
+    [ "SCARH.c", "db/dfe/_s_c_a_r_h_8c.html", "db/dfe/_s_c_a_r_h_8c" ],
     [ "SKS.c", "dd/daa/_s_k_s_8c.html", "dd/daa/_s_k_s_8c" ]
 ];

@@ -210,6 +210,10 @@ var _e_diag_menu_i_ds_8c =
       [ "MATERIALDIAG_MENU", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336a71c901bcc8a7d6a7175006c04fd9838f", null ],
       [ "MATERIALDIAG_GHOSTPP", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336aca6b646546c41c0b9f86fb58bfae7a5a", null ],
       [ "SERVER_BROWSER_DUMMY_SERVERS", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336a6da37fd2393a341c16fbc556f9321275", null ],
+      [ "GEYSERDIAG_MENU", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336abfc830e47227d69db061c3acfaea5896", null ],
+      [ "GEYSERDIAG_ENABLE", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336adb157659f8f9eba071a6545566102a75", null ],
+      [ "GEYSERDIAG_STATE_INTERVAL", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336a40692e8268aeb488af8f2d3d47d10521", null ],
+      [ "GEYSERDIAG_STATE_DURATION", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336a5659eca9d16daaf3ae2080437b19258a", null ],
       [ "MODDED_MENU", "d9/dbc/_e_diag_menu_i_ds_8c.html#a85affb4d5021d4465be4205f8cd4e336af9406c6e0241e0a42c23afdce3ee8ae4", null ]
     ] ]
 ];

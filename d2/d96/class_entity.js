@@ -341,6 +341,8 @@ var class_entity =
     [ "LogWarning", "d2/d96/class_entity.html#aebf471e4a4935c402928152e2addd39b", null ],
     [ "LookAt", "d2/d96/class_entity.html#ac03ec17c4eb88678bc3942285cbece2e", null ],
     [ "MaxLifetimeRefreshCalc", "d2/d96/class_entity.html#a048232c2677203b9c527d44a80a457bd", null ],
+    [ "NotifyPlayerInventoryLoadChanged", "d2/d96/class_entity.html#ac24efddb53cb1c236cae5d01479e9103", null ],
+    [ "NotifyPlayerLoadChanged", "d2/d96/class_entity.html#ac40fbd38f8c75c133dfd16ca521c460c", null ],
     [ "OnAction", "d2/d96/class_entity.html#a2d15a1b2d6f62805222acab67d3f557a", null ],
     [ "OnAttachmentRuined", "d2/d96/class_entity.html#a032f1a618013c4e89b99bfe637b7ff3f", null ],
     [ "OnBeforeTryDelete", "d2/d96/class_entity.html#afdfdbbd7a5d9684a54a0c54915db3c9a", null ],

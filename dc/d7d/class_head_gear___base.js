@@ -32,5 +32,6 @@ var class_head_gear___base =
     [ "SetActions", "dc/d7d/class_head_gear___base.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
     [ "SetActions", "dc/d7d/class_head_gear___base.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
     [ "SetActions", "dc/d7d/class_head_gear___base.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
+    [ "SetActions", "dc/d7d/class_head_gear___base.html#afa39b7c4d3d085ef8514a87c32b81a4d", null ],
     [ "m_Player", "dc/d7d/class_head_gear___base.html#a9dd2585f9b6cb233c97468e2356201f7", null ]
 ];

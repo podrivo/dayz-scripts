@@ -5,6 +5,7 @@ var class_action_targets =
     [ "Clear", "df/dba/class_action_targets.html#aa71d36872f416feaa853788a7a7a7ef8", null ],
     [ "ComputeUtility", "df/dba/class_action_targets.html#af127f53a1004be733d41fbeaac2b0cd5", null ],
     [ "DistSqrPoint2Line", "df/dba/class_action_targets.html#ae40c67904a330878f8c58a7d3a84df05", null ],
+    [ "FilterDuplicateVicinityObjects", "df/dba/class_action_targets.html#a20022d51deeb548a9123905ded545237", null ],
     [ "FilterObstructedObjects", "df/dba/class_action_targets.html#a84007df1471d21de6607935c29621557", null ],
     [ "FilterObstructedObjectsEx", "df/dba/class_action_targets.html#a4d86b93d3e08aa41d2f2c58ee764f435", null ],
     [ "FindIndexForStoring", "df/dba/class_action_targets.html#ae62144c63200d2e06c2007905b72355f", null ],
@@ -13,6 +14,7 @@ var class_action_targets =
     [ "GetVicinityObjects", "df/dba/class_action_targets.html#aa8627187a45b52e3b16e28db8e955481", null ],
     [ "IsObstructed", "df/dba/class_action_targets.html#abde46936c51c71935d2d0ed7d2e8618c", null ],
     [ "IsObstructedEx", "df/dba/class_action_targets.html#ac7c2379a5aaa497559f7cd331aa4242a", null ],
+    [ "SortResultsDistance", "df/dba/class_action_targets.html#aa8abcec4297f6823c0ad046c780083fa", null ],
     [ "StoreTarget", "df/dba/class_action_targets.html#a3e0692e836e10352952cef497c187dfd", null ],
     [ "Update", "df/dba/class_action_targets.html#aec0783b5a136e042adcc47bae4fe5291", null ],
     [ "c_ConeAngle", "df/dba/class_action_targets.html#afea26de1a907aa7ad1e46be9425939c8", null ],
@@ -31,6 +33,7 @@ var class_action_targets =
     [ "m_Player", "df/dba/class_action_targets.html#a37495a7d404542b02363adc8c53a2ddb", null ],
     [ "m_RayEnd", "df/dba/class_action_targets.html#a573dafa1f13191afc770c21dc7863481", null ],
     [ "m_RayStart", "df/dba/class_action_targets.html#aa205718dc5ad53ea0781834d9e4e85e5", null ],
+    [ "m_SortedResults", "df/dba/class_action_targets.html#a2701e72fbe844138efa51b45c3164ca7", null ],
     [ "m_Targets", "df/dba/class_action_targets.html#acbcee90b7c14723706b88ff71842ada5", null ],
     [ "OBSTRUCTED_COUNT_THRESHOLD", "df/dba/class_action_targets.html#a2a575867336ef75a446a26fb0716556d", null ]
 ];

@@ -40,6 +40,7 @@ var dir_033634d6226c208676d37d46cb6839ff =
     [ "R12Recoil.c", "da/d48/_r12_recoil_8c.html", "da/d48/_r12_recoil_8c" ],
     [ "RepeaterRecoil.c", "d0/d19/_repeater_recoil_8c.html", "d0/d19/_repeater_recoil_8c" ],
     [ "Ruger1022Recoil.c", "d0/de8/_ruger1022_recoil_8c.html", "d0/de8/_ruger1022_recoil_8c" ],
+    [ "SCARHRecoil.c", "dd/de9/_s_c_a_r_h_recoil_8c.html", "dd/de9/_s_c_a_r_h_recoil_8c" ],
     [ "ScoutRecoil.c", "d9/deb/_scout_recoil_8c.html", "d9/deb/_scout_recoil_8c" ],
     [ "SiagaRecoil.c", "d6/dba/_siaga_recoil_8c.html", "d6/dba/_siaga_recoil_8c" ],
     [ "SkorpionRecoil.c", "d5/d09/_skorpion_recoil_8c.html", "d5/d09/_skorpion_recoil_8c" ],

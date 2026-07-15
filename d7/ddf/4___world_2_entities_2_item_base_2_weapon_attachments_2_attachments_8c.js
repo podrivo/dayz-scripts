@@ -20,5 +20,7 @@ var 4___world_2_entities_2_item_base_2_weapon_attachments_2_attachments_8c =
     [ "M4_OEBttstck", "db/d89/class_m4___o_e_bttstck.html", null ],
     [ "MP5k_StockBttstck", "d1/d30/class_m_p5k___stock_bttstck.html", null ],
     [ "Saiga_Bttstck", "de/da4/class_saiga___bttstck.html", null ],
-    [ "PP19_Bttstck", "d0/d8a/class_p_p19___bttstck.html", null ]
+    [ "PP19_Bttstck", "d0/d8a/class_p_p19___bttstck.html", null ],
+    [ "SCAR_StockBttstck", "d9/d6e/class_s_c_a_r___stock_bttstck.html", null ],
+    [ "SCAR_PrecisionBttstck", "d1/d37/class_s_c_a_r___precision_bttstck.html", null ]
 ];

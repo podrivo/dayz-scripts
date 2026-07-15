@@ -198,6 +198,7 @@ var _item_base_8c =
     [ "MessageToOwnerImportant", "df/d2e/_item_base_8c.html#aef90addcbe78f7b365a70b55cc590e95", null ],
     [ "MessageToOwnerStatus", "df/d2e/_item_base_8c.html#ae58d7498a4a50908eac22a41aaf47eca", null ],
     [ "NameToID", "df/d2e/_item_base_8c.html#a5f7546e38f4d3fa50f10f1de583b0050", null ],
+    [ "NotifyPlayerLoadChanged", "df/d2e/_item_base_8c.html#a1fb814ec008c46d132c805d1c3055754", null ],
     [ "OnAction", "df/d2e/_item_base_8c.html#a64db4496134a9520c526e341cd13807f", null ],
     [ "OnActivatedByItem", "df/d2e/_item_base_8c.html#a50275bdfe276745e5ecafa15abfedc69", null ],
     [ "OnActivatedByTripWire", "df/d2e/_item_base_8c.html#a50b1dd5340334ae33748007c48c949ec", null ],
