@@ -1,5 +1,6 @@
 var NAVTREEINDEX57 =
 {
+"d4/d58/class_army_pouch___camo.html":[2,0,673],
 "d4/d58/class_blouse___color_base.html":[2,0,794],
 "d4/d58/class_item_preview_widget.html":[2,0,1729],
 "d4/d58/class_item_preview_widget.html#a033cc3aa76b83d0e7162aabb807c638a":[2,0,1729,8],
@@ -230,9 +231,9 @@ var NAVTREEINDEX57 =
 "d4/d61/class_script_console_enf_script_tab.html#aee6a27cad085ec84d5f5dbb765b63b53":[2,0,2417,10],
 "d4/d61/class_script_console_enf_script_tab.html#afad588066d9a9b5ae87ad8d90459045b":[2,0,2417,23],
 "d4/d63/class_blood_container_base.html":[2,0,787],
+"d4/d63/class_blood_container_base.html#afa39b7c4d3d085ef8514a87c32b81a4d":[2,0,787,2],
 "d4/d63/class_blood_container_base.html#afa39b7c4d3d085ef8514a87c32b81a4d":[2,0,787,1],
 "d4/d63/class_blood_container_base.html#afa39b7c4d3d085ef8514a87c32b81a4d":[2,0,787,3],
-"d4/d63/class_blood_container_base.html#afa39b7c4d3d085ef8514a87c32b81a4d":[2,0,787,2],
 "d4/d63/class_blood_container_base.html#afa39b7c4d3d085ef8514a87c32b81a4d":[2,0,787,4],
 "d4/d63/class_blood_container_base.html#afb460bfcc86142c02827f17153963ab7":[2,0,787,0],
 "d4/d64/class_spooky_event_base.html":[2,0,2549],
@@ -248,6 +249,5 @@ var NAVTREEINDEX57 =
 "d4/d64/class_spooky_event_base.html#a9370275e58369e512eb3260f370f21d6":[2,0,2549,10],
 "d4/d64/class_spooky_event_base.html#a963cb0db4afd2ac9b3ed8c84138422a8":[2,0,2549,6],
 "d4/d64/class_spooky_event_base.html#adcad60e95ad92163adb9beb4423534af":[2,0,2549,5],
-"d4/d64/class_spooky_event_base.html#ae110387831f3f5b1f33aa99f23ce9ae1":[2,0,2549,0],
-"d4/d64/class_spooky_event_base.html#af97904d4d10a9214387a0beb26c36d44":[2,0,2549,4]
+"d4/d64/class_spooky_event_base.html#ae110387831f3f5b1f33aa99f23ce9ae1":[2,0,2549,0]
 };

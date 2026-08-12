@@ -1,5 +1,6 @@
 var NAVTREEINDEX37 =
 {
+"d2/de6/class_c_game.html#a4f03cfc84232284447f2bb059cb0833c":[2,0,1057,355],
 "d2/de6/class_c_game.html#a4f41d7faf655c6cb68096fc8d6a99814":[2,0,1057,353],
 "d2/de6/class_c_game.html#a4f62203eaa697d57ce1cf391e0f4e126":[2,0,1057,174],
 "d2/de6/class_c_game.html#a50283243f29883323a197bb0976d0cb5":[2,0,1057,236],
@@ -248,6 +249,5 @@ var NAVTREEINDEX37 =
 "d2/de6/class_c_game.html#ac9b8e7949206e9c27a2812ba6a4e0b14":[2,0,1057,202],
 "d2/de6/class_c_game.html#aca9597fc7e85de4f803e1e42e22baf63":[2,0,1057,342],
 "d2/de6/class_c_game.html#acb01e3ed28e7184a4a3de697e6b217d0":[2,0,1057,22],
-"d2/de6/class_c_game.html#acd061f0cad56b4d2a4789697e32cfb4b":[2,0,1057,146],
-"d2/de6/class_c_game.html#acd5895d07bee68d818fbd112ca7c53b8":[2,0,1057,486]
+"d2/de6/class_c_game.html#acd061f0cad56b4d2a4789697e32cfb4b":[2,0,1057,146]
 };

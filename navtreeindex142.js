@@ -1,5 +1,6 @@
 var NAVTREEINDEX142 =
 {
+"da/d9b/class_day_z_intro_scene_xbox.html#a6b9fc0290a9b0432dd7a4bac4785be24":[2,0,1218,27],
 "da/d9b/class_day_z_intro_scene_xbox.html#a701840d849790dda87ed6a3ca82b62c9":[2,0,1218,37],
 "da/d9b/class_day_z_intro_scene_xbox.html#a780992e910475d1bfe07ad8dcc184ea5":[2,0,1218,11],
 "da/d9b/class_day_z_intro_scene_xbox.html#a7b946212d8a31df247f10110755c3024":[2,0,1218,24],
@@ -248,6 +249,5 @@ var NAVTREEINDEX142 =
 "da/dae/_ingame_hud_visibility_8c.html#a0368fd0e6d5c7e88d66df0cbb60c741e":[3,0,0,4,0,27,11],
 "da/dae/_ingame_hud_visibility_8c.html#a17ee0759a9f7e2ffe58589ded17e673a":[3,0,0,4,0,27,1],
 "da/dae/_ingame_hud_visibility_8c.html#a3a7ed48b0cce91173c204c6bfa2dc477":[3,0,0,4,0,27,9],
-"da/dae/_ingame_hud_visibility_8c.html#a538026a569b44931e63f7475ae6204b2":[3,0,0,4,0,27,6],
-"da/dae/_ingame_hud_visibility_8c.html#a5d56323126a6ebcbfaaa07ff8f84bcf6":[3,0,0,4,0,27,5]
+"da/dae/_ingame_hud_visibility_8c.html#a538026a569b44931e63f7475ae6204b2":[3,0,0,4,0,27,6]
 };

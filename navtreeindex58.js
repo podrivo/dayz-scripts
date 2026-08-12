@@ -1,5 +1,6 @@
 var NAVTREEINDEX58 =
 {
+"d4/d64/class_spooky_event_base.html#af97904d4d10a9214387a0beb26c36d44":[2,0,2549,4],
 "d4/d64/class_spooky_event_base.html#afe9dc88bed577597e8b47ef63011fac8":[2,0,2549,2],
 "d4/d65/_shovel_8c.html":[3,0,0,3,1,10,121],
 "d4/d65/class_action_switch_seats.html":[2,0,430],
@@ -248,6 +249,5 @@ var NAVTREEINDEX58 =
 "d4/d7b/class_input.html#a1d02813954651fe2b5d7e6d86d0fc6a7":[2,0,1683,51],
 "d4/d7b/class_input.html#a2a6fd257784bf0cab4631b1376ddc6ff":[2,0,1683,37],
 "d4/d7b/class_input.html#a2da29e78c01510333c850fdee78261f9":[2,0,1683,7],
-"d4/d7b/class_input.html#a30e3f2782a2d626d0571c49468cb01f9":[2,0,1683,15],
-"d4/d7b/class_input.html#a424b7ace2cd02187856e79d5a2b8b335":[2,0,1683,4]
+"d4/d7b/class_input.html#a30e3f2782a2d626d0571c49468cb01f9":[2,0,1683,15]
 };

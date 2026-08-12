@@ -18,6 +18,7 @@ var _action_targets_8c =
     [ "GetUtility", "d2/d9f/_action_targets_8c.html#aae0edf0e9c717786db9a052e11af44c9", null ],
     [ "GetVicinityObjects", "d2/d9f/_action_targets_8c.html#a678fada9eac3c4bceea44bfc79923358", null ],
     [ "IsProxy", "d2/d9f/_action_targets_8c.html#afee33344cd3d639572a2716f2d58b8ac", null ],
+    [ "IsValidVicinityObject", "d2/d9f/_action_targets_8c.html#a8b559a2ffbb9b739191698155e2e6335", null ],
     [ "Remove", "d2/d9f/_action_targets_8c.html#abf4fa9fa9e1c0f3433ec5d4d7a1ea780", null ],
     [ "Remove", "d2/d9f/_action_targets_8c.html#a4e5b0bb3769aa50e2f4c19bcb4ecd8ea", null ],
     [ "SetCursorHitPos", "d2/d9f/_action_targets_8c.html#af355f15b0f5f1b7b852fb8d106fd5097", null ],

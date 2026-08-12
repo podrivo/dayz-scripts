@@ -1,5 +1,6 @@
 var NAVTREEINDEX96 =
 {
+"d7/d1a/class_stamina_handler.html#af722aadfc96405efe2a4b7bc6941bc19":[2,0,2565,54],
 "d7/d1a/class_stamina_handler.html#af903e9a111be781780c537048967ca16":[2,0,2565,33],
 "d7/d1a/class_stamina_handler.html#afe8f1adf44fe8362e05d28db314c024d":[2,0,2565,57],
 "d7/d1a/class_stamina_handler.html#aff669510956ec2c2cc6c60ed37ca7d63":[2,0,2565,86],
@@ -248,6 +249,5 @@ var NAVTREEINDEX96 =
 "d7/d29/class_entity_light_source.html#ae24535881a67caa8049f3ce733775239":[2,0,1370,50],
 "d7/d29/class_entity_light_source.html#ae4fa9d17e380526c05cc3e4a35b5f00d":[2,0,1370,41],
 "d7/d29/class_entity_light_source.html#ae7e1949e309c333fe0bae02c1e1b4cfd":[2,0,1370,77],
-"d7/d29/class_entity_light_source.html#ae9d97beda400cf9a472376b36d6ac01a":[2,0,1370,83],
-"d7/d29/class_entity_light_source.html#aed070c6f487f8f45e6b3362a94d36351":[2,0,1370,63]
+"d7/d29/class_entity_light_source.html#ae9d97beda400cf9a472376b36d6ac01a":[2,0,1370,83]
 };

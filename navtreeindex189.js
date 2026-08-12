@@ -1,5 +1,6 @@
 var NAVTREEINDEX189 =
 {
+"dd/df5/class_hologram.html#a4db400630cd1908885239f079d52a80e":[2,0,1621,86],
 "dd/df5/class_hologram.html#a504fdad41af837b5a4a16c7e428fb58e":[2,0,1621,26],
 "dd/df5/class_hologram.html#a5450d050d8ec2f19f63f5aeda5f04ee2":[2,0,1621,6],
 "dd/df5/class_hologram.html#a56627bd5ab181091ab63b122ba9787c9":[2,0,1621,13],
@@ -248,6 +249,5 @@ var NAVTREEINDEX189 =
 "de/d0e/_modifier_base_8c.html#aaf1f4a946562de51ffce20654c40d4ed":[3,0,0,3,0,18,2,24],
 "de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf":[3,0,0,3,0,18,2,15],
 "de/d0e/_modifier_base_8c.html#ab67045236526b55e73528b15d854bd1a":[3,0,0,3,0,18,2,32],
-"de/d0e/_modifier_base_8c.html#ab85cf87dc9590d7f2299c5948e477e8b":[3,0,0,3,0,18,2,4],
-"de/d0e/_modifier_base_8c.html#ac28402df023315ef1d7ff94b147dfdd1":[3,0,0,3,0,18,2,3]
+"de/d0e/_modifier_base_8c.html#ab85cf87dc9590d7f2299c5948e477e8b":[3,0,0,3,0,18,2,4]
 };

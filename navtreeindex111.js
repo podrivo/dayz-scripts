@@ -1,5 +1,6 @@
 var NAVTREEINDEX111 =
 {
+"d8/d53/class_cfg_slots_1_1_slot___material___wooden_planks.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1056,187,1],
 "d8/d53/class_cfg_slots_1_1_slot___material___wooden_planks.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1056,187,2],
 "d8/d54/class_action_bite_tetracycline_antibiotics.html":[2,0,30],
 "d8/d54/class_action_bite_tetracycline_antibiotics.html#a3670fc05faca8208f993e014e1a632bf":[2,0,30,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX111 =
 "d8/d6c/_working_boots___color_base_8c.html":[3,0,0,3,1,10,3,228],
 "d8/d6c/class_cfg_slots_1_1_slot___cargo.html":[2,0,1056,31],
 "d8/d6c/class_cfg_slots_1_1_slot___cargo.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1056,31,0],
-"d8/d6c/class_cfg_slots_1_1_slot___cargo.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1056,31,1],
-"d8/d6c/class_cfg_slots_1_1_slot___cargo.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1056,31,2]
+"d8/d6c/class_cfg_slots_1_1_slot___cargo.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1056,31,1]
 };

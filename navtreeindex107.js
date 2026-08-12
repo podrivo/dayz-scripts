@@ -1,5 +1,6 @@
 var NAVTREEINDEX107 =
 {
+"d8/d06/class_power_generator_static.html#aea052228cf8c9f915d7de431fd4982e6":[2,0,2262,21],
 "d8/d06/class_power_generator_static.html#afabba46e9f4dc3899991f5a4c0d3f05d":[2,0,2262,30],
 "d8/d08/class_medium_gas_canister.html":[2,0,1986],
 "d8/d08/class_medium_gas_canister.html#a05ae049a1f530700d0ed1c4ea23c22e5":[2,0,1986,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX107 =
 "d8/d18/gameplay_8c.html#ae543a056d7b476a85d600091da2624adaf3784cc9b98ba8bbab7c2aa8d3a925a7":[3,0,0,2,47,64,0],
 "d8/d18/gameplay_8c.html#ae747353a04423e7ee5f4e8245d82b44d":[3,0,0,2,47,76],
 "d8/d18/gameplay_8c.html#aebf986ae6aa5530b47742a73bfc366bb":[3,0,0,2,47,119],
-"d8/d18/gameplay_8c.html#aed6408f73619442d0f70588b0e0c0e7a":[3,0,0,2,47,67],
-"d8/d18/gameplay_8c.html#af12e04c22088ac0f7591f699a5b6a429":[3,0,0,2,47,56]
+"d8/d18/gameplay_8c.html#aed6408f73619442d0f70588b0e0c0e7a":[3,0,0,2,47,67]
 };

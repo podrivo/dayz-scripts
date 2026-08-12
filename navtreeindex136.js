@@ -1,5 +1,6 @@
 var NAVTREEINDEX136 =
 {
+"d9/dfe/_c_a_continuous_fertilize_garden_slot_8c.html":[3,0,0,3,0,30,0,6],
 "d9/dff/_craft_wooden_crate_8c.html":[3,0,0,3,0,22,0,68],
 "da/d00/_chelate_water_8c.html":[3,0,0,3,0,22,0,5],
 "da/d00/class_land___ruin___house_small1___no_ivy.html":[2,0,1811],
@@ -248,6 +249,5 @@ var NAVTREEINDEX136 =
 "da/d1d/class_c_a_continuous_empty_magazine.html#aac36ad7863dd1c9a96317c86065bacf3":[2,0,936,1],
 "da/d1d/class_c_a_continuous_empty_magazine.html#ac3dad05da9ded351212f101fcf650524":[2,0,936,8],
 "da/d1d/class_c_a_continuous_empty_magazine.html#adc4eeed851ccdf899b90e5a82a758509":[2,0,936,6],
-"da/d1d/class_c_a_continuous_empty_magazine.html#afaf420574963aef13ecf2b69b92a81fc":[2,0,936,5],
-"da/d1e/_log_templates_8c.html":[3,0,0,2,19,14]
+"da/d1d/class_c_a_continuous_empty_magazine.html#afaf420574963aef13ecf2b69b92a81fc":[2,0,936,5]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX155 =
 {
+"db/d8f/class_bleeding_source_zone.html#af9a8363602691bd4e27c25ad897c4b53":[2,0,784,14],
 "db/d90/_anim_command_8c.html":[3,0,0,2,2,0],
 "db/d93/_groza___barrel___grip_8c.html":[3,0,0,3,1,10,11,1],
 "db/d94/class_action_repair_item_with_blowtorch_c_b.html":[2,0,385],
@@ -248,6 +249,5 @@ var NAVTREEINDEX155 =
 "db/dbb/class_chernarus_plus_data.html#a6381789ed45cbff702cfd0c07ae46d59":[2,0,1072,22],
 "db/dbb/class_chernarus_plus_data.html#a65a9a4066abe57ac49f92d3a6d840561":[2,0,1072,13],
 "db/dbb/class_chernarus_plus_data.html#a748abaa4a89f101cb8ea2a0719f4a43c":[2,0,1072,19],
-"db/dbb/class_chernarus_plus_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9":[2,0,1072,2],
-"db/dbb/class_chernarus_plus_data.html#a81a5938a69af68ad07642744ea0fdcb8":[2,0,1072,21]
+"db/dbb/class_chernarus_plus_data.html#a8045e088b31fe0754fb20cb0a5ff0dc9":[2,0,1072,2]
 };

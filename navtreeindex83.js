@@ -1,5 +1,6 @@
 var NAVTREEINDEX83 =
 {
+"d6/d0e/class_inventory_item.html#ac437e9f00af886671432f4dd647001e2":[2,0,1691,243],
 "d6/d0e/class_inventory_item.html#ac49b1cab32f5eab70aab44528726e721":[2,0,1691,222],
 "d6/d0e/class_inventory_item.html#ac52e9814fbb9de81258944cebee42e39":[2,0,1691,82],
 "d6/d0e/class_inventory_item.html#ac64261e85b4fcfdc78ecffd6408b7525":[2,0,1691,292],
@@ -248,6 +249,5 @@ var NAVTREEINDEX83 =
 "d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#ae28cc436a4d8869ad7d978dc5785efbd":[3,0,0,3,1,11,1,8,39],
 "d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#ae2b9df2c171fcb9a965e6beb2e132eae":[3,0,0,3,1,11,1,8,43],
 "d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#aef8b35720417c07b6e0ad3e0220f037a":[3,0,0,3,1,11,1,8,6],
-"d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#aefbde62ef7117c602425f3713d5903db":[3,0,0,3,1,11,1,8,16],
-"d6/d1c/class_a_k_s74_u___bttstck.html":[2,0,572]
+"d6/d1c/_day_z_player_melee_fight_logic___light_heavy_8c.html#aefbde62ef7117c602425f3713d5903db":[3,0,0,3,1,11,1,8,16]
 };

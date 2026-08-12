@@ -7,6 +7,7 @@ var class_vicinity_objects =
     [ "GetParent", "df/d59/class_vicinity_objects.html#ac210ef0e5e121b63aa43ca04ef6ecc52", null ],
     [ "GetRawVicinityObjects", "df/d59/class_vicinity_objects.html#ad5cbf6d13cb204355a1e9edf4b1309f5", null ],
     [ "GetVicinityObjects", "df/d59/class_vicinity_objects.html#a678fada9eac3c4bceea44bfc79923358", null ],
+    [ "IsValidVicinityObject", "df/d59/class_vicinity_objects.html#a8b559a2ffbb9b739191698155e2e6335", null ],
     [ "Remove", "df/d59/class_vicinity_objects.html#abf4fa9fa9e1c0f3433ec5d4d7a1ea780", null ],
     [ "Remove", "df/d59/class_vicinity_objects.html#a4e5b0bb3769aa50e2f4c19bcb4ecd8ea", null ],
     [ "StoreVicinityObject", "df/d59/class_vicinity_objects.html#a8dd2e6028585b135103f03eccf0fd57c", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX84 =
 {
+"d6/d1c/class_a_k_s74_u___bttstck.html":[2,0,572],
 "d6/d20/_dark_moto_helmet___color_base_8c.html":[3,0,0,3,1,10,3,0,2],
 "d6/d20/_dark_moto_helmet___color_base_8c.html#a27fc2e4e2468bb6ed486737bbdf02629":[3,0,0,3,1,10,3,0,2,2],
 "d6/d21/_hand___events_8c.html":[3,0,0,2,18,5,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX84 =
 "d6/d37/class_boat_script.html#a398b31b102b4857bab14e03fe94613be":[2,0,800,61],
 "d6/d37/class_boat_script.html#a3b1d7004d7a1a2b9847b43994c7da14f":[2,0,800,27],
 "d6/d37/class_boat_script.html#a3b3b06e658588e7f432f8d1e18c3889b":[2,0,800,11],
-"d6/d37/class_boat_script.html#a412d4ceb865f7c85edad44fa19c0409f":[2,0,800,69],
-"d6/d37/class_boat_script.html#a473105b75e7168edcb063d17a0470b5f":[2,0,800,84]
+"d6/d37/class_boat_script.html#a412d4ceb865f7c85edad44fa19c0409f":[2,0,800,69]
 };

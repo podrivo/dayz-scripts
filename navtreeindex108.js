@@ -1,5 +1,6 @@
 var NAVTREEINDEX108 =
 {
+"d8/d18/gameplay_8c.html#af12e04c22088ac0f7591f699a5b6a429":[3,0,0,2,47,56],
 "d8/d18/gameplay_8c.html#af142716d067a582403ea99ba551eefd8":[3,0,0,2,47,83],
 "d8/d18/gameplay_8c.html#af194843dc9b5d57ac6353cfb09cee131":[3,0,0,2,47,63],
 "d8/d18/gameplay_8c.html#af194843dc9b5d57ac6353cfb09cee131a0e78b65244dc412703b553e7323ef60b":[3,0,0,2,47,63,47],
@@ -248,6 +249,5 @@ var NAVTREEINDEX108 =
 "d8/d32/class_stamina_sound_event_base.html":[2,0,2568],
 "d8/d32/class_stamina_sound_event_base.html#a18ea76f73f5bbe343e5439b74031c363":[2,0,2568,1],
 "d8/d32/class_stamina_sound_event_base.html#a4906b3589dadeccf64ed957e6cc8c0f6":[2,0,2568,2],
-"d8/d32/class_stamina_sound_event_base.html#afb89bcc4c79966a4f94b00f9001ac066":[2,0,2568,0],
-"d8/d36/_item_base_2_head_8c.html":[3,0,0,3,1,10,70]
+"d8/d32/class_stamina_sound_event_base.html#afb89bcc4c79966a4f94b00f9001ac066":[2,0,2568,0]
 };

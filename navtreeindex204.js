@@ -1,5 +1,6 @@
 var NAVTREEINDEX204 =
 {
+"de/dff/class_weapon_debug.html#a577837210fca66cb0380b379c74a4d09":[2,0,3038,12],
 "de/dff/class_weapon_debug.html#a58957473548652cc8ba4b18bf16b5198":[2,0,3038,22],
 "de/dff/class_weapon_debug.html#a59624869377e9a51dfa33b0b394c6b4e":[2,0,3038,21],
 "de/dff/class_weapon_debug.html#a5e0a41bb1cf3d6ff6ad95a80a3596865":[2,0,3038,32],
@@ -248,6 +249,5 @@ var NAVTREEINDEX204 =
 "df/d13/_emote_manager_8c.html#af3066a54cc9fc0ee66c54042c38b34c5":[3,0,0,3,0,42,88],
 "df/d13/_emote_manager_8c.html#af59931998eda1e7e190aff2074f74961":[3,0,0,3,0,42,40],
 "df/d13/_emote_manager_8c.html#af74c845ef049e72592d63aa23bb307aa":[3,0,0,3,0,42,57],
-"df/d13/_emote_manager_8c.html#af7de21666d771526fba7fb616c9c0eee":[3,0,0,3,0,42,68],
-"df/d13/_emote_manager_8c.html#afc099f9c14703551fbf0a31abda6fd64":[3,0,0,3,0,42,79]
+"df/d13/_emote_manager_8c.html#af7de21666d771526fba7fb616c9c0eee":[3,0,0,3,0,42,68]
 };

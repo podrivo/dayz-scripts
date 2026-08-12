@@ -1,5 +1,6 @@
 var NAVTREEINDEX145 =
 {
+"da/ddc/_day_z_player_inventory_8c.html#a87b8925e164e95fa60f55d9ec767316c":[3,0,0,3,4,2,1,20],
 "da/ddc/_day_z_player_inventory_8c.html#a8ac9303b03a50e2409947d86d0529387":[3,0,0,3,4,2,1,45],
 "da/ddc/_day_z_player_inventory_8c.html#a8cedc4dd39b7128b13ca820ac9f65e88":[3,0,0,3,4,2,1,8],
 "da/ddc/_day_z_player_inventory_8c.html#a9024b1ae2e39923cb313644f88294c50":[3,0,0,3,4,2,1,42],
@@ -248,6 +249,5 @@ var NAVTREEINDEX145 =
 "da/df6/_e_fire_ignite_type_8c.html#a96be9fad49c872d620786d85934daafea7fed95a74fd0835db7088d8c2fc01371":[3,0,0,2,45,0,2],
 "da/df6/_e_fire_ignite_type_8c.html#a96be9fad49c872d620786d85934daafea84e4c9e2b59e68a76593b606e24f15b2":[3,0,0,2,45,0,3],
 "da/df6/_land___house__2_w02_8c.html":[3,0,0,3,1,1,2,1,15],
-"da/df6/class_cfg_slots_1_1_slot___truck__01___hood.html":[2,0,1056,290],
-"da/df6/class_cfg_slots_1_1_slot___truck__01___hood.html#a4749eb4ff1eac6f4be45afb16fa91175":[2,0,1056,290,0]
+"da/df6/class_cfg_slots_1_1_slot___truck__01___hood.html":[2,0,1056,290]
 };

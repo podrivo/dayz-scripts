@@ -1,5 +1,6 @@
 var NAVTREEINDEX64 =
 {
+"d4/d9e/class_land___underground___entrance_base.html":[2,0,1817],
 "d4/d9e/class_land___underground___entrance_base.html#a0541409a5b09fbf6af803fbd4831f2e9":[2,0,1817,17],
 "d4/d9e/class_land___underground___entrance_base.html#a060f385b0621c8bc9c8fe062e4a07bcf":[2,0,1817,23],
 "d4/d9e/class_land___underground___entrance_base.html#a07f9b8f0e51242525d4c618354a03fe0":[2,0,1817,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX64 =
 "d4/d9e/human_8c.html#a9fffe435b059ccfb9abfd77ea877ff47":[3,0,0,2,52,52],
 "d4/d9e/human_8c.html#aa373d084f08673d499172825fbb6702e":[3,0,0,2,52,160],
 "d4/d9e/human_8c.html#aa3a38fb122c5a5a14f6447caf9406a3f":[3,0,0,2,52,33],
-"d4/d9e/human_8c.html#aa3d07983643d95f8ca32f5bd47627d4d":[3,0,0,2,52,53],
-"d4/d9e/human_8c.html#aa54b822f26f3063e6b62c22d96a2b81f":[3,0,0,2,52,170]
+"d4/d9e/human_8c.html#aa3d07983643d95f8ca32f5bd47627d4d":[3,0,0,2,52,53]
 };

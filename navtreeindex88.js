@@ -1,5 +1,6 @@
 var NAVTREEINDEX88 =
 {
+"d6/d55/group___environment_cfg.html#gaff9ccf8ea7907e250f25186d952e42b7":[1,24,12,9],
 "d6/d56/_action_bite_vitamin_bottle_8c.html":[3,0,0,3,0,30,1,3,0,4],
 "d6/d57/_potato_8c.html":[3,0,0,3,1,10,5,46],
 "d6/d57/_refridgerator_8c.html":[3,0,0,3,1,10,113],
@@ -248,6 +249,5 @@ var NAVTREEINDEX88 =
 "d6/d6f/class_cfg_slots_1_1_slot___seed_base__3.html#a79d1b0e96e042367a41a73d13a4a09f1":[2,0,1056,256,3],
 "d6/d6f/class_cfg_slots_1_1_slot___seed_base__3.html#a8cb78570785fa7a30fb768eb84626d32":[2,0,1056,256,1],
 "d6/d6f/class_cfg_slots_1_1_slot___seed_base__3.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1056,256,2],
-"d6/d70/_hatchback__02_front_light_8c.html":[3,0,0,3,1,13,2,0,3],
-"d6/d72/_yields_fishing_junk_8c.html":[3,0,0,3,4,0,2,1]
+"d6/d70/_hatchback__02_front_light_8c.html":[3,0,0,3,1,13,2,0,3]
 };

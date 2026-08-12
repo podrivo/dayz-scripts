@@ -1,5 +1,6 @@
 var NAVTREEINDEX143 =
 {
+"da/dae/_ingame_hud_visibility_8c.html#a5d56323126a6ebcbfaaa07ff8f84bcf6":[3,0,0,4,0,27,5],
 "da/dae/_ingame_hud_visibility_8c.html#a63103e817218ed03e4c4384b0ea9dd5e":[3,0,0,4,0,27,2],
 "da/dae/_ingame_hud_visibility_8c.html#a83100c587c77fcf9385941438f4e4b14":[3,0,0,4,0,27,4],
 "da/dae/_ingame_hud_visibility_8c.html#a8496e2a5f7d13ce74264ed0783b3828c":[3,0,0,4,0,27,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX143 =
 "da/dc7/_action_fold_base_building_object_8c.html#aa9aa4864fae11769c65e644b5fd97c66":[3,0,0,3,0,30,1,0,78,1],
 "da/dc7/_action_fold_base_building_object_8c.html#ab6eb153abc42e514909126c621d01280":[3,0,0,3,0,30,1,0,78,6],
 "da/dc7/_action_fold_base_building_object_8c.html#accfb238782010198bdb5128a8ee44300":[3,0,0,3,0,30,1,0,78,3],
-"da/dc7/_action_fold_base_building_object_8c.html#af5aa64866cd0cfb7cd9989eb748abbe0":[3,0,0,3,0,30,1,0,78,9],
-"da/dc7/_action_force_bite_painkiller_tablets_8c.html":[3,0,0,3,0,30,1,3,0,10]
+"da/dc7/_action_fold_base_building_object_8c.html#af5aa64866cd0cfb7cd9989eb748abbe0":[3,0,0,3,0,30,1,0,78,9]
 };

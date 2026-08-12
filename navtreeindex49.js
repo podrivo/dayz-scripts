@@ -1,5 +1,6 @@
 var NAVTREEINDEX49 =
 {
+"d3/da5/class_poisoning_mdfr.html#a3fae6d6b0946cbe842c50c8ab274e1e4":[2,0,2255,2],
 "d3/da5/class_poisoning_mdfr.html#a4e971213e62da8093efc912a5f666dd2":[2,0,2255,17],
 "d3/da5/class_poisoning_mdfr.html#a66a9e9d745405b2679b54b86f6c8c3dd":[2,0,2255,14],
 "d3/da5/class_poisoning_mdfr.html#a74f18bf5dc2f02c373d6276a886bb8b9":[2,0,2255,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX49 =
 "d3/daf/class_ski_goggles___black_yellow.html#abe8ed5894e859cd82d75710d34f1d71c":[2,0,2499,0],
 "d3/db0/_hit_direction_base_8c.html":[3,0,0,3,0,15,2],
 "d3/db0/class_mag___s_t_a_n_a_g__30_rnd.html":[2,0,1941],
-"d3/db1/class_fabric.html":[2,0,1387],
-"d3/db1/class_fabric.html#afa39b7c4d3d085ef8514a87c32b81a4d":[2,0,1387,0]
+"d3/db1/class_fabric.html":[2,0,1387]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX184 =
 {
+"dd/db4/class_player_identity_base.html#ac31ce8b5296c56cffea0f8d009646bed":[2,0,2213,3],
 "dd/db4/class_player_identity_base.html#acf3e5dbe610b6bee5494e335cb2183a9":[2,0,2213,10],
 "dd/db4/class_player_identity_base.html#ad5a7620454b3b8e636e44b5b71cf90e0":[2,0,2213,4],
 "dd/db4/class_player_identity_base.html#ad96187164566b724b6f7687e58cb8fa9":[2,0,2213,17],
@@ -248,6 +249,5 @@ var NAVTREEINDEX184 =
 "dd/dca/class_day_z_infected.html#a76ed075afa101feb81a9d058471938cb":[2,0,1212,25],
 "dd/dca/class_day_z_infected.html#a812af7f3bbd978b626fa21cae3909174":[2,0,1212,16],
 "dd/dca/class_day_z_infected.html#a85083e71cc8d2e4d7ca7383efad782a3":[2,0,1212,51],
-"dd/dca/class_day_z_infected.html#a8c9c6da9f00befd47d2d9de35e445cc6":[2,0,1212,7],
-"dd/dca/class_day_z_infected.html#a8daf2fb29861419975a36554a4e1cdb9":[2,0,1212,55]
+"dd/dca/class_day_z_infected.html#a8c9c6da9f00befd47d2d9de35e445cc6":[2,0,1212,7]
 };

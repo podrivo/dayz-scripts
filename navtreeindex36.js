@@ -1,5 +1,6 @@
 var NAVTREEINDEX36 =
 {
+"d2/ddb/_universal_temperature_source_8c.html":[3,0,0,2,18,8,0],
 "d2/ddb/_universal_temperature_source_8c.html#a0c03ea880b646e914d66d43425a5e7df":[3,0,0,2,18,8,0,16],
 "d2/ddb/_universal_temperature_source_8c.html#a13ecb99dcb32cce9a350097f00556536":[3,0,0,2,18,8,0,7],
 "d2/ddb/_universal_temperature_source_8c.html#a14c5b1a24bb1d3a58e14a14b15da32f0":[3,0,0,2,18,8,0,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX36 =
 "d2/de6/class_c_game.html#a4d977ccac919348bd3c967c3a13d18a2":[2,0,1057,253],
 "d2/de6/class_c_game.html#a4e167503179070b71a4c6c2d67ad853b":[2,0,1057,123],
 "d2/de6/class_c_game.html#a4e7e694c9e4693ad02cdaaa3b82f77c8":[2,0,1057,37],
-"d2/de6/class_c_game.html#a4e9555b765e3a2271bcf657d1d360302":[2,0,1057,323],
-"d2/de6/class_c_game.html#a4f03cfc84232284447f2bb059cb0833c":[2,0,1057,355]
+"d2/de6/class_c_game.html#a4e9555b765e3a2271bcf657d1d360302":[2,0,1057,323]
 };

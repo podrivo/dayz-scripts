@@ -1,5 +1,6 @@
 var NAVTREEINDEX156 =
 {
+"db/dbb/class_chernarus_plus_data.html#a81a5938a69af68ad07642744ea0fdcb8":[2,0,1072,21],
 "db/dbb/class_chernarus_plus_data.html#a8842dc10fc49ec81486740e11432104a":[2,0,1072,18],
 "db/dbb/class_chernarus_plus_data.html#a8eb330719baf44113f24eb9eed026887":[2,0,1072,11],
 "db/dbb/class_chernarus_plus_data.html#aa19ba4f3c34bca2e8b270c571fa750aa":[2,0,1072,17],
@@ -145,8 +146,8 @@ var NAVTREEINDEX156 =
 "db/dd0/_magnum_8c.html#a8fba6d4213ebbe1820d719974f601736":[3,0,0,3,1,6,5,8,5],
 "db/dd0/_magnum_8c.html#a9c20a170ad58d56f28b10ce98f02cb9c":[3,0,0,3,1,6,5,8,4],
 "db/dd0/_magnum_8c.html#a9c20a170ad58d56f28b10ce98f02cb9ca6ce26a62afab55d7606ad4e92428b30c":[3,0,0,3,1,6,5,8,4,0],
-"db/dd0/_magnum_8c.html#a9c20a170ad58d56f28b10ce98f02cb9ca88ec7d5086d2469ba843c7fcceade8a6":[3,0,0,3,1,6,5,8,4,1],
 "db/dd0/_magnum_8c.html#a9c20a170ad58d56f28b10ce98f02cb9ca88ec7d5086d2469ba843c7fcceade8a6":[3,0,0,3,1,6,5,8,3,0],
+"db/dd0/_magnum_8c.html#a9c20a170ad58d56f28b10ce98f02cb9ca88ec7d5086d2469ba843c7fcceade8a6":[3,0,0,3,1,6,5,8,4,1],
 "db/dd0/_magnum_8c.html#a9f7122d8e57dcec0a8aa49227b8be502":[3,0,0,3,1,6,5,8,13],
 "db/dd0/_magnum_8c.html#aa40f8697dfa587f8adabc8640bc98ad8":[3,0,0,3,1,6,5,8,11],
 "db/dd0/_magnum_8c.html#aac14d196e64cad535c5aa50f0c954df3":[3,0,0,3,1,6,5,8,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX156 =
 "db/de5/class_weapon.html#a473c6ec970bad0fcaf2120f5d2c0a1c0":[2,0,3027,60],
 "db/de5/class_weapon.html#a490bf66466be3d7266d3942dc313921f":[2,0,3027,53],
 "db/de5/class_weapon.html#a49127b88bcdcda48600b260c4c0b52e2":[2,0,3027,37],
-"db/de5/class_weapon.html#a4abf93f20eb318e400fbf2f0223619cc":[2,0,3027,69],
-"db/de5/class_weapon.html#a4bb560f55604f8a9a3b5598ddf5962a8":[2,0,3027,126]
+"db/de5/class_weapon.html#a4abf93f20eb318e400fbf2f0223619cc":[2,0,3027,69]
 };

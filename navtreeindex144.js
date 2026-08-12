@@ -1,5 +1,6 @@
 var NAVTREEINDEX144 =
 {
+"da/dc7/_action_force_bite_painkiller_tablets_8c.html":[3,0,0,3,0,30,1,3,0,10],
 "da/dc7/_e_player_states_8c.html":[3,0,0,2,8,22],
 "da/dc7/_e_player_states_8c.html#a52f50630eba818b4183d6bfc778d7ad5":[3,0,0,2,8,22,0],
 "da/dc7/_e_player_states_8c.html#a52f50630eba818b4183d6bfc778d7ad5a11fd9ca455f92c69c084484d5cd803c2":[3,0,0,2,8,22,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX144 =
 "da/ddc/_day_z_player_inventory_8c.html#a7f7908d58f6cc6727c6a7f9ef78258cd":[3,0,0,3,4,2,1,55],
 "da/ddc/_day_z_player_inventory_8c.html#a8045e088b31fe0754fb20cb0a5ff0dc9":[3,0,0,3,4,2,1,24],
 "da/ddc/_day_z_player_inventory_8c.html#a813d629d73e4b6b34443ec681a50fce7":[3,0,0,3,4,2,1,78],
-"da/ddc/_day_z_player_inventory_8c.html#a83fadcc3135cd1b451ddc15856e2a46b":[3,0,0,3,4,2,1,64],
-"da/ddc/_day_z_player_inventory_8c.html#a87b8925e164e95fa60f55d9ec767316c":[3,0,0,3,4,2,1,20]
+"da/ddc/_day_z_player_inventory_8c.html#a83fadcc3135cd1b451ddc15856e2a46b":[3,0,0,3,4,2,1,64]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX119 =
 {
+"d8/dd5/class_glass_bottle.html":[2,0,1492],
 "d8/dd5/class_glass_bottle.html#a0344e19f4d8ea5d8a9aa2e98d80bd2ae":[2,0,1492,1],
 "d8/dd5/class_glass_bottle.html#a339a311dbe565db3bc527077fbe24037":[2,0,1492,0],
 "d8/dd5/class_glass_bottle.html#a50af78fb1504b0d35390c1090d0fbff6":[2,0,1492,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX119 =
 "d8/dec/class_trap_base.html#afc7c03491c0efb104d0d0d108993d733":[2,0,2744,3],
 "d8/ded/_stamina_events_8c.html":[3,0,0,3,0,27,1,0,8],
 "d8/ded/_stamina_events_8c.html#a10841fcd45d6294fb05fd32b88de11a8":[3,0,0,3,0,27,1,0,8,4],
-"d8/ded/_stamina_events_8c.html#a18ea76f73f5bbe343e5439b74031c363":[3,0,0,3,0,27,1,0,8,10],
-"d8/ded/_stamina_events_8c.html#a25c927ac364191dafcffb3375506c5b9":[3,0,0,3,0,27,1,0,8,13]
+"d8/ded/_stamina_events_8c.html#a18ea76f73f5bbe343e5439b74031c363":[3,0,0,3,0,27,1,0,8,10]
 };

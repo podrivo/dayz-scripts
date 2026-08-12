@@ -1,5 +1,6 @@
 var NAVTREEINDEX99 =
 {
+"d7/d75/class_u_i_manager.html#aa571a4e987fde3e68e9f5db5a821a2ab":[2,0,2957,0],
 "d7/d75/class_u_i_manager.html#aaa558da894c3565f1410d46d29714f5a":[2,0,2957,15],
 "d7/d75/class_u_i_manager.html#aaf3db5b9f42367fe590af6d23de2b3fc":[2,0,2957,6],
 "d7/d75/class_u_i_manager.html#ab93fe2912002641673211daa48889d26":[2,0,2957,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX99 =
 "d7/d90/group___debug_u_i.html#gae6e76446818894140c94b6a676a35219":[1,2,0,17],
 "d7/d90/group___debug_u_i.html#gafa163a9b93d04b773ea9fe1a16d80ea7":[1,2,0,21],
 "d7/d91/_action_turn_off_weapon_flashlight_8c.html":[3,0,0,3,0,30,1,3,62],
-"d7/d91/_ski_gloves___color_base_8c.html":[3,0,0,3,1,10,3,180],
-"d7/d92/_debug_monitor_8c.html":[3,0,0,4,0,20]
+"d7/d91/_ski_gloves___color_base_8c.html":[3,0,0,3,1,10,3,180]
 };

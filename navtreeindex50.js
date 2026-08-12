@@ -1,5 +1,6 @@
 var NAVTREEINDEX50 =
 {
+"d3/db1/class_fabric.html#afa39b7c4d3d085ef8514a87c32b81a4d":[2,0,1387,0],
 "d3/db2/_action_unplug_this_by_cord_8c.html":[3,0,0,3,0,30,1,2,57],
 "d3/db2/class_item_book_type.html":[2,0,1717],
 "d3/db2/class_mag__1911__7_rnd.html":[2,0,1887],
@@ -248,6 +249,5 @@ var NAVTREEINDEX50 =
 "d3/dd8/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773a7da8eab35d39fa7264027b8cd703e72b":[3,0,0,3,1,11,1,2,0,5],
 "d3/dd8/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773aaea84b5b180411d8473a3b56054a2bbd":[3,0,0,3,1,11,1,2,0,4],
 "d3/dd8/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773abd91fb42894d33db9c1931414eb8d915":[3,0,0,3,1,11,1,2,0,9],
-"d3/dd8/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773ac157bdf0b85a40d2619cbc8bc1ae5fe2":[3,0,0,3,1,11,1,2,0,0],
-"d3/dd8/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773ac85438d76f0b15ff715e6a05aa770706":[3,0,0,3,1,11,1,2,0,7]
+"d3/dd8/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773ac157bdf0b85a40d2619cbc8bc1ae5fe2":[3,0,0,3,1,11,1,2,0,0]
 };

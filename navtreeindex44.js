@@ -1,5 +1,6 @@
 var NAVTREEINDEX44 =
 {
+"d3/d58/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881a56ae75fc2be25848f68fa11d002f25d2":[3,0,0,2,40,5,321],
 "d3/d58/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881a572d07c1fc06ad064270e7f0e323571a":[3,0,0,2,40,5,83],
 "d3/d58/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881a576045dfe80583e9f824e64b01e7cd01":[3,0,0,2,40,5,248],
 "d3/d58/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881a57e2d7ad067bfa5750daf28353120f7a":[3,0,0,2,40,5,330],
@@ -248,6 +249,5 @@ var NAVTREEINDEX44 =
 "d3/d58/dayzplayer_8c.html#a89243d827ec1a3df420674b29e84a930":[3,0,0,2,40,171],
 "d3/d58/dayzplayer_8c.html#a89d583965bbec03c0afff348ff99cbd4":[3,0,0,2,40,40],
 "d3/d58/dayzplayer_8c.html#a8c9ae1998034f7a5cd9d5a9a0efeebe5":[3,0,0,2,40,118],
-"d3/d58/dayzplayer_8c.html#a8dbf2e5eaf3605808b3d6e73b5f41f34":[3,0,0,2,40,160],
-"d3/d58/dayzplayer_8c.html#a900841f979f4a0e55d2381ce71c5b142":[3,0,0,2,40,117]
+"d3/d58/dayzplayer_8c.html#a8dbf2e5eaf3605808b3d6e73b5f41f34":[3,0,0,2,40,160]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX112 =
 {
+"d8/d6c/class_cfg_slots_1_1_slot___cargo.html#ab74e6bf80237ddc4109968cedc58c151":[2,0,1056,31,2],
 "d8/d6e/_p_p_e_r_drowning_effect_8c.html":[3,0,0,2,15,1,8],
 "d8/d6e/_paddle_8c.html":[3,0,0,3,1,10,7,10,28],
 "d8/d6f/_particle_manager_8c.html":[3,0,0,2,14,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX112 =
 "d8/d81/_edible___base_8c.html#a6db7db87ee2ddd992d2b43e38434c4e1":[3,0,0,3,1,10,50,43],
 "d8/d81/_edible___base_8c.html#a701d2e029a2705e7642a3e6c81459289":[3,0,0,3,1,10,50,82],
 "d8/d81/_edible___base_8c.html#a71cfa6ae2516172a23bbd887d9a19a94":[3,0,0,3,1,10,50,10],
-"d8/d81/_edible___base_8c.html#a75057cfbd62c1a655ea775be6b72927f":[3,0,0,3,1,10,50,18],
-"d8/d81/_edible___base_8c.html#a76ee2166dd1ed828c60cc9985039ddb9":[3,0,0,3,1,10,50,25]
+"d8/d81/_edible___base_8c.html#a75057cfbd62c1a655ea775be6b72927f":[3,0,0,3,1,10,50,18]
 };

@@ -14,6 +14,7 @@ var class_action_targets =
     [ "GetVicinityObjects", "df/dba/class_action_targets.html#aa8627187a45b52e3b16e28db8e955481", null ],
     [ "IsObstructed", "df/dba/class_action_targets.html#abde46936c51c71935d2d0ed7d2e8618c", null ],
     [ "IsObstructedEx", "df/dba/class_action_targets.html#ac7c2379a5aaa497559f7cd331aa4242a", null ],
+    [ "IsRaycastResultException", "df/dba/class_action_targets.html#a8b22c9233a919882389d25ae23512549", null ],
     [ "SortResultsDistance", "df/dba/class_action_targets.html#aa8abcec4297f6823c0ad046c780083fa", null ],
     [ "StoreTarget", "df/dba/class_action_targets.html#a3e0692e836e10352952cef497c187dfd", null ],
     [ "Update", "df/dba/class_action_targets.html#aec0783b5a136e042adcc47bae4fe5291", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX53 =
 {
+"d3/def/class_player_constants.html#ad91595c070e38e713098f85c71f0c7b6":[2,0,2209,95],
 "d3/def/class_player_constants.html#adaa8c2c44a914d043bc86ccaed1cfe00":[2,0,2209,72],
 "d3/def/class_player_constants.html#adafb4b77f6672bea49f201be6980cdab":[2,0,2209,147],
 "d3/def/class_player_constants.html#adb3d91aea3f7c5998c809563399106ed":[2,0,2209,85],
@@ -248,6 +249,5 @@ var NAVTREEINDEX53 =
 "d4/d0b/class_action_empty_bottle_base_c_b.html":[2,0,204],
 "d4/d0b/class_action_empty_bottle_base_c_b.html#ac60929d9a8117cee13a3f345f28582f3":[2,0,204,2],
 "d4/d0b/class_action_empty_bottle_base_c_b.html#accfb238782010198bdb5128a8ee44300":[2,0,204,0],
-"d4/d0b/class_action_empty_bottle_base_c_b.html#af0d46c26688c4dac76faaf8af704daf0":[2,0,204,1],
-"d4/d0b/class_eff_breath_vapour_heavy.html":[2,0,1334]
+"d4/d0b/class_action_empty_bottle_base_c_b.html#af0d46c26688c4dac76faaf8af704daf0":[2,0,204,1]
 };

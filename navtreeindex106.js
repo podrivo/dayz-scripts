@@ -1,5 +1,6 @@
 var NAVTREEINDEX106 =
 {
+"d7/ded/class_tortilla_bag___desert.html":[2,0,2728],
 "d7/df0/_action_detach_from_target_8c.html":[3,0,0,3,0,30,1,2,7],
 "d7/df0/_action_detach_from_target_8c.html#a19b6ca382ce324b39bd04236b5e217bf":[3,0,0,3,0,30,1,2,7,4],
 "d7/df0/_action_detach_from_target_8c.html#a3070026ef71d716695e68b59c1d4ac09":[3,0,0,3,0,30,1,2,7,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX106 =
 "d8/d06/class_power_generator_static.html#ac0b4d1e4a959df59e101718b0b5cb518":[2,0,2262,27],
 "d8/d06/class_power_generator_static.html#ad49d3d2c043af36ff5bbba381f5d3f11":[2,0,2262,25],
 "d8/d06/class_power_generator_static.html#ad67cbfeda7ac6268fdf4f1da6b207a47":[2,0,2262,23],
-"d8/d06/class_power_generator_static.html#addbbe5ffb3fc585e1c47dcf3edcbbe8d":[2,0,2262,20],
-"d8/d06/class_power_generator_static.html#aea052228cf8c9f915d7de431fd4982e6":[2,0,2262,21]
+"d8/d06/class_power_generator_static.html#addbbe5ffb3fc585e1c47dcf3edcbbe8d":[2,0,2262,20]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX162 =
 {
+"dc/d53/class_ammunition___base.html#a86b687f78fe933c6f2a26e954fb6be35":[2,0,631,4],
 "dc/d53/class_ammunition___base.html#ace88383688c0181e71cd0e39ad2fd445":[2,0,631,0],
 "dc/d53/class_ammunition___base.html#af5a533494537e59f16b9e8ea67850c99":[2,0,631,5],
 "dc/d54/_action_close_barrel_holes_8c.html":[3,0,0,3,0,30,1,2,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX162 =
 "dc/d5f/_de_craft_snare_trap_8c.html":[3,0,0,3,0,22,0,97],
 "dc/d5f/group___a_g_t_i_ds.html":[1,24,4],
 "dc/d5f/group___a_g_t_i_ds.html#ga1865cd62d4e508dcc1ba6e5409a1e26f":[1,24,4,8],
-"dc/d5f/group___a_g_t_i_ds.html#ga2c6544d359880856c7a600e4a500e50f":[1,24,4,12],
-"dc/d5f/group___a_g_t_i_ds.html#ga419bc2517fecfc87e242469ce5f93ed8":[1,24,4,4]
+"dc/d5f/group___a_g_t_i_ds.html#ga2c6544d359880856c7a600e4a500e50f":[1,24,4,12]
 };

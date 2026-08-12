@@ -1,5 +1,6 @@
 var NAVTREEINDEX72 =
 {
+"d5/d4f/class_surface_detection_parameters.html#abcd282433506a1ce9b710706d95ef67b":[2,0,2654,1],
 "d5/d50/class_p1_recoil.html":[2,0,2117],
 "d5/d50/class_p1_recoil.html#a8045e088b31fe0754fb20cb0a5ff0dc9":[2,0,2117,0],
 "d5/d51/_weapon_re_chamber_8c.html":[3,0,0,3,1,6,2,0,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX72 =
 "d5/d6f/_plugin_lifespan_8c.html#a20afab42044fae2938fa80d840ee7fcf":[3,0,0,3,2,0,20,22],
 "d5/d6f/_plugin_lifespan_8c.html#a239f5f447585c6d3401073081b5ba0bd":[3,0,0,3,2,0,20,14],
 "d5/d6f/_plugin_lifespan_8c.html#a2473593c29b9770abcfd3e6d371d2e4a":[3,0,0,3,2,0,20,10],
-"d5/d6f/_plugin_lifespan_8c.html#a2665f2771c9a559194923f5994637b04":[3,0,0,3,2,0,20,32],
-"d5/d6f/_plugin_lifespan_8c.html#a2988329e1c67bf4a78dc9d7451102ebc":[3,0,0,3,2,0,20,15]
+"d5/d6f/_plugin_lifespan_8c.html#a2665f2771c9a559194923f5994637b04":[3,0,0,3,2,0,20,32]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX38 =
 {
+"d2/de6/class_c_game.html#acd5895d07bee68d818fbd112ca7c53b8":[2,0,1057,486],
 "d2/de6/class_c_game.html#acdcef2e44bafac59bd28439199e71071":[2,0,1057,110],
 "d2/de6/class_c_game.html#aceb6bc9c738aa26cf18e19d4128b9b3b":[2,0,1057,267],
 "d2/de6/class_c_game.html#acfcae4f183feb6e59688655bf298515b":[2,0,1057,1],
@@ -163,10 +164,10 @@ var NAVTREEINDEX38 =
 "d2/ded/class_leaf_crown___summer.html":[2,0,1833],
 "d2/ded/class_zombie_base.html":[2,0,3132],
 "d2/ded/class_zombie_base.html#a467627fa6cbfa32365bf871c35c7321c":[2,0,3132,2],
-"d2/ded/class_zombie_base.html#a7610f1938e082304c0a182cec4882c85":[2,0,3132,3],
 "d2/ded/class_zombie_base.html#a7610f1938e082304c0a182cec4882c85":[2,0,3132,4],
-"d2/ded/class_zombie_base.html#a9963015efd45ba5607f7ac42e039f4d7":[2,0,3132,1],
+"d2/ded/class_zombie_base.html#a7610f1938e082304c0a182cec4882c85":[2,0,3132,3],
 "d2/ded/class_zombie_base.html#a9963015efd45ba5607f7ac42e039f4d7":[2,0,3132,0],
+"d2/ded/class_zombie_base.html#a9963015efd45ba5607f7ac42e039f4d7":[2,0,3132,1],
 "d2/def/_chelating_tablets_8c.html":[3,0,0,3,1,10,5,19],
 "d2/def/_effect_particle_8c.html":[3,0,0,2,6,3],
 "d2/def/class_r12_recoil.html":[2,0,2322],
@@ -248,6 +249,5 @@ var NAVTREEINDEX38 =
 "d2/df5/_action_input_8c.html#a9138c23baa6d7014775eb2bd63047fdea7ea96a40640b7de706a0a98523132271":[3,0,0,3,0,30,7,14,2],
 "d2/df5/_action_input_8c.html#a9138c23baa6d7014775eb2bd63047fdea945d6a62312d6c83919a976cfcf787c1":[3,0,0,3,0,30,7,14,6],
 "d2/df5/_action_input_8c.html#a9138c23baa6d7014775eb2bd63047fdea9afedaecb8e478d819541232ab0eba98":[3,0,0,3,0,30,7,14,3],
-"d2/df5/_action_input_8c.html#a9138c23baa6d7014775eb2bd63047fdeaa945efe353da155fb806e41a23cd0bf1":[3,0,0,3,0,30,7,14,5],
-"d2/df5/_action_input_8c.html#a9138c23baa6d7014775eb2bd63047fdeabfeb90d6d6dc5a990c84c182ac40088a":[3,0,0,3,0,30,7,14,4]
+"d2/df5/_action_input_8c.html#a9138c23baa6d7014775eb2bd63047fdeaa945efe353da155fb806e41a23cd0bf1":[3,0,0,3,0,30,7,14,5]
 };
