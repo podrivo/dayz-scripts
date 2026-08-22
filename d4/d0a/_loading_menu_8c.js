@@ -1,4 +1,0 @@
-var _loading_menu_8c =
-[
-    [ "UIScriptedMenu", "d1/d5b/class_u_i_scripted_menu.html", "d1/d5b/class_u_i_scripted_menu" ]
-];
