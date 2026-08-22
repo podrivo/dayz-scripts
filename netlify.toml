@@ -1,0 +1,7 @@
+# Deploys are normally performed by GitHub Actions via the Netlify CLI
+# (see .github/workflows/build.yml). This file exists so that manual
+# `netlify deploy` runs pick the right publish directory.
+
+[build]
+  publish = "dist"
+  command = "npm run build"

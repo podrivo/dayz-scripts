@@ -1,0 +1,19 @@
+{
+  "name": "dayz-scripts-docs",
+  "version": "1.0.0",
+  "description": "Custom documentation generator for DayZ Enforce Script sources",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "fetch": "node src/fetch.js",
+    "parse": "node src/parse-all.js",
+    "generate": "node src/generate/index.js",
+    "build": "npm run fetch && npm run parse && npm run generate",
+    "test": "node --test",
+    "serve": "node src/serve.js"
+  },
+  "license": "SEE LICENSE IN README.md"
+}

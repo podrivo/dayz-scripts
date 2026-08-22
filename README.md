@@ -1,0 +1,62 @@
+# DayZ Scripts Docs
+
+Custom documentation site for the DayZ Enforce Script API, generated from the
+official [DayZ Script Diff](https://github.com/BohemiaInteractive/DayZ-Script-Diff)
+sources. Live at [dayz-scripts.yadz.app](https://dayz-scripts.yadz.app).
+
+This replaces the previous Doxygen-based site (preserved on the
+[`doxygen-archive`](../../tree/doxygen-archive) branch) with a fully custom,
+mobile-friendly static site: friendly URLs, fast client-side search,
+inheritance trees, syntax-highlighted sources, and per-version changelogs with
+a version selector.
+
+## How it works
+
+```
+src/fetch.js      clones DayZ-Script-Diff, maps commits to versions  -> data/versions.json
+src/parse-all.js  parses every version's .c files (Enforce Script)   -> data/model-<version>.json
+src/generate/     renders static HTML from the models                -> dist/
+```
+
+The parser is a real lexer + recursive-descent declaration parser for Enforce
+Script (not regex scraping). It understands classes (both `extends` and `:`
+inheritance), generic templates, the full method modifier set (`proto`,
+`native`, `owned`, `external`, `volatile`, `event`, `sealed`, ...), enums,
+typedefs, global constants/functions, Doxygen-style doc comments, and
+preprocessor conditions (`#ifdef DIAG_DEVELOPER` etc.), which are shown as
+badges instead of being stripped.
+
+## Local development
+
+Requires Node.js 20+ and git. No npm dependencies.
+
+```sh
+npm run fetch      # clone/update upstream, detect versions
+npm run parse      # parse all versions into JSON models (cached by commit)
+npm run generate   # render the static site into dist/
+npm run build      # all of the above
+npm run serve      # preview dist/ at http://localhost:8817
+npm test           # parser test suite
+```
+
+## Deployment
+
+`.github/workflows/build.yml` runs on a daily schedule (and on push / manual
+dispatch). It skips early when the upstream repo has no new commit, otherwise
+it rebuilds everything and deploys `dist/` to Netlify. Requires two repository
+secrets: `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID`.
+
+## Links
+
+- [DayZ Script Diff](https://github.com/BohemiaInteractive/DayZ-Script-Diff)
+- [DayZ Modding Samples](https://github.com/BohemiaInteractive/DayZ-Samples)
+- [DayZ Central Economy](https://github.com/BohemiaInteractive/DayZ-Central-Economy)
+- [DayZ Additional Resources](https://github.com/BohemiaInteractive/DayZ-Misc)
+
+## License
+
+The DayZ script sources are licensed under the
+[Arma and DayZ Public License Share Alike (ADPL-SA)](https://www.bohemia.net/community/licenses/arma-and-dayz-public-license-share-alike-adpl-sa).
+This is not an official documentation and it is not affiliated with DayZ or
+Bohemia Interactive. DAYZ®, ENFUSION®, and BOHEMIA INTERACTIVE® are registered
+trademarks of BOHEMIA INTERACTIVE a.s.
