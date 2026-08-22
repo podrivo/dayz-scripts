@@ -1,0 +1,99 @@
+name: Build and deploy docs
+
+on:
+  schedule:
+    - cron: '17 6 * * *' # daily; skips early when upstream has no new commit
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Rebuild even if upstream is unchanged
+        type: boolean
+        default: false
+
+concurrency:
+  group: build-deploy
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Skip scheduled runs when DayZ-Script-Diff has no new commit since the
+      # last successful deploy (recorded in the last-built cache).
+      - name: Check upstream for changes
+        id: upstream
+        run: |
+          HEAD=$(git ls-remote https://github.com/BohemiaInteractive/DayZ-Script-Diff.git refs/heads/main | cut -f1)
+          echo "head=$HEAD" >> "$GITHUB_OUTPUT"
+          echo "Upstream head: $HEAD"
+
+      - name: Restore last-built marker
+        id: marker
+        uses: actions/cache/restore@v4
+        with:
+          path: .last-built
+          key: last-built-${{ steps.upstream.outputs.head }}-${{ github.sha }}
+
+      - name: Decide whether to build
+        id: decide
+        run: |
+          if [[ "${{ github.event_name }}" != "schedule" || "${{ inputs.force }}" == "true" || "${{ steps.marker.outputs.cache-hit }}" != "true" ]]; then
+            echo "build=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Upstream unchanged and generator unchanged - skipping."
+            echo "build=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Parsed models are cached per upstream head so historical versions are
+      # only re-parsed when the parser itself changes.
+      - name: Restore parsed models
+        if: steps.decide.outputs.build == 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
+            data
+            .cache
+          key: models-${{ hashFiles('src/parser/**', 'src/parse-all.js', 'src/fetch.js') }}-${{ steps.upstream.outputs.head }}
+          restore-keys: |
+            models-${{ hashFiles('src/parser/**', 'src/parse-all.js', 'src/fetch.js') }}-
+
+      - name: Test parser
+        if: steps.decide.outputs.build == 'true'
+        run: npm test
+
+      - name: Fetch upstream versions
+        if: steps.decide.outputs.build == 'true'
+        run: npm run fetch
+
+      - name: Parse all versions
+        if: steps.decide.outputs.build == 'true'
+        run: npm run parse
+
+      - name: Generate site
+        if: steps.decide.outputs.build == 'true'
+        run: npm run generate
+
+      - name: Deploy to Netlify
+        if: steps.decide.outputs.build == 'true'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: npx --yes netlify-cli deploy --dir dist --prod --message "Build ${{ steps.upstream.outputs.head }} (${{ github.sha }})"
+
+      - name: Save last-built marker
+        if: steps.decide.outputs.build == 'true'
+        run: echo "${{ steps.upstream.outputs.head }}" > .last-built
+
+      - uses: actions/cache/save@v4
+        if: steps.decide.outputs.build == 'true'
+        with:
+          path: .last-built
+          key: last-built-${{ steps.upstream.outputs.head }}-${{ github.sha }}

@@ -1,4 +1,4 @@
-import { execFileSync } from 'node:child_process';
+import { execFileSync, execSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -24,6 +24,18 @@ export function readJson(file) {
 export function writeJson(file, value) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, JSON.stringify(value));
+}
+
+/** Extract the scripts/ tree of a version commit into .cache/src/<label>. */
+export function extractSources(v) {
+  const dir = path.join(CACHE_DIR, 'src', v.label);
+  const marker = path.join(dir, '.sha');
+  if (fs.existsSync(marker) && fs.readFileSync(marker, 'utf8') === v.sha) return dir;
+  fs.rmSync(dir, { recursive: true, force: true });
+  fs.mkdirSync(dir, { recursive: true });
+  execSync(`git -C "${UPSTREAM_DIR}" archive ${v.sha} scripts | tar -x -C "${dir}"`, { stdio: 'inherit' });
+  fs.writeFileSync(marker, v.sha);
+  return dir;
 }
 
 /** Recursively list files under dir matching the extension, as relative paths. */

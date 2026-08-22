@@ -4,25 +4,13 @@
 // a re-parse. Fails the build when parse diagnostics appear (unless
 // ALLOW_DIAGS=1), so silent parser degradation is impossible.
 
-import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
-import { CACHE_DIR, DATA_DIR, UPSTREAM_DIR, readJson, walk, writeJson } from './util.js';
+import { DATA_DIR, extractSources, readJson, walk, writeJson } from './util.js';
 import { parseFile } from './parser/index.js';
 
 const { versions } = readJson(path.join(DATA_DIR, 'versions.json'));
 const only = process.env.ONLY_VERSION; // e.g. ONLY_VERSION=1.29 for quick runs
-
-export function extractSources(v) {
-  const dir = path.join(CACHE_DIR, 'src', v.label);
-  const marker = path.join(dir, '.sha');
-  if (fs.existsSync(marker) && fs.readFileSync(marker, 'utf8') === v.sha) return dir;
-  fs.rmSync(dir, { recursive: true, force: true });
-  fs.mkdirSync(dir, { recursive: true });
-  execSync(`git -C "${UPSTREAM_DIR}" archive ${v.sha} scripts | tar -x -C "${dir}"`, { stdio: 'inherit' });
-  fs.writeFileSync(marker, v.sha);
-  return dir;
-}
 
 function parseVersion(v) {
   const modelFile = path.join(DATA_DIR, `model-${v.label}.json`);
