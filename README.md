@@ -4,11 +4,10 @@ Custom documentation site for the DayZ Enforce Script API, generated from the
 official [DayZ Script Diff](https://github.com/BohemiaInteractive/DayZ-Script-Diff)
 sources. Live at [dayz-scripts.yadz.app](https://dayz-scripts.yadz.app).
 
-This replaces the previous Doxygen-based site (preserved on the
-[`doxygen-archive`](../../tree/doxygen-archive) branch) with a fully custom,
-mobile-friendly static site: friendly URLs, fast client-side search,
-inheritance trees, syntax-highlighted sources, and per-build changelogs with
-a build selector (every published build, e.g. 1.29.163709, 1.29.163451, ...).
+It is a fully custom, mobile-friendly static site: friendly URLs, fast
+client-side search, inheritance trees, syntax-highlighted sources, and
+per-build changelogs with a build selector (every published build, e.g.
+1.29.163709, 1.29.163451, ...).
 
 ## How it works
 
@@ -53,10 +52,28 @@ secrets: `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID`.
 
 ## Links
 
-- [DayZ Script Diff](https://github.com/BohemiaInteractive/DayZ-Script-Diff)
+The homepage carries the same two lists, from `src/generate/content.js`.
+
+**Official**
+
+- [DayZ Script Diff](https://github.com/BohemiaInteractive/DayZ-Script-Diff) — the script sources this site is generated from
 - [DayZ Modding Samples](https://github.com/BohemiaInteractive/DayZ-Samples)
 - [DayZ Central Economy](https://github.com/BohemiaInteractive/DayZ-Central-Economy)
 - [DayZ Additional Resources](https://github.com/BohemiaInteractive/DayZ-Misc)
+- [GitHub Repositories](https://github.com/orgs/BohemiaInteractive/repositories?q=dayz) — every official Bohemia Interactive DayZ repo
+- [DayZ Forums](https://forums.dayz.com/) — announcements and stable update threads
+- [Community Wiki](https://community.bistudio.com/wiki/Category:DayZ) — Bohemia Interactive wiki pages for DayZ
+- [Feedback Tracker](https://feedback.bistudio.com/tag/dayz/) — report bugs and follow known issues
+
+**Community**
+
+- [YADZ](https://discord.gg/nbrHqZCpA6) — Discord · bugs and suggestions for this site
+- [Enfusion Modders](https://discord.gg/enfusion-modders-452035973786632194) — Discord · modding and scripting help
+- [DZ Academy](https://discord.gg/Mh5nhD3qth) — Discord · modders and server owners
+- [DayZ Editor](https://discord.gg/z65nVkU) — Discord · support for the DayZ Editor mod
+- [DayZ BoosterZ Tools](https://dayzboosterz.com/showcase) — web tools for DayZ server owners
+- [Mikero's Tools](https://mikero.bytex.digital/) — PBO packing and file conversion tools
+- [WOBO Tools](https://wobo.tools/) — item, weapon and loot data explorer
 
 ## License
 
