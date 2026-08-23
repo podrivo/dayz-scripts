@@ -328,7 +328,7 @@ ${section('Methods', methods, methodBlock)}
     ...ctx,
     title: cls.name,
     active: 'Classes',
-    description: brief || `${cls.name} class — DayZ ${site.version} Enforce Script API`,
+    description: brief || `${cls.name} class — DayZ Enforce Script API`,
     breadcrumbs: [{ label: 'Classes', href: `${base}classes/` }, { label: cls.name }],
     content,
   });

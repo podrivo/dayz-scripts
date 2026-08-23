@@ -139,13 +139,18 @@ const NAV = [
 
 /**
  * Full page layout.
- * opts: { title, base, root, site, versions, current, active, breadcrumbs, content, description }
+ * opts: { title, base, active, breadcrumbs, content, description, versionPath }
  *  - base: relative prefix from this page to the VERSION root (e.g. "../../")
- *  - root: relative prefix from this page to the SITE root
  *  - versionPath: path of this page relative to version root (for the switcher)
+ *
+ * Deliberately carries no build, version or date, and links to assets by
+ * absolute path rather than a relative site root. That makes a page's bytes
+ * depend only on its content, so identical pages across builds can be
+ * hard-linked in dist/ instead of duplicated 49 times. The build stamp is
+ * restored client-side in site/app.js from the URL. See test/render.test.js.
  */
 export function layout(o) {
-  const desc = o.description || `DayZ ${o.site.version} Enforce Script API documentation`;
+  const desc = o.description || 'DayZ Enforce Script API documentation';
   const nav = NAV.map(
     ([href, label]) =>
       `<a href="${o.base}${href}"${o.active === label ? ' class="active" aria-current="page"' : ''}>${label}</a>`
@@ -162,40 +167,40 @@ export function layout(o) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(o.title)} · DayZ ${esc(o.site.version)} Scripts</title>
+<title>${esc(o.title)} · DayZ Scripts</title>
 <meta name="description" content="${esc(desc)}">
-<link rel="icon" href="${o.root}assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="${o.root}assets/styles.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
 <script>try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
-<body data-base="${o.base}" data-root="${o.root}" data-vpath="${esc(o.versionPath || '')}">
+<body data-base="${o.base}" data-vpath="${esc(o.versionPath || '')}">
 <header class="top">
-  <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h14M3 10h14M3 15h14"/></svg></button>
-  <a class="brand" href="${o.root}">DayZ<span>Scripts</span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="ic ic-menu"></i></button>
+  <a class="brand" href="/">DayZ<span>Scripts</span></a>
   <div class="searchbox">
     <input id="search" type="search" placeholder="Search classes, methods, enums…" autocomplete="off" spellcheck="false" aria-label="Search">
     <kbd>/</kbd>
     <div id="searchResults" class="search-results" hidden></div>
   </div>
   <div class="verpicker">
-    <button class="ver-btn" id="verBtn" data-build="${esc(o.site.build)}" aria-haspopup="true" aria-expanded="false" title="Switch DayZ build">${esc(o.site.version)}<span class="ver-patch">${esc(o.site.build.slice(o.site.version.length))}</span><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3.5l3 3 3-3"/></svg></button>
+    <button class="ver-btn" id="verBtn" aria-haspopup="true" aria-expanded="false" title="Switch DayZ build"><span class="ver-label"></span><i class="ic ic-chev"></i></button>
     <nav class="ver-menu" id="verMenu" aria-label="DayZ builds" hidden></nav>
   </div>
-  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme (M)"><svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.3 11.3 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.3-11.3 1.4-1.4"/></svg><svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme (M)"><i class="ic ic-theme"></i></button>
 </header>
 <div class="shell">
   <aside class="side" id="sidebar"><nav>${nav}</nav>
-    <div class="side-meta">DayZ ${esc(o.site.version)}<br>build ${esc(o.site.build)}<br>${esc(o.site.date)}</div>
+    <div class="side-meta" id="sideMeta"></div>
   </aside>
   <main class="main">
     ${crumbs}
     ${o.content}
     <footer class="foot">
-      <p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" rel="noopener">DayZ Script Diff</a> · build ${esc(o.site.build)} (${esc(o.site.date)}) · Unofficial, not affiliated with Bohemia Interactive · © 2022 BOHEMIA INTERACTIVE a.s., licensed under the <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" rel="noopener">DayZ Public License</a></p>
+      <p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" rel="noopener">DayZ Script Diff</a> · build <span id="footBuild"></span> · Unofficial, not affiliated with Bohemia Interactive · © 2022 Bohemia Interactive a.s., <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" rel="noopener">DayZ Public License</a></p>
     </footer>
   </main>
 </div>
-<script src="${o.root}assets/app.js" defer></script>
+<script src="/assets/app.js" defer></script>
 </body>
 </html>`;
 }

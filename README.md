@@ -17,6 +17,19 @@ src/parse-all.js  parses every build's .c files (Enforce Script)     -> data/mod
 src/generate/     renders static HTML from the models                -> dist/
 ```
 
+Pages carry no build number, version or date: consecutive builds share 98-99%
+of their pages, so the generator emits each distinct page once and hard-links
+every other URL to it. That turns ~417,000 pages into ~23,000 files and keeps
+`dist/` around 380 MB instead of 3.9 GB, and lets Netlify upload each unique
+page once. The build stamp is restored in the browser from the URL plus
+`assets/versions.json`. `test/render.test.js` guards the invariant, because a
+build number leaking back into `layout()` would silently undo all of it.
+
+Two consequences worth knowing: `dist/` measures ~3 GB to anything that follows
+hard links (`cp -r`, `tar`, `du -L`) rather than counting inodes, and pages must
+reference assets by absolute path since the same file is served at several
+depths.
+
 The homepage also carries hand-maintained content — community links and the
 official forum thread of each PC stable update — which lives in
 `src/generate/content.js`. Add the thread URL there when a new build ships;
@@ -38,6 +51,7 @@ Requires Node.js 20+ and git. No npm dependencies.
 npm run fetch      # clone/update upstream, detect versions
 npm run parse      # parse all versions into JSON models (cached by commit)
 npm run generate   # render the static site into dist/
+npm run generate:latest  # render only the newest build (fast inner loop)
 npm run build      # all of the above
 npm run dev        # preview dist/ at http://localhost:3000
 npm test           # parser test suite

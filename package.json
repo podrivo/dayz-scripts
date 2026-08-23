@@ -11,6 +11,7 @@
     "fetch": "node src/fetch.js",
     "parse": "node src/parse-all.js",
     "generate": "node src/generate/index.js",
+    "generate:latest": "BUILD_VERSIONS=1 node src/generate/index.js",
     "build": "npm run fetch && npm run parse && npm run generate",
     "test": "node --test",
     "dev": "node src/serve.js"

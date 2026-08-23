@@ -81,6 +81,12 @@ jobs:
         if: steps.decide.outputs.build == 'true'
         run: npm run generate
 
+      # Finder writes these into dist/ on local runs; belt and braces so a
+      # stray one can never reach production.
+      - name: Prune OS metadata files
+        if: steps.decide.outputs.build == 'true'
+        run: find dist -name '.DS_Store' -delete
+
       - name: Deploy to Netlify
         if: steps.decide.outputs.build == 'true'
         env:

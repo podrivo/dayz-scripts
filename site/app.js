@@ -3,7 +3,7 @@
   'use strict';
   const $ = (s, el) => (el || document).querySelector(s);
   const BASE = document.body.dataset.base || '';
-  const ROOT = document.body.dataset.root || '';
+  const ROOT = '/';
   const VPATH = document.body.dataset.vpath || '';
 
   /* ---------- theme ----------
@@ -41,22 +41,48 @@
     }
   });
 
+  const fmtDate = (iso) =>
+    new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', {
+      month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC',
+    });
+
+  /* ---------- build identity ----------
+     Pages are byte-identical across builds so dist/ can hard-link them, which
+     means the build number, date and version are deliberately absent from the
+     HTML. Recover them from the URL — /v/<build>/… for an archived build, the
+     newest build at the site root — and stamp them into the chrome. */
+  const pathBuild = location.pathname.match(/^\/v\/([^/]+)\//)?.[1];
+  let buildsPromise;
+  const loadBuilds = () => (buildsPromise ||= fetch(ROOT + 'assets/versions.json').then((r) => r.json()));
+
+  let current = null;
+  const identity = loadBuilds().then((builds) => {
+    current = (pathBuild && builds.find((b) => b.build === pathBuild)) || builds[0];
+    const label = $('.ver-label');
+    if (label) {
+      const patch = document.createElement('span');
+      patch.className = 'ver-patch';
+      patch.textContent = current.build.slice(current.version.length);
+      label.textContent = current.version;
+      label.append(patch);
+    }
+    const br = () => document.createElement('br');
+    $('#sideMeta')?.append(`DayZ ${current.version}`, br(), `build ${current.build}`, br(), current.date);
+    const foot = $('#footBuild');
+    if (foot) foot.textContent = `${current.build} (${current.date})`;
+    return builds;
+  });
+
   /* ---------- version switcher ----------
-     A button opening a popover of all builds grouped by game version.
-     The list is fetched on first open so pages don't carry all 49 builds. */
+     A button opening a popover of all builds grouped by game version. */
   const verBtn = $('#verBtn');
   const verMenu = $('#verMenu');
   if (verBtn) {
-    const fmtDate = (iso) =>
-      new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', {
-        month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC',
-      });
-
     let loaded = false;
     async function fillMenu() {
       if (loaded) return;
       loaded = true;
-      const builds = await (await fetch(ROOT + 'assets/versions.json')).json();
+      const builds = await identity;
       let html = '';
       let version = '';
       builds.forEach((b, i) => {
@@ -64,7 +90,7 @@
           version = b.version;
           html += `<div class="ver-group">DayZ ${version}</div>`;
         }
-        const cur = b.build === verBtn.dataset.build;
+        const cur = b.build === current?.build;
         const href = ROOT + (i === 0 ? '' : `v/${b.build}/`) + VPATH;
         html += `<a href="${href}"${cur ? ' class="cur" aria-current="page"' : ''}>${b.build}` +
           (i === 0 ? '<span class="ver-latest">latest</span>' : '') +

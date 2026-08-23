@@ -5,6 +5,12 @@ import path from 'node:path';
 import { DIST_DIR } from './util.js';
 
 const PORT = process.env.PORT || 3000;
+
+if (!fs.existsSync(DIST_DIR)) {
+  console.error('No dist/ to serve. Run `pnpm generate` (or `BUILD_VERSIONS=1 pnpm generate` for just the latest build).');
+  process.exit(1);
+}
+
 const TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css',
