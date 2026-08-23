@@ -61,6 +61,14 @@
   }
 }
 
+/* Layout measures. Only these three exist: the page column, the reading measure
+   for running text, and the search field. Anything else spans its container. */
+:root {
+  --w-page: 1060px;
+  --w-prose: 700px;
+  --w-search: 600px;
+}
+
 * { box-sizing: border-box; }
 html { scroll-padding-top: 72px; }
 
@@ -138,7 +146,7 @@ pre code { background: none; padding: 0; }
 /* ---- search: header trigger + command palette ---- */
 .search-trigger {
   display: flex; align-items: center; gap: 8px;
-  flex: 1; max-width: 520px; margin-left: auto;
+  flex: 1; max-width: var(--w-search); margin-left: auto;
   height: 36px; padding: 0 8px 0 12px;
   border: 1px solid var(--line); border-radius: 8px;
   background: var(--bg2); color: var(--fg2); font: inherit; font-size: 14px;
@@ -161,7 +169,7 @@ pre code { background: none; padding: 0; }
 /* display:flex above is an author rule, so it outranks the UA [hidden] one */
 .palette[hidden] { display: none; }
 .palette-box {
-  display: flex; flex-direction: column; width: 100%; max-width: 620px;
+  display: flex; flex-direction: column; width: 100%; max-width: var(--w-search);
   max-height: 100%; overflow: hidden;
   background: var(--bg); border: 1px solid var(--line); border-radius: 14px;
   box-shadow: var(--shadow);
@@ -268,7 +276,13 @@ body.palette-open { overflow: hidden; }
 .side nav a:hover { background: var(--bg3); text-decoration: none; }
 .side nav a.active { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
 
-.main { flex: 1; min-width: 0; padding: 28px 36px 40px; max-width: 1060px; }
+.main { flex: 1; min-width: 0; padding: 28px 36px 40px; max-width: var(--w-page); }
+
+/* Running text is capped wherever it appears, so prose shares one edge across
+   every page. Data — tables, cards, trees, signatures, source — keeps the full
+   column, as do the two paragraphs that are really dense lists of links. */
+.main > p:not(.chain, .locations), .hero p, .foot p,
+.class-doc, .member-doc { max-width: var(--w-prose); }
 
 .foot { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--fg2); font-size: 13px; }
 
@@ -282,7 +296,7 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 .crumbs { font-size: 13px; color: var(--fg2); margin-bottom: 10px; overflow-wrap: anywhere; }
 .crumb-sep { margin: 0 6px; opacity: 0.6; }
 
-.hero p { font-size: 16px; max-width: 640px; }
+.hero p { font-size: 16px; }
 
 .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
 .stat {
@@ -346,8 +360,6 @@ table.list td:first-child { white-space: nowrap; }
 
 .derived summary { cursor: pointer; color: var(--accent); font-size: 14px; }
 .derived-list { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 10px 4px; font-size: 14px; }
-
-.class-doc, .member-doc { max-width: 760px; }
 
 .member { padding: 10px 12px; margin: 0 -12px; border-radius: 10px; }
 .member:hover { background: var(--bg2); }
