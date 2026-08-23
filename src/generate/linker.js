@@ -15,6 +15,13 @@ import { parentPort, workerData } from 'node:worker_threads';
 const { jobs } = workerData;
 const dirs = new Set(); // most pages are the only entry in their directory, but cheap to check
 
+// Linking is by far the longest phase of a full build, so tick often enough
+// that the parent can show it moving even on a short run, where a whole slice
+// is only a few thousand links. The parent throttles the redraw, so the only
+// cost here is the message itself.
+const TICK = 500;
+let sinceTick = 0;
+
 for (let i = 0; i < jobs.length; i += 2) {
   const file = jobs[i];
   const dir = path.dirname(file);
@@ -23,6 +30,12 @@ for (let i = 0; i < jobs.length; i += 2) {
     dirs.add(dir);
   }
   fs.linkSync(jobs[i + 1], file);
+  if (++sinceTick === TICK) {
+    parentPort.postMessage({ linked: sinceTick });
+    sinceTick = 0;
+  }
 }
 
-parentPort.postMessage(jobs.length / 2);
+// sinceTick carries the links made after the last tick, so the parent's running
+// total ends up exact rather than rounded down to a multiple of TICK.
+parentPort.postMessage({ done: jobs.length / 2, linked: sinceTick });

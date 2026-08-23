@@ -88,16 +88,41 @@ function linkAll() {
   for (let i = 0; i < linkJobs.length; i += pairs * 2) {
     work.push(linkJobs.slice(i, i + pairs * 2));
   }
+
+  // This phase is ~75% of a full build's wall time and writes no output of its
+  // own, so without progress it reads as a hang right after the last build.
+  const total = linkJobs.length / 2;
+  const tty = process.stdout.isTTY;
+  let linked = 0;
+  let lastReport = 0;
+  const report = () => {
+    // redraw once a second on a terminal; every 10% in a log file
+    const step = tty ? 1000 : 0;
+    const now = Date.now();
+    if (linked < total && (tty ? now - lastReport < step : linked - lastReport < total / 10)) return;
+    lastReport = tty ? now : linked;
+    const line = `  linking ${linked.toLocaleString('en-US')} of ${total.toLocaleString('en-US')} pages (${Math.round((linked / total) * 100)}%)`;
+    process.stdout.write(tty ? `\r${line}` : `${line}\n`);
+  };
+
+  console.log(`Linking ${total.toLocaleString('en-US')} duplicate pages across ${work.length} threads...`);
   return Promise.all(
     work.map(
       (jobs) =>
         new Promise((resolve, reject) => {
           const w = new Worker(new URL('./linker.js', import.meta.url), { workerData: { jobs } });
-          w.on('message', resolve);
+          w.on('message', (m) => {
+            linked += m.linked;
+            report();
+            if (m.done !== undefined) resolve(m.done);
+          });
           w.on('error', reject);
         })
     )
-  );
+  ).then((r) => {
+    if (tty) process.stdout.write('\n');
+    return r;
+  });
 }
 
 // ---- static assets --------------------------------------------------------
