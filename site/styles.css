@@ -120,6 +120,10 @@ pre code { background: none; padding: 0; }
   width: 10px; height: 10px; margin-left: 6px; color: var(--fg2);
   --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none' stroke='%23fff' stroke-width='1.5'%3E%3Cpath d='M2 3.5l3 3 3-3'/%3E%3C/svg%3E");
 }
+.ic-search {
+  width: 15px; height: 15px; flex: none;
+  --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='1.8'%3E%3Ccircle cx='6.8' cy='6.8' r='4.6'/%3E%3Cpath d='M10.2 10.2 14 14'/%3E%3C/svg%3E");
+}
 /* theme icon mirrors the resolved theme: sun in light, moon in dark */
 .ic-theme { width: 18px; height: 18px; --ic: var(--ic-sun); }
 :root {
@@ -131,25 +135,62 @@ pre code { background: none; padding: 0; }
   :root:not([data-theme]) .ic-theme { --ic: var(--ic-moon); }
 }
 
-.searchbox { position: relative; flex: 1; max-width: 520px; margin-left: auto; }
-.searchbox input {
-  width: 100%; height: 36px; padding: 0 34px 0 12px;
+/* ---- search: header trigger + command palette ---- */
+.search-trigger {
+  display: flex; align-items: center; gap: 8px;
+  flex: 1; max-width: 520px; margin-left: auto;
+  height: 36px; padding: 0 8px 0 12px;
   border: 1px solid var(--line); border-radius: 8px;
-  background: var(--bg2); color: var(--fg); font-size: 14px;
+  background: var(--bg2); color: var(--fg2); font: inherit; font-size: 14px;
+  cursor: pointer; text-align: left;
 }
-.searchbox input:focus { outline: 2px solid var(--accent2); border-color: transparent; }
-.searchbox kbd {
-  position: absolute; right: 8px; top: 8px;
-  padding: 0 6px; border: 1px solid var(--line); border-radius: 4px;
+.search-trigger:hover { border-color: var(--accent2); }
+.search-trigger > span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.search-trigger kbd {
+  margin-left: auto; padding: 0 6px;
+  border: 1px solid var(--line); border-radius: 4px;
   color: var(--fg2); font-size: 12px; line-height: 18px; background: var(--bg);
-  pointer-events: none;
 }
 
-.search-results {
-  position: absolute; top: 42px; left: 0; right: 0; max-height: 70vh; overflow: auto;
-  background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
-  box-shadow: var(--shadow); padding: 4px;
+.palette {
+  position: fixed; inset: 0; z-index: 100;
+  display: flex; justify-content: center; align-items: flex-start;
+  padding: 12vh 16px 16px;
+  background: rgba(0, 0, 0, 0.5);
 }
+/* display:flex above is an author rule, so it outranks the UA [hidden] one */
+.palette[hidden] { display: none; }
+.palette-box {
+  display: flex; flex-direction: column; width: 100%; max-width: 620px;
+  max-height: 100%; overflow: hidden;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+.palette-field {
+  display: flex; align-items: center; gap: 10px;
+  padding: 0 14px; border-bottom: 1px solid var(--line); color: var(--fg2);
+}
+.palette-field input {
+  flex: 1; min-width: 0; height: 52px; padding: 0;
+  border: none; outline: none; background: none; color: var(--fg); font-size: 16px;
+}
+.palette-field input::-webkit-search-cancel-button { display: none; }
+.palette-field kbd {
+  padding: 0 6px; border: 1px solid var(--line); border-radius: 4px;
+  color: var(--fg2); font-size: 11px; line-height: 18px;
+}
+.palette-hints {
+  flex: none; padding: 8px 14px; border-top: 1px solid var(--line);
+  background: var(--bg2); color: var(--fg2); font-size: 12px;
+}
+.palette-hints kbd {
+  padding: 0 5px; border: 1px solid var(--line); border-radius: 4px;
+  background: var(--bg); font-size: 11px; line-height: 16px;
+}
+body.palette-open { overflow: hidden; }
+
+/* no flex-grow: the box hugs its results instead of filling the viewport */
+.search-results { min-height: 0; overflow: auto; padding: 6px; }
 .search-results a {
   display: flex; align-items: center; gap: 8px;
   padding: 7px 10px; border-radius: 6px; color: var(--fg); font-size: 14px;
@@ -180,7 +221,7 @@ pre code { background: none; padding: 0; }
 
 .ver-menu {
   position: absolute; top: 42px; right: 0; z-index: 60;
-  width: 274px; max-height: min(70vh, 540px); overflow-y: auto;
+  width: 300px; max-height: min(70vh, 540px); overflow-y: auto;
   background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
   box-shadow: var(--shadow); padding: 0 4px 4px;
 }
@@ -190,13 +231,18 @@ pre code { background: none; padding: 0; }
   font-size: 12px; font-weight: 700; color: var(--fg2);
 }
 .ver-menu a {
-  display: flex; align-items: center; gap: 8px;
+  display: block;
   margin-top: 2px; padding: 6px 10px; border-radius: 6px;
   color: var(--fg); font-size: 13.5px;
   font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
 }
 .ver-menu a:hover { background: var(--bg3); text-decoration: none; }
 .ver-menu a.cur { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
+.ver-row { display: flex; align-items: center; gap: 8px; }
+.ver-title {
+  display: block; color: var(--fg2); font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
 .ver-date {
   margin-left: auto; color: var(--fg2); font-size: 12px; white-space: nowrap;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -221,7 +267,6 @@ pre code { background: none; padding: 0; }
 }
 .side nav a:hover { background: var(--bg3); text-decoration: none; }
 .side nav a.active { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
-.side-meta { margin-top: 24px; padding: 0 12px; color: var(--fg2); font-size: 12px; line-height: 1.7; }
 
 .main { flex: 1; min-width: 0; padding: 28px 36px 40px; max-width: 1060px; }
 
@@ -263,6 +308,7 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 .releases li { display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 4px 0; }
 .releases li > :first-child { min-width: 116px; }
 .releases .rdate { color: var(--fg2); min-width: 96px; }
+.releases .rname { color: var(--fg2); min-width: 180px; }
 .releases .rbuild { color: var(--fg2); cursor: help; }
 
 /* ---- badges ---- */
@@ -339,6 +385,7 @@ pre.code, pre.attrs {
 
 /* ---- source view ---- */
 .file-title { overflow-wrap: anywhere; }
+.file-actions { margin: 0 0 14px; font-size: 13.5px; }
 .file-decls { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 0 16px; font-size: 13.5px; }
 .file-decls .kw { opacity: 0.75; font-size: 12px; }
 
@@ -395,8 +442,10 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
   }
   body.nav-open .side { transform: translateX(0); }
   .main { padding: 20px 16px 32px; }
-  .searchbox kbd { display: none; }
   .brand { display: none; }
-  .searchbox { max-width: none; }
+  .search-trigger { max-width: none; }
+  .search-trigger kbd { display: none; }
+  .palette { padding: 8vh 8px 8px; }
+  .palette-hints { display: none; }
   table.list td:first-child { white-space: normal; }
 }

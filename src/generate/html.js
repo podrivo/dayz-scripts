@@ -11,6 +11,9 @@ export function esc(s) {
     .replaceAll('"', '&quot;');
 }
 
+/** Attributes every link that leaves the site carries. */
+export const EXT = 'target="_blank" rel="noopener"';
+
 export function typeUrl(name, kind) {
   if (kind === 'class') return `class/${name}/`;
   if (kind === 'enum') return `enum/${name}/`;
@@ -74,7 +77,7 @@ function inlineDoc(text, site, base) {
   html = html.replace(/[\\@]p\s+(\S+)/g, (_, w) => `<code>${w}</code>`);
   html = html.replace(/[\\@]b\s+(\S+)/g, (_, w) => `<strong>${w}</strong>`);
   html = html.replace(/[\\@]n\b/g, '<br>');
-  html = html.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" rel="noopener">$1</a>');
+  html = html.replace(/(https?:\/\/[^\s<]+)/g, `<a href="$1" ${EXT}>$1</a>`);
   // linkify known type names when they appear as standalone words
   if (site) {
     html = html.replace(/\b([A-Z]\w{2,})\b/g, (word) => {
@@ -177,11 +180,7 @@ export function layout(o) {
 <header class="top">
   <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="ic ic-menu"></i></button>
   <a class="brand" href="/">DayZ<span>Scripts</span></a>
-  <div class="searchbox">
-    <input id="search" type="search" placeholder="Search classes, methods, enums…" autocomplete="off" spellcheck="false" aria-label="Search">
-    <kbd>/</kbd>
-    <div id="searchResults" class="search-results" hidden></div>
-  </div>
+  <button class="search-trigger" id="searchBtn" aria-label="Search"><i class="ic ic-search"></i><span>Search classes, methods, enums…</span><kbd id="searchKbd">⌘K</kbd></button>
   <div class="verpicker">
     <button class="ver-btn" id="verBtn" aria-haspopup="true" aria-expanded="false" title="Switch DayZ build"><span class="ver-label"></span><i class="ic ic-chev"></i></button>
     <nav class="ver-menu" id="verMenu" aria-label="DayZ builds" hidden></nav>
@@ -189,16 +188,25 @@ export function layout(o) {
   <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme (M)"><i class="ic ic-theme"></i></button>
 </header>
 <div class="shell">
-  <aside class="side" id="sidebar"><nav>${nav}</nav>
-    <div class="side-meta" id="sideMeta"></div>
-  </aside>
+  <aside class="side" id="sidebar"><nav>${nav}</nav></aside>
   <main class="main">
     ${crumbs}
     ${o.content}
     <footer class="foot">
-      <p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" rel="noopener">DayZ Script Diff</a> · build <span id="footBuild"></span> · Unofficial, not affiliated with Bohemia Interactive · © 2022 Bohemia Interactive a.s., <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" rel="noopener">DayZ Public License</a></p>
+      <p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a> · build <span id="footBuild"></span> · Unofficial, not affiliated with Bohemia Interactive · © 2022 Bohemia Interactive a.s., <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a></p>
     </footer>
   </main>
+</div>
+<div class="palette" id="palette" hidden>
+  <div class="palette-box" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="palette-field">
+      <i class="ic ic-search"></i>
+      <input id="search" type="search" placeholder="Search classes, methods, enums…" autocomplete="off" spellcheck="false" aria-label="Search">
+      <kbd>Esc</kbd>
+    </div>
+    <div id="searchResults" class="search-results" hidden></div>
+    <div class="palette-hints"><kbd>↑</kbd><kbd>↓</kbd> to navigate · <kbd>↵</kbd> to open</div>
+  </div>
 </div>
 <script src="/assets/app.js" defer></script>
 </body>

@@ -18,6 +18,7 @@ import { spawn } from 'node:child_process';
 import { Worker } from 'node:worker_threads';
 import { CACHE_DIR, DATA_DIR, DIST_DIR, ROOT, extractSources, readJson } from '../util.js';
 import { buildSiteModel } from './model.js';
+import { BUILD_TITLES } from './content.js';
 import { diffModels } from './diff.js';
 import { buildSearchIndex } from './search.js';
 import {
@@ -134,10 +135,19 @@ for (const f of fs.readdirSync(path.join(ROOT, 'site'))) {
 }
 // build list for the client-side version picker (newest first). Also the only
 // place the build/version/date of each build now lives, since pages no longer
-// carry it; site/app.js reads this to stamp the chrome.
+// carry it; site/app.js reads this to stamp the chrome. The sha is what lets it
+// point the "View on GitHub" link at this exact build's commit.
 fs.writeFileSync(
   path.join(assetsDir, 'versions.json'),
-  JSON.stringify(buildList.map((v) => ({ build: v.build, version: v.version, date: v.date })))
+  JSON.stringify(
+    buildList.map((v) => ({
+      build: v.build,
+      version: v.version,
+      date: v.date,
+      sha: v.sha,
+      title: BUILD_TITLES[v.build],
+    }))
+  )
 );
 
 // Old URLs used the minor version (/v/1.28/); send those to that version's

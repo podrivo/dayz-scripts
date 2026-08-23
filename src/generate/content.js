@@ -20,10 +20,21 @@ export const COMMUNITY_LINKS = [
 
 export const YADZ_DISCORD = 'https://discord.gg/nbrHqZCpA6';
 
-/** Marketing name of a game version, when it has one. */
+/** Marketing name of a game version, when the whole version carries one. */
 export const VERSION_TITLES = {
-  '1.29': 'Road to Badlands',
   '1.26': 'Frostline DLC',
+};
+
+/**
+ * Name Bohemia gave an individual stable update, when it has one. 1.29 is why
+ * this exists: its four stable updates are two plain ones followed by two
+ * "Road to Badlands" ones, so the name belongs to the build, not the version.
+ */
+export const BUILD_TITLES = {
+  '1.29.163709': 'Road to Badlands Update 2',
+  '1.29.163451': 'Road to Badlands Update 1',
+  '1.29.163047': 'Update 2',
+  '1.29.162510': 'Update 1',
 };
 
 /**

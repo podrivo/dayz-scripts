@@ -66,8 +66,8 @@
       label.textContent = current.version;
       label.append(patch);
     }
-    const br = () => document.createElement('br');
-    $('#sideMeta')?.append(`DayZ ${current.version}`, br(), `build ${current.build}`, br(), current.date);
+    const gh = $('#ghSrc');
+    if (gh && current.sha) gh.href = gh.href.replace('/blob/main/', `/blob/${current.sha}/`);
     const foot = $('#footBuild');
     if (foot) foot.textContent = `${current.build} (${current.date})`;
     return builds;
@@ -92,9 +92,12 @@
         }
         const cur = b.build === current?.build;
         const href = ROOT + (i === 0 ? '' : `v/${b.build}/`) + VPATH;
-        html += `<a href="${href}"${cur ? ' class="cur" aria-current="page"' : ''}>${b.build}` +
+        html += `<a href="${href}"${cur ? ' class="cur" aria-current="page"' : ''}>` +
+          `<span class="ver-row">${b.build}` +
           (i === 0 ? '<span class="ver-latest">latest</span>' : '') +
-          `<span class="ver-date">${fmtDate(b.date)}</span></a>`;
+          `<span class="ver-date">${fmtDate(b.date)}</span></span>` +
+          (b.title ? `<span class="ver-title">${b.title}</span>` : '') +
+          '</a>';
       });
       verMenu.innerHTML = html;
     }
@@ -135,6 +138,8 @@
   }
 
   /* ---------- search ---------- */
+  const palette = $('#palette');
+  const trigger = $('#searchBtn');
   const input = $('#search');
   const resultsEl = $('#searchResults');
   let index = null;
@@ -225,9 +230,33 @@
     items[sel].scrollIntoView({ block: 'nearest' });
   }
 
-  if (input) {
+  /* The search lives in a command palette: a modal overlay opened with ⌘K /
+     Ctrl+K or `/`, rather than an always-visible field in the header. */
+  function openPalette() {
+    if (!palette || !palette.hidden) return;
+    palette.hidden = false;
+    document.body.classList.add('palette-open');
+    input.focus();
+    input.select();
+    loadIndex().then(() => runSearch(input.value.trim()));
+  }
+
+  function closePalette() {
+    if (!palette || palette.hidden) return;
+    palette.hidden = true;
+    document.body.classList.remove('palette-open');
+    hide();
+    trigger?.focus();
+  }
+
+  if (input && palette) {
+    if (!/Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)) {
+      const kbd = $('#searchKbd');
+      if (kbd) kbd.textContent = 'Ctrl K';
+    }
+
     let timer;
-    input.addEventListener('focus', loadIndex, { once: true });
+    trigger?.addEventListener('click', openPalette);
     input.addEventListener('input', () => {
       clearTimeout(timer);
       timer = setTimeout(async () => { await loadIndex(); runSearch(input.value.trim()); }, 80);
@@ -238,16 +267,19 @@
       else if (e.key === 'Enter') {
         const t = resultsEl.querySelector('a.sel') || resultsEl.querySelector('a');
         if (t) location.href = t.href;
-      } else if (e.key === 'Escape') { hide(); input.blur(); }
+      } else if (e.key === 'Escape') { closePalette(); }
     });
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.searchbox')) hide();
+    palette.addEventListener('click', (e) => {
+      if (!e.target.closest('.palette-box')) closePalette();
     });
     document.addEventListener('keydown', (e) => {
-      if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) {
+      if (e.key.toLowerCase() === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        input.focus();
-        input.select();
+        palette.hidden ? openPalette() : closePalette();
+      } else if (e.key === '/' && palette.hidden &&
+                 !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) {
+        e.preventDefault();
+        openPalette();
       }
     });
   }

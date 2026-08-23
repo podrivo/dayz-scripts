@@ -13,7 +13,7 @@
     "generate": "node src/generate/index.js",
     "generate:latest": "BUILD_VERSIONS=1 node src/generate/index.js",
     "build": "npm run fetch && npm run parse && npm run generate",
-    "test": "node --test",
+    "test": "node --test 'test/*.test.js'",
     "dev": "node src/serve.js"
   },
   "license": "MIT"

@@ -2,9 +2,11 @@
 
 import {
   esc, layout, linkType, typeUrl, condBadges, modBadges,
-  methodSig, varSig, renderDoc, briefOf,
+  methodSig, varSig, renderDoc, briefOf, EXT,
 } from './html.js';
-import { OFFICIAL_LINKS, COMMUNITY_LINKS, FORUM_THREADS, VERSION_TITLES, YADZ_DISCORD } from './content.js';
+import {
+  OFFICIAL_LINKS, COMMUNITY_LINKS, FORUM_THREADS, BUILD_TITLES, VERSION_TITLES, YADZ_DISCORD,
+} from './content.js';
 
 const MODULE_LABELS = {
   '1_core': 'Core',
@@ -93,8 +95,9 @@ function renderReleases(ctx) {
           if (r.build === site.build) label = `<strong>v${esc(r.build)}</strong>`;
           else if (r.docs) label = `<a href="${r.docs}">v${esc(r.build)}</a>`;
           else label = `<span class="rbuild" title="Scripts for this build are not in the Script Diff repository">v${esc(r.build)}</span>`;
-          const notes = r.url ? ` <a href="${r.url}" rel="noopener">release notes</a>` : '';
-          return `<li>${label}<span class="rdate">${esc(fmtDate(r.date))}</span>${notes}</li>`;
+          const name = BUILD_TITLES[r.build] ? `<span class="rname">${esc(BUILD_TITLES[r.build])}</span>` : '';
+          const notes = r.url ? ` <a href="${r.url}" ${EXT}>release notes</a>` : '';
+          return `<li>${label}<span class="rdate">${esc(fmtDate(r.date))}</span>${name}${notes}</li>`;
         })
         .join('\n');
       return `<details${version === site.version ? ' open' : ''}>
@@ -125,7 +128,7 @@ export function renderHome(ctx) {
   const linkCards = (links) => `<div class="cards">
 ${links
   .map(
-    ([label, url, desc]) => `<a class="card" href="${url}" rel="noopener">
+    ([label, url, desc]) => `<a class="card" href="${url}" ${EXT}>
   <h3>${esc(label)}</h3>
   <p>${esc(desc)}</p>
 </a>`
@@ -137,13 +140,14 @@ ${links
 
   const thread = FORUM_THREADS[site.build];
   const buildLine = thread
-    ? `<a href="${thread.url}" rel="noopener">${esc(site.build)}</a>`
+    ? `<a href="${thread.url}" ${EXT}>${esc(site.build)}</a>`
     : `<strong>${esc(site.build)}</strong>`;
+  const buildName = BUILD_TITLES[site.build] ? ` “${esc(BUILD_TITLES[site.build])}”` : '';
 
   const content = `
 <section class="hero">
-  <h1>DayZ ${esc(site.version)} Script API</h1>
-  <p>Browsable documentation for the DayZ Enforce Script sources — every class, method, enum and constant of game build ${buildLine} (${esc(site.date)}), generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" rel="noopener">DayZ&nbsp;Script&nbsp;Diff</a> repository.</p>
+  <h1>Overview</h1>
+  <p>Browsable documentation for the DayZ Enforce Script sources — every class, method, enum and constant of DayZ ${esc(site.version)}${buildName}, game build ${buildLine} (${esc(site.date)}), generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ&nbsp;Script&nbsp;Diff</a> repository.</p>
   <p>Made for anyone wandering the DayZ modding and scripting world, and meant to be quicker to browse than the raw sources. This is just the tip of the iceberg: there is no official detailed documentation on the subject, so community content is your best friend. Once you join one of the Discord servers below, check the pinned messages — most recurring questions are answered there.</p>
 </section>
 <section class="stats">
@@ -183,10 +187,16 @@ ${linkCards(COMMUNITY_LINKS)}
 ${releases}
 </div>
 <h2 id="about">About</h2>
-<p>This site is generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff/tree/main/scripts" rel="noopener">DayZ Script Diff</a> sources, so it covers what ships in the game's script files — engine internals are not part of it. It is actively maintained, so if you find a bug or have a suggestion, share it on <a href="${YADZ_DISCORD}" rel="noopener">YADZ's Discord</a>.</p>
-<p class="muted">This is not an official documentation and it is not affiliated with <a href="https://dayz.com/" rel="noopener">DayZ</a> or <a href="https://www.bohemia.net/" rel="noopener">Bohemia Interactive</a>. The script sources shown here are © 2022 BOHEMIA INTERACTIVE a.s., all rights reserved, and are licensed under the <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" rel="noopener">DayZ Public License (DPL)</a>. They have been modified for presentation — parsed, reorganized and reformatted into these pages — from the originals in <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff/tree/main/scripts" rel="noopener">DayZ Script Diff</a>, and are offered as-is, without warranties of any kind. DAYZ®, ENFUSION® and BOHEMIA INTERACTIVE® are registered trademarks of BOHEMIA INTERACTIVE a.s. All other trademarks and copyrights are the property of their respective owners.</p>`;
+<p>This site is generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff/tree/main/scripts" ${EXT}>DayZ Script Diff</a> sources, so it covers what ships in the game's script files — engine internals are not part of it. It is actively maintained, so if you find a bug or have a suggestion, share it on <a href="${YADZ_DISCORD}" ${EXT}>YADZ's Discord</a>.</p>
+<p class="muted">This is not an official documentation and it is not affiliated with <a href="https://dayz.com/" ${EXT}>DayZ</a> or <a href="https://www.bohemia.net/" ${EXT}>Bohemia Interactive</a>. The script sources shown here are © 2022 BOHEMIA INTERACTIVE a.s., all rights reserved, and are licensed under the <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License (DPL)</a>. They have been modified for presentation — parsed, reorganized and reformatted into these pages — from the originals in <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff/tree/main/scripts" ${EXT}>DayZ Script Diff</a>, and are offered as-is, without warranties of any kind. DAYZ®, ENFUSION® and BOHEMIA INTERACTIVE® are registered trademarks of BOHEMIA INTERACTIVE a.s. All other trademarks and copyrights are the property of their respective owners.</p>`;
 
-  return layout({ ...ctx, title: `DayZ ${site.version} Script API`, active: 'Overview', content });
+  return layout({
+    ...ctx,
+    title: 'Overview',
+    active: 'Overview',
+    description: `DayZ ${site.version} Enforce Script API documentation — classes, methods, enums and sources.`,
+    content,
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -488,8 +498,13 @@ export function renderFile(ctx, fileEntry, fileModel, source) {
         .join('')}</div>`
     : '';
 
+  // Pinned to the exact build's commit by site/app.js; `main` is the fallback
+  // for when it can't be, since the href must not name a build (see layout()).
+  const github = `https://github.com/BohemiaInteractive/DayZ-Script-Diff/blob/main/${fileEntry.path}`;
+
   const content = `
 <h1 class="file-title"><code>${esc(short)}</code></h1>
+<p class="file-actions"><a id="ghSrc" href="${github}" ${EXT}>View on GitHub</a></p>
 ${decls}
 <div class="srcwrap"><pre class="src" id="src"><code>${esc(source)}</code></pre></div>`;
 
@@ -606,7 +621,7 @@ ${enumChanged || '<p class="muted">None.</p>'}
     })
     .join(' · ')}</p>`;
 
-  return layout({ ...ctx, title: `Changelog ${site.build}`, active: 'Changelog', breadcrumbs: [{ label: 'Changelog' }], content });
+  return layout({ ...ctx, title: 'Changelog', active: 'Changelog', breadcrumbs: [{ label: 'Changelog' }], content });
 }
 
 export function render404(ctx) {
