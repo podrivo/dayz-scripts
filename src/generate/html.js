@@ -151,14 +151,6 @@ export function layout(o) {
       `<a href="${o.base}${href}"${o.active === label ? ' class="active" aria-current="page"' : ''}>${label}</a>`
   ).join('');
 
-  const versionOptions = o.versions
-    .map((v, i) => {
-      const sel = v.label === o.site.label ? ' selected' : '';
-      const prefix = i === 0 ? '' : `v/${v.label}/`;
-      return `<option value="${o.root}${prefix}"${sel}>${v.build}</option>`;
-    })
-    .join('');
-
   const crumbs = o.breadcrumbs?.length
     ? `<nav class="crumbs" aria-label="Breadcrumb">${o.breadcrumbs
         .map((c) => (c.href ? `<a href="${c.href}">${esc(c.label)}</a>` : `<span>${esc(c.label)}</span>`))
@@ -185,7 +177,10 @@ export function layout(o) {
     <kbd>/</kbd>
     <div id="searchResults" class="search-results" hidden></div>
   </div>
-  <select id="versionSel" aria-label="DayZ build">${versionOptions}</select>
+  <div class="verpicker">
+    <button class="ver-btn" id="verBtn" data-build="${esc(o.site.build)}" aria-haspopup="true" aria-expanded="false" title="Switch DayZ build">${esc(o.site.version)}<span class="ver-patch">${esc(o.site.build.slice(o.site.version.length))}</span><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3.5l3 3 3-3"/></svg></button>
+    <nav class="ver-menu" id="verMenu" aria-label="DayZ builds" hidden></nav>
+  </div>
   <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme (M)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.3 11.3 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.3-11.3 1.4-1.4"/></svg></button>
 </header>
 <div class="shell">

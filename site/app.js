@@ -41,10 +41,72 @@
     }
   });
 
-  /* ---------- version switcher ---------- */
-  $('#versionSel')?.addEventListener('change', (e) => {
-    location.href = e.target.value + VPATH + location.hash;
-  });
+  /* ---------- version switcher ----------
+     A button opening a popover of all builds grouped by game version.
+     The list is fetched on first open so pages don't carry all 49 builds. */
+  const verBtn = $('#verBtn');
+  const verMenu = $('#verMenu');
+  if (verBtn) {
+    const fmtDate = (iso) =>
+      new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', {
+        month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC',
+      });
+
+    let loaded = false;
+    async function fillMenu() {
+      if (loaded) return;
+      loaded = true;
+      const builds = await (await fetch(ROOT + 'assets/versions.json')).json();
+      let html = '';
+      let version = '';
+      builds.forEach((b, i) => {
+        if (b.version !== version) {
+          version = b.version;
+          html += `<div class="ver-group">DayZ ${version}</div>`;
+        }
+        const cur = b.build === verBtn.dataset.build;
+        const href = ROOT + (i === 0 ? '' : `v/${b.build}/`) + VPATH;
+        html += `<a href="${href}"${cur ? ' class="cur" aria-current="page"' : ''}>${b.build}` +
+          (i === 0 ? '<span class="ver-latest">latest</span>' : '') +
+          `<span class="ver-date">${fmtDate(b.date)}</span></a>`;
+      });
+      verMenu.innerHTML = html;
+    }
+
+    function closeVerMenu() {
+      verMenu.hidden = true;
+      verBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    verBtn.addEventListener('click', async () => {
+      if (!verMenu.hidden) return closeVerMenu();
+      await fillMenu();
+      verMenu.hidden = false;
+      verBtn.setAttribute('aria-expanded', 'true');
+      const cur = verMenu.querySelector('.cur');
+      if (cur) verMenu.scrollTop = cur.offsetTop - verMenu.clientHeight / 2;
+    });
+    verMenu.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if (a && location.hash) a.href += location.hash; // keep deep links across builds
+    });
+    verBtn.parentElement.addEventListener('keydown', (e) => {
+      if (verMenu.hidden) return;
+      if (e.key === 'Escape') {
+        closeVerMenu();
+        verBtn.focus();
+      } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        const links = [...verMenu.querySelectorAll('a')];
+        const i = links.indexOf(document.activeElement);
+        const next = i === -1 ? 0 : (i + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        links[next]?.focus();
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (!verMenu.hidden && !e.target.closest('.verpicker')) closeVerMenu();
+    });
+  }
 
   /* ---------- search ---------- */
   const input = $('#search');

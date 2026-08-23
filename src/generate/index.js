@@ -30,6 +30,11 @@ fs.mkdirSync(assetsDir, { recursive: true });
 for (const f of fs.readdirSync(path.join(ROOT, 'site'))) {
   fs.copyFileSync(path.join(ROOT, 'site', f), path.join(assetsDir, f));
 }
+// build list for the client-side version picker (newest first)
+fs.writeFileSync(
+  path.join(assetsDir, 'versions.json'),
+  JSON.stringify(buildList.map((v) => ({ build: v.build, version: v.version, date: v.date })))
+);
 
 // Old URLs used the minor version (/v/1.28/); send those to that version's
 // newest build (or the site root when it is the latest build overall).

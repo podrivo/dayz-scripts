@@ -31,6 +31,12 @@ http
       res.statusCode = 404;
     }
     res.setHeader('content-type', TYPES[path.extname(file)] || 'application/octet-stream');
-    fs.createReadStream(file).pipe(res);
+    // files can vanish mid-request while dist/ is being regenerated
+    fs.createReadStream(file)
+      .on('error', () => {
+        res.statusCode = 404;
+        res.end('Not found');
+      })
+      .pipe(res);
   })
   .listen(PORT, () => console.log(`Serving dist/ at http://localhost:${PORT}`));
