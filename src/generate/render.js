@@ -4,6 +4,7 @@ import {
   esc, layout, linkType, typeUrl, condBadges, modBadges,
   methodSig, varSig, renderDoc, briefOf,
 } from './html.js';
+import { OFFICIAL_LINKS, COMMUNITY_LINKS, FORUM_THREADS, VERSION_TITLES, YADZ_DISCORD } from './content.js';
 
 const MODULE_LABELS = {
   '1_core': 'Core',
@@ -40,8 +41,74 @@ function fileLineHref(base, path, line) {
 
 // ---------------------------------------------------------------------------
 
+function fmtDate(iso) {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', {
+    year: 'numeric', month: 'short', day: '2-digit', timeZone: 'UTC',
+  });
+}
+
+const buildNo = (build) => Number(build.split('.')[2] || 0);
+const versionNo = (version) => {
+  const [major, minor] = version.split('.').map(Number);
+  return major * 1000 + minor;
+};
+
+/**
+ * Release history grouped by game version: every build we document, merged
+ * with the official forum threads. Builds whose scripts never reached the
+ * Script Diff repository still show up, with their thread only.
+ */
+function renderReleases(ctx) {
+  const { site, root, versions } = ctx;
+  const groups = new Map(); // version -> Map(build -> row)
+  const rowsFor = (version) => {
+    if (!groups.has(version)) groups.set(version, new Map());
+    return groups.get(version);
+  };
+
+  versions.forEach((v, i) => {
+    rowsFor(v.version).set(v.build, {
+      build: v.build,
+      date: v.date,
+      docs: i === 0 ? root : `${root}v/${v.label}/`,
+    });
+  });
+
+  for (const [build, thread] of Object.entries(FORUM_THREADS)) {
+    const version = build.split('.').slice(0, 2).join('.');
+    const rows = rowsFor(version);
+    const row = rows.get(build) || { build, date: thread.date };
+    row.url = thread.url;
+    rows.set(build, row);
+  }
+
+  return [...groups.entries()]
+    .sort((a, b) => versionNo(b[0]) - versionNo(a[0]))
+    .map(([version, rows]) => {
+      const title = VERSION_TITLES[version] ? ` <span class="muted">${esc(VERSION_TITLES[version])}</span>` : '';
+      const items = [...rows.values()]
+        .sort((a, b) => buildNo(b.build) - buildNo(a.build))
+        .map((r) => {
+          let label;
+          if (r.build === site.build) label = `<strong>v${esc(r.build)}</strong>`;
+          else if (r.docs) label = `<a href="${r.docs}">v${esc(r.build)}</a>`;
+          else label = `<span class="rbuild" title="Scripts for this build are not in the Script Diff repository">v${esc(r.build)}</span>`;
+          const notes = r.url ? ` <a href="${r.url}" rel="noopener">release notes</a>` : '';
+          return `<li>${label}<span class="rdate">${esc(fmtDate(r.date))}</span>${notes}</li>`;
+        })
+        .join('\n');
+      return `<details${version === site.version ? ' open' : ''}>
+<summary>DayZ ${esc(version)}${title} <span class="count">${rows.size} build${rows.size === 1 ? '' : 's'}</span></summary>
+<ul>
+${items}
+</ul>
+</details>`;
+    })
+    .join('\n');
+}
+
 export function renderHome(ctx) {
-  const { site, base } = ctx;
+  const { site, base, root, versions } = ctx;
   const s = site.stats;
   const modules = new Map();
   for (const f of site.files) {
@@ -55,10 +122,29 @@ export function renderHome(ctx) {
   const stat = (n, label, href) =>
     `<a class="stat" href="${href}"><strong>${n.toLocaleString('en-US')}</strong><span>${label}</span></a>`;
 
+  const linkCards = (links) => `<div class="cards">
+${links
+  .map(
+    ([label, url, desc]) => `<a class="card" href="${url}" rel="noopener">
+  <h3>${esc(label)}</h3>
+  <p>${esc(desc)}</p>
+</a>`
+  )
+  .join('\n')}
+</div>`;
+
+  const releases = renderReleases(ctx);
+
+  const thread = FORUM_THREADS[site.build];
+  const buildLine = thread
+    ? `<a href="${thread.url}" rel="noopener">${esc(site.build)}</a>`
+    : `<strong>${esc(site.build)}</strong>`;
+
   const content = `
 <section class="hero">
   <h1>DayZ ${esc(site.version)} Script API</h1>
-  <p>Browsable documentation for the DayZ Enforce Script sources — every class, method, enum and constant of game build <strong>${esc(site.build)}</strong> (${esc(site.date)}), generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" rel="noopener">DayZ&nbsp;Script&nbsp;Diff</a> repository.</p>
+  <p>Browsable documentation for the DayZ Enforce Script sources — every class, method, enum and constant of game build ${buildLine} (${esc(site.date)}), generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" rel="noopener">DayZ&nbsp;Script&nbsp;Diff</a> repository.</p>
+  <p>Made for anyone wandering the DayZ modding and scripting world, and meant to be quicker to browse than the raw sources. This is just the tip of the iceberg: there is no official detailed documentation on the subject, so community content is your best friend. Once you join one of the Discord servers below, check the pinned messages — most recurring questions are answered there.</p>
 </section>
 <section class="stats">
   ${stat(s.classes, 'classes', base + 'classes/')}
@@ -85,8 +171,20 @@ ${[...modules.entries()]
   <li><a href="${base}class/ItemBase/">ItemBase</a> — base of all items</li>
   <li><a href="${base}class/EntityAI/">EntityAI</a> — base of interactive entities</li>
   <li><a href="${base}hierarchy/">Full class hierarchy</a></li>
-  <li><a href="${base}changes/">What changed in ${esc(site.version)}</a></li>
-</ul>`;
+  <li><a href="${base}changes/">What changed in build ${esc(site.build)}</a></li>
+</ul>
+<h2 id="official-links">Official links</h2>
+${linkCards(OFFICIAL_LINKS)}
+<h2 id="community-links">Community links</h2>
+${linkCards(COMMUNITY_LINKS)}
+<h2 id="changelog">PC stable changelog</h2>
+<p>Every PC stable update thread on the DayZ Forums. For what changed in the scripts themselves, see the <a href="${base}changes/">${esc(site.version)} changelog</a>.</p>
+<div class="releases">
+${releases}
+</div>
+<h2 id="about">About</h2>
+<p>This site is generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff/tree/main/scripts" rel="noopener">DayZ Script Diff</a> sources, so it covers what ships in the game's script files — engine internals are not part of it. It is actively maintained, so if you find a bug or have a suggestion, share it on <a href="${YADZ_DISCORD}" rel="noopener">YADZ's Discord</a>.</p>
+<p class="muted">This is not an official documentation and it is not affiliated with <a href="https://dayz.com/" rel="noopener">DayZ</a> or <a href="https://www.bohemia.net/" rel="noopener">Bohemia Interactive</a>. All rights reserved to Bohemia Interactive. Released under the <a href="https://www.bohemia.net/community/licenses/arma-and-dayz-public-license-share-alike-adpl-sa" rel="noopener">Arma and DayZ Public License Share Alike (ADPL-SA)</a>. All other trademarks and copyrights are the property of their respective owners.</p>`;
 
   return layout({ ...ctx, title: `DayZ ${site.version} Script API`, active: 'Overview', content });
 }
@@ -438,8 +536,8 @@ export function renderHierarchy(ctx) {
 export function renderChanges(ctx, diff, prevLabel) {
   const { site, base } = ctx;
   if (!diff) {
-    const content = `<h1>Changelog — DayZ ${esc(site.version)}</h1>
-<p>This is the oldest version tracked, so there is no previous version to compare against.</p>`;
+    const content = `<h1>Changelog — DayZ ${esc(site.build)}</h1>
+<p>This is the oldest build tracked, so there is no previous build to compare against.</p>`;
     return layout({ ...ctx, title: 'Changelog', active: 'Changelog', breadcrumbs: [{ label: 'Changelog' }], content });
   }
 
@@ -481,7 +579,7 @@ export function renderChanges(ctx, diff, prevLabel) {
     .join('\n');
 
   const content = `
-<h1>Changelog — DayZ ${esc(site.version)} <span class="muted">vs ${esc(prevLabel)}</span></h1>
+<h1>Changelog — DayZ ${esc(site.build)} <span class="muted">vs ${esc(prevLabel)}</span></h1>
 <section class="stats">
   <span class="stat"><strong>${diff.classesAdded.length}</strong><span>classes added</span></span>
   <span class="stat"><strong>${diff.classesRemoved.length}</strong><span>classes removed</span></span>
@@ -500,15 +598,15 @@ ${nameList(diff.enumsAdded, 'enum')}
 ${nameList(diff.enumsRemoved, 'none')}
 <h2>Changed enums <span class="count">${diff.enumsChanged.length}</span></h2>
 ${enumChanged || '<p class="muted">None.</p>'}
-<h2>All versions</h2>
+<h2>All builds</h2>
 <p>${ctx.versions
     .map((v, i) => {
       const href = i === 0 ? `${ctx.root}changes/` : `${ctx.root}v/${v.label}/changes/`;
-      return v.label === site.version ? `<strong>${esc(v.label)}</strong>` : `<a href="${href}">${esc(v.label)}</a>`;
+      return v.label === site.label ? `<strong>${esc(v.build)}</strong>` : `<a href="${href}">${esc(v.build)}</a>`;
     })
     .join(' · ')}</p>`;
 
-  return layout({ ...ctx, title: `Changelog ${site.version}`, active: 'Changelog', breadcrumbs: [{ label: 'Changelog' }], content });
+  return layout({ ...ctx, title: `Changelog ${site.build}`, active: 'Changelog', breadcrumbs: [{ label: 'Changelog' }], content });
 }
 
 export function render404(ctx) {

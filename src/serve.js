@@ -4,7 +4,7 @@ import http from 'node:http';
 import path from 'node:path';
 import { DIST_DIR } from './util.js';
 
-const PORT = process.env.PORT || 8817;
+const PORT = process.env.PORT || 3000;
 const TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css',

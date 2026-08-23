@@ -156,6 +156,7 @@ export function buildSiteModel(model) {
   for (const t of typedefs) if (!typeIndex.has(t.name)) typeIndex.set(t.name, 'typedef');
 
   return {
+    label: model.label,
     version: model.version,
     build: model.build,
     date: model.date,

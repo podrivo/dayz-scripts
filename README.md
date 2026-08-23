@@ -7,16 +7,21 @@ sources. Live at [dayz-scripts.yadz.app](https://dayz-scripts.yadz.app).
 This replaces the previous Doxygen-based site (preserved on the
 [`doxygen-archive`](../../tree/doxygen-archive) branch) with a fully custom,
 mobile-friendly static site: friendly URLs, fast client-side search,
-inheritance trees, syntax-highlighted sources, and per-version changelogs with
-a version selector.
+inheritance trees, syntax-highlighted sources, and per-build changelogs with
+a build selector (every published build, e.g. 1.29.163709, 1.29.163451, ...).
 
 ## How it works
 
 ```
-src/fetch.js      clones DayZ-Script-Diff, maps commits to versions  -> data/versions.json
-src/parse-all.js  parses every version's .c files (Enforce Script)   -> data/model-<version>.json
+src/fetch.js      clones DayZ-Script-Diff, maps commits to builds    -> data/versions.json
+src/parse-all.js  parses every build's .c files (Enforce Script)     -> data/model-<build>.json
 src/generate/     renders static HTML from the models                -> dist/
 ```
+
+The homepage also carries hand-maintained content — community links and the
+official forum thread of each PC stable update — which lives in
+`src/generate/content.js`. Add the thread URL there when a new build ships;
+builds without one still appear, they just don't link to release notes.
 
 The parser is a real lexer + recursive-descent declaration parser for Enforce
 Script (not regex scraping). It understands classes (both `extends` and `:`
@@ -35,7 +40,7 @@ npm run fetch      # clone/update upstream, detect versions
 npm run parse      # parse all versions into JSON models (cached by commit)
 npm run generate   # render the static site into dist/
 npm run build      # all of the above
-npm run serve      # preview dist/ at http://localhost:8817
+npm run dev        # preview dist/ at http://localhost:3000
 npm test           # parser test suite
 ```
 

@@ -1,5 +1,5 @@
-// Parses every DayZ version listed in data/versions.json into a JSON model
-// (data/model-<label>.json). Sources are extracted from the upstream clone
+// Parses every DayZ build listed in data/versions.json into a JSON model
+// (data/model-<build>.json). Sources are extracted from the upstream clone
 // with `git archive`. Models are cached by commit sha; delete data/ to force
 // a re-parse. Fails the build when parse diagnostics appear (unless
 // ALLOW_DIAGS=1), so silent parser degradation is impossible.
@@ -10,7 +10,7 @@ import { DATA_DIR, extractSources, readJson, walk, writeJson } from './util.js';
 import { parseFile } from './parser/index.js';
 
 const { versions } = readJson(path.join(DATA_DIR, 'versions.json'));
-const only = process.env.ONLY_VERSION; // e.g. ONLY_VERSION=1.29 for quick runs
+const only = process.env.ONLY_VERSION; // minor ("1.29") or full build ("1.29.163709")
 
 function parseVersion(v) {
   const modelFile = path.join(DATA_DIR, `model-${v.label}.json`);
@@ -24,7 +24,7 @@ function parseVersion(v) {
 
   const dir = extractSources(v);
   const files = walk(path.join(dir, 'scripts'), '.c', dir);
-  const model = { version: v.label, build: v.build, sha: v.sha, date: v.date, files: [] };
+  const model = { label: v.label, version: v.version, build: v.build, sha: v.sha, date: v.date, files: [] };
   const allDiags = [];
   const stats = { files: files.length, classes: 0, methods: 0, members: 0, enums: 0, typedefs: 0, globals: 0, functions: 0, documented: 0 };
 
@@ -62,7 +62,7 @@ function parseVersion(v) {
 
 let failed = false;
 for (const v of versions) {
-  if (only && v.label !== only) continue;
+  if (only && v.label !== only && v.version !== only) continue;
   const stats = parseVersion(v);
   if ((stats.diagnostics ?? 0) > 0 && !process.env.ALLOW_DIAGS) failed = true;
 }

@@ -13,7 +13,7 @@
     "generate": "node src/generate/index.js",
     "build": "npm run fetch && npm run parse && npm run generate",
     "test": "node --test",
-    "serve": "node src/serve.js"
+    "dev": "node src/serve.js"
   },
   "license": "SEE LICENSE IN README.md"
 }

@@ -1,8 +1,8 @@
 // Clones/updates the official DayZ-Script-Diff repository and maps its
-// commit history to DayZ versions. Each commit message looks like:
+// commit history to DayZ builds. Each commit message looks like:
 //   "Build 1.29.163709, Scripts Rev. 125372"
-// Multiple commits share a minor version (hotfix updates); we document the
-// newest commit of each minor version (1.29, 1.28, ...).
+// Every build is documented (1.29.163709, 1.29.163451, ...); when several
+// commits share a build number we keep the newest one.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -23,7 +23,7 @@ function updateUpstream() {
 
 function detectVersions() {
   const log = git(['-C', UPSTREAM_DIR, 'log', 'origin/main', '--format=%H%x09%cI%x09%s']);
-  const byLabel = new Map(); // "1.29" -> newest matching commit (log is newest-first)
+  const byBuild = new Map(); // "1.29.163709" -> newest matching commit (log is newest-first)
   const skipped = [];
   for (const line of log.trim().split('\n')) {
     const [sha, date, subject] = line.split('\t');
@@ -32,11 +32,12 @@ function detectVersions() {
       skipped.push(subject);
       continue;
     }
-    const label = `${m[1]}.${m[2]}`;
-    if (!byLabel.has(label)) {
-      byLabel.set(label, {
-        label,
-        build: `${m[1]}.${m[2]}.${m[3]}`,
+    const build = `${m[1]}.${m[2]}.${m[3]}`;
+    if (!byBuild.has(build)) {
+      byBuild.set(build, {
+        label: build,
+        version: `${m[1]}.${m[2]}`,
+        build,
         rev: Number(m[4]),
         sha,
         date: date.slice(0, 10),
@@ -44,11 +45,12 @@ function detectVersions() {
     }
   }
   if (skipped.length) console.log(`Skipped ${skipped.length} non-build commits.`);
-  // Newest first by version number (not by date; history contains reverts).
-  return [...byLabel.values()].sort((a, b) => {
-    const [amaj, amin] = a.label.split('.').map(Number);
-    const [bmaj, bmin] = b.label.split('.').map(Number);
-    return bmaj - amaj || bmin - amin;
+  // Newest first by build number (not by date; history contains reverts and
+  // out-of-order hotfixes, e.g. a 1.25 hotfix released after the first 1.26).
+  return [...byBuild.values()].sort((a, b) => {
+    const A = a.build.split('.').map(Number);
+    const B = b.build.split('.').map(Number);
+    return B[0] - A[0] || B[1] - A[1] || B[2] - A[2];
   });
 }
 

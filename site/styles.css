@@ -194,6 +194,14 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 .quicklinks { padding-left: 20px; }
 .quicklinks li { margin: 4px 0; }
 
+.releases details { border: 1px solid var(--line); border-radius: 12px; margin: 8px 0; padding: 10px 16px; }
+.releases summary { cursor: pointer; font-weight: 600; }
+.releases ul { list-style: none; margin: 8px 0 2px; padding: 0; font-size: 14px; }
+.releases li { display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 4px 0; }
+.releases li > :first-child { min-width: 116px; }
+.releases .rdate { color: var(--fg2); min-width: 96px; }
+.releases .rbuild { color: var(--fg2); cursor: help; }
+
 /* ---- badges ---- */
 .badge {
   display: inline-block; margin-left: 8px; padding: 1px 7px;

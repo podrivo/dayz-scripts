@@ -1,7 +1,7 @@
-// Static site orchestrator: renders every version of the docs into dist/.
-// Latest version lives at the site root; older versions under /v/<label>/.
-// Versions are processed oldest -> newest so each diff only needs the
-// previous version's site model in memory.
+// Static site orchestrator: renders every build of the docs into dist/.
+// Latest build lives at the site root; older builds under /v/<build>/.
+// Builds are processed oldest -> newest so each diff only needs the
+// previous build's site model in memory.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -31,6 +31,19 @@ for (const f of fs.readdirSync(path.join(ROOT, 'site'))) {
   fs.copyFileSync(path.join(ROOT, 'site', f), path.join(assetsDir, f));
 }
 
+// Old URLs used the minor version (/v/1.28/); send those to that version's
+// newest build (or the site root when it is the latest build overall).
+const minorRedirects = [];
+{
+  const seen = new Set();
+  for (const v of buildList) {
+    if (seen.has(v.version)) continue;
+    seen.add(v.version);
+    const target = v.label === buildList[0].label ? '/:splat' : `/v/${v.label}/:splat`;
+    minorRedirects.push(`/v/${v.version}/* ${target} 301`);
+  }
+}
+
 // domain redirects preserved from the previous Doxygen site
 fs.writeFileSync(
   path.join(DIST_DIR, '_redirects'),
@@ -39,6 +52,7 @@ fs.writeFileSync(
     'https://dayz-docs.yadz.app/* https://dayz-scripts.yadz.app/:splat 301!',
     '/v/ / 302',
     `/v/${buildList[0].label}/* /:splat 301`,
+    ...minorRedirects,
     '',
   ].join('\n')
 );
@@ -50,7 +64,7 @@ let pages = 0;
 
 function renderVersion(site, diff, prevLabel, versionIndex) {
   const isLatest = versionIndex === 0;
-  const versionDirRel = isLatest ? '' : `v/${site.version}/`;
+  const versionDirRel = isLatest ? '' : `v/${site.label}/`;
   const versionDir = path.join(DIST_DIR, versionDirRel);
 
   const write = (relDir, html) => {
@@ -102,7 +116,7 @@ function renderVersion(site, diff, prevLabel, versionIndex) {
   write('changes/', renderChanges(ctx('changes/'), diff, prevLabel));
 
   // file pages with embedded source
-  const srcDir = path.join(CACHE_DIR, 'src', site.version);
+  const srcDir = path.join(CACHE_DIR, 'src', site.label);
   const fileModels = new Map(site.rawFiles.map((f) => [f.path, f]));
   for (const f of site.files) {
     const source = fs.readFileSync(path.join(srcDir, f.path), 'utf8');
@@ -113,7 +127,7 @@ function renderVersion(site, diff, prevLabel, versionIndex) {
   // search index
   fs.writeFileSync(path.join(versionDir, 'search.json'), JSON.stringify(buildSearchIndex(site)));
 
-  console.log(`${site.version}: rendered${isLatest ? ' (latest, at site root)' : ''}`);
+  console.log(`${site.label}: rendered${isLatest ? ' (latest, at site root)' : ''}`);
 }
 
 // Process oldest -> newest, keeping only the previous site model for diffs.
@@ -126,7 +140,7 @@ for (const v of ordered) {
   site.rawFiles = model.files; // per-file decls needed for file pages
   const diff = prevSite ? diffModels(site, prevSite) : null;
   const versionIndex = buildList.findIndex((x) => x.label === v.label);
-  renderVersion(site, diff, prevSite?.version, versionIndex);
+  renderVersion(site, diff, prevSite?.build, versionIndex);
   prevSite = site;
 }
 

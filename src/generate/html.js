@@ -153,9 +153,9 @@ export function layout(o) {
 
   const versionOptions = o.versions
     .map((v, i) => {
-      const sel = v.label === o.site.version ? ' selected' : '';
+      const sel = v.label === o.site.label ? ' selected' : '';
       const prefix = i === 0 ? '' : `v/${v.label}/`;
-      return `<option value="${o.root}${prefix}"${sel}>${v.label}</option>`;
+      return `<option value="${o.root}${prefix}"${sel}>${v.build}</option>`;
     })
     .join('');
 
@@ -185,8 +185,8 @@ export function layout(o) {
     <kbd>/</kbd>
     <div id="searchResults" class="search-results" hidden></div>
   </div>
-  <select id="versionSel" aria-label="DayZ version">${versionOptions}</select>
-  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.3 11.3 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.3-11.3 1.4-1.4"/></svg></button>
+  <select id="versionSel" aria-label="DayZ build">${versionOptions}</select>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme (M)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.3 11.3 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.3-11.3 1.4-1.4"/></svg></button>
 </header>
 <div class="shell">
   <aside class="side" id="sidebar"><nav>${nav}</nav>
