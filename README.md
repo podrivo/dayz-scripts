@@ -60,8 +60,28 @@ secrets: `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID`.
 
 ## License
 
-The DayZ script sources are licensed under the
-[Arma and DayZ Public License Share Alike (ADPL-SA)](https://www.bohemia.net/community/licenses/arma-and-dayz-public-license-share-alike-adpl-sa).
+Two different licenses apply, and the distinction matters:
+
+**This generator** — everything tracked in this repository, i.e. `src/`,
+`site/`, `test/` and the build configuration — is released under the
+[MIT License](LICENSE). Reuse it however you like.
+
+**The generated documentation** — the DayZ script sources it renders, which
+live in `data/` and `dist/` and are deliberately not tracked here — is not
+mine to license, and MIT does not extend to it. Those terms follow.
+
+Those sources are © 2022 BOHEMIA INTERACTIVE a.s., all rights reserved, and are
+licensed under the
+[DayZ Public License (DPL)](https://www.bohemia.net/community/licenses/dayz-public-license-dpl),
+which permits non-commercial, DayZ-only reuse with attribution. They are
+modified here only for presentation — parsed, reorganized and reformatted into
+documentation pages — from the originals in
+[DayZ Script Diff](https://github.com/BohemiaInteractive/DayZ-Script-Diff/tree/main/scripts),
+and are offered as-is, without warranties of any kind.
+
+The DPL does not license trademarks and carries no share-alike obligation, so
+it places no conditions on the MIT-licensed generator above.
+
 This is not an official documentation and it is not affiliated with DayZ or
 Bohemia Interactive. DAYZ®, ENFUSION®, and BOHEMIA INTERACTIVE® are registered
 trademarks of BOHEMIA INTERACTIVE a.s.

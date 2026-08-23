@@ -181,7 +181,7 @@ export function layout(o) {
     <button class="ver-btn" id="verBtn" data-build="${esc(o.site.build)}" aria-haspopup="true" aria-expanded="false" title="Switch DayZ build">${esc(o.site.version)}<span class="ver-patch">${esc(o.site.build.slice(o.site.version.length))}</span><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3.5l3 3 3-3"/></svg></button>
     <nav class="ver-menu" id="verMenu" aria-label="DayZ builds" hidden></nav>
   </div>
-  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme (M)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.3 11.3 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.3-11.3 1.4-1.4"/></svg></button>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme (M)"><svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.3 11.3 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.3-11.3 1.4-1.4"/></svg><svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
 </header>
 <div class="shell">
   <aside class="side" id="sidebar"><nav>${nav}</nav>
@@ -191,7 +191,7 @@ export function layout(o) {
     ${crumbs}
     ${o.content}
     <footer class="foot">
-      <p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" rel="noopener">DayZ Script Diff</a> · build ${esc(o.site.build)} (${esc(o.site.date)}) · Unofficial, not affiliated with Bohemia Interactive · <a href="https://www.bohemia.net/community/licenses/arma-and-dayz-public-license-share-alike-adpl-sa" rel="noopener">ADPL-SA</a></p>
+      <p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" rel="noopener">DayZ Script Diff</a> · build ${esc(o.site.build)} (${esc(o.site.date)}) · Unofficial, not affiliated with Bohemia Interactive · © 2022 BOHEMIA INTERACTIVE a.s., licensed under the <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" rel="noopener">DayZ Public License</a></p>
     </footer>
   </main>
 </div>

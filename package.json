@@ -15,5 +15,5 @@
     "test": "node --test",
     "dev": "node src/serve.js"
   },
-  "license": "SEE LICENSE IN README.md"
+  "license": "MIT"
 }
