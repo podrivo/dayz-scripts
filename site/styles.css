@@ -92,7 +92,21 @@ body {
 }
 
 a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a:hover { text-decoration: underline; text-decoration-color: currentColor; }
+
+/* Nothing in this palette is bright enough to mark a link by colour alone — in
+   light mode the accent sits at 2.25:1 against body text, well under the 3:1
+   that colour-only links need — so running text underlines instead. The
+   original site does the same thing for the same reason. Chrome (nav, cards,
+   tables, signatures, the dense .chain and .locations link lists) is left
+   alone: there the link is the whole element, so position already says so. */
+:is(.hero p, .main > p:not(.chain, .locations), .quicklinks, .releases,
+    .class-doc, .member-doc, .doc-params dd, .foot) a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+}
 
 code, pre, kbd {
   font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
