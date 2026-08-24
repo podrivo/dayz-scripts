@@ -5,7 +5,7 @@ import {
   methodSig, varSig, renderDoc, briefOf, EXT,
 } from './html.js';
 import {
-  OFFICIAL_LINKS, COMMUNITY_LINKS, FORUM_THREADS, BUILD_TITLES, VERSION_TITLES, YADZ_DISCORD,
+  OFFICIAL_LINKS, COMMUNITY_LINKS, FORUM_THREADS, VERSION_TITLES, YADZ_DISCORD,
 } from './content.js';
 
 const MODULE_LABELS = {
@@ -95,9 +95,8 @@ function renderReleases(ctx) {
           if (r.build === site.build) label = `<strong>v${esc(r.build)}</strong>`;
           else if (r.docs) label = `<a href="${r.docs}">v${esc(r.build)}</a>`;
           else label = `<span class="rbuild" title="Scripts for this build are not in the Script Diff repository">v${esc(r.build)}</span>`;
-          const name = BUILD_TITLES[r.build] ? `<span class="rname">${esc(BUILD_TITLES[r.build])}</span>` : '';
           const notes = r.url ? ` <a href="${r.url}" ${EXT}>release notes</a>` : '';
-          return `<li>${label}<span class="rdate">${esc(fmtDate(r.date))}</span>${name}${notes}</li>`;
+          return `<li>${label}<span class="rdate">${esc(fmtDate(r.date))}</span>${notes}</li>`;
         })
         .join('\n');
       return `<details${version === site.version ? ' open' : ''}>
@@ -142,12 +141,11 @@ ${links
   const buildLine = thread
     ? `<a href="${thread.url}" ${EXT}>${esc(site.build)}</a>`
     : `<strong>${esc(site.build)}</strong>`;
-  const buildName = BUILD_TITLES[site.build] ? ` “${esc(BUILD_TITLES[site.build])}”` : '';
 
   const content = `
 <section class="hero">
   <h1>Overview</h1>
-  <p>Browsable documentation for the DayZ Enforce Script sources — every class, method, enum and constant of DayZ ${esc(site.version)}${buildName}, game build ${buildLine} (${esc(site.date)}), generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ&nbsp;Script&nbsp;Diff</a> repository.</p>
+  <p>Browsable documentation for the DayZ Enforce Script sources — every class, method, enum and constant of DayZ ${esc(site.version)}, game build ${buildLine} (${esc(site.date)}), generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ&nbsp;Script&nbsp;Diff</a> repository.</p>
   <p>Made for anyone wandering the DayZ modding and scripting world, and meant to be quicker to browse than the raw sources. This is just the tip of the iceberg: there is no official detailed documentation on the subject, so community content is your best friend. Once you join one of the Discord servers below, check the pinned messages — most recurring questions are answered there.</p>
 </section>
 <section class="stats">

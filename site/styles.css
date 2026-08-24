@@ -1,63 +1,75 @@
 /* DayZ Scripts docs — custom generator UI */
 
+/* Palette. The dark theme is the original doxygen site's, reused verbatim: the
+   olive near-blacks come from its doxygen-extra.css (body #0b100a, header
+   #12160f, tree #1c2118, selection #47533e) and the text and syntax colours
+   from its doxygen.css. --accent is the one addition: the original links in
+   plain grey, which the selection green cannot carry, so it is #47533e lifted
+   until it reads on both. The light theme has no original to copy — doxygen
+   ships dark only — so it is the same hues inverted. */
 :root {
   --bg: #ffffff;
-  --bg2: #f6f7f5;
-  --bg3: #eef0ec;
-  --fg: #1c2419;
-  --fg2: #5b6657;
-  --line: #dde2d8;
-  --accent: #4e7d33;
-  --accent2: #6ca24c;
-  --accent-bg: #eef5e8;
-  --code-bg: #f4f6f1;
-  --kw: #7a3e9d;
-  --str: #1a7f37;
-  --num: #b25000;
-  --com: #7b857a;
-  --fn: #0550ae;
-  --warn-bg: #fff3e0;
-  --warn-line: #e8b04a;
-  --note-bg: #e8f1fb;
-  --note-line: #5c9fd6;
-  --added: #1a7f37;
-  --removed: #c62828;
-  --shadow: 0 4px 24px rgba(20, 30, 15, 0.12);
+  --bg2: #f4f6f2;
+  --bg3: #e9ede4;
+  --fg: #12160f;
+  --fg2: #5d6b52;
+  --line: #dce0d5;
+  --accent: #47533e;
+  --accent2: #7a8a6d;
+  --accent-bg: #e6ebdf;
+  --code-bg: #f4f6f2;
+  --kw: #8a4b8c;
+  --str: #2f7d4f;
+  --num: #a35c00;
+  --com: #6a708a;
+  --fn: #2f6bab;
+  --pre: #2b7f76;
+  --pre-bg: #e5f2f0;
+  --warn-bg: #fdf3e3;
+  --warn-line: #a35c00;
+  --note-bg: #eaf2fb;
+  --note-line: #2f6bab;
+  --added: #2f7d4f;
+  --removed: #b03a3a;
+  --shadow: 0 4px 24px rgba(18, 22, 15, 0.12);
 }
 
 [data-theme="dark"] {
-  --bg: #171a15;
-  --bg2: #1e231c;
-  --bg3: #262c23;
-  --fg: #e4e8e0;
-  --fg2: #9aa494;
-  --line: #333a2f;
-  --accent: #8fc46a;
-  --accent2: #6ca24c;
-  --accent-bg: #24301c;
-  --code-bg: #20251d;
-  --kw: #c792ea;
-  --str: #7ec87e;
-  --num: #f0a35e;
-  --com: #78826f;
-  --fn: #82aaff;
-  --warn-bg: #33290f;
-  --warn-line: #b98a2e;
-  --note-bg: #16283a;
-  --note-line: #3e7cb1;
-  --added: #7ec87e;
-  --removed: #ef7070;
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  --bg: #0b100a;
+  --bg2: #12160f;
+  --bg3: #1c2118;
+  --fg: #c9d1d9;
+  --fg2: #889083;
+  --line: #2f372a;
+  --accent: #b9c9a9;
+  --accent2: #5d6b52;
+  --accent-bg: #47533e;
+  --code-bg: #000000;
+  --kw: #cc99cd;
+  --str: #7ec699;
+  --num: #e08000;
+  --com: #717790;
+  --fn: #79c0ff;
+  --pre: #65cabe;
+  --pre-bg: #102a27;
+  --warn-bg: #2b2010;
+  --warn-line: #e08000;
+  --note-bg: #10202f;
+  --note-line: #79c0ff;
+  --added: #7ec699;
+  --removed: #e08080;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --bg: #171a15; --bg2: #1e231c; --bg3: #262c23; --fg: #e4e8e0; --fg2: #9aa494;
-    --line: #333a2f; --accent: #8fc46a; --accent2: #6ca24c; --accent-bg: #24301c;
-    --code-bg: #20251d; --kw: #c792ea; --str: #7ec87e; --num: #f0a35e; --com: #78826f;
-    --fn: #82aaff; --warn-bg: #33290f; --warn-line: #b98a2e; --note-bg: #16283a;
-    --note-line: #3e7cb1; --added: #7ec87e; --removed: #ef7070;
-    --shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    --bg: #0b100a; --bg2: #12160f; --bg3: #1c2118; --fg: #c9d1d9; --fg2: #889083;
+    --line: #2f372a; --accent: #b9c9a9; --accent2: #5d6b52; --accent-bg: #47533e;
+    --code-bg: #000000; --kw: #cc99cd; --str: #7ec699; --num: #e08000; --com: #717790;
+    --fn: #79c0ff; --pre: #65cabe; --pre-bg: #102a27; --warn-bg: #2b2010;
+    --warn-line: #e08000; --note-bg: #10202f; --note-line: #79c0ff;
+    --added: #7ec699; --removed: #e08080;
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
   }
 }
 
@@ -100,7 +112,9 @@ pre code { background: none; padding: 0; }
 }
 
 .brand { font-weight: 700; font-size: 17px; color: var(--fg); white-space: nowrap; }
-.brand span { color: var(--accent); }
+/* The palette has no bright accent, so the wordmark splits on weight of colour
+   rather than hue, the way the original's projectname/projectbrief pair does. */
+.brand span { color: var(--fg2); }
 .brand:hover { text-decoration: none; }
 
 .menu-btn, .theme-btn {
@@ -209,10 +223,12 @@ body.palette-open { overflow: hidden; }
   display: inline-flex; align-items: center; justify-content: center;
   font-size: 11px; font-weight: 700; color: #fff;
 }
-.tag-c { background: #4e7d33; } .tag-m { background: #0550ae; }
-.tag-e { background: #7a3e9d; } .tag-t { background: #9a6700; }
-.tag-k { background: #b25000; } .tag-f { background: #555f6b; }
-.tag-F { background: #6e5494; }
+/* One per search kind, taken from the syntax palette and kept dark enough for
+   white text in both themes. */
+.tag-c { background: #47533e; } .tag-m { background: #2f6bab; }
+.tag-e { background: #8a4b8c; } .tag-t { background: #2b7f76; }
+.tag-k { background: #a35c00; } .tag-f { background: #3f6b4d; }
+.tag-F { background: #5a6270; }
 .search-results .ctx { color: var(--fg2); font-size: 12px; margin-left: auto; white-space: nowrap; }
 .search-empty { padding: 12px; color: var(--fg2); font-size: 14px; }
 
@@ -247,10 +263,6 @@ body.palette-open { overflow: hidden; }
 .ver-menu a:hover { background: var(--bg3); text-decoration: none; }
 .ver-menu a.cur { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
 .ver-row { display: flex; align-items: center; gap: 8px; }
-.ver-title {
-  display: block; color: var(--fg2); font-size: 12px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
 .ver-date {
   margin-left: auto; color: var(--fg2); font-size: 12px; white-space: nowrap;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -322,7 +334,6 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 .releases li { display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 4px 0; }
 .releases li > :first-child { min-width: 116px; }
 .releases .rdate { color: var(--fg2); min-width: 96px; }
-.releases .rname { color: var(--fg2); min-width: 180px; }
 .releases .rbuild { color: var(--fg2); cursor: help; }
 
 /* ---- badges ---- */
@@ -332,7 +343,7 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
   font-family: ui-monospace, Menlo, Consolas, monospace;
 }
 .badge-mod { background: var(--accent-bg); color: var(--accent); }
-.badge-cond { background: var(--warn-bg); color: var(--warn-line); border: 1px solid var(--warn-line); }
+.badge-cond { background: var(--pre-bg); color: var(--pre); border: 1px solid var(--pre); }
 
 /* ---- tables ---- */
 table.list { width: 100%; border-collapse: collapse; font-size: 14px; }
@@ -416,7 +427,7 @@ pre.src .line::before {
 }
 pre.src .line:target, pre.src .line.hl { background: var(--accent-bg); }
 .tok-kw { color: var(--kw); } .tok-str { color: var(--str); } .tok-num { color: var(--num); }
-.tok-com { color: var(--com); font-style: italic; } .tok-pre { color: var(--warn-line); }
+.tok-com { color: var(--com); font-style: italic; } .tok-pre { color: var(--pre); }
 .tok-type { color: var(--fn); }
 
 /* ---- hierarchy ---- */

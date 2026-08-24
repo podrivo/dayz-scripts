@@ -30,13 +30,11 @@ hard links (`cp -r`, `tar`, `du -L`) rather than counting inodes, and pages must
 reference assets by absolute path since the same file is served at several
 depths.
 
-The homepage also carries hand-maintained content — community links, plus the
-official forum thread and update name of each PC stable update — which lives in
-`src/generate/content.js`. Add the thread URL and name there when a new build
-ships; builds without either still appear, they just don't link to release notes
-and show no name. Names belong to a build rather than a version because Bohemia
-renames mid-version: 1.29 shipped as "Update 1" and "Update 2", then "Road to
-Badlands Update 1" and "Update 2".
+The homepage also carries hand-maintained content — community links, the official
+forum thread of each PC stable update, and the marketing name of the versions
+that have one — which lives in `src/generate/content.js`. Add the thread URL
+there when a new build ships; builds without one still appear, they just don't
+link to release notes.
 
 The parser is a real lexer + recursive-descent declaration parser for Enforce
 Script (not regex scraping). It understands classes (both `extends` and `:`

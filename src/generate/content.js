@@ -26,18 +26,6 @@ export const VERSION_TITLES = {
 };
 
 /**
- * Name Bohemia gave an individual stable update, when it has one. 1.29 is why
- * this exists: its four stable updates are two plain ones followed by two
- * "Road to Badlands" ones, so the name belongs to the build, not the version.
- */
-export const BUILD_TITLES = {
-  '1.29.163709': 'Road to Badlands Update 2',
-  '1.29.163451': 'Road to Badlands Update 1',
-  '1.29.163047': 'Update 2',
-  '1.29.162510': 'Update 1',
-};
-
-/**
  * Forum thread for each PC stable update, keyed by game build. Dates are only
  * used for builds we don't track (their scripts never reached the Script Diff
  * repository) — otherwise the build's own release date wins.

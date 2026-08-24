@@ -96,7 +96,6 @@
           `<span class="ver-row">${b.build}` +
           (i === 0 ? '<span class="ver-latest">latest</span>' : '') +
           `<span class="ver-date">${fmtDate(b.date)}</span></span>` +
-          (b.title ? `<span class="ver-title">${b.title}</span>` : '') +
           '</a>';
       });
       verMenu.innerHTML = html;

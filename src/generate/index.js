@@ -18,7 +18,6 @@ import { spawn } from 'node:child_process';
 import { Worker } from 'node:worker_threads';
 import { CACHE_DIR, DATA_DIR, DIST_DIR, ROOT, extractSources, readJson } from '../util.js';
 import { buildSiteModel } from './model.js';
-import { BUILD_TITLES } from './content.js';
 import { diffModels } from './diff.js';
 import { buildSearchIndex } from './search.js';
 import {
@@ -145,7 +144,6 @@ fs.writeFileSync(
       version: v.version,
       date: v.date,
       sha: v.sha,
-      title: BUILD_TITLES[v.build],
     }))
   )
 );
