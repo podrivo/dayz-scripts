@@ -56,7 +56,13 @@ if (!fs.existsSync(path.join(ROOT, 'node_modules'))) {
   await offer('No node_modules folder.', [['install dependencies', 'pnpm install']]);
 }
 
-if (!fs.existsSync(DIST_DIR)) {
+// generate/index.js writes sitemap.xml only after every page and hard link is
+// in place, and moves any previous tree aside before it starts, so the file is
+// there if and only if the build that produced this dist/ ran to completion.
+if (!fs.existsSync(path.join(DIST_DIR, 'sitemap.xml'))) {
+  const reason = fs.existsSync(DIST_DIR)
+    ? 'The dist folder is incomplete — the last generate did not finish.'
+    : 'No dist folder to serve.';
   // Without data/ the models have to be fetched and parsed first, so neither
   // generate would get anywhere.
   const choices = fs.existsSync(path.join(DATA_DIR, 'versions.json'))
@@ -65,7 +71,7 @@ if (!fs.existsSync(DIST_DIR)) {
         ['every build, minutes and ~380 MB', 'pnpm generate'],
       ]
     : [['fetch, parse and render everything', 'pnpm build']];
-  await offer('No dist folder to serve.', choices);
+  await offer(reason, choices);
 }
 
 const TYPES = {
