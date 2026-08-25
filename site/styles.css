@@ -312,6 +312,66 @@ body.palette-open { overflow: hidden; }
 
 .foot { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--fg2); font-size: 13px; }
 
+/* ---- minimap ----
+   The pages that are hard to navigate are the long ones: a class with 900
+   methods, a six-thousand-line source file. This is the whole document
+   squashed into one column beside it — a bar per heading, member, table row or
+   line of code, plus a window marking what is on screen. VS Code's minimap,
+   used as a scrollbar you can read.
+
+   It sits in the shell as a third column rather than pinned to the viewport
+   edge, so it stays against the text instead of drifting away on a wide
+   screen. app.js builds it, and only when a page is long enough to need one.
+   Phones never get it: there is no room and no pointer to hover with. */
+.minimap {
+  position: sticky; top: 56px;
+  flex: none; width: 108px; height: calc(100vh - 56px);
+  padding: 14px 12px; border-left: 1px solid var(--line);
+}
+.mm-track { position: relative; height: 100%; cursor: pointer; touch-action: none; }
+
+/* One bar per pixel row. Width stands in for the length of the line or
+   signature and the offset for its indentation, which is what makes the
+   column read as text rather than as a solid block. */
+.mm-bar { position: absolute; border-radius: 1px; background: var(--fg2); opacity: 0.34; }
+.mm-head { border-radius: 2px; background: var(--accent); opacity: 0.95; }
+
+/* The labels, which is what a rail of several hundred identical bars needs to
+   be worth pointing at. They sit over the texture on the page background so
+   they stay legible, ticked on the left to say which row they belong to. */
+.mm-mark { position: absolute; left: 0; right: 0; pointer-events: none; }
+.mm-mark span {
+  display: block; max-width: 100%; margin-top: 1px;
+  padding: 0 3px 0 4px; border-left: 2px solid var(--accent2);
+  background: var(--bg); color: var(--fg2);
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  font-size: 9.5px; line-height: 12px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* Outlined rather than only tinted: on a long page the window is a few pixels
+   tall, and a wash that thin disappears against the bars behind it. */
+.mm-view {
+  position: absolute; left: -8px; right: -8px;
+  border: 1px solid color-mix(in srgb, var(--accent2) 75%, transparent);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--accent2) 20%, transparent);
+  pointer-events: none;
+}
+
+/* Names the bar under the pointer, so the column is browsable and not just a
+   position readout. Opens to the left, over the text it belongs to. */
+.mm-tip {
+  position: absolute; right: calc(100% - 4px); z-index: 30;
+  max-width: 42ch; padding: 2px 8px;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 6px;
+  box-shadow: var(--shadow); color: var(--fg);
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  font-size: 12px; font-style: normal; line-height: 19px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transform: translateY(-50%); pointer-events: none;
+}
+
 /* ---- content ---- */
 h1 { font-size: 26px; line-height: 1.3; margin: 0 0 12px; }
 h2 { font-size: 19px; margin: 32px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
@@ -485,4 +545,5 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
   .palette { padding: 8vh 8px 8px; }
   .palette-hints { display: none; }
   table.list td:first-child { white-space: normal; }
+  .minimap { display: none; }
 }

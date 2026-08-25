@@ -338,4 +338,313 @@
     document.querySelectorAll('ul.tree details').forEach((d) => (d.open = true)));
   $('#collapseAll')?.addEventListener('click', () =>
     document.querySelectorAll('ul.tree details').forEach((d) => (d.open = false)));
+
+  /* ---------- minimap ----------
+     A rail beside long pages holding the whole document at once: every
+     landmark — heading, member, table row, or line of code on a source page —
+     becomes one bar, positioned and sized by where it actually sits in the
+     page. Dragging scrolls, clicking jumps to the bar under the pointer, and
+     hovering names it.
+
+     Bars alone are only half of it. Source code has shape, so its texture
+     reads, but a list of nine hundred methods is nine hundred identical marks
+     and says nothing at all. So the rail also carries a few labels you can
+     actually read — see signposts() — which is what makes it navigable rather
+     than merely proportional.
+
+     Built here rather than in the markup because it is measured, throwaway
+     chrome, and because the generated HTML has to stay byte-identical across
+     builds. It carries aria-hidden: every bar targets an anchor the page
+     already exposes to a screen reader, so announcing all of them twice would
+     only add noise. */
+  const main = $('.main');
+  const wide = matchMedia('(min-width: 901px)');
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+  const LANDMARKS = 'h1, h2, h3, .member, .diff-class, ul.tree > li, table.list tbody tr';
+  const LABEL_MIN = 17; // px between labels before they would collide
+  const LABEL_MAX = 96; // px of unlabelled rail before one gets sampled in
+
+  let mm, track, view, tip, items, bars = [], marks = [], scale = 1;
+
+  /** The shortest text that identifies a landmark, for the hover tip: the
+      summary of a collapsed block, else the signature or name it leads with,
+      else everything it says. Naming the inner element matters because the
+      badges and briefs that follow one are siblings inside the same cell, and
+      textContent would run them all together. */
+  function labelOf(el) {
+    const s = el.classList.contains('line')
+      ? `${el.id.slice(1)}  ${el.textContent}`
+      : $('summary', el)?.textContent || $('code, a', el)?.textContent || el.textContent;
+    return s.replace(/\s+/g, ' ').trim().slice(0, 90);
+  }
+
+  /** Landmarks with their document geometry, measured once per layout.
+      Offsets come from the viewport rather than offsetTop, which for a table
+      row is measured from its own <table> and would stack every row of every
+      table at the top of the rail. */
+  function collect() {
+    const y0 = scrollY;
+    // On a source page the code is the page, so map it line by line. Lines are
+    // uniform, so two reads give every offset and spare us thousands more.
+    const lines = srcEl && srcEl.children.length > 1 ? [...srcEl.children] : null;
+    if (lines) {
+      const first = lines[0].getBoundingClientRect();
+      const lh = lines[1].getBoundingClientRect().top - first.top;
+      return lines.map((el, i) => {
+        const text = el.textContent;
+        return {
+          el, top: first.top + y0 + i * lh, h: lh, head: false, label: labelOf(el),
+          name: `L${i + 1}`,
+          indent: text.length - text.trimStart().length, len: text.trim().length,
+        };
+      });
+    }
+    const out = [];
+    for (const el of main.querySelectorAll(LANDMARKS)) {
+      // A closed <details> still reports a box for its contents, and the wrong
+      // one — the rows of a collapsed changelog group all measure up near the
+      // summary — so go by the state of the disclosure rather than the box.
+      if (el.parentElement?.closest('details:not([open])')) continue;
+      const r = el.getBoundingClientRect();
+      if (!r.height) continue;
+      const head = el.tagName.length === 2 && el.tagName[0] === 'H';
+      const label = labelOf(el);
+      // The bare name, apart from the signature around it, is what a label has
+      // room for and what an alphabetical page is ordered by. Paths keep only
+      // their last segment: a column this narrow spent on a directory prefix
+      // every neighbour shares says nothing at all.
+      const found = ($('.fn, .vn', el) || $('code, a', el))?.textContent.trim() || label;
+      const name = found.split('/').pop() || found;
+      out.push({
+        el, top: r.top + y0, h: r.height, head, label, name,
+        indent: head ? 0 : 3, len: label.length,
+      });
+    }
+    return out;
+  }
+
+  /** The item nearest a point on the rail. Landmarks come out of collect() in
+      document order, so their rail positions are already sorted. */
+  function itemAt(list, y) {
+    let lo = 0;
+    let hi = list.length - 1;
+    while (lo < hi) {
+      const mid = (lo + hi) >> 1;
+      if (list[mid].top * scale < y) lo = mid + 1;
+      else hi = mid;
+    }
+    return list[lo];
+  }
+
+  /** Whether a list is in name order, in which case initials make signposts
+      the way the letter strip on the classes index does. A handful out of
+      order is fine — overloads and casing put them there. */
+  function alphabetical(list) {
+    let wrong = 0;
+    let prev = '';
+    for (const it of list) {
+      const cur = it.name.toLowerCase();
+      if (cur < prev) wrong++;
+      prev = cur;
+    }
+    return wrong < list.length * 0.05;
+  }
+
+  /**
+   * The few labels that make the rail readable, in rail coordinates.
+   *
+   * Sections where the page has them, initials where it is one alphabetical
+   * list, and past that a sampled name wherever a stretch of rail would
+   * otherwise carry nothing to aim at — which is what rescues the pages that
+   * are one flat run of hundreds of members under a single heading.
+   */
+  function signposts(th) {
+    // not the h1: the page title is already on screen above the rail
+    const heads = items.filter((it) => it.head && it.el.tagName !== 'H1');
+    const list = items.filter((it) => !it.head);
+    const found = [];
+    if (heads.length >= 3) {
+      // without the count badge, which the width here cannot spare
+      for (const it of heads) {
+        found.push({ y: Math.round(it.top * scale), text: it.label.replace(/\s+\d+$/, '') });
+      }
+    } else if (list.length > 40 && alphabetical(list)) {
+      let prev = '';
+      for (const it of list) {
+        const initial = it.name.slice(0, 1).toUpperCase();
+        if (initial && initial !== prev) {
+          prev = initial;
+          found.push({ y: Math.round(it.top * scale), text: initial });
+        }
+      }
+      // A page under a single initial has learnt nothing from it — a letter of
+      // the class index, or the line numbers of a source file. Sample instead.
+      if (found.length < 4) found.length = 0;
+    }
+
+    // Where labels would collide the one owning more of the rail wins. On a
+    // class page that keeps Methods and its hundreds of entries over the
+    // two-line Constructors section sitting a few pixels above it.
+    const kept = [];
+    for (let i = 0; i < found.length; i++) {
+      const m = { ...found[i], span: (found[i + 1]?.y ?? th) - found[i].y };
+      const prev = kept[kept.length - 1];
+      if (prev && m.y - prev.y < LABEL_MIN) {
+        if (m.span > prev.span) kept[kept.length - 1] = m;
+      } else {
+        kept.push(m);
+      }
+    }
+
+    const out = [];
+    let last = -LABEL_MIN; // so a list starting at the top keeps its first label
+    for (const m of [...kept, { y: th }]) {
+      for (let y = last + LABEL_MAX; y < m.y - LABEL_MIN; y += LABEL_MAX) {
+        // A sample is only worth a label if something is really there to name.
+        // On a short page the nearest item can be half the rail away, and the
+        // label would point at the wrong thing — or repeat the one above it.
+        const it = itemAt(list, y);
+        const iy = it && Math.round(it.top * scale);
+        if (it && Math.abs(iy - y) < LABEL_MIN) out.push({ y: iy, text: it.name });
+      }
+      if (m.text) out.push(m);
+      last = m.y;
+    }
+    return out;
+  }
+
+  /** Project the landmarks onto the rail, one bar per pixel row. */
+  function place() {
+    const th = track.clientHeight;
+    const tw = track.clientWidth;
+    if (!th || !tw) return; // rail is hidden (narrow viewport)
+    scale = th / document.documentElement.scrollHeight;
+
+    // Several landmarks can land on the same row — a long file puts a dozen
+    // lines there. Keep the longest and the shallowest, so the row still
+    // describes them. Headings are the exception: they read as full-width
+    // rules across the rail, which is the only thing that makes the sections
+    // of a nine-hundred-method class findable, so one owns its row outright.
+    const rows = new Map();
+    for (const it of items) {
+      const y = Math.round(it.top * scale);
+      const w = it.head ? tw : Math.max(2, Math.min(1, it.len / 80) * tw);
+      const x = it.head ? 0 : Math.min(0.4, it.indent / 60) * tw;
+      const h = Math.max(it.head ? 3 : 1, Math.round(it.h * scale));
+      const r = rows.get(y);
+      if (!r || (it.head && !r.head)) { rows.set(y, { y, x, w, h, head: it.head, it }); continue; }
+      if (r.head) continue;
+      r.x = Math.min(r.x, x);
+      r.h = Math.max(r.h, h);
+      // the fullest of them names the row, so the tip never reads out a blank
+      if (w > r.w) { r.w = w; r.it = it; }
+    }
+
+    bars = [...rows.values()];
+    marks = signposts(th);
+    const esc = (s) => s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]);
+    track.innerHTML = bars
+      .map((b) => `<i class="mm-bar${b.head ? ' mm-head' : ''}" style="top:${b.y}px;` +
+        `left:${b.x.toFixed(1)}px;width:${b.w.toFixed(1)}px;height:${b.h}px"></i>`)
+      .join('') + marks
+      .map((m) => `<div class="mm-mark" style="top:${m.y}px"><span>${esc(m.text)}</span></div>`)
+      .join('') + '<div class="mm-view"></div>';
+    view = $('.mm-view', track);
+  }
+
+  function sync() {
+    if (!view) return;
+    view.style.top = `${(scrollY * scale).toFixed(1)}px`;
+    view.style.height = `${Math.max(8, innerHeight * scale).toFixed(1)}px`;
+  }
+
+  /** The bar under (or within a few pixels of) a point on the rail. */
+  function nearest(y) {
+    let best = null;
+    let bd = 9;
+    for (const b of bars) {
+      const d = y < b.y ? b.y - y : Math.max(0, y - b.y - b.h);
+      if (d < bd) { bd = d; best = b; }
+    }
+    return best;
+  }
+
+  function buildMinimap() {
+    if (mm) return;
+    items = collect();
+    // Not worth a rail if the page barely scrolls or has nothing to point at.
+    if (items.length < 8 || document.documentElement.scrollHeight < innerHeight * 1.8) return;
+
+    mm = document.createElement('aside');
+    mm.className = 'minimap';
+    mm.setAttribute('aria-hidden', 'true');
+    mm.innerHTML = '<div class="mm-track"></div><div class="mm-tip" hidden></div>';
+    main.after(mm);
+    track = $('.mm-track', mm);
+    tip = $('.mm-tip', mm);
+    place();
+    sync();
+
+    const at = (e) => e.clientY - track.getBoundingClientRect().top;
+    // Centre the viewport on the point pressed, the way a minimap does.
+    const centre = (y, smooth) => scrollTo({
+      top: Math.max(0, y / scale - innerHeight / 2),
+      behavior: smooth && !still.matches ? 'smooth' : 'auto',
+    });
+
+    let down = false;
+    let dragging = false;
+    let startY = 0;
+
+    track.addEventListener('pointerdown', (e) => {
+      e.preventDefault(); // don't start a text selection in the page behind
+      track.setPointerCapture(e.pointerId);
+      down = true;
+      dragging = false;
+      startY = e.clientY;
+      tip.hidden = true;
+    });
+    track.addEventListener('pointermove', (e) => {
+      const y = at(e);
+      if (!down) {
+        const b = nearest(y);
+        if (b) {
+          tip.textContent = b.it.label;
+          tip.style.top = `${b.y + track.offsetTop}px`;
+        }
+        tip.hidden = !b;
+        return;
+      }
+      if (!dragging && Math.abs(e.clientY - startY) > 3) dragging = true;
+      if (dragging) centre(y, false);
+    });
+    // A press that never moved is aimed at something: bars are one or two
+    // pixels tall, so honour the nearest one instead of the raw position.
+    track.addEventListener('pointerup', (e) => {
+      down = false;
+      if (dragging) return;
+      const b = nearest(at(e));
+      if (b) b.it.el.scrollIntoView({ block: 'start', behavior: still.matches ? 'auto' : 'smooth' });
+      else centre(at(e), true);
+    });
+    // without this a cancelled gesture leaves the rail scrolling on hover
+    track.addEventListener('pointercancel', () => { down = false; });
+    track.addEventListener('pointerleave', () => { tip.hidden = true; });
+
+    addEventListener('scroll', sync, { passive: true });
+
+    // The page can grow after load — a <details> opens, the window resizes, a
+    // font settles — and every offset moves with it, so measure again.
+    let pending;
+    new ResizeObserver(() => {
+      clearTimeout(pending);
+      pending = setTimeout(() => { items = collect(); place(); sync(); }, 120);
+    }).observe(document.body);
+  }
+
+  if (main) {
+    const boot = () => { if (wide.matches) buildMinimap(); };
+    wide.addEventListener('change', boot);
+    boot();
+  }
 })();
