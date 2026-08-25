@@ -9,6 +9,13 @@
 // consecutive builds. The first copy of a given body is written and every later
 // URL with the same body becomes a hard link to it, which is what keeps dist/
 // in the hundreds of MB rather than a few GB.
+//
+// That redundancy is exploited twice more, because a full build is 417k pages
+// with only 23k distinct bodies:
+//   - pages whose inputs are unchanged since the previous build are not
+//     rendered or hashed again, only linked (see src/generate/memo.js)
+//   - every write and link happens on a worker pool while this thread renders
+//     the next build, since the filesystem work outlasts the rendering by far
 
 import crypto from 'node:crypto';
 import fs from 'node:fs';
@@ -16,10 +23,11 @@ import os from 'node:os';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { Worker } from 'node:worker_threads';
-import { CACHE_DIR, DATA_DIR, DIST_DIR, ROOT, extractSources, readJson } from '../util.js';
+import { CACHE_DIR, DATA_DIR, DIST_DIR, ROOT, extractSources, readJson, sourceBlobs } from '../util.js';
 import { buildSiteModel } from './model.js';
 import { diffModels } from './diff.js';
 import { buildSearchIndex } from './search.js';
+import { PageMemo, recordingSite, classDeps, enumDeps } from './memo.js';
 import {
   renderHome, renderClassesIndex, renderClassesLetter, renderClass,
   renderEnumsIndex, renderEnum, renderTypedefs, renderConstants,
@@ -30,98 +38,185 @@ import {
 const t0 = Date.now();
 const clock = () => process.hrtime.bigint();
 const since = (t) => Number(process.hrtime.bigint() - t) / 1e6;
-const timers = { teardown: 0, model: 0, render: 0, write: 0, link: 0, sitemap: 0 };
+// `queue` and `flush` are what the writing costs this thread now that the pool
+// does it; `drain` is the wait for the pool once there is nothing left to render.
+const timers = { teardown: 0, parse: 0, model: 0, diff: 0, deps: 0, render: 0, hash: 0, queue: 0, flush: 0, drain: 0, sitemap: 0 };
+// render time split by page kind, to show where the ~417k renders actually go
+const renderTimers = { class: 0, file: 0, enum: 0, index: 0, search: 0 };
+const linkTimers = { mkdir: 0, write: 0, link: 0 };
+
+// Renders every memoized page anyway and asserts it still hashes to what the
+// memo promised. Slower than a plain build by design; see src/generate/memo.js.
+const VERIFY = !!process.env.GENERATE_VERIFY;
+const memo = new PageMemo();
+const memoStats = { rendered: 0, reused: 0, mismatched: 0 };
 
 const { versions } = readJson(path.join(DATA_DIR, 'versions.json'));
 const limit = process.env.BUILD_VERSIONS ? Number(process.env.BUILD_VERSIONS) : versions.length;
 const buildList = versions.slice(0, limit); // newest first
 
 // ---- teardown -------------------------------------------------------------
-// Renaming the old tree is O(1); unlinking its ~850k inodes is not. Move it
-// aside and let the kernel reclaim it in the background while we render.
+// Renaming the old tree is O(1); unlinking its ~850k inodes is not, so the
+// rename happens now and the delete is deferred to the very end of the build.
+// Deleting concurrently looks free but is not: unlinking and hard-linking are
+// both pure metadata work on the same volume, and the old tree's ~850k unlinks
+// contend with the ~394k links this build has to make.
 {
   const t = clock();
   if (fs.existsSync(DIST_DIR)) {
     // Sibling of dist/ so the rename stays on one filesystem, and outside
     // .cache/ so a half-deleted tree can never be picked up by the CI cache.
-    const stale = path.join(ROOT, `.dist-stale-${Date.now()}`);
-    fs.renameSync(DIST_DIR, stale);
-    spawn('rm', ['-rf', stale], { detached: true, stdio: 'ignore' }).unref();
+    fs.renameSync(DIST_DIR, path.join(ROOT, `.dist-stale-${Date.now()}`));
   }
   fs.mkdirSync(DIST_DIR, { recursive: true });
   timers.teardown = since(t);
 }
 
+/**
+ * Reclaim every renamed tree in the background, once this build is done with
+ * the disk. Sweeps the whole set rather than just ours, so a tree left behind
+ * by an interrupted run is collected by the next one instead of leaking.
+ */
+function dropStaleTrees() {
+  const stale = fs.readdirSync(ROOT).filter((f) => f.startsWith('.dist-stale-'));
+  if (!stale.length) return;
+  spawn('rm', ['-rf', ...stale.map((f) => path.join(ROOT, f))], { detached: true, stdio: 'ignore' }).unref();
+}
+
 // ---- content-addressed writer --------------------------------------------
-// The first page with a given body is written now; duplicates are queued and
-// linked in parallel once every target exists (see linkAll below).
+// The first page with a given body is written; every later URL with the same
+// body becomes a hard link to it. Both are handed to the worker pool below
+// rather than done here, so the main thread only ever renders.
 const canonical = new Map(); // content hash -> path of the file holding that body
-const linkJobs = []; // flat [file, target, ...]
 const sitemapUrls = [];
 let pages = 0;
 let bytesWritten = 0;
 
+// ---- worker pool ----------------------------------------------------------
+// All of dist/'s filesystem work happens here, off the main thread, while the
+// main thread renders the next build. That matters twice over: linking is
+// syscall-latency bound so it scales across threads and overlaps with
+// rendering for free, and leaving the ~23k canonical writes on the main thread
+// made them four times slower by putting them in contention with the pool.
+//
+// Threads are heavily oversubscribed because the cost is syscall latency
+// rather than CPU, so far more of them can be in flight than there are cores.
+// Full builds on a 10-core APFS machine: 233s on 6 threads, 189s on 10, 181s
+// on 20, 160s on 32, 164s on 44 — a broad optimum around three per core. The
+// cap keeps a many-core machine from paying for threads that only add memory.
+// LINK_THREADS overrides for tuning elsewhere.
+const LINK_THREADS =
+  Number(process.env.LINK_THREADS) || Math.min(48, Math.max(8, os.availableParallelism() * 3));
+// Cap on how much rendered HTML may sit in the queues before it is handed off,
+// so the first build (~8k distinct pages, ~130 MB) does not pile up unsent.
+const FLUSH_AT = 4096;
+
+const tty = process.stdout.isTTY;
+const queues = Array.from({ length: LINK_THREADS }, () => ({ writes: [], links: [] }));
+let pendingOps = 0; // writes + links sitting in the queues, unsent
+let workers = null;
+let batches = 0; // batches the pool has not finished yet
+let queued = 0; // links handed to the pool
+let linked = 0; // links the pool has finished
+let drained = null; // resolve of the promise waiting on the pool to go idle
+let showProgress = false;
+let lastReport = 0;
+
+/**
+ * Which worker owns a body. Everything about one body — the write and every
+ * link pointing at it — must go to the same worker, because a worker's
+ * message queue is the only thing ordering the write before its links.
+ */
+const ownerOf = (hash) => parseInt(hash.slice(0, 6), 16) % LINK_THREADS;
+
+/** Write a page, or queue a link to the file that already holds these bytes. */
 function writeFile(file, body) {
-  const t = clock();
+  let t = clock();
   const hash = crypto.createHash('sha1').update(body).digest('hex');
+  timers.hash += since(t);
+
+  t = clock();
+  const q = queues[ownerOf(hash)];
   const first = canonical.get(hash);
   if (first) {
-    linkJobs.push(file, first);
+    q.links.push(file, first);
   } else {
-    fs.mkdirSync(path.dirname(file), { recursive: true });
-    fs.writeFileSync(file, body);
+    q.writes.push(file, body);
     canonical.set(hash, file);
     bytesWritten += Buffer.byteLength(body);
   }
-  timers.write += since(t);
+  timers.queue += since(t);
+  if (++pendingOps >= FLUSH_AT) flushJobs();
+  return hash;
 }
 
-/** Create every queued hard link, spread over one worker per core. */
-function linkAll() {
-  if (!linkJobs.length) return Promise.resolve();
-  // One per core. Oversubscribing does not help — measured flat from 10 to 24
-  // threads, because the filesystem serialises the metadata updates, not the
-  // CPU. LINK_THREADS overrides for tuning on other hardware.
-  const threads = Number(process.env.LINK_THREADS) || Math.max(2, os.availableParallelism());
-  const pairs = Math.ceil(linkJobs.length / 2 / threads);
-  const work = [];
-  for (let i = 0; i < linkJobs.length; i += pairs * 2) {
-    work.push(linkJobs.slice(i, i + pairs * 2));
+/** Queue a link to a page the memo already knows the bytes of. */
+function linkFile(file, hash) {
+  queues[ownerOf(hash)].links.push(file, canonical.get(hash));
+  if (++pendingOps >= FLUSH_AT) flushJobs();
+}
+
+function report() {
+  if (!showProgress) return;
+  const now = Date.now();
+  // redraw once a second on a terminal; every 10% in a log file
+  if (linked < queued && (tty ? now - lastReport < 1000 : linked - lastReport < queued / 10)) return;
+  lastReport = tty ? now : linked;
+  const line = `  linking ${linked.toLocaleString('en-US')} of ${queued.toLocaleString('en-US')} pages (${Math.round((linked / queued) * 100)}%)`;
+  process.stdout.write(tty ? `\r${line}` : `${line}\n`);
+}
+
+function pool() {
+  if (workers) return workers;
+  workers = queues.map(() => {
+    const w = new Worker(new URL('./linker.js', import.meta.url));
+    w.on('message', (m) => {
+      linked += m.linked;
+      report();
+      if (m.batchDone) {
+        linkTimers.mkdir += m.mkdirMs;
+        linkTimers.write += m.writeMs;
+        linkTimers.link += m.linkMs;
+        if (--batches === 0 && drained) drained();
+      }
+    });
+    w.on('error', (err) => {
+      console.error(err);
+      process.exit(1);
+    });
+    return w;
+  });
+  return workers;
+}
+
+/** Hand every queued write and link to the worker that owns it. */
+function flushJobs() {
+  if (!pendingOps) return;
+  const t = clock();
+  const ws = pool();
+  for (let i = 0; i < ws.length; i++) {
+    const q = queues[i];
+    if (!q.writes.length && !q.links.length) continue;
+    queued += q.links.length / 2;
+    batches++;
+    ws[i].postMessage({ writes: q.writes, links: q.links.join('\n') });
+    q.writes = [];
+    q.links = [];
   }
+  pendingOps = 0;
+  timers.flush += since(t);
+}
 
-  // This phase is ~75% of a full build's wall time and writes no output of its
-  // own, so without progress it reads as a hang right after the last build.
-  const total = linkJobs.length / 2;
-  const tty = process.stdout.isTTY;
-  let linked = 0;
-  let lastReport = 0;
-  const report = () => {
-    // redraw once a second on a terminal; every 10% in a log file
-    const step = tty ? 1000 : 0;
-    const now = Date.now();
-    if (linked < total && (tty ? now - lastReport < step : linked - lastReport < total / 10)) return;
-    lastReport = tty ? now : linked;
-    const line = `  linking ${linked.toLocaleString('en-US')} of ${total.toLocaleString('en-US')} pages (${Math.round((linked / total) * 100)}%)`;
-    process.stdout.write(tty ? `\r${line}` : `${line}\n`);
-  };
-
-  console.log(`Linking ${total.toLocaleString('en-US')} duplicate pages across ${work.length} threads...`);
-  return Promise.all(
-    work.map(
-      (jobs) =>
-        new Promise((resolve, reject) => {
-          const w = new Worker(new URL('./linker.js', import.meta.url), { workerData: { jobs } });
-          w.on('message', (m) => {
-            linked += m.linked;
-            report();
-            if (m.done !== undefined) resolve(m.done);
-          });
-          w.on('error', reject);
-        })
-    )
-  ).then((r) => {
+/** Wait for every queued write and link to exist on disk. */
+function drainJobs() {
+  flushJobs();
+  if (!batches) return Promise.resolve();
+  showProgress = true;
+  return new Promise((resolve) => {
+    drained = resolve;
+  }).then(() => {
     if (tty) process.stdout.write('\n');
-    return r;
+    for (const w of workers) w.terminate();
   });
 }
 
@@ -177,15 +272,57 @@ fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), 'User-agent: *\nAllow: /\nDi
 
 // ---- rendering ------------------------------------------------------------
 
-function renderVersion(site, diff, prevLabel, versionIndex) {
+/**
+ * Render a page the memo said to skip and check it really is unchanged. The
+ * memo only tracks the inputs the renderers read today, so this is the guard
+ * that turns "a renderer grew a dependency" from a silently stale page into a
+ * failed build.
+ */
+function verifyReuse(key, hit, render) {
+  const html = render(new Set());
+  const hash = crypto.createHash('sha1').update(html).digest('hex');
+  if (hash === hit.hash) return;
+  memoStats.mismatched++;
+  console.error(`\nmemo mismatch: ${key} reused ${hit.hash} but renders ${hash}`);
+}
+
+function renderVersion(site, diff, prevLabel, versionIndex, blobs) {
   const isLatest = versionIndex === 0;
   const versionDirRel = isLatest ? '' : `v/${site.label}/`;
   const versionDir = path.join(DIST_DIR, versionDirRel);
 
-  const write = (relDir, html) => {
-    writeFile(path.join(versionDir, relDir, 'index.html'), html);
+  /**
+   * Emit one page. Passing `deps` opts it into cross-build reuse: when nothing
+   * it reads has changed since the previous build, its bytes are known to be
+   * identical and it goes straight to a hard link. `render` receives the set
+   * that collects the type names it looked up, which are part of what "reads"
+   * means (see src/generate/memo.js).
+   *
+   * Page keys are the version-relative directory, which is deliberate: the
+   * latest build writes to the site root and the rest under /v/<build>/, but
+   * class, enum and file pages render the same bytes either way.
+   */
+  const write = (relDir, kind, render, deps) => {
+    const file = path.join(versionDir, relDir, 'index.html');
     pages++;
     if (isLatest) sitemapUrls.push(`https://dayz-scripts.yadz.app/${relDir}`);
+
+    const hit = deps === undefined ? undefined : memo.lookup(relDir, deps);
+    if (hit) {
+      memoStats.reused++;
+      linkFile(file, hit.hash);
+      memo.keep(relDir, hit);
+      if (VERIFY) verifyReuse(relDir, hit, render);
+      return;
+    }
+
+    const t = clock();
+    const seen = deps === undefined ? null : new Set();
+    const html = render(seen);
+    renderTimers[kind] += since(t);
+    memoStats.rendered++;
+    const hash = writeFile(file, html);
+    if (deps !== undefined) memo.record(relDir, deps, hash, seen);
   };
 
   const ctx = (relDir) => {
@@ -196,7 +333,7 @@ function renderVersion(site, diff, prevLabel, versionIndex) {
   };
 
   // home
-  write('', renderHome(ctx('')));
+  write('', 'index', () => renderHome(ctx('')));
 
   // classes index by letter
   const letters = new Map();
@@ -205,61 +342,91 @@ function renderVersion(site, diff, prevLabel, versionIndex) {
     if (!letters.has(l)) letters.set(l, []);
     letters.get(l).push(name);
   }
-  write('classes/', renderClassesIndex(ctx('classes/'), letters));
+  write('classes/', 'index', () => renderClassesIndex(ctx('classes/'), letters));
   for (const [l, names] of letters) {
-    write(`classes/${l}/`, renderClassesLetter(ctx(`classes/${l}/`), l, names));
+    write(`classes/${l}/`, 'index', () => renderClassesLetter(ctx(`classes/${l}/`), l, names));
   }
 
   // class pages
   for (const cls of site.classes.values()) {
-    write(`class/${cls.name}/`, renderClass(ctx(`class/${cls.name}/`), cls));
+    const rel = `class/${cls.name}/`;
+    const t = clock();
+    const deps = classDeps(site, cls);
+    timers.deps += since(t);
+    write(rel, 'class', (seen) => renderClass({ ...ctx(rel), site: recordingSite(site, seen) }, cls), deps);
   }
 
   // enums
-  write('enums/', renderEnumsIndex(ctx('enums/')));
+  write('enums/', 'index', () => renderEnumsIndex(ctx('enums/')));
   for (const en of site.enums.values()) {
-    write(`enum/${en.name}/`, renderEnum(ctx(`enum/${en.name}/`), en));
+    const rel = `enum/${en.name}/`;
+    const t = clock();
+    const deps = enumDeps(en);
+    timers.deps += since(t);
+    write(rel, 'enum', (seen) => renderEnum({ ...ctx(rel), site: recordingSite(site, seen) }, en), deps);
   }
 
   // flat listings
-  write('typedefs/', renderTypedefs(ctx('typedefs/')));
-  write('constants/', renderConstants(ctx('constants/')));
-  write('functions/', renderFunctions(ctx('functions/')));
-  write('hierarchy/', renderHierarchy(ctx('hierarchy/')));
-  write('files/', renderFilesIndex(ctx('files/')));
-  write('changes/', renderChanges(ctx('changes/'), diff, prevLabel));
+  write('typedefs/', 'index', () => renderTypedefs(ctx('typedefs/')));
+  write('constants/', 'index', () => renderConstants(ctx('constants/')));
+  write('functions/', 'index', () => renderFunctions(ctx('functions/')));
+  write('hierarchy/', 'index', () => renderHierarchy(ctx('hierarchy/')));
+  write('files/', 'index', () => renderFilesIndex(ctx('files/')));
+  write('changes/', 'index', () => renderChanges(ctx('changes/'), diff, prevLabel));
 
   // file pages with embedded source
   const srcDir = path.join(CACHE_DIR, 'src', site.label);
   const fileModels = new Map(site.rawFiles.map((f) => [f.path, f]));
   for (const f of site.files) {
-    const source = fs.readFileSync(path.join(srcDir, f.path), 'utf8');
     const rel = `file/${f.path.replace(/^scripts\//, '')}/`;
-    write(rel, renderFile(ctx(rel), f, fileModels.get(f.path), source));
+    // The blob sha is the whole dependency: renderFile reads nothing off the
+    // site model, and the decls it lists are a pure function of these bytes.
+    write(
+      rel,
+      'file',
+      () => renderFile(ctx(rel), f, fileModels.get(f.path), fs.readFileSync(path.join(srcDir, f.path), 'utf8')),
+      blobs.get(f.path)
+    );
   }
 
   // search index
-  writeFile(path.join(versionDir, 'search.json'), JSON.stringify(buildSearchIndex(site)));
+  const tSearch = clock();
+  const searchJson = JSON.stringify(buildSearchIndex(site));
+  renderTimers.search += since(tSearch);
+  writeFile(path.join(versionDir, 'search.json'), searchJson);
 }
 
 // Process oldest -> newest, keeping only the previous site model for diffs.
+//
+// Parsing stays on this thread on purpose. A worker cannot hand back the site
+// model (Maps and an ancestorsOf closure), so the most it could return is a
+// v8-serialized copy of the raw JSON — and v8.deserialize costs more than
+// JSON.parse does (45ms vs 39ms on a 7 MB model), with the read itself only
+// 2ms. There is nothing here to move off the critical path.
 let prevSite = null;
 const ordered = [...buildList].reverse();
 for (const v of ordered) {
   extractSources(v);
   let t = clock();
   const model = readJson(path.join(DATA_DIR, `model-${v.label}.json`));
+  timers.parse += since(t);
+  t = clock();
   const site = buildSiteModel(model);
   site.rawFiles = model.files; // per-file decls needed for file pages
-  const diff = prevSite ? diffModels(site, prevSite) : null;
   timers.model += since(t);
-
   t = clock();
-  const writeBefore = timers.write; // timers.write is cumulative across builds
+  const diff = prevSite ? diffModels(site, prevSite) : null;
+  timers.diff += since(t);
+
+  memo.startBuild(site.typeIndex, prevSite?.typeIndex);
   const versionIndex = buildList.findIndex((x) => x.label === v.label);
-  renderVersion(site, diff, prevSite?.build, versionIndex);
-  timers.render += since(t) - (timers.write - writeBefore);
+  renderVersion(site, diff, prevSite?.build, versionIndex, sourceBlobs(v));
+  memo.endBuild();
   prevSite = site;
+
+  // Hand this build's remaining filesystem work to the pool now: it runs while
+  // the next build renders, which is most of what keeps the two from adding up.
+  flushJobs();
 
   const unique = canonical.size;
   console.log(
@@ -268,20 +435,32 @@ for (const v of ordered) {
   );
 }
 
-// site-level 404 (uses latest version chrome)
+// site-level 404 (uses latest version chrome). The loop runs oldest -> newest,
+// so prevSite is already the latest build's model.
 {
-  const latestModel = readJson(path.join(DATA_DIR, `model-${buildList[0].label}.json`));
-  const site = buildSiteModel(latestModel);
-  const ctx = { site, versions, base: '/', root: '/', versionPath: '' };
+  const ctx = { site: prevSite, versions, base: '/', root: '/', versionPath: '' };
   writeFile(path.join(DIST_DIR, '404.html'), render404(ctx));
 }
 
-// Every unique page is on disk now, so the duplicates can be linked in bulk.
+// Most of the writing and linking happened while the builds rendered; wait for
+// whatever the pool has left.
 {
   const t = clock();
-  await linkAll();
-  timers.link = since(t);
+  flushJobs();
+  // Rendering never yields, so the pool's progress messages have been piling
+  // up unread; let them land before quoting a number.
+  await new Promise(setImmediate);
+  console.log(
+    `Linking ${queued.toLocaleString('en-US')} duplicate pages across ${LINK_THREADS} threads ` +
+    `(${linked.toLocaleString('en-US')} already done alongside rendering)...`
+  );
+  await drainJobs();
+  timers.drain = since(t);
 }
+
+// Nothing else touches the filesystem in bulk from here, so the previous
+// build's tree can finally go.
+dropStaleTrees();
 
 // sitemap for the latest version only, from the paths recorded while writing
 {
@@ -296,13 +475,32 @@ for (const v of ordered) {
 }
 
 const s = (ms) => `${(ms / 1000).toFixed(1)}s`;
+const n = (x) => x.toLocaleString('en-US');
+timers.render = Object.values(renderTimers).reduce((a, b) => a + b, 0);
+
 console.log(
-  `\nDone: ${pages.toLocaleString('en-US')} pages, ` +
-  `${canonical.size.toLocaleString('en-US')} unique files, ` +
-  `${(linkJobs.length / 2).toLocaleString('en-US')} hard links, ` +
+  `\nDone: ${n(pages)} pages, ${n(canonical.size)} unique files, ${n(queued)} hard links, ` +
   `${(bytesWritten / 1e6).toFixed(0)} MB written in ${s(Date.now() - t0)} -> dist/`
 );
 console.log(
-  `  teardown ${s(timers.teardown)} · models ${s(timers.model)} · render ${s(timers.render)} · ` +
-  `write ${s(timers.write)} · link ${s(timers.link)} · sitemap ${s(timers.sitemap)}`
+  `  teardown ${s(timers.teardown)} · parse ${s(timers.parse)} · model ${s(timers.model)} · ` +
+  `diff ${s(timers.diff)} · deps ${s(timers.deps)} · render ${s(timers.render)} · hash ${s(timers.hash)} · ` +
+  `queue ${s(timers.queue)} · flush ${s(timers.flush)} · drain ${s(timers.drain)} · sitemap ${s(timers.sitemap)}`
 );
+console.log(
+  `  render: class ${s(renderTimers.class)} · file ${s(renderTimers.file)} · ` +
+  `enum ${s(renderTimers.enum)} · index ${s(renderTimers.index)} · search ${s(renderTimers.search)}`
+);
+console.log(
+  `  pool: mkdir ${s(linkTimers.mkdir)} · write ${s(linkTimers.write)} · link ${s(linkTimers.link)} ` +
+  `(summed across ${LINK_THREADS} threads)`
+);
+console.log(
+  `  memo: ${n(memoStats.rendered)} pages rendered, ${n(memoStats.reused)} reused ` +
+  `(${Math.round((memoStats.reused / (memoStats.rendered + memoStats.reused)) * 100)}%)`
+);
+
+if (VERIFY) {
+  console.log(`  verify: ${memoStats.mismatched ? `${n(memoStats.mismatched)} MISMATCHED` : 'every reused page re-rendered identically'}`);
+  if (memoStats.mismatched) process.exit(1);
+}

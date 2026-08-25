@@ -77,6 +77,14 @@ jobs:
         if: steps.decide.outputs.build == 'true'
         run: npm run parse
 
+      # Pages are reused across builds instead of re-rendered, which is only
+      # sound while the generator's dependency tracking matches what the
+      # renderers actually read. This re-renders every reused page over the
+      # newest few builds and fails if any of them changed.
+      - name: Verify page reuse
+        if: steps.decide.outputs.build == 'true'
+        run: npm run generate:verify
+
       - name: Generate site
         if: steps.decide.outputs.build == 'true'
         run: npm run generate

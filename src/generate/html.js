@@ -3,12 +3,15 @@
 
 import { parseDoc } from '../parser/docparse.js';
 
+// One pass instead of four, and none at all for the majority of strings that
+// contain nothing to escape. Worth the noise because file pages run whole
+// source files through this.
+const ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
+const NEEDS_ESCAPE = /[&<>"]/;
+
 export function esc(s) {
-  return String(s)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;');
+  const str = String(s);
+  return NEEDS_ESCAPE.test(str) ? str.replace(/[&<>"]/g, (c) => ESCAPES[c]) : str;
 }
 
 /** Attributes every link that leaves the site carries. */

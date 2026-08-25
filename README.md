@@ -25,6 +25,20 @@ page once. The build stamp is restored in the browser from the URL plus
 `assets/versions.json`. `test/render.test.js` guards the invariant, because a
 build number leaking back into `layout()` would silently undo all of it.
 
+That same redundancy is worth avoiding earlier, while rendering rather than
+while writing. A page is only rendered when something it reads has changed
+since the previous build, which is true of about 6% of them; the rest reuse the
+bytes they already hashed to and go straight to the hard link. That means
+tracking what each page reads — its model object, the inheritance graph around
+it, and every type name it looked up to decide what becomes a link — which
+`src/generate/memo.js` explains in full. `npm run generate:verify` re-renders
+every reused page and fails if one of them changed, so a renderer that grows a
+dependency the tracking does not know about is caught rather than shipped.
+
+Everything that touches `dist/` runs on a worker pool while the main thread
+renders the next build, because creating those ~394,000 hard links is by far
+the longest part of a build and is bound by filesystem latency rather than CPU.
+
 Two consequences worth knowing: `dist/` measures ~3 GB to anything that follows
 hard links (`cp -r`, `tar`, `du -L`) rather than counting inodes, and pages must
 reference assets by absolute path since the same file is served at several
@@ -53,10 +67,14 @@ npm run fetch      # clone/update upstream, detect versions
 npm run parse      # parse all versions into JSON models (cached by commit)
 npm run generate   # render the static site into dist/
 npm run generate:latest  # render only the newest build (fast inner loop)
+npm run generate:verify  # re-render every reused page and check it is unchanged
 npm run build      # all of the above
 npm run dev        # preview dist/ at http://localhost:3000
 npm test           # parser test suite
 ```
+
+`LINK_THREADS` overrides how many threads create the hard links, which is the
+longest phase of a full build.
 
 ## Deployment
 

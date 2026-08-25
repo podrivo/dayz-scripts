@@ -38,6 +38,30 @@ export function extractSources(v) {
   return dir;
 }
 
+/**
+ * Blob sha of every script file in a version commit, keyed by the same path
+ * the models use. A file page renders nothing but its source, so an unchanged
+ * blob sha is proof the page is unchanged — and getting it from the index
+ * costs one git call per build instead of reading 19 MB of sources.
+ */
+export function sourceBlobs(v) {
+  const out = new Map();
+  let listing;
+  try {
+    listing = git(['-C', UPSTREAM_DIR, 'ls-tree', '-r', '-z', v.sha, '--', 'scripts']);
+  } catch {
+    return out; // no clone to ask: callers fall back to rendering every page
+  }
+  // -z gives "<mode> <type> <sha>\t<path>" records separated by NULs, so paths
+  // never come back quoted or escaped.
+  for (const entry of listing.split('\0')) {
+    const tab = entry.indexOf('\t');
+    if (tab < 0) continue;
+    out.set(entry.slice(tab + 1), entry.slice(0, tab).split(' ')[2]);
+  }
+  return out;
+}
+
 /** Recursively list files under dir matching the extension, as relative paths. */
 export function walk(dir, ext, base = dir) {
   const out = [];

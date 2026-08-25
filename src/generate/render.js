@@ -502,7 +502,7 @@ export function renderFile(ctx, fileEntry, fileModel, source) {
 
   const content = `
 <h1 class="file-title"><code>${esc(short)}</code></h1>
-<p class="file-actions"><a id="ghSrc" href="${github}" ${EXT}>View on GitHub</a></p>
+<p class="file-actions"><a id="ghSrc" href="${github}" ${EXT}>View source file on GitHub</a></p>
 ${decls}
 <div class="srcwrap"><pre class="src" id="src"><code>${esc(source)}</code></pre></div>`;
 
