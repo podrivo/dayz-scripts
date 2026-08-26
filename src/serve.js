@@ -1,4 +1,7 @@
-// Tiny static preview server for dist/ with clean-URL resolution.
+// Tiny static preview server for dist/ with clean-URL resolution. This is what
+// `npm run preview` serves, for checking what a real build produced —
+// hard links, redirects, the sitemap. Developing against the pages themselves
+// is src/dev.js, which needs no dist/ at all.
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
@@ -50,10 +53,6 @@ async function offer(reason, choices) {
   const { status } = spawnSync(bin, args, { cwd: ROOT, stdio: 'inherit' });
   if (status !== 0) process.exit(status ?? 1);
   console.log(); // keep the command's output off whatever prompt comes next
-}
-
-if (!fs.existsSync(path.join(ROOT, 'node_modules'))) {
-  await offer('No node_modules folder.', [['install dependencies', 'pnpm install']]);
 }
 
 // generate/index.js writes sitemap.xml only after every page and hard link is

@@ -26,13 +26,9 @@ import { Worker } from 'node:worker_threads';
 import { CACHE_DIR, DATA_DIR, DIST_DIR, ROOT, extractSources, readJson, sourceBlobs } from '../util.js';
 import { buildSiteModel } from './model.js';
 import { diffModels } from './diff.js';
-import { buildSearchIndex } from './search.js';
-import { PageMemo, recordingSite, classDeps, enumDeps } from './memo.js';
-import {
-  renderHome, renderAnnotated, renderClassesIndex, renderClassesLetter, renderClass,
-  renderFields, renderEnum, renderGlobals, renderModulesIndex, renderModule,
-  renderFilesIndex, renderFile, renderHierarchy, renderChanges, render404,
-} from './render.js';
+import { PageMemo } from './memo.js';
+import { pages as sitePages } from './routes.js';
+import { render404 } from './render.js';
 
 const t0 = Date.now();
 const clock = () => process.hrtime.bigint();
@@ -300,151 +296,62 @@ function verifyReuse(key, hit, render) {
   console.error(`\nmemo mismatch: ${key} reused ${hit.hash} but renders ${hash}`);
 }
 
+/**
+ * Write every page of one build. The site map itself lives in
+ * src/generate/routes.js, because the dev server has to walk the same one from
+ * the other end; this is only what becomes of each page once it is named.
+ */
 function renderVersion(site, diff, prevLabel, versionIndex, blobs) {
   const isLatest = versionIndex === 0;
-  const versionDirRel = isLatest ? '' : `v/${site.label}/`;
-  const versionDir = path.join(DIST_DIR, versionDirRel);
+  const versionDir = path.join(DIST_DIR, isLatest ? '' : `v/${site.label}/`);
 
   /**
-   * Emit one page. Passing `deps` opts it into cross-build reuse: when nothing
-   * it reads has changed since the previous build, its bytes are known to be
-   * identical and it goes straight to a hard link. `render` receives the set
-   * that collects the type names it looked up, which are part of what "reads"
-   * means (see src/generate/memo.js).
+   * Emit one page. A descriptor carrying `deps` opts into cross-build reuse:
+   * when nothing it reads has changed since the previous build, its bytes are
+   * known to be identical and it goes straight to a hard link. `render`
+   * receives the set that collects the type names it looked up, which are part
+   * of what "reads" means (see src/generate/memo.js).
    *
    * Page keys are the version-relative directory, which is deliberate: the
    * latest build writes to the site root and the rest under /v/<build>/, but
    * class, enum and file pages render the same bytes either way.
    */
-  const write = (relDir, kind, render, deps) => {
-    const file = path.join(versionDir, relDir, 'index.html');
-    pages++;
-    if (isLatest) sitemapUrls.push(`https://dayz-scripts.yadz.app/${relDir}`);
+  const write = (p) => {
+    const file = path.join(versionDir, p.file);
+    if (!p.asset) {
+      pages++;
+      if (isLatest) sitemapUrls.push(`https://dayz-scripts.yadz.app/${p.rel}`);
+    }
 
-    const hit = deps === undefined ? undefined : memo.lookup(relDir, deps);
+    let deps;
+    if (p.deps) {
+      const t = clock();
+      deps = p.deps();
+      timers.deps += since(t);
+    }
+
+    const hit = deps === undefined ? undefined : memo.lookup(p.rel, deps);
     if (hit) {
       memoStats.reused++;
       linkFile(file, hit.hash);
-      memo.keep(relDir, hit);
-      if (VERIFY) verifyReuse(relDir, hit, render);
+      memo.keep(p.rel, hit);
+      if (VERIFY) verifyReuse(p.rel, hit, p.render);
       return;
     }
 
     const t = clock();
     const seen = deps === undefined ? null : new Set();
-    const html = render(seen);
-    renderTimers[kind] += since(t);
+    const html = p.render(seen);
+    renderTimers[p.kind] += since(t);
     memoStats.rendered++;
     const hash = writeFile(file, html);
-    if (deps !== undefined) memo.record(relDir, deps, hash, seen);
+    if (deps !== undefined) memo.record(p.rel, deps, hash, seen);
   };
 
-  const ctx = (relDir) => {
-    const depth = relDir === '' ? 0 : relDir.replace(/\/$/, '').split('/').length;
-    const base = '../'.repeat(depth);
-    const root = base + (isLatest ? '' : '../'.repeat(2));
-    return { site, versions, base, root, versionPath: relDir, xref: isLatest };
-  };
-
-  // home
-  write('', 'index', () => renderHome(ctx('')));
-
-  // modules (\defgroup topics)
-  write('modules/', 'index', () => renderModulesIndex(ctx('modules/')));
-  for (const mod of site.groups.values()) {
-    const rel = `module/${mod.name}/`;
-    write(rel, 'index', () => renderModule(ctx(rel), mod));
-  }
-
-  // data structures, indexed by initial
-  const letters = new Map();
-  for (const name of [...site.classes.keys()].sort((a, b) => a.localeCompare(b))) {
-    const l = /^[a-z]/i.test(name) ? name[0].toLowerCase() : '_';
-    if (!letters.has(l)) letters.set(l, []);
-    letters.get(l).push(name);
-  }
-  write('annotated/', 'index', () => renderAnnotated(ctx('annotated/'), letters));
-  write('classes/', 'index', () => renderClassesIndex(ctx('classes/'), letters));
-  for (const [l, names] of letters) {
-    write(`classes/${l}/`, 'index', () => renderClassesLetter(ctx(`classes/${l}/`), l, names, letters.keys()));
-  }
-
-  // class pages
-  for (const cls of site.classes.values()) {
-    const rel = `class/${cls.name}/`;
-    const t = clock();
-    const deps = classDeps(site, cls, isLatest);
-    timers.deps += since(t);
-    write(rel, 'class', (seen) => renderClass({ ...ctx(rel), site: recordingSite(site, seen) }, cls), deps);
-  }
-
-  // data fields: every class member, by initial and by kind
-  const fieldLetters = [...site.fields.keys()].sort();
-  for (const [kind, dir, keep] of [
-    ['all', 'fields/', null],
-    ['functions', 'fields/functions/', (o) => o.method],
-    ['variables', 'fields/variables/', (o) => !o.method],
-  ]) {
-    write(dir, 'index', () => renderFields(ctx(dir), null, [], fieldLetters, kind));
-    for (const l of fieldLetters) {
-      const rel = `${dir}${l}/`;
-      const all = site.fields.get(l);
-      const entries = keep
-        ? all.map(([n, owners]) => [n, owners.filter(keep)]).filter(([, owners]) => owners.length)
-        : all;
-      write(rel, 'index', () => renderFields(ctx(rel), l, entries, fieldLetters, kind));
-    }
-  }
-
-  // enum pages
-  for (const en of site.enums.values()) {
-    const rel = `enum/${en.name}/`;
-    const t = clock();
-    const deps = enumDeps(site, en);
-    timers.deps += since(t);
-    write(rel, 'enum', (seen) => renderEnum({ ...ctx(rel), site: recordingSite(site, seen) }, en), deps);
-  }
-
-  // globals, split the way doxygen splits them
-  for (const kind of ['', 'functions/', 'variables/', 'typedefs/', 'enums/', 'values/', 'macros/']) {
-    const rel = `globals/${kind}`;
-    write(rel, 'index', () => renderGlobals(ctx(rel), kind));
-  }
-
-  write('hierarchy/', 'index', () => renderHierarchy(ctx('hierarchy/')));
-  write('files/', 'index', () => renderFilesIndex(ctx('files/')));
-  write('changes/', 'index', () => renderChanges(ctx('changes/'), diff, prevLabel));
-
-  // file pages with embedded source
   const srcDir = path.join(CACHE_DIR, 'src', site.label);
-  const fileModels = new Map(site.rawFiles.map((f) => [f.path, f]));
-  for (const f of site.files) {
-    const rel = `file/${f.path.replace(/^scripts\//, '')}/`;
-    // The blob sha is the whole dependency: renderFile reads nothing off the
-    // site model, and the decls it lists are a pure function of these bytes.
-    write(
-      rel,
-      'file',
-      () => renderFile(ctx(rel), f, fileModels.get(f.path), fs.readFileSync(path.join(srcDir, f.path), 'utf8')),
-      blobs.get(f.path)
-    );
+  for (const p of sitePages(site, { isLatest, versions, srcDir, blobs, changes: () => ({ diff, prevLabel }) })) {
+    write(p);
   }
-
-  // search index
-  const tSearch = clock();
-  const searchJson = JSON.stringify(buildSearchIndex(site));
-  renderTimers.search += since(tSearch);
-  writeFile(path.join(versionDir, 'search.json'), searchJson);
-
-  // The sidebar's module topics. Kept out of the pages themselves so that they
-  // stay identical from build to build and can go on being hard-linked; see
-  // the note on NAV in html.js.
-  writeFile(
-    path.join(versionDir, 'nav.json'),
-    JSON.stringify({
-      topics: site.moduleRoots.map((n) => [n, site.groups.get(n).title]),
-    })
-  );
 }
 
 // Process oldest -> newest, keeping only the previous site model for diffs.

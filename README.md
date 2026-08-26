@@ -32,7 +32,16 @@ so anyone who used that documentation finds the same things in the same places:
 src/fetch.js      clones DayZ-Script-Diff, maps commits to builds    -> data/versions.json
 src/parse-all.js  parses every build's .c files (Enforce Script)     -> data/model-<build>.json
 src/generate/     renders static HTML from the models                -> dist/
+src/dev.js        renders one page per request, for development      -> localhost:3000
 ```
+
+Which pages a build has lives in `src/generate/routes.js`, as one generator
+yielding a descriptor per page. Both readers go through it, from opposite
+ends: `src/generate/index.js` walks the whole build to write it out, and
+`src/dev.js` looks a single page up by URL. That is what keeps the dev server
+from becoming a second, drifting copy of the site map — a page reachable in
+one is reachable in the other by construction, which `test/routes.test.js`
+asserts directly.
 
 Pages carry no build number, version or date: consecutive builds share 98-99%
 of their pages, so the generator emits each distinct page once and hard-links
@@ -192,13 +201,30 @@ Requires Node.js 20+ and git. No npm dependencies.
 ```sh
 npm run fetch      # clone/update upstream, detect versions
 npm run parse      # parse all versions into JSON models (cached by commit)
+npm run dev        # render on demand at http://localhost:3000, reload on save
 npm run generate   # render the static site into dist/
-npm run generate:latest  # render only the newest build (fast inner loop)
+npm run generate:latest  # render only the newest build
 npm run generate:verify  # re-render every reused page and check it is unchanged
-npm run build      # all of the above
-npm run dev        # preview dist/ at http://localhost:3000
-npm test           # parser, rendering, casing and module-tree tests
+npm run build      # fetch, parse and generate
+npm run preview    # serve a real dist/ at http://localhost:3000
+npm test           # parser, routing, rendering, casing and module-tree tests
 ```
+
+`npm run dev` is the inner loop, and it never generates anything. It loads the
+newest build's model once and renders whichever page the browser asks for,
+which is a few milliseconds each; older builds under `/v/<build>/` load the
+same way if you browse to one, and the changelog builds its diff only when you
+open it. So it needs `fetch` and `parse`, but not `generate`.
+
+Edits are picked up by restarting rather than by invalidating anything, since
+rebuilding one model costs less than the browser takes to notice: it runs under
+`node --watch`, and every page it serves carries a snippet that watches the
+process over SSE and reloads when it changes. Editing a renderer, the
+stylesheet or `site/app.js` is in the browser about a second later. Assets come
+straight from `site/`, so there is no copy step in the way.
+
+Use `npm run preview` when the thing being checked is the real `dist/` —
+hard links, redirects, the sitemap — rather than a page.
 
 Changing the parser means the cached models no longer match what it produces,
 so re-run the parse with `FORCE_PARSE=1 npm run parse` (or `ONLY_VERSION=1.29`
