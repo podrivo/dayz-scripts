@@ -171,41 +171,66 @@
   const trigger = $('#searchBtn');
   const input = $('#search');
   const resultsEl = $('#searchResults');
+  const filtersEl = $('#searchFilters');
   let index = null;
   let entries = null;
   let sel = -1;
+  let kinds = null; // the filter's set of kinds, or null for everything
 
+  const RESULTS_MAX = 60;
+  const anchorOf = (n) => n.replace(/[^\w]/g, '_');
+
+  /* An entry is [kind, name, owner]. `owner` is whatever the URL needs beside
+     the name — the declaring class, the enum, the module, the file path — and
+     is the name itself for the kinds that stand alone. */
   const KIND = {
-    c: ['c', (n) => `class/${n}/`],
-    e: ['e', (n) => `enum/${n}/`],
-    t: ['t', (n) => `globals/typedefs/#${n}`],
-    k: ['k', (n) => `globals/variables/#${n}`],
-    f: ['f', (n) => `globals/functions/#${n}`],
+    c: ['class', (n, o) => `class/${o}/`],
+    m: ['method', (n, o) => `class/${o}/#${anchorOf(n)}`],
+    v: ['field', (n, o) => `class/${o}/#${anchorOf(n)}`],
+    e: ['enum', (n, o) => `enum/${o}/`],
+    V: ['value', (n, o) => `enum/${o}/#${n}`],
+    t: ['typedef', (n, o) => `globals/typedefs/#${o}`],
+    k: ['const', (n, o) => `globals/variables/#${o}`],
+    f: ['func', (n, o) => `globals/functions/#${o}`],
+    d: ['macro', (n, o) => `globals/macros/#${o}`],
+    g: ['topic', (n, o) => `module/${o}/`],
     // Paths are indexed as displayed; the URL is that spelling lowercased.
-    F: ['F', (p) => `file/${p.toLowerCase()}/`],
+    F: ['file', (n, o) => `file/${o.toLowerCase()}/`],
   };
+
+  /* Which kinds carry a real owner, and so can be narrowed by one. */
+  const SCOPED = new Set(['m', 'v', 'V']);
+
+  /* Ranking nudges by kind: a class outranks its own methods when both match,
+     and a topic outranks the constants filed under it. */
+  const KIND_BONUS = { c: 20, e: 12, g: 10, m: 5, v: 3 };
 
   async function loadIndex() {
     if (index) return;
     const res = await fetch(BASE + 'search.json');
     index = await res.json();
     entries = [];
-    for (const n of index.classes) entries.push(['c', n, n]);
-    for (const n of index.enums) entries.push(['e', n, n]);
-    for (const n of index.typedefs) entries.push(['t', n, n]);
-    for (const [ci, m] of index.methods) entries.push(['m', m, index.classes[ci]]);
-    for (const n of index.consts) entries.push(['k', n, n]);
-    for (const n of index.funcs) entries.push(['f', n, n]);
-    for (const p of index.files) entries.push(['F', p.split('/').pop(), p]);
+    // Older builds predate some of these lists, so every one is optional.
+    const list = (k) => index[k] || [];
+    for (const n of list('classes')) entries.push(['c', n, n]);
+    for (const n of list('enums')) entries.push(['e', n, n]);
+    for (const n of list('typedefs')) entries.push(['t', n, n]);
+    for (const [ci, m] of list('methods')) entries.push(['m', m, index.classes[ci]]);
+    for (const [ci, v] of list('vars')) entries.push(['v', v, index.classes[ci]]);
+    for (const [ei, v] of list('values')) entries.push(['V', v, index.enums[ei]]);
+    for (const n of list('consts')) entries.push(['k', n, n]);
+    for (const n of list('funcs')) entries.push(['f', n, n]);
+    for (const n of list('macros')) entries.push(['d', n, n]);
+    for (const [name, title] of list('topics')) entries.push(['g', title, name]);
+    for (const p of list('files')) entries.push(['F', p.split('/').pop(), p]);
   }
 
   function urlFor(e) {
-    if (e[0] === 'm') return `class/${e[2]}/#${e[1]}`;
-    return KIND[e[0]][1](e[2]);
+    return KIND[e[0]][1](e[1], e[2]);
   }
 
   function ctxFor(e) {
-    if (e[0] === 'm') return e[2];
+    if (SCOPED.has(e[0])) return e[2];
     if (e[0] === 'F') return e[2].split('/').slice(0, -1).join('/');
     return '';
   }
@@ -222,16 +247,49 @@
     return s;
   }
 
+  /**
+   * `Class.Member` and `Class::Member`, which is how anyone who has read the
+   * sources already thinks of a member. The owner narrows the field and the
+   * rest is scored as usual.
+   *
+   * Its results are merged with the plain search rather than replacing it,
+   * because a dot is also just a character: `playerbase.c` is a file, not a
+   * scope. Requiring two characters after a dot keeps that one out of here,
+   * and where both do match, the plain hit for a whole filename outscores any
+   * member matching a fragment.
+   */
+  function scopedMatches(q) {
+    const m = q.match(/^([A-Za-z_]\w*)(::|\.)(\w*)$/);
+    if (!m) return null;
+    const [, ownerQ, sep, nameQ] = m;
+    if (sep === '.' && nameQ.length < 2) return null;
+    const olc = ownerQ.toLowerCase();
+    const nlc = nameQ.toLowerCase();
+    const out = [];
+    for (const e of entries) {
+      if (!SCOPED.has(e[0])) continue;
+      const own = e[2].toLowerCase();
+      if (!own.includes(olc)) continue;
+      const s = nameQ ? score(e[1], nameQ, nlc) : 0;
+      if (s < 0) continue;
+      out.push([s + (own === olc ? 60 : 20), e]);
+    }
+    return out;
+  }
+
   function runSearch(q) {
     if (!entries || q.length < 2) { hide(); return; }
     const qlc = q.toLowerCase();
-    const scored = [];
+    const scored = scopedMatches(q) || [];
+    const seen = new Set(scored.map((x) => x[1]));
     for (const e of entries) {
+      if (seen.has(e)) continue;
       const s = score(e[1], q, qlc);
-      if (s >= 0) scored.push([s + (e[0] === 'c' ? 20 : e[0] === 'm' ? 5 : 0), e]);
+      if (s >= 0) scored.push([s + (KIND_BONUS[e[0]] || 0), e]);
     }
-    scored.sort((a, b) => b[0] - a[0]);
-    render(scored.slice(0, 40).map((x) => x[1]), q);
+    const list = kinds ? scored.filter((x) => kinds.has(x[1][0])) : scored;
+    list.sort((a, b) => b[0] - a[0]);
+    render(list.slice(0, RESULTS_MAX).map((x) => x[1]), q);
   }
 
   function render(list, q) {
@@ -244,11 +302,27 @@
     resultsEl.innerHTML = list
       .map((e) => {
         const ctx = ctxFor(e);
-        return `<a href="${BASE}${urlFor(e)}"><span class="tag tag-${e[0] === 'm' ? 'm' : e[0]}">${e[0].toUpperCase()}</span><span>${e[1]}</span>${ctx ? `<span class="ctx">${ctx}</span>` : ''}</a>`;
+        return `<a href="${BASE}${urlFor(e)}"><span class="tag tag-${e[0]}">${KIND[e[0]][0]}</span><span>${e[1]}</span>${ctx ? `<span class="ctx">${ctx}</span>` : ''}</a>`;
       })
       .join('');
     resultsEl.hidden = false;
   }
+
+  /* The filter narrows an already-scored list rather than the index, so
+     switching between tabs costs nothing and the ranking stays the same one
+     the unfiltered results were in. */
+  filtersEl?.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-kinds]');
+    if (!btn) return;
+    for (const el of filtersEl.children) {
+      const on = el === btn;
+      el.classList.toggle('active', on);
+      el.setAttribute('aria-pressed', String(on));
+    }
+    kinds = btn.dataset.kinds ? new Set(btn.dataset.kinds) : null;
+    input.focus();
+    runSearch(input.value.trim());
+  });
 
   function hide() { resultsEl.hidden = true; sel = -1; }
 
@@ -322,26 +396,38 @@
 
   const TOKEN_RE = /(\/\/[^\n]*|\/\*[\s\S]*?\*\/)|("(?:[^"\\]|\\.)*")|(^[ \t]*#[^\n]*)|(\b0x[0-9a-fA-F]+\b|\b\d+\.?\d*\b)|(\b[A-Za-z_]\w*\b)/gm;
 
+  function newlines(s) {
+    let n = 0;
+    for (let i = 0; i < s.length; i++) if (s.charCodeAt(i) === 10) n++;
+    return n;
+  }
+
   function highlight(text, resolve) {
     let out = '';
     let last = 0;
+    // Which line each identifier is on, so the resolver can tell which class
+    // body it sits inside. Comments and strings are the only tokens that can
+    // span lines, so counting is a matter of the gaps plus those two.
+    let line = 1;
     const escMap = { '&': '&amp;', '<': '&lt;', '>': '&gt;' };
     const esc = (s) => s.replace(/[&<>]/g, (c) => escMap[c]);
     // spans must never cross newlines (lines get wrapped individually later)
     const span = (cls, s) =>
       s.split('\n').map((part) => (part ? `<span class="${cls}">${esc(part)}</span>` : '')).join('\n');
     for (let m; (m = TOKEN_RE.exec(text)); ) {
-      out += esc(text.slice(last, m.index));
+      const gap = text.slice(last, m.index);
+      out += esc(gap);
+      line += newlines(gap);
       last = TOKEN_RE.lastIndex;
-      if (m[1]) out += span('tok-com', m[1]);
-      else if (m[2]) out += `<span class="tok-str">${esc(m[2])}</span>`;
+      if (m[1]) { out += span('tok-com', m[1]); line += newlines(m[1]); }
+      else if (m[2]) { out += `<span class="tok-str">${esc(m[2])}</span>`; line += newlines(m[2]); }
       else if (m[3]) out += `<span class="tok-pre">${esc(m[3])}</span>`;
       else if (m[4]) out += `<span class="tok-num">${esc(m[4])}</span>`;
       else if (m[5]) {
         if (KW.has(m[5])) out += `<span class="tok-kw">${esc(m[5])}</span>`;
         else {
           const body = /^[A-Z]/.test(m[5]) ? `<span class="tok-type">${esc(m[5])}</span>` : esc(m[5]);
-          const href = resolve && resolve(m[5]);
+          const href = resolve && resolve(m[5], line);
           out += href ? `<a class="tok-link" href="${href}">${body}</a>` : body;
         }
       }
@@ -353,25 +439,66 @@
    * Where a name written in source goes. Doxygen linked every name in its
    * source pages to the declaration it resolved to, which is most of what made
    * them worth reading when 89% of members carry no documentation. It resolved
-   * by scope; nothing here parses the language, so a name is linked only when
-   * one declaration in the build answers to it and the ambiguous ones are left
-   * as plain text.
+   * by scope, and so does this: the file's links.json says which class body
+   * each line falls inside and what that class inherits from, and search.json
+   * says which classes declare a name, so a bare call inside a method is
+   * looked up against its own class and then up the chain.
+   *
+   * A name that no enclosing class answers to falls back to the build-wide
+   * index, where it is linked only if exactly one declaration claims it.
+   * Anything still ambiguous is left as plain text, which is what Doxygen did
+   * with a name it could not resolve either.
    */
-  function sourceResolver() {
+  function sourceResolver(links) {
     const map = new Map();
     const claim = (n, url) => {
       const seen = map.get(n);
       if (seen === undefined) map.set(n, url);
       else if (seen !== url) map.set(n, null);
     };
-    for (const n of index.classes) claim(n, `class/${n}/`);
-    for (const n of index.enums) claim(n, `enum/${n}/`);
-    for (const n of index.typedefs) claim(n, `globals/typedefs/#${n}`);
-    for (const n of index.funcs) claim(n, `globals/functions/#${n}`);
-    for (const n of index.consts) claim(n, `globals/variables/#${n}`);
-    for (const [ci, m] of index.methods) claim(m, `class/${index.classes[ci]}/#${m}`);
-    return (n) => {
-      const url = map.get(n);
+    const list = (k) => index[k] || [];
+    for (const n of list('classes')) claim(n, `class/${n}/`);
+    for (const n of list('enums')) claim(n, `enum/${n}/`);
+    for (const n of list('typedefs')) claim(n, `globals/typedefs/#${anchorOf(n)}`);
+    for (const n of list('funcs')) claim(n, `globals/functions/#${anchorOf(n)}`);
+    for (const n of list('consts')) claim(n, `globals/variables/#${anchorOf(n)}`);
+    for (const n of list('macros')) claim(n, `globals/macros/#${anchorOf(n)}`);
+    for (const [ei, v] of list('values')) claim(v, `enum/${index.enums[ei]}/#${v}`);
+    for (const [ci, m] of list('methods')) claim(m, `class/${index.classes[ci]}/#${anchorOf(m)}`);
+    for (const [ci, v] of list('vars')) claim(v, `class/${index.classes[ci]}/#${anchorOf(v)}`);
+
+    // Which classes declare each member name, which is the question a scoped
+    // lookup asks of every class in the chain.
+    const owners = new Map();
+    const own = (ci, n) => {
+      const a = owners.get(n);
+      if (a) { if (!a.includes(ci)) a.push(ci); }
+      else owners.set(n, [ci]);
+    };
+    for (const [ci, m] of list('methods')) own(ci, m);
+    for (const [ci, v] of list('vars')) own(ci, v);
+
+    const byName = new Map(index.classes.map((n, i) => [n, i]));
+    const scopes = (links?.scopes || []).map(([from, to, chain]) => [
+      from, to, chain.map((n) => byName.get(n)).filter((i) => i !== undefined),
+    ]);
+
+    /** The innermost class body a line sits in, as its inheritance chain. */
+    const chainAt = (line) => {
+      let best = null;
+      for (const s of scopes) if (line >= s[0] && line <= s[1] && (!best || s[0] > best[0])) best = s;
+      return best?.[2];
+    };
+
+    return (name, line) => {
+      const chain = line && chainAt(line);
+      const os = chain && owners.get(name);
+      if (os) {
+        for (const ci of chain) {
+          if (os.includes(ci)) return `${BASE}class/${index.classes[ci]}/#${anchorOf(name)}`;
+        }
+      }
+      const url = map.get(name);
       return url ? BASE + url : null;
     };
   }
@@ -380,24 +507,179 @@
   const srcEl = $('#src code');
   if (srcEl) {
     const raw = srcEl.textContent;
-    const paint = (resolve) => {
+    const paint = (resolve, decls) => {
+      const declAt = decls && new Map(decls);
       srcEl.innerHTML = highlight(raw, resolve)
         .split('\n')
-        .map((l, i) => `<span class="line" id="L${i + 1}">${l}\n</span>`)
+        .map((l, i) => {
+          // A line that declares something gets its number turned into a link
+          // to the page describing it — the reverse of the "src" link every
+          // member carries, and the pair is what makes the two views one.
+          const url = declAt?.get(i + 1);
+          const to = url ? `<a class="ldoc" href="${BASE}${url}" title="Go to documentation" aria-label="Documentation for this declaration"></a>` : '';
+          return `<span class="line${url ? ' decl' : ''}" id="L${i + 1}">${to}${l}\n</span>`;
+        })
         .join('');
     };
     // Painted twice: once now, so the code is readable without waiting on a
-    // network round trip, and again once the index that resolves the links has
-    // arrived. Keeping the links out of the HTML is also what lets a file page
-    // stay byte-identical across builds and keep its hard link.
+    // network round trip, and again once the index and the file's link map
+    // have arrived. Keeping the links out of the HTML is also what lets a file
+    // page stay byte-identical across builds and keep its hard link.
     paint(null);
     if (/^#L\d+$/.test(location.hash)) $(location.hash)?.scrollIntoView({ block: 'center' });
-    loadIndex().then(() => paint(sourceResolver()));
+    // links.json sits beside the page, so it is named relative to it and
+    // needs no knowledge of which build this is.
+    Promise.all([
+      loadIndex(),
+      fetch('links.json').then((r) => (r.ok ? r.json() : null)).catch(() => null),
+    ]).then(([, links]) => {
+      paint(sourceResolver(links), links?.decls);
+      addFolds(raw);
+    });
+  }
+
+  /* ---------- code folding ----------
+     Every brace pair worth collapsing, found by scanning the source with the
+     same tokenizer that highlights it, so a brace inside a string or a comment
+     is not one. A class body opening on line 49 and closing on 9788 is the
+     reason this exists: without it the only way past a method is to scroll it.
+
+     The braces are counted here rather than read off the DOM because the DOM
+     has no structure to read — the page is a flat run of line spans, which is
+     what lets a six-thousand-line file paint at all. */
+  const FOLD_MIN = 2; // lines hidden before a fold is worth offering
+
+  function foldRanges(text) {
+    const stack = [];
+    const out = [];
+    let line = 1;
+    let last = 0;
+    for (let m; (m = TOKEN_RE.exec(text)); ) {
+      const gap = text.slice(last, m.index);
+      last = TOKEN_RE.lastIndex;
+      // braces only ever live in the gaps between tokens: the tokenizer
+      // matches comments, strings, preprocessor lines, numbers and names.
+      for (let i = 0; i < gap.length; i++) {
+        const c = gap.charCodeAt(i);
+        if (c === 10) line++;
+        else if (c === 123) stack.push(line); // {
+        else if (c === 125 && stack.length) { // }
+          const from = stack.pop();
+          if (line - from > FOLD_MIN) out.push([from, line]);
+        }
+      }
+      line += newlines(m[0]);
+    }
+    return out;
+  }
+
+  function addFolds(text) {
+    const lines = srcEl.children;
+    const byStart = new Map();
+    for (const [from, to] of foldRanges(text)) {
+      // the widest range starting on a line is the one that line folds
+      const seen = byStart.get(from);
+      if (!seen || to > seen) byStart.set(from, to);
+    }
+    if (!byStart.size) return;
+
+    // Which folds are shut, and nothing else. Nesting then needs no
+    // bookkeeping: a line is hidden if any shut fold covers it, so opening one
+    // cannot reveal what another is still holding closed.
+    const shut = new Map();
+    const apply = () => {
+      const hide = new Uint8Array(lines.length);
+      for (const [from, to] of shut) {
+        for (let i = from; i < to && i < hide.length; i++) hide[i] = 1;
+      }
+      for (let i = 0; i < lines.length; i++) lines[i].hidden = hide[i] === 1;
+    };
+
+    for (const [from, to] of byStart) {
+      const el = lines[from - 1];
+      if (!el) continue;
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'fold';
+      btn.setAttribute('aria-expanded', 'true');
+      btn.title = `Fold lines ${from}–${to}`;
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        el.classList.toggle('folded', open);
+        if (open) shut.set(from, to);
+        else shut.delete(from);
+        apply();
+      });
+      el.prepend(btn);
+    }
   }
 
   // inline @code blocks
   for (const pre of document.querySelectorAll('pre[data-hl] code')) {
     pre.innerHTML = highlight(pre.textContent);
+  }
+
+  // The article element, which everything from here down hangs off: the copy
+  // buttons, the page filter, the all-members table and the table of contents.
+  const main = $('.main');
+
+  /* ---------- copy ----------
+     Signatures are the thing people come here to take away, and selecting one
+     out of a line that also holds badges, a src link and an anchor is fiddly.
+     Code blocks get their own button; signatures share a single one that
+     follows the pointer, because a class page has nine hundred of them and
+     nine hundred buttons is a page's worth of DOM for an affordance only one
+     is ever using. */
+  function copyText(text, btn) {
+    navigator.clipboard?.writeText(text).then(() => {
+      btn.classList.add('copied');
+      btn.setAttribute('aria-label', 'Copied');
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.setAttribute('aria-label', 'Copy');
+      }, 1200);
+    }, () => {});
+  }
+
+  function copyButton() {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'copy-btn';
+    b.setAttribute('aria-label', 'Copy');
+    b.title = 'Copy';
+    return b;
+  }
+
+  for (const pre of document.querySelectorAll('pre.code, pre.src, pre.attrs')) {
+    // The button is positioned against its block, so each one needs a box of
+    // its own; a source page already has the frame around its listing, and
+    // two doc examples in one comment must not share the containing div.
+    let box = pre.parentElement;
+    if (!box.classList.contains('srcwrap')) {
+      box = document.createElement('div');
+      pre.replaceWith(box);
+      box.append(pre);
+    }
+    box.classList.add('has-copy');
+    const btn = copyButton();
+    btn.classList.add('copy-block');
+    btn.addEventListener('click', () => copyText(pre.textContent, btn));
+    box.prepend(btn);
+  }
+
+  if (main) {
+    const sigCopy = copyButton();
+    sigCopy.classList.add('copy-sig');
+    let sigFor = null;
+    sigCopy.addEventListener('click', () => sigFor && copyText(sigFor.textContent.trim(), sigCopy));
+    main.addEventListener('pointerover', (e) => {
+      const sig = e.target.closest?.('.member-sig');
+      const code = sig && $('code', sig);
+      if (!code || code === sigFor) return;
+      sigFor = code;
+      sig.append(sigCopy);
+    });
   }
 
   /* ---------- hierarchy expand/collapse ---------- */
@@ -406,91 +688,372 @@
   $('#collapseAll')?.addEventListener('click', () =>
     document.querySelectorAll('ul.tree details').forEach((d) => (d.open = false)));
 
-  /* ---------- minimap ----------
-     A rail beside long pages holding the whole document at once: every
-     landmark — heading, member, table row, or line of code on a source page —
-     becomes one bar, positioned and sized by where it actually sits in the
-     page. Dragging scrolls, clicking jumps to the bar under the pointer, and
-     hovering names it.
+  // Assigned by buildToc() below, and called by the filter when a whole
+  // section disappears. Declared here because either can run first.
+  let refreshToc = () => {};
+  // Assigned by the page filter, and called by the all-members table once its
+  // rows exist — they are the one thing on any page that the filter cannot
+  // have seen when it first looked.
+  let rescanFilter = () => {};
 
-     Bars alone are only half of it. Source code has shape, so its texture
-     reads, but a list of nine hundred methods is nine hundred identical marks
-     and says nothing at all. So the rail also carries a few labels you can
-     actually read — see signposts() — which is what makes it navigable rather
-     than merely proportional.
+  /* ---------- page filter ----------
+     What the search palette does for the whole build, this does for the page
+     you are already on. Every long page here is one of four shapes — a table,
+     a grid of names, a tree, or a run of member blocks — so one pass over
+     those four covers the class index, the hierarchy, the file list, the
+     globals tabs and a nine-hundred-member class alike. Nothing is fetched
+     and nothing is added to the HTML but the field itself. */
+  const filterInput = $('#pageFilter');
+  const filterCount = $('#filterCount');
+  if (filterInput && main) {
+    const UNIT = 'table.list > tbody > tr, .namegrid > a, dl.fields > dt, .member';
+
+    /** What a unit is matched on. A member block is matched on its name and
+        signature alone: its documentation and its list of callers are there to
+        be read once you have found it, not to be searched. */
+    const unitText = (el) =>
+      el.classList.contains('member')
+        ? `${$('.member-name', el)?.textContent || ''} ${$('.member-sig', el)?.textContent || ''}`
+        : el.textContent;
+
+    /** What the access chips ask about. The modifiers are already on the page
+        as keyword spans inside the signature, and whether a member is
+        documented is the presence of its doc block, so nothing has to be
+        shipped to support any of this. */
+    const modsOf = (el) => {
+      const set = new Set([...el.querySelectorAll('.member-sig .kw')].map((k) => k.textContent));
+      if ($('.member-doc', el)) set.add('@documented');
+      return set;
+    };
+
+    let units = [];
+    const scan = () => {
+      units = [...main.querySelectorAll(UNIT)].map((el) => ({
+        el,
+        // a data field's <dt> and the <dd> listing its classes hide together
+        also: el.tagName === 'DT' ? el.nextElementSibling : null,
+        text: unitText(el).toLowerCase(),
+        mods: el.classList.contains('member') ? modsOf(el) : null,
+      }));
+    };
+    scan();
+    const trees = [...main.querySelectorAll('ul.tree')];
+
+    // What each disclosure was showing before the filter took over, so
+    // clearing it puts the tree back rather than to some canned state. Taken
+    // when filtering starts, not at load, so an Expand all first survives it.
+    let saved = null;
+
+    /** A node's own label, which on a branch is its summary rather than
+        everything nested under it. */
+    const ownText = (li) => (li.querySelector(':scope > details > summary') || li).textContent.toLowerCase();
+    const branch = (li) => li.querySelector(':scope > details');
+    const kidsOf = (li) => (branch(li) || li).querySelector(':scope > ul');
+
+    function showSubtree(ul) {
+      for (const li of ul.children) {
+        li.hidden = false;
+        const det = branch(li);
+        if (det) det.open = saved.get(det) ?? det.open;
+        const kids = kidsOf(li);
+        if (kids) showSubtree(kids);
+      }
+    }
+
+    /** Hide what does not match, open what holds a match, and count the hits.
+        A node whose own name matches keeps its whole subtree, since narrowing
+        to a directory is one of the things this is for. */
+    function filterTree(ul, q) {
+      let n = 0;
+      for (const li of ul.children) {
+        const det = branch(li);
+        const kids = kidsOf(li);
+        const self = ownText(li).includes(q);
+        let deep = 0;
+        if (self) {
+          if (kids) showSubtree(kids);
+        } else if (kids) {
+          deep = filterTree(kids, q);
+        }
+        li.hidden = !self && !deep;
+        if (det) det.open = deep > 0;
+        n += (self ? 1 : 0) + deep;
+      }
+      return n;
+    }
+
+    /** Whether anything under a heading is still showing. Elements that hold
+        no filterable unit at all — a paragraph, a tab strip — always count. */
+    function holdsVisible(el) {
+      if (el.matches(UNIT)) return !el.hidden;
+      const inner = el.querySelectorAll(UNIT);
+      if (inner.length) return [...inner].some((u) => !u.hidden);
+      const lis = el.querySelectorAll('li');
+      if (lis.length) return [...lis].some((li) => !li.hidden);
+      return true;
+    }
+
+    /** Drop the headings whose whole section filtered away, so the page does
+        not end up as a column of empty section titles. */
+    function syncHeadings(active) {
+      let head = null;
+      let seen = false;
+      for (const el of main.children) {
+        if (el.tagName === 'H2' || el.tagName === 'H3') {
+          if (head) head.hidden = active && !seen;
+          head = el;
+          seen = false;
+        } else if (head && !seen && holdsVisible(el)) {
+          seen = true;
+        }
+      }
+      if (head) head.hidden = active && !seen;
+    }
+
+    // How many things there were to narrow, for the count beside the field.
+    let treeTotal = 0;
+    const total = () => units.length || (treeTotal ||= trees.reduce((n, t) => n + t.querySelectorAll('li').length, 0));
+
+    // The access chip in force, as a predicate over a member's modifiers.
+    // A leading "!" reads as "none of these", which is how public is spelled.
+    let access = null;
+    const chipTest = (spec) => {
+      const negated = spec.startsWith('!');
+      const want = spec.replace(/^!/, '').split(',');
+      return (mods) => (negated ? !want.some((w) => mods.has(w)) : want.some((w) => mods.has(w)));
+    };
+
+    function apply() {
+      const q = filterInput.value.trim().toLowerCase();
+      const narrowed = !!q || !!access;
+      if (narrowed && !saved) {
+        saved = new Map();
+        for (const t of trees) for (const d of t.querySelectorAll('details')) saved.set(d, d.open);
+      }
+      let n = 0;
+      for (const u of units) {
+        const on = (!q || u.text.includes(q)) && (!access || !u.mods || access(u.mods));
+        u.el.hidden = !on;
+        if (u.also) u.also.hidden = !on;
+        if (on) n++;
+      }
+      for (const t of trees) {
+        if (q) n += filterTree(t, q);
+        else if (saved) showSubtree(t);
+      }
+      if (!q) saved = null;
+      syncHeadings(narrowed);
+      if (filterCount) {
+        filterCount.textContent = narrowed
+          ? (n ? `${n.toLocaleString()} of ${total().toLocaleString()}` : 'no matches')
+          : '';
+      }
+      refreshToc();
+    }
+
+    $('.filter-chips')?.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-mod]');
+      if (!btn) return;
+      for (const el of btn.parentElement.children) {
+        const on = el === btn;
+        el.classList.toggle('active', on);
+        el.setAttribute('aria-pressed', String(on));
+      }
+      access = btn.dataset.mod ? chipTest(btn.dataset.mod) : null;
+      apply();
+    });
+
+    let pending;
+    filterInput.addEventListener('input', () => {
+      clearTimeout(pending);
+      pending = setTimeout(apply, 60);
+    });
+    filterInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && filterInput.value) {
+        e.stopPropagation();
+        filterInput.value = '';
+        apply();
+      }
+    });
+    // Browsers restore a search field's value across a back navigation, and
+    // the page it is restored onto is unfiltered.
+    if (filterInput.value) apply();
+
+    // For the one page whose rows arrive after this ran.
+    rescanFilter = () => { scan(); apply(); };
+  }
+
+  /* ---------- all members of a class ----------
+     The one page built here rather than by the generator. Everything it needs
+     is in search.json — which classes declare which methods and fields — and
+     the page itself supplies the inheritance chain, so the rows cost nothing
+     to ship. See renderClassMembers in src/generate/render.js for why. */
+  const allTable = $('#allMembers');
+  if (allTable) {
+    const chain = allTable.dataset.chain.split(',');
+    const own = chain[0];
+
+    loadIndex().then(() => {
+      const wanted = new Map(chain.map((n, i) => [n, i]));
+      // name -> the position in the chain of each class declaring it
+      const found = new Map();
+      const note = (ci, name, method) => {
+        const at = wanted.get(index.classes[ci]);
+        if (at === undefined) return;
+        const seen = found.get(name);
+        if (seen) seen.at.push(at);
+        else found.set(name, { at: [at], method });
+      };
+      for (const [ci, n] of index.methods || []) note(ci, n, true);
+      for (const [ci, n] of index.vars || []) note(ci, n, false);
+
+      const rows = [...found.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+      const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+      const html = rows
+        .map(([name, r]) => {
+          // Nearest declaration wins, which is the one a call resolves to.
+          const from = chain[Math.min(...r.at)];
+          const shadows = r.at.length > 1;
+          const badge = from !== own
+            ? '<span class="badge badge-inherited">inherited</span>'
+            : shadows
+              ? '<span class="badge badge-override" title="Also declared further up the chain">override</span>'
+              : '';
+          return `<tr><td><a href="${BASE}class/${from}/#${anchorOf(name)}"><code>${esc(name)}${r.method ? '()' : ''}</code></a></td><td><a href="${BASE}class/${from}/">${esc(from)}</a></td><td>${badge}</td></tr>`;
+        })
+        .join('');
+
+      $('tbody', allTable).innerHTML = html;
+      const inherited = rows.filter(([, r]) => chain[Math.min(...r.at)] !== own).length;
+      $('.members-fallback').textContent =
+        `${rows.length.toLocaleString()} members, ${inherited.toLocaleString()} of them inherited.`;
+      $('h1').insertAdjacentHTML('beforeend', ` <span class="count">${rows.length.toLocaleString()}</span>`);
+      const filter = $('#pageFilter');
+      if (filter) filter.placeholder = `Filter ${rows.length.toLocaleString()} members…`;
+      rescanFilter();
+    }).catch(() => {
+      // .catch rather than a second argument to .then, so that a failure while
+      // building the rows is caught too and not just a failure to fetch them.
+      // Either way the page must stop claiming it is still working on it.
+      if (!$('tbody', allTable).children.length) {
+        $('.members-fallback').textContent =
+          'The member list could not be loaded. Each class in the chain above lists its own members in full.';
+      }
+    });
+  }
+
+  /* ---------- table of contents ----------
+     Doxygen's page-nav panel: the sections of this page, beside it, with the
+     one you are in marked. Built from the headings the page already has, so
+     it costs the generated HTML nothing and cannot fall out of step with it.
+     Wide viewports only — there is no room for a third column below that, and
+     the headings are a short scroll away on a phone. */
+  const roomForToc = matchMedia('(min-width: 1180px)');
+
+  function buildToc() {
+    if (!main || $('.toc')) return;
+    const heads = [...main.children].filter((el) => el.tagName === 'H2' || el.tagName === 'H3');
+    if (heads.length < 3) return;
+
+    const toc = document.createElement('aside');
+    toc.className = 'toc';
+    toc.setAttribute('aria-label', 'On this page');
+    const nav = document.createElement('nav');
+    const links = heads.map((h) => {
+      // Most headings are anchored already; the rest are given one here rather
+      // than in the generator, where it would be an id nothing links to.
+      if (!h.id) h.id = (h.textContent.trim().toLowerCase().match(/[\w]+/g) || ['section']).join('-');
+      const a = document.createElement('a');
+      a.href = `#${h.id}`;
+      a.className = h.tagName === 'H3' ? 'toc-3' : 'toc-2';
+      // not the count badge: the number is on the heading itself already
+      const label = h.cloneNode(true);
+      label.querySelector('.count')?.remove();
+      a.textContent = label.textContent.trim();
+      nav.append(a);
+      return a;
+    });
+    toc.append(Object.assign(document.createElement('p'), { className: 'toc-title', textContent: 'On this page' }), nav);
+    main.after(toc);
+
+    /** The section the top of the viewport is in. */
+    const spy = () => {
+      let cur = null;
+      for (let i = 0; i < heads.length; i++) {
+        if (heads[i].hidden) continue;
+        if (heads[i].getBoundingClientRect().top > 90) break;
+        cur = links[i];
+      }
+      for (const a of links) a.classList.toggle('cur', a === cur);
+    };
+    addEventListener('scroll', spy, { passive: true });
+
+    refreshToc = () => {
+      let any = false;
+      heads.forEach((h, i) => {
+        links[i].hidden = h.hidden;
+        if (!h.hidden) any = true;
+      });
+      toc.hidden = !any;
+      spy();
+    };
+    refreshToc();
+  }
+
+  if (main) {
+    roomForToc.addEventListener('change', () => roomForToc.matches && buildToc());
+    if (roomForToc.matches) buildToc();
+  }
+
+  /* ---------- source minimap ----------
+     A rail beside a source file holding the whole of it at once: one bar per
+     line, positioned and sized by where the line sits and how long it is, so
+     the column reads as the shape of the code. Dragging scrolls, clicking
+     jumps to the line under the pointer, and hovering reads it out.
+
+     Source pages only. Every other long page here is a list of named things,
+     and a list of nine hundred methods is nine hundred identical marks that
+     say nothing; those are served by the table of contents above and the
+     filter field, which name what the rail could only gesture at. Code is the
+     one thing on this site with a texture worth mapping.
 
      Built here rather than in the markup because it is measured, throwaway
      chrome, and because the generated HTML has to stay byte-identical across
-     builds. It carries aria-hidden: every bar targets an anchor the page
-     already exposes to a screen reader, so announcing all of them twice would
-     only add noise. */
-  const main = $('.main');
+     builds. It carries aria-hidden: every bar targets a line the page already
+     exposes to a screen reader, so announcing all of them twice would only
+     add noise. */
   const wide = matchMedia('(min-width: 901px)');
   const still = matchMedia('(prefers-reduced-motion: reduce)');
-  const LANDMARKS = 'h1, h2, h3, .member, .diff-class, ul.tree > li, table.list tbody tr';
-  const LABEL_MIN = 17; // px between labels before they would collide
+  const LABEL_MIN = 17; // px between a label and the line it names
   const LABEL_MAX = 96; // px of unlabelled rail before one gets sampled in
 
   let mm, track, view, tip, items, bars = [], marks = [], scale = 1;
 
-  /** The shortest text that identifies a landmark, for the hover tip: the
-      summary of a collapsed block, else the signature or name it leads with,
-      else everything it says. Naming the inner element matters because the
-      badges and briefs that follow one are siblings inside the same cell, and
-      textContent would run them all together. */
-  function labelOf(el) {
-    const s = el.classList.contains('line')
-      ? `${el.id.slice(1)}  ${el.textContent}`
-      : $('summary', el)?.textContent || $('code, a', el)?.textContent || el.textContent;
-    return s.replace(/\s+/g, ' ').trim().slice(0, 90);
-  }
-
-  /** Landmarks with their document geometry, measured once per layout.
-      Offsets come from the viewport rather than offsetTop, which for a table
-      row is measured from its own <table> and would stack every row of every
-      table at the top of the rail. */
+  /** Every line with its document geometry, measured once per layout. Lines
+      are uniform, so two reads give every offset and spare us thousands more.
+      Offsets come from the viewport rather than offsetTop, which is measured
+      from the positioned ancestor and would need correcting anyway. */
   function collect() {
+    const lines = [...srcEl.children];
+    if (lines.length < 2) return [];
     const y0 = scrollY;
-    // On a source page the code is the page, so map it line by line. Lines are
-    // uniform, so two reads give every offset and spare us thousands more.
-    const lines = srcEl && srcEl.children.length > 1 ? [...srcEl.children] : null;
-    if (lines) {
-      const first = lines[0].getBoundingClientRect();
-      const lh = lines[1].getBoundingClientRect().top - first.top;
-      return lines.map((el, i) => {
-        const text = el.textContent;
-        return {
-          el, top: first.top + y0 + i * lh, h: lh, head: false, label: labelOf(el),
-          name: `L${i + 1}`,
-          indent: text.length - text.trimStart().length, len: text.trim().length,
-        };
-      });
-    }
-    const out = [];
-    for (const el of main.querySelectorAll(LANDMARKS)) {
-      // A closed <details> still reports a box for its contents, and the wrong
-      // one — the rows of a collapsed changelog group all measure up near the
-      // summary — so go by the state of the disclosure rather than the box.
-      if (el.parentElement?.closest('details:not([open])')) continue;
-      const r = el.getBoundingClientRect();
-      if (!r.height) continue;
-      const head = el.tagName.length === 2 && el.tagName[0] === 'H';
-      const label = labelOf(el);
-      // The bare name, apart from the signature around it, is what a label has
-      // room for and what an alphabetical page is ordered by. Paths keep only
-      // their last segment: a column this narrow spent on a directory prefix
-      // every neighbour shares says nothing at all.
-      const found = ($('.fn, .vn', el) || $('code, a', el))?.textContent.trim() || label;
-      const name = found.split('/').pop() || found;
-      out.push({
-        el, top: r.top + y0, h: r.height, head, label, name,
-        indent: head ? 0 : 3, len: label.length,
-      });
-    }
-    return out;
+    const first = lines[0].getBoundingClientRect();
+    const lh = lines[1].getBoundingClientRect().top - first.top;
+    return lines.map((el, i) => {
+      const text = el.textContent;
+      return {
+        el,
+        top: first.top + y0 + i * lh,
+        h: lh,
+        name: `L${i + 1}`,
+        label: `${i + 1}  ${text}`.replace(/\s+/g, ' ').trim().slice(0, 90),
+        indent: text.length - text.trimStart().length,
+        len: text.trim().length,
+      };
+    });
   }
 
-  /** The item nearest a point on the rail. Landmarks come out of collect() in
+  /** The line nearest a point on the rail. They come out of collect() in
       document order, so their rail positions are already sorted. */
   function itemAt(list, y) {
     let lo = 0;
@@ -503,104 +1066,39 @@
     return list[lo];
   }
 
-  /** Whether a list is in name order, in which case initials make signposts
-      the way the letter strip on the classes index does. A handful out of
-      order is fine — overloads and casing put them there. */
-  function alphabetical(list) {
-    let wrong = 0;
-    let prev = '';
-    for (const it of list) {
-      const cur = it.name.toLowerCase();
-      if (cur < prev) wrong++;
-      prev = cur;
-    }
-    return wrong < list.length * 0.05;
-  }
-
   /**
-   * The few labels that make the rail readable, in rail coordinates.
-   *
-   * Sections where the page has them, initials where it is one alphabetical
-   * list, and past that a sampled name wherever a stretch of rail would
-   * otherwise carry nothing to aim at — which is what rescues the pages that
-   * are one flat run of hundreds of members under a single heading.
+   * The few line numbers that make the rail aimable, in rail coordinates.
+   * Sampled at a fixed spacing, and only where a line really sits close to
+   * the sample point — on a short file the nearest one can be half the rail
+   * away, and the label would point at the wrong thing.
    */
   function signposts(th) {
-    // not the h1: the page title is already on screen above the rail
-    const heads = items.filter((it) => it.head && it.el.tagName !== 'H1');
-    const list = items.filter((it) => !it.head);
-    const found = [];
-    if (heads.length >= 3) {
-      // without the count badge, which the width here cannot spare
-      for (const it of heads) {
-        found.push({ y: Math.round(it.top * scale), text: it.label.replace(/\s+\d+$/, '') });
-      }
-    } else if (list.length > 40 && alphabetical(list)) {
-      let prev = '';
-      for (const it of list) {
-        const initial = it.name.slice(0, 1).toUpperCase();
-        if (initial && initial !== prev) {
-          prev = initial;
-          found.push({ y: Math.round(it.top * scale), text: initial });
-        }
-      }
-      // A page under a single initial has learnt nothing from it — a letter of
-      // the class index, or the line numbers of a source file. Sample instead.
-      if (found.length < 4) found.length = 0;
-    }
-
-    // Where labels would collide the one owning more of the rail wins. On a
-    // class page that keeps Methods and its hundreds of entries over the
-    // two-line Constructors section sitting a few pixels above it.
-    const kept = [];
-    for (let i = 0; i < found.length; i++) {
-      const m = { ...found[i], span: (found[i + 1]?.y ?? th) - found[i].y };
-      const prev = kept[kept.length - 1];
-      if (prev && m.y - prev.y < LABEL_MIN) {
-        if (m.span > prev.span) kept[kept.length - 1] = m;
-      } else {
-        kept.push(m);
-      }
-    }
-
     const out = [];
-    let last = -LABEL_MIN; // so a list starting at the top keeps its first label
-    for (const m of [...kept, { y: th }]) {
-      for (let y = last + LABEL_MAX; y < m.y - LABEL_MIN; y += LABEL_MAX) {
-        // A sample is only worth a label if something is really there to name.
-        // On a short page the nearest item can be half the rail away, and the
-        // label would point at the wrong thing — or repeat the one above it.
-        const it = itemAt(list, y);
-        const iy = it && Math.round(it.top * scale);
-        if (it && Math.abs(iy - y) < LABEL_MIN) out.push({ y: iy, text: it.name });
-      }
-      if (m.text) out.push(m);
-      last = m.y;
+    for (let y = LABEL_MAX; y < th - LABEL_MIN; y += LABEL_MAX) {
+      const it = itemAt(items, y);
+      const iy = it && Math.round(it.top * scale);
+      if (it && Math.abs(iy - y) < LABEL_MIN) out.push({ y: iy, text: it.name });
     }
     return out;
   }
 
-  /** Project the landmarks onto the rail, one bar per pixel row. */
+  /** Project the lines onto the rail, one bar per pixel row. */
   function place() {
     const th = track.clientHeight;
     const tw = track.clientWidth;
     if (!th || !tw) return; // rail is hidden (narrow viewport)
     scale = th / document.documentElement.scrollHeight;
 
-    // Several landmarks can land on the same row — a long file puts a dozen
-    // lines there. Keep the longest and the shallowest, so the row still
-    // describes them. Headings are the exception: they read as full-width
-    // rules across the rail, which is the only thing that makes the sections
-    // of a nine-hundred-method class findable, so one owns its row outright.
+    // A long file puts a dozen lines on the same row. Keep the longest and
+    // the shallowest, so the row still describes them.
     const rows = new Map();
     for (const it of items) {
       const y = Math.round(it.top * scale);
-      const w = it.head ? tw : Math.max(2, Math.min(1, it.len / 80) * tw);
-      const x = it.head ? 0 : Math.min(0.4, it.indent / 60) * tw;
-      const h = Math.max(it.head ? 3 : 1, Math.round(it.h * scale));
+      const w = Math.max(2, Math.min(1, it.len / 80) * tw);
+      const x = Math.min(0.4, it.indent / 60) * tw;
+      const h = Math.max(1, Math.round(it.h * scale));
       const r = rows.get(y);
-      if (!r || (it.head && !r.head)) { rows.set(y, { y, x, w, h, head: it.head, it }); continue; }
-      if (r.head) continue;
+      if (!r) { rows.set(y, { y, x, w, h, it }); continue; }
       r.x = Math.min(r.x, x);
       r.h = Math.max(r.h, h);
       // the fullest of them names the row, so the tip never reads out a blank
@@ -611,7 +1109,7 @@
     marks = signposts(th);
     const esc = (s) => s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]);
     track.innerHTML = bars
-      .map((b) => `<i class="mm-bar${b.head ? ' mm-head' : ''}" style="top:${b.y}px;` +
+      .map((b) => `<i class="mm-bar" style="top:${b.y}px;` +
         `left:${b.x.toFixed(1)}px;width:${b.w.toFixed(1)}px;height:${b.h}px"></i>`)
       .join('') + marks
       .map((m) => `<div class="mm-mark" style="top:${m.y}px"><span>${esc(m.text)}</span></div>`)
@@ -709,7 +1207,7 @@
     }).observe(document.body);
   }
 
-  if (main) {
+  if (srcEl && main) {
     const boot = () => { if (wide.matches) buildMinimap(); };
     wide.addEventListener('change', boot);
     boot();

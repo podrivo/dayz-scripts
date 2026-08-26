@@ -215,9 +215,28 @@ pre code { background: none; padding: 0; }
   padding: 0 6px; border: 1px solid var(--line); border-radius: 4px;
   color: var(--fg2); font-size: 11px; line-height: 18px;
 }
+/* Category tabs. They scroll rather than wrap so the field above them never
+   moves as the box grows, which matters when the palette opens under the
+   cursor already mid-type. */
+.palette-filters {
+  flex: none; display: flex; gap: 4px; padding: 8px 10px;
+  overflow-x: auto; scrollbar-width: none;
+  border-bottom: 1px solid var(--line); background: var(--bg2);
+}
+.palette-filters::-webkit-scrollbar { display: none; }
+.pf {
+  flex: none; padding: 3px 10px; border: 1px solid transparent; border-radius: 999px;
+  background: none; color: var(--fg2); font: inherit; font-size: 12px; cursor: pointer;
+}
+.pf:hover { color: var(--fg); background: var(--bg3); }
+.pf.active { color: var(--fg); background: var(--bg); border-color: var(--line); }
 .palette-hints {
   flex: none; padding: 8px 14px; border-top: 1px solid var(--line);
   background: var(--bg2); color: var(--fg2); font-size: 12px;
+}
+.palette-hints code {
+  padding: 0 4px; border: 1px solid var(--line); border-radius: 4px;
+  background: var(--bg); font-size: 11px;
 }
 .palette-hints kbd {
   padding: 0 5px; border: 1px solid var(--line); border-radius: 4px;
@@ -232,16 +251,22 @@ body.palette-open { overflow: hidden; }
   padding: 7px 10px; border-radius: 6px; color: var(--fg); font-size: 14px;
 }
 .search-results a:hover, .search-results a.sel { background: var(--accent-bg); text-decoration: none; }
+/* Named rather than initialled: eleven kinds have no eleven distinct letters,
+   and "field" says what "V" cannot. Fixed width so the names beside them stay
+   in one column — the label is scenery, the name is what is being read. */
 .search-results .tag {
-  flex: none; width: 18px; height: 18px; border-radius: 4px;
+  flex: none; width: 52px; height: 18px; border-radius: 4px;
   display: inline-flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 700; color: #fff;
+  font-size: 10px; font-weight: 700; color: #fff;
 }
 /* One per search kind, taken from the syntax palette and kept dark enough for
-   white text in both themes. */
+   white text in both themes. Kinds that name the same thing at two levels —
+   enum and enumerator, method and field — sit next to each other in hue. */
 .tag-c { background: #47533e; } .tag-m { background: #2f6bab; }
-.tag-e { background: #8a4b8c; } .tag-t { background: #2b7f76; }
+.tag-v { background: #3f5e6b; } .tag-e { background: #8a4b8c; }
+.tag-V { background: #6f4a8c; } .tag-t { background: #2b7f76; }
 .tag-k { background: #a35c00; } .tag-f { background: #3f6b4d; }
+.tag-d { background: #8a5a3c; } .tag-g { background: #55578c; }
 .tag-F { background: #5a6270; }
 .search-results .ctx { color: var(--fg2); font-size: 12px; margin-left: auto; white-space: nowrap; }
 .search-empty { padding: 12px; color: var(--fg2); font-size: 14px; }
@@ -366,16 +391,15 @@ h3.member-name .ordinal { font-size: 12px; font-weight: 400; color: var(--fg2); 
 
 .foot { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--fg2); font-size: 13px; }
 
-/* ---- minimap ----
-   The pages that are hard to navigate are the long ones: a class with 900
-   methods, a six-thousand-line source file. This is the whole document
-   squashed into one column beside it — a bar per heading, member, table row or
-   line of code, plus a window marking what is on screen. VS Code's minimap,
-   used as a scrollbar you can read.
+/* ---- source minimap ----
+   A six-thousand-line source file squashed into one column beside itself — a
+   bar per line, plus a window marking what is on screen. VS Code's minimap,
+   used as a scrollbar you can read. The other long pages are lists of named
+   things and get the table of contents and the filter field instead.
 
    It sits in the shell as a third column rather than pinned to the viewport
    edge, so it stays against the text instead of drifting away on a wide
-   screen. app.js builds it, and only when a page is long enough to need one.
+   screen. app.js builds it, and only when a file is long enough to need one.
    Phones never get it: there is no room and no pointer to hover with. */
 .minimap {
   position: sticky; top: 56px;
@@ -384,15 +408,15 @@ h3.member-name .ordinal { font-size: 12px; font-weight: 400; color: var(--fg2); 
 }
 .mm-track { position: relative; height: 100%; cursor: pointer; touch-action: none; }
 
-/* One bar per pixel row. Width stands in for the length of the line or
-   signature and the offset for its indentation, which is what makes the
-   column read as text rather than as a solid block. */
+/* One bar per pixel row. Width stands in for the length of the line and the
+   offset for its indentation, which is what makes the column read as code
+   rather than as a solid block. */
 .mm-bar { position: absolute; border-radius: 1px; background: var(--fg2); opacity: 0.34; }
-.mm-head { border-radius: 2px; background: var(--accent); opacity: 0.95; }
 
-/* The labels, which is what a rail of several hundred identical bars needs to
-   be worth pointing at. They sit over the texture on the page background so
-   they stay legible, ticked on the left to say which row they belong to. */
+/* The sampled line numbers, which is what a rail of several thousand bars
+   needs to be worth pointing at. They sit over the texture on the page
+   background so they stay legible, ticked on the left to say which row they
+   belong to. */
 .mm-mark { position: absolute; left: 0; right: 0; pointer-events: none; }
 .mm-mark span {
   display: block; max-width: 100%; margin-top: 1px;
@@ -472,6 +496,15 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 }
 .badge-mod { background: var(--accent-bg); color: var(--accent); }
 .badge-cond { background: var(--pre-bg); color: var(--pre); border: 1px solid var(--pre); }
+/* Quiet, because on an all-members page most rows carry one: they mark the
+   exception, which is the handful the class declares itself. */
+.badge-inherited { margin: 0; background: var(--bg3); color: var(--fg2); font-weight: 500; }
+.badge-override { margin: 0; background: var(--note-bg); color: var(--note-line); cursor: help; }
+
+.all-members { margin: 6px 0; font-size: 14px; }
+.all-members-table td:first-child { width: 55%; }
+.all-members-table td:last-child { width: 1%; white-space: nowrap; }
+.members-fallback { color: var(--fg2); font-size: 13px; }
 
 /* ---- tables ---- */
 table.list { width: 100%; border-collapse: collapse; font-size: 14px; }
@@ -565,7 +598,7 @@ pre.src {
   background: var(--code-bg); font-size: 13px; line-height: 1.5;
   counter-reset: ln;
 }
-pre.src .line { display: block; padding: 0 14px 0 0; }
+pre.src .line { display: block; position: relative; padding: 0 14px 0 0; }
 pre.src .line::before {
   counter-increment: ln; content: counter(ln);
   display: inline-block; width: 52px; padding-right: 14px; margin-right: 12px;
@@ -573,6 +606,50 @@ pre.src .line::before {
   border-right: 1px solid var(--line);
 }
 pre.src .line:target, pre.src .line.hl { background: var(--accent-bg); }
+
+/* A line that declares something links back to the page documenting it. The
+   number is drawn by the counter above and cannot itself be a link, so the
+   link is an empty box laid over it — which is why the colour that says so
+   goes on the number rather than on the anchor. */
+pre.src .line.decl::before { color: var(--accent); font-weight: 600; }
+pre.src .line.decl:hover::before { text-decoration: underline; }
+/* 38px, not the full 52: the number is right-aligned inside its own padding
+   and ends there, and the rest of the gutter belongs to the fold arrow. */
+.ldoc { position: absolute; left: 0; top: 0; width: 38px; height: 100%; cursor: pointer; }
+
+/* ---- code folding ----
+   Kept to the gutter and out of sight until the line is under the pointer, so
+   a file reads as a file. A shut fold keeps its arrow, since that is the only
+   thing left saying the lines below it are still there. */
+.fold {
+  position: absolute; left: 38px; top: 0; width: 14px; height: 100%;
+  padding: 0; border: 0; background: none; color: var(--com);
+  font: inherit; line-height: inherit; text-align: center; cursor: pointer;
+  opacity: 0; user-select: none;
+}
+.fold::before { content: "\25BE"; }
+.fold[aria-expanded="false"]::before { content: "\25B8"; }
+pre.src .line:hover .fold, .fold[aria-expanded="false"] { opacity: 1; }
+.fold:focus-visible { opacity: 1; outline: 1px solid var(--accent2); }
+pre.src .line.folded { background: var(--bg2); }
+pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
+
+/* ---- copy ---- */
+.copy-btn {
+  padding: 2px 8px; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--bg); color: var(--fg2);
+  font: inherit; font-size: 11px; line-height: 16px; cursor: pointer;
+}
+.copy-btn::before { content: "Copy"; }
+.copy-btn:hover { color: var(--accent); border-color: var(--accent2); }
+.copy-btn.copied { color: var(--added); border-color: var(--added); }
+.copy-btn.copied::before { content: "Copied"; }
+/* The block button floats over the top-right corner of the code it copies. */
+.has-copy { position: relative; }
+.copy-block { position: absolute; top: 8px; right: 8px; z-index: 2; opacity: 0; }
+.has-copy:hover .copy-block, .copy-block:focus-visible, .copy-block.copied { opacity: 1; }
+.copy-sig { margin-left: 2px; opacity: 0; }
+.member-sig:hover .copy-sig, .copy-sig:focus-visible, .copy-sig.copied { opacity: 1; }
 .tok-kw { color: var(--kw); } .tok-str { color: var(--str); } .tok-num { color: var(--num); }
 .tok-com { color: var(--com); font-style: italic; } .tok-pre { color: var(--pre); }
 .tok-type { color: var(--fn); }
@@ -584,6 +661,49 @@ pre.src .line:target, pre.src .line.hl { background: var(--accent-bg); }
 .tok-link:hover { text-decoration: underline; text-decoration-color: var(--accent2); }
 
 /* ---- hierarchy ---- */
+/* ---- page filter ----
+   Everything it narrows is hidden with [hidden]. The UA stylesheet covers
+   that on its own for rows and member blocks, but only where this file has
+   not given the element a display of its own, which outranks it. */
+.fields dd[hidden], .toc a[hidden] { display: none; }
+
+.filterbar { display: flex; align-items: center; gap: 10px; margin: 14px 0 4px; }
+.filter-input {
+  flex: 1; max-width: 340px; height: 34px; padding: 0 12px;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: var(--bg); color: var(--fg); font: inherit; font-size: 14px;
+}
+.filter-input:focus { outline: none; border-color: var(--accent2); }
+.filter-input::-webkit-search-cancel-button { cursor: pointer; }
+.filter-count { color: var(--fg2); font-size: 13px; white-space: nowrap; }
+.filter-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 4px; }
+
+/* ---- table of contents ----
+   Where this page's own sections are, beside it. The third column only exists
+   where there is room for one; below that the sections are a short scroll
+   away and the space belongs to the text. */
+.toc {
+  position: sticky; top: 56px; align-self: flex-start;
+  flex: none; width: 200px; max-height: calc(100vh - 56px);
+  padding: 26px 16px 20px; overflow-y: auto;
+  border-left: 1px solid var(--line);
+}
+.toc-title {
+  margin: 0 0 8px; color: var(--fg2); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.toc nav { display: flex; flex-direction: column; gap: 1px; }
+.toc a {
+  display: block; padding: 3px 8px; border-left: 2px solid transparent;
+  color: var(--fg2); font-size: 13px; line-height: 1.4;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.toc a:hover { color: var(--fg); text-decoration: none; }
+.toc a.cur { color: var(--accent); border-left-color: var(--accent2); font-weight: 600; }
+.toc .toc-3 { padding-left: 18px; font-size: 12.5px; }
+
+@media (max-width: 1179px) { .toc { display: none; } }
+
 .hierarchy-tools { margin-bottom: 12px; }
 .btn {
   padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px;

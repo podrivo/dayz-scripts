@@ -2,6 +2,16 @@
 // rendering. Pure template-literal functions, no dependencies.
 
 import { parseDoc } from '../parser/docparse.js';
+import { SITE_URL, ANALYTICS_ID } from './content.js';
+
+// Analytics, carried over from the Doxygen site so its numbers continue rather
+// than restart. Loaded async and last, after the script the page actually
+// needs, so it cannot delay anything: nothing here waits on it and it touches
+// nothing on the page.
+const ANALYTICS = ANALYTICS_ID
+  ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${ANALYTICS_ID}');</script>`
+  : '';
 
 // One pass instead of four, and none at all for the majority of strings that
 // contain nothing to escape. Worth the noise because file pages run whole
@@ -16,6 +26,56 @@ export function esc(s) {
 
 /** Attributes every link that leaves the site carries. */
 export const EXT = 'target="_blank" rel="noopener"';
+
+/** A heading's anchor, so a section of a long page can be linked to. */
+export function slug(title) {
+  return title.toLowerCase().replace(/[^\w]+/g, '-').replace(/^-|-$/g, '');
+}
+
+/**
+ * The type-to-filter field the long pages carry.
+ *
+ * An index of six thousand classes, a tree of two thousand files or a class
+ * with nine hundred members is only navigable if you can narrow it, and every
+ * one of those pages already holds everything it would need to: the filtering
+ * is done in the browser over the rows, chips, tree nodes and member blocks
+ * that are on the page, so it costs no bytes beyond this field and works
+ * offline. See the page filter in site/app.js.
+ */
+export function filterBar(placeholder, chips = []) {
+  const row = chips.length
+    ? `<div class="filter-chips">${chips
+        .map(([mod, label], i) =>
+          `<button type="button" class="pf${i ? '' : ' active'}" data-mod="${esc(mod)}" aria-pressed="${!i}">${esc(label)}</button>`)
+        .join('')}</div>`
+    : '';
+  return `<div class="filterbar">
+<input type="search" id="pageFilter" class="filter-input" placeholder="${esc(placeholder)}" autocomplete="off" spellcheck="false" aria-label="${esc(placeholder)}">
+<span class="filter-count" id="filterCount" aria-live="polite"></span>
+</div>${row}`;
+}
+
+/**
+ * The access chips a class page carries.
+ *
+ * Doxygen split a class into public / protected / private / static sections;
+ * ours lists members in one run and puts the modifiers in the signature,
+ * which reads better but leaves no way to ask for just the ones you can call
+ * from outside. These filter over what the signature already says. "Public"
+ * is the absence of the other two rather than a keyword, because that is what
+ * it is in the language.
+ */
+export const ACCESS_CHIPS = [
+  ['', 'All'],
+  // First because it is the one that pays: 89% of members carry no comment,
+  // so this is the difference between a page you read and a page you scroll.
+  ['@documented', 'Documented'],
+  ['!private,protected', 'Public'],
+  ['protected', 'Protected'],
+  ['private', 'Private'],
+  ['static', 'Static'],
+  ['proto', 'Engine'],
+];
 
 export function typeUrl(name, kind) {
   if (kind === 'class') return `class/${name}/`;
@@ -198,6 +258,26 @@ function navLevel(nodes, active, base, depth) {
     .join('');
 }
 
+// The search palette's category tabs, over the kind letters site/app.js gives
+// each entry. Doxygen offered the same choice from the magnifier beside its
+// search field, and it is what makes a common word usable: "Get" matches
+// thousands of methods, and the only way to see the four classes called that
+// is to ask for classes.
+const SEARCH_FILTERS = [
+  ['', 'All'],
+  ['c', 'Classes'],
+  ['m', 'Methods'],
+  ['v', 'Fields'],
+  ['eV', 'Enums'],
+  ['fkt', 'Globals'],
+  ['d', 'Macros'],
+  ['F', 'Files'],
+  ['g', 'Topics'],
+]
+  .map(([kinds, label], i) =>
+    `<button type="button" class="pf${i ? '' : ' active'}" data-kinds="${kinds}" aria-pressed="${!i}">${label}</button>`)
+  .join('');
+
 /**
  * Full page layout.
  * opts: { title, base, active, breadcrumbs, content, description, versionPath }
@@ -216,6 +296,25 @@ export function layout(o) {
   // Pages outside the tree, such as 404, match nothing and open nothing.
   const nav = navLevel(NAV, o.active ?? null, o.base, 0);
 
+  // Sharing and search metadata. The canonical URL deliberately names the
+  // page at the site root rather than under /v/<build>/, which is both the
+  // right answer for SEO — an archived build should point at the current one
+  // — and the only one that keeps these bytes identical across builds, since
+  // the path of a page within a version is the same in every version of it.
+  // No og:image: there is no card artwork yet, and a broken one is worse than
+  // the summary card these tags already earn.
+  const url = `${SITE_URL}/${o.versionPath || ''}`;
+  const title = `${o.title} · DayZ Scripts`;
+  const social = o.noindex
+    ? '<meta name="robots" content="noindex">'
+    : `<link rel="canonical" href="${esc(url)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DayZ Scripts">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(desc)}">
+<meta property="og:url" content="${esc(url)}">
+<meta name="twitter:card" content="summary">`;
+
   const crumbs = o.breadcrumbs?.length
     ? `<nav class="crumbs" aria-label="Breadcrumb">${o.breadcrumbs
         .map((c) => (c.href ? `<a href="${c.href}">${esc(c.label)}</a>` : `<span>${esc(c.label)}</span>`))
@@ -227,8 +326,9 @@ export function layout(o) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(o.title)} · DayZ Scripts</title>
+<title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
+${social}
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/styles.css">
 <script>try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
@@ -261,11 +361,13 @@ export function layout(o) {
       <input id="search" type="search" placeholder="Search classes, methods, enums…" autocomplete="off" spellcheck="false" aria-label="Search">
       <kbd>Esc</kbd>
     </div>
+    <div id="searchFilters" class="palette-filters">${SEARCH_FILTERS}</div>
     <div id="searchResults" class="search-results" hidden></div>
-    <div class="palette-hints"><kbd>↑</kbd><kbd>↓</kbd> to navigate · <kbd>↵</kbd> to open</div>
+    <div class="palette-hints"><kbd>↑</kbd><kbd>↓</kbd> to navigate · <kbd>↵</kbd> to open · type <code>Class.member</code> to scope</div>
   </div>
 </div>
 <script src="/assets/app.js" defer></script>
+${ANALYTICS}
 </body>
 </html>`;
 }

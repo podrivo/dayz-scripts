@@ -26,6 +26,7 @@ import { Worker } from 'node:worker_threads';
 import { CACHE_DIR, DATA_DIR, DIST_DIR, ROOT, extractSources, readJson, sourceBlobs } from '../util.js';
 import { buildSiteModel } from './model.js';
 import { diffModels } from './diff.js';
+import { SITE_URL } from './content.js';
 import { PageMemo } from './memo.js';
 import { pages as sitePages } from './routes.js';
 import { render404 } from './render.js';
@@ -269,8 +270,8 @@ const moveRedirects = movedPages.flatMap(([from, to]) => [
 fs.writeFileSync(
   path.join(DIST_DIR, '_redirects'),
   [
-    'https://dayz.yadz.app/* https://dayz-scripts.yadz.app/:splat 301!',
-    'https://dayz-docs.yadz.app/* https://dayz-scripts.yadz.app/:splat 301!',
+    `https://dayz.yadz.app/* ${SITE_URL}/:splat 301!`,
+    `https://dayz-docs.yadz.app/* ${SITE_URL}/:splat 301!`,
     '/v/ / 302',
     ...moveRedirects,
     `/v/${buildList[0].label}/* /:splat 301`,
@@ -278,7 +279,7 @@ fs.writeFileSync(
     '',
   ].join('\n')
 );
-fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), 'User-agent: *\nAllow: /\nDisallow: /v/\nSitemap: https://dayz-scripts.yadz.app/sitemap.xml\n');
+fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /v/\nSitemap: ${SITE_URL}/sitemap.xml\n`);
 
 // ---- rendering ------------------------------------------------------------
 
@@ -320,7 +321,7 @@ function renderVersion(site, diff, prevLabel, versionIndex, blobs) {
     const file = path.join(versionDir, p.file);
     if (!p.asset) {
       pages++;
-      if (isLatest) sitemapUrls.push(`https://dayz-scripts.yadz.app/${p.rel}`);
+      if (isLatest) sitemapUrls.push(`${SITE_URL}/${p.rel}`);
     }
 
     let deps;

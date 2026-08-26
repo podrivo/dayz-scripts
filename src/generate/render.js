@@ -2,7 +2,7 @@
 
 import {
   esc, layout, linkType, typeUrl, condBadges, modBadges,
-  methodSig, varSig, renderDoc, briefOf, EXT,
+  methodSig, varSig, renderDoc, briefOf, filterBar, slug, ACCESS_CHIPS, EXT,
 } from './html.js';
 import {
   OFFICIAL_LINKS, COMMUNITY_LINKS, FORUM_THREADS, VERSION_TITLES, YADZ_DISCORD,
@@ -308,6 +308,7 @@ export function renderAnnotated(ctx, letters) {
 <h1>Data Structures <span class="count">${site.classes.size.toLocaleString('en-US')}</span></h1>
 <p>Every Enforce Script class in DayZ ${esc(site.version)}, with a short description where the sources document one.</p>
 ${letterBar(base, 'classes/', letters.keys())}
+${filterBar('Filter classes…')}
 ${sections}`;
   return layout({
     ...ctx,
@@ -332,6 +333,7 @@ export function renderClassesIndex(ctx, letters) {
 <h1>Data Structure Index <span class="count">${site.classes.size.toLocaleString('en-US')}</span></h1>
 <p>All class names, alphabetically. Follow a letter for the same list with descriptions.</p>
 ${letterBar(base, 'classes/', letters.keys())}
+${filterBar('Filter classes…')}
 ${sections}`;
   return layout({
     ...ctx,
@@ -355,6 +357,7 @@ export function renderClassesLetter(ctx, letter, names, letters) {
   const content = `
 <h1>Data Structures — ${letterTitle(letter)} <span class="count">${names.length}</span></h1>
 ${letterBar(base, 'classes/', letters, letter)}
+${filterBar('Filter classes…')}
 <table class="list"><tbody>${rows}</tbody></table>`;
   return layout({
     ...ctx,
@@ -399,6 +402,7 @@ export function renderFields(ctx, letter, entries, letters, kind) {
 <p>${blurb} The same name is often declared by many classes, so each one links to every class that has it.</p>
 <div class="tabs">${tabs}</div>
 ${letterBar(base, dir, letters, letter)}
+${letter ? filterBar('Filter fields…') : ''}
 ${body}`;
   return layout({
     ...ctx,
@@ -427,6 +431,14 @@ export function renderClass(ctx, cls) {
       return site.classes.has(n) ? `<a href="${base}class/${n}/">${esc(n)}</a>` : esc(n);
     })
     .join(' <span class="chain-sep">›</span> ');
+
+  // Only worth its own page when there is something above to inherit from;
+  // without a base the list would be this page over again. Whether the chain
+  // holds a documented class is already part of what this page depends on
+  // (see classDeps), so the link cannot go stale.
+  const allMembers = ancestors.some((n) => site.classes.has(n))
+    ? `<p class="all-members"><a href="${base}class/${cls.name}/members/">All members, including inherited</a></p>`
+    : '';
 
   const kids = site.children.get(cls.name) || [];
   const derived = kids.length
@@ -466,7 +478,14 @@ ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}
   };
 
   const section = (title, items, block) =>
-    items.length ? `<h2 id="${title.toLowerCase().replace(/\s/g, '-')}">${title} <span class="count">${items.length}</span></h2>\n${items.map(block).join('\n')}` : '';
+    items.length ? `<h2 id="${slug(title)}">${title} <span class="count">${items.length}</span></h2>\n${items.map(block).join('\n')}` : '';
+
+  // A short class reads as a list; a long one has to be searched, and
+  // PlayerBase alone declares 876 members.
+  const total = cls.members.length + cls.methods.length;
+  const filter = total >= 12
+    ? filterBar(`Filter ${total.toLocaleString('en-US')} members…`, ACCESS_CHIPS)
+    : '';
 
   const locations = locationLinks(
     site,
@@ -492,14 +511,16 @@ ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}
 <p class="chain">${chain}</p>
 ${module}
 ${basesNote}
+${allMembers}
 ${derived}
 ${attrs}
 ${cls.doc ? `<div class="class-doc">${renderDoc(cls.doc, site, base)}</div>` : ''}
+${filter}
 ${section('Constants', constants, memberBlock)}
 ${section('Members', vars, memberBlock)}
 ${section('Constructors', ctors, methodBlock)}
 ${section('Methods', methods, methodBlock)}
-<h2>Defined in</h2>
+<h2 id="defined-in">Defined in</h2>
 <p class="locations">${locations}</p>`;
 
   const brief = cls.doc ? briefOf(cls.doc, null, base).replace(/<[^>]+>/g, '') : '';
@@ -509,6 +530,65 @@ ${section('Methods', methods, methodBlock)}
     active: 'annotated/',
     description: brief || `${cls.name} class — DayZ Enforce Script API`,
     breadcrumbs: [{ label: 'Data Structures', href: `${base}annotated/` }, { label: cls.name }],
+    content,
+  });
+}
+
+// ---------------------------------------------------------------------------
+
+/**
+ * Every member reachable on a class, its own and its ancestors'.
+ *
+ * The question this answers — "what can I actually call on this thing" — has
+ * no answer anywhere else, on this site or on either of the Doxygen ones.
+ * ItemBase is ItemBase › InventoryItem › EntityAI › Entity › ObjectTyped ›
+ * Object › IEntity › Managed, and its own page shows one eighth of it.
+ *
+ * One row per name rather than per declaration, because that is what a call
+ * site resolves to: the nearest class in the chain that declares the name
+ * wins, and the ones it shadows are named beside it. Overloads collapse into
+ * the row of the name they share, counted rather than repeated.
+ */
+export function renderClassMembers(ctx, cls) {
+  const { site, base } = ctx;
+  const chain = [cls.name, ...site.ancestorsOf(cls.name)].filter((n) => site.classes.has(n));
+
+  // The rows are built in the browser, and the only thing shipped is the
+  // chain to build them from.
+  //
+  // Written into the page instead, they cost 564 MB across one build: a
+  // member appears once per class that inherits it, so the total is every
+  // member times its descendants, and DayZ's hierarchies are both deep and
+  // wide. The same rows composed from search.json — which already lists every
+  // class's methods and fields with their owner, and which the page fetches
+  // for the command palette regardless — cost nothing at all.
+  //
+  // What that trades away is the table for a reader without JavaScript. The
+  // chain below is the honest fallback: every class in it is a link, and each
+  // of those pages is static and lists its own members in full.
+  const content = `
+<h1>All members of ${esc(cls.name)}</h1>
+<p class="chain">${chain
+    .map((n, i) => (i === 0 ? `<strong>${esc(n)}</strong>` : `<a href="${base}class/${n}/">${esc(n)}</a>`))
+    .join(' <span class="chain-sep">›</span> ')}</p>
+<p>Everything callable on a <code>${esc(cls.name)}</code>, its own and everything it inherits from the ${(chain.length - 1).toLocaleString('en-US')} ${chain.length === 2 ? 'class' : 'classes'} above. Each name links to the class that declares it; where a name is declared more than once in the chain, the nearest one is the one that answers.</p>
+<p><a href="${base}class/${cls.name}/">Back to ${esc(cls.name)}</a></p>
+${filterBar('Filter members…')}
+<table class="list all-members-table" id="allMembers" data-chain="${esc(chain.join(','))}">
+<thead><tr><th>Member</th><th>Declared by</th><th></th></tr></thead>
+<tbody></tbody></table>
+<p class="members-fallback">Assembling the list from the class index. If it does not appear, each class in the chain above lists its own members in full.</p>`;
+
+  return layout({
+    ...ctx,
+    title: `${cls.name} — all members`,
+    active: 'annotated/',
+    description: `Every member of ${cls.name}, its own and those inherited from ${chain.slice(1).join(', ')}.`,
+    breadcrumbs: [
+      { label: 'Data Structures', href: `${base}annotated/` },
+      { label: cls.name, href: `${base}class/${cls.name}/` },
+      { label: 'All members' },
+    ],
     content,
   });
 }
@@ -674,6 +754,7 @@ export function renderGlobals(ctx, kind) {
 <h1>Globals${key ? ` — ${label}` : ''}${key ? ` <span class="count">${counts[key].toLocaleString('en-US')}</span>` : ''}</h1>
 <p>Functions, variables, type aliases, enumerations and macros declared outside any class.</p>
 <div class="tabs">${tabs}</div>
+${filterBar(`Filter ${key ? label.toLowerCase() : 'globals'}…`)}
 ${body}`;
 
   return layout({
@@ -713,6 +794,7 @@ export function renderFilesIndex(ctx) {
 <h1>File List <span class="count">${site.files.length.toLocaleString('en-US')}</span></h1>
 <p>Every script file, in the directory layout the game ships them in. Expand a directory to see its files.</p>
 <div class="hierarchy-tools"><button id="expandAll" class="btn">Expand all</button> <button id="collapseAll" class="btn">Collapse all</button></div>
+${filterBar('Filter files and directories…')}
 <ul class="tree">${site.dirRoots.map((d) => dirNode(d, 0)).join('')}${site.rootFiles.map(fileRow).join('')}</ul>`;
   return layout({ ...ctx, title: 'File List', active: 'files/', breadcrumbs: [{ label: 'Files' }], content });
 }
@@ -735,6 +817,7 @@ export function renderModulesIndex(ctx) {
 <h1>Modules <span class="count">${site.groups.size}</span></h1>
 <p>Topics the scripts group themselves into with Doxygen <code>\\defgroup</code> blocks — mostly the engine-facing API and the constant tables. Classes and constants that belong to a topic link back to it.</p>
 <div class="hierarchy-tools"><button id="expandAll" class="btn">Expand all</button> <button id="collapseAll" class="btn">Collapse all</button></div>
+${filterBar('Filter topics…')}
 <ul class="tree">${site.moduleRoots.map((n) => node(n, 0)).join('')}</ul>`;
   return layout({
     ...ctx,
@@ -759,7 +842,7 @@ function rootTopic(site, name) {
 export function renderModule(ctx, mod) {
   const { site, base } = ctx;
 
-  const section = (title, body) => (body ? `<h2>${title}</h2>\n${body}` : '');
+  const section = (title, body) => (body ? `<h2 id="${slug(title)}">${title}</h2>\n${body}` : '');
   const nameList = (names, kind) =>
     names.length
       ? `<div class="derived-list">${[...names]
@@ -909,6 +992,7 @@ ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e
 ${parent}
 ${mod.desc ? `<div class="class-doc">${renderDoc(mod.desc.replace(/[\\@](def|addto)group\s+\S+[^\n]*/, '').replace(/@[{}]/g, ''), site, base)}</div>` : ''}
 ${empty}
+${fnEntries.length + varEntries.length + valueEntries.length >= 12 ? filterBar('Filter this topic…') : ''}
 ${section('Modules', children)}
 ${section('Data Structures', nameList(mod.classes, 'class'))}
 ${section('Macros', macroRows)}
@@ -997,6 +1081,7 @@ export function renderHierarchy(ctx) {
 <h1>Class Hierarchy</h1>
 <p>Expand a node to see the classes derived from it. Top-level entries either have no base class or extend an engine class that is not defined in scripts.</p>
 <div class="hierarchy-tools"><button id="expandAll" class="btn">Expand all</button> <button id="collapseAll" class="btn">Collapse all</button></div>
+${filterBar('Filter classes…')}
 <ul class="tree">${roots.map((r) => renderNode(r, 0)).join('\n')}</ul>`;
   return layout({
     ...ctx,
@@ -1090,5 +1175,5 @@ export function render404(ctx) {
 <h1>Page not found</h1>
 <p>This page doesn't exist in this version of the documentation. It may have been added in a newer DayZ version, or removed.</p>
 <p><a href="${ctx.root}">Go to the latest documentation</a> or use the search box above.</p>`;
-  return layout({ ...ctx, title: 'Not found', content });
+  return layout({ ...ctx, title: 'Not found', noindex: true, content });
 }

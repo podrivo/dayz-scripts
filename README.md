@@ -21,7 +21,9 @@ so anyone who used that documentation finds the same things in the same places:
   describe rather than one imposed here.
 - **Data Structures** — every class, as an annotated list (`/annotated/`), a
   name-only index by initial (`/classes/`), the inheritance tree
-  (`/hierarchy/`) and an index of all ~43,000 members (`/fields/`).
+  (`/hierarchy/`) and an index of all ~43,000 members (`/fields/`). A class
+  with a base class also has `/class/<Name>/members/`, everything it inherits
+  in one list.
 - **Files** — the script tree (`/files/`, `/file/<path>/`) and everything
   declared outside a class (`/globals/`), split into functions, variables,
   typedefs, enumerations, enumerators and macros.
@@ -162,8 +164,37 @@ the page: `site/app.js` already highlights the source client-side, and
 owner, so the file page is painted once immediately and again once that index
 arrives. Nothing is added to the HTML, which is what lets a file page stay
 byte-identical across builds and keep its hard link — the same constraint that
-keeps the module tree out of the sidebar. Ambiguous names are left as plain
-text, so about a quarter of the identifiers on a page become links.
+keeps the module tree out of the sidebar.
+
+Resolving against that index alone only links the names exactly one
+declaration in the build answers to, which leaves out `Init`, `Update`,
+`GetGame` and most of what is worth clicking — about 36% of the identifiers on
+a page. What is missing is the scope, and the generator has it, so each file
+page carries a `links.json` beside it (`src/generate/srclinks.js`) holding the
+line range of every class body with its inheritance chain, plus the line each
+declaration sits on. A bare `GetPosition()` inside `PlayerBase` is then looked
+up against `PlayerBase` and then its ancestors, which takes coverage to about
+60% — the rest being local variables and parameters, which have nothing to
+link to. The same file tells each declaration's line number where its
+documentation is, so the gutter links back the way the `src` link on a member
+links out.
+
+## All members of a class
+
+`/class/<Name>/members/` lists everything callable on a class, its own and
+everything it inherits, with the class that declares each name and whether it
+overrides one further up. `ItemBase` is `ItemBase › InventoryItem › EntityAI ›
+Entity › ObjectTyped › Object › IEntity › Managed`, and its own page shows one
+eighth of the 1,187 members it actually has.
+
+The rows are built in the browser. Written into the page they cost 564 MB
+across a single build, because a member appears once for every class that
+inherits it and these hierarchies are both deep and wide; composed from
+`search.json`, which already lists every class's methods and fields with their
+owner and is fetched for the command palette regardless, they cost nothing.
+The page ships the chain and an empty table, so its bytes depend on the chain
+alone and adding a member to a base class does not touch any of the six
+thousand pages below it.
 
 ## Path capitalisation
 

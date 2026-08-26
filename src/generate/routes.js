@@ -11,11 +11,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { CACHE_DIR } from '../util.js';
 import { buildSearchIndex } from './search.js';
-import { recordingSite, classDeps, enumDeps } from './memo.js';
+import { buildFileLinks, chainBuilder } from './srclinks.js';
+import { recordingSite, classDeps, enumDeps, membersDeps } from './memo.js';
 import {
   renderHome, renderAnnotated, renderClassesIndex, renderClassesLetter, renderClass,
-  renderFields, renderEnum, renderGlobals, renderModulesIndex, renderModule,
-  renderFilesIndex, renderFile, renderHierarchy, renderChanges,
+  renderClassMembers, renderFields, renderEnum, renderGlobals, renderModulesIndex,
+  renderModule, renderFilesIndex, renderFile, renderHierarchy, renderChanges,
 } from './render.js';
 
 /**
@@ -89,10 +90,15 @@ export function* pages(site, opts) {
     yield page(rel, 'index', () => renderClassesLetter(ctx(rel), l, names, letters.keys()));
   }
 
-  // class pages
+  // class pages, and for anything with a base the flat list of everything it
+  // inherits as well
   for (const cls of site.classes.values()) {
     const rel = `class/${cls.name}/`;
     yield page(rel, 'class', (seen) => renderClass(seeing(rel, seen), cls), () => classDeps(site, cls, isLatest));
+    if (site.ancestorsOf(cls.name).some((n) => site.classes.has(n))) {
+      const mrel = `${rel}members/`;
+      yield page(mrel, 'class', (seen) => renderClassMembers(seeing(mrel, seen), cls), () => membersDeps(site, cls));
+    }
   }
 
   // data fields: every class member, by initial and by kind
@@ -136,6 +142,7 @@ export function* pages(site, opts) {
 
   // file pages with embedded source
   const fileModels = new Map(site.rawFiles.map((f) => [f.path, f]));
+  let chainOf;
   for (const f of site.files) {
     const rel = `file/${f.path.replace(/^scripts\//, '')}/`;
     // The blob sha is the whole dependency: renderFile reads nothing off the
@@ -146,6 +153,22 @@ export function* pages(site, opts) {
       () => renderFile(ctx(rel), f, fileModels.get(f.path), fs.readFileSync(path.join(srcDir, f.path), 'utf8')),
       () => blobs.get(f.path)
     );
+    // What the page's identifiers resolve to, fetched rather than inlined so
+    // the page above keeps its hard link. Unlike that page this one does read
+    // the site model — an inheritance chain can change under an untouched
+    // file — so the chain goes into its dependency hash alongside the blob.
+    yield {
+      rel: `${rel}links.json`,
+      file: `${rel}links.json`,
+      kind: 'file',
+      asset: true,
+      render: () => JSON.stringify(buildFileLinks(fileModels.get(f.path), (chainOf ||= chainBuilder(site)))),
+      deps: () => {
+        chainOf ||= chainBuilder(site);
+        const chains = fileModels.get(f.path).classes.map((c) => chainOf(c.name).join('>')).join(';');
+        return `${blobs.get(f.path) || ''}|${chains}`;
+      },
+    };
   }
 
   // search index

@@ -182,3 +182,13 @@ export function classDeps(site, cls, xref = true) {
 export function enumDeps(site, en) {
   return sha1(`${shownPaths(site, en.locations)}\n${JSON.stringify(en)}`);
 }
+
+/**
+ * The all-members page is its inheritance chain and nothing else — the rows
+ * are composed in the browser from search.json — so the chain is the whole of
+ * what it depends on. Adding a member to a base class does not touch it,
+ * which is what keeps six thousand of these pages reusable between builds.
+ */
+export function membersDeps(site, cls) {
+  return sha1([cls.name, ...site.ancestorsOf(cls.name)].filter((n) => site.classes.has(n)).join(','));
+}

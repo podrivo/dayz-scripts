@@ -2,6 +2,14 @@
 // forum thread for each PC stable update. None of it can be derived from the
 // script sources, so it lives here and grows as new builds ship.
 
+/** Where the site is served from, for the absolute URLs that have to name it:
+ *  the sitemap, robots.txt, and the canonical and OpenGraph tags on a page. */
+export const SITE_URL = 'https://dayz-scripts.yadz.app';
+
+/** The same Google Analytics property the Doxygen site reported to, so the
+ *  two sets of numbers stay one series across the move. */
+export const ANALYTICS_ID = 'G-R8ZT2QC248';
+
 export const OFFICIAL_LINKS = [
   ['DayZ Forums', 'https://forums.dayz.com/', 'Announcements and stable update threads'],
   ['Community Wiki', 'https://community.bistudio.com/wiki/Category:DayZ', 'Bohemia Interactive wiki pages for DayZ'],

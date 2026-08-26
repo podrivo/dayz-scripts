@@ -9,6 +9,7 @@ import { layout } from '../src/generate/html.js';
 import { buildSiteModel } from '../src/generate/model.js';
 import { renderClass, renderEnum } from '../src/generate/render.js';
 import { classDeps } from '../src/generate/memo.js';
+import { SITE_URL } from '../src/generate/content.js';
 
 const BUILD_A = { label: '1.29.163709', version: '1.29', build: '1.29.163709', date: '2026-08-12', sha: 'aaa' };
 const BUILD_B = { label: '1.19.155390', version: '1.19', build: '1.19.155390', date: '2022-11-15', sha: 'bbb' };
@@ -72,7 +73,7 @@ test('the sidebar is the tree Doxygen had, and marks the page once', () => {
     'Data Fields', 'Files', 'File List', 'Globals', 'Typedefs', 'Enumerator', 'Macros', 'Changelog',
   ];
   for (const l of labels) assert.ok(html.includes(`>${l}</a>`), `sidebar is missing ${l}`);
-  assert.equal(html.match(/ active"/g).length, 1, 'exactly one entry is the current page');
+  assert.equal(html.match(/nav-(?:item|sub) active"/g).length, 1, 'exactly one entry is the current page');
   assert.equal(html.match(/<details class="nav-sec" open>/g).length, 2, 'Files and Globals are open');
 });
 
@@ -182,6 +183,25 @@ test('a class page depends on whether the names it calls are still unambiguous',
     classDeps(shared, shared.classes.get('Foo')),
     'so its memo key must differ too'
   );
+});
+
+// The canonical URL is the one absolute URL a page carries, so it is also the
+// one place a build number could leak back into the bytes. It names the page
+// at the site root instead, which is both the right answer for a crawler
+// looking at an archived build and the only one that keeps a page reusable.
+test('canonical and og:url name the page, never the build that rendered it', () => {
+  const html = layout({ title: 'Foo', base: '../../', versionPath: 'class/Foo/', content: '' });
+  const canon = html.match(/<link rel="canonical" href="([^"]*)">/)[1];
+  assert.equal(canon, `${SITE_URL}/class/Foo/`);
+  assert.ok(!canon.includes('/v/'), 'canonical must not name a build');
+  assert.ok(html.includes(`<meta property="og:url" content="${canon}">`), 'og:url must agree with it');
+  assert.equal(html.match(/<meta property="og:title" content="([^"]*)">/)[1], 'Foo · DayZ Scripts');
+});
+
+test('the 404 page asks not to be indexed and claims no canonical', () => {
+  const html = layout({ title: 'Not found', base: '/', versionPath: '', noindex: true, content: '' });
+  assert.match(html, /<meta name="robots" content="noindex">/);
+  assert.ok(!html.includes('rel="canonical"'), '404 must not claim to be a page');
 });
 
 test('a class page without docs does not fall back to a versioned description', () => {
