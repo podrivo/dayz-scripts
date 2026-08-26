@@ -143,6 +143,21 @@ export function* pages(site, opts) {
   // No diff is built for this one: it picks its own pair of builds and compares
   // them in the browser. See renderCompare in src/generate/render.js.
   yield page('compare/', 'index', () => renderCompare(ctx('compare/')));
+  // The same diff /changes/ renders, as data. Comparing two builds that are not
+  // neighbours means folding together every one of these that lies between
+  // them, which is why each build ships its own rather than the site shipping a
+  // single file holding all of them: most comparisons span a handful of builds,
+  // and only those get fetched. The whole history is a few hundred KB even so.
+  yield {
+    rel: 'diff.json',
+    file: 'diff.json',
+    kind: 'index',
+    asset: true,
+    render: () => {
+      const { diff, prevLabel } = changes();
+      return JSON.stringify(diff ? { prev: prevLabel, kinds: diff } : { prev: null });
+    },
+  };
 
   // file pages with embedded source
   const fileModels = new Map(site.rawFiles.map((f) => [f.path, f]));

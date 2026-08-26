@@ -206,7 +206,7 @@
   const KIND_BONUS = { c: 20, e: 12, g: 10, m: 5, v: 3 };
 
   async function loadIndex() {
-    if (index) return index;
+    if (index) return;
     const res = await fetch(BASE + 'search.json');
     index = await res.json();
     entries = [];
@@ -223,7 +223,6 @@
     for (const n of list('macros')) entries.push(['d', n, n]);
     for (const [name, title] of list('topics')) entries.push(['g', title, name]);
     for (const p of list('files')) entries.push(['F', p.split('/').pop(), p]);
-    return index;
   }
 
   function urlFor(e) {
@@ -391,14 +390,12 @@
 
   /* ---------- compare page ----------
      The one page whose behaviour is fetched rather than shipped. /compare/ is
-     a single URL out of ~416k, and its build pickers, its filter and the diff
-     it composes have no business in the script every class page loads. It is
-     handed the two things it cannot get for itself: the build list, and the
-     index the names come out of. */
+     a single URL out of some 660,000, and its build pickers, its filter and the
+     diff it composes have no business in the script every class page loads. */
   const compareBox = $('#compare');
   if (compareBox) {
     Promise.all([import('/assets/compare.js'), identity])
-      .then(([{ initCompare }, builds]) => initCompare({ builds, loadIndex, fmtDate }))
+      .then(([{ initCompare }, builds]) => initCompare({ builds, fmtDate }))
       .catch(() => {
         compareBox.setAttribute('aria-busy', 'false');
         compareBox.className = 'cmp muted';

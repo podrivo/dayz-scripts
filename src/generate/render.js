@@ -7,6 +7,7 @@ import {
 import {
   OFFICIAL_LINKS, COMMUNITY_LINKS, FORUM_THREADS, VERSION_TITLES, YADZ_DISCORD,
 } from './content.js';
+import { ADDED, REMOVED, CHANGED, DIFF_KINDS } from './diff.js';
 
 function anchorFor(used, name) {
   let a = name.replace(/[^\w]/g, '_');
@@ -1094,71 +1095,83 @@ ${filterBar('Filter classes…')}
 
 // ---------------------------------------------------------------------------
 
+// How a row's operation is spelled on the page. The signs are the ones the
+// diff tables have always used; site/compare.js repeats them.
+const DIFF_SIGNS = { [ADDED]: ['added', '+'], [REMOVED]: ['removed', '−'], [CHANGED]: ['changed', '±'] };
+
+/** One member's line in a diff table. */
+function diffRow(row) {
+  const [cls, sign] = DIFF_SIGNS[row[0]];
+  const body = row[0] === CHANGED
+    ? `<code class="old">${esc(row[2])}</code><br><code>${esc(row[3])}</code>`
+    : `<code>${esc(row[2])}</code>`;
+  return `<tr class="${cls}"><td>${sign}</td><td>${body}</td></tr>`;
+}
+
 export function renderChanges(ctx, diff, prevLabel) {
   const { site, base } = ctx;
   if (!diff) {
     const content = `<h1>Changelog — DayZ ${esc(site.build)}</h1>
-<p>This is the oldest build tracked, so there is no previous build to compare against.</p>`;
+<p>This is the oldest build tracked, so there is no previous build to compare against.</p>
+<p><a href="${base}compare/">Compare any two builds</a> instead.</p>`;
     return layout({ ...ctx, title: 'Changelog', active: 'changes/', breadcrumbs: [{ label: 'Changelog' }], content });
   }
 
-  const nameList = (names, kind) =>
-    names.length
-      ? `<div class="derived-list">${names
-          .map((n) => {
-            const known = kind === 'class' ? site.classes.has(n) : kind === 'enum' ? site.enums.has(n) : false;
-            return known ? `<a href="${base}${kind}/${n}/">${esc(n)}</a>` : `<span>${esc(n)}</span>`;
-          })
-          .join(' ')}</div>`
-      : '<p class="muted">None.</p>';
+  // Added and changed names still have a page in this build, so they are
+  // linked; a removed one does not, and never did.
+  const names = (list, url, linked) =>
+    `<div class="namegrid">${list
+      .map((n) => (linked ? `<a href="${base}${url(n)}">${esc(n)}</a>` : `<span>${esc(n)}</span>`))
+      .join('')}</div>`;
 
-  const clsChanged = diff.classesChanged
-    .map((c) => {
-      const rows = [];
-      for (const s of c.methodsAdded) rows.push(`<tr class="added"><td>+</td><td><code>${esc(s)}</code></td></tr>`);
-      for (const s of c.methodsRemoved) rows.push(`<tr class="removed"><td>−</td><td><code>${esc(s)}</code></td></tr>`);
-      for (const ch of c.methodsChanged)
-        rows.push(`<tr class="changed"><td>±</td><td><code class="old">${esc(ch.from)}</code><br><code>${esc(ch.to)}</code></td></tr>`);
-      for (const s of c.membersAdded) rows.push(`<tr class="added"><td>+</td><td><code>${esc(s)}</code></td></tr>`);
-      for (const s of c.membersRemoved) rows.push(`<tr class="removed"><td>−</td><td><code>${esc(s)}</code></td></tr>`);
-      const link = site.classes.has(c.name) ? `<a href="${base}class/${c.name}/">${esc(c.name)}</a>` : esc(c.name);
-      return `<details class="diff-class"><summary>${link} <span class="count">${rows.length}</span></summary>
-<table class="list difftable"><tbody>${rows.join('')}</tbody></table></details>`;
-    })
-    .join('\n');
+  const totals = { added: 0, removed: 0, changed: 0 };
+  const sections = [];
+  for (const [key, label, url] of DIFF_KINDS) {
+    const k = diff[key];
+    if (!k) continue;
+    totals.added += k.added.length;
+    totals.removed += k.removed.length;
+    totals.changed += k.changed.length;
+    const total = k.added.length + k.removed.length + k.changed.length;
+    if (!total) continue;
 
-  const enumChanged = diff.enumsChanged
-    .map((e) => {
-      const rows = [
-        ...e.valuesAdded.map((v) => `<tr class="added"><td>+</td><td><code>${esc(v)}</code></td></tr>`),
-        ...e.valuesRemoved.map((v) => `<tr class="removed"><td>−</td><td><code>${esc(v)}</code></td></tr>`),
-      ];
-      const link = site.enums.has(e.name) ? `<a href="${base}enum/${e.name}/">${esc(e.name)}</a>` : esc(e.name);
-      return `<details class="diff-class"><summary>${link} <span class="count">${rows.length}</span></summary>
-<table class="list difftable"><tbody>${rows.join('')}</tbody></table></details>`;
-    })
-    .join('\n');
+    const parts = [];
+    if (k.added.length) {
+      parts.push(`<h3>Added <span class="count">${k.added.length}</span></h3>
+${names(k.added, url, true)}`);
+    }
+    if (k.removed.length) {
+      parts.push(`<h3>Removed <span class="count">${k.removed.length}</span></h3>
+${names(k.removed, url, false)}`);
+    }
+    if (k.changed.length) {
+      const entries = k.changed.map((e) => {
+        const rows = e.rows.map(diffRow).join('');
+        const link = `<a href="${base}${url(e.name)}">${esc(e.name)}</a>`;
+        const table = `<table class="list difftable"><tbody>${rows}</tbody></table>`;
+        // One before-and-after line is not worth hiding behind a disclosure;
+        // a class with nine changed methods is.
+        return e.rows.length > 1
+          ? `<details class="diff-class"><summary>${link} <span class="count">${e.rows.length}</span></summary>${table}</details>`
+          : `<div class="diff-flat"><p class="diff-flat-name">${link}</p>${table}</div>`;
+      });
+      parts.push(`<h3>Changed <span class="count">${k.changed.length}</span></h3>
+<div class="cmp-list">${entries.join('\n')}</div>`);
+    }
+    sections.push(`<h2>${esc(label)} <span class="count">${total}</span></h2>
+${parts.join('\n')}`);
+  }
 
   const content = `
 <h1>Changelog — DayZ ${esc(site.build)} <span class="muted">vs ${esc(prevLabel)}</span></h1>
 <section class="stats">
-  <span class="stat"><strong>${diff.classesAdded.length}</strong><span>classes added</span></span>
-  <span class="stat"><strong>${diff.classesRemoved.length}</strong><span>classes removed</span></span>
-  <span class="stat"><strong>${diff.classesChanged.length}</strong><span>classes changed</span></span>
-  <span class="stat"><strong>${diff.enumsAdded.length + diff.enumsRemoved.length + diff.enumsChanged.length}</strong><span>enum changes</span></span>
+  <span class="stat"><strong>${totals.added}</strong><span>Additions</span></span>
+  <span class="stat"><strong>${totals.removed}</strong><span>Removals</span></span>
+  <span class="stat"><strong>${totals.changed}</strong><span>Changes</span></span>
 </section>
-<h2>New classes <span class="count">${diff.classesAdded.length}</span></h2>
-${nameList(diff.classesAdded, 'class')}
-<h2>Removed classes <span class="count">${diff.classesRemoved.length}</span></h2>
-${nameList(diff.classesRemoved, 'none')}
-<h2>Changed classes <span class="count">${diff.classesChanged.length}</span></h2>
-${clsChanged || '<p class="muted">None.</p>'}
-<h2>New enums <span class="count">${diff.enumsAdded.length}</span></h2>
-${nameList(diff.enumsAdded, 'enum')}
-<h2>Removed enums <span class="count">${diff.enumsRemoved.length}</span></h2>
-${nameList(diff.enumsRemoved, 'none')}
-<h2>Changed enums <span class="count">${diff.enumsChanged.length}</span></h2>
-${enumChanged || '<p class="muted">None.</p>'}
+<p>This is one build against the one before it. To compare builds further apart,
+use <a href="${base}compare/?from=${esc(prevLabel)}&amp;to=${esc(site.build)}">Compare builds</a>.</p>
+${sections.join('\n') || '<p class="muted">Nothing in the scripting API changed between these two builds.</p>'}
 <h2>All builds</h2>
 <p>${ctx.versions
     .map((v, i) => {
