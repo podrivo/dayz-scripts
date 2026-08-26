@@ -18,10 +18,9 @@ export const OFFICIAL_LINKS = [
 ];
 
 export const COMMUNITY_LINKS = [
-  ['Enfusion Modders', 'https://discord.gg/enfusion-modders-452035973786632194', 'Discord · modding and scripting help'],
-  ['DZ Academy', 'https://discord.gg/Mh5nhD3qth', 'Discord · modders and server owners'],
-  ['DayZ Editor', 'https://discord.gg/z65nVkU', 'Discord · support for the DayZ Editor mod'],
-  ['DayZ BoosterZ Tools', 'https://dayzboosterz.com/showcase', 'Web tools for DayZ server owners'],
+  ['DayZ Modders', 'https://discord.gg/dayz-modders-452035973786632194', 'Discord · modding and scripting help'],
+  ['DayZ Academy', 'https://discord.gg/BMnpGEzKdx', 'Discord · modders and server owners'],
+  ['DayZ Editor', 'https://discord.gg/dayz-editor-738181536029081662', 'Discord · support for the DayZ Editor mod'],
   ["Mikero's Tools", 'https://mikero.bytex.digital/', 'PBO packing and file conversion tools'],
   ['WOBO Tools', 'https://wobo.tools/', 'Item, weapon and loot data explorer'],
 ];

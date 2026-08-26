@@ -169,6 +169,10 @@ pre code { background: none; padding: 0; }
   width: 15px; height: 15px; flex: none;
   --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='1.8'%3E%3Ccircle cx='6.8' cy='6.8' r='4.6'/%3E%3Cpath d='M10.2 10.2 14 14'/%3E%3C/svg%3E");
 }
+.ic-ext {
+  width: 16px; height: 16px;
+  --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3H3.5A1.5 1.5 0 0 0 2 4.5v8A1.5 1.5 0 0 0 3.5 14h8A1.5 1.5 0 0 0 13 12.5V10'/%3E%3Cpath d='M8.5 2.5h5v5M13.5 2.5 7 9'/%3E%3C/svg%3E");
+}
 /* theme icon mirrors the resolved theme: sun in light, moon in dark */
 .ic-theme { width: 18px; height: 18px; --ic: var(--ic-sun); }
 :root {
@@ -484,10 +488,14 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 .stat span { font-size: 12.5px; color: var(--fg2); }
 
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
-.card { padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; color: var(--fg); }
+.card { padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; color: var(--fg); transition: border-color .15s ease; }
 .card:hover { border-color: var(--accent2); text-decoration: none; }
 .card h3 { margin: 0 0 4px; }
 .card p { margin: 0; color: var(--fg2); font-size: 13.5px; }
+.card-ext { position: relative; }
+.card-ext h3 { padding-right: 22px; }
+.card-ext .ic-ext { position: absolute; top: 12px; right: 12px; color: var(--accent2); transition: color .15s ease; }
+.card-ext:hover .ic-ext { color: var(--fg); }
 
 .quicklinks { padding-left: 20px; }
 .quicklinks li { margin: 4px 0; }

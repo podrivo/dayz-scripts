@@ -200,7 +200,8 @@ export function renderHome(ctx) {
   const linkCards = (links) => `<div class="cards">
 ${links
   .map(
-    ([label, url, desc]) => `<a class="card" href="${url}" ${EXT}>
+    ([label, url, desc]) => `<a class="card card-ext" href="${url}" ${EXT}>
+  <i class="ic ic-ext" aria-hidden="true"></i>
   <h3>${esc(label)}</h3>
   <p>${esc(desc)}</p>
 </a>`
@@ -256,7 +257,7 @@ ${links
 ${linkCards(OFFICIAL_LINKS)}
 <h2 id="community-links">Community links</h2>
 ${linkCards(COMMUNITY_LINKS)}
-<h2 id="changelog">PC stable changelog</h2>
+<h2 id="changelog">PC Stable Changelog</h2>
 <p>Every PC stable update thread on the DayZ Forums. For what changed in the scripts themselves, see the <a href="${base}changes/">${esc(site.version)} changelog</a>.</p>
 <div class="releases">
 ${releases}
