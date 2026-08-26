@@ -352,7 +352,7 @@ ${social}
     ${crumbs}
     ${o.content}
     <footer class="foot">
-      <p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a> · build <span id="footBuild"></span> · Unofficial, not affiliated with Bohemia Interactive · © 2022 Bohemia Interactive a.s., <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a></p>
+      <p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a> · build <span id="footBuild"></span> · Unofficial, not affiliated with Bohemia Interactive · © Bohemia Interactive a.s., <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a></p>
     </footer>
   </main>
 </div>

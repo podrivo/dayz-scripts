@@ -311,7 +311,7 @@ mine to license, and MIT does not extend to it. Those terms follow.
 holds the file and directory names of the script tree, and nothing of its
 contents, so that the site can spell paths the way the game does.)
 
-Those sources are © 2022 BOHEMIA INTERACTIVE a.s., all rights reserved, and are
+Those sources are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are
 licensed under the
 [DayZ Public License (DPL)](https://www.bohemia.net/community/licenses/dayz-public-license-dpl),
 which permits non-commercial, DayZ-only reuse with attribution. They are
