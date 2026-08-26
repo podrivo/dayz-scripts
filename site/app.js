@@ -98,8 +98,6 @@
     }
     const gh = $('#ghSrc');
     if (gh && current.sha) gh.href = gh.href.replace('/blob/main/', `/blob/${current.sha}/`);
-    const foot = $('#footBuild');
-    if (foot) foot.textContent = `${current.build} (${current.date})`;
     return builds;
   });
 

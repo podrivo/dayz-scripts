@@ -197,17 +197,25 @@ export function renderHome(ctx) {
   const stat = (n, label, href) =>
     `<a class="stat" href="${href}"><strong>${n.toLocaleString('en-US')}</strong><span>${label}</span></a>`;
 
-  const linkCards = (links) => `<div class="cards">
+  const linkCards = (links, ext = false) => `<div class="cards">
 ${links
   .map(
-    ([label, url, desc]) => `<a class="card card-ext" href="${url}" ${EXT}>
-  <i class="ic ic-ext" aria-hidden="true"></i>
-  <h3>${esc(label)}</h3>
+    ([label, url, desc]) => `<a class="card${ext ? ' card-ext' : ''}" href="${url}"${ext ? ` ${EXT}` : ''}>
+  ${ext ? '<i class="ic ic-ext" aria-hidden="true"></i>\n  ' : ''}<h3>${esc(label)}</h3>
   <p>${esc(desc)}</p>
 </a>`
   )
   .join('\n')}
 </div>`;
+
+  const explore = [
+    ['PlayerBase', `${base}class/PlayerBase/`, 'The player entity'],
+    ['ItemBase', `${base}class/ItemBase/`, 'Base of all items'],
+    ['EntityAI', `${base}class/EntityAI/`, 'Base of interactive entities'],
+    ['ActionBase', `${base}class/ActionBase/`, 'Player actions'],
+    ['DayZInfected', `${base}class/DayZInfected/`, 'The infected'],
+    ['CarScript', `${base}class/CarScript/`, 'Vehicles'],
+  ];
 
   const releases = renderReleases(ctx);
 
@@ -222,6 +230,7 @@ ${links
   <p>Browsable documentation for the DayZ Enforce Script sources — every class, method, enum and constant of DayZ ${esc(site.version)}, game build ${buildLine} (${esc(site.date)}), generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ&nbsp;Script&nbsp;Diff</a> repository.</p>
   <p>Made for anyone wandering the DayZ modding and scripting world, and meant to be quicker to browse than the raw sources. This is just the tip of the iceberg: there is no official detailed documentation on the subject, so community content is your best friend. Once you join one of the Discord servers below, check the pinned messages — most recurring questions are answered there.</p>
 </section>
+<div class="home-stack">
 <section class="stats">
   ${stat(s.classes, 'classes', base + 'annotated/')}
   ${stat(s.methods, 'methods', base + 'fields/')}
@@ -230,7 +239,6 @@ ${links
   ${stat(s.globals, 'constants', base + 'globals/variables/')}
   ${stat(s.files, 'script files', base + 'files/')}
 </section>
-<h2>How this is organised</h2>
 <div class="cards">
   <a class="card" href="${base}modules/">
     <h3>Modules</h3>
@@ -245,20 +253,13 @@ ${links
     <p>All ${s.files.toLocaleString('en-US')} script files with their sources, plus everything declared outside a class.</p>
   </a>
 </div>
-<h2>Start exploring</h2>
-<ul class="quicklinks">
-  <li><a href="${base}class/PlayerBase/">PlayerBase</a> — the player entity</li>
-  <li><a href="${base}class/ItemBase/">ItemBase</a> — base of all items</li>
-  <li><a href="${base}class/EntityAI/">EntityAI</a> — base of interactive entities</li>
-  <li><a href="${base}hierarchy/">Full class hierarchy</a></li>
-  <li><a href="${base}changes/">What changed in build ${esc(site.build)}</a></li>
-</ul>
+${linkCards(explore)}
+</div>
 <h2 id="official-links">Official links</h2>
-${linkCards(OFFICIAL_LINKS)}
+${linkCards(OFFICIAL_LINKS, true)}
 <h2 id="community-links">Community links</h2>
-${linkCards(COMMUNITY_LINKS)}
+${linkCards(COMMUNITY_LINKS, true)}
 <h2 id="changelog">PC Stable Changelog</h2>
-<p>Every PC stable update thread on the DayZ Forums. For what changed in the scripts themselves, see the <a href="${base}changes/">${esc(site.version)} changelog</a>.</p>
 <div class="releases">
 ${releases}
 </div>
@@ -270,6 +271,7 @@ ${releases}
     ...ctx,
     title: 'Welcome',
     active: '',
+    footer: false,
     description: `DayZ ${site.version} Enforce Script API documentation — classes, methods, enums and sources.`,
     content,
   });

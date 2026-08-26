@@ -282,9 +282,11 @@ The homepage carries the same two lists, from `src/generate/content.js`.
 - [DayZ Central Economy](https://github.com/BohemiaInteractive/DayZ-Central-Economy)
 - [DayZ Additional Resources](https://github.com/BohemiaInteractive/DayZ-Misc)
 - [GitHub Repositories](https://github.com/orgs/BohemiaInteractive/repositories?q=dayz) — every official Bohemia Interactive DayZ repo
+- [DayZ.com](https://dayz.com/) — official game website and news
 - [DayZ Forums](https://forums.dayz.com/) — announcements and stable update threads
 - [Community Wiki](https://community.bistudio.com/wiki/Category:DayZ) — Bohemia Interactive wiki pages for DayZ
 - [Feedback Tracker](https://feedback.bistudio.com/tag/dayz/) — report bugs and follow known issues
+- [DayZ Tools](https://store.steampowered.com/app/830640/DayZ_Tools/) — official modding tools on Steam
 
 **Community**
 
@@ -294,6 +296,10 @@ The homepage carries the same two lists, from `src/generate/content.js`.
 - [DayZ Editor](https://discord.gg/dayz-editor-738181536029081662) — Discord · support for the DayZ Editor mod
 - [Mikero's Tools](https://mikero.bytex.digital/) — PBO packing and file conversion tools
 - [WOBO Tools](https://wobo.tools/) — item, weapon and loot data explorer
+- [DayZ Wiki](https://dayz.wiki.gg/) — community-run gameplay and item wiki
+- [iZurvive](https://izurvive.com/) — interactive maps with loot spawn layers
+- [CFTools Cloud](https://cftools.cloud/) — server management, player and ban tools
+- [DayZ Expansion](https://dayzexpansion.com/) — mod framework wiki, guides and configuration
 
 ## License
 

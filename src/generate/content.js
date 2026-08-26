@@ -11,10 +11,12 @@ export const SITE_URL = 'https://dayz-scripts.yadz.app';
 export const ANALYTICS_ID = 'G-R8ZT2QC248';
 
 export const OFFICIAL_LINKS = [
+  ['DayZ.com', 'https://dayz.com/', 'Official game website and news'],
   ['DayZ Forums', 'https://forums.dayz.com/', 'Announcements and stable update threads'],
   ['Community Wiki', 'https://community.bistudio.com/wiki/Category:DayZ', 'Bohemia Interactive wiki pages for DayZ'],
   ['Feedback Tracker', 'https://feedback.bistudio.com/tag/dayz/', 'Report bugs and follow known issues'],
   ['GitHub Repositories', 'https://github.com/orgs/BohemiaInteractive/repositories?q=dayz', 'Official Bohemia Interactive DayZ repos'],
+  ['DayZ Tools', 'https://store.steampowered.com/app/830640/DayZ_Tools/', 'Official modding tools on Steam'],
 ];
 
 export const COMMUNITY_LINKS = [
@@ -23,6 +25,10 @@ export const COMMUNITY_LINKS = [
   ['DayZ Editor', 'https://discord.gg/dayz-editor-738181536029081662', 'Discord · support for the DayZ Editor mod'],
   ["Mikero's Tools", 'https://mikero.bytex.digital/', 'PBO packing and file conversion tools'],
   ['WOBO Tools', 'https://wobo.tools/', 'Item, weapon and loot data explorer'],
+  ['DayZ Wiki', 'https://dayz.wiki.gg/', 'Community-run gameplay and item wiki'],
+  ['iZurvive', 'https://izurvive.com/', 'Interactive maps with loot spawn layers'],
+  ['CFTools Cloud', 'https://cftools.cloud/', 'Server management, player and ban tools'],
+  ['DayZ Expansion', 'https://dayzexpansion.com/', 'Mod framework wiki, guides and configuration'],
 ];
 
 export const YADZ_DISCORD = 'https://discord.gg/nbrHqZCpA6';

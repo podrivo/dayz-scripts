@@ -282,7 +282,7 @@ const SEARCH_FILTERS = [
 
 /**
  * Full page layout.
- * opts: { title, base, active, breadcrumbs, content, description, versionPath }
+ * opts: { title, base, active, breadcrumbs, content, description, versionPath, footer }
  *  - base: relative prefix from this page to the VERSION root (e.g. "../../")
  *  - active: the nav entry this page sits under, as a version-relative dir
  *  - versionPath: path of this page relative to version root (for the switcher)
@@ -351,9 +351,9 @@ ${social}
   <main class="main">
     ${crumbs}
     ${o.content}
-    <footer class="foot">
-      <p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a> · build <span id="footBuild"></span> · Unofficial, not affiliated with Bohemia Interactive · © Bohemia Interactive a.s., <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a></p>
-    </footer>
+    ${o.footer === false ? '' : `<footer class="foot">
+      <p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a> · Not affiliated with Bohemia Interactive · <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a></p>
+    </footer>`}
   </main>
 </div>
 <div class="palette" id="palette" hidden>

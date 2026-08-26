@@ -109,7 +109,7 @@ a:hover { text-decoration: underline; text-decoration-color: currentColor; }
    original site does the same thing for the same reason. Chrome (nav, cards,
    tables, signatures, the dense .chain and .locations link lists) is left
    alone: there the link is the whole element, so position already says so. */
-:is(.hero p, .main > p:not(.chain, .locations), .quicklinks, .releases,
+:is(.hero p, .main > p:not(.chain, .locations), .releases,
     .class-doc, .member-doc, .doc-params dd, .foot) a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -402,7 +402,7 @@ h3.member-name .ordinal { font-size: 12px; font-weight: 400; color: var(--fg2); 
 /* Running text is capped wherever it appears, so prose shares one edge across
    every page. Data — tables, cards, trees, signatures, source — keeps the full
    column, as do the two paragraphs that are really dense lists of links. */
-.main > p:not(.chain, .locations), .hero p, .foot p,
+.main > p:not(.chain, .locations), .hero p,
 .class-doc, .member-doc { max-width: var(--w-prose); }
 
 .foot { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--fg2); font-size: 13px; }
@@ -468,7 +468,7 @@ h3.member-name .ordinal { font-size: 12px; font-weight: 400; color: var(--fg2); 
 
 /* ---- content ---- */
 h1 { font-size: 26px; line-height: 1.3; margin: 0 0 12px; }
-h2 { font-size: 19px; margin: 32px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+h2 { font-size: 19px; margin: 48px 0 10px; }
 h3 { font-size: 16px; margin: 20px 0 8px; }
 
 .count { font-size: 13px; font-weight: 500; color: var(--fg2); }
@@ -477,6 +477,9 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 .crumb-sep { margin: 0 6px; opacity: 0.6; }
 
 .hero p { font-size: 16px; }
+
+.home-stack { display: flex; flex-direction: column; gap: 36px; margin: 20px 0 0; }
+.home-stack .stats { margin: 0; }
 
 .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
 .stat {
@@ -487,7 +490,7 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 .stat strong { font-size: 20px; }
 .stat span { font-size: 12.5px; color: var(--fg2); }
 
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .card { padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; color: var(--fg); transition: border-color .15s ease; }
 .card:hover { border-color: var(--accent2); text-decoration: none; }
 .card h3 { margin: 0 0 4px; }
@@ -496,9 +499,6 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 .card-ext h3 { padding-right: 22px; }
 .card-ext .ic-ext { position: absolute; top: 12px; right: 12px; color: var(--accent2); transition: color .15s ease; }
 .card-ext:hover .ic-ext { color: var(--fg); }
-
-.quicklinks { padding-left: 20px; }
-.quicklinks li { margin: 4px 0; }
 
 .releases details { border: 1px solid var(--line); border-radius: 12px; margin: 8px 0; padding: 10px 16px; }
 .releases summary { cursor: pointer; font-weight: 600; }
@@ -805,6 +805,7 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
   }
   body.nav-open .side { transform: translateX(0); }
   .main { padding: 20px 16px 32px; }
+  .cards { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
   .brand { display: none; }
   .search-trigger { max-width: none; }
   .search-trigger kbd { display: none; }
