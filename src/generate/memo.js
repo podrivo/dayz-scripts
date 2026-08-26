@@ -9,8 +9,10 @@
 // Soundness rests on one rule: reuse a page only when every input its renderer
 // touched is unchanged. Per src/generate/render.js that means
 //   - class pages: the merged class object, the ancestor chain and whether
-//     each ancestor is a documented class, the derived-class list, and every
-//     name looked up in site.typeIndex (which decides what becomes a link)
+//     each ancestor is a documented class, the derived-class list, the caller
+//     list of every method name it shows, where each name those methods call
+//     resolves to, and every name looked up in site.typeIndex (which decides
+//     what becomes a link)
 //   - enum pages: the merged enum object and the same typeIndex lookups
 //   - file pages: the source bytes only — renderFile reads nothing off site,
 //     and the parsed decls are a pure function of those bytes
@@ -119,15 +121,64 @@ export function recordingSite(site, seenWords) {
   };
 }
 
-export function classDeps(site, cls) {
+/**
+ * How the "Defined in" paths are spelled. They are a pure function of the file
+ * plus a fixed dictionary (see src/generate/casing.js), but the file's own
+ * contents decide it when the dictionary is silent, so they are part of what a
+ * page reads rather than something the class object already covers.
+ */
+function shownPaths(site, locations) {
+  return locations.map((l) => site.paths.get(l.path)).join(',');
+}
+
+/**
+ * The cross-reference dependencies a page has that are not about its own
+ * subject. Both directions of the call graph are global: a class page shows
+ * where each of its methods is called from, and whether each name its methods
+ * call resolves to one declaration, so a change anywhere in the sources can
+ * change the page while the class itself is untouched. Computed on demand and
+ * cached per build, so the cost is one pass over the names class pages
+ * actually show rather than over every edge in the call graph.
+ */
+const xrefDigests = new WeakMap();
+
+function digestFor(site, key, compute) {
+  let perSite = xrefDigests.get(site);
+  if (!perSite) xrefDigests.set(site, (perSite = new Map()));
+  let digest = perSite.get(key);
+  if (digest === undefined) perSite.set(key, (digest = compute()));
+  return digest;
+}
+
+function callerDigest(site, name) {
+  return digestFor(site, `<${name}`, () => {
+    const list = site.callers?.get(name);
+    return list ? sha1(list.map((c) => (c.owner ? `${c.owner}.${c.name}` : c.name)).join(',')) : '';
+  });
+}
+
+/** Where a called name resolves, which decides whether it prints as a link.
+ *  A second class declaring the same name makes it ambiguous and unlinks it
+ *  on every page that calls it. */
+function targetDigest(site, name) {
+  return digestFor(site, `>${name}`, () => site.refTargets?.get(name)?.owner ?? (site.refTargets?.has(name) ? '()' : ''));
+}
+
+export function classDeps(site, cls, xref = true) {
   const chain = site
     .ancestorsOf(cls.name)
     .map((n) => (site.classes.has(n) ? `+${n}` : `-${n}`))
     .join(',');
   const kids = (site.children.get(cls.name) || []).join(',');
-  return sha1(`${chain}\n${kids}\n${JSON.stringify(cls)}`);
+  const module = cls.group ? site.groups.get(cls.group)?.title : '';
+  const xrefs = xref
+    ? cls.methods
+        .map((m) => `${callerDigest(site, m.name)}|${(m.calls || []).map((n) => targetDigest(site, n)).join(',')}`)
+        .join(';')
+    : 'none';
+  return sha1(`${chain}\n${kids}\n${module}\n${shownPaths(site, cls.locations)}\n${xrefs}\n${JSON.stringify(cls)}`);
 }
 
-export function enumDeps(en) {
-  return sha1(JSON.stringify(en));
+export function enumDeps(site, en) {
+  return sha1(`${shownPaths(site, en.locations)}\n${JSON.stringify(en)}`);
 }

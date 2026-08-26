@@ -29,10 +29,9 @@ import { diffModels } from './diff.js';
 import { buildSearchIndex } from './search.js';
 import { PageMemo, recordingSite, classDeps, enumDeps } from './memo.js';
 import {
-  renderHome, renderClassesIndex, renderClassesLetter, renderClass,
-  renderEnumsIndex, renderEnum, renderTypedefs, renderConstants,
-  renderFunctions, renderFilesIndex, renderFile, renderHierarchy,
-  renderChanges, render404,
+  renderHome, renderAnnotated, renderClassesIndex, renderClassesLetter, renderClass,
+  renderFields, renderEnum, renderGlobals, renderModulesIndex, renderModule,
+  renderFilesIndex, renderFile, renderHierarchy, renderChanges, render404,
 } from './render.js';
 
 const t0 = Date.now();
@@ -256,6 +255,20 @@ const minorRedirects = [];
   }
 }
 
+// Pages that moved when the site was reorganised around doxygen's own
+// sections. Written for both the site root and /v/<build>/, since every build
+// carries the same URL shape.
+const movedPages = [
+  ['typedefs', 'globals/typedefs'],
+  ['constants', 'globals/variables'],
+  ['functions', 'globals/functions'],
+  ['enums', 'globals/enums'],
+];
+const moveRedirects = movedPages.flatMap(([from, to]) => [
+  `/${from}/ /${to}/ 301`,
+  `/v/:build/${from}/ /v/:build/${to}/ 301`,
+]);
+
 // domain redirects preserved from the previous Doxygen site
 fs.writeFileSync(
   path.join(DIST_DIR, '_redirects'),
@@ -263,6 +276,7 @@ fs.writeFileSync(
     'https://dayz.yadz.app/* https://dayz-scripts.yadz.app/:splat 301!',
     'https://dayz-docs.yadz.app/* https://dayz-scripts.yadz.app/:splat 301!',
     '/v/ / 302',
+    ...moveRedirects,
     `/v/${buildList[0].label}/* /:splat 301`,
     ...minorRedirects,
     '',
@@ -329,47 +343,74 @@ function renderVersion(site, diff, prevLabel, versionIndex, blobs) {
     const depth = relDir === '' ? 0 : relDir.replace(/\/$/, '').split('/').length;
     const base = '../'.repeat(depth);
     const root = base + (isLatest ? '' : '../'.repeat(2));
-    return { site, versions, base, root, versionPath: relDir };
+    return { site, versions, base, root, versionPath: relDir, xref: isLatest };
   };
 
   // home
   write('', 'index', () => renderHome(ctx('')));
 
-  // classes index by letter
+  // modules (\defgroup topics)
+  write('modules/', 'index', () => renderModulesIndex(ctx('modules/')));
+  for (const mod of site.groups.values()) {
+    const rel = `module/${mod.name}/`;
+    write(rel, 'index', () => renderModule(ctx(rel), mod));
+  }
+
+  // data structures, indexed by initial
   const letters = new Map();
   for (const name of [...site.classes.keys()].sort((a, b) => a.localeCompare(b))) {
     const l = /^[a-z]/i.test(name) ? name[0].toLowerCase() : '_';
     if (!letters.has(l)) letters.set(l, []);
     letters.get(l).push(name);
   }
+  write('annotated/', 'index', () => renderAnnotated(ctx('annotated/'), letters));
   write('classes/', 'index', () => renderClassesIndex(ctx('classes/'), letters));
   for (const [l, names] of letters) {
-    write(`classes/${l}/`, 'index', () => renderClassesLetter(ctx(`classes/${l}/`), l, names));
+    write(`classes/${l}/`, 'index', () => renderClassesLetter(ctx(`classes/${l}/`), l, names, letters.keys()));
   }
 
   // class pages
   for (const cls of site.classes.values()) {
     const rel = `class/${cls.name}/`;
     const t = clock();
-    const deps = classDeps(site, cls);
+    const deps = classDeps(site, cls, isLatest);
     timers.deps += since(t);
     write(rel, 'class', (seen) => renderClass({ ...ctx(rel), site: recordingSite(site, seen) }, cls), deps);
   }
 
-  // enums
-  write('enums/', 'index', () => renderEnumsIndex(ctx('enums/')));
+  // data fields: every class member, by initial and by kind
+  const fieldLetters = [...site.fields.keys()].sort();
+  for (const [kind, dir, keep] of [
+    ['all', 'fields/', null],
+    ['functions', 'fields/functions/', (o) => o.method],
+    ['variables', 'fields/variables/', (o) => !o.method],
+  ]) {
+    write(dir, 'index', () => renderFields(ctx(dir), null, [], fieldLetters, kind));
+    for (const l of fieldLetters) {
+      const rel = `${dir}${l}/`;
+      const all = site.fields.get(l);
+      const entries = keep
+        ? all.map(([n, owners]) => [n, owners.filter(keep)]).filter(([, owners]) => owners.length)
+        : all;
+      write(rel, 'index', () => renderFields(ctx(rel), l, entries, fieldLetters, kind));
+    }
+  }
+
+  // enum pages
   for (const en of site.enums.values()) {
     const rel = `enum/${en.name}/`;
     const t = clock();
-    const deps = enumDeps(en);
+    const deps = enumDeps(site, en);
     timers.deps += since(t);
     write(rel, 'enum', (seen) => renderEnum({ ...ctx(rel), site: recordingSite(site, seen) }, en), deps);
   }
 
-  // flat listings
-  write('typedefs/', 'index', () => renderTypedefs(ctx('typedefs/')));
-  write('constants/', 'index', () => renderConstants(ctx('constants/')));
-  write('functions/', 'index', () => renderFunctions(ctx('functions/')));
+  // globals, split the way doxygen splits them
+  for (const kind of ['', 'functions/', 'variables/', 'typedefs/', 'enums/', 'values/', 'macros/']) {
+    const rel = `globals/${kind}`;
+    write(rel, 'index', () => renderGlobals(ctx(rel), kind));
+  }
+
   write('hierarchy/', 'index', () => renderHierarchy(ctx('hierarchy/')));
   write('files/', 'index', () => renderFilesIndex(ctx('files/')));
   write('changes/', 'index', () => renderChanges(ctx('changes/'), diff, prevLabel));
@@ -394,6 +435,16 @@ function renderVersion(site, diff, prevLabel, versionIndex, blobs) {
   const searchJson = JSON.stringify(buildSearchIndex(site));
   renderTimers.search += since(tSearch);
   writeFile(path.join(versionDir, 'search.json'), searchJson);
+
+  // The sidebar's module topics. Kept out of the pages themselves so that they
+  // stay identical from build to build and can go on being hard-linked; see
+  // the note on NAV in html.js.
+  writeFile(
+    path.join(versionDir, 'nav.json'),
+    JSON.stringify({
+      topics: site.moduleRoots.map((n) => [n, site.groups.get(n).title]),
+    })
+  );
 }
 
 // Process oldest -> newest, keeping only the previous site model for diffs.

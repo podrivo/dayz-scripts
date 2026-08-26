@@ -21,6 +21,12 @@ const TYPE_PREFIX_MODS = new Set(['ref', 'autoptr', 'const', 'owned', 'notnull',
 const PARAM_MODS = new Set(['out', 'inout', 'notnull', 'ref', 'autoptr', 'const', 'owned']);
 const DECL_KEYWORDS = new Set(['class', 'enum', 'typedef']);
 
+/** Names that take a '(' without being a call. */
+const NOT_CALLS = new Set([
+  'if', 'else', 'for', 'foreach', 'while', 'do', 'switch', 'case', 'return',
+  'new', 'delete', 'thread', 'catch', 'sizeof', 'typeof', 'break', 'continue',
+]);
+
 const isDocBlock = (v) =>
   (v.startsWith('/**') && v[3] !== '*') || v.startsWith('/*!');
 const isDocLine = (v) => v.startsWith('//!') || (v.startsWith('///') && v[3] !== '/');
@@ -38,6 +44,9 @@ function cleanLineComment(v) {
   return v.replace(/^\/\/[!/]?<?\s?/, '').replace(/\s+$/, '');
 }
 
+/** A \name block: it nests inside a topic without being one. */
+const MEMBER_BLOCK = Symbol('member group');
+
 export class Parser {
   constructor(source, file = '<input>') {
     this.source = source;
@@ -46,7 +55,7 @@ export class Parser {
     this.pos = 0;
     this.diagnostics = [];
     this.conds = []; // active preprocessor conditions
-    this.groups = []; // active \defgroup stack: {name, title}
+    this.groups = []; // open blocks, innermost last: a group or MEMBER_BLOCK
     this.pendingGroup = null;
     this.pendingDoc = null; // {text, line}
     this.pendingAttrs = null; // [Attribute(...)] decorations
@@ -172,7 +181,10 @@ export class Parser {
   }
 
   currentGroup() {
-    return this.groups.length ? this.groups[this.groups.length - 1].name : undefined;
+    for (let i = this.groups.length - 1; i >= 0; i--) {
+      if (this.groups[i] !== MEMBER_BLOCK) return this.groups[i].name;
+    }
+    return undefined;
   }
 
   // ---- comments & preprocessor --------------------------------------------
@@ -182,21 +194,35 @@ export class Parser {
     if (t.type === 'comment' && (isDocBlock(v) || isDocLine(v))) {
       const text = v.startsWith('//') ? cleanLineComment(v) : cleanBlockComment(v);
 
-      // \defgroup handling: "/** \defgroup Name Title ... @{ */"
-      const dg = text.match(/[\\@]defgroup\s+(\S+)([^\n]*)/);
+      // Group handling: "/** \defgroup Name Title ... @{ */" opens a group and
+      // documents it; "\addtogroup Name @{" reopens one defined elsewhere.
+      // A group opened while another is still open is nested inside it, which
+      // is where the module tree comes from.
+      const dg = text.match(/[\\@](defgroup|addtogroup)\s+(\S+)([^\n]*)/);
       if (dg) {
-        const group = { name: dg[1], title: dg[2].trim() || dg[1], desc: text };
+        const define = dg[1] === 'defgroup';
+        const title = dg[3].trim().replace(/^\((.*)\)$/, '$1');
+        const group = { name: dg[2], parent: this.currentGroup() };
         if (/@\{/.test(text)) this.groups.push(group);
         else this.pendingGroup = group;
         if (!this.out.groups) this.out.groups = [];
-        this.out.groups.push({ name: group.name, title: group.title, desc: text });
+        this.out.groups.push({
+          name: group.name,
+          title: title || group.name,
+          parent: group.parent,
+          define,
+          desc: define ? text : undefined,
+        });
         return;
       }
-      if (/^\s*@\{\s*$/.test(text)) {
-        if (this.pendingGroup) {
-          this.groups.push(this.pendingGroup);
-          this.pendingGroup = null;
-        }
+      // A @{ that does not name a group opens a member group -- the sources
+      // use them under \name to caption a run of related declarations. They
+      // nest inside the topic rather than being one, so they go on the same
+      // stack and take their own @} with them; without that, the member group
+      // in enwidgets.c would close the topic covering the whole widget API.
+      if (/@\{/.test(text)) {
+        this.groups.push(this.pendingGroup || MEMBER_BLOCK);
+        this.pendingGroup = null;
         return;
       }
       if (/@\}/.test(text)) {
@@ -213,9 +239,12 @@ export class Parser {
     } else if (/@\{/.test(v) && this.pendingGroup) {
       this.groups.push(this.pendingGroup);
       this.pendingGroup = null;
-    } else if (/@\}/.test(v) && this.groups.length) {
-      this.groups.pop();
     }
+    // A plain "//@}" closes nothing. Doxygen reads @} as a terminator only
+    // inside a documentation comment, so the 257 plain ones here -- sound.c
+    // ends its API topic with one -- were ignored and those topics ran on to
+    // the end of the file. Honouring them instead files 9% fewer of the names
+    // the old documentation listed; see tools/compare-groups.mjs.
   }
 
   handleDirective(t) {
@@ -233,7 +262,13 @@ export class Parser {
     } else if (/^#\s*endif\b/.test(v)) {
       this.conds.pop();
     } else if ((m = v.match(/^#\s*define\s+(\w+)\s*(.*)/))) {
-      this.out.defines.push({ name: m[1], value: m[2].trim() || undefined, line: t.line, cond: this.snapshotConds() });
+      this.out.defines.push({
+        name: m[1],
+        value: m[2].trim() || undefined,
+        line: t.line,
+        cond: this.snapshotConds(),
+        group: this.currentGroup(),
+      });
     }
     // #include and anything else: ignore
   }
@@ -251,18 +286,28 @@ export class Parser {
 
   // ---- skipping ------------------------------------------------------------
 
-  /** Skip a balanced {...} block; positioned ON the '{'. */
-  skipBraces() {
+  /** Skip a balanced {...} block; positioned ON the '{'.
+   *  Given a Set, records every name called inside it. A name followed by '('
+   *  is the whole test: the receiver is not resolved, so a call to Widget.Show
+   *  and one to PlayerBase.Show are recorded alike. That ambiguity is the
+   *  price of not type-checking the language, and the reason the pages built
+   *  from this gather every method of a name under one entry. */
+  skipBraces(calls) {
     let depth = 0;
+    let prev = null;
     for (;;) {
       const t = this.sig();
       if (t.type === 'eof') return;
       this.pos++;
+      if (calls && t.value === '(' && prev?.type === 'ident' && !NOT_CALLS.has(prev.value)) {
+        calls.add(prev.value);
+      }
       if (t.value === '{') depth++;
       else if (t.value === '}') {
         depth--;
         if (depth <= 0) return;
       }
+      prev = t;
     }
   }
 
@@ -493,6 +538,7 @@ export class Parser {
       line: startTok.line,
       doc,
       cond: this.snapshotConds(),
+      group: this.currentGroup(),
       methods: [],
       members: [],
     };
@@ -602,6 +648,7 @@ export class Parser {
       line: startTok.line,
       doc,
       cond: this.snapshotConds(),
+      group: this.currentGroup(),
       values: [],
     };
     const nxt = this.sig();
@@ -796,7 +843,10 @@ export class Parser {
         const trail = this.takeTrailing(after.line);
         if (trail && !fn.doc) fn.doc = trail;
       } else if (after.value === '{') {
-        this.skipBraces();
+        const calls = new Set();
+        this.skipBraces(calls);
+        calls.delete(name); // recursion is not a cross-reference worth listing
+        if (calls.size) fn.calls = [...calls].sort();
         this.eatIf(';');
       } else if (after.value === '}' || after.type === 'eof' || (after.type === 'ident' && after.line > closeLine)) {
         // Missing ';' after a prototype — the engine compiler tolerates this
@@ -806,7 +856,7 @@ export class Parser {
         this.diag(`expected ';' or '{' after ${name}(), found '${after.value || 'eof'}'`, after.line);
         this.recover();
       }
-      if (!cls) fn.group = this.currentGroup();
+      fn.group = this.currentGroup();
       (cls ? cls.methods : this.out.functions).push(fn);
       return;
     }
@@ -825,7 +875,7 @@ export class Parser {
       };
       if (mods.length) v.mods = mods;
       if (attrs && first) v.attrs = attrs;
-      if (!cls) v.group = this.currentGroup();
+      v.group = this.currentGroup();
 
       // fixed-size array suffix(es) on the NAME: int x[4]; float uv[4][2];
       while (this.sig().value === '[') {

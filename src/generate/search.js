@@ -8,9 +8,11 @@
 //   methods:  [[classIdx, "MethodName"], ...],
 //   consts:   ["MATERIAL_WOOD", ...],
 //   funcs:    ["ErrorEx", ...],
-//   files:    ["4_world/entities/....c", ...],
+//   files:    ["4_World/Entities/....c", ...],
 // }
-// URLs are reconstructed client-side: class/<name>/, enum/<name>/, ...
+// URLs are reconstructed client-side: class/<name>/, enum/<name>/, ... File
+// paths are stored the way they are displayed and lowercased back into a URL,
+// since that is exactly how the two spellings relate (see casing.js).
 
 export function buildSearchIndex(site) {
   const classes = [...site.classes.keys()].sort((a, b) => a.localeCompare(b));
@@ -34,6 +36,6 @@ export function buildSearchIndex(site) {
     methods,
     consts: site.globals.map((g) => g.name),
     funcs: site.functions.map((f) => f.name),
-    files: site.files.map((f) => f.path.replace(/^scripts\//, '')),
+    files: site.files.map((f) => f.display),
   };
 }

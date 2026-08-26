@@ -41,6 +41,36 @@
     }
   });
 
+  /* ---------- sidebar topics ----------
+     The list of module topics belongs to a build, and the pages do not, so the
+     sidebar leaves a hole for it and fills it from this build's nav.json the
+     first time the section is opened. Without JavaScript the section heading
+     is still a link to the full list. */
+  let navPromise;
+  for (const box of document.querySelectorAll('.nav-kids[data-nav]')) {
+    const details = box.closest('details');
+    const fill = () => {
+      navPromise ||= fetch(BASE + 'nav.json').then((r) => r.json());
+      navPromise.then(({ topics }) => {
+        if (box.firstChild) return;
+        const active = box.dataset.active;
+        box.append(...topics.map(([name, title]) => {
+          const a = document.createElement('a');
+          a.className = 'nav-sub';
+          a.href = `${BASE}module/${name}/`;
+          a.textContent = title;
+          if (active === `module/${name}/`) {
+            a.classList.add('active');
+            a.setAttribute('aria-current', 'page');
+          }
+          return a;
+        }));
+      }).catch(() => {});
+    };
+    if (details.open) fill();
+    details.addEventListener('toggle', () => details.open && fill(), { once: false });
+  }
+
   const fmtDate = (iso) =>
     new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', {
       month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC',
@@ -148,10 +178,11 @@
   const KIND = {
     c: ['c', (n) => `class/${n}/`],
     e: ['e', (n) => `enum/${n}/`],
-    t: ['t', (n) => `typedefs/#${n}`],
-    k: ['k', (n) => `constants/#${n}`],
-    f: ['f', (n) => `functions/#${n}`],
-    F: ['F', (p) => `file/${p}/`],
+    t: ['t', (n) => `globals/typedefs/#${n}`],
+    k: ['k', (n) => `globals/variables/#${n}`],
+    f: ['f', (n) => `globals/functions/#${n}`],
+    // Paths are indexed as displayed; the URL is that spelling lowercased.
+    F: ['F', (p) => `file/${p.toLowerCase()}/`],
   };
 
   async function loadIndex() {
@@ -291,7 +322,7 @@
 
   const TOKEN_RE = /(\/\/[^\n]*|\/\*[\s\S]*?\*\/)|("(?:[^"\\]|\\.)*")|(^[ \t]*#[^\n]*)|(\b0x[0-9a-fA-F]+\b|\b\d+\.?\d*\b)|(\b[A-Za-z_]\w*\b)/gm;
 
-  function highlight(text) {
+  function highlight(text, resolve) {
     let out = '';
     let last = 0;
     const escMap = { '&': '&amp;', '<': '&lt;', '>': '&gt;' };
@@ -308,24 +339,60 @@
       else if (m[4]) out += `<span class="tok-num">${esc(m[4])}</span>`;
       else if (m[5]) {
         if (KW.has(m[5])) out += `<span class="tok-kw">${esc(m[5])}</span>`;
-        else if (/^[A-Z]/.test(m[5])) out += `<span class="tok-type">${esc(m[5])}</span>`;
-        else out += esc(m[5]);
+        else {
+          const body = /^[A-Z]/.test(m[5]) ? `<span class="tok-type">${esc(m[5])}</span>` : esc(m[5]);
+          const href = resolve && resolve(m[5]);
+          out += href ? `<a class="tok-link" href="${href}">${body}</a>` : body;
+        }
       }
     }
     return out + esc(text.slice(last));
+  }
+
+  /**
+   * Where a name written in source goes. Doxygen linked every name in its
+   * source pages to the declaration it resolved to, which is most of what made
+   * them worth reading when 89% of members carry no documentation. It resolved
+   * by scope; nothing here parses the language, so a name is linked only when
+   * one declaration in the build answers to it and the ambiguous ones are left
+   * as plain text.
+   */
+  function sourceResolver() {
+    const map = new Map();
+    const claim = (n, url) => {
+      const seen = map.get(n);
+      if (seen === undefined) map.set(n, url);
+      else if (seen !== url) map.set(n, null);
+    };
+    for (const n of index.classes) claim(n, `class/${n}/`);
+    for (const n of index.enums) claim(n, `enum/${n}/`);
+    for (const n of index.typedefs) claim(n, `globals/typedefs/#${n}`);
+    for (const n of index.funcs) claim(n, `globals/functions/#${n}`);
+    for (const n of index.consts) claim(n, `globals/variables/#${n}`);
+    for (const [ci, m] of index.methods) claim(m, `class/${index.classes[ci]}/#${m}`);
+    return (n) => {
+      const url = map.get(n);
+      return url ? BASE + url : null;
+    };
   }
 
   // source view: highlight + line numbers + deep links
   const srcEl = $('#src code');
   if (srcEl) {
     const raw = srcEl.textContent;
-    const lines = highlight(raw).split('\n');
-    srcEl.innerHTML = lines
-      .map((l, i) => `<span class="line" id="L${i + 1}">${l}\n</span>`)
-      .join('');
-    if (/^#L\d+$/.test(location.hash)) {
-      $(location.hash)?.scrollIntoView({ block: 'center' });
-    }
+    const paint = (resolve) => {
+      srcEl.innerHTML = highlight(raw, resolve)
+        .split('\n')
+        .map((l, i) => `<span class="line" id="L${i + 1}">${l}\n</span>`)
+        .join('');
+    };
+    // Painted twice: once now, so the code is readable without waiting on a
+    // network round trip, and again once the index that resolves the links has
+    // arrived. Keeping the links out of the HTML is also what lets a file page
+    // stay byte-identical across builds and keep its hard link.
+    paint(null);
+    if (/^#L\d+$/.test(location.hash)) $(location.hash)?.scrollIntoView({ block: 'center' });
+    loadIndex().then(() => paint(sourceResolver()));
   }
 
   // inline @code blocks

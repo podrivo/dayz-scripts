@@ -20,7 +20,7 @@ export const EXT = 'target="_blank" rel="noopener"';
 export function typeUrl(name, kind) {
   if (kind === 'class') return `class/${name}/`;
   if (kind === 'enum') return `enum/${name}/`;
-  if (kind === 'typedef') return `typedefs/#${name}`;
+  if (kind === 'typedef') return `globals/typedefs/#${name}`;
   return null;
 }
 
@@ -131,22 +131,78 @@ export function briefOf(rawDoc, site, base) {
   return inlineDoc(d.brief, site, base);
 }
 
+// Doxygen's own navigation tree, entry for entry, with Changelog standing
+// where it listed Examples. Sections are links to their own overview as well
+// as headings, and repeat that overview as their first child the way Doxygen
+// did, so the page a section lands on is also visible as a place you are.
+// The topics under Modules are the one part that changes from build to build,
+// so they are not written into the page: a reused page would carry the sidebar
+// of the build it was first rendered for. They are fetched from that build's
+// nav.json on first expand instead, which is how Doxygen served its tree too.
 const NAV = [
-  ['', 'Overview'],
-  ['classes/', 'Classes'],
-  ['hierarchy/', 'Hierarchy'],
-  ['enums/', 'Enums'],
-  ['typedefs/', 'Typedefs'],
-  ['constants/', 'Constants'],
-  ['functions/', 'Functions'],
-  ['files/', 'Files'],
+  ['', 'Welcome'],
+  ['modules/', 'Modules', 'topics'],
+  ['annotated/', 'Data Structures', [
+    ['annotated/', 'Data Structures'],
+    ['classes/', 'Data Structure Index'],
+    ['hierarchy/', 'Class Hierarchy'],
+    ['fields/', 'Data Fields', [
+      ['fields/', 'All'],
+      ['fields/functions/', 'Functions'],
+      ['fields/variables/', 'Variables'],
+    ]],
+  ]],
+  ['files/', 'Files', [
+    ['files/', 'File List'],
+    ['globals/', 'Globals', [
+      ['globals/', 'All'],
+      ['globals/functions/', 'Functions'],
+      ['globals/variables/', 'Variables'],
+      ['globals/typedefs/', 'Typedefs'],
+      ['globals/enums/', 'Enumerations'],
+      ['globals/values/', 'Enumerator'],
+      ['globals/macros/', 'Macros'],
+    ]],
+  ]],
   ['changes/', 'Changelog'],
 ];
+
+/** Whether `active` names this branch or anything under it. */
+function navHolds(nodes, active) {
+  return nodes.some(([href, , kids]) => href === active || (Array.isArray(kids) && navHolds(kids, active)));
+}
+
+/**
+ * One level of the tree. `active` is the version-relative directory of the
+ * page's place in it; where a section and its first child share that
+ * directory, the child is the one marked, so a page is highlighted once.
+ */
+function navLevel(nodes, active, base, depth) {
+  return nodes
+    .map(([href, label, kids]) => {
+      const list = Array.isArray(kids) ? kids : null;
+      const here = href === active && !list?.some(([h]) => h === active);
+      const cls = depth === 0 ? 'nav-item' : 'nav-sub';
+      const a = `<a class="${cls}${here ? ' active' : ''}" href="${base}${href}"${here ? ' aria-current="page"' : ''}>${esc(label)}</a>`;
+      if (!kids) return a;
+
+      // Every /module/<topic>/ page belongs under Modules, including the
+      // nested topics the sidebar does not list, so the section opens for all
+      // of them and the client marks the entry if it is one of the roots.
+      const under = !!active?.startsWith('module/');
+      const open = href === active || (list ? navHolds(list, active) : under);
+      const body = list ? navLevel(list, active, base, depth + 1) : '';
+      const fill = list ? '' : ` data-nav="${kids}"${under ? ` data-active="${esc(active)}"` : ''}`;
+      return `<details class="nav-sec"${open ? ' open' : ''}><summary>${a}</summary><div class="nav-kids"${fill}>${body}</div></details>`;
+    })
+    .join('');
+}
 
 /**
  * Full page layout.
  * opts: { title, base, active, breadcrumbs, content, description, versionPath }
  *  - base: relative prefix from this page to the VERSION root (e.g. "../../")
+ *  - active: the nav entry this page sits under, as a version-relative dir
  *  - versionPath: path of this page relative to version root (for the switcher)
  *
  * Deliberately carries no build, version or date, and links to assets by
@@ -157,10 +213,8 @@ const NAV = [
  */
 export function layout(o) {
   const desc = o.description || 'DayZ Enforce Script API documentation';
-  const nav = NAV.map(
-    ([href, label]) =>
-      `<a href="${o.base}${href}"${o.active === label ? ' class="active" aria-current="page"' : ''}>${label}</a>`
-  ).join('');
+  // Pages outside the tree, such as 404, match nothing and open nothing.
+  const nav = navLevel(NAV, o.active ?? null, o.base, 0);
 
   const crumbs = o.breadcrumbs?.length
     ? `<nav class="crumbs" aria-label="Breadcrumb">${o.breadcrumbs

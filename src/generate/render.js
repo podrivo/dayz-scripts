@@ -8,20 +8,6 @@ import {
   OFFICIAL_LINKS, COMMUNITY_LINKS, FORUM_THREADS, VERSION_TITLES, YADZ_DISCORD,
 } from './content.js';
 
-const MODULE_LABELS = {
-  '1_core': 'Core',
-  '2_gamelib': 'GameLib',
-  '3_game': 'Game',
-  '4_world': 'World',
-  '5_mission': 'Mission',
-  editor: 'Editor',
-  _root: 'Root scripts',
-};
-
-export function moduleLabel(m) {
-  return MODULE_LABELS[m] || m;
-}
-
 function anchorFor(used, name) {
   let a = name.replace(/[^\w]/g, '_');
   if (used.has(a)) {
@@ -37,8 +23,102 @@ function fileHref(base, path) {
   return `${base}file/${path.replace(/^scripts\//, '')}/`;
 }
 
+/** How many callers to show, and the point past which the rest are only
+ *  counted. Three fits the median name, which has two callers, so most lists
+ *  are complete as shown and the signature above stays the loudest thing in
+ *  the block. Listing every caller of `Cast` would cost 4,955 links on each of
+ *  the pages naming a Cast and tell nobody anything. */
+const CALLERS_SHOWN = 3;
+const CALLERS_LISTED = 50;
+
+/** Doxygen's own list joining: ", " between, ", and " before the last
+ *  (trWriteList in translator_en.h). */
+function writeList(items) {
+  if (items.length < 2) return items.join('');
+  return `${items.slice(0, -1).join(', ')}, and ${items[items.length - 1]}`;
+}
+
+/** A name inside a reference list. Doxygen prints the scope only when it is
+ *  not the scope of the page you are on, closes every function with "()", and
+ *  falls back to plain text when the name will not resolve. */
+function refName(owner, name, scope, base, linked) {
+  const label = owner && owner !== scope ? `<span class="xref-owner">${esc(owner)}.</span>${esc(name)}()` : `${esc(name)}()`;
+  if (!linked) return label;
+  const anchor = name.replace(/[^\w]/g, '_');
+  const href = owner ? `${base}class/${owner}/#${anchor}` : `${base}globals/functions/#${anchor}`;
+  return `<a href="${href}">${label}</a>`;
+}
+
+/**
+ * Where a name is called from. Only 11% of members carry a doc comment, so for
+ * most of this API the way to learn what something does is to read a place it
+ * is already used, and this is the index of those places.
+ *
+ * The match is by name alone -- the parser does not resolve receivers -- so a
+ * `Show` entry gathers every Show in the sources. Doxygen's heading is kept
+ * because its own matching was no more exact, but the common names are folded
+ * away by default: a 200-entry list is the noise its version drowned in.
+ */
+function callersBlock(name, ctx, scope = null) {
+  const { site, base } = ctx;
+  if (!ctx.xref) return '';
+  const list = site.callers?.get(name);
+  if (!list?.length) return '';
+
+  const link = (c) => refName(c.owner || null, c.name, scope, base, true);
+  const extra = list.length - CALLERS_SHOWN;
+  // "and" belongs before the last entry only when the last entry is shown;
+  // a truncated head runs on into the "and N more" that follows it.
+  const shown = list.slice(0, CALLERS_SHOWN).map(link);
+  const head = extra <= 0 ? writeList(shown) : shown.join(', ');
+  const rest =
+    extra <= 0
+      ? '.'
+      : list.length <= CALLERS_LISTED
+        ? `, <details class="xref-more"><summary>and ${extra} more</summary>${writeList(list.slice(CALLERS_SHOWN).map(link))}.</details>`
+        : `, <span class="xref-rest">and ${extra.toLocaleString()} more.</span>`;
+  return `<div class="xref"><span class="xref-label" title="Matched by name: the sources are not type-checked, so every method of this name is gathered">Referenced by</span> ${head}${rest}</div>`;
+}
+
+/**
+ * What a body calls, which is Doxygen's "References". The parser records the
+ * names a body names without resolving what they are called on, so a name is
+ * linked only where one declaration in the build answers to it (83% of them);
+ * the rest print as plain text, which is what definition.cpp does with a name
+ * it cannot link either.
+ */
+function referencesBlock(item, ctx, scope = null) {
+  const { site, base } = ctx;
+  if (!ctx.xref || !item.calls?.length) return '';
+  const items = item.calls.map((n) => {
+    const t = site.refTargets?.get(n);
+    return refName(t?.owner || null, n, scope, base, Boolean(t));
+  });
+  return `<div class="xref xref-out"><span class="xref-label">References</span> ${writeList(items)}.</div>`;
+}
+
 function fileLineHref(base, path, line) {
   return `${fileHref(base, path)}#L${line}`;
+}
+
+/**
+ * How a script path is spelled for the reader. URLs keep the lowercase
+ * spelling the sources use; only what is shown gets the game's own
+ * capitalisation back (see src/generate/casing.js).
+ */
+function shown(site, path) {
+  return site.paths.get(path) || path.replace(/^scripts\//, '');
+}
+
+/** Source link for a declaration, labelled with its path and line. */
+function locationLinks(site, base, locations) {
+  return locations
+    .map(
+      (l) =>
+        `<a href="${fileLineHref(base, l.path, l.line)}"><code>${esc(shown(site, l.path))}</code>:${l.line}</a>` +
+        (l.forward ? ' <span class="muted">(declaration)</span>' : '')
+    )
+    .join('<br>');
 }
 
 // ---------------------------------------------------------------------------
@@ -112,14 +192,6 @@ ${items}
 export function renderHome(ctx) {
   const { site, base, root, versions } = ctx;
   const s = site.stats;
-  const modules = new Map();
-  for (const f of site.files) {
-    const m = f.module;
-    if (!modules.has(m)) modules.set(m, { files: 0, classes: 0 });
-    const mm = modules.get(m);
-    mm.files++;
-    mm.classes += f.counts.classes;
-  }
 
   const stat = (n, label, href) =>
     `<a class="stat" href="${href}"><strong>${n.toLocaleString('en-US')}</strong><span>${label}</span></a>`;
@@ -144,28 +216,32 @@ ${links
 
   const content = `
 <section class="hero">
-  <h1>Overview</h1>
+  <h1>Welcome</h1>
   <p>Browsable documentation for the DayZ Enforce Script sources — every class, method, enum and constant of DayZ ${esc(site.version)}, game build ${buildLine} (${esc(site.date)}), generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ&nbsp;Script&nbsp;Diff</a> repository.</p>
   <p>Made for anyone wandering the DayZ modding and scripting world, and meant to be quicker to browse than the raw sources. This is just the tip of the iceberg: there is no official detailed documentation on the subject, so community content is your best friend. Once you join one of the Discord servers below, check the pinned messages — most recurring questions are answered there.</p>
 </section>
 <section class="stats">
-  ${stat(s.classes, 'classes', base + 'classes/')}
-  ${stat(s.methods, 'methods', base + 'classes/')}
-  ${stat(s.enums, 'enums', base + 'enums/')}
-  ${stat(s.typedefs, 'typedefs', base + 'typedefs/')}
-  ${stat(s.globals, 'constants', base + 'constants/')}
+  ${stat(s.classes, 'classes', base + 'annotated/')}
+  ${stat(s.methods, 'methods', base + 'fields/')}
+  ${stat(s.enums, 'enums', base + 'globals/enums/')}
+  ${stat(s.typedefs, 'typedefs', base + 'globals/typedefs/')}
+  ${stat(s.globals, 'constants', base + 'globals/variables/')}
   ${stat(s.files, 'script files', base + 'files/')}
 </section>
-<h2>Modules</h2>
+<h2>How this is organised</h2>
 <div class="cards">
-${[...modules.entries()]
-  .map(
-    ([m, mm]) => `<a class="card" href="${base}files/#${esc(m)}">
-  <h3>${esc(moduleLabel(m))} <code>${esc(m)}</code></h3>
-  <p>${mm.files.toLocaleString('en-US')} files · ${mm.classes.toLocaleString('en-US')} classes</p>
-</a>`
-  )
-  .join('\n')}
+  <a class="card" href="${base}modules/">
+    <h3>Modules</h3>
+    <p>The ${site.groups.size} topics the scripts group themselves into — math, physics, entities, UI and the constant tables.</p>
+  </a>
+  <a class="card" href="${base}annotated/">
+    <h3>Data Structures</h3>
+    <p>All ${s.classes.toLocaleString('en-US')} classes, with an alphabetical index, the inheritance tree and every data field.</p>
+  </a>
+  <a class="card" href="${base}files/">
+    <h3>Files</h3>
+    <p>All ${s.files.toLocaleString('en-US')} script files with their sources, plus everything declared outside a class.</p>
+  </a>
 </div>
 <h2>Start exploring</h2>
 <ul class="quicklinks">
@@ -190,8 +266,8 @@ ${releases}
 
   return layout({
     ...ctx,
-    title: 'Overview',
-    active: 'Overview',
+    title: 'Welcome',
+    active: '',
     description: `DayZ ${site.version} Enforce Script API documentation — classes, methods, enums and sources.`,
     content,
   });
@@ -199,30 +275,74 @@ ${releases}
 
 // ---------------------------------------------------------------------------
 
-export function renderClassesIndex(ctx, letters) {
+/** Row of A-Z shortcuts shared by the class and data-field indexes. */
+function letterBar(base, dir, letters, current) {
+  return `<div class="letters">${[...letters]
+    .map(
+      (l) =>
+        `<a class="letter${l === current ? ' active' : ''}" href="${base}${dir}${l}/">${l === '_' ? '#' : l.toUpperCase()}</a>`
+    )
+    .join('')}</div>`;
+}
+
+const letterTitle = (l) => (l === '_' ? 'Other' : l.toUpperCase());
+
+/** Data Structures: every class with its brief, the way Doxygen annotates them. */
+export function renderAnnotated(ctx, letters) {
   const { site, base } = ctx;
-  const letterLinks = [...letters.keys()]
-    .map((l) => `<a class="letter" href="${base}classes/${l}/">${l.toUpperCase()}</a>`)
-    .join('');
+  const sections = [...letters.entries()]
+    .map(([l, names]) => {
+      const rows = names
+        .map((n) => {
+          const c = site.classes.get(n);
+          const brief = c.doc ? briefOf(c.doc, site, base) : '';
+          const badges = (c.modded ? '<span class="badge badge-mod">modded</span>' : '') + condBadges(c.cond);
+          return `<tr><td><a href="${base}class/${n}/">${esc(n)}</a>${badges}</td><td>${brief}</td></tr>`;
+        })
+        .join('\n');
+      return `<h2 id="${l}">${letterTitle(l)} <span class="count">${names.length}</span></h2>
+<table class="list"><tbody>${rows}</tbody></table>`;
+    })
+    .join('\n');
   const content = `
-<h1>Classes <span class="count">${site.classes.size.toLocaleString('en-US')}</span></h1>
-<p>All Enforce Script classes in DayZ ${esc(site.version)}, grouped alphabetically. Use the search box for instant lookup.</p>
-<div class="letters">${letterLinks}</div>
-${[...letters.entries()]
-  .map(
-    ([l, names]) => `<h2 id="${l}"><a href="${base}classes/${l}/">${l.toUpperCase()}</a> <span class="count">${names.length}</span></h2>`
-  )
-  .join('\n')}`;
+<h1>Data Structures <span class="count">${site.classes.size.toLocaleString('en-US')}</span></h1>
+<p>Every Enforce Script class in DayZ ${esc(site.version)}, with a short description where the sources document one.</p>
+${letterBar(base, 'classes/', letters.keys())}
+${sections}`;
   return layout({
     ...ctx,
-    title: 'Classes',
-    active: 'Classes',
-    breadcrumbs: [{ label: 'Classes' }],
+    title: 'Data Structures',
+    active: 'annotated/',
+    description: `All ${site.classes.size} DayZ Enforce Script classes, with descriptions.`,
+    breadcrumbs: [{ label: 'Data Structures' }],
     content,
   });
 }
 
-export function renderClassesLetter(ctx, letter, names) {
+/** Data Structure Index: names only, which is what makes it quick to scan. */
+export function renderClassesIndex(ctx, letters) {
+  const { site, base } = ctx;
+  const sections = [...letters.entries()]
+    .map(
+      ([l, names]) => `<h2 id="${l}"><a href="${base}classes/${l}/">${letterTitle(l)}</a> <span class="count">${names.length}</span></h2>
+<div class="namegrid">${names.map((n) => `<a href="${base}class/${n}/">${esc(n)}</a>`).join('')}</div>`
+    )
+    .join('\n');
+  const content = `
+<h1>Data Structure Index <span class="count">${site.classes.size.toLocaleString('en-US')}</span></h1>
+<p>All class names, alphabetically. Follow a letter for the same list with descriptions.</p>
+${letterBar(base, 'classes/', letters.keys())}
+${sections}`;
+  return layout({
+    ...ctx,
+    title: 'Data Structure Index',
+    active: 'classes/',
+    breadcrumbs: [{ label: 'Data Structures', href: `${base}annotated/` }, { label: 'Index' }],
+    content,
+  });
+}
+
+export function renderClassesLetter(ctx, letter, names, letters) {
   const { site, base } = ctx;
   const rows = names
     .map((n) => {
@@ -233,13 +353,62 @@ export function renderClassesLetter(ctx, letter, names) {
     })
     .join('\n');
   const content = `
-<h1>Classes — ${letter.toUpperCase()} <span class="count">${names.length}</span></h1>
+<h1>Data Structures — ${letterTitle(letter)} <span class="count">${names.length}</span></h1>
+${letterBar(base, 'classes/', letters, letter)}
 <table class="list"><tbody>${rows}</tbody></table>`;
   return layout({
     ...ctx,
-    title: `Classes ${letter.toUpperCase()}`,
-    active: 'Classes',
-    breadcrumbs: [{ label: 'Classes', href: `${base}classes/` }, { label: letter.toUpperCase() }],
+    title: `Data Structures ${letterTitle(letter)}`,
+    active: 'classes/',
+    breadcrumbs: [
+      { label: 'Data Structures', href: `${base}annotated/` },
+      { label: 'Index', href: `${base}classes/` },
+      { label: letterTitle(letter) },
+    ],
+    content,
+  });
+}
+
+// ---------------------------------------------------------------------------
+
+/** Data Fields: every member and method of every class, by initial. */
+export function renderFields(ctx, letter, entries, letters, kind) {
+  const { base } = ctx;
+  const KINDS = {
+    all: ['Data Fields', 'fields/', 'Every member and method declared by a class.'],
+    functions: ['Data Fields — Functions', 'fields/functions/', 'Every method declared by a class.'],
+    variables: ['Data Fields — Variables', 'fields/variables/', 'Every variable and constant declared by a class.'],
+  };
+  const [title, dir, blurb] = KINDS[kind];
+  const tabs = Object.entries(KINDS)
+    .map(([k, [, d]]) => `<a class="tab${k === kind ? ' active' : ''}" href="${base}${d}">${k === 'all' ? 'All' : k[0].toUpperCase() + k.slice(1)}</a>`)
+    .join('');
+
+  const body = letter
+    ? `<dl class="fields">${entries
+        .map(
+          ([name, owners]) => `<dt><code>${esc(name)}</code></dt><dd>${owners
+            .map((o) => `<a href="${base}class/${o.owner}/#${name.replace(/[^\w]/g, '_')}">${esc(o.owner)}</a>`)
+            .join(' ')}</dd>`
+        )
+        .join('\n')}</dl>`
+    : `<p class="muted">Pick a letter above.</p>`;
+
+  const content = `
+<h1>${title}${letter ? ` — ${letterTitle(letter)}` : ''}${letter ? ` <span class="count">${entries.length.toLocaleString('en-US')}</span>` : ''}</h1>
+<p>${blurb} The same name is often declared by many classes, so each one links to every class that has it.</p>
+<div class="tabs">${tabs}</div>
+${letterBar(base, dir, letters, letter)}
+${body}`;
+  return layout({
+    ...ctx,
+    title: letter ? `${title} ${letterTitle(letter)}` : title,
+    active: dir,
+    breadcrumbs: [
+      { label: 'Data Structures', href: `${base}annotated/` },
+      { label: 'Data Fields', href: `${base}fields/` },
+      ...(letter ? [{ label: letterTitle(letter) }] : []),
+    ],
     content,
   });
 }
@@ -293,20 +462,21 @@ ${doc}</div>`;
       : '';
     return `<div class="member" id="${id}">
 <div class="member-sig"><code>${methodSig(m, site, base)}</code>${condBadges(m.cond)}${src}<a class="anchor" href="#${id}" aria-label="Link to ${esc(m.name)}">#</a></div>
-${doc}</div>`;
+${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}</div>`;
   };
 
   const section = (title, items, block) =>
     items.length ? `<h2 id="${title.toLowerCase().replace(/\s/g, '-')}">${title} <span class="count">${items.length}</span></h2>\n${items.map(block).join('\n')}` : '';
 
-  const locations = cls.locations
-    .filter((l) => !l.forward)
-    .concat(cls.locations.filter((l) => l.forward))
-    .map(
-      (l) =>
-        `<a href="${fileLineHref(base, l.path, l.line)}"><code>${esc(l.path.replace(/^scripts\//, ''))}</code>:${l.line}</a>${l.forward ? ' <span class="muted">(declaration)</span>' : ''}`
-    )
-    .join('<br>');
+  const locations = locationLinks(
+    site,
+    base,
+    cls.locations.filter((l) => !l.forward).concat(cls.locations.filter((l) => l.forward))
+  );
+
+  const module = cls.group && site.groups.has(cls.group)
+    ? `<p class="in-module">Part of <a href="${base}module/${cls.group}/">${esc(site.groups.get(cls.group).title)}</a></p>`
+    : '';
 
   const badges =
     (cls.modded ? '<span class="badge badge-mod">modded</span>' : '') +
@@ -320,6 +490,7 @@ ${doc}</div>`;
   const content = `
 <h1 class="class-title"><span class="kw">class</span> ${esc(cls.name)}${cls.generics ? `<span class="generics">${esc(cls.generics)}</span>` : ''}${badges}</h1>
 <p class="chain">${chain}</p>
+${module}
 ${basesNote}
 ${derived}
 ${attrs}
@@ -335,29 +506,14 @@ ${section('Methods', methods, methodBlock)}
   return layout({
     ...ctx,
     title: cls.name,
-    active: 'Classes',
+    active: 'annotated/',
     description: brief || `${cls.name} class — DayZ Enforce Script API`,
-    breadcrumbs: [{ label: 'Classes', href: `${base}classes/` }, { label: cls.name }],
+    breadcrumbs: [{ label: 'Data Structures', href: `${base}annotated/` }, { label: cls.name }],
     content,
   });
 }
 
 // ---------------------------------------------------------------------------
-
-export function renderEnumsIndex(ctx) {
-  const { site, base } = ctx;
-  const names = [...site.enums.keys()].sort((a, b) => a.localeCompare(b));
-  const rows = names
-    .map((n) => {
-      const e = site.enums.get(n);
-      return `<tr><td><a href="${base}enum/${n}/">${esc(n)}</a>${condBadges(e.cond)}</td><td>${e.values.length} values</td><td>${e.doc ? briefOf(e.doc, site, base) : ''}</td></tr>`;
-    })
-    .join('\n');
-  const content = `
-<h1>Enums <span class="count">${names.length}</span></h1>
-<table class="list"><tbody>${rows}</tbody></table>`;
-  return layout({ ...ctx, title: 'Enums', active: 'Enums', breadcrumbs: [{ label: 'Enums' }], content });
-}
 
 export function renderEnum(ctx, en) {
   const { site, base } = ctx;
@@ -366,119 +522,420 @@ export function renderEnum(ctx, en) {
       (v) => `<tr id="${esc(v.name)}"><td><code>${esc(v.name)}</code>${condBadges(v.cond)}</td><td>${v.value !== undefined ? `<code class="lit">${esc(v.value)}</code>` : ''}</td><td>${v.doc ? renderDoc(v.doc, site, base) : ''}</td></tr>`
     )
     .join('\n');
-  const locations = en.locations
-    .map((l) => `<a href="${fileLineHref(base, l.path, l.line)}"><code>${esc(l.path.replace(/^scripts\//, ''))}</code>:${l.line}</a>`)
-    .join('<br>');
   const content = `
 <h1 class="class-title"><span class="kw">enum</span> ${esc(en.name)}${en.base ? ` <span class="chain-sep">:</span> ${linkType(en.base, site, base)}` : ''}${condBadges(en.cond)}</h1>
 ${en.doc ? `<div class="class-doc">${renderDoc(en.doc, site, base)}</div>` : ''}
 <table class="list enum-table"><thead><tr><th>Name</th><th>Value</th><th></th></tr></thead><tbody>${rows}</tbody></table>
 <h2>Defined in</h2>
-<p class="locations">${locations}</p>`;
+<p class="locations">${locationLinks(site, base, en.locations)}</p>`;
   return layout({
     ...ctx,
     title: en.name,
-    active: 'Enums',
-    breadcrumbs: [{ label: 'Enums', href: `${base}enums/` }, { label: en.name }],
+    active: 'globals/enums/',
+    breadcrumbs: [{ label: 'Enumerations', href: `${base}globals/enums/` }, { label: en.name }],
     content,
   });
 }
 
 // ---------------------------------------------------------------------------
 
-export function renderTypedefs(ctx) {
-  const { site, base } = ctx;
-  const items = [...site.typedefs].sort((a, b) => a.name.localeCompare(b.name));
-  const rows = items
-    .map(
-      (t) => `<tr id="${esc(t.name)}"><td><code>${esc(t.name)}</code>${condBadges(t.cond)}</td><td><code>${linkType(t.type, site, base)}</code></td><td><a href="${fileLineHref(base, t.file, t.line)}">src</a></td></tr>`
-    )
-    .join('\n');
-  const content = `
-<h1>Typedefs <span class="count">${items.length}</span></h1>
-<p>Type aliases defined across the scripts.</p>
-<table class="list"><thead><tr><th>Alias</th><th>Type</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
-  return layout({ ...ctx, title: 'Typedefs', active: 'Typedefs', breadcrumbs: [{ label: 'Typedefs' }], content });
-}
+// Everything declared outside a class, split the way Doxygen splits it.
+const GLOBAL_KINDS = [
+  ['', 'All'],
+  ['functions/', 'Functions'],
+  ['variables/', 'Variables'],
+  ['typedefs/', 'Typedefs'],
+  ['enums/', 'Enumerations'],
+  ['values/', 'Enumerator'],
+  ['macros/', 'Macros'],
+];
 
-export function renderConstants(ctx) {
-  const { site, base } = ctx;
+const byName = (a, b) => a.name.localeCompare(b.name);
+
+/** The contents of each Globals tab, so the "All" tab can reuse them. */
+function globalSections(ctx, site, base) {
+  const src = (item) => `<a class="member-src" href="${fileLineHref(base, item.file, item.line)}">src</a>`;
+  const used = new Set();
+
+  const functions = [...site.functions].sort(byName).map((fn) => {
+    const id = anchorFor(used, fn.name);
+    const doc = fn.doc ? `<div class="member-doc">${renderDoc(fn.doc, site, base)}</div>` : '';
+    return `<div class="member" id="${id}">
+<div class="member-sig"><code>${methodSig(fn, site, base)}</code>${condBadges(fn.cond)}${src(fn)}<a class="anchor" href="#${id}">#</a></div>
+${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
+  });
+
+  // Variables keep their module grouping: the sources organise the constants
+  // into \defgroup blocks, and that is the only structure they have.
   const grouped = new Map();
   for (const g of site.globals) {
-    const key = g.group || 'Ungrouped';
+    const key = g.group || '';
     if (!grouped.has(key)) grouped.set(key, []);
     grouped.get(key).push(g);
   }
-  const sections = [...grouped.entries()]
-    .sort((a, b) => a[0].localeCompare(b[0]))
+  const variables = [...grouped.entries()]
+    .sort((a, b) => (site.groups.get(a[0])?.title || 'zzz').localeCompare(site.groups.get(b[0])?.title || 'zzz'))
     .map(([g, items]) => {
-      const title = site.groups.get(g)?.title || g;
+      const mod = site.groups.get(g);
+      const heading = mod
+        ? `<a href="${base}module/${g}/">${esc(mod.title)}</a>`
+        : 'Ungrouped';
       const rows = items
         .map(
-          (v) => `<tr id="${esc(v.name)}"><td><code>${varSig(v, site, base)}</code>${condBadges(v.cond)}</td><td>${v.doc ? briefOf(v.doc, site, base) : ''}</td><td><a href="${fileLineHref(base, v.file, v.line)}">src</a></td></tr>`
+          (v) => `<tr id="${esc(v.name)}"><td><code>${varSig(v, site, base)}</code>${condBadges(v.cond)}</td><td>${v.doc ? briefOf(v.doc, site, base) : ''}</td><td>${src(v)}</td></tr>`
         )
         .join('\n');
-      return `<h2 id="${esc(g)}">${esc(title)} <span class="count">${items.length}</span></h2>
+      return `<h3 id="${esc(g || 'ungrouped')}">${heading} <span class="count">${items.length}</span></h3>
 <table class="list"><tbody>${rows}</tbody></table>`;
     })
     .join('\n');
-  const content = `<h1>Constants &amp; globals <span class="count">${site.globals.length}</span></h1>\n${sections}`;
-  return layout({ ...ctx, title: 'Constants', active: 'Constants', breadcrumbs: [{ label: 'Constants' }], content });
+
+  const typedefs = [...site.typedefs].sort(byName)
+    .map(
+      (t) => `<tr id="${esc(t.name)}"><td><code>${esc(t.name)}</code>${condBadges(t.cond)}</td><td><code>${linkType(t.type, site, base)}</code></td><td>${src(t)}</td></tr>`
+    )
+    .join('\n');
+
+  const enums = [...site.enums.values()].sort(byName)
+    .map(
+      (e) => `<tr><td><a href="${base}enum/${e.name}/">${esc(e.name)}</a>${condBadges(e.cond)}</td><td>${e.values.length} values</td><td>${e.doc ? briefOf(e.doc, site, base) : ''}</td></tr>`
+    )
+    .join('\n');
+
+  const values = [...site.enums.values()]
+    .flatMap((e) => e.values.map((v) => ({ ...v, owner: e.name })))
+    .sort((a, b) => a.name.localeCompare(b.name) || a.owner.localeCompare(b.owner))
+    .map(
+      (v) => `<tr><td><a href="${base}enum/${v.owner}/#${esc(v.name)}"><code>${esc(v.name)}</code></a></td><td><a href="${base}enum/${v.owner}/">${esc(v.owner)}</a></td><td>${v.value !== undefined ? `<code class="lit">${esc(v.value)}</code>` : ''}</td></tr>`
+    )
+    .join('\n');
+
+  const macros = [...site.defines].sort(byName)
+    .map(
+      (d) => `<tr id="${esc(d.name)}"><td><code>${esc(d.name)}</code>${condBadges(d.cond)}</td><td>${d.value ? `<code class="lit">${esc(d.value)}</code>` : ''}</td><td>${src(d)}</td></tr>`
+    )
+    .join('\n');
+
+  const table = (head, rows) =>
+    rows ? `<table class="list">${head}<tbody>${rows}</tbody></table>` : '<p class="muted">None.</p>';
+
+  return {
+    functions: functions.length ? functions.join('\n') : '<p class="muted">None.</p>',
+    variables: variables || '<p class="muted">None.</p>',
+    typedefs: table('<thead><tr><th>Alias</th><th>Type</th><th></th></tr></thead>', typedefs),
+    enums: table('', enums),
+    values: table('<thead><tr><th>Name</th><th>Enum</th><th>Value</th></tr></thead>', values),
+    macros: table('<thead><tr><th>Name</th><th>Value</th><th></th></tr></thead>', macros),
+  };
 }
 
-export function renderFunctions(ctx) {
+export function renderGlobals(ctx, kind) {
   const { site, base } = ctx;
-  const items = [...site.functions].sort((a, b) => a.name.localeCompare(b.name));
-  const used = new Set();
-  const blocks = items
-    .map((fn) => {
-      const id = anchorFor(used, fn.name);
-      const doc = fn.doc ? `<div class="member-doc">${renderDoc(fn.doc, site, base)}</div>` : '';
-      return `<div class="member" id="${id}">
-<div class="member-sig"><code>${methodSig(fn, site, base)}</code>${condBadges(fn.cond)}<a class="member-src" href="${fileLineHref(base, fn.file, fn.line)}">src</a><a class="anchor" href="#${id}">#</a></div>
-${doc}</div>`;
-    })
-    .join('\n');
-  const content = `<h1>Global functions <span class="count">${items.length}</span></h1>\n${blocks}`;
-  return layout({ ...ctx, title: 'Functions', active: 'Functions', breadcrumbs: [{ label: 'Functions' }], content });
+  const label = GLOBAL_KINDS.find(([k]) => k === kind)[1];
+  const tabs = GLOBAL_KINDS.map(
+    ([k, l]) => `<a class="tab${k === kind ? ' active' : ''}" href="${base}globals/${k}">${l}</a>`
+  ).join('');
+
+  const counts = {
+    functions: site.functions.length,
+    variables: site.globals.length,
+    typedefs: site.typedefs.length,
+    enums: site.enums.size,
+    values: [...site.enums.values()].reduce((n, e) => n + e.values.length, 0),
+    macros: site.defines.length,
+  };
+  const key = kind === '' ? null : kind.replace('/', '');
+
+  // The "All" tab is an index of names rather than a copy of the six pages
+  // below it: repeating them costs more bytes than the whole rest of the site.
+  const names = {
+    functions: [...site.functions].sort(byName).map((f) => [f.name, `globals/functions/#${f.name}`]),
+    variables: [...site.globals].sort(byName).map((g) => [g.name, `globals/variables/#${g.name}`]),
+    typedefs: [...site.typedefs].sort(byName).map((t) => [t.name, `globals/typedefs/#${t.name}`]),
+    enums: [...site.enums.values()].sort(byName).map((e) => [e.name, `enum/${e.name}/`]),
+    values: null, // 3.5k enumerators; the tab itself is the only sensible place
+    macros: [...site.defines].sort(byName).map((d) => [d.name, `globals/macros/#${d.name}`]),
+  };
+
+  const body = key
+    ? globalSections(ctx, site, base)[key]
+    : GLOBAL_KINDS.slice(1)
+        .map(([k, l]) => {
+          const id = k.replace('/', '');
+          const heading = `<h2 id="${id}"><a href="${base}globals/${k}">${l}</a> <span class="count">${counts[id].toLocaleString('en-US')}</span></h2>`;
+          const list = names[id]
+            ? `<div class="namegrid">${names[id].map(([n, href]) => `<a href="${base}${href}">${esc(n)}</a>`).join('')}</div>`
+            : `<p class="muted"><a href="${base}globals/${k}">Browse all ${counts[id].toLocaleString('en-US')} enumerators</a>.</p>`;
+          return `${heading}\n${list}`;
+        })
+        .join('\n');
+
+  const content = `
+<h1>Globals${key ? ` — ${label}` : ''}${key ? ` <span class="count">${counts[key].toLocaleString('en-US')}</span>` : ''}</h1>
+<p>Functions, variables, type aliases, enumerations and macros declared outside any class.</p>
+<div class="tabs">${tabs}</div>
+${body}`;
+
+  return layout({
+    ...ctx,
+    title: key ? `Globals — ${label}` : 'Globals',
+    active: `globals/${kind}`,
+    breadcrumbs: [
+      { label: 'Files', href: `${base}files/` },
+      { label: 'Globals', href: key ? `${base}globals/` : undefined },
+      ...(key ? [{ label }] : []),
+    ],
+    content,
+  });
 }
 
 // ---------------------------------------------------------------------------
 
 export function renderFilesIndex(ctx) {
   const { site, base } = ctx;
-  const byModule = new Map();
-  for (const f of site.files) {
-    if (!byModule.has(f.module)) byModule.set(f.module, []);
-    byModule.get(f.module).push(f);
-  }
-  const sections = [...byModule.entries()]
-    .map(([m, files]) => {
-      const rows = files
-        .map((f) => {
-          const short = f.path.replace(/^scripts\/[^/]+\//, '');
-          const what = [
-            f.counts.classes && `${f.counts.classes} classes`,
-            f.counts.enums && `${f.counts.enums} enums`,
-            f.counts.functions && `${f.counts.functions} functions`,
-            f.counts.globals && `${f.counts.globals} globals`,
-          ]
-            .filter(Boolean)
-            .join(', ');
-          return `<tr><td><a href="${fileHref(base, f.path)}"><code>${esc(short)}</code></a></td><td>${what}</td></tr>`;
+
+  const fileRow = (f) => {
+    const what = [
+      f.counts.classes && `${f.counts.classes} classes`,
+      f.counts.enums && `${f.counts.enums} enums`,
+      f.counts.functions && `${f.counts.functions} functions`,
+      f.counts.globals && `${f.counts.globals} globals`,
+    ]
+      .filter(Boolean)
+      .join(', ');
+    return `<li class="tree-file"><a href="${fileHref(base, f.path)}"><code>${esc(f.name)}</code></a>${what ? ` <span class="muted">${what}</span>` : ''}</li>`;
+  };
+
+  const dirNode = (d, depth) => `<li><details${depth < 1 ? ' open' : ''}><summary><code>${esc(d.name)}</code> <span class="count">${d.count.toLocaleString('en-US')}</span></summary>
+<ul>${d.dirs.map((k) => dirNode(k, depth + 1)).join('')}${d.files.map(fileRow).join('')}</ul></details></li>`;
+
+  const content = `
+<h1>File List <span class="count">${site.files.length.toLocaleString('en-US')}</span></h1>
+<p>Every script file, in the directory layout the game ships them in. Expand a directory to see its files.</p>
+<div class="hierarchy-tools"><button id="expandAll" class="btn">Expand all</button> <button id="collapseAll" class="btn">Collapse all</button></div>
+<ul class="tree">${site.dirRoots.map((d) => dirNode(d, 0)).join('')}${site.rootFiles.map(fileRow).join('')}</ul>`;
+  return layout({ ...ctx, title: 'File List', active: 'files/', breadcrumbs: [{ label: 'Files' }], content });
+}
+
+// ---------------------------------------------------------------------------
+
+/** Modules: the \defgroup topics the sources declare, as a tree. */
+export function renderModulesIndex(ctx) {
+  const { site, base } = ctx;
+  const node = (name, depth) => {
+    const mod = site.groups.get(name);
+    const total = site.moduleTotal(name);
+    const link = `<a href="${base}module/${name}/">${esc(mod.title)}</a>`;
+    const count = total ? ` <span class="count">${total.toLocaleString('en-US')}</span>` : '';
+    if (!mod.children.length) return `<li>${link}${count}</li>`;
+    return `<li><details${depth < 1 ? ' open' : ''}><summary>${link}${count}</summary>
+<ul>${mod.children.map((k) => node(k, depth + 1)).join('')}</ul></details></li>`;
+  };
+  const content = `
+<h1>Modules <span class="count">${site.groups.size}</span></h1>
+<p>Topics the scripts group themselves into with Doxygen <code>\\defgroup</code> blocks — mostly the engine-facing API and the constant tables. Classes and constants that belong to a topic link back to it.</p>
+<div class="hierarchy-tools"><button id="expandAll" class="btn">Expand all</button> <button id="collapseAll" class="btn">Collapse all</button></div>
+<ul class="tree">${site.moduleRoots.map((n) => node(n, 0)).join('')}</ul>`;
+  return layout({
+    ...ctx,
+    title: 'Modules',
+    active: 'modules/',
+    description: 'DayZ Enforce Script API grouped into modules: math, physics, entities, UI, constants and more.',
+    breadcrumbs: [{ label: 'Modules' }],
+    content,
+  });
+}
+
+/**
+ * The top-level topic a module sits under. The sidebar lists only those, so
+ * this is what a nested topic's page highlights.
+ */
+function rootTopic(site, name) {
+  let n = name;
+  for (let p = site.groups.get(n)?.parent; p; p = site.groups.get(n)?.parent) n = p;
+  return n;
+}
+
+export function renderModule(ctx, mod) {
+  const { site, base } = ctx;
+
+  const section = (title, body) => (body ? `<h2>${title}</h2>\n${body}` : '');
+  const nameList = (names, kind) =>
+    names.length
+      ? `<div class="derived-list">${[...names]
+          .sort((a, b) => a.localeCompare(b))
+          .map((n) => `<a href="${base}${kind}/${n}/">${esc(n)}</a>`)
+          .join(' ')}</div>`
+      : '';
+
+  const children = mod.children.length
+    ? `<ul class="modkids">${mod.children
+        .map((k) => {
+          const kid = site.groups.get(k);
+          const total = site.moduleTotal(k);
+          return `<li><a href="${base}module/${k}/">${esc(kid.title)}</a>${total ? ` <span class="count">${total}</span>` : ''}</li>`;
         })
-        .join('\n');
-      return `<h2 id="${esc(m)}">${esc(moduleLabel(m))} <code>${esc(m)}</code> <span class="count">${files.length}</span></h2>
-<table class="list"><tbody>${rows}</tbody></table>`;
-    })
-    .join('\n');
-  const content = `<h1>Script files <span class="count">${site.files.length}</span></h1>\n${sections}`;
-  return layout({ ...ctx, title: 'Files', active: 'Files', breadcrumbs: [{ label: 'Files' }], content });
+        .join('')}</ul>`
+    : '';
+
+  const src = (item) => `<a class="member-src" href="${fileLineHref(base, item.file, item.line)}">src</a>`;
+  const varRows = (items) =>
+    items.length
+      ? `<table class="list"><tbody>${[...items]
+          .sort(byName)
+          .map(
+            (v) => `<tr id="${esc(v.name)}"><td><code>${varSig(v, site, base)}</code>${condBadges(v.cond)}</td><td>${v.doc ? briefOf(v.doc, site, base) : ''}</td><td>${src(v)}</td></tr>`
+          )
+          .join('\n')}</tbody></table>`
+      : '';
+
+  // Everything the topic declares, flattened the way Doxygen flattened it: a
+  // group page there buckets members by shape rather than by owner, so a class
+  // method sits under Functions beside a free one and an enum value sits under
+  // Variables. Two sources feed it -- members the sources wrapped in their own
+  // \defgroup away from the class holding them, which is how the big constants
+  // classes are carved up, and the members of the classes the topic contains.
+  const fnEntries = mod.functions.map((item) => ({ item, owner: null, method: true }));
+  const varEntries = mod.globals.map((item) => ({ item, owner: null, method: false }));
+  for (const m of mod.members) (m.method ? fnEntries : varEntries).push(m);
+  for (const name of mod.classes) {
+    const cls = site.classes.get(name);
+    if (!cls) continue;
+    for (const m of cls.methods) fnEntries.push({ item: m, owner: name, method: true });
+    for (const v of cls.members) varEntries.push({ item: v, owner: name, method: false });
+  }
+  const byItemName = (a, b) => a.item.name.localeCompare(b.item.name) || (a.owner || '').localeCompare(b.owner || '');
+  fnEntries.sort(byItemName);
+  varEntries.sort(byItemName);
+
+  const valueEntries = mod.enums
+    .map((n) => [n, site.enums.get(n)])
+    .flatMap(([n, en]) => (en?.values || []).map((v) => ({ item: v, owner: n, method: false })))
+    .sort(byItemName);
+
+  // Doxygen numbered same-named members [1/n] because its anchors were unique
+  // but its headings were not; the same is needed here for GetName, which four
+  // of the widget classes declare.
+  const used = new Set();
+  const seenCount = new Map();
+  for (const e of [...fnEntries, ...varEntries, ...valueEntries]) {
+    seenCount.set(e.item.name, (seenCount.get(e.item.name) || 0) + 1);
+  }
+  const numbering = new Map();
+  for (const e of [...fnEntries, ...varEntries, ...valueEntries]) {
+    e.id = anchorFor(used, e.item.name);
+    const total = seenCount.get(e.item.name);
+    if (total > 1) {
+      const n = (numbering.get(e.item.name) || 0) + 1;
+      numbering.set(e.item.name, n);
+      e.ordinal = ` <span class="ordinal">[${n}/${total}]</span>`;
+    }
+  }
+
+  const sigOf = (e) =>
+    e.method ? methodSig(e.item, site, base) : e.item.value !== undefined || !e.item.type
+      ? esc(e.item.name)
+      : varSig(e.item, site, base);
+
+  /** Doxygen's summary tables: signature, brief, and a link to the detail below. */
+  const declTable = (entries) =>
+    entries.length
+      ? `<table class="list"><tbody>${entries
+          .map(
+            (e) => `<tr><td><code>${sigOf(e)}</code>${condBadges(e.item.cond)}</td><td>${
+              e.item.doc ? briefOf(e.item.doc, site, base) : ''
+            }</td><td><a class="member-src" href="#${e.id}">more…</a></td></tr>`
+          )
+          .join('\n')}</tbody></table>`
+      : '';
+
+  /** Doxygen's documentation sections: the full block, repeated on this page. */
+  const defBlocks = (entries) =>
+    entries.length
+      ? entries
+          .map((e) => {
+            const owner = e.owner
+              ? `<span class="owner-of">${
+                  site.classes.has(e.owner)
+                    ? `<a href="${base}class/${e.owner}/">${esc(e.owner)}</a>`
+                    : site.enums.has(e.owner)
+                      ? `<a href="${base}enum/${e.owner}/">${esc(e.owner)}</a>`
+                      : esc(e.owner)
+                }</span>`
+              : '';
+            const doc = e.item.doc ? `<div class="member-doc">${renderDoc(e.item.doc, site, base)}</div>` : '';
+            const source = e.item.file ? src(e.item) : '';
+            return `<div class="member" id="${e.id}">
+<h3 class="member-name">${esc(e.item.name)}${e.ordinal || ''}${owner}</h3>
+<div class="member-sig"><code>${sigOf(e)}</code>${condBadges(e.item.cond)}${source}<a class="anchor" href="#${e.id}">#</a></div>
+${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e.owner)}</div>`;
+          })
+          .join('\n')
+      : '';
+
+  const macroRows = mod.defines.length
+    ? `<table class="list"><tbody>${[...mod.defines]
+        .sort(byName)
+        .map(
+          (d) => `<tr id="${esc(d.name)}"><td><code>${esc(d.name)}</code>${condBadges(d.cond)}</td><td>${d.value ? `<code class="lit">${esc(d.value)}</code>` : ''}</td><td>${src(d)}</td></tr>`
+        )
+        .join('\n')}</tbody></table>`
+    : '';
+
+  const typedefRows = mod.typedefs.length
+    ? `<table class="list"><tbody>${[...mod.typedefs]
+        .sort(byName)
+        .map(
+          (t) => `<tr><td><code>${esc(t.name)}</code></td><td><code>${linkType(t.type, site, base)}</code></td><td>${src(t)}</td></tr>`
+        )
+        .join('\n')}</tbody></table>`
+    : '';
+
+  const parent = mod.parent && site.groups.has(mod.parent)
+    ? `<p class="in-module">Part of <a href="${base}module/${mod.parent}/">${esc(site.groups.get(mod.parent).title)}</a></p>`
+    : '';
+
+  const empty =
+    !children && !mod.classes.length && !mod.enums.length && !mod.typedefs.length &&
+    !varEntries.length && !fnEntries.length && !mod.defines.length
+      ? '<p class="muted">Nothing in this build is filed under this module. The sources declare it, but everything it once held is commented out or has moved.</p>'
+      : '';
+
+  // The order is Doxygen's own, from group/memberdecl/* then group/memberdef/*
+  // in src/layout.cpp: every declaration is summarised in a table first, then
+  // documented in full below. That is why their group pages ran to 300 KB.
+  const content = `
+<h1>${esc(mod.title)}</h1>
+${parent}
+${mod.desc ? `<div class="class-doc">${renderDoc(mod.desc.replace(/[\\@](def|addto)group\s+\S+[^\n]*/, '').replace(/@[{}]/g, ''), site, base)}</div>` : ''}
+${empty}
+${section('Modules', children)}
+${section('Data Structures', nameList(mod.classes, 'class'))}
+${section('Macros', macroRows)}
+${section('Typedefs', typedefRows)}
+${section('Enumerations', nameList(mod.enums, 'enum'))}
+${section('Enumerator', declTable(valueEntries))}
+${section('Functions', declTable(fnEntries))}
+${section('Variables', declTable(varEntries))}
+${section('Enumerator Documentation', defBlocks(valueEntries))}
+${section('Function Documentation', defBlocks(fnEntries))}
+${section('Variable Documentation', defBlocks(varEntries))}`;
+
+  return layout({
+    ...ctx,
+    title: mod.title,
+    active: `module/${rootTopic(site, mod.name)}/`,
+    description: `${mod.title} — DayZ Enforce Script API module`,
+    breadcrumbs: [{ label: 'Modules', href: `${base}modules/` }, { label: mod.title }],
+    content,
+  });
 }
 
 export function renderFile(ctx, fileEntry, fileModel, source) {
-  const { site, base } = ctx;
-  const short = fileEntry.path.replace(/^scripts\//, '');
+  const { base } = ctx;
+  // fileEntry.display is derived from these same bytes plus the static
+  // dictionary, so the page still depends on nothing but the source blob.
+  const short = fileEntry.display;
 
   const declList = [];
   for (const c of fileModel.classes) {
@@ -487,8 +944,8 @@ export function renderFile(ctx, fileEntry, fileModel, source) {
     }
   }
   for (const e of fileModel.enums) declList.push({ kind: 'enum', name: e.name, href: `${base}enum/${e.name}/`, line: e.line });
-  for (const t of fileModel.typedefs) declList.push({ kind: 'typedef', name: t.name, href: `${base}typedefs/#${t.name}`, line: t.line });
-  for (const fn of fileModel.functions) declList.push({ kind: 'func', name: fn.name + '()', href: `${base}functions/#${fn.name}`, line: fn.line });
+  for (const t of fileModel.typedefs) declList.push({ kind: 'typedef', name: t.name, href: `${base}globals/typedefs/#${t.name}`, line: t.line });
+  for (const fn of fileModel.functions) declList.push({ kind: 'func', name: fn.name + '()', href: `${base}globals/functions/#${fn.name}`, line: fn.line });
 
   const decls = declList.length
     ? `<div class="file-decls">${declList
@@ -509,8 +966,8 @@ ${decls}
   return layout({
     ...ctx,
     title: short,
-    active: 'Files',
-    breadcrumbs: [{ label: 'Files', href: `${base}files/` }, { label: short }],
+    active: 'files/',
+    breadcrumbs: [{ label: 'File List', href: `${base}files/` }, { label: short }],
     content,
   });
 }
@@ -537,11 +994,17 @@ export function renderHierarchy(ctx) {
   };
 
   const content = `
-<h1>Class hierarchy</h1>
+<h1>Class Hierarchy</h1>
 <p>Expand a node to see the classes derived from it. Top-level entries either have no base class or extend an engine class that is not defined in scripts.</p>
 <div class="hierarchy-tools"><button id="expandAll" class="btn">Expand all</button> <button id="collapseAll" class="btn">Collapse all</button></div>
 <ul class="tree">${roots.map((r) => renderNode(r, 0)).join('\n')}</ul>`;
-  return layout({ ...ctx, title: 'Hierarchy', active: 'Hierarchy', breadcrumbs: [{ label: 'Hierarchy' }], content });
+  return layout({
+    ...ctx,
+    title: 'Class Hierarchy',
+    active: 'hierarchy/',
+    breadcrumbs: [{ label: 'Data Structures', href: `${base}annotated/` }, { label: 'Class Hierarchy' }],
+    content,
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -551,7 +1014,7 @@ export function renderChanges(ctx, diff, prevLabel) {
   if (!diff) {
     const content = `<h1>Changelog — DayZ ${esc(site.build)}</h1>
 <p>This is the oldest build tracked, so there is no previous build to compare against.</p>`;
-    return layout({ ...ctx, title: 'Changelog', active: 'Changelog', breadcrumbs: [{ label: 'Changelog' }], content });
+    return layout({ ...ctx, title: 'Changelog', active: 'changes/', breadcrumbs: [{ label: 'Changelog' }], content });
   }
 
   const nameList = (names, kind) =>
@@ -619,7 +1082,7 @@ ${enumChanged || '<p class="muted">None.</p>'}
     })
     .join(' · ')}</p>`;
 
-  return layout({ ...ctx, title: 'Changelog', active: 'Changelog', breadcrumbs: [{ label: 'Changelog' }], content });
+  return layout({ ...ctx, title: 'Changelog', active: 'changes/', breadcrumbs: [{ label: 'Changelog' }], content });
 }
 
 export function render404(ctx) {
