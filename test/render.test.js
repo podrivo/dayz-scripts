@@ -7,7 +7,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { layout } from '../src/generate/html.js';
 import { buildSiteModel } from '../src/generate/model.js';
-import { renderClass, renderEnum } from '../src/generate/render.js';
+import { renderClass, renderEnum, renderCompare } from '../src/generate/render.js';
 import { classDeps } from '../src/generate/memo.js';
 import { SITE_URL } from '../src/generate/content.js';
 
@@ -71,6 +71,7 @@ test('the sidebar is the tree Doxygen had, and marks the page once', () => {
   const labels = [
     'Welcome', 'Modules', 'Data Structures', 'Data Structure Index', 'Class Hierarchy',
     'Data Fields', 'Files', 'File List', 'Globals', 'Typedefs', 'Enumerator', 'Macros', 'Changelog',
+    'Compare builds',
   ];
   for (const l of labels) assert.ok(html.includes(`>${l}</a>`), `sidebar is missing ${l}`);
   assert.equal(html.match(/nav-(?:item|sub) active"/g).length, 1, 'exactly one entry is the current page');
@@ -111,6 +112,20 @@ test('enum page is byte-identical across builds when its content is unchanged', 
   const a = renderEnum(ctx(site(BUILD_A)), site(BUILD_A).enums.get('EFoo'));
   const b = renderEnum(ctx(site(BUILD_B)), site(BUILD_B).enums.get('EFoo'));
   assert.equal(a, b);
+});
+
+// The compare page is the one page whose whole subject is which builds exist,
+// so it is also the most tempting place to write a build number into the HTML.
+// It must not: the pickers are filled from /assets/versions.json client-side,
+// which is what keeps one copy of these bytes serving all 49 builds.
+test('the compare page names no build', () => {
+  const cmp = (s) => renderCompare({ site: s, versions: [], base: '../', root: '../', versionPath: 'compare/' });
+  assert.equal(cmp(site(BUILD_A)), cmp(site(BUILD_B)));
+  const html = cmp(site(BUILD_A));
+  for (const needle of ['1.29', '1.19', '163709', '155390', '2026-08-12']) {
+    assert.ok(!html.includes(needle), `compare page leaked ${needle}`);
+  }
+  assert.match(html, /id="compare"/, 'the container compare.js fills must be there');
 });
 
 // A class page lists where each of its methods is called from, so an edit to

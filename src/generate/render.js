@@ -1170,6 +1170,48 @@ ${enumChanged || '<p class="muted">None.</p>'}
   return layout({ ...ctx, title: 'Changelog', active: 'changes/', breadcrumbs: [{ label: 'Changelog' }], content });
 }
 
+/**
+ * The compare page: an empty shell, filled in by site/compare.js.
+ *
+ * /changes/ answers one question — what did this build change — and answers it
+ * from a diff the generator already had in hand. This page answers the other
+ * one: what changed between two builds a modder actually cares about, which is
+ * usually the one they built against and the one their users are running.
+ *
+ * There are 49 builds, so 1,176 pairs, and generating a page per pair would
+ * mean holding two 8 MB models in memory 1,176 times over. It also would not
+ * survive the obvious next ask, three builds at once, which is 18,424 triples.
+ * So the pair is chosen in the browser instead, which is also what makes the
+ * URL shareable: /compare/?from=…&to=… names a comparison, not a build.
+ *
+ * Nothing here names a build, for the same reason nothing else does: the
+ * selects are filled from /assets/versions.json client-side, so these bytes
+ * are identical in all 49 builds and keep their hard link. See layout() in
+ * src/generate/html.js.
+ */
+export function renderCompare(ctx) {
+  const { base } = ctx;
+  const content = `
+<h1>Compare builds</h1>
+<form class="cmp-bar" id="cmpBar" hidden>
+  <label class="cmp-pick"><span>From</span><select id="cmpFrom" aria-label="Compare from build"></select></label>
+  <button type="button" class="btn cmp-swap" id="cmpSwap" title="Swap the two builds" aria-label="Swap the two builds"><i class="ic ic-swap"></i></button>
+  <label class="cmp-pick"><span>To</span><select id="cmpTo" aria-label="Compare to build"></select></label>
+</form>
+<noscript><p>Comparing two builds is done in the browser and needs JavaScript.
+Each build's changes against the one before it are on its own
+<a href="${base}changes/">changelog</a>, which is generated ahead of time.</p></noscript>
+<div class="cmp" id="compare" aria-live="polite" aria-busy="true"><p class="muted">Loading builds…</p></div>`;
+  return layout({
+    ...ctx,
+    title: 'Compare builds',
+    active: 'compare/',
+    description: 'Compare the DayZ Enforce Script API between any two game builds.',
+    breadcrumbs: [{ label: 'Compare builds' }],
+    content,
+  });
+}
+
 export function render404(ctx) {
   const content = `
 <h1>Page not found</h1>

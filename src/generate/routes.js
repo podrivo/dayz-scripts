@@ -17,6 +17,7 @@ import {
   renderHome, renderAnnotated, renderClassesIndex, renderClassesLetter, renderClass,
   renderClassMembers, renderFields, renderEnum, renderGlobals, renderModulesIndex,
   renderModule, renderFilesIndex, renderFile, renderHierarchy, renderChanges,
+  renderCompare,
 } from './render.js';
 
 /**
@@ -139,6 +140,9 @@ export function* pages(site, opts) {
     const { diff, prevLabel } = changes();
     return renderChanges(ctx('changes/'), diff, prevLabel);
   });
+  // No diff is built for this one: it picks its own pair of builds and compares
+  // them in the browser. See renderCompare in src/generate/render.js.
+  yield page('compare/', 'index', () => renderCompare(ctx('compare/')));
 
   // file pages with embedded source
   const fileModels = new Map(site.rawFiles.map((f) => [f.path, f]));

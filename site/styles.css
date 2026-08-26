@@ -84,11 +84,20 @@
 * { box-sizing: border-box; }
 html { scroll-padding-top: 72px; }
 
+/* Nearly every name on this site is one long unbroken word — a signature, a
+   file path, UniversalTemperatureSourceLambdaBaseImpl — and a word that cannot
+   break is a word that widens the page under it. That is worse than an ugly
+   line: the header, the nav and the table of contents are all sticky, so they
+   stay where the viewport is while the text slides out from under them. So
+   anything that cannot fit breaks instead, everywhere, and the page is only
+   ever as wide as the window. Code blocks are exempt by their own doing: they
+   do not wrap at all and scroll inside their box. */
 body {
   margin: 0;
   font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background: var(--bg);
   color: var(--fg);
+  overflow-wrap: anywhere;
 }
 
 a { color: var(--accent); text-decoration: none; }
@@ -172,9 +181,12 @@ pre code { background: none; padding: 0; }
 }
 
 /* ---- search: header trigger + command palette ---- */
+/* min-width: 0 because the placeholder inside is a line of text that does not
+   wrap, and without it the field refuses to shrink below that line and shoves
+   the version picker off the right of a phone. */
 .search-trigger {
   display: flex; align-items: center; gap: 8px;
-  flex: 1; max-width: var(--w-search); margin-left: auto;
+  flex: 1; min-width: 0; max-width: var(--w-search); margin-left: auto;
   height: 36px; padding: 0 8px 0 12px;
   border: 1px solid var(--line); border-radius: 8px;
   background: var(--bg2); color: var(--fg2); font: inherit; font-size: 14px;
@@ -457,7 +469,7 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 
 .count { font-size: 13px; font-weight: 500; color: var(--fg2); }
 
-.crumbs { font-size: 13px; color: var(--fg2); margin-bottom: 10px; overflow-wrap: anywhere; }
+.crumbs { font-size: 13px; color: var(--fg2); margin-bottom: 10px; }
 .crumb-sep { margin: 0 6px; opacity: 0.6; }
 
 .hero p { font-size: 16px; }
@@ -512,6 +524,11 @@ table.list td, table.list th { padding: 7px 10px; border-bottom: 1px solid var(-
 table.list th { color: var(--fg2); font-weight: 600; font-size: 13px; }
 table.list tr:hover td { background: var(--bg2); }
 table.list td:first-child { white-space: nowrap; }
+/* Except where the first column holds a whole declaration rather than a name.
+   A name is short enough to keep on one line and reads worse broken; a
+   declaration is a line of code, and one of them is long enough on its own to
+   hold the column — and the page — open past the width of the window. */
+table.list td:first-child > code { white-space: normal; }
 .enum-table td:first-child { white-space: normal; }
 
 .letters { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 6px; }
@@ -530,7 +547,6 @@ table.list td:first-child { white-space: nowrap; }
 
 /* Name-only index: many short links read better as columns than as a table. */
 .namegrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2px 16px; margin: 10px 0 22px; font-size: 14px; }
-.namegrid a { overflow-wrap: anywhere; }
 
 /* Data fields: a name, then every class that declares it. */
 .fields { margin: 12px 0; font-size: 14px; }
@@ -541,11 +557,10 @@ table.list td:first-child { white-space: nowrap; }
 .modkids { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 16px; }
 
 /* ---- class page ---- */
-.class-title { overflow-wrap: anywhere; }
 .class-title .kw { color: var(--kw); font-weight: 500; font-size: 0.8em; }
 .generics { color: var(--fg2); font-weight: 400; font-size: 0.75em; margin-left: 2px; }
 
-.chain { color: var(--fg2); font-size: 14px; overflow-wrap: anywhere; }
+.chain { color: var(--fg2); font-size: 14px; }
 .chain-sep { opacity: 0.5; margin: 0 2px; }
 .alt-bases { font-size: 14px; color: var(--fg2); }
 
@@ -556,10 +571,12 @@ table.list td:first-child { white-space: nowrap; }
 .member:hover { background: var(--bg2); }
 .member:target { background: var(--accent-bg); outline: 1px solid var(--accent2); }
 .member-sig { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-.member-sig > code { background: none; padding: 0; font-size: 14px; overflow-wrap: anywhere; }
+.member-sig > code { background: none; padding: 0; font-size: 14px; }
 .member-sig .anchor { opacity: 0; font-weight: 600; }
 .member:hover .anchor, .member:target .anchor { opacity: 1; }
-.member-src { font-size: 12px; color: var(--fg2); border: 1px solid var(--line); padding: 0 6px; border-radius: 6px; }
+/* nowrap because it is a button, not prose: three letters in a box, and the
+   table column it usually sits in is narrow enough to break them apart */
+.member-src { font-size: 12px; color: var(--fg2); border: 1px solid var(--line); padding: 0 6px; border-radius: 6px; white-space: nowrap; }
 .member-src:hover { color: var(--accent); border-color: var(--accent2); text-decoration: none; }
 .member-doc { margin: 6px 0 0; font-size: 14px; color: var(--fg); }
 .member-doc p { margin: 4px 0; }
@@ -584,10 +601,9 @@ pre.code, pre.attrs {
   padding: 12px 14px; overflow-x: auto; font-size: 13px; line-height: 1.55;
 }
 
-.locations { font-size: 14px; line-height: 2; overflow-wrap: anywhere; }
+.locations { font-size: 14px; line-height: 2; }
 
 /* ---- source view ---- */
-.file-title { overflow-wrap: anywhere; }
 .file-actions { margin: 0 0 14px; font-size: 13.5px; }
 .file-decls { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 0 16px; font-size: 13.5px; }
 .file-decls .kw { opacity: 0.75; font-size: 12px; }
@@ -681,10 +697,17 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 /* ---- table of contents ----
    Where this page's own sections are, beside it. The third column only exists
    where there is room for one; below that the sections are a short scroll
-   away and the space belongs to the text. */
+   away and the space belongs to the text.
+
+   margin-left: auto keeps it against the right edge of the window rather than
+   against the text: the page column stops at --w-page, and on a wider screen
+   the leftover would otherwise be left stranded to the right of this, which
+   reads as the column having come loose. The nav and the text stay where they
+   are; only the slack moves. */
 .toc {
   position: sticky; top: 56px; align-self: flex-start;
   flex: none; width: 200px; max-height: calc(100vh - 56px);
+  margin-left: auto;
   padding: 26px 16px 20px; overflow-y: auto;
   border-left: 1px solid var(--line);
 }
@@ -727,6 +750,40 @@ tr.removed td:first-child { color: var(--removed); }
 tr.removed code { text-decoration: line-through; opacity: 0.75; }
 tr.changed td:first-child { color: var(--warn-line); }
 tr.changed .old { text-decoration: line-through; opacity: 0.6; }
+
+/* ---- compare two builds ----
+   The picker sits above the results rather than in the header, because it is
+   two choices rather than one and the header already holds the switcher that
+   makes a single one. */
+.cmp-bar { display: flex; align-items: flex-end; gap: 10px; flex-wrap: wrap; margin: 18px 0 4px; }
+.cmp-pick { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.cmp-pick span { color: var(--fg2); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.cmp-pick select {
+  max-width: min(320px, 42vw); height: 34px; padding: 0 8px;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: var(--bg); color: var(--fg); font: inherit; font-size: 14px;
+}
+.cmp-pick select:focus { outline: none; border-color: var(--accent2); }
+.cmp-swap { display: inline-flex; align-items: center; justify-content: center; height: 34px; padding: 0 10px; }
+.ic-swap {
+  width: 15px; height: 15px;
+  --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='1.6'%3E%3Cpath d='M2 5h11l-3-3m3 9H2l3 3'/%3E%3C/svg%3E");
+}
+
+/* The three totals are the filter. A count spanning six kinds cannot say
+   which kind it came from, so clicking it shows what it counted instead. */
+.cmp-ops button.stat { background: none; font: inherit; cursor: pointer; }
+.cmp-ops button.stat[aria-pressed="true"] { border-color: var(--accent2); background: var(--accent-bg); }
+.cmp-ops button.stat[aria-pressed="true"] strong,
+.cmp-ops button.stat[aria-pressed="true"] span { color: var(--accent); }
+
+.cmp-kind { margin-bottom: 8px; }
+.cmp-kind h3 { color: var(--fg2); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+.cmp-none { margin-top: 22px; font-size: 13.5px; }
+
+/* A changed thing with one line to show gets the line, not a disclosure. */
+.diff-flat { border: 1px solid var(--line); border-radius: 10px; margin: 8px 0; padding: 8px 14px; }
+.diff-flat-name { margin: 0; font-weight: 600; }
 
 /* ---- responsive ---- */
 @media (max-width: 900px) {

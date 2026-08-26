@@ -191,10 +191,11 @@ export function briefOf(rawDoc, site, base) {
   return inlineDoc(d.brief, site, base);
 }
 
-// Doxygen's own navigation tree, entry for entry, with Changelog standing
-// where it listed Examples. Sections are links to their own overview as well
-// as headings, and repeat that overview as their first child the way Doxygen
-// did, so the page a section lands on is also visible as a place you are.
+// Doxygen's own navigation tree, entry for entry, with Changelog and Compare
+// builds standing where it listed Examples. Sections are links to their own
+// overview as well as headings, and repeat that overview as their first child
+// the way Doxygen did, so the page a section lands on is also visible as a
+// place you are.
 // The topics under Modules are the one part that changes from build to build,
 // so they are not written into the page: a reused page would carry the sidebar
 // of the build it was first rendered for. They are fetched from that build's
@@ -225,6 +226,7 @@ const NAV = [
     ]],
   ]],
   ['changes/', 'Changelog'],
+  ['compare/', 'Compare builds'],
 ];
 
 /** Whether `active` names this branch or anything under it. */

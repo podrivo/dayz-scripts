@@ -88,3 +88,11 @@ test('app.js survives a page where every feature it looks for is absent', () => 
   const { sandbox } = run();
   assert.equal(typeof sandbox.document.body.dataset, 'object', 'the stub stood in for a real page');
 });
+
+// The compare page is the one feature that hands its work to a second file,
+// and the branch that does so is skipped on all ~416k other pages — which is
+// the shape of the bug the whole file is here to catch. The import itself
+// cannot resolve in a vm; that it rejects rather than throws is the point.
+test('app.js hands off to compare.js when the compare container is there', () => {
+  assert.doesNotThrow(() => run({ querySelector: (s) => (s === '#compare' ? stubEl() : null) }));
+});

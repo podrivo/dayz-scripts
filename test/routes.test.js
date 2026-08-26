@@ -72,6 +72,7 @@ test('URLs resolve to the renderer they name', () => {
     ['hierarchy/', 'index'],
     ['files/', 'index'],
     ['changes/', 'index'],
+    ['compare/', 'index'],
     ['file/3_game/foo.c/', 'file'],
     ['search.json', 'search'],
   ]) {
@@ -116,7 +117,7 @@ test('dependency hashes are deferred until a page is actually written', () => {
 test('a resolved page renders without a memo behind it', () => {
   // The generator always passes the set that records type lookups; the dev
   // server passes nothing, and both have to work.
-  for (const rel of ['', 'class/Foo/', 'enum/EFoo/', 'changes/']) {
+  for (const rel of ['', 'class/Foo/', 'enum/EFoo/', 'changes/', 'compare/']) {
     const html = resolve(site, rel, opts).render();
     assert.match(html, /^<!DOCTYPE html>/, `${rel} did not render a document`);
   }
