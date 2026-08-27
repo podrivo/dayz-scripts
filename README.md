@@ -46,38 +46,38 @@ one is reachable in the other by construction, which `test/routes.test.js`
 asserts directly.
 
 Pages carry no build number, version or date: consecutive builds share 98-99%
-of their pages, so the generator emits each distinct page once and hard-links
-every other URL to it. That turns ~426,000 pages into ~25,000 files and keeps
-`dist/` around 750 MB instead of 6 GB, and lets Netlify upload each unique
-page once. The build stamp is restored in the browser from the URL plus
-`assets/versions.json`. `test/render.test.js` guards the invariant, because a
-build number leaking back into `layout()` would silently undo all of it.
+of their pages, so the generator writes the latest build as real HTML and
+stores only the pages that differ for older builds. Unique historical bodies
+live under `/_b/<sha>` (the page inner, without layout chrome) and
+`/v/<build>/pages.json` lists those exceptions. Identical archive URLs rewrite
+to `/archive.html`, which fetches the latest copy, so `dist/` stays one copy
+of each body instead of ~49 hard-linked trees. The build stamp is restored in
+the browser from the URL plus `assets/versions.json`. `test/render.test.js`
+guards the invariant, because a build number leaking back into `layout()`
+would silently undo all of it.
 
 That same redundancy is worth avoiding earlier, while rendering rather than
 while writing. A page is only rendered when something it reads has changed
 since the previous build, which is true of about 6% of them; the rest reuse the
-bytes they already hashed to and go straight to the hard link. That means
-tracking what each page reads — its model object, the inheritance graph around
-it, and every type name it looked up to decide what becomes a link — which
-`src/generate/memo.js` explains in full. `npm run generate:verify` re-renders
-every reused page and fails if one of them changed, so a renderer that grows a
-dependency the tracking does not know about is caught rather than shipped.
+bytes they already hashed to. That means tracking what each page reads — its
+model object, the inheritance graph around it, and every type name it looked
+up to decide what becomes a link — which `src/generate/memo.js` explains in
+full. `npm run generate:verify` re-renders every reused page and fails if one
+of them changed, so a renderer that grows a dependency the tracking does not
+know about is caught rather than shipped.
 
-Everything that touches `dist/` runs on a worker pool while the main thread
-renders the next build, because creating those ~401,000 hard links is by far
-the longest part of a build and is bound by filesystem latency rather than CPU.
+Filesystem work (writes, and the remaining hard links for identical latest
+pages) runs on a worker pool while the main thread renders the next build.
 
-Two consequences worth knowing: `dist/` measures several GB to anything that
-follows hard links (`cp -r`, `tar`, `du -L`) rather than counting inodes, and
-pages must reference assets by absolute path since the same file is served at
-several depths.
+Pages must reference assets by absolute path since an archived page is served
+from `/archive.html` while the URL stays at `/v/<build>/…`.
 
 The sidebar is the third consequence, and the least obvious one. Anything in it
-is in all 426,000 pages, so anything in it that a build can change costs the
-reuse of every page in the builds where it changes — and, worse, is not noticed
-by the dependency tracking above, which watches the model rather than the
-chrome, so reused pages keep the sidebar of the build that first rendered them.
-The module topics are the one part that varies, and they are fetched per build
+is in every page, so anything in it that a build can change costs the reuse of
+every page in the builds where it changes — and, worse, is not noticed by the
+dependency tracking above, which watches the model rather than the chrome, so
+reused pages keep the sidebar of the build that first rendered them. The
+module topics are the one part that varies, and they are fetched per build
 from `nav.json` instead of being written into the page. The rest of the tree is
 the same in every build and is inlined.
 
@@ -146,10 +146,10 @@ calls it is not. And a class page now depends on the whole call graph rather
 than on its own class, so `classDeps` in src/generate/memo.js hashes both the
 caller list of every method it shows and where each name those methods call
 resolves to; a second class picking up a name unlinks it on every page that
-calls it. Without that the hard-linked copies serve whichever build rendered
-them first. Only the newest build carries cross-references for that reason —
-extending them to all 49 costs 419 MB of lost deduplication against the 54 MB
-they cost on their own.
+calls it. Without that a reused packed body would serve whichever build
+rendered it first. Only the newest build carries cross-references for that
+reason — extending them to all 49 costs 419 MB of lost deduplication against
+the 54 MB they cost on their own.
 
 ## Source cross-links
 
@@ -160,8 +160,8 @@ the page: `site/app.js` already highlights the source client-side, and
 `search.json` already carries every class, enum, typedef and method with its
 owner, so the file page is painted once immediately and again once that index
 arrives. Nothing is added to the HTML, which is what lets a file page stay
-byte-identical across builds and keep its hard link — the same constraint that
-keeps the module tree out of the sidebar.
+byte-identical across builds — the same constraint that keeps the module tree
+out of the sidebar.
 
 Resolving against that index alone only links the names exactly one
 declaration in the build answers to, which leaves out `Init`, `Update`,
@@ -251,14 +251,13 @@ stylesheet or `site/app.js` is in the browser about a second later. Assets come
 straight from `site/`, so there is no copy step in the way.
 
 Use `npm run preview` when the thing being checked is the real `dist/` —
-hard links, redirects, the sitemap — rather than a page.
+archive rewrites, redirects, the sitemap — rather than a page.
 
 Changing the parser means the cached models no longer match what it produces,
 so re-run the parse with `FORCE_PARSE=1 npm run parse` (or `ONLY_VERSION=1.29`
 for a single build) rather than relying on the commit-sha cache.
 
-`LINK_THREADS` overrides how many threads create the hard links, which is the
-longest phase of a full build.
+`LINK_THREADS` overrides how many threads do the filesystem writes.
 
 ## Deployment
 

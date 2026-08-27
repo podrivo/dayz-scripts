@@ -209,14 +209,19 @@ function fail(res, err) {
 const t0 = Date.now();
 siteFor(latest.label);
 
-http
-  .createServer((req, res) => {
-    try {
-      handle(req, res);
-    } catch (err) {
-      fail(res, err);
-    }
-  })
-  .listen(PORT, () =>
-    console.log(`DayZ ${latest.build} ready in ${Date.now() - t0}ms — http://localhost:${PORT}`)
-  );
+const server = http.createServer((req, res) => {
+  try {
+    handle(req, res);
+  } catch (err) {
+    fail(res, err);
+  }
+});
+
+server.on('error', (err) => {
+  if (err.code !== 'EADDRINUSE') throw err;
+  server.listen(err.port + 1);
+});
+
+server.listen(PORT, () =>
+  console.log(`DayZ ${latest.build} ready in ${Date.now() - t0}ms — http://localhost:${server.address().port}`)
+);

@@ -300,45 +300,34 @@ const SEARCH_FILTERS = [
     `<button type="button" class="pf${i ? '' : ' active'}" data-kinds="${kinds}" aria-pressed="${!i}">${label}</button>`)
   .join('');
 
+const FOOTER = `<footer class="foot">
+<p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a> · Not affiliated with <a href="https://www.bohemia.net/" ${EXT}>Bohemia Interactive</a> · <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a></p>
+</footer>`;
+
 /**
- * Full page layout.
- * opts: { title, base, active, breadcrumbs, content, description, versionPath, footer }
- *  - base: relative prefix from this page to the VERSION root (e.g. "../../")
- *  - active: the nav entry this page sits under, as a version-relative dir
- *  - versionPath: path of this page relative to version root (for the switcher)
- *
- * Deliberately carries no build, version or date, and links to assets by
- * absolute path rather than a relative site root. That makes a page's bytes
- * depend only on its content, so identical pages across builds can be
- * hard-linked in dist/ instead of duplicated 49 times. The build stamp is
- * restored client-side in site/app.js from the URL. See test/render.test.js.
+ * Tokens layout() interpolates when building the archive shell. They cannot
+ * appear in a real page, and they pass through esc() unchanged.
  */
-export function layout(o) {
-  const desc = o.description || 'DayZ Enforce Script API documentation';
-  // Pages outside the tree, such as 404, match nothing and open nothing.
-  const nav = navLevel(NAV, o.active ?? null, o.base);
+export const ARCHIVE_MARK = { title: '§T§', desc: '§D§', base: '§B§', vpath: '§P§', inner: '§C§' };
 
-  // Sharing and search metadata. The canonical URL deliberately names the
-  // page at the site root rather than under /v/<build>/, which is both the
-  // right answer for SEO — an archived build should point at the current one
-  // — and the only one that keeps these bytes identical across builds, since
-  // the path of a page within a version is the same in every version of it.
-  // No og:image: there is no card artwork yet, and a broken one is worse than
-  // the summary card these tags already earn.
-  const url = `${SITE_URL}/${o.versionPath || ''}`;
-  const title = `${o.title} · DayZ Scripts`;
-  const social = o.noindex
-    ? '<meta name="robots" content="noindex">'
-    : `<link rel="canonical" href="${esc(url)}">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="DayZ Scripts">
-<meta property="og:title" content="${esc(title)}">
-<meta property="og:description" content="${esc(desc)}">
-<meta property="og:url" content="${esc(url)}">
-<meta name="twitter:card" content="summary">`;
+/** Last packed inner produced by layout(), for the generator's _b store. */
+export let lastPacked = '';
 
-  // Title already names the page, so a one-level trail is just the title
-  // again. Longer trails keep the parents and sit under the heading.
+export function pageMeta(o) {
+  return {
+    title: `${o.title} · DayZ Scripts`,
+    description: o.description || 'DayZ Enforce Script API documentation',
+    base: o.base,
+    vpath: o.versionPath || '',
+    active: o.active ?? '',
+  };
+}
+
+/**
+ * The contents of `<main>`: breadcrumbs, body, footer. Archived builds store
+ * this instead of a full document so the layout chrome is not paid per body.
+ */
+export function pageInner(o) {
   const trail = o.breadcrumbs?.length > 1 ? o.breadcrumbs.slice(0, -1) : [];
   const crumbs = trail.length
     ? `<nav class="crumbs" aria-label="Breadcrumb">${trail
@@ -350,13 +339,45 @@ export function layout(o) {
   const body = crumbs && titleAt !== -1
     ? `${o.content.slice(0, titleAt + close.length)}\n${crumbs}${o.content.slice(titleAt + close.length)}`
     : `${crumbs}${o.content}`;
+  return o.footer === false ? body : `${body}${FOOTER}`;
+}
+
+/**
+ * Full page layout.
+ * opts: { title, base, active, breadcrumbs, content, description, versionPath, footer }
+ *  - base: relative prefix from this page to the VERSION root (e.g. "../../")
+ *  - active: the nav entry this page sits under, as a version-relative dir
+ *  - versionPath: path of this page relative to version root (for the switcher)
+ *
+ * Deliberately carries no build, version or date, and links to assets by
+ * absolute path rather than a relative site root. That makes a page's bytes
+ * depend only on its content, so identical pages across builds can be
+ * stored once. The build stamp is restored client-side in site/app.js from
+ * the URL. See test/render.test.js.
+ */
+export function layout(o) {
+  const meta = pageMeta(o);
+  const inner = pageInner(o);
+  lastPacked = `${JSON.stringify(meta)}\n${inner}`;
+  const desc = meta.description;
+  const nav = navLevel(NAV, o.active ?? null, o.base);
+  const url = `${SITE_URL}/${o.versionPath || ''}`;
+  const social = o.noindex
+    ? '<meta name="robots" content="noindex">'
+    : `<link rel="canonical" href="${esc(url)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DayZ Scripts">
+<meta property="og:title" content="${esc(meta.title)}">
+<meta property="og:description" content="${esc(desc)}">
+<meta property="og:url" content="${esc(url)}">
+<meta name="twitter:card" content="summary">`;
 
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(title)}</title>
+<title>${esc(meta.title)}</title>
 <meta name="description" content="${esc(desc)}">
 ${social}
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -368,35 +389,30 @@ ${social}
 </head>
 <body data-base="${o.base}" data-vpath="${esc(o.versionPath || '')}">
 <header class="top">
-  <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><i class="ic ic-menu"></i></button>
-  <a class="brand" href="/">DayZ<span>Scripts</span></a>
-  <nav class="nav" id="nav" aria-label="Site">${nav}</nav>
-  <button class="search-trigger" id="searchBtn" aria-label="Search"><i class="ic ic-search"></i><span>Search…</span><kbd id="searchKbd">⌘K</kbd></button>
-  <div class="verpicker">
-    <button class="ver-btn" id="verBtn" aria-haspopup="true" aria-expanded="false" title="Switch DayZ build"><span class="ver-label"></span><i class="ic ic-chev"></i></button>
-    <nav class="ver-menu" id="verMenu" aria-label="DayZ builds" hidden></nav>
-  </div>
-  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme (M)"><i class="ic ic-theme"></i></button>
+<button class="menu-btn" id="menuBtn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><i class="ic ic-menu"></i></button>
+<a class="brand" href="/">DayZ<span>Scripts</span></a>
+<nav class="nav" id="nav" aria-label="Site">${nav}</nav>
+<button class="search-trigger" id="searchBtn" aria-label="Search"><i class="ic ic-search"></i><span>Search…</span><kbd id="searchKbd">⌘K</kbd></button>
+<div class="verpicker">
+<button class="ver-btn" id="verBtn" aria-haspopup="true" aria-expanded="false" title="Switch DayZ build"><span class="ver-label"></span><i class="ic ic-chev"></i></button>
+<nav class="ver-menu" id="verMenu" aria-label="DayZ builds" hidden></nav>
+</div>
+<button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme (M)"><i class="ic ic-theme"></i></button>
 </header>
 <div class="shell">
-  <main class="main">
-    ${body}
-    ${o.footer === false ? '' : `<footer class="foot">
-      <p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a> · Not affiliated with <a href="https://www.bohemia.net/" ${EXT}>Bohemia Interactive</a> · <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a></p>
-    </footer>`}
-  </main>
+<main class="main">${inner}</main>
 </div>
 <div class="palette" id="palette" hidden>
-  <div class="palette-box" role="dialog" aria-modal="true" aria-label="Search">
-    <div class="palette-field">
-      <i class="ic ic-search"></i>
-      <input id="search" type="search" placeholder="Search classes, methods, enums…" autocomplete="off" spellcheck="false" aria-label="Search">
-      <kbd>Esc</kbd>
-    </div>
-    <div id="searchFilters" class="palette-filters">${SEARCH_FILTERS}</div>
-    <div id="searchResults" class="search-results" hidden></div>
-    <div class="palette-hints"><kbd>↑</kbd><kbd>↓</kbd> to navigate · <kbd>↵</kbd> to open · type <code>Class.member</code> to scope</div>
-  </div>
+<div class="palette-box" role="dialog" aria-modal="true" aria-label="Search">
+<div class="palette-field">
+<i class="ic ic-search"></i>
+<input id="search" type="search" placeholder="Search classes, methods, enums…" autocomplete="off" spellcheck="false" aria-label="Search">
+<kbd>Esc</kbd>
+</div>
+<div id="searchFilters" class="palette-filters">${SEARCH_FILTERS}</div>
+<div id="searchResults" class="search-results" hidden></div>
+<div class="palette-hints"><kbd>↑</kbd><kbd>↓</kbd> to navigate · <kbd>↵</kbd> to open · type <code>Class.member</code> to scope</div>
+</div>
 </div>
 <script src="/assets/app.js" defer></script>
 ${ANALYTICS}

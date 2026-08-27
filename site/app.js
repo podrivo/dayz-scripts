@@ -104,6 +104,11 @@
      HTML. Recover them from the URL — /v/<build>/… for an archived build, the
      newest build at the site root — and stamp them into the chrome. */
   const pathBuild = location.pathname.match(/^\/v\/([^/]+)\//)?.[1];
+  let pagesMapPromise;
+  const loadPagesMap = () => {
+    if (!pathBuild) return Promise.resolve({});
+    return (pagesMapPromise ||= fetch(`/v/${pathBuild}/pages.json`).then((r) => r.json()).catch(() => ({})));
+  };
   let buildsPromise;
   const loadBuilds = () => (buildsPromise ||= fetch(ROOT + 'assets/versions.json').then((r) => r.json()));
 
@@ -576,7 +581,13 @@
     // needs no knowledge of which build this is.
     Promise.all([
       loadIndex(),
-      fetch('links.json').then((r) => (r.ok ? r.json() : null)).catch(() => null),
+      (pathBuild
+        ? loadPagesMap().then((map) => {
+            const rel = `${VPATH}links.json`;
+            return fetch(map[rel] ? `/_b/${map[rel]}` : `/${rel}`);
+          })
+        : fetch('links.json')
+      ).then((r) => (r.ok ? r.json() : null)).catch(() => null),
     ]).then(([, links]) => {
       paint(sourceResolver(links), links?.decls);
       addFolds(raw);
@@ -984,6 +995,45 @@
         $('.members-fallback').textContent =
           'The member list could not be loaded. Each class in the chain above lists its own members in full.';
       }
+    });
+  }
+
+  /* ---------- data fields index ----------
+     Letter pages ship empty; the name → classes map is in search.json. */
+  const fieldsList = $('#fieldsList');
+  if (fieldsList) {
+    const kind = fieldsList.dataset.kind;
+    const letter = fieldsList.dataset.letter;
+    const letterOf = (n) => (/^[a-z]/i.test(n) ? n[0].toLowerCase() : '_');
+    loadIndex().then(() => {
+      const owners = new Map();
+      const add = (ci, name) => {
+        if (letterOf(name) !== letter) return;
+        const cls = index.classes[ci];
+        const list = owners.get(name);
+        if (list) {
+          if (!list.includes(cls)) list.push(cls);
+        } else owners.set(name, [cls]);
+      };
+      if (kind !== 'variables') for (const [ci, n] of index.methods || []) add(ci, n);
+      if (kind !== 'functions') for (const [ci, n] of index.vars || []) add(ci, n);
+      const names = [...owners.keys()].sort((a, b) => a.localeCompare(b));
+      const escHtml = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+      fieldsList.innerHTML = names
+        .map((name) => {
+          const dd = owners.get(name).map((c) => `<a href="${BASE}class/${c}/#${anchorOf(name)}">${escHtml(c)}</a>`).join(' ');
+          return `<dt><code>${escHtml(name)}</code></dt><dd>${dd}</dd>`;
+        })
+        .join('');
+      const fallback = $('.members-fallback');
+      if (fallback) fallback.textContent = `${names.length.toLocaleString()} names.`;
+      $('h1').insertAdjacentHTML('beforeend', ` <span class="count">${names.length.toLocaleString()}</span>`);
+      const filter = $('#pageFilter');
+      if (filter) filter.placeholder = `Filter ${names.length.toLocaleString()} fields…`;
+      rescanFilter();
+    }).catch(() => {
+      const fallback = $('.members-fallback');
+      if (fallback) fallback.textContent = 'The list could not be loaded.';
     });
   }
 

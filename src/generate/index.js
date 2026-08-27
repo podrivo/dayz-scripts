@@ -6,16 +6,14 @@
 // Output is content-addressed. Pages carry no build identity (see
 // src/generate/html.js and test/render.test.js), so a page is byte-identical in
 // every build where its content did not change — 99% of them between
-// consecutive builds. The first copy of a given body is written and every later
-// URL with the same body becomes a hard link to it, which is what keeps dist/
-// in the hundreds of MB rather than a few GB.
+// consecutive builds. The latest build is written as real HTML at pretty URLs.
+// Archived builds store only the pages that differ, as packed inners under
+// /_b/<sha>, and /v/<build>/pages.json lists those exceptions. Identical
+// archive URLs rewrite to /archive.html, which fetches the latest copy.
 //
-// That redundancy is exploited twice more, because a full build is 417k pages
-// with only 23k distinct bodies:
-//   - pages whose inputs are unchanged since the previous build are not
-//     rendered or hashed again, only linked (see src/generate/memo.js)
-//   - every write and link happens on a worker pool while this thread renders
-//     the next build, since the filesystem work outlasts the rendering by far
+// Pages whose inputs are unchanged since the previous build are not rendered
+// or hashed again (see src/generate/memo.js). Every write and link happens on
+// a worker pool while this thread renders the next build.
 
 import crypto from 'node:crypto';
 import fs from 'node:fs';
@@ -30,6 +28,8 @@ import { SITE_URL } from './content.js';
 import { PageMemo } from './memo.js';
 import { pages as sitePages } from './routes.js';
 import { render404 } from './render.js';
+import { layout, lastPacked, ARCHIVE_MARK } from './html.js';
+import { pageExceptions } from './archive.js';
 
 const t0 = Date.now();
 const clock = () => process.hrtime.bigint();
@@ -65,6 +65,7 @@ const buildList = versions.slice(0, limit); // newest first
     fs.renameSync(DIST_DIR, path.join(ROOT, `.dist-stale-${Date.now()}`));
   }
   fs.mkdirSync(DIST_DIR, { recursive: true });
+  fs.mkdirSync(path.join(DIST_DIR, '_b'), { recursive: true });
   timers.teardown = since(t);
 }
 
@@ -84,9 +85,12 @@ function dropStaleTrees() {
 // body becomes a hard link to it. Both are handed to the worker pool below
 // rather than done here, so the main thread only ever renders.
 const canonical = new Map(); // content hash -> path of the file holding that body
+const sizes = new Map(); // content hash -> byteLength
+const bHashes = new Set(); // hashes written to _b/, some later unlinked
 const sitemapUrls = [];
 let pages = 0;
 let bytesWritten = 0;
+let bytesTotal = 0;
 
 // ---- worker pool ----------------------------------------------------------
 // All of dist/'s filesystem work happens here, off the main thread, while the
@@ -130,26 +134,35 @@ function writeFile(file, body) {
   let t = clock();
   const hash = crypto.createHash('sha1').update(body).digest('hex');
   timers.hash += since(t);
+  const size = Buffer.byteLength(body);
 
   t = clock();
   const q = queues[ownerOf(hash)];
   const first = canonical.get(hash);
+  if (first === file) {
+    timers.queue += since(t);
+    return hash;
+  }
   if (first) {
     q.links.push(file, first);
+    bytesTotal += size;
   } else {
     q.writes.push(file, body);
     canonical.set(hash, file);
-    bytesWritten += Buffer.byteLength(body);
+    sizes.set(hash, size);
+    bytesWritten += size;
+    bytesTotal += size;
   }
   timers.queue += since(t);
   if (++pendingOps >= FLUSH_AT) flushJobs();
   return hash;
 }
 
-/** Queue a link to a page the memo already knows the bytes of. */
-function linkFile(file, hash) {
-  queues[ownerOf(hash)].links.push(file, canonical.get(hash));
-  if (++pendingOps >= FLUSH_AT) flushJobs();
+function storeB(body) {
+  const hash = crypto.createHash('sha1').update(body).digest('hex');
+  writeFile(path.join(DIST_DIR, '_b', hash), body);
+  bHashes.add(hash);
+  return hash;
 }
 
 function report() {
@@ -221,6 +234,10 @@ const assetsDir = path.join(DIST_DIR, 'assets');
 fs.mkdirSync(assetsDir, { recursive: true });
 for (const f of fs.readdirSync(path.join(ROOT, 'site'))) {
   if (f.startsWith('.')) continue; // .DS_Store and friends must not ship
+  if (f === 'archive.html') {
+    fs.copyFileSync(path.join(ROOT, 'site', f), path.join(DIST_DIR, f));
+    continue;
+  }
   fs.copyFileSync(path.join(ROOT, 'site', f), path.join(assetsDir, f));
 }
 // build list for the client-side version picker (newest first). Also the only
@@ -284,10 +301,11 @@ fs.writeFileSync(
     ...moduleRedirects,
     `/v/${buildList[0].label}/* /:splat 301`,
     ...minorRedirects,
+    '/v/:build/* /archive.html 200',
     '',
   ].join('\n')
 );
-fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /v/\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /v/\nDisallow: /_b/\nSitemap: ${SITE_URL}/sitemap.xml\n`);
 
 // ---- rendering ------------------------------------------------------------
 
@@ -305,6 +323,9 @@ function verifyReuse(key, hit, render) {
   console.error(`\nmemo mismatch: ${key} reused ${hit.hash} but renders ${hash}`);
 }
 
+const latestHashes = new Map(); // rel -> packed/asset hash of the latest build
+const archives = []; // { label, hashes }
+
 /**
  * Write every page of one build. The site map itself lives in
  * src/generate/routes.js, because the dev server has to walk the same one from
@@ -313,11 +334,12 @@ function verifyReuse(key, hit, render) {
 function renderVersion(site, diff, prevLabel, versionIndex, blobs) {
   const isLatest = versionIndex === 0;
   const versionDir = path.join(DIST_DIR, isLatest ? '' : `v/${site.label}/`);
+  const hashes = new Map();
 
   /**
    * Emit one page. A descriptor carrying `deps` opts into cross-build reuse:
    * when nothing it reads has changed since the previous build, its bytes are
-   * known to be identical and it goes straight to a hard link. `render`
+   * known to be identical and the packed body is already under _b/. `render`
    * receives the set that collects the type names it looked up, which are part
    * of what "reads" means (see src/generate/memo.js).
    *
@@ -326,7 +348,6 @@ function renderVersion(site, diff, prevLabel, versionIndex, blobs) {
    * class, enum and file pages render the same bytes either way.
    */
   const write = (p) => {
-    const file = path.join(versionDir, p.file);
     if (!p.asset) {
       pages++;
       if (isLatest) sitemapUrls.push(`${SITE_URL}/${p.rel}`);
@@ -340,11 +361,11 @@ function renderVersion(site, diff, prevLabel, versionIndex, blobs) {
     }
 
     const hit = deps === undefined ? undefined : memo.lookup(p.rel, deps);
-    if (hit) {
+    if (hit && !isLatest && (p.asset || hit.packedHash)) {
       memoStats.reused++;
-      linkFile(file, hit.hash);
       memo.keep(p.rel, hit);
       if (VERIFY) verifyReuse(p.rel, hit, p.render);
+      hashes.set(p.rel, p.asset ? hit.hash : hit.packedHash);
       return;
     }
 
@@ -353,13 +374,37 @@ function renderVersion(site, diff, prevLabel, versionIndex, blobs) {
     const html = p.render(seen);
     renderTimers[p.kind] += since(t);
     memoStats.rendered++;
-    const hash = writeFile(file, html);
-    if (deps !== undefined) memo.record(p.rel, deps, hash, seen);
+
+    if (p.keep || isLatest) writeFile(path.join(versionDir, p.file), html);
+
+    if (p.asset) {
+      const stored = p.keep || isLatest
+        ? crypto.createHash('sha1').update(html).digest('hex')
+        : storeB(html);
+      if (!p.keep) hashes.set(p.rel, stored);
+      if (deps !== undefined) memo.record(p.rel, deps, stored, seen);
+      return;
+    }
+
+    const packedHash = !isLatest
+      ? storeB(lastPacked)
+      : crypto.createHash('sha1').update(lastPacked).digest('hex');
+    hashes.set(p.rel, packedHash);
+    if (deps !== undefined) {
+      const fullHash = crypto.createHash('sha1').update(html).digest('hex');
+      memo.record(p.rel, deps, fullHash, seen, { packedHash });
+    }
   };
 
   const srcDir = path.join(CACHE_DIR, 'src', site.label);
   for (const p of sitePages(site, { isLatest, versions, srcDir, blobs, changes: () => ({ diff, prevLabel }) })) {
     write(p);
+  }
+
+  if (isLatest) {
+    for (const [rel, hash] of hashes) latestHashes.set(rel, hash);
+  } else {
+    archives.push({ label: site.label, hashes });
   }
 }
 
@@ -402,6 +447,24 @@ for (const v of ordered) {
   );
 }
 
+const usedB = new Set();
+for (const a of archives) {
+  const ex = pageExceptions(a.hashes, latestHashes);
+  for (const h of Object.values(ex)) usedB.add(h);
+  writeFile(path.join(DIST_DIR, `v/${a.label}/pages.json`), JSON.stringify(ex));
+}
+fs.writeFileSync(
+  path.join(DIST_DIR, 'archive.tpl'),
+  layout({
+    title: ARCHIVE_MARK.title,
+    description: ARCHIVE_MARK.desc,
+    base: ARCHIVE_MARK.base,
+    versionPath: ARCHIVE_MARK.vpath,
+    content: ARCHIVE_MARK.inner,
+    footer: false,
+  })
+);
+
 // site-level 404 (uses latest version chrome). The loop runs oldest -> newest,
 // so prevSite is already the latest build's model.
 {
@@ -414,15 +477,25 @@ for (const v of ordered) {
 {
   const t = clock();
   flushJobs();
-  // Rendering never yields, so the pool's progress messages have been piling
-  // up unread; let them land before quoting a number.
   await new Promise(setImmediate);
-  console.log(
-    `Linking ${queued.toLocaleString('en-US')} duplicate pages across ${LINK_THREADS} threads ` +
-    `(${linked.toLocaleString('en-US')} already done alongside rendering)...`
-  );
+  if (queued) {
+    console.log(
+      `Linking ${queued.toLocaleString('en-US')} duplicate pages across ${LINK_THREADS} threads ` +
+      `(${linked.toLocaleString('en-US')} already done alongside rendering)...`
+    );
+  }
   await drainJobs();
   timers.drain = since(t);
+}
+
+let droppedB = 0;
+for (const hash of bHashes) {
+  if (usedB.has(hash)) continue;
+  try { fs.unlinkSync(path.join(DIST_DIR, '_b', hash)); } catch {}
+  const size = sizes.get(hash) || 0;
+  bytesWritten -= size;
+  bytesTotal -= size;
+  droppedB++;
 }
 
 // Nothing else touches the filesystem in bulk from here, so the previous
@@ -443,11 +516,12 @@ dropStaleTrees();
 
 const s = (ms) => `${(ms / 1000).toFixed(1)}s`;
 const n = (x) => x.toLocaleString('en-US');
+const fmt = (bytes) => (bytes >= 1e9 ? `${(bytes / 1e9).toFixed(1)} GB` : `${(bytes / 1e6).toFixed(0)} MB`);
 timers.render = Object.values(renderTimers).reduce((a, b) => a + b, 0);
 
 console.log(
-  `\nDone: ${n(pages)} pages, ${n(canonical.size)} unique files, ${n(queued)} hard links, ` +
-  `${(bytesWritten / 1e6).toFixed(0)} MB written in ${s(Date.now() - t0)} -> dist/`
+  `\nDone: ${n(pages)} pages, ${n(canonical.size - droppedB)} unique files, ${n(queued)} hard links, ` +
+  `${fmt(bytesWritten)} unique / ${fmt(bytesTotal)} total in ${s(Date.now() - t0)} -> dist/`
 );
 console.log(
   `  teardown ${s(timers.teardown)} · parse ${s(timers.parse)} · model ${s(timers.model)} · ` +

@@ -35,6 +35,8 @@ import {
  *           costs ~155ms per build and a single URL lookup must not pay it.
  *   asset   set on the sidecars the site fetches rather than navigates to, so
  *           they stay out of the page count and the sitemap
+ *   keep    set on sidecars that must exist at /v/<build>/ (search, nav, diff)
+ *           rather than going through the archive exception map
  *
  * Being a generator is load-bearing for the lookup side: nothing past the yield
  * a caller stops at is computed, so resolving an early URL never builds the
@@ -103,21 +105,15 @@ export function* pages(site, opts) {
 
   // data fields: every class member, by initial and by kind
   const fieldLetters = [...site.fields.keys()].sort();
-  for (const [kind, dir, keep] of [
-    ['all', 'fields/', null],
-    ['functions', 'fields/functions/', (o) => o.method],
-    ['variables', 'fields/variables/', (o) => !o.method],
+  for (const [kind, dir] of [
+    ['all', 'fields/'],
+    ['functions', 'fields/functions/'],
+    ['variables', 'fields/variables/'],
   ]) {
-    yield page(dir, 'index', () => renderFields(ctx(dir), null, [], fieldLetters, kind));
+    yield page(dir, 'index', () => renderFields(ctx(dir), null, fieldLetters, kind));
     for (const l of fieldLetters) {
       const rel = `${dir}${l}/`;
-      yield page(rel, 'index', () => {
-        const all = site.fields.get(l);
-        const entries = keep
-          ? all.map(([n, owners]) => [n, owners.filter(keep)]).filter(([, owners]) => owners.length)
-          : all;
-        return renderFields(ctx(rel), l, entries, fieldLetters, kind);
-      });
+      yield page(rel, 'index', () => renderFields(ctx(rel), l, fieldLetters, kind));
     }
   }
 
@@ -148,6 +144,7 @@ export function* pages(site, opts) {
     file: 'diff.json',
     kind: 'index',
     asset: true,
+    keep: true,
     render: () => {
       const { diff, prevLabel } = changes();
       return JSON.stringify(diff ? { prev: prevLabel, kinds: diff } : { prev: null });
@@ -191,6 +188,7 @@ export function* pages(site, opts) {
     file: 'search.json',
     kind: 'search',
     asset: true,
+    keep: true,
     render: () => JSON.stringify(buildSearchIndex(site)),
   };
 
@@ -202,6 +200,7 @@ export function* pages(site, opts) {
     file: 'nav.json',
     kind: 'index',
     asset: true,
+    keep: true,
     render: () => JSON.stringify({ topics: site.moduleRoots.map((n) => [n, site.groups.get(n).title]) }),
   };
 }

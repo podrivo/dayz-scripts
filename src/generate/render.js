@@ -393,8 +393,10 @@ ${filterBar('Filter classes…')}
 
 // ---------------------------------------------------------------------------
 
-/** Data Fields: every member and method of every class, by initial. */
-export function renderFields(ctx, letter, entries, letters, kind) {
+/** Data Fields: every member and method of every class, by initial.
+ *  Letter pages are a shell; the rows are composed in the browser from
+ *  search.json, the same way /class/<Name>/members/ is. */
+export function renderFields(ctx, letter, letters, kind) {
   const { base } = ctx;
   const KINDS = {
     all: ['Data Fields', 'fields/', 'Every member and method declared by a class.'],
@@ -407,17 +409,12 @@ export function renderFields(ctx, letter, entries, letters, kind) {
     .join('');
 
   const body = letter
-    ? `<dl class="fields">${entries
-        .map(
-          ([name, owners]) => `<dt><code>${esc(name)}</code></dt><dd>${owners
-            .map((o) => `<a href="${base}class/${o.owner}/#${name.replace(/[^\w]/g, '_')}">${esc(o.owner)}</a>`)
-            .join(' ')}</dd>`
-        )
-        .join('\n')}</dl>`
+    ? `<dl class="fields" id="fieldsList" data-kind="${kind}" data-letter="${esc(letter)}"></dl>
+<p class="members-fallback">Assembling the list from the class index.</p>`
     : `<p class="muted">Pick a letter above.</p>`;
 
   const content = `
-<h1>${title}${letter ? ` — ${letterTitle(letter)}` : ''}${letter ? ` <span class="count">${entries.length.toLocaleString('en-US')}</span>` : ''}</h1>
+<h1>${title}${letter ? ` — ${letterTitle(letter)}` : ''}</h1>
 <p>${blurb} The same name is often declared by many classes, so each one links to every class that has it.</p>
 <div class="tabs">${tabs}</div>
 ${letterBar(base, dir, letters, letter)}

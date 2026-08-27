@@ -88,13 +88,13 @@ export class PageMemo {
     this.#next.set(key, entry);
   }
 
-  record(key, deps, hash, seenWords) {
+  record(key, deps, hash, seenWords, extra = {}) {
     const ids = new Int32Array(seenWords ? seenWords.size : 0);
     if (seenWords) {
       let i = 0;
       for (const word of seenWords) ids[i++] = this.#words.intern(word);
     }
-    this.#next.set(key, { deps, hash, words: ids });
+    this.#next.set(key, { deps, hash, words: ids, ...extra });
   }
 
   endBuild() {

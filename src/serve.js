@@ -67,7 +67,7 @@ if (!fs.existsSync(path.join(DIST_DIR, 'sitemap.xml'))) {
   const choices = fs.existsSync(path.join(DATA_DIR, 'versions.json'))
     ? [
         ['newest build only, seconds', 'pnpm generate:latest'],
-        ['every build, minutes and ~380 MB', 'pnpm generate'],
+        ['every build, minutes', 'pnpm generate'],
       ]
     : [['fetch, parse and render everything', 'pnpm build']];
   await offer(reason, choices);
@@ -83,28 +83,37 @@ const TYPES = {
   '.png': 'image/png',
   '.xml': 'application/xml',
   '.txt': 'text/plain; charset=utf-8',
+  '.tpl': 'text/plain; charset=utf-8',
 };
 
-http
-  .createServer((req, res) => {
-    let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
-    let file = path.join(DIST_DIR, p);
-    if (p.endsWith('/')) file = path.join(file, 'index.html');
-    else if (!path.extname(file) && fs.existsSync(path.join(file, 'index.html'))) {
-      res.writeHead(301, { location: p + '/' });
-      return res.end();
-    }
-    if (!fs.existsSync(file)) {
+const server = http.createServer((req, res) => {
+  let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+  let file = path.join(DIST_DIR, p);
+  if (p.endsWith('/')) file = path.join(file, 'index.html');
+  else if (!path.extname(file) && fs.existsSync(path.join(file, 'index.html'))) {
+    res.writeHead(301, { location: p + '/' });
+    return res.end();
+  }
+  if (!fs.existsSync(file)) {
+    if (/^\/v\/[^/]+\//.test(p) && p.endsWith('/')) file = path.join(DIST_DIR, 'archive.html');
+    else {
       file = path.join(DIST_DIR, '404.html');
       res.statusCode = 404;
     }
-    res.setHeader('content-type', TYPES[path.extname(file)] || 'application/octet-stream');
-    // files can vanish mid-request while dist/ is being regenerated
-    fs.createReadStream(file)
-      .on('error', () => {
-        res.statusCode = 404;
-        res.end('Not found');
-      })
-      .pipe(res);
-  })
-  .listen(PORT, () => console.log(`Serving dist folder at http://localhost:${PORT}`));
+  }
+  res.setHeader('content-type', TYPES[path.extname(file)] || 'application/octet-stream');
+  // files can vanish mid-request while dist/ is being regenerated
+  fs.createReadStream(file)
+    .on('error', () => {
+      res.statusCode = 404;
+      res.end('Not found');
+    })
+    .pipe(res);
+});
+
+server.on('error', (err) => {
+  if (err.code !== 'EADDRINUSE') throw err;
+  server.listen(err.port + 1);
+});
+
+server.listen(PORT, () => console.log(`Serving dist folder at http://localhost:${server.address().port}`));

@@ -1,13 +1,12 @@
 // Guards the invariant that makes dist/ small: a page's bytes must depend only
-// on its content, never on which build produced it. If that breaks, the
-// content-addressed hard linking in src/generate/index.js silently stops
-// finding duplicates and dist/ grows back from ~340 MB to ~3.2 GB with no error.
+// on its content, never on which build produced it. If that breaks, archived
+// builds stop sharing bodies with the latest copy and dist/ grows with no error.
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { layout } from '../src/generate/html.js';
 import { buildSiteModel } from '../src/generate/model.js';
-import { renderClass, renderEnum, renderCompare } from '../src/generate/render.js';
+import { renderClass, renderEnum, renderCompare, renderFields } from '../src/generate/render.js';
 import { classDeps } from '../src/generate/memo.js';
 import { SITE_URL } from '../src/generate/content.js';
 
@@ -219,6 +218,20 @@ test('canonical and og:url name the page, never the build that rendered it', () 
   assert.ok(!canon.includes('/v/'), 'canonical must not name a build');
   assert.ok(html.includes(`<meta property="og:url" content="${canon}">`), 'og:url must agree with it');
   assert.equal(html.match(/<meta property="og:title" content="([^"]*)">/)[1], 'Foo · DayZ Scripts');
+});
+
+test('fields letter pages are a shell, not an inlined member list', () => {
+  const s = site(BUILD_A);
+  const letters = [...s.fields.keys()].sort();
+  const html = renderFields(
+    { site: s, versions: [], base: '../../', root: '../../', versionPath: 'fields/d/', xref: true },
+    'd',
+    letters,
+    'all'
+  );
+  assert.match(html, /id="fieldsList"/);
+  assert.doesNotMatch(html, /<dd>/);
+  assert.match(html, /data-letter="d"/);
 });
 
 test('the 404 page asks not to be indexed and claims no canonical', () => {
