@@ -1208,12 +1208,20 @@ ${sections.join('\n') || '<p class="muted">Nothing in the scripting API changed 
  */
 export function renderCompare(ctx) {
   const { base } = ctx;
+  const card = (side, label) => `<article class="cmp-card" data-side="${side}">
+  <label class="cmp-pick"><span>${label}</span><select id="cmp${label}" aria-label="Compare ${side} build"></select></label>
+  <p class="cmp-card-links" id="cmp${label}Links"></p>
+</article>`;
   const content = `
 <h1>Compare builds</h1>
-<form class="cmp-bar" id="cmpBar" hidden>
-  <label class="cmp-pick"><span>From</span><select id="cmpFrom" aria-label="Compare from build"></select></label>
-  <button type="button" class="btn cmp-swap" id="cmpSwap" title="Swap the two builds" aria-label="Swap the two builds"><i class="ic ic-swap"></i></button>
-  <label class="cmp-pick"><span>To</span><select id="cmpTo" aria-label="Compare to build"></select></label>
+<p>Any two game builds, side by side. Each build also has a <a href="${base}changes/">changelog</a> against the one before it.</p>
+<form class="cmp-stage" id="cmpBar" hidden>
+  ${card('from', 'From')}
+  <div class="cmp-mid">
+    <button type="button" class="btn cmp-swap" id="cmpSwap" title="Swap the two builds" aria-label="Swap the two builds"><i class="ic ic-swap"></i></button>
+    <span class="cmp-span" id="cmpSpan"></span>
+  </div>
+  ${card('to', 'To')}
 </form>
 <noscript><p>Comparing two builds is done in the browser and needs JavaScript.
 Each build's changes against the one before it are on its own

@@ -798,19 +798,74 @@ tr.changed td:first-child { color: var(--warn-line); }
 tr.changed .old { text-decoration: line-through; opacity: 0.6; }
 
 /* ---- compare two builds ----
-   The picker sits above the results rather than in the header, because it is
-   two choices rather than one and the header already holds the switcher that
-   makes a single one. */
-.cmp-bar { display: flex; align-items: flex-end; gap: 10px; flex-wrap: wrap; margin: 18px 0 4px; }
+   Two product cards, then a two-column sheet: removed under From, added
+   under To, changed signatures as a From / To pair. The picker sits in the
+   page rather than the header because it is two choices, and the header
+   already holds the switcher that makes a single one. */
+.cmp-stage {
+  display: grid;
+  grid-template-columns: 1fr 56px 1fr;
+  gap: 12px 16px;
+  align-items: stretch;
+  margin: 20px 0 8px;
+  padding: 0 0 16px;
+  background: var(--bg);
+}
+.cmp-stage[hidden] { display: none; }
+@media (min-width: 901px) {
+  .cmp-stage {
+    position: sticky;
+    top: var(--h-top);
+    z-index: 20;
+    margin-left: calc(var(--gutter) * -1);
+    margin-right: calc(var(--gutter) * -1);
+    padding: 12px var(--gutter) 16px;
+    border-bottom: 1px solid var(--line);
+  }
+}
+.cmp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding: 14px 16px 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--bg2);
+}
 .cmp-pick { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .cmp-pick span { color: var(--fg2); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
-.cmp-pick select {
-  max-width: min(320px, 42vw); height: 34px; padding: 0 8px;
-  border: 1px solid var(--line); border-radius: 8px;
-  background: var(--bg); color: var(--fg); font: inherit; font-size: 14px;
+.cmp-card .cmp-pick select {
+  width: 100%;
+  max-width: none;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 650;
 }
 .cmp-pick select:focus { outline: none; border-color: var(--accent2); }
-.cmp-swap { display: inline-flex; align-items: center; justify-content: center; height: 34px; padding: 0 10px; }
+.cmp-card-links {
+  margin: 0;
+  color: var(--fg2);
+  font-size: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+.cmp-mid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.cmp-swap { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; border-radius: 999px; }
+.cmp-span { color: var(--fg2); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-align: center; line-height: 1.3; }
 .ic-swap {
   width: 15px; height: 15px;
   --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='1.6'%3E%3Cpath d='M2 5h11l-3-3m3 9H2l3 3'/%3E%3C/svg%3E");
@@ -819,13 +874,85 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
 /* The three totals are the filter. A count spanning six kinds cannot say
    which kind it came from, so clicking it shows what it counted instead. */
 .cmp-ops button.stat { background: none; font: inherit; cursor: pointer; }
+.cmp-ops button.stat[data-op="added"] strong { color: var(--added); }
+.cmp-ops button.stat[data-op="removed"] strong { color: var(--removed); }
+.cmp-ops button.stat[data-op="changed"] strong { color: var(--warn-line); }
 .cmp-ops button.stat[aria-pressed="true"] { border-color: var(--accent2); background: var(--accent-bg); }
-.cmp-ops button.stat[aria-pressed="true"] strong,
-.cmp-ops button.stat[aria-pressed="true"] span { color: var(--accent); }
+.cmp-ops button.stat[data-op="added"][aria-pressed="true"] { border-color: var(--added); background: color-mix(in srgb, var(--added) 12%, var(--bg)); }
+.cmp-ops button.stat[data-op="removed"][aria-pressed="true"] { border-color: var(--removed); background: color-mix(in srgb, var(--removed) 12%, var(--bg)); }
+.cmp-ops button.stat[data-op="changed"][aria-pressed="true"] { border-color: var(--warn-line); background: var(--warn-bg); }
+.cmp-ops button.stat[data-op=""][aria-pressed="true"] strong,
+.cmp-ops button.stat[data-op=""][aria-pressed="true"] span { color: var(--accent); }
 
 .cmp-kind { margin-bottom: 8px; }
+.cmp-kind h2 { margin: 36px 0 14px; }
+.cmp-kind:first-of-type h2 { margin-top: 28px; }
 .cmp-kind h3 { color: var(--fg2); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
 .cmp-none { margin-top: 22px; font-size: 13.5px; }
+.cmp-builds { font-size: 14px; line-height: 1.8; }
+.cmp [hidden] { display: none; }
+
+.cmp-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 0;
+  margin: 0 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.cmp-split > .cmp-col { padding: 12px 16px 16px; min-width: 0; }
+.cmp-split > .cmp-col[data-op="removed"] { grid-column: 1; background: color-mix(in srgb, var(--removed) 7%, var(--bg)); border-right: 1px solid var(--line); }
+.cmp-split > .cmp-col[data-op="added"] { grid-column: 2; background: color-mix(in srgb, var(--added) 7%, var(--bg)); }
+.cmp-split > .cmp-col h3 { margin: 0 0 10px; }
+.cmp-split .namegrid { margin: 0; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+.cmp-empty { margin: 0; color: var(--fg2); font-size: 13.5px; }
+
+.cmp-pair-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+  margin: 4px 0 6px;
+  color: var(--fg2);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.cmp-change {
+  margin: 8px 0;
+  padding: 10px 14px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.cmp-change summary {
+  display: flex; align-items: center; gap: 8px;
+  cursor: pointer; font-weight: 600; margin-bottom: 6px;
+  list-style: none;
+}
+.cmp-change summary::-webkit-details-marker { display: none; }
+.cmp-change summary::after {
+  content: ''; flex: none; width: 16px; height: 16px; margin-left: auto;
+  background: currentColor; opacity: .45;
+  --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M2 3.5l3 3 3-3'/%3E%3C/svg%3E");
+  -webkit-mask: var(--chev) center / 10px no-repeat;
+  mask: var(--chev) center / 10px no-repeat;
+  transform: rotate(-90deg);
+}
+.cmp-change[open] > summary::after { transform: none; }
+.cmp-change-name { margin: 0 0 8px; font-weight: 600; }
+.cmp-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  padding: 6px 0;
+  border-top: 1px solid var(--line);
+}
+.cmp-change > .cmp-pair:first-of-type,
+.cmp-change summary + .cmp-pair { border-top: none; }
+.cmp-pair .cmp-col { min-width: 0; }
+.cmp-pair code { display: block; white-space: pre-wrap; }
+.cmp-gap { color: var(--fg2); }
 
 /* A changed thing with one line to show gets the line, not a disclosure. */
 .diff-flat { border: 1px solid var(--line); border-radius: 10px; margin: 8px 0; padding: 8px 14px; }
@@ -881,4 +1008,23 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
   .palette-hints { display: none; }
   table.list td:first-child { white-space: normal; }
   .minimap { display: none; }
+  .cmp-stage {
+    grid-template-columns: 1fr;
+    position: static;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 0 12px;
+    border-bottom: none;
+  }
+  .cmp-mid { flex-direction: row; padding: 0; }
+}
+
+@media (max-width: 640px) {
+  .cmp-split,
+  .cmp-pair,
+  .cmp-pair-head { grid-template-columns: 1fr; }
+  .cmp-split > .cmp-col[data-op="removed"],
+  .cmp-split > .cmp-col[data-op="added"] { grid-column: auto; }
+  .cmp-split > .cmp-col[data-op="removed"] { border-right: none; border-bottom: 1px solid var(--line); }
+  .cmp-pair { gap: 4px; }
 }

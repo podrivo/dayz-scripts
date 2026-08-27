@@ -167,12 +167,14 @@ function canonical(kind) {
  */
 const prefixFor = (build, latest) => `/${build === latest ? '' : `v/${build}/`}`;
 
-function rowHtml(row) {
+const gap = '<span class="cmp-gap" aria-hidden="true">—</span>';
+
+/** One member as a From / To pair, the way a spec row sits under two products. */
+function pairHtml(row) {
+  const left = row[0] === ADDED ? gap : `<code class="old">${esc(row[2])}</code>`;
+  const right = row[0] === REMOVED ? gap : `<code>${esc(row[0] === CHANGED ? row[3] : row[2])}</code>`;
   const op = row[0] === ADDED ? 'added' : row[0] === REMOVED ? 'removed' : 'changed';
-  const body = row[0] === CHANGED
-    ? `<code class="old">${esc(row[2])}</code><br><code>${esc(row[3])}</code>`
-    : `<code>${esc(row[2])}</code>`;
-  return `<tr class="${op}"><td>${OPS[op].sign}</td><td>${body}</td></tr>`;
+  return `<div class="cmp-pair ${op}"><div class="cmp-col">${left}</div><div class="cmp-col">${right}</div></div>`;
 }
 
 /**
@@ -185,21 +187,34 @@ function nameHtml(kind, name, op, prefix) {
 }
 
 function changedHtml(kind, entry, prefix) {
-  const rows = entry.rows.map(rowHtml).join('');
+  const pairs = entry.rows.map(pairHtml).join('');
   const text = esc(`${entry.name} ${entry.rows.map((r) => r.slice(1).join(' ')).join(' ')}`.toLowerCase());
   const link = `<a href="${prefix}${kind.url(entry.name)}">${esc(entry.name)}</a>`;
-  const table = `<table class="list difftable"><tbody>${rows}</tbody></table>`;
   // One before-and-after line is not worth hiding behind a disclosure; a class
   // with nine changed methods is.
   return entry.rows.length > 1
-    ? `<details class="diff-class cmp-unit" data-op="changed" data-text="${text}"><summary>${link} <span class="count">${entry.rows.length}</span></summary>${table}</details>`
-    : `<div class="diff-flat cmp-unit" data-op="changed" data-text="${text}"><p class="diff-flat-name">${link}</p>${table}</div>`;
+    ? `<details class="cmp-unit cmp-change" data-op="changed" data-text="${text}"><summary>${link} <span class="count">${entry.rows.length}</span></summary>${pairs}</details>`
+    : `<div class="cmp-unit cmp-change" data-op="changed" data-text="${text}"><p class="cmp-change-name">${link}</p>${pairs}</div>`;
+}
+
+function colHtml(op, list, kind, prefix) {
+  const names = list.length
+    ? `<div class="namegrid">${list.map((n) => nameHtml(kind, n, op, prefix)).join('')}</div>`
+    : '<p class="cmp-empty">None</p>';
+  return `<div class="cmp-col" data-op="${op}">
+<h3 data-op="${op}">${OPS[op].label} <span class="count">${num(list.length)}</span></h3>
+${names}
+</div>`;
 }
 
 /**
  * `from` and `to` rather than older and newer: the diff is always expressed in
  * the direction the two pickers were left in, so when they are the other way
  * round it is `from` that holds the newer build.
+ *
+ * Added names sit under To, removed ones under From — the two columns are the
+ * two cards above them, the way a comparison table puts each value under the
+ * product it belongs to.
  */
 function groupsHtml(diff, fromPrefix, toPrefix) {
   return KINDS
@@ -209,22 +224,36 @@ function groupsHtml(diff, fromPrefix, toPrefix) {
       if (!total) return '';
 
       const parts = [];
-      for (const [op, list, prefix] of [['added', k.added, toPrefix], ['removed', k.removed, fromPrefix]]) {
-        if (!list.length) continue;
-        parts.push(`<h3 data-op="${op}">${OPS[op].label} <span class="count">${num(list.length)}</span></h3>
-<div class="namegrid">${list.map((n) => nameHtml(kind, n, op, prefix)).join('')}</div>`);
+      if (k.added.length || k.removed.length) {
+        parts.push(`<div class="cmp-split">
+${colHtml('removed', k.removed, kind, fromPrefix)}
+${colHtml('added', k.added, kind, toPrefix)}
+</div>`);
       }
       if (k.changed.length) {
         parts.push(`<h3 data-op="changed">Changed <span class="count">${num(k.changed.length)}</span></h3>
+<div class="cmp-pair-head" aria-hidden="true"><span>From</span><span>To</span></div>
 <div class="cmp-list">${k.changed.map((e) => changedHtml(kind, e, toPrefix)).join('')}</div>`);
       }
-      return `<div class="cmp-kind" data-kind="${kind.key}">
+      return `<section class="cmp-kind" data-kind="${kind.key}">
 <h2>${esc(kind.label)} <span class="count">${num(total)}</span></h2>
 ${parts.join('\n')}
-</div>`;
+</section>`;
     })
     .filter(Boolean)
     .join('\n');
+}
+
+function buildsFooter(builds, latest, from, to) {
+  const links = builds.map((b) => {
+    const href = `${prefixFor(b.build, latest)}changes/`;
+    return b.build === from || b.build === to
+      ? `<strong>${esc(b.build)}</strong>`
+      : `<a href="${href}">${esc(b.build)}</a>`;
+  }).join(' · ');
+  return `<h2>All builds</h2>
+<p class="cmp-builds">${links}</p>
+<p class="muted">Each link is that build’s changelog against the one before it.</p>`;
 }
 
 /* ---------- page ---------------------------------------------------------- */
@@ -241,7 +270,6 @@ export function initCompare({ builds, fmtDate }) {
   // mean, and what a run of adjacent diffs has to be folded in.
   const order = builds.map((b) => b.build).reverse();
   const known = new Set(order);
-
   const fill = (sel, selected) => {
     let html = '';
     let version = '';
@@ -266,6 +294,27 @@ export function initCompare({ builds, fmtDate }) {
 
   let { from, to } = read();
   let drawing = 0; // guards against a slow fetch landing after a newer pick
+
+  function stampCard(side, build) {
+    const label = side === 'from' ? 'From' : 'To';
+    const links = document.getElementById(`cmp${label}Links`);
+    if (!links) return;
+    const prefix = prefixFor(build, latest);
+    links.innerHTML = `<a href="${prefix}changes/">Changelog</a><a href="${prefix}">Browse API</a>`;
+  }
+
+  function stampPair() {
+    stampCard('from', from);
+    stampCard('to', to);
+    const span = document.getElementById('cmpSpan');
+    if (!span) return;
+    if (from === to) {
+      span.textContent = 'Same build';
+      return;
+    }
+    const steps = Math.abs(order.indexOf(from) - order.indexOf(to));
+    span.textContent = steps === 1 ? 'Neighbours' : `${num(steps)} builds`;
+  }
 
   // A build's diff.json, once. Switching one end of a comparison re-fetches
   // only the builds the range gained.
@@ -303,7 +352,8 @@ export function initCompare({ builds, fmtDate }) {
 
     box.setAttribute('aria-busy', 'false');
     if (steps.some((s) => s === null)) {
-      box.innerHTML = '<p class="muted">Part of this comparison could not be loaded. Try a narrower range, or reload.</p>';
+      box.innerHTML = '<p class="muted">Part of this comparison could not be loaded. Try a narrower range, or reload.</p>' +
+        buildsFooter(builds, latest, from, to);
       return;
     }
 
@@ -314,10 +364,13 @@ export function initCompare({ builds, fmtDate }) {
     const totals = { added: tally('added'), removed: tally('removed'), changed: tally('changed') };
     const all = totals.added + totals.removed + totals.changed;
 
+    const footer = buildsFooter(builds, latest, from, to);
+
     if (!all) {
       box.innerHTML = `<p class="muted">${same
         ? 'The same build on both sides. Pick two different ones to compare.'
-        : 'Nothing in the scripting API differs between these two builds.'}</p>`;
+        : 'Nothing in the scripting API differs between these two builds.'}</p>
+${footer}`;
       return;
     }
 
@@ -339,7 +392,8 @@ export function initCompare({ builds, fmtDate }) {
   <span class="filter-count" id="cmpCount" aria-live="polite"></span>
 </div>
 ${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}
-${missing.length ? `<p class="muted cmp-none">No changes to ${missing.join(', ')}.</p>` : ''}`;
+${missing.length ? `<p class="muted cmp-none">No changes to ${missing.join(', ')}.</p>` : ''}
+${footer}`;
     bindFilter();
   }
 
@@ -368,12 +422,35 @@ ${missing.length ? `<p class="muted cmp-none">No changes to ${missing.join(', ')
       // than no count at all.
       for (const kind of box.querySelectorAll('.cmp-kind')) {
         let live = 0;
-        for (const h of kind.querySelectorAll('h3')) {
-          const list = h.nextElementSibling;
-          const here = [...list.children].filter((el) => !el.hidden).length;
-          h.hidden = list.hidden = !here;
-          h.querySelector('.count').textContent = num(here);
+        for (const col of kind.querySelectorAll('.cmp-split > .cmp-col')) {
+          const colOp = col.dataset.op;
+          if (op && colOp && colOp !== op) {
+            col.hidden = true;
+            continue;
+          }
+          const names = [...col.querySelectorAll('.cmp-name')];
+          const here = names.filter((el) => !el.hidden).length;
+          const count = col.querySelector('.count');
+          if (count) count.textContent = num(here);
+          col.hidden = names.length ? !here : !!op;
           live += here;
+        }
+        const split = kind.querySelector('.cmp-split');
+        if (split) split.hidden = [...split.children].every((c) => c.hidden);
+
+        const changedHead = kind.querySelector('h3[data-op="changed"]');
+        const pairHead = changedHead?.nextElementSibling;
+        const changedList = pairHead?.classList.contains('cmp-pair-head')
+          ? pairHead.nextElementSibling
+          : pairHead;
+        if (changedHead && changedList) {
+          const here = [...changedList.querySelectorAll('.cmp-unit')].filter((el) => !el.hidden).length;
+          const hide = !here || (op && op !== 'changed');
+          changedHead.hidden = changedList.hidden = hide;
+          if (pairHead?.classList.contains('cmp-pair-head')) pairHead.hidden = hide;
+          const count = changedHead.querySelector('.count');
+          if (count) count.textContent = num(here);
+          if (!hide) live += here;
         }
         kind.hidden = !live;
         kind.querySelector('h2 .count').textContent = num(live);
@@ -415,6 +492,7 @@ ${missing.length ? `<p class="muted cmp-none">No changes to ${missing.join(', ')
   fill(fromSel, from);
   fill(toSel, to);
   bar.hidden = false;
+  stampPair();
   store();
   draw();
 
@@ -439,6 +517,7 @@ ${missing.length ? `<p class="muted cmp-none">No changes to ${missing.join(', ')
     }
     fromSel.value = from;
     toSel.value = to;
+    stampPair();
     store();
     draw();
   }
@@ -451,6 +530,7 @@ ${missing.length ? `<p class="muted cmp-none">No changes to ${missing.join(', ')
     ({ from, to } = read());
     fromSel.value = from;
     toSel.value = to;
+    stampPair();
     draw();
   });
 }
