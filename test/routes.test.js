@@ -99,9 +99,22 @@ test('pages go under their directory, sidecars stand alone', () => {
 // so a sidecar that stopped declaring itself would be advertised as a page.
 test('only the sidecars the site fetches are marked as assets', () => {
   const assets = all.filter((p) => p.asset).map((p) => p.rel);
-  assert.deepEqual(assets, ['diff.json', 'file/3_game/foo.c/links.json', 'search.json', 'nav.json']);
-  for (const rel of assets) assert.match(rel, /\.json$/, `${rel} is not a sidecar`);
-  assert.ok(all.every((p) => p.asset || !p.rel.endsWith('.json')), 'a sidecar is being counted as a page');
+  assert.deepEqual(assets, [
+    'diff.json',
+    'file/3_game/foo.c/links.json',
+    'search.json',
+    'nav.json',
+    'api.json',
+    'llms.txt',
+  ]);
+  for (const rel of assets) assert.match(rel, /\.(json|txt)$/, `${rel} is not a sidecar`);
+  assert.ok(all.every((p) => p.asset || !/\.(json|txt)$/.test(p.rel)), 'a sidecar is being counted as a page');
+});
+
+test('the machine API is latest-only', () => {
+  const older = [...pages(site, { isLatest: false, versions: [] })].map((p) => p.rel);
+  assert.ok(!older.includes('api.json'));
+  assert.ok(!older.includes('llms.txt'));
 });
 
 // Hashing every class's dependencies costs ~155ms per build. A URL lookup walks

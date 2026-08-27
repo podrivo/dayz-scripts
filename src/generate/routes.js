@@ -11,6 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { CACHE_DIR } from '../util.js';
 import { buildSearchIndex } from './search.js';
+import { buildApi, renderLlmsTxt } from './api.js';
 import { buildFileLinks, chainBuilder } from './srclinks.js';
 import { recordingSite, classDeps, enumDeps, membersDeps } from './memo.js';
 import {
@@ -203,6 +204,25 @@ export function* pages(site, opts) {
     keep: true,
     render: () => JSON.stringify({ topics: site.moduleRoots.map((n) => [n, site.groups.get(n).label]) }),
   };
+
+  // Stable URLs for agents. Latest-only, and not `keep`, so archived builds
+  // do not grow a second copy and /api.json always means the current dump.
+  if (isLatest) {
+    yield {
+      rel: 'api.json',
+      file: 'api.json',
+      kind: 'search',
+      asset: true,
+      render: () => JSON.stringify(buildApi(site)),
+    };
+    yield {
+      rel: 'llms.txt',
+      file: 'llms.txt',
+      kind: 'index',
+      asset: true,
+      render: () => renderLlmsTxt(site),
+    };
+  }
 }
 
 /**
