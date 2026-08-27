@@ -2,7 +2,7 @@ name: Sync script data
 
 on:
   schedule:
-    - cron: '17 6 * * *' # daily; skips early when upstream has no new commit
+    - cron: '13 */6 * * *' # every 6h UTC; skips early when upstream has no new commit
   push:
     branches: [main]
   workflow_dispatch:
