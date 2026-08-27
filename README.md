@@ -263,8 +263,8 @@ for a single build) rather than relying on the commit-sha cache.
 
 `.github/workflows/build.yml` runs on a daily schedule (and on push / manual
 dispatch). It skips early when the upstream repo has no new commit, otherwise
-it rebuilds everything and deploys `dist/` to Netlify. Requires two repository
-secrets: `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID`.
+it fetches, parses, and commits `data/`. That commit is what triggers Netlify
+to run `npm run build` and deploy. No Netlify secrets are required on GitHub.
 
 ## Links
 
@@ -305,8 +305,8 @@ Two different licenses apply, and the distinction matters:
 [MIT License](LICENSE). Reuse it however you like.
 
 **The generated documentation** — the DayZ script sources it renders, which
-live in `data/` and `dist/` and are deliberately not tracked here — is not
-mine to license, and MIT does not extend to it. Those terms follow.
+live in `data/` (tracked) and `dist/` (not tracked) — is not mine to license,
+and MIT does not extend to it. Those terms follow.
 (`src/generate/pathnames.json` is the one exception in this repository: it
 holds the file and directory names of the script tree, and nothing of its
 contents, so that the site can spell paths the way the game does.)

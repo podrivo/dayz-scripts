@@ -1,6 +1,5 @@
 node_modules/
 .cache/
-data/
 dist/
 .dist-stale-*
 .DS_Store

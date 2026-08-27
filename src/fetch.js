@@ -57,12 +57,17 @@ function detectVersions() {
 updateUpstream();
 const versions = detectVersions();
 const head = git(['-C', UPSTREAM_DIR, 'rev-parse', 'origin/main']).trim();
-
-writeJson(path.join(DATA_DIR, 'versions.json'), {
-  fetchedAt: new Date().toISOString(),
-  upstreamHead: head,
-  versions,
-});
+const dest = path.join(DATA_DIR, 'versions.json');
+const prev = fs.existsSync(dest) ? JSON.parse(fs.readFileSync(dest, 'utf8')) : null;
+if (prev?.upstreamHead === head && JSON.stringify(prev.versions) === JSON.stringify(versions)) {
+  console.log(`versions.json unchanged (${versions.length} versions).`);
+} else {
+  writeJson(dest, {
+    fetchedAt: new Date().toISOString(),
+    upstreamHead: head,
+    versions,
+  });
+}
 
 console.log(`Found ${versions.length} versions:`);
 for (const v of versions) console.log(`  ${v.label}  build ${v.build}  rev ${v.rev}  ${v.date}  ${v.sha.slice(0, 10)}`);

@@ -1,6 +1,6 @@
-# Deploys are normally performed by GitHub Actions via the Netlify CLI
-# (see .github/workflows/build.yml). This file exists so that manual
-# `netlify deploy` runs pick the right publish directory.
+# Netlify builds on every commit with `npm run build`. GitHub Actions only
+# fetches/parses DayZ-Script-Diff and commits data/ when that repo changes,
+# which is what triggers a deploy for a new official build.
 
 [build]
   publish = "dist"
