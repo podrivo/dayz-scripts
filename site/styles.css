@@ -739,6 +739,14 @@ table.list td:first-child > code { white-space: normal; }
 .doc-note, .doc-warning { padding: 8px 12px; margin: 8px 0; border-radius: 8px; font-size: 14px; }
 .doc-note { background: var(--note-bg); border-left: 3px solid var(--note-line); }
 .doc-warning { background: var(--warn-bg); border-left: 3px solid var(--warn-line); }
+.note-community { background: var(--accent-bg); border-left-color: var(--accent2); }
+.note-community code { background: color-mix(in srgb, currentColor 12%, transparent); }
+.note-tag {
+  display: inline-block; margin-right: 8px; padding: 1px 6px; border-radius: 5px;
+  background: var(--accent2); color: var(--bg); font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em; vertical-align: 1px;
+}
+.enum-table .note-community { margin: 6px 0 0; }
 
 pre.code, pre.attrs {
   background: var(--code-bg); border: 1px solid var(--line); border-radius: 10px;

@@ -185,6 +185,7 @@ The script sources are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are
 
 - [Latest build API](${SITE_URL}/api.json): every class, method, field, enum, global, typedef and macro of ${site.build}, with signatures, inheritance, file locations and doc briefs
 - [Search index](${SITE_URL}/search.json): compact name index the site search uses
+- [Community notes](${SITE_URL}/assets/notes.json): community-written notes on undocumented declarations, keyed by \`Type\` or \`Type.Member\`. Not from Bohemia, and not covered by the license above
 - [Build list](${SITE_URL}/assets/versions.json): every documented PC build
 
 ## Human documentation

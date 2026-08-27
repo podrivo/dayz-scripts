@@ -151,6 +151,46 @@ rendered it first. Only the newest build carries cross-references for that
 reason — extending them to all 49 costs 419 MB of lost deduplication against
 the 54 MB they cost on their own.
 
+## Community notes
+
+Cross-references answer where a member is used; they cannot answer what it does,
+or which of its arguments is the one that silently does nothing. For the 89% of
+members with no doc comment that knowledge exists only in Discord, where it is
+not searchable and not durable. `site/notes.json` is where it can be written
+down: a flat object keyed by a type or a member of one, mapping to a sentence or
+two of plain text.
+
+```json
+{
+  "PlayerBase": "Server-side only outside of simulation callbacks.",
+  "PlayerBase.SetQuantity": "Clamps to the config maximum instead of failing; read it back with `GetQuantity()`."
+}
+```
+
+Contributing is editing that one file and opening a pull request — there is no
+account, no backend and no schema beyond the above. `Type.Member` uses the
+member's own name, so it covers every overload of it at once, and enum values
+key off the value name. Backticks render as code. `test/api.test.js` rejects a
+key that is not one of those two shapes, a value that is not a non-empty string,
+and an unclosed backtick, so a malformed contribution fails before it deploys.
+
+Notes are not written into the HTML. Everything in `site/` ships verbatim to
+`dist/assets/`, so the file is served as `/assets/notes.json` and `site/app.js`
+fetches it and injects the notes on class and enum pages — beneath the member's
+own documentation where it has some, beneath its signature where it does not.
+That is the same constraint the build stamp and the inherited-member tables are
+under: a page carries no build number and archived bodies are shared between
+builds, so a note rendered into the page would be frozen into whichever build
+first rendered it, and adding one would invalidate the reuse of every page it
+touches. Fetched instead, it costs one request and no bytes of HTML, and a note
+added today shows up on all 49 builds at once.
+
+It is also the only content here that is ours. Everything under `data/` and most
+of `dist/` is Bohemia's, offered under the DPL; a note is original writing in
+`site/`, and so is MIT-licensed with the rest of the generator. Notes are
+labelled as community writing in the page for the same reason — the
+documentation they sit beside is not.
+
 ## Source cross-links
 
 Doxygen's source pages linked every name to the declaration it resolved to, and

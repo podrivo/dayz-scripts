@@ -794,6 +794,67 @@
     }).catch(() => {});
   }
 
+  /* ---------- community notes ----------
+     Only 4,869 of 42,927 members carry a doc comment, and what is known about
+     the rest sits in Discord rather than in the sources. site/notes.json is
+     that knowledge, keyed by Type or Type.Member, and it is fetched for the
+     same reason the history above is: a page carries no build stamp and
+     archived bodies are shared between builds, so anything maintained outside
+     the sources would otherwise freeze into whichever build first rendered the
+     page. Overload anchors (Foo-2) share the note of the name they dedupe. */
+  if (historyOwner && main) {
+    fetch(ROOT + 'assets/notes.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((notes) => {
+        if (!notes) return;
+        const noteFor = (key) => (typeof notes[key] === 'string' && notes[key] ? notes[key] : null);
+        // Marked as community writing, because the docs it sits beside are
+        // Bohemia's. Built as nodes rather than markup so a contributor can
+        // write `Class.Method` without the note being able to inject anything.
+        const noteEl = (text) => {
+          const el = document.createElement('div');
+          el.className = 'doc-note note-community';
+          const tag = document.createElement('span');
+          tag.className = 'note-tag';
+          tag.textContent = 'Community note';
+          el.append(tag);
+          text.split('`').forEach((part, i) => {
+            if (!part) return;
+            if (i % 2) {
+              const code = document.createElement('code');
+              code.textContent = part;
+              el.append(code);
+            } else {
+              el.append(document.createTextNode(part));
+            }
+          });
+          return el;
+        };
+
+        const own = noteFor(historyOwner[1]);
+        if (own) {
+          const doc = $('.class-doc', main);
+          const filter = $('.filterbar', main);
+          const h2 = main.querySelector('h2');
+          if (doc) doc.after(noteEl(own));
+          else if (filter) filter.before(noteEl(own));
+          else if (h2) h2.before(noteEl(own));
+          else main.append(noteEl(own));
+        }
+        for (const mem of main.querySelectorAll('.member[id]')) {
+          const text = noteFor(`${historyOwner[1]}.${mem.id.replace(/-\d+$/, '')}`);
+          if (!text) continue;
+          const after = $('.member-doc', mem) || $('.member-sig', mem);
+          if (after) after.after(noteEl(text));
+        }
+        for (const row of main.querySelectorAll('.enum-table tr[id]')) {
+          const text = noteFor(`${historyOwner[1]}.${row.id}`);
+          if (text) (row.cells[2] || row).append(noteEl(text));
+        }
+      })
+      .catch(() => {});
+  }
+
   /* ---------- copy ----------
      Signatures are the thing people come here to take away, and selecting one
      out of a line that also holds badges, a src link and an anchor is fiddly.

@@ -1,5 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { parseFile } from '../src/parser/index.js';
 import { buildSiteModel } from '../src/generate/model.js';
 import { buildApi, renderLlmsTxt } from '../src/generate/api.js';
@@ -66,4 +69,21 @@ test('llms.txt points at the dump and states the license', () => {
   assert.match(txt, new RegExp(`${SITE_URL}/api.json`));
   assert.match(txt, /DayZ Public License/);
   assert.match(txt, /1\.29\.0/);
+});
+
+// The overlay is hand-edited by contributors rather than generated, and
+// llms.txt promises it at a fixed URL, so a malformed key or a missing file is
+// a broken link in a machine-readable index. site/ ships verbatim to
+// dist/assets/, which is what puts it at the URL below.
+test('the community notes overlay llms.txt advertises exists and validates', () => {
+  const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+  assert.match(renderLlmsTxt(siteOf()), new RegExp(`${SITE_URL}/assets/notes.json`));
+
+  const notes = JSON.parse(fs.readFileSync(path.join(root, 'site', 'notes.json'), 'utf8'));
+  for (const [key, text] of Object.entries(notes)) {
+    assert.match(key, /^[A-Za-z_]\w*(\.[A-Za-z_]\w*)?$/, `not a Type or Type.Member key: ${key}`);
+    assert.equal(typeof text, 'string', `${key} must map to a string`);
+    assert.ok(text.trim(), `${key} must not be empty`);
+    assert.equal(text.split('`').length % 2, 1, `${key} has an unclosed backtick`);
+  }
 });
