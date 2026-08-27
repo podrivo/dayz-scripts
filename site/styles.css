@@ -173,7 +173,7 @@ html.brand-snap .brand-in, html.brand-snap .brand-w, html.brand-snap .brand-rest
 [data-brand="on"] .brand { z-index: 3; }
 .brand:is(:hover, :focus-visible, :active, .on) .brand-in,
 [data-brand="on"] .brand .brand-in {
-  gap: 0.4em;
+  gap: 0.1em;
   background: var(--bg);
   padding-right: 14px;
 }

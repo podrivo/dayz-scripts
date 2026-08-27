@@ -125,7 +125,7 @@ function locationLinks(site, base, locations) {
 
 function fmtDate(iso) {
   return new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', {
-    year: 'numeric', month: 'short', day: '2-digit', timeZone: 'UTC',
+    month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC',
   });
 }
 
@@ -243,7 +243,7 @@ ${links
   const content = `
 <section class="hero">
   <h1>Welcome</h1>
-  <p>YADZ DIFF - DayZ Internal File Finder. Browsable documentation for the DayZ Enforce Script sources — every class, method, enum and constant of DayZ ${esc(site.version)}, game build ${buildLine} (${esc(site.date)}), generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ&nbsp;Script&nbsp;Diff</a> repository.</p>
+  <p>YADZ DIFF - DayZ Internal File Finder. Browsable documentation for the DayZ Enforce Script sources — every class, method, enum and constant of DayZ ${esc(site.version)}, game build ${buildLine} (${esc(fmtDate(site.date))}), generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ&nbsp;Script&nbsp;Diff</a> repository.</p>
   <p>Made for anyone wandering the DayZ modding and scripting world, and meant to be quicker to browse than the raw sources. This is just the tip of the iceberg: there is no official detailed documentation on the subject, so community content is your best friend. Once you join one of the Discord servers below, check the pinned messages — most recurring questions are answered there.</p>
 </section>
 <div class="home-stack">
