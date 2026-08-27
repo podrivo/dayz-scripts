@@ -1,4 +1,4 @@
-# DayZ Scripts Docs
+# YADZ DIFF - DayZ Internal File Finder
 
 Custom documentation site for the DayZ Enforce Script API, generated from the
 official [DayZ Script Diff](https://github.com/BohemiaInteractive/DayZ-Script-Diff)

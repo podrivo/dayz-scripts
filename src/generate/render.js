@@ -243,7 +243,7 @@ ${links
   const content = `
 <section class="hero">
   <h1>Welcome</h1>
-  <p>Browsable documentation for the DayZ Enforce Script sources — every class, method, enum and constant of DayZ ${esc(site.version)}, game build ${buildLine} (${esc(site.date)}), generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ&nbsp;Script&nbsp;Diff</a> repository.</p>
+  <p>YADZ DIFF - DayZ Internal File Finder. Browsable documentation for the DayZ Enforce Script sources — every class, method, enum and constant of DayZ ${esc(site.version)}, game build ${buildLine} (${esc(site.date)}), generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ&nbsp;Script&nbsp;Diff</a> repository.</p>
   <p>Made for anyone wandering the DayZ modding and scripting world, and meant to be quicker to browse than the raw sources. This is just the tip of the iceberg: there is no official detailed documentation on the subject, so community content is your best friend. Once you join one of the Discord servers below, check the pinned messages — most recurring questions are answered there.</p>
 </section>
 <div class="home-stack">
@@ -280,7 +280,7 @@ ${linkCards(COMMUNITY_LINKS, true)}
 ${releases}
 </div>
 <h2 id="about">About</h2>
-<p>This site is generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff/tree/main/scripts" ${EXT}>DayZ Script Diff</a> sources, so it covers what ships in the game's script files — engine internals are not part of it. It is actively maintained, so if you find a bug or have a suggestion, share it on <a href="${YADZ_DISCORD}" ${EXT}>YADZ's Discord</a>.</p>
+<p>YADZ DIFF - DayZ Internal File Finder is generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff/tree/main/scripts" ${EXT}>DayZ Script Diff</a> sources, so it covers what ships in the game's script files — engine internals are not part of it. It is actively maintained, so if you find a bug or have a suggestion, share it on <a href="${YADZ_DISCORD}" ${EXT}>YADZ's Discord</a>.</p>
 <p class="muted">This is not an official documentation and it is not affiliated with <a href="https://dayz.com/" ${EXT}>DayZ</a> or <a href="https://www.bohemia.net/" ${EXT}>Bohemia Interactive</a>. The script sources shown here are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are licensed under the <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License (DPL)</a>. They have been modified for presentation — parsed, reorganized and reformatted into these pages — from the originals in <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff/tree/main/scripts" ${EXT}>DayZ Script Diff</a>, and are offered as-is, without warranties of any kind. DAYZ®, ENFUSION® and BOHEMIA INTERACTIVE® are registered trademarks of BOHEMIA INTERACTIVE a.s. All other trademarks and copyrights are the property of their respective owners.</p>`;
 
   return layout({
@@ -288,7 +288,7 @@ ${releases}
     title: 'Welcome',
     active: '',
     footer: false,
-    description: `DayZ ${site.version} Enforce Script API documentation — classes, methods, enums and sources.`,
+    description: `YADZ DIFF - DayZ Internal File Finder — DayZ ${site.version} classes, methods, enums and sources.`,
     content,
   });
 }

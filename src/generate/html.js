@@ -315,8 +315,8 @@ export let lastPacked = '';
 
 export function pageMeta(o) {
   return {
-    title: `${o.title} · DayZ Scripts`,
-    description: o.description || 'DayZ Enforce Script API documentation',
+    title: `${o.title} · DIFF`,
+    description: o.description || 'YADZ DIFF - DayZ Internal File Finder',
     base: o.base,
     vpath: o.versionPath || '',
     active: o.active ?? '',
@@ -366,7 +366,7 @@ export function layout(o) {
     ? '<meta name="robots" content="noindex">'
     : `<link rel="canonical" href="${esc(url)}">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="DayZ Scripts">
+<meta property="og:site_name" content="DIFF">
 <meta property="og:title" content="${esc(meta.title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${esc(url)}">
@@ -390,7 +390,7 @@ ${social}
 <body data-base="${o.base}" data-vpath="${esc(o.versionPath || '')}">
 <header class="top">
 <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><i class="ic ic-menu"></i></button>
-<a class="brand" href="/">DayZ<span>Scripts</span></a>
+<a class="brand" href="/">DIFF</a>
 <nav class="nav" id="nav" aria-label="Site">${nav}</nav>
 <button class="search-trigger" id="searchBtn" aria-label="Search"><i class="ic ic-search"></i><span>Search…</span><kbd id="searchKbd">⌘K</kbd></button>
 <div class="verpicker">

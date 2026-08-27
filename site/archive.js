@@ -14,7 +14,7 @@
 
   const fill = (tpl, meta, inner) =>
     tpl
-      .replaceAll(`${MARK.title} · DayZ Scripts`, esc(meta.title))
+      .replaceAll(`${MARK.title} · DIFF`, esc(meta.title))
       .replaceAll(MARK.desc, esc(meta.description))
       .replaceAll(MARK.vpath, esc(meta.vpath))
       .replaceAll(MARK.base, meta.base)

@@ -29,7 +29,7 @@ test('packed inners round-trip through the archive template', () => {
     content: '<h1>Foo</h1><p>hello</p>',
   });
   const { meta, inner } = unpackPage(lastPacked);
-  assert.equal(meta.title, 'Foo · DayZ Scripts');
+  assert.equal(meta.title, 'Foo · DIFF');
   assert.equal(meta.base, '../../');
   assert.equal(meta.vpath, 'class/Foo/');
   assert.match(inner, /<h1>Foo<\/h1>/);
@@ -44,7 +44,7 @@ test('packed inners round-trip through the archive template', () => {
     footer: false,
   });
   const filled = fillArchiveTemplate(tpl, meta, inner);
-  assert.match(filled, /<title>Foo · DayZ Scripts<\/title>/);
+  assert.match(filled, /<title>Foo · DIFF<\/title>/);
   assert.match(filled, /data-base="\.\.\/\.\.\/"/);
   assert.match(filled, /<h1>Foo<\/h1>/);
   assert.match(filled, /<footer class="foot">/);
@@ -59,5 +59,5 @@ test('pageInner is the main of a layout, without the document chrome', () => {
   const inner = pageInner(o);
   assert.ok(!inner.includes('<html'));
   assert.ok(inner.includes('<h1>x</h1>'));
-  assert.equal(pageMeta(o).title, 'x · DayZ Scripts');
+  assert.equal(pageMeta(o).title, 'x · DIFF');
 });

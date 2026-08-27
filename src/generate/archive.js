@@ -22,11 +22,11 @@ export function unpackPage(text) {
 
 /**
  * Fill the archive shell template produced by layout() with ARCHIVE_MARK
- * placeholders. Title is already "§T§ · DayZ Scripts" in the template.
+ * placeholders. Title is already "§T§ · DIFF" in the template.
  */
 export function fillArchiveTemplate(tpl, meta, inner) {
   return tpl
-    .replaceAll(`${ARCHIVE_MARK.title} · DayZ Scripts`, esc(meta.title))
+    .replaceAll(`${ARCHIVE_MARK.title} · DIFF`, esc(meta.title))
     .replaceAll(ARCHIVE_MARK.desc, esc(meta.description))
     .replaceAll(ARCHIVE_MARK.vpath, esc(meta.vpath))
     .replaceAll(ARCHIVE_MARK.base, meta.base)

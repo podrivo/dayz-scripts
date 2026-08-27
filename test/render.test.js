@@ -218,7 +218,7 @@ test('canonical and og:url name the page, never the build that rendered it', () 
   assert.equal(canon, `${SITE_URL}/class/Foo/`);
   assert.ok(!canon.includes('/v/'), 'canonical must not name a build');
   assert.ok(html.includes(`<meta property="og:url" content="${canon}">`), 'og:url must agree with it');
-  assert.equal(html.match(/<meta property="og:title" content="([^"]*)">/)[1], 'Foo · DayZ Scripts');
+  assert.equal(html.match(/<meta property="og:title" content="([^"]*)">/)[1], 'Foo · DIFF');
 });
 
 test('fields letter pages are a shell, not an inlined member list', () => {
