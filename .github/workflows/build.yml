@@ -20,6 +20,17 @@ permissions:
   contents: write
 
 jobs:
+  keepalive:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Keep this schedule enabled
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/build.yml/enable"
+
   sync:
     if: github.event_name != 'push' || !startsWith(github.event.head_commit.message, 'Update parsed DayZ script data')
     runs-on: ubuntu-latest
@@ -98,3 +109,14 @@ jobs:
           fi
           git commit -m "Update parsed DayZ script data" -m "Upstream ${{ steps.upstream.outputs.head }}"
           git push
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Sync script data"
+            echo "- Event: \`${{ github.event_name }}\`"
+            echo "- Upstream: \`${{ steps.upstream.outputs.head }}\`"
+            echo "- In repo: \`${{ steps.upstream.outputs.committed }}\`"
+            echo "- Sync: \`${{ steps.decide.outputs.sync }}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
