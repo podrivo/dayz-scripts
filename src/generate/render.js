@@ -257,12 +257,12 @@ ${links
 </section>
 <div class="cards">
   <a class="card" href="${base}modules/">
-    <h3>Modules</h3>
+    <h3>Topics</h3>
     <p>The ${site.groups.size} topics the scripts group themselves into — math, physics, entities, UI and the constant tables.</p>
   </a>
   <a class="card" href="${base}classes/">
-    <h3>Data Structures</h3>
-    <p>All ${s.classes.toLocaleString('en-US')} classes, with an alphabetical index, the inheritance tree and every data field.</p>
+    <h3>Classes</h3>
+    <p>All ${s.classes.toLocaleString('en-US')} classes, with an alphabetical index, the inheritance tree and every member.</p>
   </a>
   <a class="card" href="${base}files/">
     <h3>Files</h3>
@@ -307,7 +307,7 @@ function letterBar(base, dir, letters, current) {
 
 const letterTitle = (l) => (l === '_' ? 'Other' : l.toUpperCase());
 
-/** Data Structures: every class with its brief, the way Doxygen annotates them. */
+/** Classes: every class with its brief, the way Doxygen annotates them. */
 export function renderAnnotated(ctx, letters) {
   const { site, base } = ctx;
   const sections = [...letters.entries()]
@@ -325,21 +325,21 @@ export function renderAnnotated(ctx, letters) {
     })
     .join('\n');
   const content = `
-<h1>Data Structures <span class="count">${site.classes.size.toLocaleString('en-US')}</span></h1>
+<h1>Classes <span class="count">${site.classes.size.toLocaleString('en-US')}</span></h1>
 ${letterBar(base, 'classes/', letters.keys())}
 ${filterBar('Filter classes…')}
 ${sections}`;
   return layout({
     ...ctx,
-    title: 'Data Structures',
+    title: 'Classes',
     active: 'classes/',
     description: `All ${site.classes.size} DayZ Enforce Script classes, with descriptions.`,
-    breadcrumbs: [{ label: 'Data Structures' }],
+    breadcrumbs: [{ label: 'Classes' }],
     content,
   });
 }
 
-/** Data Structure Index: names only, which is what makes it quick to scan. */
+/** Class Index: names only, which is what makes it quick to scan. */
 export function renderClassesIndex(ctx, letters) {
   const { site, base } = ctx;
   const sections = [...letters.entries()]
@@ -349,16 +349,16 @@ export function renderClassesIndex(ctx, letters) {
     )
     .join('\n');
   const content = `
-<h1>Data Structure Index <span class="count">${site.classes.size.toLocaleString('en-US')}</span></h1>
+<h1>Class Index <span class="count">${site.classes.size.toLocaleString('en-US')}</span></h1>
 <p>All class names, alphabetically. Follow a letter for the same list with descriptions.</p>
 ${letterBar(base, 'classes/', letters.keys())}
 ${filterBar('Filter classes…')}
 ${sections}`;
   return layout({
     ...ctx,
-    title: 'Data Structure Index',
+    title: 'Class Index',
     active: 'classes/index/',
-    breadcrumbs: [{ label: 'Data Structures', href: `${base}classes/` }, { label: 'Index' }],
+    breadcrumbs: [{ label: 'Classes', href: `${base}classes/` }, { label: 'Index' }],
     content,
   });
 }
@@ -374,16 +374,16 @@ export function renderClassesLetter(ctx, letter, names, letters) {
     })
     .join('\n');
   const content = `
-<h1>Data Structures — ${letterTitle(letter)} <span class="count">${names.length}</span></h1>
+<h1>Classes — ${letterTitle(letter)} <span class="count">${names.length}</span></h1>
 ${letterBar(base, 'classes/', letters, letter)}
 ${filterBar('Filter classes…')}
 <table class="list"><tbody>${rows}</tbody></table>`;
   return layout({
     ...ctx,
-    title: `Data Structures ${letterTitle(letter)}`,
+    title: `Classes ${letterTitle(letter)}`,
     active: 'classes/',
     breadcrumbs: [
-      { label: 'Data Structures', href: `${base}classes/` },
+      { label: 'Classes', href: `${base}classes/` },
       { label: letterTitle(letter) },
     ],
     content,
@@ -392,19 +392,19 @@ ${filterBar('Filter classes…')}
 
 // ---------------------------------------------------------------------------
 
-/** Data Fields: every member and method of every class, by initial.
+/** Members: every member and method of every class, by initial.
  *  Letter pages are a shell; the rows are composed in the browser from
  *  search.json, the same way /class/<Name>/members/ is. */
 export function renderFields(ctx, letter, letters, kind) {
   const { base } = ctx;
   const KINDS = {
-    all: ['Data Fields', 'classes/fields/', 'Every member and method declared by a class.'],
-    functions: ['Data Fields — Functions', 'classes/fields/functions/', 'Every method declared by a class.'],
-    variables: ['Data Fields — Variables', 'classes/fields/variables/', 'Every variable and constant declared by a class.'],
+    all: ['Members', 'classes/fields/', 'Every member and method declared by a class.', 'All'],
+    functions: ['Members — Methods', 'classes/fields/functions/', 'Every method declared by a class.', 'Methods'],
+    variables: ['Members — Fields', 'classes/fields/variables/', 'Every variable and constant declared by a class.', 'Fields'],
   };
   const [title, dir, blurb] = KINDS[kind];
   const tabs = Object.entries(KINDS)
-    .map(([k, [, d]]) => `<a class="tab${k === kind ? ' active' : ''}" href="${base}${d}">${k === 'all' ? 'All' : k[0].toUpperCase() + k.slice(1)}</a>`)
+    .map(([, [, d, , tab]]) => `<a class="tab${d === dir ? ' active' : ''}" href="${base}${d}">${tab}</a>`)
     .join('');
 
   const body = letter
@@ -417,15 +417,15 @@ export function renderFields(ctx, letter, letters, kind) {
 <p>${blurb} The same name is often declared by many classes, so each one links to every class that has it.</p>
 <div class="tabs">${tabs}</div>
 ${letterBar(base, dir, letters, letter)}
-${letter ? filterBar('Filter fields…') : ''}
+${letter ? filterBar('Filter members…') : ''}
 ${body}`;
   return layout({
     ...ctx,
     title: letter ? `${title} ${letterTitle(letter)}` : title,
     active: dir,
     breadcrumbs: [
-      { label: 'Data Structures', href: `${base}classes/` },
-      { label: 'Data Fields', href: `${base}classes/fields/` },
+      { label: 'Classes', href: `${base}classes/` },
+      { label: 'Members', href: `${base}classes/fields/` },
       ...(letter ? [{ label: letterTitle(letter) }] : []),
     ],
     content,
@@ -815,7 +815,7 @@ ${filterBar('Filter files and directories…')}
 
 // ---------------------------------------------------------------------------
 
-/** Modules: the \defgroup topics the sources declare, as a tree. */
+/** Topics: the \defgroup groups the sources declare, as a tree. */
 export function renderModulesIndex(ctx) {
   const { site, base } = ctx;
   const node = (name, depth) => {
@@ -828,17 +828,17 @@ export function renderModulesIndex(ctx) {
 <ul>${mod.children.map((k) => node(k, depth + 1)).join('')}</ul></details></li>`;
   };
   const content = `
-<h1>Modules <span class="count">${site.groups.size}</span></h1>
-<p>Topics the scripts group themselves into with Doxygen <code>\\defgroup</code> blocks — mostly the engine-facing API and the constant tables. Classes and constants that belong to a topic link back to it.</p>
+<h1>Topics <span class="count">${site.groups.size}</span></h1>
+<p>Engine-facing APIs and constant tables the scripts group themselves into — math, physics, entities, UI and the rest. Classes and constants that belong to a topic link back to it.</p>
 <div class="hierarchy-tools"><button id="expandAll" class="btn">Expand all</button> <button id="collapseAll" class="btn">Collapse all</button></div>
 ${filterBar('Filter topics…')}
 <ul class="tree">${site.moduleRoots.map((n) => node(n, 0)).join('')}</ul>`;
   return layout({
     ...ctx,
-    title: 'Modules',
+    title: 'Topics',
     active: 'modules/',
-    description: 'DayZ Enforce Script API grouped into modules: math, physics, entities, UI, constants and more.',
-    breadcrumbs: [{ label: 'Modules' }],
+    description: 'DayZ Enforce Script API grouped into topics: math, physics, entities, UI, constants and more.',
+    breadcrumbs: [{ label: 'Topics' }],
     content,
   });
 }
@@ -995,7 +995,7 @@ ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e
   const empty =
     !children && !mod.classes.length && !mod.enums.length && !mod.typedefs.length &&
     !varEntries.length && !fnEntries.length && !mod.defines.length
-      ? '<p class="muted">Nothing in this build is filed under this module. The sources declare it, but everything it once held is commented out or has moved.</p>'
+      ? '<p class="muted">Nothing in this build is filed under this topic. The sources declare it, but everything it once held is commented out or has moved.</p>'
       : '';
 
   // The order is Doxygen's own, from group/memberdecl/* then group/memberdef/*
@@ -1007,8 +1007,8 @@ ${parent}
 ${mod.desc ? `<div class="class-doc">${renderDoc(mod.desc.replace(/[\\@](def|addto)group\s+\S+[^\n]*/, '').replace(/@[{}]/g, ''), site, base)}</div>` : ''}
 ${empty}
 ${fnEntries.length + varEntries.length + valueEntries.length >= 12 ? filterBar('Filter this topic…') : ''}
-${section('Modules', children)}
-${section('Data Structures', nameList(mod.classes, 'class'))}
+${section('Topics', children)}
+${section('Classes', nameList(mod.classes, 'class'))}
 ${section('Macros', macroRows)}
 ${section('Typedefs', typedefRows)}
 ${section('Enums', nameList(mod.enums, 'enum'))}
@@ -1023,8 +1023,8 @@ ${section('Variable Documentation', defBlocks(varEntries))}`;
     ...ctx,
     title: mod.label,
     active: `modules/${rootTopic(site, mod.name)}/`,
-    description: `${mod.label} — DayZ Enforce Script API module`,
-    breadcrumbs: [{ label: 'Modules', href: `${base}modules/` }, { label: mod.label }],
+    description: `${mod.label} — DayZ Enforce Script API topic`,
+    breadcrumbs: [{ label: 'Topics', href: `${base}modules/` }, { label: mod.label }],
     content,
   });
 }
@@ -1101,7 +1101,7 @@ ${filterBar('Filter classes…')}
     ...ctx,
     title: 'Class Hierarchy',
     active: 'hierarchy/',
-    breadcrumbs: [{ label: 'Data Structures', href: `${base}classes/` }, { label: 'Class Hierarchy' }],
+    breadcrumbs: [{ label: 'Classes', href: `${base}classes/` }, { label: 'Hierarchy' }],
     content,
   });
 }

@@ -12,14 +12,14 @@ per-build changelogs with a build selector (every published build, e.g.
 ## Structure
 
 The scripts are documented with [Doxygen](https://www.doxygen.nl/) comments;
-this site renders them, following Doxygen's usual sections:
+this site renders them as:
 
-- **Modules** (`/modules/`, `/modules/<Name>/`) — the topics the sources group
+- **Topics** (`/modules/`, `/modules/<Name>/`) — the groups the sources wrap
   themselves into with `\defgroup` blocks: the engine-facing APIs (math,
   physics, entities, widgets) and the constant tables. Nesting comes from
   blocks opened inside other blocks, so the tree is the one the sources
   describe rather than one imposed here.
-- **Data Structures** — every class, as an annotated list (`/classes/`), a
+- **Classes** — every class, as an annotated list (`/classes/`), a
   name-only index by initial (`/classes/index/`), the inheritance tree
   (`/hierarchy/`) and an index of all ~43,000 members (`/classes/fields/`). A class
   with a base class also has `/class/<Name>/members/`, everything it inherits
@@ -83,7 +83,7 @@ the same in every build and is inlined.
 
 ## Topics
 
-The Modules section is built from the `\defgroup` blocks the sources wrap their
+The Topics section is built from the `\defgroup` blocks the sources wrap their
 declarations in, and reading those the way Doxygen did turns out to be most of
 the work. Two rules decide almost everything:
 
@@ -101,7 +101,7 @@ the work. Two rules decide almost everything:
 
 Topic pages follow the order Doxygen used for a group, which is `group/memberdecl/*`
 then `group/memberdef/*` in its `src/layout.cpp`: every declaration is summarised
-in a table — Data Structures, Macros, Typedefs, Enumerations, Enumerator,
+in a table — Topics, Classes, Macros, Typedefs, Enums, Values,
 Functions, Variables — and then documented in full below under Function
 Documentation and its siblings. Members are bucketed by shape rather than by
 owner, so a class method sits under Functions beside a free one, which is why
@@ -217,7 +217,7 @@ Script (not regex scraping). It understands classes (both `extends` and `:`
 inheritance), generic templates, the full method modifier set (`proto`,
 `native`, `owned`, `external`, `volatile`, `event`, `sealed`, ...), enums,
 typedefs, global constants/functions, macros, Doxygen-style doc comments and
-group blocks (`\defgroup` / `\addtogroup`, which become the Modules section),
+group blocks (`\defgroup` / `\addtogroup`, which become the Topics section),
 and preprocessor conditions (`#ifdef DIAG_DEVELOPER` etc.), which are shown as
 badges instead of being stripped.
 

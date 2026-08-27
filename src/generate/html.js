@@ -191,26 +191,27 @@ export function briefOf(rawDoc, site, base) {
   return inlineDoc(d.brief, site, base);
 }
 
-// Doxygen's own navigation tree, entry for entry, with Changelog standing
-// where it listed Examples, and Globals lifted next to Files so the two
-// are not one menu. Sections are links to their own overview as well as
-// headings, and repeat that overview as their first child the way
-// Doxygen did, so the page a section lands on is also visible as a
-// place you are.
-// The topics under Modules are the one part that changes from build to build,
-// so they are not written into the page: a reused page would carry the nav of
-// the build it was first rendered for. They are fetched from that build's
-// nav.json on first expand instead, which is how Doxygen served its tree too.
+// Doxygen's navigation tree, entry for entry, with Changelog standing where
+// it listed Examples, and Globals lifted next to Files so the two are not
+// one menu. Labels are the DayZ names (Topics, Classes, Members) rather
+// than Doxygen's C-mode ones (Modules, Data Structures, Data Fields).
+// Sections are links to their own overview as well as headings, and repeat
+// that overview as their first child the way Doxygen did, so the page a
+// section lands on is also visible as a place you are.
+// The topic list is the one part that changes from build to build, so it is
+// not written into the page: a reused page would carry the nav of the build
+// it was first rendered for. Topics are fetched from that build's nav.json
+// on first expand instead, which is how Doxygen served its tree too.
 const NAV = [
-  ['modules/', 'Modules', 'topics'],
-  ['classes/', 'Data Structures', [
-    ['classes/', 'Data Structures'],
-    ['classes/index/', 'Data Structure Index'],
-    ['hierarchy/', 'Class Hierarchy'],
-    ['classes/fields/', 'Data Fields', [
+  ['modules/', 'Topics', 'topics'],
+  ['classes/', 'Classes', [
+    ['classes/', 'Classes'],
+    ['classes/index/', 'Index'],
+    ['hierarchy/', 'Hierarchy'],
+    ['classes/fields/', 'Members', [
       ['classes/fields/', 'All'],
-      ['classes/fields/functions/', 'Functions'],
-      ['classes/fields/variables/', 'Variables'],
+      ['classes/fields/functions/', 'Methods'],
+      ['classes/fields/variables/', 'Fields'],
     ]],
   ]],
   ['globals/', 'Globals', [
@@ -236,7 +237,7 @@ function navLink(href, label, cls, here, base) {
 }
 
 /** Flattened children of a dropdown: groups become a heading plus their
- *  links, so Data Fields is visible without a second click. */
+ *  links, so Members is visible without a second click. */
 function navPanel(nodes, active, base) {
   return nodes
     .map(([href, label, kids]) => {
@@ -258,7 +259,7 @@ function navLevel(nodes, active, base) {
     .map(([href, label, kids]) => {
       const list = Array.isArray(kids) ? kids : null;
       const here = href === active && !list?.some(([h]) => h === active);
-      // Every /modules/<topic>/ page belongs under Modules, including the
+      // Every /modules/<topic>/ page belongs under Topics, including the
       // nested topics the nav does not list, so the section is current for
       // all of them and the client marks the entry if it is one of the roots.
       const under = kids === 'topics' && !!active?.startsWith('modules/') && active !== 'modules/';
@@ -272,7 +273,7 @@ function navLevel(nodes, active, base) {
       // Sections stay shut: they are hover menus, and serving them open
       // would pin a panel under the bar on every page they hold.
       const fill = list ? '' : ` data-nav="${kids}"${under ? ` data-active="${esc(active)}"` : ''}`;
-      const intro = list ? '' : navLink(href, 'All modules', 'nav-sub', false, base);
+      const intro = list ? '' : navLink(href, 'All topics', 'nav-sub', false, base);
       const body = list ? navPanel(list, active, base) : '';
       return `<details class="nav-sec${holds ? ' nav-here' : ''}"><summary>${a}</summary><div class="nav-kids"${fill}>${intro}${body}</div></details>`;
     })
@@ -319,7 +320,7 @@ function titleKind(vpath) {
   if (vpath.startsWith('class/')) return 'Class';
   if (vpath.startsWith('enum/')) return 'Enum';
   if (vpath.startsWith('file/')) return 'File';
-  if (vpath.startsWith('modules/') && vpath !== 'modules/') return 'Module';
+  if (vpath.startsWith('modules/') && vpath !== 'modules/') return 'Topic';
   return '';
 }
 

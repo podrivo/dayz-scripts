@@ -65,16 +65,24 @@ test('layout links assets absolutely so a page works at any depth', () => {
   assert.ok(!html.includes('../../assets/'), 'assets must not be relative');
 });
 
-test('the nav is the tree Doxygen had, and marks the page once', () => {
+test('the nav names the DayZ-facing sections, and marks the page once', () => {
   const html = layout({ title: 'x', base: '', active: 'globals/typedefs/', versionPath: '', content: '' });
   const labels = [
-    'Modules', 'Data Structures', 'Data Structure Index', 'Class Hierarchy',
-    'Data Fields', 'Globals', 'Files', 'Constants', 'Typedefs', 'Enums', 'Values', 'Macros', 'Changelog',
+    'Topics', 'Classes', 'Index', 'Hierarchy',
+    'Members', 'Methods', 'Fields', 'Globals', 'Files', 'Constants', 'Typedefs', 'Enums', 'Values', 'Macros', 'Changelog',
   ];
   for (const l of labels) assert.ok(html.includes(`>${l}</a>`), `nav is missing ${l}`);
-  assert.ok(html.includes('href="classes/"'), 'Data Structures is /classes/');
-  assert.ok(html.includes('href="classes/index/"'), 'Data Structure Index is /classes/index/');
-  assert.ok(html.includes('href="classes/fields/"'), 'Data Fields is /classes/fields/');
+  assert.ok(html.includes('href="classes/"'), 'Classes is /classes/');
+  assert.ok(html.includes('href="classes/index/"'), 'Index is /classes/index/');
+  assert.ok(html.includes('href="classes/fields/"'), 'Members is /classes/fields/');
+  assert.ok(html.includes('href="classes/fields/functions/"'), 'Methods is /classes/fields/functions/');
+  assert.ok(html.includes('href="classes/fields/variables/"'), 'Fields is /classes/fields/variables/');
+  assert.ok(html.includes('>All topics</a>'), 'Topics menu starts with All topics');
+  assert.ok(!html.includes('>Modules</a>'));
+  assert.ok(!html.includes('>Data Structures</a>'));
+  assert.ok(!html.includes('>Data Structure Index</a>'));
+  assert.ok(!html.includes('>Class Hierarchy</a>'));
+  assert.ok(!html.includes('>Data Fields</a>'));
   assert.ok(html.includes('href="changelog/"'), 'Changelog is /changelog/');
   assert.ok(!html.includes('href="annotated/"'));
   assert.ok(!html.includes('href="changes/"'));
