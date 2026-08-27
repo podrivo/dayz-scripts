@@ -1,5 +1,5 @@
 // The diff is computed once per build, against the build before it, and that is
-// the only comparison the generator ever makes. Everything /compare/ offers is
+// the only comparison the generator ever makes. Everything /changelog/ offers is
 // a run of those folded together in the browser, so the property this file
 // exists to hold is that folding a run gives the same answer as diffing its
 // endpoints directly. If it stops being true, the compare page starts quietly

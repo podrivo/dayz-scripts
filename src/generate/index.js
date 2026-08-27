@@ -260,11 +260,18 @@ const movedPages = [
   ['constants', 'globals/variables'],
   ['functions', 'globals/functions'],
   ['enums', 'globals/enums'],
+  ['annotated', 'classes'],
+  ['changes', 'changelog'],
+  ['compare', 'changelog'],
 ];
 const moveRedirects = movedPages.flatMap(([from, to]) => [
   `/${from}/ /${to}/ 301`,
   `/v/:build/${from}/ /v/:build/${to}/ 301`,
 ]);
+const moduleRedirects = [
+  '/module/* /modules/:splat 301',
+  '/v/:build/module/* /v/:build/modules/:splat 301',
+];
 
 // domain redirects preserved from the previous Doxygen site
 fs.writeFileSync(
@@ -274,6 +281,7 @@ fs.writeFileSync(
     `https://dayz-docs.yadz.app/* ${SITE_URL}/:splat 301!`,
     '/v/ / 302',
     ...moveRedirects,
+    ...moduleRedirects,
     `/v/${buildList[0].label}/* /:splat 301`,
     ...minorRedirects,
     '',

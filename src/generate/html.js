@@ -202,9 +202,9 @@ export function briefOf(rawDoc, site, base) {
 // nav.json on first expand instead, which is how Doxygen served its tree too.
 const NAV = [
   ['modules/', 'Modules', 'topics'],
-  ['annotated/', 'Data Structures', [
-    ['annotated/', 'Data Structures'],
-    ['classes/', 'Data Structure Index'],
+  ['classes/', 'Data Structures', [
+    ['classes/', 'Data Structures'],
+    ['classes/index/', 'Data Structure Index'],
     ['hierarchy/', 'Class Hierarchy'],
     ['fields/', 'Data Fields', [
       ['fields/', 'All'],
@@ -224,7 +224,7 @@ const NAV = [
       ['globals/macros/', 'Macros'],
     ]],
   ]],
-  ['compare/', 'Changelog'],
+  ['changelog/', 'Changelog'],
 ];
 
 /** Whether `active` names this branch or anything under it. */
@@ -259,10 +259,10 @@ function navLevel(nodes, active, base) {
     .map(([href, label, kids]) => {
       const list = Array.isArray(kids) ? kids : null;
       const here = href === active && !list?.some(([h]) => h === active);
-      // Every /module/<topic>/ page belongs under Modules, including the
+      // Every /modules/<topic>/ page belongs under Modules, including the
       // nested topics the nav does not list, so the section is current for
       // all of them and the client marks the entry if it is one of the roots.
-      const under = kids === 'topics' && !!active?.startsWith('module/');
+      const under = kids === 'topics' && !!active?.startsWith('modules/') && active !== 'modules/';
       const holds = here || under || !!(list && navHolds(list, active));
       // A section that holds the page is marked `on` so the bar still says
       // where you are when the exact entry is a child.

@@ -1,13 +1,11 @@
 /* Comparing two builds.
    ------------------------------------------------------------------------
-   Loaded on demand by site/app.js when /compare/ is the page, so the several
+   Loaded on demand by site/app.js when /changelog/ is the page, so the several
    hundred thousand pages that are not this one do not pay for it.
 
-   /changes/ shows one build against the one before it, from a diff the
-   generator already had in hand. This shows any two builds against each
-   other, and does the choosing here rather than at build time: 49 builds are
-   1,176 pairs, and the obvious next ask — three builds at once — is 18,424
-   triples, so there is no version of this that is a page per comparison.
+   49 builds are 1,176 pairs, and the obvious next ask — three builds at once —
+   is 18,424 triples, so there is no version of this that is a page per
+   comparison. The pair is chosen here rather than at build time.
 
    Nothing new is computed to make that work. Every build already ships the
    diff against its predecessor as diff.json (see src/generate/routes.js), and

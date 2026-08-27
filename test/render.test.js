@@ -73,6 +73,12 @@ test('the nav is the tree Doxygen had, and marks the page once', () => {
     'Data Fields', 'Files', 'File List', 'Globals', 'Typedefs', 'Enumerator', 'Macros', 'Changelog',
   ];
   for (const l of labels) assert.ok(html.includes(`>${l}</a>`), `nav is missing ${l}`);
+  assert.ok(html.includes('href="classes/"'), 'Data Structures is /classes/');
+  assert.ok(html.includes('href="classes/index/"'), 'Data Structure Index is /classes/index/');
+  assert.ok(html.includes('href="changelog/"'), 'Changelog is /changelog/');
+  assert.ok(!html.includes('href="annotated/"'));
+  assert.ok(!html.includes('href="changes/"'));
+  assert.ok(!html.includes('href="compare/"'));
   assert.ok(!html.includes('>Welcome</a>'), 'the brand is home; Welcome is not repeated');
   assert.equal(html.match(/nav-(?:item|sub) active"/g).length, 1, 'exactly one entry is the current page');
   assert.ok(html.includes('<a class="nav-item on" href="files/"'), 'Files is the current section');
@@ -81,8 +87,8 @@ test('the nav is the tree Doxygen had, and marks the page once', () => {
 });
 
 test('a section that repeats itself as its first child marks the child', () => {
-  const html = layout({ title: 'x', base: '', active: 'annotated/', versionPath: '', content: '' });
-  assert.ok(html.includes('<a class="nav-sub active" href="annotated/"'));
+  const html = layout({ title: 'x', base: '', active: 'classes/', versionPath: '', content: '' });
+  assert.ok(html.includes('<a class="nav-sub active" href="classes/"'));
   assert.ok(!html.includes('nav-item active'), 'the heading is not marked as well');
 });
 
@@ -121,7 +127,7 @@ test('enum page is byte-identical across builds when its content is unchanged', 
 // It must not: the pickers are filled from /assets/versions.json client-side,
 // which is what keeps one copy of these bytes serving all 49 builds.
 test('the compare page names no build', () => {
-  const cmp = (s) => renderCompare({ site: s, versions: [], base: '../', root: '../', versionPath: 'compare/' });
+  const cmp = (s) => renderCompare({ site: s, versions: [], base: '../', root: '../', versionPath: 'changelog/' });
   assert.equal(cmp(site(BUILD_A)), cmp(site(BUILD_B)));
   const html = cmp(site(BUILD_A));
   for (const needle of ['1.29', '1.19', '163709', '155390', '2026-08-12']) {

@@ -143,6 +143,13 @@ function locate(pathname) {
   return { label: m[1], rel: m[2] };
 }
 
+function relocated(rel) {
+  if (rel === 'annotated/') return 'classes/';
+  if (rel === 'changes/' || rel === 'compare/') return 'changelog/';
+  if (rel.startsWith('module/')) return `modules/${rel.slice('module/'.length)}`;
+  return null;
+}
+
 function handle(req, res) {
   const pathname = decodeURIComponent(new URL(req.url, 'http://x').pathname);
 
@@ -160,6 +167,13 @@ function handle(req, res) {
   }
 
   const { label, rel } = locate(pathname);
+  const dest = relocated(rel);
+  if (dest) {
+    const prefix = label === latest.label ? '/' : `/v/${label}/`;
+    const search = new URL(req.url, 'http://x').search;
+    res.writeHead(301, { location: `${prefix}${dest}${search}` });
+    return res.end();
+  }
   const site = siteFor(label);
   if (!site) return notFound(res, rel);
 

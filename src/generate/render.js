@@ -7,7 +7,6 @@ import {
 import {
   OFFICIAL_LINKS, COMMUNITY_LINKS, FORUM_THREADS, VERSION_TITLES, YADZ_DISCORD,
 } from './content.js';
-import { ADDED, REMOVED, CHANGED, DIFF_KINDS } from './diff.js';
 
 function anchorFor(used, name) {
   let a = name.replace(/[^\w]/g, '_');
@@ -249,7 +248,7 @@ ${links
 </section>
 <div class="home-stack">
 <section class="stats">
-  ${stat(s.classes, 'classes', base + 'annotated/')}
+  ${stat(s.classes, 'classes', base + 'classes/')}
   ${stat(s.methods, 'methods', base + 'fields/')}
   ${stat(s.enums, 'enums', base + 'globals/enums/')}
   ${stat(s.typedefs, 'typedefs', base + 'globals/typedefs/')}
@@ -261,7 +260,7 @@ ${links
     <h3>Modules</h3>
     <p>The ${site.groups.size} topics the scripts group themselves into — math, physics, entities, UI and the constant tables.</p>
   </a>
-  <a class="card" href="${base}annotated/">
+  <a class="card" href="${base}classes/">
     <h3>Data Structures</h3>
     <p>All ${s.classes.toLocaleString('en-US')} classes, with an alphabetical index, the inheritance tree and every data field.</p>
   </a>
@@ -334,7 +333,7 @@ ${sections}`;
   return layout({
     ...ctx,
     title: 'Data Structures',
-    active: 'annotated/',
+    active: 'classes/',
     description: `All ${site.classes.size} DayZ Enforce Script classes, with descriptions.`,
     breadcrumbs: [{ label: 'Data Structures' }],
     content,
@@ -359,8 +358,8 @@ ${sections}`;
   return layout({
     ...ctx,
     title: 'Data Structure Index',
-    active: 'classes/',
-    breadcrumbs: [{ label: 'Data Structures', href: `${base}annotated/` }, { label: 'Index' }],
+    active: 'classes/index/',
+    breadcrumbs: [{ label: 'Data Structures', href: `${base}classes/` }, { label: 'Index' }],
     content,
   });
 }
@@ -385,8 +384,7 @@ ${filterBar('Filter classes…')}
     title: `Data Structures ${letterTitle(letter)}`,
     active: 'classes/',
     breadcrumbs: [
-      { label: 'Data Structures', href: `${base}annotated/` },
-      { label: 'Index', href: `${base}classes/` },
+      { label: 'Data Structures', href: `${base}classes/` },
       { label: letterTitle(letter) },
     ],
     content,
@@ -430,7 +428,7 @@ ${body}`;
     title: letter ? `${title} ${letterTitle(letter)}` : title,
     active: dir,
     breadcrumbs: [
-      { label: 'Data Structures', href: `${base}annotated/` },
+      { label: 'Data Structures', href: `${base}classes/` },
       { label: 'Data Fields', href: `${base}fields/` },
       ...(letter ? [{ label: letterTitle(letter) }] : []),
     ],
@@ -518,7 +516,7 @@ ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}
   );
 
   const module = cls.group && site.groups.has(cls.group)
-    ? `<p class="in-module">Part of <a href="${base}module/${cls.group}/">${esc(site.groups.get(cls.group).title)}</a></p>`
+    ? `<p class="in-module">Part of <a href="${base}modules/${cls.group}/">${esc(site.groups.get(cls.group).title)}</a></p>`
     : '';
 
   const badges =
@@ -551,7 +549,7 @@ ${section('Methods', methods, methodBlock)}
   return layout({
     ...ctx,
     title: cls.name,
-    active: 'annotated/',
+    active: 'classes/',
     description: brief || `${cls.name} class — DayZ Enforce Script API`,
     content,
   });
@@ -609,7 +607,7 @@ ${filterBar('Filter members…')}
   return layout({
     ...ctx,
     title: `${cls.name} — all members`,
-    active: 'annotated/',
+    active: 'classes/',
     description: `Every member of ${cls.name}, its own and those inherited from ${chain.slice(1).join(', ')}.`,
     content,
   });
@@ -680,7 +678,7 @@ ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
     .map(([g, items]) => {
       const mod = site.groups.get(g);
       const heading = mod
-        ? `<a href="${base}module/${g}/">${esc(mod.title)}</a>`
+        ? `<a href="${base}modules/${g}/">${esc(mod.title)}</a>`
         : 'Ungrouped';
       const rows = items
         .map(
@@ -829,7 +827,7 @@ export function renderModulesIndex(ctx) {
   const node = (name, depth) => {
     const mod = site.groups.get(name);
     const total = site.moduleTotal(name);
-    const link = `<a href="${base}module/${name}/">${esc(mod.title)}</a>`;
+    const link = `<a href="${base}modules/${name}/">${esc(mod.title)}</a>`;
     const count = total ? ` <span class="count">${total.toLocaleString('en-US')}</span>` : '';
     if (!mod.children.length) return `<li>${link}${count}</li>`;
     return `<li><details${depth < 1 ? ' open' : ''}><summary>${link}${count}</summary>
@@ -878,7 +876,7 @@ export function renderModule(ctx, mod) {
         .map((k) => {
           const kid = site.groups.get(k);
           const total = site.moduleTotal(k);
-          return `<li><a href="${base}module/${k}/">${esc(kid.title)}</a>${total ? ` <span class="count">${total}</span>` : ''}</li>`;
+          return `<li><a href="${base}modules/${k}/">${esc(kid.title)}</a>${total ? ` <span class="count">${total}</span>` : ''}</li>`;
         })
         .join('')}</ul>`
     : '';
@@ -997,7 +995,7 @@ ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e
     : '';
 
   const parent = mod.parent && site.groups.has(mod.parent)
-    ? `<p class="in-module">Part of <a href="${base}module/${mod.parent}/">${esc(site.groups.get(mod.parent).title)}</a></p>`
+    ? `<p class="in-module">Part of <a href="${base}modules/${mod.parent}/">${esc(site.groups.get(mod.parent).title)}</a></p>`
     : '';
 
   const empty =
@@ -1030,7 +1028,7 @@ ${section('Variable Documentation', defBlocks(varEntries))}`;
   return layout({
     ...ctx,
     title: mod.title,
-    active: `module/${rootTopic(site, mod.name)}/`,
+    active: `modules/${rootTopic(site, mod.name)}/`,
     description: `${mod.title} — DayZ Enforce Script API module`,
     breadcrumbs: [{ label: 'Modules', href: `${base}modules/` }, { label: mod.title }],
     content,
@@ -1109,114 +1107,24 @@ ${filterBar('Filter classes…')}
     ...ctx,
     title: 'Class Hierarchy',
     active: 'hierarchy/',
-    breadcrumbs: [{ label: 'Data Structures', href: `${base}annotated/` }, { label: 'Class Hierarchy' }],
+    breadcrumbs: [{ label: 'Data Structures', href: `${base}classes/` }, { label: 'Class Hierarchy' }],
     content,
   });
 }
 
 // ---------------------------------------------------------------------------
 
-// How a row's operation is spelled on the page. The signs are the ones the
-// diff tables have always used; site/compare.js repeats them.
-const DIFF_SIGNS = { [ADDED]: ['added', '+'], [REMOVED]: ['removed', '−'], [CHANGED]: ['changed', '±'] };
-
-/** One member's line in a diff table. */
-function diffRow(row) {
-  const [cls, sign] = DIFF_SIGNS[row[0]];
-  const body = row[0] === CHANGED
-    ? `<code class="old">${esc(row[2])}</code><br><code>${esc(row[3])}</code>`
-    : `<code>${esc(row[2])}</code>`;
-  return `<tr class="${cls}"><td>${sign}</td><td>${body}</td></tr>`;
-}
-
-export function renderChanges(ctx, diff, prevLabel) {
-  const { site, base } = ctx;
-  if (!diff) {
-    const content = `<h1>Changelog — DayZ ${esc(site.build)}</h1>
-<p>This is the oldest build tracked, so there is no previous build to compare against.</p>
-<p><a href="${base}compare/">Compare any two builds</a> instead.</p>`;
-    return layout({ ...ctx, title: 'Changelog', active: 'changes/', breadcrumbs: [{ label: 'Changelog' }], content });
-  }
-
-  // Added and changed names still have a page in this build, so they are
-  // linked; a removed one does not, and never did.
-  const names = (list, url, linked) =>
-    `<div class="namegrid">${list
-      .map((n) => (linked ? `<a href="${base}${url(n)}">${esc(n)}</a>` : `<span>${esc(n)}</span>`))
-      .join('')}</div>`;
-
-  const totals = { added: 0, removed: 0, changed: 0 };
-  const sections = [];
-  for (const [key, label, url] of DIFF_KINDS) {
-    const k = diff[key];
-    if (!k) continue;
-    totals.added += k.added.length;
-    totals.removed += k.removed.length;
-    totals.changed += k.changed.length;
-    const total = k.added.length + k.removed.length + k.changed.length;
-    if (!total) continue;
-
-    const parts = [];
-    if (k.added.length) {
-      parts.push(`<h3>Added <span class="count">${k.added.length}</span></h3>
-${names(k.added, url, true)}`);
-    }
-    if (k.removed.length) {
-      parts.push(`<h3>Removed <span class="count">${k.removed.length}</span></h3>
-${names(k.removed, url, false)}`);
-    }
-    if (k.changed.length) {
-      const entries = k.changed.map((e) => {
-        const rows = e.rows.map(diffRow).join('');
-        const link = `<a href="${base}${url(e.name)}">${esc(e.name)}</a>`;
-        const table = `<table class="list difftable"><tbody>${rows}</tbody></table>`;
-        // One before-and-after line is not worth hiding behind a disclosure;
-        // a class with nine changed methods is.
-        return e.rows.length > 1
-          ? `<details class="diff-class"><summary>${link} <span class="count">${e.rows.length}</span></summary>${table}</details>`
-          : `<div class="diff-flat"><p class="diff-flat-name">${link}</p>${table}</div>`;
-      });
-      parts.push(`<h3>Changed <span class="count">${k.changed.length}</span></h3>
-<div class="cmp-list">${entries.join('\n')}</div>`);
-    }
-    sections.push(`<h2>${esc(label)} <span class="count">${total}</span></h2>
-${parts.join('\n')}`);
-  }
-
-  const content = `
-<h1>Changelog — DayZ ${esc(site.build)} <span class="muted">vs ${esc(prevLabel)}</span></h1>
-<section class="stats">
-  <span class="stat"><strong>${totals.added}</strong><span>Additions</span></span>
-  <span class="stat"><strong>${totals.removed}</strong><span>Removals</span></span>
-  <span class="stat"><strong>${totals.changed}</strong><span>Changes</span></span>
-</section>
-<p>This is one build against the one before it. To compare builds further apart,
-use <a href="${base}compare/?from=${esc(prevLabel)}&amp;to=${esc(site.build)}">Compare builds</a>.</p>
-${sections.join('\n') || '<p class="muted">Nothing in the scripting API changed between these two builds.</p>'}
-<h2>All builds</h2>
-<p>${ctx.versions
-    .map((v, i) => {
-      const href = i === 0 ? `${ctx.root}changes/` : `${ctx.root}v/${v.label}/changes/`;
-      return v.label === site.label ? `<strong>${esc(v.build)}</strong>` : `<a href="${href}">${esc(v.build)}</a>`;
-    })
-    .join(' · ')}</p>`;
-
-  return layout({ ...ctx, title: 'Changelog', active: 'changes/', breadcrumbs: [{ label: 'Changelog' }], content });
-}
-
 /**
- * The compare page: an empty shell, filled in by site/compare.js.
+ * The changelog: an empty shell, filled in by site/compare.js.
  *
- * /changes/ answers one question — what did this build change — and answers it
- * from a diff the generator already had in hand. This page answers the other
- * one: what changed between two builds a modder actually cares about, which is
+ * What changed between two builds a modder actually cares about, which is
  * usually the one they built against and the one their users are running.
  *
  * There are 49 builds, so 1,176 pairs, and generating a page per pair would
  * mean holding two 8 MB models in memory 1,176 times over. It also would not
  * survive the obvious next ask, three builds at once, which is 18,424 triples.
  * So the pair is chosen in the browser instead, which is also what makes the
- * URL shareable: /compare/?from=…&to=… names a comparison, not a build.
+ * URL shareable: /changelog/?from=…&to=… names a comparison, not a build.
  *
  * Nothing here names a build, for the same reason nothing else does: the
  * selects are filled from /assets/versions.json client-side, so these bytes
@@ -1243,7 +1151,7 @@ export function renderCompare(ctx) {
   return layout({
     ...ctx,
     title: 'Changelog',
-    active: 'compare/',
+    active: 'changelog/',
     description: 'What changed in the DayZ Enforce Script API between two game builds.',
     breadcrumbs: [{ label: 'Changelog' }],
     content,

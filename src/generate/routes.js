@@ -16,8 +16,7 @@ import { recordingSite, classDeps, enumDeps, membersDeps } from './memo.js';
 import {
   renderHome, renderAnnotated, renderClassesIndex, renderClassesLetter, renderClass,
   renderClassMembers, renderFields, renderEnum, renderGlobals, renderModulesIndex,
-  renderModule, renderFilesIndex, renderFile, renderHierarchy, renderChanges,
-  renderCompare,
+  renderModule, renderFilesIndex, renderFile, renderHierarchy, renderCompare,
 } from './render.js';
 
 /**
@@ -43,10 +42,10 @@ import {
  *
  * opts:
  *   isLatest  whether this build is served from the site root
- *   versions  the build list, for the "all builds" footer on the changelog
+ *   versions  the build list, for the homepage releases
  *   srcDir    where this build's sources were extracted
  *   blobs     path -> blob sha, the whole dependency of a file page
- *   changes   () => ({ diff, prevLabel }), called only if /changes/ renders,
+ *   changes   () => ({ diff, prevLabel }), called only if diff.json renders,
  *             since building the diff means holding a second site model
  */
 export function* pages(site, opts) {
@@ -73,7 +72,7 @@ export function* pages(site, opts) {
   // modules (\defgroup topics)
   yield page('modules/', 'index', () => renderModulesIndex(ctx('modules/')));
   for (const mod of site.groups.values()) {
-    const rel = `module/${mod.name}/`;
+    const rel = `modules/${mod.name}/`;
     yield page(rel, 'index', () => renderModule(ctx(rel), mod));
   }
 
@@ -84,8 +83,8 @@ export function* pages(site, opts) {
     if (!letters.has(l)) letters.set(l, []);
     letters.get(l).push(name);
   }
-  yield page('annotated/', 'index', () => renderAnnotated(ctx('annotated/'), letters));
-  yield page('classes/', 'index', () => renderClassesIndex(ctx('classes/'), letters));
+  yield page('classes/', 'index', () => renderAnnotated(ctx('classes/'), letters));
+  yield page('classes/index/', 'index', () => renderClassesIndex(ctx('classes/index/'), letters));
   for (const [l, names] of letters) {
     const rel = `classes/${l}/`;
     yield page(rel, 'index', () => renderClassesLetter(ctx(rel), l, names, letters.keys()));
@@ -136,14 +135,10 @@ export function* pages(site, opts) {
 
   yield page('hierarchy/', 'index', () => renderHierarchy(ctx('hierarchy/')));
   yield page('files/', 'index', () => renderFilesIndex(ctx('files/')));
-  yield page('changes/', 'index', () => {
-    const { diff, prevLabel } = changes();
-    return renderChanges(ctx('changes/'), diff, prevLabel);
-  });
   // No diff is built for this one: it picks its own pair of builds and compares
   // them in the browser. See renderCompare in src/generate/render.js.
-  yield page('compare/', 'index', () => renderCompare(ctx('compare/')));
-  // The same diff /changes/ renders, as data. Comparing two builds that are not
+  yield page('changelog/', 'index', () => renderCompare(ctx('changelog/')));
+  // The diffs /changelog/ folds together. Comparing two builds that are not
   // neighbours means folding together every one of these that lies between
   // them, which is why each build ships its own rather than the site shipping a
   // single file holding all of them: most comparisons span a handful of builds,

@@ -1,7 +1,6 @@
 // The semantic API diff between two site models (new vs old), in the one shape
-// three readers share:
+// two readers share:
 //
-//   - renderChanges in src/generate/render.js, which draws /changes/
 //   - the diff.json sidecar every build ships (see src/generate/routes.js)
 //   - site/compare.js, which folds a run of those sidecars together to compare
 //     two builds that are not neighbours

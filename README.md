@@ -14,13 +14,13 @@ per-build changelogs with a build selector (every published build, e.g.
 The scripts are documented with [Doxygen](https://www.doxygen.nl/) comments;
 this site renders them, following Doxygen's usual sections:
 
-- **Modules** (`/modules/`, `/module/<Name>/`) — the topics the sources group
+- **Modules** (`/modules/`, `/modules/<Name>/`) — the topics the sources group
   themselves into with `\defgroup` blocks: the engine-facing APIs (math,
   physics, entities, widgets) and the constant tables. Nesting comes from
   blocks opened inside other blocks, so the tree is the one the sources
   describe rather than one imposed here.
-- **Data Structures** — every class, as an annotated list (`/annotated/`), a
-  name-only index by initial (`/classes/`), the inheritance tree
+- **Data Structures** — every class, as an annotated list (`/classes/`), a
+  name-only index by initial (`/classes/index/`), the inheritance tree
   (`/hierarchy/`) and an index of all ~43,000 members (`/fields/`). A class
   with a base class also has `/class/<Name>/members/`, everything it inherits
   in one list.
@@ -240,8 +240,8 @@ npm test           # parser, routing, rendering, casing and module-tree tests
 `npm run dev` is the inner loop, and it never generates anything. It loads the
 newest build's model once and renders whichever page the browser asks for,
 which is a few milliseconds each; older builds under `/v/<build>/` load the
-same way if you browse to one, and the changelog builds its diff only when you
-open it. So it needs `fetch` and `parse`, but not `generate`.
+same way if you browse to one, and the changelog's diffs are built only when
+that page fetches them. So it needs `fetch` and `parse`, but not `generate`.
 
 Edits are picked up by restarting rather than by invalidating anything, since
 rebuilding one model costs less than the browser takes to notice: it runs under

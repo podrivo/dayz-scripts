@@ -78,9 +78,9 @@
         box.append(...topics.map(([name, title]) => {
           const a = document.createElement('a');
           a.className = 'nav-sub';
-          a.href = `${BASE}module/${name}/`;
+          a.href = `${BASE}modules/${name}/`;
           a.textContent = title;
-          if (active === `module/${name}/`) {
+          if (active === `modules/${name}/`) {
             a.classList.add('active');
             a.setAttribute('aria-current', 'page');
           }
@@ -223,7 +223,7 @@
     k: ['const', (n, o) => `globals/variables/#${o}`],
     f: ['func', (n, o) => `globals/functions/#${o}`],
     d: ['macro', (n, o) => `globals/macros/#${o}`],
-    g: ['topic', (n, o) => `module/${o}/`],
+    g: ['topic', (n, o) => `modules/${o}/`],
     // Paths are indexed as displayed; the URL is that spelling lowercased.
     F: ['file', (n, o) => `file/${o.toLowerCase()}/`],
   };
@@ -418,8 +418,8 @@
     });
   }
 
-  /* ---------- compare page ----------
-     The one page whose behaviour is fetched rather than shipped. /compare/ is
+  /* ---------- changelog ----------
+     The one page whose behaviour is fetched rather than shipped. /changelog/ is
      a single URL out of some 660,000, and its build pickers, its filter and the
      diff it composes have no business in the script every class page loads. */
   const compareBox = $('#compare');
