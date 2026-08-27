@@ -63,6 +63,7 @@ class Matrix {}
 `);
   assert.equal(site.groups.size, 1);
   assert.equal(site.groups.get('Math').title, 'Math library');
+  assert.equal(site.groups.get('Math').label, 'Math library');
   assert.deepEqual(site.groups.get('Math').classes.sort(), ['Matrix', 'Vec']);
 });
 
@@ -91,6 +92,8 @@ void SetSoundControllerOverride(string name);
 class AbstractSoundScene {}
 `);
   assert.deepEqual(site.groups.get('Sound').classes, ['AbstractSoundScene']);
+  assert.equal(site.groups.get('Sound').title, 'API');
+  assert.equal(site.groups.get('Sound').label, 'Sound');
 });
 
 test('a documented @} does end a topic', () => {
@@ -171,4 +174,18 @@ class Math
   const mod = site.groups.get('Enforce');
   assert.deepEqual(mod.classes, ['Math']);
   assert.equal(mod.members.length, 0);
+});
+
+test('a title two modules share is shown as each id', () => {
+  const site = siteOf(`
+/** \\defgroup World World
+ * @{ */
+/** \\defgroup WorldCommon World
+ * @{ */
+class Camera {}
+/** @} */
+/** @} */
+`);
+  assert.equal(site.groups.get('World').label, 'World');
+  assert.equal(site.groups.get('WorldCommon').label, 'WorldCommon');
 });

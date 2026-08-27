@@ -72,8 +72,8 @@ export function buildSearchIndex(site) {
     consts: site.globals.map((g) => g.name),
     funcs: site.functions.map((f) => f.name),
     macros: site.defines.map((d) => d.name),
-    // Titles are what the site shows a topic as; the name is what its URL uses.
-    topics: [...site.groups.values()].map((g) => [g.name, g.title]),
+    // Labels are what the site shows a topic as; the name is what its URL uses.
+    topics: [...site.groups.values()].map((g) => [g.name, g.label]),
     files: site.files.map((f) => f.display),
   };
 }

@@ -206,10 +206,10 @@ const NAV = [
     ['classes/', 'Data Structures'],
     ['classes/index/', 'Data Structure Index'],
     ['hierarchy/', 'Class Hierarchy'],
-    ['fields/', 'Data Fields', [
-      ['fields/', 'All'],
-      ['fields/functions/', 'Functions'],
-      ['fields/variables/', 'Variables'],
+    ['classes/fields/', 'Data Fields', [
+      ['classes/fields/', 'All'],
+      ['classes/fields/functions/', 'Functions'],
+      ['classes/fields/variables/', 'Variables'],
     ]],
   ]],
   ['files/', 'Files', [
@@ -217,10 +217,10 @@ const NAV = [
     ['globals/', 'Globals', [
       ['globals/', 'All'],
       ['globals/functions/', 'Functions'],
-      ['globals/variables/', 'Variables'],
+      ['globals/constants/', 'Constants'],
       ['globals/typedefs/', 'Typedefs'],
-      ['globals/enums/', 'Enumerations'],
-      ['globals/values/', 'Enumerator'],
+      ['globals/enums/', 'Enums'],
+      ['globals/values/', 'Values'],
       ['globals/macros/', 'Macros'],
     ]],
   ]],

@@ -217,9 +217,14 @@ export function buildSiteModel(model) {
     if (parent) parent.children.push(mod.name);
     else moduleRoots.push(mod.name);
   }
-  const byTitle = (a, b) => groups.get(a).title.localeCompare(groups.get(b).title);
-  moduleRoots.sort(byTitle);
-  for (const mod of groups.values()) mod.children.sort(byTitle);
+  const titleCounts = new Map();
+  for (const mod of groups.values()) titleCounts.set(mod.title, (titleCounts.get(mod.title) || 0) + 1);
+  for (const mod of groups.values()) {
+    mod.label = (mod.title === 'API' || titleCounts.get(mod.title) > 1) ? mod.name : mod.title;
+  }
+  const byLabel = (a, b) => groups.get(a).label.localeCompare(groups.get(b).label);
+  moduleRoots.sort(byLabel);
+  for (const mod of groups.values()) mod.children.sort(byLabel);
 
   /** How much a module holds, counting everything nested inside it. */
   const moduleTotal = (name, seen = new Set()) => {

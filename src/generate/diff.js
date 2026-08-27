@@ -30,7 +30,7 @@ export const DIFF_KINDS = [
   ['class', 'Classes', (n) => `class/${n}/`],
   ['enum', 'Enums', (n) => `enum/${n}/`],
   ['func', 'Global functions', (n) => `globals/functions/#${n}`],
-  ['const', 'Constants', (n) => `globals/variables/#${n}`],
+  ['const', 'Constants', (n) => `globals/constants/#${n}`],
   ['typedef', 'Typedefs', (n) => `globals/typedefs/#${n}`],
   ['macro', 'Macros', (n) => `globals/macros/#${n}`],
 ];

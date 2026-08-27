@@ -70,6 +70,7 @@ test('URLs resolve to the renderer they name', () => {
     ['class/Foo/', 'class'],
     ['enum/EFoo/', 'enum'],
     ['globals/functions/', 'index'],
+    ['globals/constants/', 'index'],
     ['hierarchy/', 'index'],
     ['files/', 'index'],
     ['changelog/', 'index'],
@@ -83,7 +84,7 @@ test('URLs resolve to the renderer they name', () => {
 });
 
 test('an unknown URL resolves to nothing', () => {
-  for (const rel of ['class/Nope/', 'enum/Nope/', 'nonsense/', 'class/Foo', 'annotated/', 'changes/', 'compare/', 'module/Topic/']) {
+  for (const rel of ['class/Nope/', 'enum/Nope/', 'nonsense/', 'class/Foo', 'annotated/', 'changes/', 'compare/', 'module/Topic/', 'globals/variables/']) {
     assert.equal(resolve(site, rel, opts), null, `${JSON.stringify(rel)} resolved`);
   }
 });

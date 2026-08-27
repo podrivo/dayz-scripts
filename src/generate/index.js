@@ -274,17 +274,27 @@ const minorRedirects = [];
 // carries the same URL shape.
 const movedPages = [
   ['typedefs', 'globals/typedefs'],
-  ['constants', 'globals/variables'],
+  ['constants', 'globals/constants'],
   ['functions', 'globals/functions'],
   ['enums', 'globals/enums'],
   ['annotated', 'classes'],
   ['changes', 'changelog'],
   ['compare', 'changelog'],
 ];
-const moveRedirects = movedPages.flatMap(([from, to]) => [
-  `/${from}/ /${to}/ 301`,
-  `/v/:build/${from}/ /v/:build/${to}/ 301`,
-]);
+const moveRedirects = [
+  ...movedPages.flatMap(([from, to]) => [
+    `/${from}/ /${to}/ 301`,
+    `/v/:build/${from}/ /v/:build/${to}/ 301`,
+  ]),
+  '/globals/variables/ /globals/constants/ 301',
+  '/v/:build/globals/variables/ /v/:build/globals/constants/ 301',
+];
+const fieldRedirects = [
+  '/fields/* /classes/fields/:splat 301',
+  '/fields/ /classes/fields/ 301',
+  '/v/:build/fields/* /v/:build/classes/fields/:splat 301',
+  '/v/:build/fields/ /v/:build/classes/fields/ 301',
+];
 const moduleRedirects = [
   '/module/* /modules/:splat 301',
   '/v/:build/module/* /v/:build/modules/:splat 301',
@@ -298,6 +308,7 @@ fs.writeFileSync(
     `https://dayz-docs.yadz.app/* ${SITE_URL}/:splat 301!`,
     '/v/ / 302',
     ...moveRedirects,
+    ...fieldRedirects,
     ...moduleRedirects,
     `/v/${buildList[0].label}/* /:splat 301`,
     ...minorRedirects,

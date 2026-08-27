@@ -106,9 +106,9 @@ export function* pages(site, opts) {
   // data fields: every class member, by initial and by kind
   const fieldLetters = [...site.fields.keys()].sort();
   for (const [kind, dir] of [
-    ['all', 'fields/'],
-    ['functions', 'fields/functions/'],
-    ['variables', 'fields/variables/'],
+    ['all', 'classes/fields/'],
+    ['functions', 'classes/fields/functions/'],
+    ['variables', 'classes/fields/variables/'],
   ]) {
     yield page(dir, 'index', () => renderFields(ctx(dir), null, fieldLetters, kind));
     for (const l of fieldLetters) {
@@ -124,7 +124,7 @@ export function* pages(site, opts) {
   }
 
   // globals, split the way doxygen splits them
-  for (const kind of ['', 'functions/', 'variables/', 'typedefs/', 'enums/', 'values/', 'macros/']) {
+  for (const kind of ['', 'functions/', 'constants/', 'typedefs/', 'enums/', 'values/', 'macros/']) {
     const rel = `globals/${kind}`;
     yield page(rel, 'index', () => renderGlobals(ctx(rel), kind));
   }
@@ -201,7 +201,7 @@ export function* pages(site, opts) {
     kind: 'index',
     asset: true,
     keep: true,
-    render: () => JSON.stringify({ topics: site.moduleRoots.map((n) => [n, site.groups.get(n).title]) }),
+    render: () => JSON.stringify({ topics: site.moduleRoots.map((n) => [n, site.groups.get(n).label]) }),
   };
 }
 

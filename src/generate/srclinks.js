@@ -53,7 +53,7 @@ export function buildFileLinks(fileModel, chainOf) {
   }
   for (const t of fileModel.typedefs) decls.push([t.line, `globals/typedefs/#${anchor(t.name)}`]);
   for (const fn of fileModel.functions) decls.push([fn.line, `globals/functions/#${anchor(fn.name)}`]);
-  for (const g of fileModel.globals) decls.push([g.line, `globals/variables/#${anchor(g.name)}`]);
+  for (const g of fileModel.globals) decls.push([g.line, `globals/constants/#${anchor(g.name)}`]);
   for (const d of fileModel.defines || []) decls.push([d.line, `globals/macros/#${anchor(d.name)}`]);
 
   // One link per line, the outermost declaration winning, so a class and the

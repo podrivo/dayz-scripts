@@ -33,7 +33,7 @@ const KINDS = [
   { key: 'class', label: 'Classes', url: (n) => `class/${n}/` },
   { key: 'enum', label: 'Enums', url: (n) => `enum/${n}/` },
   { key: 'func', label: 'Global functions', url: (n) => `globals/functions/#${n}` },
-  { key: 'const', label: 'Constants', url: (n) => `globals/variables/#${n}` },
+  { key: 'const', label: 'Constants', url: (n) => `globals/constants/#${n}` },
   { key: 'typedef', label: 'Typedefs', url: (n) => `globals/typedefs/#${n}` },
   { key: 'macro', label: 'Macros', url: (n) => `globals/macros/#${n}` },
 ];

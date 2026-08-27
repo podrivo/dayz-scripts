@@ -146,6 +146,8 @@ function locate(pathname) {
 function relocated(rel) {
   if (rel === 'annotated/') return 'classes/';
   if (rel === 'changes/' || rel === 'compare/') return 'changelog/';
+  if (rel === 'globals/variables/') return 'globals/constants/';
+  if (rel.startsWith('fields/')) return `classes/${rel}`;
   if (rel.startsWith('module/')) return `modules/${rel.slice('module/'.length)}`;
   return null;
 }

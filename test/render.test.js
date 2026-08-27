@@ -69,11 +69,12 @@ test('the nav is the tree Doxygen had, and marks the page once', () => {
   const html = layout({ title: 'x', base: '', active: 'globals/typedefs/', versionPath: '', content: '' });
   const labels = [
     'Modules', 'Data Structures', 'Data Structure Index', 'Class Hierarchy',
-    'Data Fields', 'Files', 'File List', 'Globals', 'Typedefs', 'Enumerator', 'Macros', 'Changelog',
+    'Data Fields', 'Files', 'File List', 'Globals', 'Constants', 'Typedefs', 'Enums', 'Values', 'Macros', 'Changelog',
   ];
   for (const l of labels) assert.ok(html.includes(`>${l}</a>`), `nav is missing ${l}`);
   assert.ok(html.includes('href="classes/"'), 'Data Structures is /classes/');
   assert.ok(html.includes('href="classes/index/"'), 'Data Structure Index is /classes/index/');
+  assert.ok(html.includes('href="classes/fields/"'), 'Data Fields is /classes/fields/');
   assert.ok(html.includes('href="changelog/"'), 'Changelog is /changelog/');
   assert.ok(!html.includes('href="annotated/"'));
   assert.ok(!html.includes('href="changes/"'));
@@ -224,7 +225,7 @@ test('fields letter pages are a shell, not an inlined member list', () => {
   const s = site(BUILD_A);
   const letters = [...s.fields.keys()].sort();
   const html = renderFields(
-    { site: s, versions: [], base: '../../', root: '../../', versionPath: 'fields/d/', xref: true },
+    { site: s, versions: [], base: '../../../', root: '../../../', versionPath: 'classes/fields/d/', xref: true },
     'd',
     letters,
     'all'

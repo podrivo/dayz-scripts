@@ -21,12 +21,12 @@ this site renders them, following Doxygen's usual sections:
   describe rather than one imposed here.
 - **Data Structures** — every class, as an annotated list (`/classes/`), a
   name-only index by initial (`/classes/index/`), the inheritance tree
-  (`/hierarchy/`) and an index of all ~43,000 members (`/fields/`). A class
+  (`/hierarchy/`) and an index of all ~43,000 members (`/classes/fields/`). A class
   with a base class also has `/class/<Name>/members/`, everything it inherits
   in one list.
 - **Files** — the script tree (`/files/`, `/file/<path>/`) and everything
-  declared outside a class (`/globals/`), split into functions, variables,
-  typedefs, enumerations, enumerators and macros.
+  declared outside a class (`/globals/`), split into functions, constants,
+  typedefs, enums, values and macros.
 
 ## How it works
 

@@ -170,7 +170,7 @@ export function classDeps(site, cls, xref = true) {
     .map((n) => (site.classes.has(n) ? `+${n}` : `-${n}`))
     .join(',');
   const kids = (site.children.get(cls.name) || []).join(',');
-  const module = cls.group ? site.groups.get(cls.group)?.title : '';
+  const module = cls.group ? site.groups.get(cls.group)?.label : '';
   const xrefs = xref
     ? cls.methods
         .map((m) => `${callerDigest(site, m.name)}|${(m.calls || []).map((n) => targetDigest(site, n)).join(',')}`)

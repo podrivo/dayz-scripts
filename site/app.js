@@ -225,7 +225,7 @@
     e: ['enum', (n, o) => `enum/${o}/`],
     V: ['value', (n, o) => `enum/${o}/#${n}`],
     t: ['typedef', (n, o) => `globals/typedefs/#${o}`],
-    k: ['const', (n, o) => `globals/variables/#${o}`],
+    k: ['const', (n, o) => `globals/constants/#${o}`],
     f: ['func', (n, o) => `globals/functions/#${o}`],
     d: ['macro', (n, o) => `globals/macros/#${o}`],
     g: ['topic', (n, o) => `modules/${o}/`],
@@ -511,7 +511,7 @@
     for (const n of list('enums')) claim(n, `enum/${n}/`);
     for (const n of list('typedefs')) claim(n, `globals/typedefs/#${anchorOf(n)}`);
     for (const n of list('funcs')) claim(n, `globals/functions/#${anchorOf(n)}`);
-    for (const n of list('consts')) claim(n, `globals/variables/#${anchorOf(n)}`);
+    for (const n of list('consts')) claim(n, `globals/constants/#${anchorOf(n)}`);
     for (const n of list('macros')) claim(n, `globals/macros/#${anchorOf(n)}`);
     for (const [ei, v] of list('values')) claim(v, `enum/${index.enums[ei]}/#${v}`);
     for (const [ci, m] of list('methods')) claim(m, `class/${index.classes[ci]}/#${anchorOf(m)}`);

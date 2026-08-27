@@ -249,10 +249,10 @@ ${links
 <div class="home-stack">
 <section class="stats">
   ${stat(s.classes, 'classes', base + 'classes/')}
-  ${stat(s.methods, 'methods', base + 'fields/')}
+  ${stat(s.methods, 'methods', base + 'classes/fields/functions/')}
   ${stat(s.enums, 'enums', base + 'globals/enums/')}
   ${stat(s.typedefs, 'typedefs', base + 'globals/typedefs/')}
-  ${stat(s.globals, 'constants', base + 'globals/variables/')}
+  ${stat(s.globals, 'constants', base + 'globals/constants/')}
   ${stat(s.files, 'script files', base + 'files/')}
 </section>
 <div class="cards">
@@ -326,7 +326,6 @@ export function renderAnnotated(ctx, letters) {
     .join('\n');
   const content = `
 <h1>Data Structures <span class="count">${site.classes.size.toLocaleString('en-US')}</span></h1>
-<p>Every Enforce Script class in DayZ ${esc(site.version)}, with a short description where the sources document one.</p>
 ${letterBar(base, 'classes/', letters.keys())}
 ${filterBar('Filter classes…')}
 ${sections}`;
@@ -399,9 +398,9 @@ ${filterBar('Filter classes…')}
 export function renderFields(ctx, letter, letters, kind) {
   const { base } = ctx;
   const KINDS = {
-    all: ['Data Fields', 'fields/', 'Every member and method declared by a class.'],
-    functions: ['Data Fields — Functions', 'fields/functions/', 'Every method declared by a class.'],
-    variables: ['Data Fields — Variables', 'fields/variables/', 'Every variable and constant declared by a class.'],
+    all: ['Data Fields', 'classes/fields/', 'Every member and method declared by a class.'],
+    functions: ['Data Fields — Functions', 'classes/fields/functions/', 'Every method declared by a class.'],
+    variables: ['Data Fields — Variables', 'classes/fields/variables/', 'Every variable and constant declared by a class.'],
   };
   const [title, dir, blurb] = KINDS[kind];
   const tabs = Object.entries(KINDS)
@@ -426,7 +425,7 @@ ${body}`;
     active: dir,
     breadcrumbs: [
       { label: 'Data Structures', href: `${base}classes/` },
-      { label: 'Data Fields', href: `${base}fields/` },
+      { label: 'Data Fields', href: `${base}classes/fields/` },
       ...(letter ? [{ label: letterTitle(letter) }] : []),
     ],
     content,
@@ -513,7 +512,7 @@ ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}
   );
 
   const module = cls.group && site.groups.has(cls.group)
-    ? `<p class="in-module">Part of <a href="${base}modules/${cls.group}/">${esc(site.groups.get(cls.group).title)}</a></p>`
+    ? `<p class="in-module">Part of <a href="${base}modules/${cls.group}/">${esc(site.groups.get(cls.group).label)}</a></p>`
     : '';
 
   const badges =
@@ -629,7 +628,7 @@ ${en.doc ? `<div class="class-doc">${renderDoc(en.doc, site, base)}</div>` : ''}
     ...ctx,
     title: en.name,
     active: 'globals/enums/',
-    breadcrumbs: [{ label: 'Enumerations', href: `${base}globals/enums/` }, { label: en.name }],
+    breadcrumbs: [{ label: 'Enums', href: `${base}globals/enums/` }, { label: en.name }],
     content,
   });
 }
@@ -640,10 +639,10 @@ ${en.doc ? `<div class="class-doc">${renderDoc(en.doc, site, base)}</div>` : ''}
 const GLOBAL_KINDS = [
   ['', 'All'],
   ['functions/', 'Functions'],
-  ['variables/', 'Variables'],
+  ['constants/', 'Constants'],
   ['typedefs/', 'Typedefs'],
-  ['enums/', 'Enumerations'],
-  ['values/', 'Enumerator'],
+  ['enums/', 'Enums'],
+  ['values/', 'Values'],
   ['macros/', 'Macros'],
 ];
 
@@ -662,7 +661,7 @@ function globalSections(ctx, site, base) {
 ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
   });
 
-  // Variables keep their module grouping: the sources organise the constants
+  // Constants keep their module grouping: the sources organise them
   // into \defgroup blocks, and that is the only structure they have.
   const grouped = new Map();
   for (const g of site.globals) {
@@ -670,12 +669,12 @@ ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
     if (!grouped.has(key)) grouped.set(key, []);
     grouped.get(key).push(g);
   }
-  const variables = [...grouped.entries()]
-    .sort((a, b) => (site.groups.get(a[0])?.title || 'zzz').localeCompare(site.groups.get(b[0])?.title || 'zzz'))
+  const constants = [...grouped.entries()]
+    .sort((a, b) => (site.groups.get(a[0])?.label || 'zzz').localeCompare(site.groups.get(b[0])?.label || 'zzz'))
     .map(([g, items]) => {
       const mod = site.groups.get(g);
       const heading = mod
-        ? `<a href="${base}modules/${g}/">${esc(mod.title)}</a>`
+        ? `<a href="${base}modules/${g}/">${esc(mod.label)}</a>`
         : 'Ungrouped';
       const rows = items
         .map(
@@ -718,7 +717,7 @@ ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
 
   return {
     functions: functions.length ? functions.join('\n') : '<p class="muted">None.</p>',
-    variables: variables || '<p class="muted">None.</p>',
+    constants: constants || '<p class="muted">None.</p>',
     typedefs: table('<thead><tr><th>Alias</th><th>Type</th><th></th></tr></thead>', typedefs),
     enums: table('', enums),
     values: table('<thead><tr><th>Name</th><th>Enum</th><th>Value</th></tr></thead>', values),
@@ -735,7 +734,7 @@ export function renderGlobals(ctx, kind) {
 
   const counts = {
     functions: site.functions.length,
-    variables: site.globals.length,
+    constants: site.globals.length,
     typedefs: site.typedefs.length,
     enums: site.enums.size,
     values: [...site.enums.values()].reduce((n, e) => n + e.values.length, 0),
@@ -747,7 +746,7 @@ export function renderGlobals(ctx, kind) {
   // below it: repeating them costs more bytes than the whole rest of the site.
   const names = {
     functions: [...site.functions].sort(byName).map((f) => [f.name, `globals/functions/#${f.name}`]),
-    variables: [...site.globals].sort(byName).map((g) => [g.name, `globals/variables/#${g.name}`]),
+    constants: [...site.globals].sort(byName).map((g) => [g.name, `globals/constants/#${g.name}`]),
     typedefs: [...site.typedefs].sort(byName).map((t) => [t.name, `globals/typedefs/#${t.name}`]),
     enums: [...site.enums.values()].sort(byName).map((e) => [e.name, `enum/${e.name}/`]),
     values: null, // 3.5k enumerators; the tab itself is the only sensible place
@@ -762,14 +761,13 @@ export function renderGlobals(ctx, kind) {
           const heading = `<h2 id="${id}"><a href="${base}globals/${k}">${l}</a> <span class="count">${counts[id].toLocaleString('en-US')}</span></h2>`;
           const list = names[id]
             ? `<div class="namegrid">${names[id].map(([n, href]) => `<a href="${base}${href}">${esc(n)}</a>`).join('')}</div>`
-            : `<p class="muted"><a href="${base}globals/${k}">Browse all ${counts[id].toLocaleString('en-US')} enumerators</a>.</p>`;
+            : `<p class="muted"><a href="${base}globals/${k}">Browse all ${counts[id].toLocaleString('en-US')} values</a>.</p>`;
           return `${heading}\n${list}`;
         })
         .join('\n');
 
   const content = `
 <h1>Globals${key ? ` — ${label}` : ''}${key ? ` <span class="count">${counts[key].toLocaleString('en-US')}</span>` : ''}</h1>
-<p>Functions, variables, type aliases, enumerations and macros declared outside any class.</p>
 <div class="tabs">${tabs}</div>
 ${filterBar(`Filter ${key ? label.toLowerCase() : 'globals'}…`)}
 ${body}`;
@@ -824,7 +822,7 @@ export function renderModulesIndex(ctx) {
   const node = (name, depth) => {
     const mod = site.groups.get(name);
     const total = site.moduleTotal(name);
-    const link = `<a href="${base}modules/${name}/">${esc(mod.title)}</a>`;
+    const link = `<a href="${base}modules/${name}/">${esc(mod.label)}</a>`;
     const count = total ? ` <span class="count">${total.toLocaleString('en-US')}</span>` : '';
     if (!mod.children.length) return `<li>${link}${count}</li>`;
     return `<li><details${depth < 1 ? ' open' : ''}><summary>${link}${count}</summary>
@@ -873,7 +871,7 @@ export function renderModule(ctx, mod) {
         .map((k) => {
           const kid = site.groups.get(k);
           const total = site.moduleTotal(k);
-          return `<li><a href="${base}modules/${k}/">${esc(kid.title)}</a>${total ? ` <span class="count">${total}</span>` : ''}</li>`;
+          return `<li><a href="${base}modules/${k}/">${esc(kid.label)}</a>${total ? ` <span class="count">${total}</span>` : ''}</li>`;
         })
         .join('')}</ul>`
     : '';
@@ -992,7 +990,7 @@ ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e
     : '';
 
   const parent = mod.parent && site.groups.has(mod.parent)
-    ? `<p class="in-module">Part of <a href="${base}modules/${mod.parent}/">${esc(site.groups.get(mod.parent).title)}</a></p>`
+    ? `<p class="in-module">Part of <a href="${base}modules/${mod.parent}/">${esc(site.groups.get(mod.parent).label)}</a></p>`
     : '';
 
   const empty =
@@ -1005,7 +1003,7 @@ ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e
   // in src/layout.cpp: every declaration is summarised in a table first, then
   // documented in full below. That is why their group pages ran to 300 KB.
   const content = `
-<h1>${esc(mod.title)}</h1>
+<h1>${esc(mod.label)}</h1>
 ${parent}
 ${mod.desc ? `<div class="class-doc">${renderDoc(mod.desc.replace(/[\\@](def|addto)group\s+\S+[^\n]*/, '').replace(/@[{}]/g, ''), site, base)}</div>` : ''}
 ${empty}
@@ -1014,20 +1012,20 @@ ${section('Modules', children)}
 ${section('Data Structures', nameList(mod.classes, 'class'))}
 ${section('Macros', macroRows)}
 ${section('Typedefs', typedefRows)}
-${section('Enumerations', nameList(mod.enums, 'enum'))}
-${section('Enumerator', declTable(valueEntries))}
+${section('Enums', nameList(mod.enums, 'enum'))}
+${section('Values', declTable(valueEntries))}
 ${section('Functions', declTable(fnEntries))}
 ${section('Variables', declTable(varEntries))}
-${section('Enumerator Documentation', defBlocks(valueEntries))}
+${section('Value Documentation', defBlocks(valueEntries))}
 ${section('Function Documentation', defBlocks(fnEntries))}
 ${section('Variable Documentation', defBlocks(varEntries))}`;
 
   return layout({
     ...ctx,
-    title: mod.title,
+    title: mod.label,
     active: `modules/${rootTopic(site, mod.name)}/`,
-    description: `${mod.title} — DayZ Enforce Script API module`,
-    breadcrumbs: [{ label: 'Modules', href: `${base}modules/` }, { label: mod.title }],
+    description: `${mod.label} — DayZ Enforce Script API module`,
+    breadcrumbs: [{ label: 'Modules', href: `${base}modules/` }, { label: mod.label }],
     content,
   });
 }
