@@ -192,9 +192,10 @@ export function briefOf(rawDoc, site, base) {
 }
 
 // Doxygen's own navigation tree, entry for entry, with Changelog standing
-// where it listed Examples. Sections are links to their own
-// overview as well as headings, and repeat that overview as their first child
-// the way Doxygen did, so the page a section lands on is also visible as a
+// where it listed Examples, and Globals lifted next to Files so the two
+// are not one menu. Sections are links to their own overview as well as
+// headings, and repeat that overview as their first child the way
+// Doxygen did, so the page a section lands on is also visible as a
 // place you are.
 // The topics under Modules are the one part that changes from build to build,
 // so they are not written into the page: a reused page would carry the nav of
@@ -212,18 +213,16 @@ const NAV = [
       ['classes/fields/variables/', 'Variables'],
     ]],
   ]],
-  ['files/', 'Files', [
-    ['files/', 'File List'],
-    ['globals/', 'Globals', [
-      ['globals/', 'All'],
-      ['globals/functions/', 'Functions'],
-      ['globals/constants/', 'Constants'],
-      ['globals/typedefs/', 'Typedefs'],
-      ['globals/enums/', 'Enums'],
-      ['globals/values/', 'Values'],
-      ['globals/macros/', 'Macros'],
-    ]],
+  ['globals/', 'Globals', [
+    ['globals/', 'All'],
+    ['globals/functions/', 'Functions'],
+    ['globals/constants/', 'Constants'],
+    ['globals/typedefs/', 'Typedefs'],
+    ['globals/enums/', 'Enums'],
+    ['globals/values/', 'Values'],
+    ['globals/macros/', 'Macros'],
   ]],
+  ['files/', 'Files'],
   ['changelog/', 'Changelog'],
 ];
 
@@ -237,7 +236,7 @@ function navLink(href, label, cls, here, base) {
 }
 
 /** Flattened children of a dropdown: groups become a heading plus their
- *  links, so Data Fields and Globals are visible without a second click. */
+ *  links, so Data Fields is visible without a second click. */
 function navPanel(nodes, active, base) {
   return nodes
     .map(([href, label, kids]) => {

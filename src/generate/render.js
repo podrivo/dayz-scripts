@@ -777,7 +777,6 @@ ${body}`;
     title: key ? `Globals — ${label}` : 'Globals',
     active: `globals/${kind}`,
     breadcrumbs: [
-      { label: 'Files', href: `${base}files/` },
       { label: 'Globals', href: key ? `${base}globals/` : undefined },
       ...(key ? [{ label }] : []),
     ],

@@ -69,7 +69,7 @@ test('the nav is the tree Doxygen had, and marks the page once', () => {
   const html = layout({ title: 'x', base: '', active: 'globals/typedefs/', versionPath: '', content: '' });
   const labels = [
     'Modules', 'Data Structures', 'Data Structure Index', 'Class Hierarchy',
-    'Data Fields', 'Files', 'File List', 'Globals', 'Constants', 'Typedefs', 'Enums', 'Values', 'Macros', 'Changelog',
+    'Data Fields', 'Globals', 'Files', 'Constants', 'Typedefs', 'Enums', 'Values', 'Macros', 'Changelog',
   ];
   for (const l of labels) assert.ok(html.includes(`>${l}</a>`), `nav is missing ${l}`);
   assert.ok(html.includes('href="classes/"'), 'Data Structures is /classes/');
@@ -80,9 +80,10 @@ test('the nav is the tree Doxygen had, and marks the page once', () => {
   assert.ok(!html.includes('href="changes/"'));
   assert.ok(!html.includes('href="compare/"'));
   assert.ok(!html.includes('>Welcome</a>'), 'the brand is home; Welcome is not repeated');
+  assert.ok(!html.includes('>File List</a>'), 'Files is a link, not a menu of File List plus Globals');
   assert.equal(html.match(/nav-(?:item|sub) active"/g).length, 1, 'exactly one entry is the current page');
-  assert.ok(html.includes('<a class="nav-item on" href="files/"'), 'Files is the current section');
-  assert.ok(html.includes('<details class="nav-sec nav-here">'), 'Files is current but shut');
+  assert.ok(html.includes('<a class="nav-item on" href="globals/"'), 'Globals is the current section');
+  assert.ok(html.includes('<details class="nav-sec nav-here">'), 'Globals is current but shut');
   assert.ok(!html.includes('nav-sec nav-here" open'), 'menus are not served open');
 });
 
