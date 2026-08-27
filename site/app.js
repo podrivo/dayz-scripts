@@ -1058,7 +1058,7 @@
     // The page title is the way back to the top: above the first section there
     // is otherwise nothing to mark, and "Index" / "Start" would collide with
     // real pages. Strip the chrome the h1 carries for the page itself.
-    const title = [...main.children].find((el) => el.tagName === 'H1');
+    const title = $('h1', main);
     let titleLink = null;
     if (title) {
       if (!title.id) title.id = 'top';
