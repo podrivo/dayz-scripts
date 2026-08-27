@@ -197,11 +197,10 @@ export function briefOf(rawDoc, site, base) {
 // the way Doxygen did, so the page a section lands on is also visible as a
 // place you are.
 // The topics under Modules are the one part that changes from build to build,
-// so they are not written into the page: a reused page would carry the sidebar
-// of the build it was first rendered for. They are fetched from that build's
+// so they are not written into the page: a reused page would carry the nav of
+// the build it was first rendered for. They are fetched from that build's
 // nav.json on first expand instead, which is how Doxygen served its tree too.
 const NAV = [
-  ['', 'Welcome'],
   ['modules/', 'Modules', 'topics'],
   ['annotated/', 'Data Structures', [
     ['annotated/', 'Data Structures'],
@@ -226,7 +225,7 @@ const NAV = [
     ]],
   ]],
   ['changes/', 'Changelog'],
-  ['compare/', 'Compare builds'],
+  ['compare/', 'Compare'],
 ];
 
 /** Whether `active` names this branch or anything under it. */
@@ -234,28 +233,50 @@ function navHolds(nodes, active) {
   return nodes.some(([href, , kids]) => href === active || (Array.isArray(kids) && navHolds(kids, active)));
 }
 
-/**
- * One level of the tree. `active` is the version-relative directory of the
- * page's place in it; where a section and its first child share that
- * directory, the child is the one marked, so a page is highlighted once.
- */
-function navLevel(nodes, active, base, depth) {
+function navLink(href, label, cls, here, base) {
+  return `<a class="${cls}${here ? ' active' : ''}" href="${base}${href}"${here ? ' aria-current="page"' : ''}>${esc(label)}</a>`;
+}
+
+/** Flattened children of a dropdown: groups become a heading plus their
+ *  links, so Data Fields and Globals are visible without a second click. */
+function navPanel(nodes, active, base) {
   return nodes
     .map(([href, label, kids]) => {
       const list = Array.isArray(kids) ? kids : null;
       const here = href === active && !list?.some(([h]) => h === active);
-      const cls = depth === 0 ? 'nav-item' : 'nav-sub';
-      const a = `<a class="${cls}${here ? ' active' : ''}" href="${base}${href}"${here ? ' aria-current="page"' : ''}>${esc(label)}</a>`;
+      if (!list) return navLink(href, label, 'nav-sub', here, base);
+      return `<div class="nav-group">${navLink(href, label, 'nav-label', here, base)}${navPanel(list, active, base)}</div>`;
+    })
+    .join('');
+}
+
+/**
+ * The bar itself. `active` is the version-relative directory of the page's
+ * place in it; where a section and its first child share that directory, the
+ * child is the one marked, so a page is highlighted once.
+ */
+function navLevel(nodes, active, base) {
+  return nodes
+    .map(([href, label, kids]) => {
+      const list = Array.isArray(kids) ? kids : null;
+      const here = href === active && !list?.some(([h]) => h === active);
+      // Every /module/<topic>/ page belongs under Modules, including the
+      // nested topics the nav does not list, so the section is current for
+      // all of them and the client marks the entry if it is one of the roots.
+      const under = kids === 'topics' && !!active?.startsWith('module/');
+      const holds = here || under || !!(list && navHolds(list, active));
+      // A section that holds the page is marked `on` so the bar still says
+      // where you are when the exact entry is a child.
+      const on = holds && !here;
+      const a = `<a class="nav-item${here ? ' active' : ''}${on ? ' on' : ''}" href="${base}${href}"${here ? ' aria-current="page"' : ''}>${esc(label)}</a>`;
       if (!kids) return a;
 
-      // Every /module/<topic>/ page belongs under Modules, including the
-      // nested topics the sidebar does not list, so the section opens for all
-      // of them and the client marks the entry if it is one of the roots.
-      const under = !!active?.startsWith('module/');
-      const open = href === active || (list ? navHolds(list, active) : under);
-      const body = list ? navLevel(list, active, base, depth + 1) : '';
+      // Sections stay shut: they are hover menus, and serving them open
+      // would pin a panel under the bar on every page they hold.
       const fill = list ? '' : ` data-nav="${kids}"${under ? ` data-active="${esc(active)}"` : ''}`;
-      return `<details class="nav-sec"${open ? ' open' : ''}><summary>${a}</summary><div class="nav-kids"${fill}>${body}</div></details>`;
+      const intro = list ? '' : navLink(href, 'All modules', 'nav-sub', false, base);
+      const body = list ? navPanel(list, active, base) : '';
+      return `<details class="nav-sec${holds ? ' nav-here' : ''}"><summary>${a}</summary><div class="nav-kids"${fill}>${intro}${body}</div></details>`;
     })
     .join('');
 }
@@ -296,7 +317,7 @@ const SEARCH_FILTERS = [
 export function layout(o) {
   const desc = o.description || 'DayZ Enforce Script API documentation';
   // Pages outside the tree, such as 404, match nothing and open nothing.
-  const nav = navLevel(NAV, o.active ?? null, o.base, 0);
+  const nav = navLevel(NAV, o.active ?? null, o.base);
 
   // Sharing and search metadata. The canonical URL deliberately names the
   // page at the site root rather than under /v/<build>/, which is both the
@@ -337,9 +358,10 @@ ${social}
 </head>
 <body data-base="${o.base}" data-vpath="${esc(o.versionPath || '')}">
 <header class="top">
-  <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="ic ic-menu"></i></button>
+  <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><i class="ic ic-menu"></i></button>
   <a class="brand" href="/">DayZ<span>Scripts</span></a>
-  <button class="search-trigger" id="searchBtn" aria-label="Search"><i class="ic ic-search"></i><span>Search classes, methods, enums…</span><kbd id="searchKbd">⌘K</kbd></button>
+  <nav class="nav" id="nav" aria-label="Site">${nav}</nav>
+  <button class="search-trigger" id="searchBtn" aria-label="Search"><i class="ic ic-search"></i><span>Search…</span><kbd id="searchKbd">⌘K</kbd></button>
   <div class="verpicker">
     <button class="ver-btn" id="verBtn" aria-haspopup="true" aria-expanded="false" title="Switch DayZ build"><span class="ver-label"></span><i class="ic ic-chev"></i></button>
     <nav class="ver-menu" id="verMenu" aria-label="DayZ builds" hidden></nav>
@@ -347,7 +369,6 @@ ${social}
   <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme (M)"><i class="ic ic-theme"></i></button>
 </header>
 <div class="shell">
-  <aside class="side" id="sidebar"><nav>${nav}</nav></aside>
   <main class="main">
     ${crumbs}
     ${o.content}

@@ -32,27 +32,48 @@
     }
   });
 
-  /* ---------- mobile nav ---------- */
-  $('#menuBtn')?.addEventListener('click', () => document.body.classList.toggle('nav-open'));
+  /* ---------- site nav ---------- */
+  const menuBtn = $('#menuBtn');
+  const nav = $('#nav');
+  const setNavOpen = (open) => {
+    document.body.classList.toggle('nav-open', open);
+    menuBtn?.setAttribute('aria-expanded', String(open));
+    if (open && nav) for (const d of nav.querySelectorAll('.nav-here')) d.open = true;
+  };
+  menuBtn?.addEventListener('click', () => setNavOpen(!document.body.classList.contains('nav-open')));
   document.addEventListener('click', (e) => {
-    if (document.body.classList.contains('nav-open') &&
-        !e.target.closest('#sidebar') && !e.target.closest('#menuBtn')) {
-      document.body.classList.remove('nav-open');
-    }
+    if (e.target.closest('#nav') || e.target.closest('#menuBtn')) return;
+    if (document.body.classList.contains('nav-open')) setNavOpen(false);
+    for (const d of nav?.querySelectorAll(':scope > .nav-sec') || []) d.open = false;
+  });
+  nav?.addEventListener('toggle', (e) => {
+    const sec = e.target;
+    if (sec.parentElement !== nav || !sec.open) return;
+    for (const d of nav.querySelectorAll(':scope > .nav-sec')) if (d !== sec) d.open = false;
+  });
+  const desktopNav = () => window.matchMedia('(min-width: 901px)').matches;
+  nav?.querySelectorAll(':scope > .nav-sec').forEach((sec) => {
+    sec.addEventListener('mouseenter', () => { if (desktopNav()) sec.open = true; });
+    sec.addEventListener('mouseleave', () => { if (desktopNav()) sec.open = false; });
+    sec.querySelector(':scope > summary')?.addEventListener('click', (e) => {
+      if (!desktopNav() || e.target.closest('a')) return;
+      e.preventDefault();
+    });
   });
 
-  /* ---------- sidebar topics ----------
+  /* ---------- nav topics ----------
      The list of module topics belongs to a build, and the pages do not, so the
-     sidebar leaves a hole for it and fills it from this build's nav.json the
-     first time the section is opened. Without JavaScript the section heading
-     is still a link to the full list. */
+     nav leaves a hole for it and fills it from this build's nav.json the first
+     time the section is opened. Without JavaScript the section heading is
+     still a link to the full list. */
   let navPromise;
   for (const box of document.querySelectorAll('.nav-kids[data-nav]')) {
     const details = box.closest('details');
     const fill = () => {
       navPromise ||= fetch(BASE + 'nav.json').then((r) => r.json());
       navPromise.then(({ topics }) => {
-        if (box.firstChild) return;
+        if (box.dataset.filled) return;
+        box.dataset.filled = '1';
         const active = box.dataset.active;
         box.append(...topics.map(([name, title]) => {
           const a = document.createElement('a');
@@ -69,6 +90,7 @@
     };
     if (details.open) fill();
     details.addEventListener('toggle', () => details.open && fill(), { once: false });
+    details.addEventListener('mouseenter', fill, { once: true });
   }
 
   const fmtDate = (iso) =>
@@ -995,7 +1017,8 @@
       let cur = null;
       for (let i = 0; i < heads.length; i++) {
         if (heads[i].hidden) continue;
-        if (heads[i].getBoundingClientRect().top > 90) break;
+        const top = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--h-top')) || 96;
+        if (heads[i].getBoundingClientRect().top > top + 10) break;
         cur = links[i];
       }
       for (const a of links) a.classList.toggle('cur', a === cur);

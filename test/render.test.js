@@ -66,16 +66,19 @@ test('layout links assets absolutely so a page works at any depth', () => {
   assert.ok(!html.includes('../../assets/'), 'assets must not be relative');
 });
 
-test('the sidebar is the tree Doxygen had, and marks the page once', () => {
+test('the nav is the tree Doxygen had, and marks the page once', () => {
   const html = layout({ title: 'x', base: '', active: 'globals/typedefs/', versionPath: '', content: '' });
   const labels = [
-    'Welcome', 'Modules', 'Data Structures', 'Data Structure Index', 'Class Hierarchy',
+    'Modules', 'Data Structures', 'Data Structure Index', 'Class Hierarchy',
     'Data Fields', 'Files', 'File List', 'Globals', 'Typedefs', 'Enumerator', 'Macros', 'Changelog',
-    'Compare builds',
+    'Compare',
   ];
-  for (const l of labels) assert.ok(html.includes(`>${l}</a>`), `sidebar is missing ${l}`);
+  for (const l of labels) assert.ok(html.includes(`>${l}</a>`), `nav is missing ${l}`);
+  assert.ok(!html.includes('>Welcome</a>'), 'the brand is home; Welcome is not repeated');
   assert.equal(html.match(/nav-(?:item|sub) active"/g).length, 1, 'exactly one entry is the current page');
-  assert.equal(html.match(/<details class="nav-sec" open>/g).length, 2, 'Files and Globals are open');
+  assert.ok(html.includes('<a class="nav-item on" href="files/"'), 'Files is the current section');
+  assert.ok(html.includes('<details class="nav-sec nav-here">'), 'Files is current but shut');
+  assert.ok(!html.includes('nav-sec nav-here" open'), 'menus are not served open');
 });
 
 test('a section that repeats itself as its first child marks the child', () => {
