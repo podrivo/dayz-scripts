@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { layout, lastPacked, ARCHIVE_MARK, pageInner, pageMeta } from '../src/generate/html.js';
+import { layout, lastPacked, ARCHIVE_MARK, SITE_TITLE, pageInner, pageMeta } from '../src/generate/html.js';
 import { pageExceptions, unpackPage, fillArchiveTemplate, locateArchive } from '../src/generate/archive.js';
 
 test('unchanged rels are absent from the exception map', () => {
@@ -29,7 +29,7 @@ test('packed inners round-trip through the archive template', () => {
     content: '<h1>Foo</h1><p>hello</p>',
   });
   const { meta, inner } = unpackPage(lastPacked);
-  assert.equal(meta.title, 'Foo · DIFF');
+  assert.equal(meta.title, `Foo · Class · ${SITE_TITLE}`);
   assert.equal(meta.base, '../../');
   assert.equal(meta.vpath, 'class/Foo/');
   assert.match(inner, /<h1>Foo<\/h1>/);
@@ -44,7 +44,7 @@ test('packed inners round-trip through the archive template', () => {
     footer: false,
   });
   const filled = fillArchiveTemplate(tpl, meta, inner);
-  assert.match(filled, /<title>Foo · DIFF<\/title>/);
+  assert.ok(filled.includes(`<title>Foo · Class · ${SITE_TITLE}</title>`));
   assert.match(filled, /data-base="\.\.\/\.\.\/"/);
   assert.match(filled, /<h1>Foo<\/h1>/);
   assert.match(filled, /<footer class="foot">/);
@@ -59,5 +59,11 @@ test('pageInner is the main of a layout, without the document chrome', () => {
   const inner = pageInner(o);
   assert.ok(!inner.includes('<html'));
   assert.ok(inner.includes('<h1>x</h1>'));
-  assert.equal(pageMeta(o).title, 'x · DIFF');
+  assert.equal(pageMeta(o).title, `x · ${SITE_TITLE}`);
+  assert.equal(pageMeta({ title: '', versionPath: '' }).title, SITE_TITLE);
+  assert.equal(pageMeta({ title: 'Foo', versionPath: 'class/Foo/' }).title, `Foo · Class · ${SITE_TITLE}`);
+  assert.equal(pageMeta({ title: 'EFoo', versionPath: 'enum/EFoo/' }).title, `EFoo · Enum · ${SITE_TITLE}`);
+  assert.equal(pageMeta({ title: 'foo.c', versionPath: 'file/3_game/foo.c/' }).title, `foo.c · File · ${SITE_TITLE}`);
+  assert.equal(pageMeta({ title: 'Math', versionPath: 'modules/Math/' }).title, `Math · Module · ${SITE_TITLE}`);
+  assert.equal(pageMeta({ title: 'Modules', versionPath: 'modules/' }).title, `Modules · ${SITE_TITLE}`);
 });

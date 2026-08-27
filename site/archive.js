@@ -4,6 +4,7 @@
 (() => {
   'use strict';
   const MARK = { title: '§T§', desc: '§D§', base: '§B§', vpath: '§P§', inner: '§C§' };
+  const SITE = 'DIFF, DayZ Internal File Finder by YADZ';
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
   const m = location.pathname.match(/^\/v\/([^/]+)\/(.*)$/);
@@ -14,7 +15,7 @@
 
   const fill = (tpl, meta, inner) =>
     tpl
-      .replaceAll(`${MARK.title} · DIFF`, esc(meta.title))
+      .replaceAll(`${MARK.title} · ${SITE}`, esc(meta.title))
       .replaceAll(MARK.desc, esc(meta.description))
       .replaceAll(MARK.vpath, esc(meta.vpath))
       .replaceAll(MARK.base, meta.base)

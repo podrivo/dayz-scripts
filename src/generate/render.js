@@ -285,7 +285,7 @@ ${releases}
 
   return layout({
     ...ctx,
-    title: 'Welcome',
+    title: '',
     active: '',
     footer: false,
     description: `YADZ DIFF - DayZ Internal File Finder — DayZ ${site.version} classes, methods, enums and sources.`,

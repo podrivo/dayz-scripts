@@ -3,7 +3,7 @@
 // whose body differs from the latest build. Identical pages are omitted and
 // the archive loader fetches the latest copy instead.
 
-import { ARCHIVE_MARK, esc } from './html.js';
+import { ARCHIVE_MARK, SITE_TITLE, esc } from './html.js';
 
 /** rel -> hash for every archive page that is not byte-identical to latest. */
 export function pageExceptions(archiveHashes, latestHashes) {
@@ -22,11 +22,12 @@ export function unpackPage(text) {
 
 /**
  * Fill the archive shell template produced by layout() with ARCHIVE_MARK
- * placeholders. Title is already "§T§ · DIFF" in the template.
+ * placeholders. Title is already "§T§ · DIFF, DayZ Internal File Finder by YADZ"
+ * in the template.
  */
 export function fillArchiveTemplate(tpl, meta, inner) {
   return tpl
-    .replaceAll(`${ARCHIVE_MARK.title} · DIFF`, esc(meta.title))
+    .replaceAll(`${ARCHIVE_MARK.title} · ${SITE_TITLE}`, esc(meta.title))
     .replaceAll(ARCHIVE_MARK.desc, esc(meta.description))
     .replaceAll(ARCHIVE_MARK.vpath, esc(meta.vpath))
     .replaceAll(ARCHIVE_MARK.base, meta.base)

@@ -4,7 +4,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { layout } from '../src/generate/html.js';
+import { layout, SITE_TITLE } from '../src/generate/html.js';
 import { buildSiteModel } from '../src/generate/model.js';
 import { renderClass, renderEnum, renderCompare, renderFields } from '../src/generate/render.js';
 import { classDeps } from '../src/generate/memo.js';
@@ -218,7 +218,7 @@ test('canonical and og:url name the page, never the build that rendered it', () 
   assert.equal(canon, `${SITE_URL}/class/Foo/`);
   assert.ok(!canon.includes('/v/'), 'canonical must not name a build');
   assert.ok(html.includes(`<meta property="og:url" content="${canon}">`), 'og:url must agree with it');
-  assert.equal(html.match(/<meta property="og:title" content="([^"]*)">/)[1], 'Foo · DIFF');
+  assert.equal(html.match(/<meta property="og:title" content="([^"]*)">/)[1], `Foo · Class · ${SITE_TITLE}`);
 });
 
 test('fields letter pages are a shell, not an inlined member list', () => {

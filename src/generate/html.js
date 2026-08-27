@@ -310,12 +310,28 @@ const FOOTER = `<footer class="foot">
  */
 export const ARCHIVE_MARK = { title: '§T§', desc: '§D§', base: '§B§', vpath: '§P§', inner: '§C§' };
 
+export const SITE_TITLE = 'DIFF, DayZ Internal File Finder by YADZ';
+
 /** Last packed inner produced by layout(), for the generator's _b store. */
 export let lastPacked = '';
 
+/** Kind a leaf URL sits under, so /class/Foo/ titles as "Foo · Class · …". */
+function titleKind(vpath) {
+  if (vpath.startsWith('class/')) return 'Class';
+  if (vpath.startsWith('enum/')) return 'Enum';
+  if (vpath.startsWith('file/')) return 'File';
+  if (vpath.startsWith('modules/') && vpath !== 'modules/') return 'Module';
+  return '';
+}
+
 export function pageMeta(o) {
+  const parts = [];
+  if (o.title) parts.push(o.title);
+  const kind = titleKind(o.versionPath || '');
+  if (kind) parts.push(kind);
+  parts.push(SITE_TITLE);
   return {
-    title: `${o.title} · DIFF`,
+    title: parts.join(' · '),
     description: o.description || 'YADZ DIFF - DayZ Internal File Finder',
     base: o.base,
     vpath: o.versionPath || '',
