@@ -332,7 +332,7 @@ export function pageMeta(o) {
   parts.push(SITE_TITLE);
   return {
     title: parts.join(' · '),
-    description: o.description || 'YADZ DIFF - DayZ Internal File Finder',
+    description: o.description || SITE_TITLE,
     base: o.base,
     vpath: o.versionPath || '',
     active: o.active ?? '',
