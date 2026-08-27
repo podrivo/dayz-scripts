@@ -136,6 +136,20 @@ const versionNo = (version) => {
   return major * 1000 + minor;
 };
 
+/** "1.29 Update 1" from the oldest of that version. `builds` is newest-first. */
+function updateNames(builds) {
+  const count = new Map();
+  const seen = new Map();
+  for (const v of builds) count.set(v.version, (count.get(v.version) || 0) + 1);
+  const names = new Map();
+  for (const v of builds) {
+    const n = (seen.get(v.version) || 0) + 1;
+    seen.set(v.version, n);
+    names.set(v.build, `${v.version} Update ${count.get(v.version) - n + 1}`);
+  }
+  return names;
+}
+
 /**
  * Release history grouped by game version: every build we document, merged
  * with the official forum threads. Builds whose scripts never reached the
@@ -143,6 +157,7 @@ const versionNo = (version) => {
  */
 function renderReleases(ctx) {
   const { site, root, versions } = ctx;
+  const names = updateNames(versions);
   const groups = new Map(); // version -> Map(build -> row)
   const rowsFor = (version) => {
     if (!groups.has(version)) groups.set(version, new Map());
@@ -172,12 +187,14 @@ function renderReleases(ctx) {
       const items = [...rows.values()]
         .sort((a, b) => buildNo(b.build) - buildNo(a.build))
         .map((r) => {
+          const name = names.get(r.build) || r.build;
+          const patch = r.build.split('.')[2];
           let label;
-          if (r.build === site.build) label = `<strong>v${esc(r.build)}</strong>`;
-          else if (r.docs) label = `<a href="${r.docs}">v${esc(r.build)}</a>`;
-          else label = `<span class="rbuild" title="Scripts for this build are not in the Script Diff repository">v${esc(r.build)}</span>`;
+          if (r.build === site.build) label = `<strong title="${esc(r.build)}">${esc(name)}</strong>`;
+          else if (r.docs) label = `<a href="${r.docs}" title="${esc(r.build)}">${esc(name)}</a>`;
+          else label = `<span class="rbuild" title="Scripts for this build are not in the Script Diff repository (${esc(r.build)})">${esc(name)}</span>`;
           const notes = r.url ? ` <a href="${r.url}" ${EXT}>release notes</a>` : '';
-          return `<li>${label}<span class="rdate">${esc(fmtDate(r.date))}</span>${notes}</li>`;
+          return `<li>${label}<span class="rpatch">${esc(patch)}</span><span class="rdate">${esc(fmtDate(r.date))}</span>${notes}</li>`;
         })
         .join('\n');
       return `<details${version === site.version ? ' open' : ''}>
@@ -1208,31 +1225,27 @@ ${sections.join('\n') || '<p class="muted">Nothing in the scripting API changed 
  */
 export function renderCompare(ctx) {
   const { base } = ctx;
-  const card = (side, label) => `<article class="cmp-card" data-side="${side}">
-  <label class="cmp-pick"><span>${label}</span><select id="cmp${label}" aria-label="Compare ${side} build"></select></label>
-  <p class="cmp-card-links" id="cmp${label}Links"></p>
-</article>`;
+  const card = (side, label) => `<label class="cmp-pick" data-side="${side}">
+  <span>${label}</span><select id="cmp${label}" aria-label="Compare ${side} build"></select>
+</label>`;
   const content = `
-<h1>Compare builds</h1>
-<p>Any two game builds, side by side. Each build also has a <a href="${base}changes/">changelog</a> against the one before it.</p>
 <form class="cmp-stage" id="cmpBar" hidden>
   ${card('from', 'From')}
   <div class="cmp-mid">
     <button type="button" class="btn cmp-swap" id="cmpSwap" title="Swap the two builds" aria-label="Swap the two builds"><i class="ic ic-swap"></i></button>
     <span class="cmp-span" id="cmpSpan"></span>
+    <button type="button" class="btn cmp-reset" id="cmpReset" hidden>Reset</button>
   </div>
   ${card('to', 'To')}
 </form>
-<noscript><p>Comparing two builds is done in the browser and needs JavaScript.
-Each build's changes against the one before it are on its own
-<a href="${base}changes/">changelog</a>, which is generated ahead of time.</p></noscript>
+<noscript><p>The changelog is built in the browser and needs JavaScript.</p></noscript>
 <div class="cmp" id="compare" aria-live="polite" aria-busy="true"><p class="muted">Loading builds…</p></div>`;
   return layout({
     ...ctx,
-    title: 'Compare builds',
+    title: 'Changelog',
     active: 'compare/',
-    description: 'Compare the DayZ Enforce Script API between any two game builds.',
-    breadcrumbs: [{ label: 'Compare builds' }],
+    description: 'What changed in the DayZ Enforce Script API between two game builds.',
+    breadcrumbs: [{ label: 'Changelog' }],
     content,
   });
 }

@@ -191,8 +191,8 @@ export function briefOf(rawDoc, site, base) {
   return inlineDoc(d.brief, site, base);
 }
 
-// Doxygen's own navigation tree, entry for entry, with Changelog and Compare
-// builds standing where it listed Examples. Sections are links to their own
+// Doxygen's own navigation tree, entry for entry, with Changelog standing
+// where it listed Examples. Sections are links to their own
 // overview as well as headings, and repeat that overview as their first child
 // the way Doxygen did, so the page a section lands on is also visible as a
 // place you are.
@@ -224,8 +224,7 @@ const NAV = [
       ['globals/macros/', 'Macros'],
     ]],
   ]],
-  ['changes/', 'Changelog'],
-  ['compare/', 'Compare'],
+  ['compare/', 'Changelog'],
 ];
 
 /** Whether `active` names this branch or anything under it. */

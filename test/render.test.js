@@ -71,7 +71,6 @@ test('the nav is the tree Doxygen had, and marks the page once', () => {
   const labels = [
     'Modules', 'Data Structures', 'Data Structure Index', 'Class Hierarchy',
     'Data Fields', 'Files', 'File List', 'Globals', 'Typedefs', 'Enumerator', 'Macros', 'Changelog',
-    'Compare',
   ];
   for (const l of labels) assert.ok(html.includes(`>${l}</a>`), `nav is missing ${l}`);
   assert.ok(!html.includes('>Welcome</a>'), 'the brand is home; Welcome is not repeated');

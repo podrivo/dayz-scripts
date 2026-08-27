@@ -107,17 +107,26 @@
   let buildsPromise;
   const loadBuilds = () => (buildsPromise ||= fetch(ROOT + 'assets/versions.json').then((r) => r.json()));
 
+  const patchOf = (build) => build.split('.').pop();
+
+  /** "1.29 Update 1" from the oldest of that version, then Update 2, … */
+  function nameBuilds(builds) {
+    const count = Object.create(null);
+    const seen = Object.create(null);
+    for (const b of builds) count[b.version] = (count[b.version] || 0) + 1;
+    for (const b of builds) {
+      const n = (seen[b.version] = (seen[b.version] || 0) + 1);
+      b.name = `${b.version} Update ${count[b.version] - n + 1}`;
+    }
+    return builds;
+  }
+
   let current = null;
   const identity = loadBuilds().then((builds) => {
+    if (Array.isArray(builds)) nameBuilds(builds);
     current = (pathBuild && builds.find((b) => b.build === pathBuild)) || builds[0];
     const label = $('.ver-label');
-    if (label) {
-      const patch = document.createElement('span');
-      patch.className = 'ver-patch';
-      patch.textContent = current.build.slice(current.version.length);
-      label.textContent = current.version;
-      label.append(patch);
-    }
+    if (label) label.textContent = current.name;
     const gh = $('#ghSrc');
     if (gh && current.sha) gh.href = gh.href.replace('/blob/main/', `/blob/${current.sha}/`);
     return builds;
@@ -142,8 +151,9 @@
         }
         const cur = b.build === current?.build;
         const href = ROOT + (i === 0 ? '' : `v/${b.build}/`) + VPATH;
-        html += `<a href="${href}"${cur ? ' class="cur" aria-current="page"' : ''}>` +
-          `<span class="ver-row">${b.build}` +
+        html += `<a href="${href}"${cur ? ' class="cur" aria-current="page"' : ''} title="${b.build}">` +
+          `<span class="ver-row"><span class="ver-name">${b.name}</span>` +
+          `<span class="ver-build">${patchOf(b.build)}</span>` +
           (i === 0 ? '<span class="ver-latest">latest</span>' : '') +
           `<span class="ver-date">${fmtDate(b.date)}</span></span>` +
           '</a>';
@@ -415,12 +425,11 @@
   const compareBox = $('#compare');
   if (compareBox) {
     Promise.all([import('/assets/compare.js'), identity])
-      .then(([{ initCompare }, builds]) => initCompare({ builds, fmtDate }))
+      .then(([{ initCompare }, builds]) => initCompare({ builds, fmtDate, current }))
       .catch(() => {
         compareBox.setAttribute('aria-busy', 'false');
         compareBox.className = 'cmp muted';
-        compareBox.textContent = 'The comparison tool could not be loaded. Each build lists its own ' +
-          'changes against the build before it on its changelog.';
+        compareBox.textContent = 'The changelog could not be loaded. Try reloading the page.';
       });
   }
 

@@ -169,7 +169,6 @@ const prefixFor = (build, latest) => `/${build === latest ? '' : `v/${build}/`}`
 
 const gap = '<span class="cmp-gap" aria-hidden="true">—</span>';
 
-/** One member as a From / To pair, the way a spec row sits under two products. */
 function pairHtml(row) {
   const left = row[0] === ADDED ? gap : `<code class="old">${esc(row[2])}</code>`;
   const right = row[0] === REMOVED ? gap : `<code>${esc(row[0] === CHANGED ? row[3] : row[2])}</code>`;
@@ -186,14 +185,14 @@ function nameHtml(kind, name, op, prefix) {
     ` href="${prefix}${kind.url(name)}">${esc(name)}</a>`;
 }
 
-function changedHtml(kind, entry, prefix) {
+function changedHtml(kind, entry, prefix, open) {
   const pairs = entry.rows.map(pairHtml).join('');
   const text = esc(`${entry.name} ${entry.rows.map((r) => r.slice(1).join(' ')).join(' ')}`.toLowerCase());
   const link = `<a href="${prefix}${kind.url(entry.name)}">${esc(entry.name)}</a>`;
   // One before-and-after line is not worth hiding behind a disclosure; a class
   // with nine changed methods is.
   return entry.rows.length > 1
-    ? `<details class="cmp-unit cmp-change" data-op="changed" data-text="${text}"><summary>${link} <span class="count">${entry.rows.length}</span></summary>${pairs}</details>`
+    ? `<details class="cmp-unit cmp-change" data-op="changed" data-text="${text}"${open ? ' open' : ''}><summary>${link} <span class="count">${entry.rows.length}</span></summary>${pairs}</details>`
     : `<div class="cmp-unit cmp-change" data-op="changed" data-text="${text}"><p class="cmp-change-name">${link}</p>${pairs}</div>`;
 }
 
@@ -217,6 +216,12 @@ ${names}
  * product it belongs to.
  */
 function groupsHtml(diff, fromPrefix, toPrefix) {
+  let accordions = 0;
+  for (const { key } of KINDS) {
+    for (const e of diff[key]?.changed || []) if (e.rows.length > 1) accordions++;
+  }
+  const open = accordions > 0 && accordions <= 8;
+
   return KINDS
     .map((kind) => {
       const k = diff[kind.key];
@@ -233,7 +238,7 @@ ${colHtml('added', k.added, kind, toPrefix)}
       if (k.changed.length) {
         parts.push(`<h3 data-op="changed">Changed <span class="count">${num(k.changed.length)}</span></h3>
 <div class="cmp-pair-head" aria-hidden="true"><span>From</span><span>To</span></div>
-<div class="cmp-list">${k.changed.map((e) => changedHtml(kind, e, toPrefix)).join('')}</div>`);
+<div class="cmp-list">${k.changed.map((e) => changedHtml(kind, e, toPrefix, open)).join('')}</div>`);
       }
       return `<section class="cmp-kind" data-kind="${kind.key}">
 <h2>${esc(kind.label)} <span class="count">${num(total)}</span></h2>
@@ -244,25 +249,14 @@ ${parts.join('\n')}
     .join('\n');
 }
 
-function buildsFooter(builds, latest, from, to) {
-  const links = builds.map((b) => {
-    const href = `${prefixFor(b.build, latest)}changes/`;
-    return b.build === from || b.build === to
-      ? `<strong>${esc(b.build)}</strong>`
-      : `<a href="${href}">${esc(b.build)}</a>`;
-  }).join(' · ');
-  return `<h2>All builds</h2>
-<p class="cmp-builds">${links}</p>
-<p class="muted">Each link is that build’s changelog against the one before it.</p>`;
-}
-
 /* ---------- page ---------------------------------------------------------- */
 
-export function initCompare({ builds, fmtDate }) {
+export function initCompare({ builds, fmtDate, current }) {
   const box = document.getElementById('compare');
   const bar = document.getElementById('cmpBar');
   const fromSel = document.getElementById('cmpFrom');
   const toSel = document.getElementById('cmpTo');
+  const resetBtn = document.getElementById('cmpReset');
   if (!box || !bar) return;
 
   const latest = builds[0].build;
@@ -270,6 +264,28 @@ export function initCompare({ builds, fmtDate }) {
   // mean, and what a run of adjacent diffs has to be folded in.
   const order = builds.map((b) => b.build).reverse();
   const known = new Set(order);
+  const byBuild = new Map(builds.map((b) => [b.build, b]));
+  const here = current && known.has(current.build) ? current.build : latest;
+  const STORE = 'cmp-pair';
+
+  /** This build against the one before it — the old per-build changelog pair. */
+  const defaults = () => {
+    const i = order.indexOf(here);
+    return { from: i > 0 ? order[i - 1] : here, to: here };
+  };
+
+  const loadSaved = () => {
+    try {
+      const s = JSON.parse(localStorage.getItem(STORE));
+      if (s && known.has(s.from) && known.has(s.to)) return s;
+    } catch { /* private mode */ }
+    return null;
+  };
+
+  const atDefault = () => {
+    const d = defaults();
+    return from === d.from && to === d.to;
+  };
   const fill = (sel, selected) => {
     let html = '';
     let version = '';
@@ -280,40 +296,34 @@ export function initCompare({ builds, fmtDate }) {
         html += `<optgroup label="DayZ ${esc(version)}">`;
       }
       html += `<option value="${esc(b.build)}"${b.build === selected ? ' selected' : ''}>` +
-        `${esc(b.build)} — ${esc(fmtDate(b.date))}</option>`;
+        `${esc(b.name || b.build)} (${esc(b.build.split('.').pop())}) — ${esc(fmtDate(b.date))}</option>`;
     }
     sel.innerHTML = html + (version ? '</optgroup>' : '');
   };
 
-  /** The pair in the URL, falling back to the two newest builds. */
+  /** URL, then the last pair the reader picked, then this version's changelog. */
   const read = () => {
     const q = new URLSearchParams(location.search);
-    const pick = (key, dflt) => (known.has(q.get(key)) ? q.get(key) : dflt);
-    return { from: pick('from', builds[1]?.build || latest), to: pick('to', latest) };
+    const fromQ = q.get('from');
+    const toQ = q.get('to');
+    if (known.has(fromQ) && known.has(toQ)) return { from: fromQ, to: toQ };
+    return loadSaved() || defaults();
   };
 
   let { from, to } = read();
   let drawing = 0; // guards against a slow fetch landing after a newer pick
 
-  function stampCard(side, build) {
-    const label = side === 'from' ? 'From' : 'To';
-    const links = document.getElementById(`cmp${label}Links`);
-    if (!links) return;
-    const prefix = prefixFor(build, latest);
-    links.innerHTML = `<a href="${prefix}changes/">Changelog</a><a href="${prefix}">Browse API</a>`;
-  }
-
   function stampPair() {
-    stampCard('from', from);
-    stampCard('to', to);
     const span = document.getElementById('cmpSpan');
-    if (!span) return;
-    if (from === to) {
-      span.textContent = 'Same build';
-      return;
+    if (span) {
+      if (from === to) span.textContent = 'Same build';
+      else {
+        const steps = Math.abs(order.indexOf(from) - order.indexOf(to));
+        span.textContent = steps === 1 ? 'Neighbours' : '';
+      }
+      span.hidden = !span.textContent;
     }
-    const steps = Math.abs(order.indexOf(from) - order.indexOf(to));
-    span.textContent = steps === 1 ? 'Neighbours' : `${num(steps)} builds`;
+    if (resetBtn) resetBtn.hidden = atDefault();
   }
 
   // A build's diff.json, once. Switching one end of a comparison re-fetches
@@ -352,8 +362,7 @@ export function initCompare({ builds, fmtDate }) {
 
     box.setAttribute('aria-busy', 'false');
     if (steps.some((s) => s === null)) {
-      box.innerHTML = '<p class="muted">Part of this comparison could not be loaded. Try a narrower range, or reload.</p>' +
-        buildsFooter(builds, latest, from, to);
+      box.innerHTML = '<p class="muted">Part of this comparison could not be loaded. Try a narrower range, or reload.</p>';
       return;
     }
 
@@ -364,13 +373,10 @@ export function initCompare({ builds, fmtDate }) {
     const totals = { added: tally('added'), removed: tally('removed'), changed: tally('changed') };
     const all = totals.added + totals.removed + totals.changed;
 
-    const footer = buildsFooter(builds, latest, from, to);
-
     if (!all) {
       box.innerHTML = `<p class="muted">${same
         ? 'The same build on both sides. Pick two different ones to compare.'
-        : 'Nothing in the scripting API differs between these two builds.'}</p>
-${footer}`;
+        : 'Nothing in the scripting API differs between these two builds.'}</p>`;
       return;
     }
 
@@ -378,22 +384,30 @@ ${footer}`;
     // clicking it shows exactly the things it counted, which is the only way a
     // number spanning six kinds can say which kind it came from.
     const ops = [['', 'Everything', all], ...Object.entries(OPS).map(([op, o]) => [op, o.total, totals[op]])];
-    const missing = KINDS
-      .filter((k) => !diff[k.key].added.length && !diff[k.key].removed.length && !diff[k.key].changed.length)
-      .map((k) => k.label.toLowerCase());
+    const a = byBuild.get(from);
+    const b = byBuild.get(to);
+    const days = a?.date && b?.date
+      ? Math.abs(Math.round((Date.parse(`${b.date}T00:00:00Z`) - Date.parse(`${a.date}T00:00:00Z`)) / 864e5))
+      : 0;
+    const gap = Math.abs(order.indexOf(from) - order.indexOf(to));
+    const range = a?.date && b?.date ? `${fmtDate(a.date)} – ${fmtDate(b.date)}` : '';
+    const time = `<section class="cmp-time" aria-label="Time between builds"${range ? ` title="${esc(range)}"` : ''}>` +
+      `<span><strong>${num(days)}</strong> days</span>` +
+      `<span><strong>${num(Math.round(days / 7))}</strong> weeks</span>` +
+      `<span><strong>${num(Math.round(days / 30.4375))}</strong> months</span>` +
+      `<span><strong>${num(gap)}</strong> builds</span></section>`;
 
     box.innerHTML = `
 <section class="stats cmp-ops" id="cmpOps" aria-label="Filter by what happened">${ops
       .map(([op, label, n], i) => `<button type="button" class="stat" data-op="${esc(op)}" aria-pressed="${!i}"` +
         `${op ? ` title="${esc(SCOPE)}"` : ''}><strong>${num(n)}</strong><span>${esc(label)}</span></button>`)
       .join('')}</section>
+${time}
 <div class="filterbar">
   <input type="search" id="cmpFilter" class="filter-input" placeholder="Filter these changes…" autocomplete="off" spellcheck="false" aria-label="Filter these changes">
   <span class="filter-count" id="cmpCount" aria-live="polite"></span>
 </div>
-${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}
-${missing.length ? `<p class="muted cmp-none">No changes to ${missing.join(', ')}.</p>` : ''}
-${footer}`;
+${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}`;
     bindFilter();
   }
 
@@ -438,7 +452,7 @@ ${footer}`;
         const split = kind.querySelector('.cmp-split');
         if (split) split.hidden = [...split.children].every((c) => c.hidden);
 
-        const changedHead = kind.querySelector('h3[data-op="changed"]');
+        const changedHead = kind.querySelector(':scope > h3[data-op="changed"]');
         const pairHead = changedHead?.nextElementSibling;
         const changedList = pairHead?.classList.contains('cmp-pair-head')
           ? pairHead.nextElementSibling
@@ -481,12 +495,20 @@ ${footer}`;
     });
   }
 
-  /** Put the pair in the URL, so a comparison can be linked to. */
+  /** Put the pair in the URL and remember it. The default pair stays unstated. */
   function store() {
     const q = new URLSearchParams(location.search);
-    q.set('from', from);
-    q.set('to', to);
-    history.replaceState(null, '', `${location.pathname}?${q}`);
+    if (atDefault()) {
+      q.delete('from');
+      q.delete('to');
+      try { localStorage.removeItem(STORE); } catch { /* private mode */ }
+    } else {
+      q.set('from', from);
+      q.set('to', to);
+      try { localStorage.setItem(STORE, JSON.stringify({ from, to })); } catch { /* private mode */ }
+    }
+    const qs = q.toString();
+    history.replaceState(null, '', qs ? `${location.pathname}?${qs}` : location.pathname);
   }
 
   fill(fromSel, from);
@@ -525,6 +547,14 @@ ${footer}`;
   fromSel.addEventListener('change', () => choose(fromSel.value, true));
   toSel.addEventListener('change', () => choose(toSel.value, false));
   document.getElementById('cmpSwap')?.addEventListener('click', () => choose(to, true));
+  resetBtn?.addEventListener('click', () => {
+    ({ from, to } = defaults());
+    fromSel.value = from;
+    toSel.value = to;
+    stampPair();
+    store();
+    draw();
+  });
   // Back and forward through shared or edited links.
   addEventListener('popstate', () => {
     ({ from, to } = read());
