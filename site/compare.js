@@ -391,11 +391,13 @@ export function initCompare({ builds, fmtDate, current }) {
       : 0;
     const gap = Math.abs(order.indexOf(from) - order.indexOf(to));
     const range = a?.date && b?.date ? `${fmtDate(a.date)} – ${fmtDate(b.date)}` : '';
+    const fact = (n, w) => `<span><strong>${num(n)}</strong> ${n === 1 ? w : `${w}s`}</span>`;
     const time = `<section class="cmp-time" aria-label="Time between builds"${range ? ` title="${esc(range)}"` : ''}>` +
-      `<span><strong>${num(days)}</strong> days</span>` +
-      `<span><strong>${num(Math.round(days / 7))}</strong> weeks</span>` +
-      `<span><strong>${num(Math.round(days / 30.4375))}</strong> months</span>` +
-      `<span><strong>${num(gap)}</strong> builds</span></section>`;
+      fact(days, 'day') +
+      fact(Math.round(days / 7), 'week') +
+      fact(Math.round(days / 30.4375), 'month') +
+      fact(gap, 'build') +
+      `</section>`;
 
     box.innerHTML = `
 <section class="stats cmp-ops" id="cmpOps" aria-label="Filter by what happened">${ops
