@@ -2,10 +2,8 @@
 //
 // The DayZ-Script-Diff repository we parse lowercases every path, so what the
 // sources call `1_core/debug/debugtext.c` is `1_Core/Debug/DebugText.c` in the
-// game's own tree. pathnames.json is that tree's spelling, recovered from the
-// titles of the Doxygen site this one replaced (branch `doxygen-archive`, which
-// documented each file under both spellings) and covering 2,812 of the 2,825
-// files in the current build.
+// game's own tree. pathnames.json is that tree's spelling, covering 2,812 of
+// the 2,825 files in the current build.
 //
 // Anything the dictionary misses — files added after that snapshot — falls back
 // to the name the file declares: `contextmenu.c` holds `class ContextMenu`, so

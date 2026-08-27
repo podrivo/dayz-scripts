@@ -244,7 +244,7 @@ export class Parser {
     // inside a documentation comment, so the 257 plain ones here -- sound.c
     // ends its API topic with one -- were ignored and those topics ran on to
     // the end of the file. Honouring them instead files 9% fewer of the names
-    // the old documentation listed; see tools/compare-groups.mjs.
+    // the old documentation listed.
   }
 
   handleDirective(t) {

@@ -1,12 +1,5 @@
 /* DayZ Scripts docs — custom generator UI */
 
-/* Palette. The dark theme is the original doxygen site's, reused verbatim: the
-   olive near-blacks come from its doxygen-extra.css (body #0b100a, header
-   #12160f, tree #1c2118, selection #47533e) and the text and syntax colours
-   from its doxygen.css. --accent is the one addition: the original links in
-   plain grey, which the selection green cannot carry, so it is #47533e lifted
-   until it reads on both. The light theme has no original to copy — doxygen
-   ships dark only — so it is the same hues inverted. */
 :root {
   --bg: #ffffff;
   --bg2: #f4f6f2;

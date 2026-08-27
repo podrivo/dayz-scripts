@@ -67,8 +67,7 @@ class Matrix {}
 });
 
 // How a topic ends, which decides most of what is filed under it. Both rules
-// are Doxygen's, and the sources lean on both; tools/compare-groups.mjs
-// measures the result against the documentation this site replaces.
+// are Doxygen's, and the sources lean on both.
 test('a member group closes itself rather than the topic around it', () => {
   const site = siteOf(`
 /** \\defgroup Widgets Widget UI system

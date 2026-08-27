@@ -11,8 +11,8 @@ per-build changelogs with a build selector (every published build, e.g.
 
 ## Structure
 
-The site follows the sections Doxygen produced for the DayZ scripts before it,
-so anyone who used that documentation finds the same things in the same places:
+The scripts are documented with [Doxygen](https://www.doxygen.nl/) comments;
+this site renders them, following Doxygen's usual sections:
 
 - **Modules** (`/modules/`, `/module/<Name>/`) — the topics the sources group
   themselves into with `\defgroup` blocks: the engine-facing APIs (math,
@@ -118,11 +118,8 @@ after them. We file all fourteen values under the enums that declare them. And
 `Overwrite`, `~AbstractWave` and the five `ScriptInvoker` event fields appear
 here and not there.
 
-`node tools/compare-groups.mjs [title]` checks all of this against the Doxygen
-site on the `doxygen-archive` branch, topic by topic, and reports the share of
-the names it listed that this one also files. It currently stands at 96%; the
-remainder is Doxygen attributing declarations that sit *above* an unterminated
-block to it as well.
+The `doxygen-archive` branch keeps a copy of Doxygen's generated HTML for the
+same scripts — an older version of this website.
 
 ## Cross-references
 
@@ -200,11 +197,10 @@ thousand pages below it.
 
 The upstream repository lowercases every path, so the file the game ships as
 `1_Core/Debug/DebugText.c` arrives as `scripts/1_core/debug/debugtext.c`. The
-site shows the original spelling back: `src/generate/pathnames.json` is the
-game tree's own capitalisation, recovered from the Doxygen site this one
-replaced (kept on the `doxygen-archive` branch), and covers all but a handful
-of today's files. The rest are spelled after the type they declare, since
-`contextmenu.c` holds `class ContextMenu`.
+site shows the original spelling back: `src/generate/pathnames.json` holds the
+game tree's own capitalisation, and covers all but a handful of today's files.
+The rest are spelled after the type they declare, since `contextmenu.c` holds
+`class ContextMenu`.
 
 Only what is displayed changes. URLs, redirects and the search index keep the
 lowercase spelling, and `test/casing.test.js` asserts that a display path never
