@@ -338,11 +338,19 @@ export function layout(o) {
 <meta property="og:url" content="${esc(url)}">
 <meta name="twitter:card" content="summary">`;
 
-  const crumbs = o.breadcrumbs?.length
-    ? `<nav class="crumbs" aria-label="Breadcrumb">${o.breadcrumbs
+  // Title already names the page, so a one-level trail is just the title
+  // again. Longer trails keep the parents and sit under the heading.
+  const trail = o.breadcrumbs?.length > 1 ? o.breadcrumbs.slice(0, -1) : [];
+  const crumbs = trail.length
+    ? `<nav class="crumbs" aria-label="Breadcrumb">${trail
         .map((c) => (c.href ? `<a href="${c.href}">${esc(c.label)}</a>` : `<span>${esc(c.label)}</span>`))
         .join('<span class="crumb-sep">/</span>')}</nav>`
     : '';
+  const close = '</h1>';
+  const titleAt = o.content.indexOf(close);
+  const body = crumbs && titleAt !== -1
+    ? `${o.content.slice(0, titleAt + close.length)}\n${crumbs}${o.content.slice(titleAt + close.length)}`
+    : `${crumbs}${o.content}`;
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -353,6 +361,9 @@ export function layout(o) {
 <meta name="description" content="${esc(desc)}">
 ${social}
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
 <script>try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
@@ -370,10 +381,9 @@ ${social}
 </header>
 <div class="shell">
   <main class="main">
-    ${crumbs}
-    ${o.content}
+    ${body}
     ${o.footer === false ? '' : `<footer class="foot">
-      <p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a> · Not affiliated with Bohemia Interactive · <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a></p>
+      <p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a> · Not affiliated with <a href="https://www.bohemia.net/" ${EXT}>Bohemia Interactive</a> · <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a></p>
     </footer>`}
   </main>
 </div>

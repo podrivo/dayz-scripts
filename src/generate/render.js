@@ -427,14 +427,17 @@ export function renderClass(ctx, cls) {
   const { site, base } = ctx;
   const used = new Set();
 
-  // inheritance chain
+  // inheritance chain — hidden when the class stands alone, the same way a
+  // one-level breadcrumb is hidden once the title has said the name.
   const ancestors = site.ancestorsOf(cls.name);
-  const chain = [cls.name, ...ancestors]
-    .map((n, i) => {
-      if (i === 0) return `<strong>${esc(n)}</strong>`;
-      return site.classes.has(n) ? `<a href="${base}class/${n}/">${esc(n)}</a>` : esc(n);
-    })
-    .join(' <span class="chain-sep">›</span> ');
+  const chain = ancestors.length
+    ? `<p class="chain">${[cls.name, ...ancestors]
+        .map((n, i) => {
+          if (i === 0) return `<strong>${esc(n)}</strong>`;
+          return site.classes.has(n) ? `<a href="${base}class/${n}/">${esc(n)}</a>` : esc(n);
+        })
+        .join(' <span class="chain-sep">›</span> ')}</p>`
+    : '';
 
   // Only worth its own page when there is something above to inherit from;
   // without a base the list would be this page over again. Whether the chain
@@ -512,7 +515,7 @@ ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}
 
   const content = `
 <h1 class="class-title"><span class="kw">class</span> ${esc(cls.name)}${cls.generics ? `<span class="generics">${esc(cls.generics)}</span>` : ''}${badges}</h1>
-<p class="chain">${chain}</p>
+${chain}
 ${module}
 ${basesNote}
 ${allMembers}
@@ -533,7 +536,6 @@ ${section('Methods', methods, methodBlock)}
     title: cls.name,
     active: 'annotated/',
     description: brief || `${cls.name} class — DayZ Enforce Script API`,
-    breadcrumbs: [{ label: 'Data Structures', href: `${base}annotated/` }, { label: cls.name }],
     content,
   });
 }
@@ -570,11 +572,15 @@ export function renderClassMembers(ctx, cls) {
   // What that trades away is the table for a reader without JavaScript. The
   // chain below is the honest fallback: every class in it is a link, and each
   // of those pages is static and lists its own members in full.
+  const chainHtml = chain.length > 1
+    ? `<p class="chain">${chain
+        .map((n, i) => (i === 0 ? `<strong>${esc(n)}</strong>` : `<a href="${base}class/${n}/">${esc(n)}</a>`))
+        .join(' <span class="chain-sep">›</span> ')}</p>`
+    : '';
+
   const content = `
 <h1>All members of ${esc(cls.name)}</h1>
-<p class="chain">${chain
-    .map((n, i) => (i === 0 ? `<strong>${esc(n)}</strong>` : `<a href="${base}class/${n}/">${esc(n)}</a>`))
-    .join(' <span class="chain-sep">›</span> ')}</p>
+${chainHtml}
 <p>Everything callable on a <code>${esc(cls.name)}</code>, its own and everything it inherits from the ${(chain.length - 1).toLocaleString('en-US')} ${chain.length === 2 ? 'class' : 'classes'} above. Each name links to the class that declares it; where a name is declared more than once in the chain, the nearest one is the one that answers.</p>
 <p><a href="${base}class/${cls.name}/">Back to ${esc(cls.name)}</a></p>
 ${filterBar('Filter members…')}
@@ -588,11 +594,6 @@ ${filterBar('Filter members…')}
     title: `${cls.name} — all members`,
     active: 'annotated/',
     description: `Every member of ${cls.name}, its own and those inherited from ${chain.slice(1).join(', ')}.`,
-    breadcrumbs: [
-      { label: 'Data Structures', href: `${base}annotated/` },
-      { label: cls.name, href: `${base}class/${cls.name}/` },
-      { label: 'All members' },
-    ],
     content,
   });
 }

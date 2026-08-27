@@ -96,7 +96,7 @@ html { scroll-padding-top: calc(var(--h-top) + 16px); }
    do not wrap at all and scroll inside their box. */
 body {
   margin: 0;
-  font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font: 15px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background: var(--bg);
   color: var(--fg);
   overflow-wrap: anywhere;
@@ -323,12 +323,12 @@ body.palette-open { overflow: hidden; }
 .ver-row { display: flex; align-items: center; gap: 8px; }
 .ver-date {
   margin-left: auto; color: var(--fg2); font-size: 12px; white-space: nowrap;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .ver-latest {
   padding: 0 7px; border: 1px solid var(--accent2); border-radius: 10px;
   color: var(--accent); font-size: 10.5px; font-weight: 600; line-height: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* ---- shell ---- */
@@ -516,7 +516,9 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 
 .count { font-size: 13px; font-weight: 500; color: var(--fg2); }
 
-.crumbs { font-size: 13px; color: var(--fg2); margin-bottom: 10px; }
+.main > h1:has(+ .crumbs),
+.main > h1:has(+ .chain) { margin-bottom: 4px; }
+.crumbs { font-size: 13px; color: var(--fg2); margin: 0 0 16px; }
 .crumb-sep { margin: 0 6px; opacity: 0.6; }
 
 .hero p { font-size: 16px; }
