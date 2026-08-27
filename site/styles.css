@@ -130,11 +130,72 @@ pre code { background: none; padding: 0; }
   overflow: visible;
 }
 
-.brand { font-weight: 700; font-size: 17px; color: var(--fg); white-space: nowrap; }
-/* The palette has no bright accent, so the wordmark splits on weight of colour
-   rather than hue, the way the original's projectname/projectbrief pair does. */
-.brand span { color: var(--fg2); }
-.brand:hover { text-decoration: none; }
+.brand {
+  display: inline-flex;
+  flex: none;
+  position: relative;
+  z-index: 3;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--fg);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.brand::after {
+  content: "DIFF";
+  visibility: hidden;
+  pointer-events: none;
+}
+.brand:hover, .brand:focus-visible { text-decoration: none; }
+.brand-in {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  background: var(--bg);
+  padding-right: 14px;
+  transition: gap 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.brand-w {
+  display: inline-flex;
+  align-items: baseline;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.brand-l { display: inline-block; color: var(--fg); }
+.brand-rest {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  color: var(--fg2);
+  font-weight: 600;
+  transition: max-width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.brand:hover .brand-in, .brand:focus-visible .brand-in { gap: 0.4em; }
+.brand:hover .brand-w:nth-child(2), .brand:focus-visible .brand-w:nth-child(2) { transform: translateX(2px); }
+.brand:hover .brand-w:nth-child(3), .brand:focus-visible .brand-w:nth-child(3) { transform: translateX(6px); }
+.brand:hover .brand-w:nth-child(4), .brand:focus-visible .brand-w:nth-child(4) { transform: translateX(10px); }
+.brand:hover .brand-w:nth-child(1) .brand-rest, .brand:focus-visible .brand-w:nth-child(1) .brand-rest { max-width: 3ch; }
+.brand:hover .brand-w:nth-child(2) .brand-rest, .brand:focus-visible .brand-w:nth-child(2) .brand-rest { max-width: 8ch; }
+.brand:hover .brand-w:nth-child(3) .brand-rest, .brand:focus-visible .brand-w:nth-child(3) .brand-rest { max-width: 3ch; }
+.brand:hover .brand-w:nth-child(4) .brand-rest, .brand:focus-visible .brand-w:nth-child(4) .brand-rest { max-width: 5ch; }
+@media (min-width: 901px) {
+  .nav { transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+  .brand:hover ~ .nav, .brand:focus-visible ~ .nav {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-in, .brand-w, .brand-rest, .nav { transition: none; }
+  .brand:hover .brand-w, .brand:focus-visible .brand-w { transform: none; }
+  .brand:hover .brand-w:nth-child(1) .brand-rest, .brand:focus-visible .brand-w:nth-child(1) .brand-rest { max-width: 3ch; }
+  .brand:hover .brand-w:nth-child(2) .brand-rest, .brand:focus-visible .brand-w:nth-child(2) .brand-rest { max-width: 8ch; }
+  .brand:hover .brand-w:nth-child(3) .brand-rest, .brand:focus-visible .brand-w:nth-child(3) .brand-rest { max-width: 3ch; }
+  .brand:hover .brand-w:nth-child(4) .brand-rest, .brand:focus-visible .brand-w:nth-child(4) .brand-rest { max-width: 5ch; }
+}
 
 .menu-btn, .theme-btn {
   display: inline-flex; align-items: center; justify-content: center;

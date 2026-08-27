@@ -390,7 +390,7 @@ ${social}
 <body data-base="${o.base}" data-vpath="${esc(o.versionPath || '')}">
 <header class="top">
 <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><i class="ic ic-menu"></i></button>
-<a class="brand" href="/">DIFF</a>
+<a class="brand" href="/" aria-label="DIFF"><span class="brand-in" aria-hidden="true"><span class="brand-w"><span class="brand-l">D</span><span class="brand-rest">ayZ</span></span><span class="brand-w"><span class="brand-l">I</span><span class="brand-rest">nternal</span></span><span class="brand-w"><span class="brand-l">F</span><span class="brand-rest">ile</span></span><span class="brand-w"><span class="brand-l">F</span><span class="brand-rest">inder</span></span></span></a>
 <nav class="nav" id="nav" aria-label="Site">${nav}</nav>
 <button class="search-trigger" id="searchBtn" aria-label="Search"><i class="ic ic-search"></i><span>Search…</span><kbd id="searchKbd">⌘K</kbd></button>
 <div class="verpicker">
