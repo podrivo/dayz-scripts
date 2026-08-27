@@ -32,6 +32,35 @@
     }
   });
 
+  const brand = $('.brand');
+  if (brand) {
+    let holdUntil = 0;
+    const hold = () => {
+      brand.classList.add('on');
+      document.documentElement.dataset.brand = 'on';
+      try { sessionStorage.setItem('brand-on', '1'); } catch {}
+    };
+    const release = () => {
+      brand.classList.remove('on');
+      delete document.documentElement.dataset.brand;
+      try { sessionStorage.removeItem('brand-on'); } catch {}
+    };
+    if (document.documentElement.dataset.brand === 'on') {
+      brand.classList.add('on');
+      requestAnimationFrame(() => document.documentElement.classList.remove('brand-snap'));
+    }
+    brand.addEventListener('pointerenter', hold);
+    brand.addEventListener('pointerleave', () => {
+      if (performance.now() < holdUntil) return;
+      release();
+    });
+    brand.addEventListener('click', (e) => {
+      hold();
+      holdUntil = performance.now() + 500;
+      if ((location.pathname.replace(/\/+$/, '') || '/') === '/') e.preventDefault();
+    });
+  }
+
   /* ---------- site nav ---------- */
   const menuBtn = $('#menuBtn');
   const nav = $('#nav');
