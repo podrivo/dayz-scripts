@@ -775,6 +775,7 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 }
 .toc a:hover { color: var(--fg); text-decoration: none; }
 .toc a.cur { color: var(--accent); border-left-color: var(--accent2); font-weight: 600; }
+.toc .toc-1 { margin-bottom: 4px; }
 .toc .toc-3 { padding-left: 18px; font-size: 12.5px; }
 
 @media (max-width: 1179px) { .toc { display: none; } }
