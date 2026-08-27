@@ -15,9 +15,10 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
-import { DATA_DIR, ROOT, extractSources, readJson } from './util.js';
+import { CACHE_DIR, DATA_DIR, ROOT, extractSources, readJson } from './util.js';
 import { buildSiteModel } from './generate/model.js';
 import { diffModels } from './generate/diff.js';
+import { buildHistory } from './generate/history.js';
 import { resolve as resolvePage } from './generate/routes.js';
 import { render404 } from './generate/render.js';
 
@@ -31,7 +32,7 @@ const die = (msg, fix) => {
 };
 
 if (!fs.existsSync(VERSIONS_FILE)) die('No data/versions.json.', 'npm run fetch');
-const { versions } = readJson(VERSIONS_FILE);
+const { versions, upstreamHead } = readJson(VERSIONS_FILE);
 const latest = versions[0];
 const modelFile = (v) => path.join(DATA_DIR, `model-${v.label}.json`);
 if (!fs.existsSync(modelFile(latest))) die(`No parsed model for ${latest.build}.`, 'npm run parse');
@@ -41,8 +42,15 @@ if (!fs.existsSync(modelFile(latest))) die(`No parsed model for ${latest.build}.
 // rest arrive if someone actually browses to /v/<build>/.
 const models = new Map();
 
-function siteFor(label) {
-  if (models.has(label)) return models.get(label);
+function siteFor(label, { sources = true } = {}) {
+  if (models.has(label)) {
+    const cached = models.get(label);
+    if (sources && cached) {
+      const v = versions.find((x) => x.label === label);
+      if (v) try { extractSources(v); } catch { /* no clone */ }
+    }
+    return cached;
+  }
   const v = versions.find((x) => x.label === label);
   if (!v || !fs.existsSync(modelFile(v))) {
     models.set(label, null);
@@ -52,10 +60,13 @@ function siteFor(label) {
   const site = buildSiteModel(model);
   site.rawFiles = model.files; // per-file decls needed for file pages
   // File pages read the sources off disk; this is a no-op once extracted.
-  try {
-    extractSources(v);
-  } catch {
-    // No upstream clone to extract from. Everything but file pages still works.
+  // History walks every build and does not need the trees.
+  if (sources) {
+    try {
+      extractSources(v);
+    } catch {
+      // No upstream clone to extract from. Everything but file pages still works.
+    }
   }
   models.set(label, site);
   return site;
@@ -114,8 +125,21 @@ const versionsAsset = JSON.stringify(
   versions.map((v) => ({ build: v.build, version: v.version, date: v.date, sha: v.sha }))
 );
 
+function historyAsset() {
+  const cache = path.join(CACHE_DIR, `history-${upstreamHead || latest.sha}.json`);
+  try {
+    return fs.readFileSync(cache, 'utf8');
+  } catch {
+    const json = JSON.stringify(buildHistory(versions, (label) => siteFor(label, { sources: false })));
+    fs.mkdirSync(CACHE_DIR, { recursive: true });
+    fs.writeFileSync(cache, json);
+    return json;
+  }
+}
+
 function sendAsset(res, name) {
   if (name === 'versions.json') return send(res, 200, 'application/json', versionsAsset);
+  if (name === 'history.json') return send(res, 200, 'application/json', historyAsset());
   const file = path.join(SITE_DIR, name);
   if (!name || name.includes('/') || !fs.existsSync(file)) return send(res, 404, TYPES['.txt'], 'Not found');
   send(res, 200, TYPES[path.extname(file)] || 'application/octet-stream', fs.readFileSync(file));

@@ -651,6 +651,11 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
    exception, which is the handful the class declares itself. */
 .badge-inherited { margin: 0; background: var(--bg3); color: var(--fg2); font-weight: 500; }
 .badge-override { margin: 0; background: var(--note-bg); color: var(--note-line); cursor: help; }
+a.badge { text-decoration: none; }
+a.badge:hover { color: inherit; text-decoration: underline; }
+.badge-since { background: var(--bg3); color: var(--fg2); font-weight: 500; }
+.badge-added { background: var(--accent-bg); color: var(--added); }
+.badge-changed { background: var(--note-bg); color: var(--note-line); }
 
 .all-members { margin: 6px 0; font-size: 14px; }
 .all-members-table td:first-child { width: 55%; }

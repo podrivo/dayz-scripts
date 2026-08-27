@@ -30,6 +30,7 @@ import { pages as sitePages } from './routes.js';
 import { render404 } from './render.js';
 import { layout, lastPacked, ARCHIVE_MARK } from './html.js';
 import { pageExceptions } from './archive.js';
+import { seedHistory, applyDiff, serializeHistory } from './history.js';
 
 const t0 = Date.now();
 const clock = () => process.hrtime.bigint();
@@ -427,6 +428,7 @@ function renderVersion(site, diff, prevLabel, versionIndex, blobs) {
 // JSON.parse does (45ms vs 39ms on a 7 MB model), with the read itself only
 // 2ms. There is nothing here to move off the critical path.
 let prevSite = null;
+let history = null;
 const ordered = [...buildList].reverse();
 for (const v of ordered) {
   extractSources(v);
@@ -440,6 +442,8 @@ for (const v of ordered) {
   t = clock();
   const diff = prevSite ? diffModels(site, prevSite) : null;
   timers.diff += since(t);
+  if (!history) history = seedHistory(site);
+  else applyDiff(history, diff, site.build);
 
   memo.startBuild(site.typeIndex, prevSite?.typeIndex);
   const versionIndex = buildList.findIndex((x) => x.label === v.label);
@@ -512,6 +516,10 @@ for (const hash of bHashes) {
 // Nothing else touches the filesystem in bulk from here, so the previous
 // build's tree can finally go.
 dropStaleTrees();
+
+if (history) {
+  fs.writeFileSync(path.join(assetsDir, 'history.json'), JSON.stringify(serializeHistory(history, buildList)));
+}
 
 // sitemap for the latest version only, from the paths recorded while writing
 {
