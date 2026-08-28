@@ -20,12 +20,11 @@ has no official doc comment — the site shows where each member is used, and
 - [Topics](https://diff.yadz.app/modules/) — the `\defgroup` groups the sources wrap themselves into (math, physics, entities, widgets, …)
 - [Files](https://diff.yadz.app/files/) — the script tree, plus [globals](https://diff.yadz.app/globals/) declared outside a class
 - [Changelog](https://diff.yadz.app/changelog/) — API diff between any two builds
-- [Community](https://diff.yadz.app/community/) — official references, Discord servers, editors, build tools and data explorers
 
-Older builds stay at `/v/<build>/…`. The PC stable changelog is on the
-[homepage](https://diff.yadz.app/). Community links are hand-maintained in
-`src/generate/content.js`. Bugs and suggestions for this site:
-[YADZ Discord](https://discord.gg/nbrHqZCpA6).
+Older builds stay at `/v/<build>/…`. The PC stable changelog, official links and
+community links are on the [homepage](https://diff.yadz.app/); the links
+themselves are hand-maintained in `src/generate/content.js`. Bugs and
+suggestions for this site: [YADZ Discord](https://discord.gg/nbrHqZCpA6).
 
 ## For language models
 
@@ -82,6 +81,11 @@ npm test
 `npm run dev` is the inner loop. It needs `fetch` and `parse`, not `generate`.
 It loads the newest build once and renders whichever page you open; older
 builds work the same at `/v/<build>/`. Assets come straight from `site/`.
+
+`npm run dev` also sets `COMMUNITY=1`, which turns on `/community/` — a page of
+modding resources that is still being written, and so is absent from a plain
+build along with its nav entry and every link to it. Pass the same variable to
+`generate` to see it in a real `dist/`.
 
 Use `npm run preview` to check archive rewrites, redirects and the sitemap.
 After changing the parser, re-run with `FORCE_PARSE=1 npm run parse` (or

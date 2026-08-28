@@ -6,8 +6,8 @@ import {
   SITE_TITLE,
 } from './html.js';
 import {
-  OFFICIAL_LINKS, DISCORD_LINKS, COMMUNITY_SECTIONS, FORUM_THREADS, VERSION_TITLES,
-  YADZ_DISCORD,
+  OFFICIAL_LINKS, OFFICIAL_MODDING_LINKS, DISCORD_LINKS, COMMUNITY_SECTIONS,
+  FORUM_THREADS, VERSION_TITLES, YADZ_DISCORD, COMMUNITY,
 } from './content.js';
 
 function anchorFor(used, name) {
@@ -240,6 +240,14 @@ export function renderHome(ctx) {
 
   const releases = renderReleases(ctx);
 
+  // With /community/ up, this section is the servers to ask in and a pointer to
+  // the rest. Without it there is nowhere else for those links to be, so they
+  // all stay here — the flag must not cost the site links it already showed.
+  const communityLinks = COMMUNITY
+    ? `${linkCards(DISCORD_LINKS, true)}
+<p>The rest of what the community has built — editors, build tools, references, object and map data, and agent tooling — is on <a href="${base}community/">Community</a>.</p>`
+    : linkCards([...DISCORD_LINKS, ...COMMUNITY_SECTIONS.flatMap((s) => s.links)], true);
+
   const content = `
 <section class="hero">
   <h1>Welcome</h1>
@@ -274,8 +282,7 @@ ${linkCards(explore)}
 <h2 id="official-links">Official links</h2>
 ${linkCards(OFFICIAL_LINKS, true)}
 <h2 id="community-links">Community links</h2>
-${linkCards(DISCORD_LINKS, true)}
-<p>The rest of what the community has built — editors, build tools, references, object and map data, and agent tooling — is on <a href="${base}community/">Community</a>.</p>
+${communityLinks}
 <h2 id="changelog">PC Stable Changelog</h2>
 <div class="releases">
 ${releases}
@@ -1163,8 +1170,7 @@ export function renderCompare(ctx) {
  * the page keeps its hard link; see layout() in src/generate/html.js.
  */
 export function renderCommunity(ctx) {
-  const section = ({ id, title, blurb, links }) => `<h2 id="${id}">${esc(title)}</h2>
-<p>${esc(blurb)}</p>
+  const section = ({ id, title, links }) => `<h2 id="${id}">${esc(title)}</h2>
 ${linkCards(links, true)}`;
 
   const content = `
@@ -1172,18 +1178,19 @@ ${linkCards(links, true)}`;
 <p>Most of the DayZ script API carries no documentation, and there is no official reference that fills the gap. These are the places that do: the official pages that exist, the servers where questions get answered, and the tools and references the community maintains.</p>
 <p>Have something that belongs here? Suggest it on <a href="${YADZ_DISCORD}" ${EXT}>YADZ's Discord</a>.</p>
 <h2 id="official">Official</h2>
-<p>Bohemia Interactive's own pages, including the syntax reference for the language itself.</p>
 ${linkCards(OFFICIAL_LINKS, true)}
+<h2 id="official-modding">Official modding docs</h2>
+${linkCards(OFFICIAL_MODDING_LINKS, true)}
 <h2 id="discord">Discord servers</h2>
-<p>Where scripting questions actually get answered. Read the pinned messages first — most recurring questions are already there.</p>
 ${linkCards(DISCORD_LINKS, true)}
 ${COMMUNITY_SECTIONS.map(section).join('\n')}
-<p class="muted">Everything outside the official section is community-made: not affiliated with, endorsed by, or supported by DayZ or Bohemia Interactive, and each carries its own license and terms. Links are offered as-is.</p>`;
+<p class="muted">Everything outside the two official sections is community-made: not affiliated with, endorsed by, or supported by DayZ or Bohemia Interactive, and each carries its own license and terms. Links are offered as-is. This site is generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a> and is not affiliated with <a href="https://www.bohemia.net/" ${EXT}>Bohemia Interactive</a> either; the script sources it documents are © BOHEMIA INTERACTIVE a.s. and licensed under the <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License (DPL)</a>.</p>`;
 
   return layout({
     ...ctx,
     title: 'Community',
     active: 'community/',
+    footer: false,
     description: 'DayZ modding resources: official references, Discord servers, editors, build tools, object and map data, and agent tooling.',
     breadcrumbs: [{ label: 'Community' }],
     content,

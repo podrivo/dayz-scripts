@@ -15,7 +15,7 @@
     "generate:verify": "BUILD_VERSIONS=6 GENERATE_VERIFY=1 node src/generate/index.js",
     "build": "node src/fetch.js && node src/parse-all.js && node src/generate/index.js",
     "test": "node --test 'test/*.test.js'",
-    "dev": "node --watch --watch-preserve-output --watch-path=src --watch-path=site src/dev.js",
+    "dev": "COMMUNITY=1 node --watch --watch-preserve-output --watch-path=src --watch-path=site src/dev.js",
     "preview": "node src/serve.js"
   },
   "license": "MIT"

@@ -626,6 +626,8 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 .card-ext h3 { padding-right: 22px; }
 .card-ext .ic-ext { position: absolute; top: 12px; right: 12px; color: var(--accent2); transition: color .15s ease; }
 .card-ext:hover .ic-ext { color: var(--fg); }
+/* A closing note below the last grid, standing as far off as a new section. */
+.cards + .muted { margin-top: 64px; }
 
 .releases details { border: 1px solid var(--line); border-radius: 12px; margin: 8px 0; padding: 10px 16px; }
 .releases summary { cursor: pointer; font-weight: 600; }

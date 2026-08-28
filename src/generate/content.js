@@ -11,6 +11,17 @@ export const SITE_URL = 'https://diff.yadz.app';
  *  two sets of numbers stay one series across the move. */
 export const ANALYTICS_ID = 'G-R8ZT2QC248';
 
+/**
+ * Whether /community/ is part of the site. It is still being written, so it is
+ * off by default and `npm run dev` turns it on; a build without the flag has
+ * no such page, no nav entry for it, and nothing linking to it.
+ *
+ * The flag is read once at load, which is what makes that consistent: the page,
+ * the nav and every link to it are gated on this one value, so no build can
+ * advertise a page it did not write.
+ */
+export const COMMUNITY = process.env.COMMUNITY === '1';
+
 export const OFFICIAL_LINKS = [
   ['DayZ.com', 'https://dayz.com/', 'Official game website and news'],
   ['DayZ Forums', 'https://forums.dayz.com/', 'Announcements and stable update threads'],
@@ -19,6 +30,14 @@ export const OFFICIAL_LINKS = [
   ['Feedback Tracker', 'https://feedback.bistudio.com/tag/dayz/', 'Report bugs and follow known issues'],
   ['GitHub Repositories', 'https://github.com/orgs/BohemiaInteractive/repositories?q=dayz', 'Official Bohemia Interactive DayZ repos'],
   ['DayZ Tools', 'https://store.steampowered.com/app/830640/DayZ_Tools/', 'Official modding tools on Steam'],
+];
+
+/** Bohemia's own modding material. Only on /community/, since it answers a
+ *  question the home page has not raised yet. */
+export const OFFICIAL_MODDING_LINKS = [
+  ['Modding Basics', 'https://community.bistudio.com/wiki/DayZ:Modding_Basics', 'Official walkthrough: project drive, config.cpp, packing, first script'],
+  ['Modding Samples', 'https://github.com/BohemiaInteractive/DayZ-Samples', 'Sample mods to start a project from'],
+  ['Central Economy', 'https://github.com/BohemiaInteractive/DayZ-Central-Economy', 'The vanilla loot economy files, as the game ships them'],
 ];
 
 /** The servers to ask in. On the home page as well as /community/, since the
@@ -38,28 +57,36 @@ export const COMMUNITY_SECTIONS = [
   {
     id: 'reference',
     title: 'Reference & guides',
-    blurb: 'Written explanations of what the sources do not say out loud.',
     links: [
       ['Enforce Script cheat sheet', 'https://gist.github.com/creativ3lab/49a4055c6b5c87d2c9ccb08ad04d5b86', 'The syntax reference as one scrollable page'],
+      ['DayZ Modding Wiki', 'https://github.com/StarDZ-Team/DayZ-Modding-Wiki', 'Open wiki on the language, layouts, engine API and its traps'],
       ['DayZ Wiki', 'https://dayz.wiki.gg/', 'Community-run gameplay and item wiki'],
-      ['DayZ Expansion', 'https://dayzexpansion.com/', 'Mod framework wiki, guides and configuration'],
     ],
   },
   {
     id: 'tooling',
     title: 'Editors & tooling',
-    blurb: 'What you write, pack and sign a mod with.',
     links: [
       ['EnScript for VS Code', 'https://marketplace.visualstudio.com/items?itemName=forestbelton.bohemia-enscript', 'Enforce Script highlighting and language support'],
+      ['DevZ Tools', 'https://marketplace.visualstudio.com/items?itemName=devz-tools.devz-tools', 'VS Code extension around an Enforce Script language server'],
       ["Mikero's Tools", 'https://mikero.bytex.digital/', 'PBO packing and file conversion tools'],
       ['RaG DayZ Tools', 'https://github.com/Tyson89/RaG-DayZ-Tools', 'PBO builder, inspector and game data extractor'],
       ['DayZ Labs', 'https://borcioo.github.io/dayz-labs/', 'Dev launcher for server, client, builds and logs'],
+      ['DayZ Editor', 'https://github.com/InclementDab/DayZ-Editor', 'In-game 3D editor for building scenes and exporting them'],
+    ],
+  },
+  {
+    id: 'frameworks',
+    title: 'Frameworks & libraries',
+    links: [
+      ['Community Framework', 'https://github.com/Arkensor/DayZ-CommunityFramework', 'The RPC and utility layer most script mods are built on'],
+      ['DayZ Expansion', 'https://dayzexpansion.com/', 'Mod framework wiki, guides and configuration'],
+      ['Community Online Tools', 'https://github.com/Jacob-Mango/DayZ-CommunityOnlineTools', 'Modular in-game admin GUI that other mods add menus to'],
     ],
   },
   {
     id: 'agents',
     title: 'Agents & automation',
-    blurb: 'Driving the game and the toolchain from a language model.',
     links: [
       ['DayZ MCP', 'https://github.com/willy92wins/dayz-mcp', 'MCP server that lets an agent run and test a mod in game'],
       ['Modding Knowledge Pack', 'https://github.com/willy92wins/DayZ-Modding-Knowledge-Pack/', 'Agent skills and notes on scripts, models and infrastructure'],
@@ -68,10 +95,10 @@ export const COMMUNITY_SECTIONS = [
   {
     id: 'data',
     title: 'Game data & servers',
-    blurb: 'Item, object and map data, and what a live server is run with.',
     links: [
       ["Sam's Object Finder", 'https://samsobjectfinder.com/', 'Every placeable object, with types.xml entries and maps'],
       ['WOBO Tools', 'https://wobo.tools/', 'Item, weapon and loot data explorer'],
+      ['Central Economy Schema', 'https://github.com/rvost/DayZ-Central-Economy-Schema', 'Unofficial XSD schemas that validate types.xml and the rest'],
       ['iZurvive', 'https://izurvive.com/', 'Interactive maps with loot spawn layers'],
       ['CFTools Cloud', 'https://cftools.cloud/', 'Server management, player and ban tools'],
     ],
