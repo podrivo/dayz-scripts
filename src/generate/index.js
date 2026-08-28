@@ -217,17 +217,26 @@ function flushJobs() {
   timers.flush += since(t);
 }
 
-/** Wait for every queued write and link to exist on disk. */
+/** Wait for every queued write and link to exist on disk, then stop the pool. */
 function drainJobs() {
   flushJobs();
-  if (!batches) return Promise.resolve();
+  const stop = () => {
+    if (tty && showProgress) process.stdout.write('\n');
+    if (!workers) return;
+    for (const w of workers) w.terminate();
+    workers = null;
+  };
+  // All work may already have finished while the next build rendered. Still
+  // terminate: open workers keep the process alive after Done is printed, and
+  // that is what makes Netlify hit the build-command time limit.
+  if (!batches) {
+    stop();
+    return Promise.resolve();
+  }
   showProgress = true;
   return new Promise((resolve) => {
     drained = resolve;
-  }).then(() => {
-    if (tty) process.stdout.write('\n');
-    for (const w of workers) w.terminate();
-  });
+  }).then(stop);
 }
 
 // ---- static assets --------------------------------------------------------
