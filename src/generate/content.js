@@ -4,7 +4,7 @@
 
 /** Where the site is served from, for the absolute URLs that have to name it:
  *  the sitemap, robots.txt, and the canonical and OpenGraph tags on a page. */
-export const SITE_URL = 'https://dayz-scripts.yadz.app';
+export const SITE_URL = 'https://diff.yadz.app';
 
 /** The same Google Analytics property the Doxygen site reported to, so the
  *  two sets of numbers stay one series across the move. */

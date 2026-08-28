@@ -301,12 +301,13 @@ const moduleRedirects = [
   '/v/:build/module/* /v/:build/modules/:splat 301',
 ];
 
-// domain redirects preserved from the previous Doxygen site
+// every domain this site has been served from, pointing at the current one
 fs.writeFileSync(
   path.join(DIST_DIR, '_redirects'),
   [
     `https://dayz.yadz.app/* ${SITE_URL}/:splat 301!`,
     `https://dayz-docs.yadz.app/* ${SITE_URL}/:splat 301!`,
+    `https://dayz-scripts.yadz.app/* ${SITE_URL}/:splat 301!`,
     '/v/ / 302',
     ...moveRedirects,
     ...fieldRedirects,
