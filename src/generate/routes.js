@@ -10,7 +10,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { CACHE_DIR } from '../util.js';
-import { COMMUNITY } from './content.js';
 import { buildSearchIndex } from './search.js';
 import { buildApi, renderLlmsTxt } from './api.js';
 import { buildFileLinks, chainBuilder } from './srclinks.js';
@@ -155,9 +154,8 @@ export function* pages(site, opts) {
   };
 
   // Links off the site. Hand-maintained rather than derived, so it renders the
-  // same in every build and costs one stored copy across all of them. Behind
-  // the COMMUNITY flag; see src/generate/content.js.
-  if (COMMUNITY) yield page('community/', 'index', () => renderCommunity(ctx('community/')));
+  // same in every build and costs one stored copy across all of them.
+  yield page('community/', 'index', () => renderCommunity(ctx('community/')));
 
   // file pages with embedded source
   const fileModels = new Map(site.rawFiles.map((f) => [f.path, f]));

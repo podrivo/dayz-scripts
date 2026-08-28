@@ -7,7 +7,7 @@
 // See renderLlmsTxt for the index that points here.
 
 import { parseDoc } from '../parser/docparse.js';
-import { SITE_URL, COMMUNITY } from './content.js';
+import { SITE_URL } from './content.js';
 import { SITE_TITLE } from './html.js';
 
 const DPL = 'https://www.bohemia.net/community/licenses/dayz-public-license-dpl';
@@ -193,7 +193,7 @@ The script sources are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are
 - [Home](${SITE_URL}/): overview, official and community links, and the PC stable changelog
 - [Classes](${SITE_URL}/classes/): annotated class list
 - [Topics](${SITE_URL}/modules/): the \\defgroup groups the sources wrap themselves into
-- [Changelog](${SITE_URL}/changelog/): API diff between any two builds${COMMUNITY ? `
-- [Community](${SITE_URL}/community/): official references, Discord servers, editors, build tools and data explorers for DayZ modding` : ''}
+- [Changelog](${SITE_URL}/changelog/): API diff between any two builds
+- [Community](${SITE_URL}/community/): official references, Discord servers, editors, build tools and data explorers for DayZ modding
 `;
 }

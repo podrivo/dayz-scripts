@@ -16,17 +16,6 @@ export const REPO_URL = 'https://github.com/podrivo/dayz-scripts';
  *  two sets of numbers stay one series across the move. */
 export const ANALYTICS_ID = 'G-R8ZT2QC248';
 
-/**
- * Whether /community/ is part of the site. It is still being written, so it is
- * off by default and `npm run dev` turns it on; a build without the flag has
- * no such page, no nav entry for it, and nothing linking to it.
- *
- * The flag is read once at load, which is what makes that consistent: the page,
- * the nav and every link to it are gated on this one value, so no build can
- * advertise a page it did not write.
- */
-export const COMMUNITY = process.env.COMMUNITY === '1';
-
 export const OFFICIAL_LINKS = [
   ['DayZ.com', 'https://dayz.com/', 'Official game website and news'],
   ['DayZ Forums', 'https://forums.dayz.com/', 'Announcements and stable update threads'],

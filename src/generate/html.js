@@ -2,7 +2,7 @@
 // rendering. Pure template-literal functions, no dependencies.
 
 import { parseDoc } from '../parser/docparse.js';
-import { SITE_URL, ANALYTICS_ID, COMMUNITY } from './content.js';
+import { SITE_URL, ANALYTICS_ID } from './content.js';
 
 // Analytics, carried over from the Doxygen site so its numbers continue rather
 // than restart. Loaded async and last, after the script the page actually
@@ -227,7 +227,7 @@ const NAV = [
   ]],
   ['files/', 'Files'],
   ['changelog/', 'Changelog'],
-  ...(COMMUNITY ? [['community/', 'Community']] : []),
+  ['community/', 'Community'],
 ];
 
 /** Whether `active` names this branch or anything under it. */

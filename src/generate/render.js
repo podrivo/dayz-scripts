@@ -7,7 +7,7 @@ import {
 } from './html.js';
 import {
   OFFICIAL_LINKS, OFFICIAL_MODDING_LINKS, DISCORD_LINKS, COMMUNITY_SECTIONS,
-  FORUM_THREADS, VERSION_TITLES, YADZ_DISCORD, COMMUNITY, REPO_URL,
+  FORUM_THREADS, VERSION_TITLES, YADZ_DISCORD, REPO_URL,
 } from './content.js';
 
 function anchorFor(used, name) {
@@ -240,13 +240,8 @@ export function renderHome(ctx) {
 
   const releases = renderReleases(ctx);
 
-  // With /community/ up, this section is the servers to ask in and a pointer to
-  // the rest. Without it there is nowhere else for those links to be, so they
-  // all stay here — the flag must not cost the site links it already showed.
-  const communityLinks = COMMUNITY
-    ? `${linkCards(DISCORD_LINKS, true)}
-<p>The rest of what the community has built — editors, build tools, references, object and map data, and agent tooling — is on <a href="${base}community/">Community</a>.</p>`
-    : linkCards([...DISCORD_LINKS, ...COMMUNITY_SECTIONS.flatMap((s) => s.links)], true);
+  const communityLinks = `${linkCards(DISCORD_LINKS, true)}
+<p>The rest of what the community has built — editors, build tools, references, object and map data, and agent tooling — is on <a href="${base}community/">Community</a>.</p>`;
 
   const content = `
 <section class="hero">

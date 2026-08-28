@@ -82,11 +82,6 @@ npm test
 It loads the newest build once and renders whichever page you open; older
 builds work the same at `/v/<build>/`. Assets come straight from `site/`.
 
-`npm run dev` also sets `COMMUNITY=1`, which turns on `/community/` — a page of
-modding resources that is still being written, and so is absent from a plain
-build along with its nav entry and every link to it. Pass the same variable to
-`generate` to see it in a real `dist/`.
-
 Use `npm run preview` to check archive rewrites, redirects and the sitemap.
 After changing the parser, re-run with `FORCE_PARSE=1 npm run parse` (or
 `ONLY_VERSION=1.29` for one build) so the commit-sha cache is not reused.

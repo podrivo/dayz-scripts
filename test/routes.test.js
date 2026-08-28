@@ -8,7 +8,6 @@ import assert from 'node:assert/strict';
 import { parseFile } from '../src/parser/index.js';
 import { buildSiteModel } from '../src/generate/model.js';
 import { pages, resolve } from '../src/generate/routes.js';
-import { COMMUNITY } from '../src/generate/content.js';
 
 const SOURCE = `
 /** \\defgroup Topic Some topic
@@ -75,6 +74,7 @@ test('URLs resolve to the renderer they name', () => {
     ['hierarchy/', 'index'],
     ['files/', 'index'],
     ['changelog/', 'index'],
+    ['community/', 'index'],
     ['file/3_game/foo.c/', 'file'],
     ['search.json', 'search'],
   ]) {
@@ -88,15 +88,6 @@ test('an unknown URL resolves to nothing', () => {
   for (const rel of ['class/Nope/', 'enum/Nope/', 'nonsense/', 'class/Foo', 'annotated/', 'changes/', 'compare/', 'module/Topic/', 'globals/variables/']) {
     assert.equal(resolve(site, rel, opts), null, `${JSON.stringify(rel)} resolved`);
   }
-});
-
-// A flagged-off page must be missing from the site map, not just unlinked: the
-// nav, the home page and llms.txt all read the same flag, so a build either has
-// the page and advertises it or has neither.
-test('the community page is behind its flag, which is off by default', () => {
-  assert.equal(COMMUNITY, false);
-  assert.equal(resolve(site, 'community/', opts), null);
-  assert.ok(!all.some((p) => p.rel === 'community/'));
 });
 
 test('pages go under their directory, sidecars stand alone', () => {
