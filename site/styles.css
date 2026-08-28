@@ -1067,6 +1067,7 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
 .cmp-split > .cmp-col[data-op="added"] { grid-column: 2; background: color-mix(in srgb, var(--added) 7%, var(--bg)); }
 .cmp-split > .cmp-col h3 { margin: 0 0 10px; }
 .cmp-split .namegrid { margin: 0; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+.cmp-name { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; }
 .cmp-empty { margin: 0; color: var(--fg2); font-size: 13.5px; }
 .cmp-change {
   margin: 8px 0;
@@ -1090,7 +1091,13 @@ details.cmp-change { padding: 0; }
   transform: rotate(-90deg);
 }
 .cmp-change[open] > summary::after { transform: none; }
-.cmp-change-name { margin: 0 0 8px; font-weight: 600; }
+.cmp-change-name { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; font-weight: 600; }
+.cmp-builds { display: inline-flex; flex-wrap: wrap; gap: 3px; }
+.cmp-build {
+  padding: 1px 5px; border: 1px solid var(--line); border-radius: 4px;
+  color: var(--fg2); background: var(--bg2); font: 10px/1.4 ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+}
+.cmp-name .cmp-builds { margin-top: 2px; }
 .cmp-pair-head {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1113,6 +1120,7 @@ details.cmp-change { padding: 0; }
 .cmp-change summary + .cmp-pair { border-top: none; }
 .cmp-change > .cmp-pair:last-child { padding-bottom: 12px; }
 .cmp-pair .cmp-col { min-width: 0; }
+.cmp-pair > .cmp-builds { grid-column: 1 / -1; justify-self: end; }
 .cmp-pair code { white-space: pre-wrap; }
 .cmp-pair .old { text-decoration: line-through; opacity: 0.6; }
 .cmp-pair.removed code { text-decoration: line-through; opacity: 0.75; }

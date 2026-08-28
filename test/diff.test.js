@@ -177,6 +177,24 @@ test('a member changed twice folds to the first signature against the last', () 
   assert.doesNotMatch(row[2] + row[3], /float/, 'the build in the middle is not part of the answer');
 });
 
+test('a folded comparison keeps the build where every visible change landed', () => {
+  const steps = chain([
+    'class Foo { void A(int x); } class Old {}',
+    'class Foo { void A(float x); } class Fresh {}',
+    'class Foo { void A(string x); } class Fresh {} class Later {}',
+  ]).map((kinds, i) => ({ build: `1.0.${i + 1}`, kinds }));
+  const folded = foldDiffs(steps);
+
+  assert.equal(folded.class.landed.added.Fresh, '1.0.1');
+  assert.equal(folded.class.landed.added.Later, '1.0.2');
+  assert.equal(folded.class.landed.removed.Old, '1.0.1');
+  assert.deepEqual(folded.class.changed[0].rows[0].builds, ['1.0.1', '1.0.2']);
+
+  const reversed = invert(folded);
+  assert.equal(reversed.class.landed.removed.Fresh, '1.0.1');
+  assert.deepEqual(reversed.class.changed[0].rows[0].builds, ['1.0.1', '1.0.2']);
+});
+
 test('a member added and then removed again is reported by neither end', () => {
   assertFoldsToDirect([
     'class Foo { void A(); }',

@@ -58,20 +58,26 @@ const SCOPE = `Across ${KINDS.map((k) => k.label.toLowerCase()).join(', ')}`;
  * carries the before and the after — so the first row to mention a member
  * fixes where it started and every row moves where it ends up.
  */
-function foldRow(members, row) {
+function foldRow(members, row, build) {
   const [op, name] = row;
   let m = members.get(name);
   if (!m) members.set(name, (m = { was: op === ADDED ? undefined : row[2] }));
   m.now = op === REMOVED ? undefined : op === ADDED ? row[2] : row[3];
+  if (build && !m.builds?.includes(build)) (m.builds ||= []).push(build);
 }
 
 /** The net rows: what differs between the two endpoints, and nothing else. */
 function netRows(members) {
   const rows = [];
   for (const [name, m] of members) {
-    if (m.was === undefined && m.now !== undefined) rows.push([ADDED, name, m.now]);
-    else if (m.was !== undefined && m.now === undefined) rows.push([REMOVED, name, m.was]);
-    else if (m.was !== m.now) rows.push([CHANGED, name, m.was, m.now]);
+    let row;
+    if (m.was === undefined && m.now !== undefined) row = [ADDED, name, m.now];
+    else if (m.was !== undefined && m.now === undefined) row = [REMOVED, name, m.was];
+    else if (m.was !== m.now) row = [CHANGED, name, m.was, m.now];
+    if (row) {
+      if (m.builds) row.builds = m.builds;
+      rows.push(row);
+    }
     // Present and identical at both ends: it moved and moved back, and a
     // comparison of the endpoints has nothing to say about it.
   }
@@ -106,30 +112,50 @@ export function foldDiffs(steps) {
     };
 
     for (const step of steps) {
-      const k = step?.[key];
+      const build = step?.kinds ? step.build : undefined;
+      const k = (step?.kinds || step)?.[key];
       if (!k) continue;
-      for (const name of k.added) at(name, false).now = true;
-      for (const name of k.removed) at(name, true).now = false;
+      for (const name of k.added) {
+        const e = at(name, false);
+        e.now = true;
+        if (build) e.build = build;
+      }
+      for (const name of k.removed) {
+        const e = at(name, true);
+        e.now = false;
+        if (build) e.build = build;
+      }
       for (const entry of k.changed) {
         const e = at(entry.name, true);
         e.now = true;
-        for (const row of entry.rows) foldRow(e.members, row);
+        for (const row of entry.rows) foldRow(e.members, row, build);
       }
     }
 
     const added = [];
     const removed = [];
     const changed = [];
+    const landed = { added: {}, removed: {} };
     for (const [name, e] of state) {
-      if (!e.was && e.now) added.push(name);
-      else if (e.was && !e.now) removed.push(name);
+      if (!e.was && e.now) {
+        added.push(name);
+        if (e.build) landed.added[name] = e.build;
+      } else if (e.was && !e.now) {
+        removed.push(name);
+        if (e.build) landed.removed[name] = e.build;
+      }
       else if (e.was && e.now) {
         const rows = netRows(e.members);
         if (rows.length) changed.push({ name, rows });
       }
       // Absent at both ends: it appeared and was gone again inside the range.
     }
-    out[key] = canonical({ added, removed, changed });
+    out[key] = canonical({
+      added,
+      removed,
+      changed,
+      ...(Object.keys(landed.added).length || Object.keys(landed.removed).length ? { landed } : {}),
+    });
   }
   return out;
 }
@@ -167,36 +193,46 @@ const prefixFor = (build, latest) => `/${build === latest ? '' : `v/${build}/`}`
 
 const gap = '<span class="cmp-gap" aria-hidden="true">—</span>';
 
-function pairHtml(row) {
+function buildsHtml(builds) {
+  if (!builds?.length) return '';
+  return `<span class="cmp-builds" title="Change landed in ${esc(builds.join(', '))}">` +
+    builds.map((build) => `<span class="cmp-build">${esc(build)}</span>`).join('') +
+    '</span>';
+}
+
+function pairHtml(row, showBuilds) {
   const left = row[0] === ADDED ? gap : `<code class="old">${esc(row[2])}</code>`;
   const right = row[0] === REMOVED ? gap : `<code>${esc(row[0] === CHANGED ? row[3] : row[2])}</code>`;
   const op = row[0] === ADDED ? 'added' : row[0] === REMOVED ? 'removed' : 'changed';
-  return `<div class="cmp-pair ${op}"><div class="cmp-col">${left}</div><div class="cmp-col">${right}</div></div>`;
+  return `<div class="cmp-pair ${op}"><div class="cmp-col">${left}</div><div class="cmp-col">${right}</div>` +
+    `${showBuilds ? buildsHtml(row.builds) : ''}</div>`;
 }
 
 /**
  * One name, as a filterable unit. `data-text` is what the filter matches and
  * `data-op` what the totals select, so narrowing never re-renders anything.
  */
-function nameHtml(kind, name, op, prefix) {
-  return `<a class="cmp-name" data-op="${op}" data-text="${esc(name.toLowerCase())}"` +
-    ` href="${prefix}${kind.url(name)}">${esc(name)}</a>`;
+function nameHtml(kind, name, op, prefix, build) {
+  return `<a class="cmp-name" data-op="${op}" data-text="${esc(`${name} ${build || ''}`.toLowerCase())}"` +
+    ` href="${prefix}${kind.url(name)}"><span>${esc(name)}</span>${buildsHtml(build ? [build] : null)}</a>`;
 }
 
 function changedHtml(kind, entry, prefix, open) {
-  const pairs = entry.rows.map(pairHtml).join('');
-  const text = esc(`${entry.name} ${entry.rows.map((r) => r.slice(1).join(' ')).join(' ')}`.toLowerCase());
+  const builds = [...new Set(entry.rows.flatMap((row) => row.builds || []))].sort(cmp);
+  const pairs = entry.rows.map((row) => pairHtml(row, entry.rows.length > 1)).join('');
+  const text = esc(`${entry.name} ${builds.join(' ')} ${entry.rows.map((r) => r.slice(1).join(' ')).join(' ')}`.toLowerCase());
   const link = `<a href="${prefix}${kind.url(entry.name)}">${esc(entry.name)}</a>`;
+  const heading = `${link} ${buildsHtml(builds)}`;
   // One before-and-after line is not worth hiding behind a disclosure; a class
   // with nine changed methods is.
   return entry.rows.length > 1
-    ? `<details class="cmp-unit cmp-change" data-op="changed" data-text="${text}"${open ? ' open' : ''}><summary>${link} <span class="count">${entry.rows.length}</span></summary>${pairs}</details>`
-    : `<div class="cmp-unit cmp-change" data-op="changed" data-text="${text}"><p class="cmp-change-name">${link}</p>${pairs}</div>`;
+    ? `<details class="cmp-unit cmp-change" data-op="changed" data-text="${text}"${open ? ' open' : ''}><summary>${heading} <span class="count">${entry.rows.length}</span></summary>${pairs}</details>`
+    : `<div class="cmp-unit cmp-change" data-op="changed" data-text="${text}"><p class="cmp-change-name">${heading}</p>${pairs}</div>`;
 }
 
-function colHtml(op, list, kind, prefix) {
+function colHtml(op, list, kind, prefix, landed) {
   const names = list.length
-    ? `<div class="namegrid">${list.map((n) => nameHtml(kind, n, op, prefix)).join('')}</div>`
+    ? `<div class="namegrid">${list.map((n) => nameHtml(kind, n, op, prefix, landed?.[n])).join('')}</div>`
     : '<p class="cmp-empty">None</p>';
   return `<div class="cmp-col" data-op="${op}">
 <h3 data-op="${op}">${OPS[op].label} <span class="count">${num(list.length)}</span></h3>
@@ -229,8 +265,8 @@ function groupsHtml(diff, fromPrefix, toPrefix) {
       const parts = [];
       if (k.added.length || k.removed.length) {
         parts.push(`<div class="cmp-split">
-${colHtml('removed', k.removed, kind, fromPrefix)}
-${colHtml('added', k.added, kind, toPrefix)}
+${colHtml('removed', k.removed, kind, fromPrefix, k.landed?.removed)}
+${colHtml('added', k.added, kind, toPrefix, k.landed?.added)}
 </div>`);
       }
       if (k.changed.length) {
@@ -364,7 +400,7 @@ export function initCompare({ builds, fmtDate, current }) {
       return;
     }
 
-    let diff = foldDiffs(steps.map((s) => s.kinds));
+    let diff = foldDiffs(steps.map((s, i) => ({ build: runs[i], kinds: s.kinds })));
     if (reversed) diff = invert(diff);
 
     const tally = (op) => KINDS.reduce((n, k) => n + diff[k.key][op].length, 0);
@@ -578,12 +614,17 @@ export function invert(diff) {
     out[key] = canonical({
       added: [...k.removed],
       removed: [...k.added],
-      changed: k.changed.map((e) => ({
-        name: e.name,
-        rows: e.rows.map((r) => (r[0] === CHANGED
-          ? [CHANGED, r[1], r[3], r[2]]
-          : [r[0] === ADDED ? REMOVED : ADDED, r[1], r[2]])),
-      })),
+      changed: k.changed.map((e) => {
+        const rows = e.rows.map((r) => {
+          const row = r[0] === CHANGED
+            ? [CHANGED, r[1], r[3], r[2]]
+            : [r[0] === ADDED ? REMOVED : ADDED, r[1], r[2]];
+          if (r.builds) row.builds = r.builds;
+          return row;
+        });
+        return { name: e.name, rows };
+      }),
+      ...(k.landed ? { landed: { added: k.landed.removed, removed: k.landed.added } } : {}),
     });
   }
   return out;
