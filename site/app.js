@@ -429,6 +429,7 @@
      Ctrl+K or `/`, rather than an always-visible field in the header. */
   function openPalette() {
     if (!palette || !palette.hidden) return;
+    closeHelp(); // one overlay at a time: both hold the body's scroll
     palette.hidden = false;
     document.body.classList.add('palette-open');
     input.focus();
@@ -478,6 +479,96 @@
       }
     });
   }
+
+  /* ---------- keyboard shortcuts ----------
+     The header's button names ⌘K and the palette's hint strip names the arrows
+     and Enter, but `/`, M and Esc were written down nowhere except, for M, the
+     title of the theme button. Built on the first ? rather than shipped in the
+     markup, for the reason the table of contents is: it is chrome nobody has
+     asked for yet, and the pages it would otherwise sit on number in the
+     hundreds of thousands. The overlay wears the palette's own box and
+     backdrop, so a second modal costs no second set of styles. */
+  const SHORTCUTS = [
+    [[/Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent) ? '⌘ K' : 'Ctrl K', '/'], 'Search'],
+    [['↑', '↓'], 'Move through the results'],
+    [['↵'], 'Open the selected result'],
+    [['M'], 'Switch between light and dark'],
+    [['?'], 'This list'],
+    [['Esc'], 'Close an overlay, or clear the page filter'],
+  ];
+
+  let help = null;
+  let helpFrom = null;
+
+  function buildHelp() {
+    const wrap = document.createElement('div');
+    wrap.className = 'palette help';
+    wrap.hidden = true;
+    const box = document.createElement('div');
+    box.className = 'palette-box help-box';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-label', 'Keyboard shortcuts');
+    box.tabIndex = -1;
+    const title = document.createElement('p');
+    title.className = 'help-title';
+    title.textContent = 'Keyboard shortcuts';
+    const list = document.createElement('dl');
+    list.className = 'help-list';
+    for (const [keys, what] of SHORTCUTS) {
+      const dt = document.createElement('dt');
+      keys.forEach((k, i) => {
+        if (i) dt.append(document.createTextNode(' '));
+        const kbd = document.createElement('kbd');
+        kbd.textContent = k;
+        dt.append(kbd);
+      });
+      const dd = document.createElement('dd');
+      dd.textContent = what;
+      list.append(dt, dd);
+    }
+    box.append(title, list);
+    wrap.append(box);
+    wrap.addEventListener('click', (e) => {
+      if (!e.target.closest('.help-box')) closeHelp();
+    });
+    document.body.append(wrap);
+    return wrap;
+  }
+
+  function openHelp() {
+    help ||= buildHelp();
+    if (!help.hidden) return;
+    closePalette();
+    helpFrom = document.activeElement;
+    help.hidden = false;
+    document.body.classList.add('palette-open');
+    $('.help-box', help).focus();
+  }
+
+  function closeHelp() {
+    if (!help || help.hidden) return;
+    help.hidden = true;
+    document.body.classList.remove('palette-open');
+    helpFrom?.focus?.();
+  }
+
+  // The palette's hint strip is the one place a shortcut is already spelled out
+  // on the page, which makes it the place this one can be found.
+  const paletteHints = palette && $('.palette-hints', palette);
+  if (paletteHints) {
+    const kbd = document.createElement('kbd');
+    kbd.textContent = '?';
+    paletteHints.append(document.createTextNode(' · '), kbd, document.createTextNode(' for shortcuts'));
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === 'Escape') { closeHelp(); return; }
+    if (e.key !== '?' || /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) return;
+    e.preventDefault();
+    help && !help.hidden ? closeHelp() : openHelp();
+  });
 
   /* ---------- changelog ----------
      The one page whose behaviour is fetched rather than shipped. /changelog/ is
@@ -1017,12 +1108,13 @@
      nine hundred buttons is a page's worth of DOM for an affordance only one
      is ever using. */
   function copyText(text, btn) {
+    const label = btn.getAttribute('aria-label');
     navigator.clipboard?.writeText(text).then(() => {
       btn.classList.add('copied');
       btn.setAttribute('aria-label', 'Copied');
       setTimeout(() => {
         btn.classList.remove('copied');
-        btn.setAttribute('aria-label', 'Copy');
+        btn.setAttribute('aria-label', label);
       }, 1200);
     }, () => {});
   }
@@ -1053,17 +1145,85 @@
     box.prepend(btn);
   }
 
+  /* ---------- copy as an override ----------
+     Every script mod starts the same way: a modded class, the signature of the
+     thing being changed copied out by hand, and a super call so the vanilla
+     behaviour still runs underneath. The page already holds that signature in
+     a form precise enough to build the stub from — modifiers are keyword
+     spans, parameter names are spans of their own — so it is assembled here
+     rather than shipped with the page.
+
+     Offered only where an override would compile. A proto or native method is
+     implemented by the engine and has no script body to extend, a static or
+     private one cannot be reached through a subclass, and a constructor is not
+     a method. A stub that cannot build is worse than no stub, since the
+     compiler reports it against the mod rather than against this page. */
+  const NO_OVERRIDE = new Set(['proto', 'native', 'static', 'private']);
+
+  /** The `modded class` stub for one signature, or null if it cannot be one. */
+  function overrideStub(code, cls) {
+    const fn = $('.fn', code);
+    const name = fn?.textContent;
+    // A variable's name is a .vn, so anything without a .fn is not a method;
+    // a constructor or destructor is named after the class and cannot be one.
+    if (!name || name === cls || name === `~${cls}`) return null;
+    const text = code.textContent;
+    const open = text.indexOf('(');
+    const close = text.lastIndexOf(')');
+    if (open < 0 || close < open) return null;
+
+    // The modifiers are the keyword spans ahead of the name. Keywords after it
+    // are inside the parentheses, where they belong to a parameter and are
+    // part of the signature being repeated.
+    const mods = [...code.querySelectorAll('.kw')]
+      .filter((k) => k.compareDocumentPosition(fn) & Node.DOCUMENT_POSITION_FOLLOWING)
+      .map((k) => k.textContent);
+    if (mods.some((m) => NO_OVERRIDE.has(m))) return null;
+
+    // Whatever is left of the head once the modifiers and the name are gone is
+    // the return type, which can hold spaces of its own: `ref map<int, int>`.
+    let ret = text.slice(0, open).trim();
+    for (const m of mods) ret = ret.replace(new RegExp(`^${m}\\s+`), '');
+    ret = ret.slice(0, -name.length).trim();
+
+    const params = text.slice(open + 1, close).trim();
+    const call = `super.${name}(${[...code.querySelectorAll('.pn')].map((p) => p.textContent).join(', ')})`;
+    /* Everything the exclusions above leave behind is `protected` or `event`,
+       every other modifier in the sources being proto's company, and both are
+       part of the declaration an override repeats: the vanilla spelling is
+       `protected override event`, with the keyword between the two. */
+    const keep = (m) => (mods.includes(m) ? [m] : []);
+    const decl = [...keep('protected'), 'override', ...keep('event'), ret, `${name}(${params})`]
+      .filter(Boolean).join(' ');
+    const body = !ret || ret === 'void' ? `${call};` : `return ${call};`;
+    return `modded class ${cls}\n{\n\t${decl}\n\t{\n\t\t${body}\n\t}\n}\n`;
+  }
+
   if (main) {
     const sigCopy = copyButton();
     sigCopy.classList.add('copy-sig');
+    // Only a class page can name what the stub would be modding.
+    const cls = /^class\/([^/]+)\/$/.exec(VPATH)?.[1];
+    const sigOverride = cls && copyButton();
+    if (sigOverride) {
+      sigOverride.classList.add('copy-override');
+      sigOverride.title = `Copy a modded class ${cls} override of this method`;
+      sigOverride.setAttribute('aria-label', 'Copy override');
+    }
     let sigFor = null;
+    let stub = null;
     sigCopy.addEventListener('click', () => sigFor && copyText(sigFor.textContent.trim(), sigCopy));
+    sigOverride?.addEventListener('click', () => stub && copyText(stub, sigOverride));
     main.addEventListener('pointerover', (e) => {
       const sig = e.target.closest?.('.member-sig');
       const code = sig && $('code', sig);
       if (!code || code === sigFor) return;
       sigFor = code;
       sig.append(sigCopy);
+      if (!sigOverride) return;
+      stub = overrideStub(code, cls);
+      if (stub) sig.append(sigOverride);
+      else sigOverride.remove();
     });
   }
 

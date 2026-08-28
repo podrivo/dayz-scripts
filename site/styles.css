@@ -343,6 +343,25 @@ html.brand-snap .search-trigger, html.brand-snap .search-trigger > span, html.br
 }
 body.palette-open { overflow: hidden; }
 
+/* ---- keyboard shortcuts overlay ----
+   Wears .palette and .palette-box for its backdrop and frame; only the list
+   inside is its own. Narrower than the search box, which is sized for result
+   rows rather than for six short lines. */
+.help-box { max-width: 400px; }
+.help-box:focus-visible { outline: none; }
+.help-title { margin: 0; padding: 16px 18px 10px; font-size: 14px; font-weight: 600; }
+.help-list {
+  display: grid; grid-template-columns: auto 1fr; align-items: center;
+  gap: 9px 14px; margin: 0; padding: 0 18px 16px;
+}
+.help-list dt { display: flex; gap: 4px; justify-content: flex-end; }
+.help-list dd { margin: 0; color: var(--fg2); font-size: 13.5px; }
+.help-list kbd {
+  padding: 1px 6px; border: 1px solid var(--line); border-radius: 4px;
+  background: var(--bg2); color: var(--fg2);
+  font-size: 11px; line-height: 17px; white-space: nowrap;
+}
+
 /* no flex-grow: the box hugs its results instead of filling the viewport */
 .search-results { min-height: 0; overflow: auto; padding: 6px; }
 .search-results a {
@@ -856,8 +875,13 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 .has-copy { position: relative; }
 .copy-block { position: absolute; top: 8px; right: 8px; z-index: 2; opacity: 0; }
 .has-copy:hover .copy-block, .copy-block:focus-visible, .copy-block.copied { opacity: 1; }
-.copy-sig { margin-left: 2px; opacity: 0; }
-.member-sig:hover .copy-sig, .copy-sig:focus-visible, .copy-sig.copied { opacity: 1; }
+.copy-sig, .copy-override { margin-left: 2px; opacity: 0; }
+.member-sig:hover .copy-sig, .copy-sig:focus-visible, .copy-sig.copied,
+.member-sig:hover .copy-override, .copy-override:focus-visible,
+.copy-override.copied { opacity: 1; }
+/* Specificity keeps .copy-btn.copied::before ahead of this one, so the label
+   still becomes "Copied" for the moment after a click. */
+.copy-override::before { content: "Override"; }
 .tok-kw { color: var(--kw); } .tok-str { color: var(--str); } .tok-num { color: var(--num); }
 .tok-com { color: var(--com); font-style: italic; } .tok-pre { color: var(--pre); }
 .tok-type { color: var(--fn); }
