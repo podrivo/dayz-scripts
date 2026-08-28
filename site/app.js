@@ -503,7 +503,12 @@
       line += newlines(gap);
       last = TOKEN_RE.lastIndex;
       if (m[1]) { out += span('tok-com', m[1]); line += newlines(m[1]); }
-      else if (m[2]) { out += `<span class="tok-str">${esc(m[2])}</span>`; line += newlines(m[2]); }
+      else if (m[2]) {
+        const body = `<span class="tok-str">${esc(m[2])}</span>`;
+        const href = resolve && resolve.str && resolve.str(m[2]);
+        out += href ? `<a class="tok-link" href="${href}">${body}</a>` : body;
+        line += newlines(m[2]);
+      }
       else if (m[3]) out += `<span class="tok-pre">${esc(m[3])}</span>`;
       else if (m[4]) out += `<span class="tok-num">${esc(m[4])}</span>`;
       else if (m[5]) {
@@ -531,6 +536,10 @@
    * index, where it is linked only if exactly one declaration claims it.
    * Anything still ambiguous is left as plain text, which is what Doxygen did
    * with a name it could not resolve either.
+   *
+   * A quoted string that is exactly a class or enum name, or that names a
+   * script file this build has (uniquely, by path or basename), is linked
+   * the same way. Game-data paths are left alone: those files are not here.
    */
   function sourceResolver(links) {
     const map = new Map();
@@ -573,7 +582,20 @@
       return best?.[2];
     };
 
-    return (name, line) => {
+    const types = new Map();
+    for (const n of list('classes')) types.set(n, `class/${n}/`);
+    for (const n of list('enums')) types.set(n, `enum/${n}/`);
+
+    const fileByLower = new Map();
+    const fileByBase = new Map();
+    for (const p of list('files')) {
+      const url = `files/${p.toLowerCase()}/`;
+      fileByLower.set(p.toLowerCase(), url);
+      const base = p.split('/').pop().toLowerCase();
+      fileByBase.set(base, fileByBase.has(base) ? null : url);
+    }
+
+    const resolve = (name, line) => {
       const chain = line && chainAt(line);
       const os = chain && owners.get(name);
       if (os) {
@@ -584,6 +606,21 @@
       const url = map.get(name);
       return url ? BASE + url : null;
     };
+
+    resolve.str = (quoted) => {
+      const inner = quoted.slice(1, -1).replace(/\\(.)/g, '$1');
+      if (!inner) return null;
+      const type = types.get(inner);
+      if (type) return BASE + type;
+      const path = inner.replace(/\\/g, '/').replace(/^\/+/, '').replace(/^scripts\//i, '');
+      const exact = fileByLower.get(path.toLowerCase());
+      if (exact) return BASE + exact;
+      const base = path.split('/').pop().toLowerCase();
+      if (base.includes('.') && fileByBase.get(base)) return BASE + fileByBase.get(base);
+      return null;
+    };
+
+    return resolve;
   }
 
   // source view: highlight + line numbers + deep links
