@@ -322,7 +322,7 @@ export let lastPacked = '';
 function titleKind(vpath) {
   if (vpath.startsWith('class/')) return 'Class';
   if (vpath.startsWith('enum/')) return 'Enum';
-  if (vpath.startsWith('file/')) return 'File';
+  if (vpath.startsWith('files/') && vpath !== 'files/') return 'File';
   if (vpath.startsWith('modules/') && vpath !== 'modules/') return 'Topic';
   return '';
 }

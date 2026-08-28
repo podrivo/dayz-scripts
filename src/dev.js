@@ -173,6 +173,7 @@ function relocated(rel) {
   if (rel === 'globals/variables/') return 'globals/constants/';
   if (rel.startsWith('fields/')) return `classes/${rel}`;
   if (rel.startsWith('module/')) return `modules/${rel.slice('module/'.length)}`;
+  if (rel.startsWith('file/')) return `files/${rel.slice('file/'.length)}`;
   return null;
 }
 

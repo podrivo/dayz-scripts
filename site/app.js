@@ -263,7 +263,7 @@
     d: ['macro', (n, o) => `globals/macros/#${o}`],
     g: ['topic', (n, o) => `modules/${o}/`],
     // Paths are indexed as displayed; the URL is that spelling lowercased.
-    F: ['file', (n, o) => `file/${o.toLowerCase()}/`],
+    F: ['file', (n, o) => `files/${o.toLowerCase()}/`],
   };
 
   /* Which kinds carry a real owner, and so can be narrowed by one. */

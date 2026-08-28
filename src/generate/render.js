@@ -22,7 +22,7 @@ function anchorFor(used, name) {
 }
 
 function fileHref(base, path) {
-  return `${base}file/${path.replace(/^scripts\//, '')}/`;
+  return `${base}files/${path.replace(/^scripts\//, '')}/`;
 }
 
 /** How many callers to show, and the point past which the rest are only

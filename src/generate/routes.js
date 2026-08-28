@@ -161,7 +161,7 @@ export function* pages(site, opts) {
   const fileModels = new Map(site.rawFiles.map((f) => [f.path, f]));
   let chainOf;
   for (const f of site.files) {
-    const rel = `file/${f.path.replace(/^scripts\//, '')}/`;
+    const rel = `files/${f.path.replace(/^scripts\//, '')}/`;
     // The blob sha is the whole dependency: renderFile reads nothing off the
     // site model, and the decls it lists are a pure function of these bytes.
     yield page(
