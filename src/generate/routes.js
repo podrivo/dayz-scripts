@@ -18,6 +18,7 @@ import {
   renderHome, renderAnnotated, renderClassesIndex, renderClassesLetter, renderClass,
   renderClassMembers, renderFields, renderEnum, renderGlobals, renderModulesIndex,
   renderModule, renderFilesIndex, renderFile, renderHierarchy, renderCompare,
+  renderCommunity,
 } from './render.js';
 
 /**
@@ -151,6 +152,10 @@ export function* pages(site, opts) {
       return JSON.stringify(diff ? { prev: prevLabel, kinds: diff } : { prev: null });
     },
   };
+
+  // Links off the site. Hand-maintained rather than derived, so it renders the
+  // same in every build and costs one stored copy across all of them.
+  yield page('community/', 'index', () => renderCommunity(ctx('community/')));
 
   // file pages with embedded source
   const fileModels = new Map(site.rawFiles.map((f) => [f.path, f]));

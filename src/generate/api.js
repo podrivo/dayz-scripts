@@ -190,9 +190,10 @@ The script sources are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are
 
 ## Human documentation
 
-- [Home](${SITE_URL}/): overview, community links and the PC stable changelog
+- [Home](${SITE_URL}/): overview, official links and the PC stable changelog
 - [Classes](${SITE_URL}/classes/): annotated class list
 - [Topics](${SITE_URL}/modules/): the \\defgroup groups the sources wrap themselves into
 - [Changelog](${SITE_URL}/changelog/): API diff between any two builds
+- [Community](${SITE_URL}/community/): official references, Discord servers, editors, build tools and data explorers for DayZ modding
 `;
 }

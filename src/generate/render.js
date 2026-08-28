@@ -6,7 +6,8 @@ import {
   SITE_TITLE,
 } from './html.js';
 import {
-  OFFICIAL_LINKS, COMMUNITY_LINKS, FORUM_THREADS, VERSION_TITLES, YADZ_DISCORD,
+  OFFICIAL_LINKS, DISCORD_LINKS, COMMUNITY_SECTIONS, FORUM_THREADS, VERSION_TITLES,
+  YADZ_DISCORD,
 } from './content.js';
 
 function anchorFor(used, name) {
@@ -207,14 +208,9 @@ ${items}
     .join('\n');
 }
 
-export function renderHome(ctx) {
-  const { site, base, root, versions } = ctx;
-  const s = site.stats;
-
-  const stat = (n, label, href) =>
-    `<a class="stat" href="${href}"><strong>${n.toLocaleString('en-US')}</strong><span>${label}</span></a>`;
-
-  const linkCards = (links, ext = false) => `<div class="cards">
+/** Grid of [label, url, description] cards. `ext` marks them as leaving. */
+function linkCards(links, ext = false) {
+  return `<div class="cards">
 ${links
   .map(
     ([label, url, desc]) => `<a class="card${ext ? ' card-ext' : ''}" href="${url}"${ext ? ` ${EXT}` : ''}>
@@ -224,6 +220,14 @@ ${links
   )
   .join('\n')}
 </div>`;
+}
+
+export function renderHome(ctx) {
+  const { site, base, root, versions } = ctx;
+  const s = site.stats;
+
+  const stat = (n, label, href) =>
+    `<a class="stat" href="${href}"><strong>${n.toLocaleString('en-US')}</strong><span>${label}</span></a>`;
 
   const explore = [
     ['PlayerBase', `${base}class/PlayerBase/`, 'The player entity'],
@@ -270,7 +274,8 @@ ${linkCards(explore)}
 <h2 id="official-links">Official links</h2>
 ${linkCards(OFFICIAL_LINKS, true)}
 <h2 id="community-links">Community links</h2>
-${linkCards(COMMUNITY_LINKS, true)}
+${linkCards(DISCORD_LINKS, true)}
+<p>The rest of what the community has built — editors, build tools, references, object and map data, and agent tooling — is on <a href="${base}community/">Community</a>.</p>
 <h2 id="changelog">PC Stable Changelog</h2>
 <div class="releases">
 ${releases}
@@ -1144,6 +1149,43 @@ export function renderCompare(ctx) {
     active: 'changelog/',
     description: 'What changed in the DayZ Enforce Script API between two game builds.',
     breadcrumbs: [{ label: 'Changelog' }],
+    content,
+  });
+}
+
+/**
+ * Where to go for everything this site does not cover. The API is generated,
+ * but almost nothing explains it: the answers live in Discord pins, community
+ * wikis and other people's tools, so they get a page rather than a paragraph.
+ *
+ * The lists are hand-maintained in src/generate/content.js. Nothing here is
+ * derived from a build, so these bytes are identical across all of them and
+ * the page keeps its hard link; see layout() in src/generate/html.js.
+ */
+export function renderCommunity(ctx) {
+  const section = ({ id, title, blurb, links }) => `<h2 id="${id}">${esc(title)}</h2>
+<p>${esc(blurb)}</p>
+${linkCards(links, true)}`;
+
+  const content = `
+<h1>Community</h1>
+<p>Most of the DayZ script API carries no documentation, and there is no official reference that fills the gap. These are the places that do: the official pages that exist, the servers where questions get answered, and the tools and references the community maintains.</p>
+<p>Have something that belongs here? Suggest it on <a href="${YADZ_DISCORD}" ${EXT}>YADZ's Discord</a>.</p>
+<h2 id="official">Official</h2>
+<p>Bohemia Interactive's own pages, including the syntax reference for the language itself.</p>
+${linkCards(OFFICIAL_LINKS, true)}
+<h2 id="discord">Discord servers</h2>
+<p>Where scripting questions actually get answered. Read the pinned messages first — most recurring questions are already there.</p>
+${linkCards(DISCORD_LINKS, true)}
+${COMMUNITY_SECTIONS.map(section).join('\n')}
+<p class="muted">Everything outside the official section is community-made: not affiliated with, endorsed by, or supported by DayZ or Bohemia Interactive, and each carries its own license and terms. Links are offered as-is.</p>`;
+
+  return layout({
+    ...ctx,
+    title: 'Community',
+    active: 'community/',
+    description: 'DayZ modding resources: official references, Discord servers, editors, build tools, object and map data, and agent tooling.',
+    breadcrumbs: [{ label: 'Community' }],
     content,
   });
 }

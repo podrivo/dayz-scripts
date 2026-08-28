@@ -74,6 +74,7 @@ test('URLs resolve to the renderer they name', () => {
     ['hierarchy/', 'index'],
     ['files/', 'index'],
     ['changelog/', 'index'],
+    ['community/', 'index'],
     ['file/3_game/foo.c/', 'file'],
     ['search.json', 'search'],
   ]) {

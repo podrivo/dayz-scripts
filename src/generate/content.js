@@ -1,6 +1,7 @@
-// Hand-maintained homepage content: community resources plus the official
-// forum thread for each PC stable update. None of it can be derived from the
-// script sources, so it lives here and grows as new builds ship.
+// Hand-maintained content for the home page and /community/: links off the
+// site, plus the official forum thread for each PC stable update. None of it
+// can be derived from the script sources, so it lives here and grows as new
+// builds ship.
 
 /** Where the site is served from, for the absolute URLs that have to name it:
  *  the sitemap, robots.txt, and the canonical and OpenGraph tags on a page. */
@@ -14,21 +15,67 @@ export const OFFICIAL_LINKS = [
   ['DayZ.com', 'https://dayz.com/', 'Official game website and news'],
   ['DayZ Forums', 'https://forums.dayz.com/', 'Announcements and stable update threads'],
   ['Community Wiki', 'https://community.bistudio.com/wiki/Category:DayZ', 'Bohemia Interactive wiki pages for DayZ'],
+  ['Enforce Script Syntax', 'https://community.bistudio.com/wiki/DayZ:Enforce_Script_Syntax', 'The language itself: types, operators and keywords'],
   ['Feedback Tracker', 'https://feedback.bistudio.com/tag/dayz/', 'Report bugs and follow known issues'],
   ['GitHub Repositories', 'https://github.com/orgs/BohemiaInteractive/repositories?q=dayz', 'Official Bohemia Interactive DayZ repos'],
   ['DayZ Tools', 'https://store.steampowered.com/app/830640/DayZ_Tools/', 'Official modding tools on Steam'],
 ];
 
-export const COMMUNITY_LINKS = [
+/** The servers to ask in. On the home page as well as /community/, since the
+ *  page above them tells a newcomer to go read their pinned messages. */
+export const DISCORD_LINKS = [
   ['DayZ Modders', 'https://discord.gg/dayz-modders-452035973786632194', 'Discord · modding and scripting help'],
   ['DayZ Academy', 'https://discord.gg/BMnpGEzKdx', 'Discord · modders and server owners'],
   ['DayZ Editor', 'https://discord.gg/dayz-editor-738181536029081662', 'Discord · support for the DayZ Editor mod'],
-  ["Mikero's Tools", 'https://mikero.bytex.digital/', 'PBO packing and file conversion tools'],
-  ['WOBO Tools', 'https://wobo.tools/', 'Item, weapon and loot data explorer'],
-  ['DayZ Wiki', 'https://dayz.wiki.gg/', 'Community-run gameplay and item wiki'],
-  ['iZurvive', 'https://izurvive.com/', 'Interactive maps with loot spawn layers'],
-  ['CFTools Cloud', 'https://cftools.cloud/', 'Server management, player and ban tools'],
-  ['DayZ Expansion', 'https://dayzexpansion.com/', 'Mod framework wiki, guides and configuration'],
+];
+
+/**
+ * What the community has built around the scripts, grouped the way /community/
+ * lists it. None of it is official, endorsed, or vetted here beyond being
+ * something a scripter actually reaches for.
+ */
+export const COMMUNITY_SECTIONS = [
+  {
+    id: 'reference',
+    title: 'Reference & guides',
+    blurb: 'Written explanations of what the sources do not say out loud.',
+    links: [
+      ['Enforce Script cheat sheet', 'https://gist.github.com/creativ3lab/49a4055c6b5c87d2c9ccb08ad04d5b86', 'The syntax reference as one scrollable page'],
+      ['DayZ Wiki', 'https://dayz.wiki.gg/', 'Community-run gameplay and item wiki'],
+      ['DayZ Expansion', 'https://dayzexpansion.com/', 'Mod framework wiki, guides and configuration'],
+    ],
+  },
+  {
+    id: 'tooling',
+    title: 'Editors & tooling',
+    blurb: 'What you write, pack and sign a mod with.',
+    links: [
+      ['EnScript for VS Code', 'https://marketplace.visualstudio.com/items?itemName=forestbelton.bohemia-enscript', 'Enforce Script highlighting and language support'],
+      ["Mikero's Tools", 'https://mikero.bytex.digital/', 'PBO packing and file conversion tools'],
+      ['RaG DayZ Tools', 'https://github.com/Tyson89/RaG-DayZ-Tools', 'PBO builder, inspector and game data extractor'],
+      ['DayZ Labs', 'https://borcioo.github.io/dayz-labs/', 'Dev launcher for server, client, builds and logs'],
+    ],
+  },
+  {
+    id: 'agents',
+    title: 'Agents & automation',
+    blurb: 'Driving the game and the toolchain from a language model.',
+    links: [
+      ['DayZ MCP', 'https://github.com/willy92wins/dayz-mcp', 'MCP server that lets an agent run and test a mod in game'],
+      ['Modding Knowledge Pack', 'https://github.com/willy92wins/DayZ-Modding-Knowledge-Pack/', 'Agent skills and notes on scripts, models and infrastructure'],
+    ],
+  },
+  {
+    id: 'data',
+    title: 'Game data & servers',
+    blurb: 'Item, object and map data, and what a live server is run with.',
+    links: [
+      ["Sam's Object Finder", 'https://samsobjectfinder.com/', 'Every placeable object, with types.xml entries and maps'],
+      ['WOBO Tools', 'https://wobo.tools/', 'Item, weapon and loot data explorer'],
+      ['iZurvive', 'https://izurvive.com/', 'Interactive maps with loot spawn layers'],
+      ['CFTools Cloud', 'https://cftools.cloud/', 'Server management, player and ban tools'],
+    ],
+  },
 ];
 
 export const YADZ_DISCORD = 'https://discord.gg/nbrHqZCpA6';

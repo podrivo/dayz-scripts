@@ -195,6 +195,8 @@ export function briefOf(rawDoc, site, base) {
 // it listed Examples, and Globals lifted next to Files so the two are not
 // one menu. Labels are the DayZ names (Topics, Classes, Members) rather
 // than Doxygen's C-mode ones (Modules, Data Structures, Data Fields).
+// Community is the one entry with no Doxygen counterpart: the generated API
+// is most of this site, and the rest of the answers are off it.
 // Sections are links to their own overview as well as headings, and repeat
 // that overview as their first child the way Doxygen did, so the page a
 // section lands on is also visible as a place you are.
@@ -225,6 +227,7 @@ const NAV = [
   ]],
   ['files/', 'Files'],
   ['changelog/', 'Changelog'],
+  ['community/', 'Community'],
 ];
 
 /** Whether `active` names this branch or anything under it. */
