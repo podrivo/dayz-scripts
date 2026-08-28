@@ -750,6 +750,37 @@ table.list td:first-child > code { white-space: normal; }
 }
 .enum-table .note-community { margin: 6px 0 0; }
 
+/* ---- contributing a note ----
+   The pencil on a note and the chip on a declaration without one. Both stay
+   out of sight until the thing they belong to is hovered: an invitation that
+   was always visible would be nine hundred invitations on a class page. */
+/* Parked in the corner rather than trailing the text, which left it wrapped
+   onto a line of its own whenever the last line was nearly full. The padding
+   is the room it sits in. */
+.note-community { position: relative; padding-right: 30px; }
+.note-edit {
+  position: absolute; top: 7px; right: 7px;
+  display: inline-flex; align-items: center; padding: 2px;
+  color: var(--fg2); opacity: 0; transition: opacity .15s ease;
+}
+.note-edit:hover { color: var(--accent); }
+.note-community:hover .note-edit, .note-edit:focus-visible { opacity: 1; }
+.ic-pencil {
+  width: 13px; height: 13px;
+  --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11.1 2.3a1.3 1.3 0 0 1 1.9 1.9l-7 7-2.6.7.7-2.6 7-7z'/%3E%3C/svg%3E");
+}
+/* order, because the chip is inserted on hover and the copy button beside it
+   is inserted on its own hover: whichever arrives first, this one sits last */
+.note-add {
+  order: 1; padding: 1px 8px; border: 1px dashed var(--line); border-radius: 6px;
+  color: var(--fg2); font-size: 11px; line-height: 16px; white-space: nowrap;
+  opacity: 0; transition: opacity .15s ease;
+}
+.note-add:hover { color: var(--accent); border-color: var(--accent2); }
+.member:hover .note-add, .enum-table tr:hover .note-add,
+.note-add:focus-visible { opacity: 1; }
+.note-ask { margin: 10px 0; color: var(--fg2); font-size: 13.5px; }
+
 pre.code, pre.attrs {
   background: var(--code-bg); border: 1px solid var(--line); border-radius: 10px;
   padding: 12px 14px; overflow-x: auto; font-size: 13px; line-height: 1.55;
