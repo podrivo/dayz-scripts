@@ -275,7 +275,10 @@
 
   async function loadIndex() {
     if (index) return;
-    const res = await fetch(BASE + 'search.json');
+    const [res, notes] = await Promise.all([
+      fetch(BASE + 'search.json'),
+      fetch(ROOT + 'assets/notes.json').then((r) => r.ok ? r.json() : {}).catch(() => ({})),
+    ]);
     index = await res.json();
     entries = [];
     // Older builds predate some of these lists, so every one is optional.
@@ -291,6 +294,10 @@
     for (const n of list('macros')) entries.push(['d', n, n]);
     for (const [name, title] of list('topics')) entries.push(['g', title, name]);
     for (const p of list('files')) entries.push(['F', p.split('/').pop(), p]);
+    for (const e of entries) {
+      const noteKey = SCOPED.has(e[0]) ? `${e[2]}.${e[1]}` : e[1];
+      e[3] = [index.docs?.[urlFor(e)], notes[noteKey]].filter(Boolean).join(' ');
+    }
   }
 
   function urlFor(e) {
@@ -313,6 +320,18 @@
     if (nlc === qlc) s += 80;
     if (i > 0 && /[^a-z0-9]/i.test(name[i - 1])) s += 25; // word boundary (_x)
     return s;
+  }
+
+  function textScore(text, q) {
+    if (!text) return -1;
+    const clean = (s) => s.toLowerCase().replace(/[^a-z0-9_]+/g, ' ').trim();
+    const haystack = clean(text);
+    const needle = clean(q);
+    if (!needle) return -1;
+    const at = haystack.indexOf(needle);
+    if (at !== -1) return 45 - Math.min(at / 20, 20);
+    const words = needle.split(/\s+/);
+    return words.length > 1 && words.every((word) => haystack.includes(word)) ? 15 : -1;
   }
 
   /**
@@ -352,7 +371,9 @@
     const seen = new Set(scored.map((x) => x[1]));
     for (const e of entries) {
       if (seen.has(e)) continue;
-      const s = score(e[1], q, qlc);
+      const nameScore = score(e[1], q, qlc);
+      const docScore = textScore(e[3], q);
+      const s = Math.max(nameScore, docScore);
       if (s >= 0) scored.push([s + (KIND_BONUS[e[0]] || 0), e]);
     }
     const list = kinds ? scored.filter((x) => kinds.has(x[1][0])) : scored;
@@ -367,10 +388,12 @@
       resultsEl.hidden = false;
       return;
     }
+    const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
     resultsEl.innerHTML = list
       .map((e) => {
         const ctx = ctxFor(e);
-        return `<a href="${BASE}${urlFor(e)}"><span class="tag tag-${e[0]}">${KIND[e[0]][0]}</span><span>${e[1]}</span>${ctx ? `<span class="ctx">${ctx}</span>` : ''}</a>`;
+        const desc = e[3]?.replace(/`/g, '').replace(/\s+/g, ' ').trim();
+        return `<a href="${BASE}${urlFor(e)}"><span class="tag tag-${e[0]}">${KIND[e[0]][0]}</span><span class="search-main"><span>${esc(e[1])}</span>${desc ? `<span class="search-desc">${esc(desc)}</span>` : ''}</span>${ctx ? `<span class="ctx">${esc(ctx)}</span>` : ''}</a>`;
       })
       .join('');
     resultsEl.hidden = false;

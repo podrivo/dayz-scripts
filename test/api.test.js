@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { parseFile } from '../src/parser/index.js';
 import { buildSiteModel } from '../src/generate/model.js';
 import { buildApi, renderLlmsTxt } from '../src/generate/api.js';
+import { buildSearchIndex } from '../src/generate/search.js';
 import { SITE_URL } from '../src/generate/content.js';
 
 const SOURCE = `
@@ -14,7 +15,9 @@ const SOURCE = `
 /** A class. */
 class Foo extends Bar
 {
+  /** Stored count. */
   int m_Count;
+  /** Performs the operation. */
   void Do(int n);
 }
 /** @} */
@@ -61,6 +64,13 @@ test('enums, typedefs and topics are in the dump', () => {
   assert.deepEqual(api.enums[0].values.map((v) => v.name), ['A', 'B']);
   assert.equal(api.typedefs[0].name, 'TFoo');
   assert.equal(api.topics[0].name, 'Topic');
+});
+
+test('the search index carries declaration briefs', () => {
+  const search = buildSearchIndex(siteOf());
+  assert.equal(search.docs['class/Foo/'], 'A class.');
+  assert.equal(search.docs['class/Foo/#m_Count'], 'Stored count.');
+  assert.equal(search.docs['class/Foo/#Do'], 'Performs the operation.');
 });
 
 test('llms.txt points at the dump and states the license', () => {

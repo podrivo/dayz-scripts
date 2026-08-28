@@ -425,7 +425,7 @@ ${social}
 <div class="palette-box" role="dialog" aria-modal="true" aria-label="Search">
 <div class="palette-field">
 <i class="ic ic-search"></i>
-<input id="search" type="search" placeholder="Search classes, methods, enums…" autocomplete="off" spellcheck="false" aria-label="Search">
+<input id="search" type="search" placeholder="Search names, docs and notes…" autocomplete="off" spellcheck="false" aria-label="Search">
 <kbd>Esc</kbd>
 </div>
 <div id="searchFilters" class="palette-filters">${SEARCH_FILTERS}</div>
