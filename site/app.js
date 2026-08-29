@@ -17,6 +17,7 @@ import { initSearch } from './app/search.js';
 import { initShortcuts } from './app/shortcuts.js';
 import { initChangelog } from './app/changelog.js';
 import { initSourceView } from './app/source.js';
+import { initShare } from './app/share.js';
 import { initInlineCode } from './app/highlight.js';
 import { initHistory } from './app/history.js';
 import { initNotes } from './app/notes.js';
@@ -42,6 +43,7 @@ initShortcuts();
 // the source view, and the one page that fetches its own behaviour
 initChangelog();
 initSourceView();
+initShare();
 initInlineCode();
 
 // what gets added to a declaration once the page is up

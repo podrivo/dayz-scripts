@@ -7,6 +7,7 @@ import { $, BASE, VPATH, anchorOf, pathBuild } from './dom.js';
 import { index, loadIndex } from './search-index.js';
 import { loadPagesMap } from './builds.js';
 import { TOKEN_RE, highlight, newlines } from './highlight.js';
+import { parseHash, showSelection } from './share.js';
 
 /**
  * Where a name written in source goes. Doxygen linked every name in its
@@ -47,7 +48,9 @@ export function sourceResolver(links) {
   for (const n of list('typedefs')) if (!types.has(n)) claim(n, `globals/typedefs/#${anchorOf(n)}`);
   for (const n of list('funcs')) claim(n, `globals/functions/#${anchorOf(n)}`);
   for (const n of list('consts')) claim(n, `globals/constants/#${anchorOf(n)}`);
-  for (const n of list('macros')) claim(n, `globals/macros/#${anchorOf(n)}`);
+  // Kept as a set of its own as well, for resolve.macro below.
+  const macros = new Set(list('macros'));
+  for (const n of macros) claim(n, `globals/macros/#${anchorOf(n)}`);
   for (const [ei, v] of list('values')) claim(v, `enum/${index.enums[ei]}/#${v}`);
   for (const [ci, m] of list('methods')) claim(m, `class/${index.classes[ci]}/#${anchorOf(m)}`);
   for (const [ci, v] of list('vars')) claim(v, `class/${index.classes[ci]}/#${anchorOf(v)}`);
@@ -97,6 +100,11 @@ export function sourceResolver(links) {
     const url = map.get(name);
     return url ? BASE + url : null;
   };
+
+  // A name in a #define/#ifdef/#ifndef is a macro by position, so it is looked
+  // up in that one list rather than the build-wide map: SERVER is a macro here
+  // even though the map has it cancelled out by whatever else declares it.
+  resolve.macro = (name) => (macros.has(name) ? `${BASE}globals/macros/#${anchorOf(name)}` : null);
 
   resolve.str = (quoted) => {
     const inner = quoted.slice(1, -1).replace(/\\(.)/g, '$1');
@@ -187,7 +195,11 @@ function addFolds(srcEl, text) {
       else shut.delete(from);
       apply();
     });
-    el.prepend(btn);
+    // Both live in the gutter, and a class declaration opening a body has the
+    // two of them, so they are ordered as they are drawn: icon then arrow.
+    const doc = el.querySelector('.ldoc');
+    if (doc) doc.after(btn);
+    else el.prepend(btn);
   }
 }
 
@@ -202,14 +214,19 @@ export function initSourceView() {
     srcEl.innerHTML = highlight(raw, resolve)
       .split('\n')
       .map((l, i) => {
-        // A line that declares something gets its number turned into a link
-        // to the page describing it — the reverse of the "src" link every
-        // member carries, and the pair is what makes the two views one.
+        // A line that declares something carries an icon linking to the page
+        // describing it — the reverse of the "src" link every member carries,
+        // and the pair is what makes the two views one. It sits beside the
+        // number rather than over it because the number belongs to the
+        // selection now (see site/app/share.js).
         const url = declAt?.get(i + 1);
-        const to = url ? `<a class="ldoc" href="${BASE}${url}" title="Go to documentation" aria-label="Documentation for this declaration"></a>` : '';
+        const to = url ? `<a class="ldoc ic" href="${BASE}${url}" title="Go to documentation" aria-label="Documentation for this declaration"></a>` : '';
         return `<span class="line${url ? ' decl' : ''}" id="L${i + 1}">${to}${l}\n</span>`;
       })
       .join('');
+    // Painting replaces the lines, and with them any highlight on the ones
+    // being shared, so the selection is put back on every time.
+    showSelection();
   };
 
   // Painted twice: once now, so the code is readable without waiting on a
@@ -217,7 +234,8 @@ export function initSourceView() {
   // have arrived. Keeping the links out of the HTML is also what lets a file
   // page stay byte-identical across builds and keep its hard link.
   paint(null);
-  if (/^#L\d+$/.test(location.hash)) $(location.hash)?.scrollIntoView({ block: 'center' });
+  const landed = parseHash(location.hash);
+  if (landed) $(`#L${landed.from}`)?.scrollIntoView({ block: 'center' });
 
   // links.json sits beside the page, so it is named relative to it and
   // needs no knowledge of which build this is.

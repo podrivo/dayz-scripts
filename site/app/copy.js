@@ -9,7 +9,9 @@
 
 import { $, VPATH } from './dom.js';
 
-function copyText(text, btn) {
+/** Copy, and let the button say so for a moment. Shared with the share bar,
+    which is another row of the same buttons doing the same thing. */
+export function copyText(text, btn) {
   const label = btn.getAttribute('aria-label');
   navigator.clipboard?.writeText(text).then(() => {
     btn.classList.add('copied');

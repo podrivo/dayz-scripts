@@ -856,30 +856,54 @@ pre.src {
   counter-reset: ln;
 }
 pre.src .line { display: block; position: relative; padding: 0 14px 0 0; }
+/* A line is the handle for sharing itself — click anywhere on it that is not
+   a link (site/app/share.js) — so the whole row lights up under the pointer
+   to say so, and the number, being the part of the row that is nothing but
+   the handle, darkens with it. The code keeps the text cursor it has earned:
+   selecting it by hand still works, and the click only lands once nothing is
+   selected. The left padding is the lane the documentation icon below sits
+   in; the width is the digits themselves, since the box-sizing rule at the
+   top of this file does not reach pseudo-elements. Four digits is the most
+   any page needs — the longest file in any build is 9,793 lines. */
 pre.src .line::before {
   counter-increment: ln; content: counter(ln);
-  display: inline-block; width: 52px; padding-right: 14px; margin-right: 12px;
-  text-align: right; color: var(--com); user-select: none;
+  display: inline-block; width: 40px; padding: 0 12px 0 15px; margin-right: 12px;
+  text-align: right; color: var(--com); user-select: none; cursor: pointer;
   border-right: 1px solid var(--line);
 }
-pre.src .line:target, pre.src .line.hl { background: var(--accent-bg); }
+pre.src .line:hover { background: var(--bg3); }
+pre.src .line:hover::before { color: var(--fg); }
+/* While lines are being taken, nothing else is: the drag and the shift-click
+   that pick them are the browser's own text-selection gestures, and a run of
+   blue behind the code would be a second, contradictory answer to what is
+   selected. The press refuses the default too (site/app/share.js); this is
+   what holds for the rest of the drag. */
+pre.src.picking { user-select: none; }
+/* And when text is selected here after all — a double-click on a word, or
+   ⌘A — it wears the same green as everything else this site marks. */
+pre.src ::selection { background: color-mix(in srgb, var(--accent2) 45%, transparent); }
+/* .hl and not :target: a range has no single target element, and the URL is
+   rewritten with replaceState, which leaves :target where it first landed. */
+pre.src .line.hl { background: var(--accent-bg); }
 
 /* A line that declares something links back to the page documenting it. The
-   number is drawn by the counter above and cannot itself be a link, so the
-   link is an empty box laid over it — which is why the colour that says so
-   goes on the number rather than on the anchor. */
+   number is drawn by the counter above and belongs to the selection, so the
+   link is an icon leading the line, out of sight until the line is under the
+   pointer — the accent on the number is what says it is there at all. */
 pre.src .line.decl::before { color: var(--accent); font-weight: 600; }
-pre.src .line.decl:hover::before { text-decoration: underline; }
-/* 38px, not the full 52: the number is right-aligned inside its own padding
-   and ends there, and the rest of the gutter belongs to the fold arrow. */
-.ldoc { position: absolute; left: 0; top: 0; width: 38px; height: 100%; cursor: pointer; }
+.ldoc {
+  position: absolute; left: 8px; top: 50%; transform: translateY(-50%);
+  width: 13px; height: 13px; color: var(--accent); cursor: pointer; opacity: 0;
+  --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 1.8H4.6A1.6 1.6 0 0 0 3 3.4v9.2a1.6 1.6 0 0 0 1.6 1.6h6.8a1.6 1.6 0 0 0 1.6-1.6V5.8z'/%3E%3Cpath d='M9 1.8v4h4'/%3E%3Cpath d='M5.6 8.6h4.8M5.6 11h3.2'/%3E%3C/svg%3E");
+}
+pre.src .line:hover .ldoc, .ldoc:focus-visible { opacity: 1; }
 
 /* ---- code folding ----
    Kept to the gutter and out of sight until the line is under the pointer, so
    a file reads as a file. A shut fold keeps its arrow, since that is the only
    thing left saying the lines below it are still there. */
 .fold {
-  position: absolute; left: 38px; top: 0; width: 14px; height: 100%;
+  position: absolute; left: 55px; top: 0; width: 12px; height: 100%;
   padding: 0; border: 0; background: none; color: var(--com);
   font: inherit; line-height: inherit; text-align: center; cursor: pointer;
   opacity: 0; user-select: none;
@@ -912,6 +936,60 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 /* Specificity keeps .copy-btn.copied::before ahead of this one, so the label
    still becomes "Copied" for the moment after a click. */
 .copy-override::before { content: "Override"; }
+
+/* ---- sharing a range of lines ----
+   Pinned to the foot of the window rather than to the gutter it belongs to:
+   the gutter is fourteen pixels wide beside a number, and a file is six
+   thousand lines long, so a strip that stays put is the only one still in
+   reach by the time a selection is made. Its buttons are the copy buttons
+   from above, relabelled here, which is also how they keep saying "Copied". */
+/* Centred by margin between two pinned edges rather than by a half-width
+   nudge from the middle: left: 50% would cap the strip at half the window,
+   which is narrower than its own buttons. */
+.share-bar {
+  position: fixed; left: 0; right: 0; bottom: 18px; z-index: 30;
+  width: max-content; max-width: calc(100% - 24px); margin: 0 auto;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line); border-radius: 12px;
+  background: var(--bg); box-shadow: var(--shadow); font-size: 14px;
+  /* Away, and on its way in or out the rest of the time. Visibility rather
+     than display so there is something to animate, and delayed by the length
+     of the fade so the strip leaves the tab order only once it has gone. */
+  visibility: hidden; opacity: 0; transform: translateY(12px);
+  transition: opacity .18s ease, transform .18s ease, visibility 0s .18s;
+}
+.share-bar.on {
+  visibility: visible; opacity: 1; transform: translateY(0);
+  transition: opacity .18s ease, transform .18s ease;
+}
+/* Which lines are held, and the way to let go of them: one pair, closer to
+   each other than to the buttons that act on them. */
+.share-what { margin-right: -4px; color: var(--fg2); white-space: nowrap; }
+/* A drawn cross rather than the × character, which carries its own idea of
+   where the middle of a line is and lands high in the box whatever the box
+   does. This one is centred by the mask inside a square centred by the flex,
+   so it sits where it looks like it should. */
+.share-clear {
+  display: flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; padding: 0; border: 0; border-radius: 7px;
+  background: none; color: var(--fg2); font: inherit; cursor: pointer;
+}
+.share-clear::before {
+  content: ""; width: 11px; height: 11px; background: currentColor;
+  --x: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M3 3l6 6M9 3l-6 6'/%3E%3C/svg%3E");
+  -webkit-mask: var(--x) center / contain no-repeat;
+  mask: var(--x) center / contain no-repeat;
+}
+.share-clear:hover { color: var(--accent); background: var(--bg2); }
+
+.share-bar .copy-btn { padding: 4px 12px; font-size: 14px; line-height: 20px; }
+.share-link::before { content: "Copy link"; }
+.share-code::before { content: "Copy code"; }
+/* A link wearing a button, so the row reads as one set of choices. */
+.share-gh:hover { text-decoration: none; }
+.share-gh::before { content: "See on GitHub"; }
+
 .tok-kw { color: var(--kw); } .tok-str { color: var(--str); } .tok-num { color: var(--num); }
 .tok-com { color: var(--com); font-style: italic; } .tok-pre { color: var(--pre); }
 .tok-type { color: var(--fn); }
