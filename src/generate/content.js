@@ -10,7 +10,7 @@ export const SITE_URL = 'https://diff.yadz.app';
 /** This site's own source, which is where a community note is contributed. The
  *  repository root rather than a path into it, so the link cannot rot as files
  *  and branches move. */
-export const REPO_URL = 'https://github.com/podrivo/dayz-scripts';
+export const REPO_URL = 'https://github.com/yadzapp/diff';
 
 /** The same Google Analytics property the Doxygen site reported to, so the
  *  two sets of numbers stay one series across the move. */

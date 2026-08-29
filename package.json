@@ -1,5 +1,5 @@
 {
-  "name": "dayz-scripts-docs",
+  "name": "diff",
   "version": "1.0.0",
   "description": "Custom documentation generator for DayZ Enforce Script sources",
   "private": true,

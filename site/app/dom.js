@@ -16,7 +16,7 @@ export const VPATH = document.body.dataset.vpath || '';
 /* This site's own repository, where a community note is written. Here rather
    than stamped into every page: it is the same string on all of them and this
    file is fetched once. Mirrors REPO_URL in src/generate/content.js. */
-export const REPO = 'https://github.com/podrivo/dayz-scripts';
+export const REPO = 'https://github.com/yadzapp/diff';
 
 const ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
 export const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ESCAPES[c]);

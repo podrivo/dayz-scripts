@@ -6,6 +6,7 @@ from the official
 sources.
 
 **Site:** [diff.yadz.app](https://diff.yadz.app) ·
+**Source:** [yadzapp/diff](https://github.com/yadzapp/diff) ·
 **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
 
 [![PlayerBase on DIFF](screenshot.png)](https://diff.yadz.app/classes/PlayerBase/)
