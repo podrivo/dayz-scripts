@@ -217,17 +217,14 @@ function nameHtml(kind, name, op, prefix, build) {
     ` href="${prefix}${kind.url(name)}"><span>${esc(name)}</span>${buildsHtml(build ? [build] : null)}</a>`;
 }
 
-function changedHtml(kind, entry, prefix, open) {
+function changedHtml(kind, entry, prefix) {
   const builds = [...new Set(entry.rows.flatMap((row) => row.builds || []))].sort(cmp);
   const pairs = entry.rows.map((row) => pairHtml(row, entry.rows.length > 1)).join('');
   const text = esc(`${entry.name} ${builds.join(' ')} ${entry.rows.map((r) => r.slice(1).join(' ')).join(' ')}`.toLowerCase());
   const link = `<a href="${prefix}${kind.url(entry.name)}">${esc(entry.name)}</a>`;
   const heading = `${link} ${buildsHtml(builds)}`;
-  // One before-and-after line is not worth hiding behind a disclosure; a class
-  // with nine changed methods is.
-  return entry.rows.length > 1
-    ? `<details class="cmp-unit cmp-change" data-op="changed" data-text="${text}"${open ? ' open' : ''}><summary>${heading} <span class="count">${entry.rows.length}</span></summary>${pairs}</details>`
-    : `<div class="cmp-unit cmp-change" data-op="changed" data-text="${text}"><p class="cmp-change-name">${heading}</p>${pairs}</div>`;
+  const count = entry.rows.length > 1 ? ` <span class="count">${entry.rows.length}</span>` : '';
+  return `<details class="cmp-unit cmp-change" data-op="changed" data-text="${text}"><summary>${heading}${count}</summary>${pairs}</details>`;
 }
 
 function colHtml(op, list, kind, prefix, landed) {
@@ -250,12 +247,6 @@ ${names}
  * product it belongs to.
  */
 function groupsHtml(diff, fromPrefix, toPrefix) {
-  let accordions = 0;
-  for (const { key } of KINDS) {
-    for (const e of diff[key]?.changed || []) if (e.rows.length > 1) accordions++;
-  }
-  const open = accordions > 0 && accordions <= 8;
-
   return KINDS
     .map((kind) => {
       const k = diff[kind.key];
@@ -272,7 +263,7 @@ ${colHtml('added', k.added, kind, toPrefix, k.landed?.added)}
       if (k.changed.length) {
         parts.push(`<h3 data-op="changed">Changed <span class="count">${num(k.changed.length)}</span></h3>
 <div class="cmp-pair-head" aria-hidden="true"><span>From</span><span>To</span></div>
-<div class="cmp-list">${k.changed.map((e) => changedHtml(kind, e, toPrefix, open)).join('')}</div>`);
+<div class="cmp-list">${k.changed.map((e) => changedHtml(kind, e, toPrefix)).join('')}</div>`);
       }
       return `<section class="cmp-kind" data-kind="${kind.key}">
 <h2>${esc(kind.label)} <span class="count">${num(total)}</span></h2>
@@ -350,14 +341,25 @@ export function initCompare({ builds, fmtDate, current }) {
   function stampPair() {
     const span = document.getElementById('cmpSpan');
     if (span) {
-      if (from === to) span.textContent = 'Same build';
-      else {
-        const steps = Math.abs(order.indexOf(from) - order.indexOf(to));
-        span.textContent = steps === 1 ? 'Neighbours' : '';
-      }
-      span.hidden = !span.textContent;
+      span.textContent = from === to ? 'Same build' : '';
+      span.hidden = from !== to;
     }
-    if (resetBtn) resetBtn.hidden = atDefault();
+    if (resetBtn) {
+      const idle = atDefault();
+      const ic = resetBtn.querySelector('.ic');
+      resetBtn.disabled = idle;
+      ic?.classList.toggle('ic-swap', idle);
+      ic?.classList.toggle('ic-reset', !idle);
+      if (idle) {
+        resetBtn.removeAttribute('title');
+        resetBtn.removeAttribute('aria-label');
+        resetBtn.setAttribute('aria-hidden', 'true');
+      } else {
+        resetBtn.title = 'Reset';
+        resetBtn.setAttribute('aria-label', 'Reset');
+        resetBtn.removeAttribute('aria-hidden');
+      }
+    }
   }
 
   // A build's diff.json, once. Switching one end of a comparison re-fetches
@@ -560,10 +562,6 @@ ${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}`;
    * leave the page comparing something to itself, which is not a comparison and
    * not what the choice meant; stepping the other side back to where this one
    * was keeps the pair two builds without having to grey half of each list out.
-   *
-   * It also is the swap. Asking for the build already opposite you is the one
-   * case where both sides move, and the two ends trading places is what that
-   * means, so the button below is this and nothing else.
    */
   function choose(build, isFrom) {
     if (isFrom) {
@@ -582,7 +580,6 @@ ${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}`;
 
   fromSel.addEventListener('change', () => choose(fromSel.value, true));
   toSel.addEventListener('change', () => choose(toSel.value, false));
-  document.getElementById('cmpSwap')?.addEventListener('click', () => choose(to, true));
   resetBtn?.addEventListener('click', () => {
     ({ from, to } = defaults());
     fromSel.value = from;

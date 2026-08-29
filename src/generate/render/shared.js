@@ -6,6 +6,7 @@
 // "Where is the HTML?" section of CONTRIBUTING.md.
 
 import { esc, EXT } from '../html.js';
+import { FORUM_THREADS, VERSION_TITLES } from '../content.js';
 
 export function anchorFor(used, name) {
   let a = name.replace(/[^\w]/g, '_');
@@ -143,3 +144,92 @@ ${links
 }
 
 export const byName = (a, b) => a.name.localeCompare(b.name);
+
+function fmtDate(iso) {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', {
+    month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC',
+  });
+}
+
+const buildNo = (build) => Number(build.split('.')[2] || 0);
+const versionNo = (version) => {
+  const [major, minor] = version.split('.').map(Number);
+  return major * 1000 + minor;
+};
+
+/** "1.29 Update 1" from the oldest of that version. `builds` is newest-first. */
+function updateNames(builds) {
+  const count = new Map();
+  const seen = new Map();
+  for (const v of builds) count.set(v.version, (count.get(v.version) || 0) + 1);
+  const names = new Map();
+  for (const v of builds) {
+    const n = (seen.get(v.version) || 0) + 1;
+    seen.set(v.version, n);
+    names.set(v.build, `${v.version} Update ${count.get(v.version) - n + 1}`);
+  }
+  return names;
+}
+
+/**
+ * Official PC stable releases, grouped by game version: every build we
+ * document, merged with the forum threads. Builds whose scripts never reached
+ * the Script Diff repository still show up, with their thread only.
+ *
+ * `highlight` marks the build this page was generated for — home does, so the
+ * current update reads as the one you are on. /changelog/ does not: those
+ * bytes have to stay identical across builds (see layout() in html.js), so
+ * no group is left open and docs links are rooted at `/`.
+ */
+export function renderReleases(ctx, { highlight = true, absolute = false } = {}) {
+  const { site, root, versions } = ctx;
+  const names = updateNames(versions);
+  const groups = new Map();
+  const rowsFor = (version) => {
+    if (!groups.has(version)) groups.set(version, new Map());
+    return groups.get(version);
+  };
+
+  versions.forEach((v, i) => {
+    const href = absolute
+      ? (i === 0 ? '/' : `/v/${v.label}/`)
+      : (i === 0 ? root : `${root}v/${v.label}/`);
+    rowsFor(v.version).set(v.build, { build: v.build, date: v.date, docs: href });
+  });
+
+  for (const [build, thread] of Object.entries(FORUM_THREADS)) {
+    const version = build.split('.').slice(0, 2).join('.');
+    const rows = rowsFor(version);
+    const row = rows.get(build) || { build, date: thread.date };
+    row.url = thread.url;
+    rows.set(build, row);
+  }
+
+  const openAt = highlight ? site.version : null;
+
+  return [...groups.entries()]
+    .sort((a, b) => versionNo(b[0]) - versionNo(a[0]))
+    .map(([version, rows]) => {
+      const title = VERSION_TITLES[version] ? ` <span class="muted">${esc(VERSION_TITLES[version])}</span>` : '';
+      const items = [...rows.values()]
+        .sort((a, b) => buildNo(b.build) - buildNo(a.build))
+        .map((r) => {
+          const name = names.get(r.build) || r.build;
+          const patch = r.build.split('.')[2];
+          let label;
+          if (highlight && r.build === site.build) label = `<strong title="${esc(r.build)}">${esc(name)}</strong>`;
+          else if (r.docs) label = `<a href="${r.docs}" title="${esc(r.build)}">${esc(name)}</a>`;
+          else label = `<span class="rbuild" title="Scripts for this build are not in the Script Diff repository (${esc(r.build)})">${esc(name)}</span>`;
+          const notes = r.url ? ` <a href="${r.url}" ${EXT}>release notes</a>` : '';
+          return `<li>${label}<span class="rpatch">${esc(patch)}</span><span class="rdate">${esc(fmtDate(r.date))}</span>${notes}</li>`;
+        })
+        .join('\n');
+      return /* html */ `<details${version === openAt ? ' open' : ''}>
+<summary>DayZ ${esc(version)}${title} <span class="count">${rows.size} build${rows.size === 1 ? '' : 's'}</span></summary>
+<ul>
+${items}
+</ul>
+</details>`;
+    })
+    .join('\n');
+}

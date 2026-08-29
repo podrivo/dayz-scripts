@@ -1,6 +1,7 @@
 // The changelog at /changelog/.
 
 import { layout } from '../html.js';
+import { renderReleases } from './shared.js';
 
 /**
  * An empty shell, filled in by site/compare.js.
@@ -14,10 +15,10 @@ import { layout } from '../html.js';
  * So the pair is chosen in the browser instead, which is also what makes the
  * URL shareable: /changelog/?from=…&to=… names a comparison, not a build.
  *
- * Nothing here names a build, for the same reason nothing else does: the
- * selects are filled from /assets/versions.json client-side, so these bytes
- * are identical in all 49 builds and keep their hard link. See layout() in
- * src/generate/html.js.
+ * The pickers name no build, for the same reason nothing else does: they
+ * are filled from /assets/versions.json client-side. The official notes
+ * name every known one, identically, so these bytes stay the same in all
+ * 49 builds and keep their hard link. See layout() in src/generate/html.js.
  */
 export function renderCompare(ctx) {
   const card = (side, label) => /* html */ `<label class="cmp-pick" data-side="${side}">
@@ -27,14 +28,17 @@ export function renderCompare(ctx) {
 <form class="cmp-stage" id="cmpBar" hidden>
   ${card('from', 'From')}
   <div class="cmp-mid">
-    <button type="button" class="btn cmp-swap" id="cmpSwap" title="Swap the two builds" aria-label="Swap the two builds"><i class="ic ic-swap"></i></button>
+    <button type="button" class="btn cmp-swap" id="cmpReset" disabled aria-hidden="true"><i class="ic ic-swap"></i></button>
     <span class="cmp-span" id="cmpSpan"></span>
-    <button type="button" class="btn cmp-reset" id="cmpReset" hidden>Reset</button>
   </div>
   ${card('to', 'To')}
 </form>
 <noscript><p>The changelog is built in the browser and needs JavaScript.</p></noscript>
-<div class="cmp" id="compare" aria-live="polite" aria-busy="true"><p class="muted">Loading builds…</p></div>`;
+<div class="cmp" id="compare" aria-live="polite" aria-busy="true"><p class="muted">Loading builds…</p></div>
+<h2 id="release-notes">Release notes</h2>
+<div class="releases">
+${renderReleases(ctx, { highlight: false, absolute: true })}
+</div>`;
   return layout({
     ...ctx,
     title: 'Changelog',

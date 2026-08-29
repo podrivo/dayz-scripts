@@ -143,17 +143,20 @@ test('enum page is byte-identical across builds when its content is unchanged', 
 });
 
 // The compare page is the one page whose whole subject is which builds exist,
-// so it is also the most tempting place to write a build number into the HTML.
-// It must not: the pickers are filled from /assets/versions.json client-side,
-// which is what keeps one copy of these bytes serving all 49 builds.
-test('the compare page names no build', () => {
-  const cmp = (s) => renderCompare({ site: s, versions: [], base: '../', root: '../', versionPath: 'changelog/' });
-  assert.equal(cmp(site(BUILD_A)), cmp(site(BUILD_B)));
-  const html = cmp(site(BUILD_A));
-  for (const needle of ['1.29', '1.19', '163709', '155390', '2026-08-12']) {
-    assert.ok(!html.includes(needle), `compare page leaked ${needle}`);
-  }
+// so it is the most tempting place to write *this* build into the HTML. The
+// pickers stay empty (filled from /assets/versions.json) and the official
+// notes name every known one the same way, which is what keeps one copy of
+// these bytes serving all 49 builds — even when `root` would have differed.
+test('the compare page is the same in every build', () => {
+  const versions = [BUILD_A, BUILD_B];
+  const cmp = (s, root) => renderCompare({ site: s, versions, base: '../', root, versionPath: 'changelog/' });
+  assert.equal(cmp(site(BUILD_A), '../'), cmp(site(BUILD_B), '../../../'));
+  const html = cmp(site(BUILD_A), '../');
   assert.match(html, /id="compare"/, 'the container compare.js fills must be there');
+  assert.match(html, /id="release-notes"/, 'release notes sit on the page');
+  assert.match(html, /release notes/, 'forum threads are linked');
+  assert.match(html, /<select id="cmpFrom"[^>]*><\/select>/, 'the From picker is empty');
+  assert.ok(!html.includes(`<strong title="${BUILD_A.build}">`), 'the current build is not marked');
 });
 
 // A class page lists where each of its methods is called from, so an edit to
