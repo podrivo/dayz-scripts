@@ -1,12 +1,18 @@
-/* Added / changed badges.
+/* What happened to this type: the badges, and the timeline.
 
    When a class or member first appeared, and when a signature last changed.
    The pages cannot carry a build stamp (see layout() in src/generate/html.js),
    so this is fetched from /assets/history.json — the same adjacent diffs
    /changelog/ folds, packed as indices into the newest-first build list.
-   Events newer than the build being viewed stay off. */
+   Events newer than the build being viewed stay off.
 
-import { $, ROOT, pageType } from './dom.js';
+   history.json only says first and last, which is all a badge can wear. The
+   whole story — every build that touched this type, member by member — is in
+   the per-build diff.json sidecars, and the History disclosure below fetches
+   the run of them on demand and lays it out as a timeline, the way
+   site/compare.js fetches the same files to compare two builds. */
+
+import { $, ROOT, esc, fmtDate, anchorOf, pageType } from './dom.js';
 import { current, identity } from './builds.js';
 
 const typeRec = (p) =>
@@ -24,6 +30,14 @@ function historyBadge(kind, text, title, href) {
   return a;
 }
 
+/** This build against the one before it, on /changelog/. */
+const changelogHref = (builds, idx) => {
+  const from = builds[idx + 1];
+  return from
+    ? `/changelog/?from=${encodeURIComponent(from.build)}&to=${encodeURIComponent(builds[idx].build)}`
+    : '/changelog/';
+};
+
 export function initHistory() {
   const main = $('.main');
   if (!pageType || !main) return;
@@ -40,12 +54,7 @@ export function initHistory() {
     const visible = (i) => i != null && i >= here;
     const pair = (idx) => {
       const b = builds[idx];
-      if (!b) return null;
-      const from = builds[idx + 1];
-      const href = from
-        ? `/changelog/?from=${encodeURIComponent(from.build)}&to=${encodeURIComponent(b.build)}`
-        : '/changelog/';
-      return { b, href };
+      return b ? { b, href: changelogHref(builds, idx) } : null;
     };
     const addedBadge = (idx) => {
       const p = pair(idx);
@@ -91,5 +100,129 @@ export function initHistory() {
       if (visible(ev.added)) { const b = addedBadge(ev.added); if (b) cell.append(b); }
       if (visible(ev.changed)) { const b = changedBadge(ev.changed); if (b) cell.append(b); }
     }
+
+    addTimeline(main, hist, builds, rec, here);
   }).catch(() => {});
+}
+
+/* ---------- the timeline ----------
+   A History disclosure beside the badges, on every class and enum page.
+   Opening it fetches the diffs and renders every build that touched this
+   type, newest first. Fetched rather than shipped for the same reason the
+   badges are, and on demand rather than on load because most visits never
+   ask: the widest run — a class present since 1.19, viewed at the latest
+   build — is the changelog's widest comparison, about 250 KB over the wire.
+
+   Only diffs at or before the build being viewed are fetched at all, so an
+   archived page tells the story as it stood then. */
+
+/** What a row says happened, matching src/generate/diff.js. */
+const OPS = { '+': ['added', '+'], '-': ['removed', '−'], '~': ['changed', '±'] };
+
+function addTimeline(main, hist, builds, rec, here) {
+  const anchor =
+    $('.derived', main) || $('.all-members', main) || $('.alt-bases', main) ||
+    $('.in-module', main) || $('.chain', main) || $('h1.class-title', main);
+  if (!anchor) return;
+
+  const details = document.createElement('details');
+  details.className = 'type-history';
+  const summary = document.createElement('summary');
+  summary.textContent = 'History';
+  const body = document.createElement('div');
+  body.className = 'th-body';
+  details.append(summary, body);
+  anchor.after(details);
+
+  const oldest = hist.builds.length - 1;
+  // The run to fetch: from the build being viewed back to where the type
+  // appeared. When the record cannot bound it — the type predates tracking,
+  // or (after a remove-and-readd) the record names a build newer than this
+  // page's — the whole span back to the oldest build does. Build diffs are
+  // each build against its predecessor, so the oldest build has none.
+  const stop = rec.added >= here && rec.added < oldest ? rec.added : oldest - 1;
+
+  // A declaration still on this page gets a link; one that was removed, or an
+  // old spelling, is text. Enum rows are anchored by value name, members by
+  // the generator's anchor.
+  const hrefFor = (name) => {
+    const id = pageType.kind === 'enum' ? name : anchorOf(name);
+    return document.getElementById(id) ? `#${id}` : null;
+  };
+
+  const rowHtml = (row) => {
+    const [op, name] = row;
+    const [cls, sign] = OPS[op];
+    const linked = (text) => {
+      const code = `<code>${esc(text)}</code>`;
+      const href = hrefFor(name);
+      return href ? `<a class="th-link" href="${href}">${code}</a>` : code;
+    };
+    const inner = op === '~'
+      ? `<span class="th-decl"><code class="old">${esc(row[2])}</code>${linked(row[3])}</span>`
+      : op === '+'
+        ? linked(row[2])
+        : `<code class="old">${esc(row[2])}</code>`;
+    return `<div class="th-row th-${cls}"><span class="th-op" aria-hidden="true">${sign}</span>${inner}</div>`;
+  };
+
+  const entryHtml = ({ idx, added, rows }) => {
+    const b = builds[idx];
+    const head = `<p class="th-head"><a href="${changelogHref(builds, idx)}" title="Everything this build changed, on the changelog">${esc(b.name || b.build)}</a>` +
+      `<span class="cmp-build">${esc(b.build.split('.').pop())}</span>` +
+      (b.date ? `<span class="th-date">${fmtDate(b.date)}</span>` : '') +
+      '</p>';
+    const born = added
+      ? `<p class="th-new">${pageType.kind === 'class' ? 'Class' : 'Enum'} added in this build.</p>`
+      : '';
+    return `<div class="th-build">${head}${born}${rows.map(rowHtml).join('')}</div>`;
+  };
+
+  async function load() {
+    const steps = await Promise.all(
+      // Newest first, which is the order the timeline reads in.
+      Array.from({ length: Math.max(0, stop - here + 1) }, (_, j) => here + j).map((idx) => {
+        const b = hist.builds[idx];
+        return fetch(idx === 0 ? ROOT + 'diff.json' : `/v/${b}/diff.json`)
+          .then((r) => (r.ok ? r.json() : null))
+          .catch(() => null)
+          .then((diff) => ({ idx, diff }));
+      })
+    );
+    if (steps.some((s) => s.diff === null)) throw new Error('missing diff');
+
+    const entries = [];
+    for (const { idx, diff } of steps) {
+      const k = diff.kinds?.[pageType.kind];
+      if (!k) continue;
+      const added = k.added.includes(pageType.name);
+      const rows = k.changed.find((e) => e.name === pageType.name)?.rows || [];
+      if (added || rows.length) entries.push({ idx, added, rows });
+    }
+
+    // Nothing said "added", so the type was already in the oldest build the
+    // run reached back to — for this page, the oldest there is.
+    const floor = builds[oldest];
+    const tail = entries.some((e) => e.added)
+      ? ''
+      : `<p class="th-tail">${entries.length ? 'Present' : 'Unchanged'} in every tracked build, from ${esc(floor?.name || '')} (${esc(floor?.build || '')}).</p>`;
+
+    body.innerHTML = entries.map(entryHtml).join('') + tail;
+    summary.innerHTML = `History <span class="count">${entries.length}</span>`;
+  }
+
+  let state = 'idle';
+  details.addEventListener('toggle', () => {
+    if (!details.open || state !== 'idle') return;
+    state = 'loading';
+    body.innerHTML = '<p class="muted">Loading the history…</p>';
+    load().then(
+      () => { state = 'done'; },
+      () => {
+        // back to idle, so closing and reopening tries again
+        state = 'idle';
+        body.innerHTML = '<p class="muted">Part of the history could not be loaded. Close and reopen to try again.</p>';
+      }
+    );
+  });
 }

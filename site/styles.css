@@ -755,6 +755,32 @@ table.list td:first-child > code { white-space: normal; }
 .derived summary { cursor: pointer; color: var(--accent); font-size: 14px; }
 .derived-list { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 10px 4px; font-size: 14px; }
 
+/* ---- what happened to this type, build by build ----
+   The History disclosure site/app/history.js puts beside the badges. The rows
+   wear the changelog's colors: added green, removed red, changed amber, the
+   old spelling struck through above the new one. */
+.type-history { margin: 6px 0; }
+.type-history summary { cursor: pointer; color: var(--accent); font-size: 14px; }
+.type-history summary .count { color: var(--fg2); font-weight: 500; }
+.th-body { padding: 10px 4px 2px; font-size: 14px; }
+.th-build { margin: 0 0 18px; }
+.th-body > .th-build:last-of-type { margin-bottom: 8px; }
+.th-head { display: flex; align-items: baseline; gap: 8px; margin: 0 0 4px; font-weight: 600; }
+.th-date { color: var(--fg2); font-size: 12.5px; font-weight: 400; }
+.th-new { margin: 2px 0; color: var(--added); font-size: 13.5px; }
+.th-row { display: flex; align-items: baseline; gap: 8px; padding: 2px 0; }
+.th-op { flex: none; width: 14px; text-align: center; font-weight: 700; }
+.th-added .th-op { color: var(--added); }
+.th-removed .th-op { color: var(--removed); }
+.th-changed .th-op { color: var(--warn-line); }
+.th-row code { background: none; padding: 0; font-size: 13px; white-space: pre-wrap; }
+.th-row .old { text-decoration: line-through; opacity: 0.6; }
+.th-decl { min-width: 0; }
+.th-decl code { display: block; }
+.th-link { text-decoration: none; }
+.th-link:hover code { text-decoration: underline; }
+.th-tail { margin: 2px 0 8px; color: var(--fg2); font-size: 13px; }
+
 .member { padding: 10px 12px; margin: 0 -12px; border-radius: 10px; }
 .member:hover { background: var(--bg2); }
 .member:target { background: var(--accent-bg); outline: 1px solid var(--accent2); }

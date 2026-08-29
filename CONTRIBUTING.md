@@ -106,7 +106,7 @@ works on is on the page, which is how one script serves ~660,000 pages.
 | The `?` shortcuts list | `site/app/shortcuts.js` |
 | Enforce Script highlighting | `site/app/highlight.js` |
 | A source page: links, folding | `site/app/source.js` |
-| "Added in" / "Changed in" badges | `site/app/history.js` |
+| "Added in" badges, the History timeline | `site/app/history.js` |
 | Community notes | `site/app/notes.js` |
 | Copy buttons, the override stub | `site/app/copy.js` |
 | The page bar under the nav | `site/app/pagebar.js` |
