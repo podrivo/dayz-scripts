@@ -15,8 +15,14 @@ export function renderHome(ctx) {
     ['ItemBase', `${base}classes/ItemBase/`, 'Base of all items'],
     ['EntityAI', `${base}classes/EntityAI/`, 'Base of interactive entities'],
     ['ActionBase', `${base}classes/ActionBase/`, 'Player actions'],
+    ['Weapon_Base', `${base}classes/Weapon_Base/`, 'Firearms'],
     ['DayZInfected', `${base}classes/DayZInfected/`, 'The infected'],
     ['CarScript', `${base}classes/CarScript/`, 'Vehicles'],
+    ['RecipeBase', `${base}classes/RecipeBase/`, 'Handcrafting recipes'],
+    ['PluginBase', `${base}classes/PluginBase/`, 'Game-wide services'],
+    ['CGame', `${base}classes/CGame/`, 'The GetGame() facade'],
+    ['MissionServer', `${base}classes/MissionServer/`, 'The server mission'],
+    ['UIScriptedMenu', `${base}classes/UIScriptedMenu/`, 'Scripted menus'],
   ];
 
   const content = /* html */ `
@@ -37,7 +43,7 @@ export function renderHome(ctx) {
 <div class="cards">
   <a class="card" href="${base}classes/">
     <h3>Classes</h3>
-    <p>All ${s.classes.toLocaleString('en-US')} classes, the inheritance tree, and every member.</p>
+    <p>All ${s.classes.toLocaleString('en-US')} classes and every member.</p>
   </a>
   <a class="card" href="${base}files/">
     <h3>Files</h3>
@@ -46,6 +52,18 @@ export function renderHome(ctx) {
   <a class="card" href="${base}topics/">
     <h3>Topics</h3>
     <p>The ${site.groups.size} topics the scripts group themselves into — math, physics, entities, UI and the constant tables.</p>
+  </a>
+  <a class="card" href="${base}hierarchy/">
+    <h3>Hierarchy</h3>
+    <p>What extends what, from engine types down through every scripted subclass.</p>
+  </a>
+  <a class="card" href="${base}globals/">
+    <h3>Globals</h3>
+    <p>Functions, constants, enums, typedefs and macros declared outside a class.</p>
+  </a>
+  <a class="card" href="${base}changelog/">
+    <h3>Changelog</h3>
+    <p>What changed in the script API between two game builds.</p>
   </a>
 </div>
 ${linkCards(explore)}
