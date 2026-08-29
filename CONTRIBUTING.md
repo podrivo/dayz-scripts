@@ -110,6 +110,7 @@ works on is on the page, which is how one script serves ~660,000 pages.
 | "Added in" badges, the History timeline | `site/app/history.js` |
 | Community notes | `site/app/notes.js` |
 | Copy buttons, the override stub | `site/app/copy.js` |
+| "Copy for LLM" on a class or enum | `site/app/llm.js` |
 | The page bar under the nav | `site/app/pagebar.js` |
 | The page filter, expand/collapse | `site/app/filter.js` |
 | The member and field tables | `site/app/members.js` |

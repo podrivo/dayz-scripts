@@ -41,6 +41,10 @@ scraping class pages.
 `api.json` is latest-only. The script sources it describes are under the DPL;
 community notes are not.
 
+For pasting into a chat by hand, every class and enum page has a
+**Copy for LLM** button under its title: the page as Markdown — signatures,
+inheritance, docs and community notes — with its build and source named.
+
 ## Community notes
 
 A community note is a short annotation on a class, enum, or member. Add it to

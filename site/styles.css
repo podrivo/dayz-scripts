@@ -989,6 +989,10 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
    still becomes "Copied" for the moment after a click. */
 .copy-override::before { content: "Override"; }
 
+/* The whole page as Markdown, under a class or enum title. */
+.page-tools { margin: 4px 0 0; }
+.copy-llm::before { content: "Copy for LLM"; }
+
 /* ---- sharing a range of lines ----
    Pinned to the foot of the window rather than to the gutter it belongs to:
    the gutter is fourteen pixels wide beside a number, and a file is six
