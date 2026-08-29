@@ -140,8 +140,15 @@ function historyAsset() {
 function sendAsset(res, name) {
   if (name === 'versions.json') return send(res, 200, 'application/json', versionsAsset);
   if (name === 'history.json') return send(res, 200, 'application/json', historyAsset());
-  const file = path.join(SITE_DIR, name);
-  if (!name || name.includes('/') || !fs.existsSync(file)) return send(res, 404, TYPES['.txt'], 'Not found');
+  // Subpaths are allowed, because /assets/app.js imports /assets/app/*.js, but
+  // only ones that stay inside site/: `..` in a URL is a path traversal, and
+  // the generator's copy of these files is a flat directory served by Netlify
+  // rather than by anything that could be talked out of it.
+  const file = path.resolve(SITE_DIR, name);
+  const inside = file === SITE_DIR || file.startsWith(SITE_DIR + path.sep);
+  if (!name || !inside || !fs.existsSync(file) || !fs.statSync(file).isFile()) {
+    return send(res, 404, TYPES['.txt'], 'Not found');
+  }
   send(res, 200, TYPES[path.extname(file)] || 'application/octet-stream', fs.readFileSync(file));
 }
 
@@ -152,6 +159,34 @@ function send(res, status, type, body) {
 
 const withReload = (html) =>
   html.includes('</body>') ? html.replace('</body>', `${RELOAD}</body>`) : html + RELOAD;
+
+/* Where the page you are looking at is written.
+   Every page here is a JavaScript function returning a template literal, so
+   "view source" in the browser would otherwise leave no trail back to the file
+   to edit. This stamps one in, dev-only: a generated page must not carry a byte
+   that depends on anything but its content (see layout() in html.js).
+   Keyed by URL shape, which is the same map CONTRIBUTING.md carries. */
+const RENDERERS = [
+  [/^$/, 'render/home.js'],
+  [/^topics\//, 'render/topics.js'],
+  [/^class\//, 'render/class.js'],
+  [/^classes\//, 'render/classes.js'],
+  [/^enum\/|^globals\//, 'render/globals.js'],
+  [/^files\//, 'render/files.js'],
+  [/^hierarchy\//, 'render/hierarchy.js'],
+  [/^changelog\//, 'render/changelog.js'],
+  [/^community\//, 'render/community.js'],
+];
+
+/** Line two of view-source, and after the doctype: a comment ahead of it puts
+ *  the browser into quirks mode, which is not a thing to do to a preview. */
+function withSource(html, file) {
+  const stamp = `<!-- dev · page body: src/generate/${file} · chrome: src/generate/html.js · client: site/app/ -->`;
+  const doctype = '<!DOCTYPE html>\n';
+  return html.startsWith(doctype) ? `${doctype}${stamp}\n${html.slice(doctype.length)}` : `${html}\n${stamp}`;
+}
+
+const rendererFor = (rel) => RENDERERS.find(([re]) => re.test(rel))?.[1] || 'render/';
 
 // ---- request handling -----------------------------------------------------
 
@@ -212,14 +247,14 @@ function handle(req, res) {
 
   const body = page.render();
   if (page.asset) return send(res, 200, TYPES[path.extname(page.file)] || TYPES['.txt'], body);
-  send(res, 200, TYPES['.html'], withReload(body));
+  send(res, 200, TYPES['.html'], withSource(withReload(body), rendererFor(rel)));
 }
 
 function notFound(res, rel) {
   const site = siteFor(latest.label);
   const html = render404({ site, versions, base: '/', root: '/', versionPath: '' });
   res.writeHead(404, { 'content-type': TYPES['.html'], 'cache-control': 'no-store' });
-  res.end(withReload(html));
+  res.end(withSource(withReload(html), 'render/notfound.js'));
   console.log(`  404 /${rel}`);
 }
 

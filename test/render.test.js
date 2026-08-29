@@ -60,7 +60,9 @@ test('layout carries no build identity', () => {
 test('layout links assets absolutely so a page works at any depth', () => {
   const html = layout({ title: 'Foo', base: '../../', versionPath: 'class/Foo/', content: '' });
   assert.ok(html.includes('href="/assets/styles.css"'));
-  assert.ok(html.includes('src="/assets/app.js"'));
+  // A module, because /assets/app.js imports the features in site/app/ by
+  // relative path; the generator has to copy that directory across too.
+  assert.ok(html.includes('<script type="module" src="/assets/app.js"></script>'));
   assert.ok(html.includes('href="/assets/favicon.svg"'));
   assert.ok(!html.includes('../../assets/'), 'assets must not be relative');
 });

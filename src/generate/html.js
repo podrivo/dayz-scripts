@@ -40,7 +40,7 @@ export function slug(title) {
  * one of those pages already holds everything it would need to: the filtering
  * is done in the browser over the rows, chips, tree nodes and member blocks
  * that are on the page, so it costs no bytes beyond this field and works
- * offline. See the page filter in site/app.js.
+ * offline. See site/app/filter.js.
  */
 export function filterBar(placeholder, chips = []) {
   const row = chips.length
@@ -49,7 +49,7 @@ export function filterBar(placeholder, chips = []) {
           `<button type="button" class="pf${i ? '' : ' active'}" data-mod="${esc(mod)}" aria-pressed="${!i}">${esc(label)}</button>`)
         .join('')}</div>`
     : '';
-  return `<div class="filterbar">
+  return /* html */ `<div class="filterbar">
 <input type="search" id="pageFilter" class="filter-input" placeholder="${esc(placeholder)}" autocomplete="off" spellcheck="false" aria-label="${esc(placeholder)}">
 <span class="filter-count" id="filterCount" aria-live="polite"></span>
 </div>${row}`;
@@ -283,11 +283,11 @@ function navLevel(nodes, active, base) {
     .join('');
 }
 
-// The search palette's category tabs, over the kind letters site/app.js gives
-// each entry. Doxygen offered the same choice from the magnifier beside its
-// search field, and it is what makes a common word usable: "Get" matches
-// thousands of methods, and the only way to see the four classes called that
-// is to ask for classes.
+// The search palette's category tabs, over the kind letters KIND in
+// site/app/search-index.js gives each entry. Doxygen offered the same choice
+// from the magnifier beside its search field, and it is what makes a common
+// word usable: "Get" matches thousands of methods, and the only way to see
+// the four classes called that is to ask for classes.
 const SEARCH_FILTERS = [
   ['', 'All'],
   ['c', 'Classes'],
@@ -303,7 +303,7 @@ const SEARCH_FILTERS = [
     `<button type="button" class="pf${i ? '' : ' active'}" data-kinds="${kinds}" aria-pressed="${!i}">${label}</button>`)
   .join('');
 
-const FOOTER = `<footer class="foot">
+const FOOTER = /* html */ `<footer class="foot">
 <p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a> · Not affiliated with <a href="https://www.bohemia.net/" ${EXT}>Bohemia Interactive</a> · <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a></p>
 </footer>`;
 
@@ -371,8 +371,12 @@ export function pageInner(o) {
  * Deliberately carries no build, version or date, and links to assets by
  * absolute path rather than a relative site root. That makes a page's bytes
  * depend only on its content, so identical pages across builds can be
- * stored once. The build stamp is restored client-side in site/app.js from
- * the URL. See test/render.test.js.
+ * stored once. The build stamp is restored client-side by site/app/builds.js
+ * from the URL. See test/render.test.js.
+ *
+ * This is the page chrome every page wears — the head, the header, the nav,
+ * the search palette — so it is where to edit any of them. The body between
+ * them comes from a renderer in src/generate/render/.
  */
 export function layout(o) {
   const meta = pageMeta(o);
@@ -391,7 +395,7 @@ export function layout(o) {
 <meta property="og:url" content="${esc(url)}">
 <meta name="twitter:card" content="summary">`;
 
-  return `<!DOCTYPE html>
+  return /* html */ `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -433,7 +437,7 @@ ${social}
 <div class="palette-hints"><kbd>↑</kbd><kbd>↓</kbd> to navigate · <kbd>↵</kbd> to open · type <code>Class.member</code> to scope</div>
 </div>
 </div>
-<script src="/assets/app.js" defer></script>
+<script type="module" src="/assets/app.js"></script>
 ${o.script ? `<script src="/assets/${o.script}" defer></script>` : ''}
 ${ANALYTICS}
 </body>

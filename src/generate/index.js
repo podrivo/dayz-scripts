@@ -242,18 +242,30 @@ function drainJobs() {
 // ---- static assets --------------------------------------------------------
 const assetsDir = path.join(DIST_DIR, 'assets');
 fs.mkdirSync(assetsDir, { recursive: true });
-for (const f of fs.readdirSync(path.join(ROOT, 'site'))) {
-  if (f.startsWith('.')) continue; // .DS_Store and friends must not ship
-  if (f === 'archive.html') {
-    fs.copyFileSync(path.join(ROOT, 'site', f), path.join(DIST_DIR, f));
-    continue;
+
+// Recursive, because site/app/ is a directory of ES modules that /assets/app.js
+// imports by relative path: they have to land at /assets/app/*.js for those
+// imports to resolve the same way the dev server serves them.
+function copyAssets(from, to) {
+  fs.mkdirSync(to, { recursive: true });
+  for (const e of fs.readdirSync(from, { withFileTypes: true })) {
+    if (e.name.startsWith('.')) continue; // .DS_Store and friends must not ship
+    if (e.isDirectory()) {
+      copyAssets(path.join(from, e.name), path.join(to, e.name));
+      continue;
+    }
+    // The archive shell is a page, not an asset: Netlify rewrites /v/<build>/…
+    // to it, so it has to sit at the site root.
+    const dest = e.name === 'archive.html' ? DIST_DIR : to;
+    fs.copyFileSync(path.join(from, e.name), path.join(dest, e.name));
   }
-  fs.copyFileSync(path.join(ROOT, 'site', f), path.join(assetsDir, f));
 }
+copyAssets(path.join(ROOT, 'site'), assetsDir);
+
 // build list for the client-side version picker (newest first). Also the only
 // place the build/version/date of each build now lives, since pages no longer
-// carry it; site/app.js reads this to stamp the chrome. The sha is what lets it
-// point the "View on GitHub" link at this exact build's commit.
+// carry it; site/app/builds.js reads this to stamp the chrome. The sha is what
+// lets it point the "View on GitHub" link at this exact build's commit.
 fs.writeFileSync(
   path.join(assetsDir, 'versions.json'),
   JSON.stringify(

@@ -7,7 +7,7 @@
 // render, the SHA-1 and, for file pages, the source read.
 //
 // Soundness rests on one rule: reuse a page only when every input its renderer
-// touched is unchanged. Per src/generate/render.js that means
+// touched is unchanged. Per the renderers in src/generate/render/ that means
 //   - class pages: the merged class object, the ancestor chain and whether
 //     each ancestor is a documented class, the derived-class list, the caller
 //     list of every method name it shows, where each name those methods call

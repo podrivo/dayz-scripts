@@ -5,7 +5,8 @@ from the official
 [DayZ Script Diff](https://github.com/BohemiaInteractive/DayZ-Script-Diff)
 sources.
 
-**Site:** [diff.yadz.app](https://diff.yadz.app)
+**Site:** [diff.yadz.app](https://diff.yadz.app) ·
+**Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
 
 [![PlayerBase on DIFF](screenshot.png)](https://diff.yadz.app/class/PlayerBase/)
 
@@ -91,6 +92,9 @@ The pipeline is `src/fetch.js` → `src/parse-all.js` → `src/generate/` (or
 `src/dev.js` in development). `src/generate/routes.js` is the site map both
 the writer and the dev server read. Page reuse, source links and the
 Enforce Script parser are documented in the files that implement them.
+
+[CONTRIBUTING.md](CONTRIBUTING.md) maps the rest: which file renders which
+URL, where the client-side behaviour lives, and the invariants to keep.
 
 When a new PC stable ships, add its forum thread (if it has one) in
 `src/generate/content.js`. Builds without a thread still appear.

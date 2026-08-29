@@ -142,7 +142,7 @@ export function* pages(site, opts) {
   yield page('hierarchy/', 'index', () => renderHierarchy(ctx('hierarchy/')));
   yield page('files/', 'index', () => renderFilesIndex(ctx('files/')));
   // No diff is built for this one: it picks its own pair of builds and compares
-  // them in the browser. See renderCompare in src/generate/render.js.
+  // them in the browser. See renderCompare in src/generate/render/changelog.js.
   yield page('changelog/', 'index', () => renderCompare(ctx('changelog/')));
   // The diffs /changelog/ folds together. Comparing two builds that are not
   // neighbours means folding together every one of these that lies between
