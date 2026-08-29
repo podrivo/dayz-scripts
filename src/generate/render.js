@@ -259,7 +259,7 @@ export function renderHome(ctx) {
   ${stat(s.files, 'script files', base + 'files/')}
 </section>
 <div class="cards">
-  <a class="card" href="${base}modules/">
+  <a class="card" href="${base}topics/">
     <h3>Topics</h3>
     <p>The ${site.groups.size} topics the scripts group themselves into — math, physics, entities, UI and the constant tables.</p>
   </a>
@@ -515,7 +515,7 @@ ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}
   );
 
   const module = cls.group && site.groups.has(cls.group)
-    ? `<p class="in-module">Part of <a href="${base}modules/${cls.group}/">${esc(site.groups.get(cls.group).label)}</a></p>`
+    ? `<p class="in-module">Part of <a href="${base}topics/${cls.group}/">${esc(site.groups.get(cls.group).label)}</a></p>`
     : '';
 
   const badges =
@@ -677,7 +677,7 @@ ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
     .map(([g, items]) => {
       const mod = site.groups.get(g);
       const heading = mod
-        ? `<a href="${base}modules/${g}/">${esc(mod.label)}</a>`
+        ? `<a href="${base}topics/${g}/">${esc(mod.label)}</a>`
         : 'Ungrouped';
       const rows = items
         .map(
@@ -824,7 +824,7 @@ export function renderModulesIndex(ctx) {
   const node = (name, depth) => {
     const mod = site.groups.get(name);
     const total = site.moduleTotal(name);
-    const link = `<a href="${base}modules/${name}/">${esc(mod.label)}</a>`;
+    const link = `<a href="${base}topics/${name}/">${esc(mod.label)}</a>`;
     const count = total ? ` <span class="count">${total.toLocaleString('en-US')}</span>` : '';
     if (!mod.children.length) return `<li>${link}${count}</li>`;
     return `<li><details${depth < 1 ? ' open' : ''}><summary>${link}${count}</summary>
@@ -839,7 +839,7 @@ ${filterBar('Filter topics…')}
   return layout({
     ...ctx,
     title: 'Topics',
-    active: 'modules/',
+    active: 'topics/',
     description: 'DayZ Enforce Script API grouped into topics: math, physics, entities, UI, constants and more.',
     breadcrumbs: [{ label: 'Topics' }],
     content,
@@ -873,7 +873,7 @@ export function renderModule(ctx, mod) {
         .map((k) => {
           const kid = site.groups.get(k);
           const total = site.moduleTotal(k);
-          return `<li><a href="${base}modules/${k}/">${esc(kid.label)}</a>${total ? ` <span class="count">${total}</span>` : ''}</li>`;
+          return `<li><a href="${base}topics/${k}/">${esc(kid.label)}</a>${total ? ` <span class="count">${total}</span>` : ''}</li>`;
         })
         .join('')}</ul>`
     : '';
@@ -992,7 +992,7 @@ ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e
     : '';
 
   const parent = mod.parent && site.groups.has(mod.parent)
-    ? `<p class="in-module">Part of <a href="${base}modules/${mod.parent}/">${esc(site.groups.get(mod.parent).label)}</a></p>`
+    ? `<p class="in-module">Part of <a href="${base}topics/${mod.parent}/">${esc(site.groups.get(mod.parent).label)}</a></p>`
     : '';
 
   const empty =
@@ -1025,9 +1025,9 @@ ${section('Variable Documentation', defBlocks(varEntries))}`;
   return layout({
     ...ctx,
     title: mod.label,
-    active: `modules/${rootTopic(site, mod.name)}/`,
+    active: `topics/${rootTopic(site, mod.name)}/`,
     description: `${mod.label} — DayZ Enforce Script API topic`,
-    breadcrumbs: [{ label: 'Topics', href: `${base}modules/` }, { label: mod.label }],
+    breadcrumbs: [{ label: 'Topics', href: `${base}topics/` }, { label: mod.label }],
     content,
   });
 }

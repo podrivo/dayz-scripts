@@ -22,6 +22,14 @@ import {
 } from './render.js';
 
 /**
+ * Spellings the \defgroup pages answered to before /topics/ settled. Kept with
+ * the site map so the generator's redirect rules and the dev server's cannot
+ * drift apart. `topics` itself is absent: it is the target, and a rule pointing
+ * at its own prefix would loop.
+ */
+export const TOPIC_ALIASES = ['module', 'modules', 'topic'];
+
+/**
  * Every page of one build, as descriptors:
  *
  *   rel     version-relative URL directory, '' for the home page. Also the
@@ -73,10 +81,10 @@ export function* pages(site, opts) {
   // home
   yield page('', 'index', () => renderHome(ctx('')));
 
-  // modules (\defgroup topics)
-  yield page('modules/', 'index', () => renderModulesIndex(ctx('modules/')));
+  // topics (\defgroup groups)
+  yield page('topics/', 'index', () => renderModulesIndex(ctx('topics/')));
   for (const mod of site.groups.values()) {
-    const rel = `modules/${mod.name}/`;
+    const rel = `topics/${mod.name}/`;
     yield page(rel, 'index', () => renderModule(ctx(rel), mod));
   }
 

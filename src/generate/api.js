@@ -141,7 +141,7 @@ export function buildApi(site) {
 
   const topics = [...site.groups.values()]
     .map((g) => {
-      const o = { name: g.name, title: g.label, url: `modules/${g.name}/` };
+      const o = { name: g.name, title: g.label, url: `topics/${g.name}/` };
       if (g.parent) o.parent = g.parent;
       return o;
     })
@@ -192,7 +192,7 @@ The script sources are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are
 
 - [Home](${SITE_URL}/): overview, official and community links, and the PC stable changelog
 - [Classes](${SITE_URL}/classes/): annotated class list
-- [Topics](${SITE_URL}/modules/): the \\defgroup groups the sources wrap themselves into
+- [Topics](${SITE_URL}/topics/): the \\defgroup groups the sources wrap themselves into
 - [Changelog](${SITE_URL}/changelog/): API diff between any two builds
 - [Community](${SITE_URL}/community/): official references, Discord servers, editors, build tools and data explorers for DayZ modding
 `;

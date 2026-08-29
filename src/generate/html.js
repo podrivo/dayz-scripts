@@ -205,7 +205,7 @@ export function briefOf(rawDoc, site, base) {
 // it was first rendered for. Topics are fetched from that build's nav.json
 // on first expand instead, which is how Doxygen served its tree too.
 const NAV = [
-  ['modules/', 'Topics', 'topics'],
+  ['topics/', 'Topics', 'topics'],
   ['classes/', 'Classes', [
     ['classes/', 'Classes'],
     ['classes/index/', 'Index'],
@@ -262,10 +262,10 @@ function navLevel(nodes, active, base) {
     .map(([href, label, kids]) => {
       const list = Array.isArray(kids) ? kids : null;
       const here = href === active && !list?.some(([h]) => h === active);
-      // Every /modules/<topic>/ page belongs under Topics, including the
+      // Every /topics/<topic>/ page belongs under Topics, including the
       // nested topics the nav does not list, so the section is current for
       // all of them and the client marks the entry if it is one of the roots.
-      const under = kids === 'topics' && !!active?.startsWith('modules/') && active !== 'modules/';
+      const under = kids === 'topics' && !!active?.startsWith('topics/') && active !== 'topics/';
       const holds = here || under || !!(list && navHolds(list, active));
       // A section that holds the page is marked `on` so the bar still says
       // where you are when the exact entry is a child.
@@ -323,7 +323,7 @@ function titleKind(vpath) {
   if (vpath.startsWith('class/')) return 'Class';
   if (vpath.startsWith('enum/')) return 'Enum';
   if (vpath.startsWith('files/') && vpath !== 'files/') return 'File';
-  if (vpath.startsWith('modules/') && vpath !== 'modules/') return 'Topic';
+  if (vpath.startsWith('topics/') && vpath !== 'topics/') return 'Topic';
   return '';
 }
 

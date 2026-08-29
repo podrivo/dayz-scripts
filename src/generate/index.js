@@ -26,7 +26,7 @@ import { buildSiteModel } from './model.js';
 import { diffModels } from './diff.js';
 import { SITE_URL } from './content.js';
 import { PageMemo } from './memo.js';
-import { pages as sitePages } from './routes.js';
+import { pages as sitePages, TOPIC_ALIASES } from './routes.js';
 import { render404 } from './render.js';
 import { layout, lastPacked, ARCHIVE_MARK } from './html.js';
 import { pageExceptions } from './archive.js';
@@ -305,10 +305,13 @@ const fieldRedirects = [
   '/v/:build/fields/* /v/:build/classes/fields/:splat 301',
   '/v/:build/fields/ /v/:build/classes/fields/ 301',
 ];
-const moduleRedirects = [
-  '/module/* /modules/:splat 301',
-  '/v/:build/module/* /v/:build/modules/:splat 301',
-];
+// The \defgroup pages were /module/ and then /modules/ before the site settled
+// on the name the nav, the breadcrumbs and every generated index already used.
+// Both numbers of both spellings resolve, so a guessed url lands either way.
+const topicRedirects = TOPIC_ALIASES.flatMap((from) => [
+  `/${from}/* /topics/:splat 301`,
+  `/v/:build/${from}/* /v/:build/topics/:splat 301`,
+]);
 const fileRedirects = [
   '/file/* /files/:splat 301',
   '/v/:build/file/* /v/:build/files/:splat 301',
@@ -324,7 +327,7 @@ fs.writeFileSync(
     '/v/ / 302',
     ...moveRedirects,
     ...fieldRedirects,
-    ...moduleRedirects,
+    ...topicRedirects,
     ...fileRedirects,
     `/v/${buildList[0].label}/* /:splat 301`,
     ...minorRedirects,

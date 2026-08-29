@@ -111,9 +111,9 @@
         box.append(...topics.map(([name, title]) => {
           const a = document.createElement('a');
           a.className = 'nav-sub';
-          a.href = `${BASE}modules/${name}/`;
+          a.href = `${BASE}topics/${name}/`;
           a.textContent = title;
-          if (active === `modules/${name}/`) {
+          if (active === `topics/${name}/`) {
             a.classList.add('active');
             a.setAttribute('aria-current', 'page');
           }
@@ -261,7 +261,7 @@
     k: ['const', (n, o) => `globals/constants/#${o}`],
     f: ['func', (n, o) => `globals/functions/#${o}`],
     d: ['macro', (n, o) => `globals/macros/#${o}`],
-    g: ['topic', (n, o) => `modules/${o}/`],
+    g: ['topic', (n, o) => `topics/${o}/`],
     // Paths are indexed as displayed; the URL is that spelling lowercased.
     F: ['file', (n, o) => `files/${o.toLowerCase()}/`],
   };

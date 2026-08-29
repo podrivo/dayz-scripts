@@ -19,7 +19,7 @@ import { CACHE_DIR, DATA_DIR, ROOT, extractSources, readJson } from './util.js';
 import { buildSiteModel } from './generate/model.js';
 import { diffModels } from './generate/diff.js';
 import { buildHistory } from './generate/history.js';
-import { resolve as resolvePage } from './generate/routes.js';
+import { resolve as resolvePage, TOPIC_ALIASES } from './generate/routes.js';
 import { render404 } from './generate/render.js';
 
 const PORT = process.env.PORT || 3000;
@@ -172,7 +172,9 @@ function relocated(rel) {
   if (rel === 'changes/' || rel === 'compare/') return 'changelog/';
   if (rel === 'globals/variables/') return 'globals/constants/';
   if (rel.startsWith('fields/')) return `classes/${rel}`;
-  if (rel.startsWith('module/')) return `modules/${rel.slice('module/'.length)}`;
+  for (const a of TOPIC_ALIASES) {
+    if (rel.startsWith(`${a}/`)) return `topics/${rel.slice(a.length + 1)}`;
+  }
   if (rel.startsWith('file/')) return `files/${rel.slice('file/'.length)}`;
   return null;
 }

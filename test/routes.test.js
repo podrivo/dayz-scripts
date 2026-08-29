@@ -62,8 +62,8 @@ test('no two pages claim the same URL', () => {
 test('URLs resolve to the renderer they name', () => {
   for (const [rel, kind] of [
     ['', 'index'],
-    ['modules/', 'index'],
-    ['modules/Topic/', 'index'],
+    ['topics/', 'index'],
+    ['topics/Topic/', 'index'],
     ['classes/', 'index'],
     ['classes/index/', 'index'],
     ['classes/f/', 'index'],
@@ -126,7 +126,7 @@ test('dependency hashes are deferred until a page is actually written', () => {
     assert.equal(typeof p.deps, 'function', `${rel} computes its deps eagerly`);
   }
   assert.equal(typeof resolve(site, 'class/Foo/', opts).deps(), 'string');
-  assert.equal(resolve(site, 'modules/', opts).deps, undefined);
+  assert.equal(resolve(site, 'topics/', opts).deps, undefined);
 });
 
 test('a resolved page renders without a memo behind it', () => {

@@ -17,7 +17,7 @@ has no official doc comment — the site shows where each member is used, and
 ## What's on the site
 
 - [Classes](https://diff.yadz.app/classes/) — annotated list, [A–Z index](https://diff.yadz.app/classes/index/), [inheritance tree](https://diff.yadz.app/hierarchy/), and every inherited member on `/class/<Name>/members/`
-- [Topics](https://diff.yadz.app/modules/) — the `\defgroup` groups the sources wrap themselves into (math, physics, entities, widgets, …)
+- [Topics](https://diff.yadz.app/topics/) — the `\defgroup` groups the sources wrap themselves into (math, physics, entities, widgets, …)
 - [Files](https://diff.yadz.app/files/) — the script tree, plus [globals](https://diff.yadz.app/globals/) declared outside a class
 - [Changelog](https://diff.yadz.app/changelog/) — API diff between any two builds
 

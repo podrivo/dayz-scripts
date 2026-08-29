@@ -65,6 +65,6 @@ test('pageInner is the main of a layout, without the document chrome', () => {
   assert.equal(pageMeta({ title: 'EFoo', versionPath: 'enum/EFoo/' }).title, `EFoo · Enum · ${SITE_TITLE}`);
   assert.equal(pageMeta({ title: 'foo.c', versionPath: 'files/3_game/foo.c/' }).title, `foo.c · File · ${SITE_TITLE}`);
   assert.equal(pageMeta({ title: 'File List', versionPath: 'files/' }).title, `File List · ${SITE_TITLE}`);
-  assert.equal(pageMeta({ title: 'Math', versionPath: 'modules/Math/' }).title, `Math · Topic · ${SITE_TITLE}`);
-  assert.equal(pageMeta({ title: 'Topics', versionPath: 'modules/' }).title, `Topics · ${SITE_TITLE}`);
+  assert.equal(pageMeta({ title: 'Math', versionPath: 'topics/Math/' }).title, `Math · Topic · ${SITE_TITLE}`);
+  assert.equal(pageMeta({ title: 'Topics', versionPath: 'topics/' }).title, `Topics · ${SITE_TITLE}`);
 });
