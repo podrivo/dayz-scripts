@@ -146,30 +146,25 @@ export function briefOf(rawDoc, site, base) {
   return inlineDoc(d.brief, site, base);
 }
 
-// Doxygen's navigation tree, entry for entry, with Changelog standing where
-// it listed Examples, and Globals lifted next to Files so the two are not
-// one menu. Labels are the DayZ names (Topics, Classes, Members) rather
-// than Doxygen's C-mode ones (Modules, Data Structures, Data Fields).
-// Community is the one entry with no Doxygen counterpart: the generated API
-// is most of this site, and the rest of the answers are off it.
-// Sections are links to their own overview as well as headings, and repeat
-// that overview as their first child the way Doxygen did, so the page a
-// section lands on is also visible as a place you are.
-// The topic list is the one part that changes from build to build, so it is
-// not written into the page: a reused page would carry the nav of the build
-// it was first rendered for. Topics are fetched from that build's nav.json
-// on first expand instead, which is how Doxygen served its tree too.
+// Two shapes. A section with kinds (Classes, Files, Globals) is a menu of
+// those kinds, repeated as page-bar tabs. A section that is one list
+// (Topics) is a link: the list is the page, and the filter finds a row.
+// Order is how a DayZ scripter looks: a class or a file first, engine
+// topic groups last. Labels are the DayZ names (Topics, Classes, Members)
+// rather than Doxygen's C-mode ones (Modules, Data Structures, Data Fields).
+export const FILE_LAYERS = ['1_Core', '2_GameLib', '3_Game', '4_World', '5_Mission'];
+
 const NAV = [
-  ['topics/', 'Topics', 'topics'],
   ['classes/', 'Classes', [
     ['classes/', 'Classes'],
-    ['classes/index/', 'Index'],
     ['hierarchy/', 'Hierarchy'],
-    ['classes/fields/', 'Members', [
-      ['classes/fields/', 'All'],
-      ['classes/fields/functions/', 'Methods'],
-      ['classes/fields/variables/', 'Fields'],
-    ]],
+    ['classes/fields/', 'Members'],
+    ['classes/fields/functions/', 'Methods'],
+    ['classes/fields/variables/', 'Fields'],
+  ]],
+  ['files/', 'Files', [
+    ['files/', 'Files'],
+    ...FILE_LAYERS.map((n) => [`files/#${n}`, n]),
   ]],
   ['globals/', 'Globals', [
     ['globals/', 'All'],
@@ -180,7 +175,7 @@ const NAV = [
     ['globals/values/', 'Values'],
     ['globals/macros/', 'Macros'],
   ]],
-  ['files/', 'Files'],
+  ['topics/', 'Topics'],
   ['changelog/', 'Changelog'],
   ['community/', 'Community'],
 ];
@@ -217,23 +212,15 @@ function navLevel(nodes, active, base) {
     .map(([href, label, kids]) => {
       const list = Array.isArray(kids) ? kids : null;
       const here = href === active && !list?.some(([h]) => h === active);
-      // Every /topics/<topic>/ page belongs under Topics, including the
-      // nested topics the nav does not list, so the section is current for
-      // all of them and the client marks the entry if it is one of the roots.
-      const under = kids === 'topics' && !!active?.startsWith('topics/') && active !== 'topics/';
-      const holds = here || under || !!(list && navHolds(list, active));
+      const holds = here || !!(list && navHolds(list, active));
       // A section that holds the page is marked `on` so the bar still says
       // where you are when the exact entry is a child.
       const on = holds && !here;
       const a = `<a class="nav-item${here ? ' active' : ''}${on ? ' on' : ''}" href="${base}${href}"${here ? ' aria-current="page"' : ''}>${esc(label)}</a>`;
-      if (!kids) return a;
-
-      // Sections stay shut: they are hover menus, and serving them open
-      // would pin a panel under the bar on every page they hold.
-      const fill = list ? '' : ` data-nav="${kids}"${under ? ` data-active="${esc(active)}"` : ''}`;
-      const intro = list ? '' : navLink(href, 'All topics', 'nav-sub', false, base);
-      const body = list ? navPanel(list, active, base) : '';
-      return `<details class="nav-sec${holds ? ' nav-here' : ''}"><summary>${a}</summary><div class="nav-kids"${fill}>${intro}${body}</div></details>`;
+      if (!list) return a;
+      // Menus stay shut: serving them open would pin a panel under the bar
+      // on every page they hold.
+      return `<details class="nav-sec${holds ? ' nav-here' : ''}"><summary>${a}</summary><div class="nav-kids">${navPanel(list, active, base)}</div></details>`;
     })
     .join('');
 }

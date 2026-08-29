@@ -65,19 +65,24 @@ export function initAllMembers() {
   });
 }
 
-/** The data-fields index: every member name of the build, by initial. */
+/** The data-fields index: every member name of the build, by initial.
+ *  A letter page paints the whole letter. The landing page waits for a
+ *  query — the full list cannot live in the DOM. */
 export function initFieldsIndex() {
   const fieldsList = $('#fieldsList');
   if (!fieldsList) return;
 
   const kind = fieldsList.dataset.kind;
-  const letter = fieldsList.dataset.letter;
+  const letter = fieldsList.dataset.letter || '';
   const letterOf = (n) => (/^[a-z]/i.test(n) ? n[0].toLowerCase() : '_');
+  const filter = $('#pageFilter');
+  const fallback = $('.members-fallback');
+  const hint = 'Type to find a member, or pick a letter.';
 
-  loadIndex().then(() => {
+  const collect = (pred) => {
     const owners = new Map();
     const add = (ci, name) => {
-      if (letterOf(name) !== letter) return;
+      if (!pred(name)) return;
       const cls = index.classes[ci];
       const list = owners.get(name);
       if (list) {
@@ -86,6 +91,10 @@ export function initFieldsIndex() {
     };
     if (kind !== 'variables') for (const [ci, n] of index.methods || []) add(ci, n);
     if (kind !== 'functions') for (const [ci, n] of index.vars || []) add(ci, n);
+    return owners;
+  };
+
+  const paint = (owners) => {
     const names = [...owners.keys()].sort((a, b) => a.localeCompare(b));
     fieldsList.innerHTML = names
       .map((name) => {
@@ -93,14 +102,35 @@ export function initFieldsIndex() {
         return /* html */ `<dt><code>${esc(name)}</code></dt><dd>${dd}</dd>`;
       })
       .join('');
-    const fallback = $('.members-fallback');
-    if (fallback) fallback.textContent = `${names.length.toLocaleString()} names.`;
-    $('h1').insertAdjacentHTML('beforeend', ` <span class="count">${names.length.toLocaleString()}</span>`);
-    const filter = $('#pageFilter');
-    if (filter) filter.placeholder = `Filter ${names.length.toLocaleString()} fields…`;
+    if (fallback) {
+      fallback.textContent = names.length ? `${names.length.toLocaleString()} names.` : hint;
+    }
     rescanFilter();
+    return names.length;
+  };
+
+  loadIndex().then(() => {
+    if (letter) {
+      const n = paint(collect((name) => letterOf(name) === letter));
+      $('h1').insertAdjacentHTML('beforeend', ` <span class="count">${n.toLocaleString()}</span>`);
+      if (filter) filter.placeholder = `Filter ${n.toLocaleString()} fields…`;
+      return;
+    }
+
+    const MIN = 2;
+    const run = () => {
+      const q = (filter?.value || '').trim().toLowerCase();
+      if (q.length < MIN) {
+        fieldsList.innerHTML = '';
+        if (fallback) fallback.textContent = hint;
+        rescanFilter();
+        return;
+      }
+      paint(collect((name) => name.toLowerCase().includes(q)));
+    };
+    filter?.addEventListener('input', run);
+    run();
   }).catch(() => {
-    const fallback = $('.members-fallback');
     if (fallback) fallback.textContent = 'The list could not be loaded.';
   });
 }

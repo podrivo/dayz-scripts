@@ -98,7 +98,7 @@ works on is on the page, which is how one script serves ~660,000 pages.
 | Feature | File |
 | --- | --- |
 | Light/dark, the wordmark | `site/app/theme.js` |
-| The nav bar and its topic list | `site/app/nav.js` |
+| The nav bar | `site/app/nav.js` |
 | Which build this is, the version switcher | `site/app/builds.js` |
 | The search palette | `site/app/search.js` |
 | `search.json`, shared by four features | `site/app/search-index.js` |

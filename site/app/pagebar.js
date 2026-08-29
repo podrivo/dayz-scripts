@@ -14,8 +14,7 @@ const NARROW = matchMedia('(max-width: 700px)');
 /**
  * Publish the bar's height as --h-bar. Read by the anchor scroll offset in
  * styles.css and by the table of contents' scroll spy. Measured rather than
- * declared because the bar is one row on most pages and two on the indexes,
- * and because the chips collapsing changes it.
+ * declared because the chips collapsing changes it.
  */
 function trackHeight(bar) {
   const publish = () =>
@@ -115,10 +114,26 @@ function filterToggle(bar) {
   if (input.value) setOpen(true);
 }
 
+/** Shut the letter picker when the click is outside it. */
+function letterPick(bar) {
+  const pick = $('.pb-pick', bar);
+  if (!pick) return;
+  addEventListener('click', (e) => {
+    if (pick.open && !e.target.closest('.pb-pick')) pick.open = false;
+  });
+  addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && pick.open) {
+      e.stopPropagation();
+      pick.open = false;
+    }
+  });
+}
+
 export function initPageBar() {
   const bar = $('.pagebar');
   if (!bar) return;
   trackHeight(bar);
   filterToggle(bar);
   chipMenu(bar);
+  letterPick(bar);
 }

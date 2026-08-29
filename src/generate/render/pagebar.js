@@ -10,6 +10,9 @@
  * A page asks for the parts it needs and layout() puts the result at the top
  * of <main>, above the title; see pageInner() in src/generate/html.js. It is
  * sticky, so it is still there once the page it narrows has scrolled past.
+ * A section with kinds (Classes, Files, Globals) asks for those kinds as
+ * `tabs`; Topics asks for the filter and the expand tools. Letters are
+ * only for the members index.
  *
  * Behaviour is site/app/filter.js (what the field and the chips do) and
  * site/app/pagebar.js (the bar itself).
@@ -50,14 +53,37 @@ const tabStrip = (tabs) =>
     )
     .join('')}</nav>`;
 
-/** A–Z shortcuts, on the indexes that are split a letter to a page. */
-const letterStrip = ({ base, dir, list, current }) =>
-  /* html */ `<nav class="pb-letters" aria-label="By letter">${[...list]
-    .map(
-      (l) =>
-        `<a class="pb-letter${l === current ? ' active' : ''}" href="${base}${dir}${l}/"${l === current ? ' aria-current="page"' : ''}>${l === '_' ? '#' : l.toUpperCase()}</a>`
-    )
-    .join('')}</nav>`;
+/** Letter picker, only on the members index — that list cannot fit on one page. */
+const letterPick = ({ base, dir, list, current }) => {
+  const label = !current ? 'Letter' : current === '_' ? '#' : current.toUpperCase();
+  const links = [...list]
+    .map((l) => {
+      const text = l === '_' ? '#' : l.toUpperCase();
+      const on = l === current;
+      return `<a class="pb-letter${on ? ' active' : ''}" href="${base}${dir}${l}/"${on ? ' aria-current="page"' : ''}>${text}</a>`;
+    })
+    .join('');
+  return /* html */ `<details class="pb-pick"><summary>${esc(label)}</summary><nav class="pb-pick-menu" aria-label="By letter">${links}</nav></details>`;
+};
+
+/** Sibling kinds of the Classes section, the same list the header menu holds. */
+export function classTabs(base, active) {
+  return [
+    ['classes/', 'Classes'],
+    ['hierarchy/', 'Hierarchy'],
+    ['classes/fields/', 'Members'],
+    ['classes/fields/functions/', 'Methods'],
+    ['classes/fields/variables/', 'Fields'],
+  ].map(([href, label]) => {
+    const on =
+      href === 'classes/'
+        ? active === 'classes/' || active === 'classes/index/' || /^classes\/[a-z_]\//.test(active)
+        : href === 'classes/fields/'
+          ? active === 'classes/fields/' || /^classes\/fields\/[a-z_]\//.test(active)
+          : active === href || active.startsWith(href);
+    return [`${base}${href}`, label, on];
+  });
+}
 
 /** Expand all / collapse all, on the pages that ship a tree. */
 const treeTools = () =>
@@ -100,19 +126,19 @@ const chipRow = (chips) =>
  * - `tools`   true for expand all / collapse all
  * - `filter`  the placeholder of the type-to-filter field
  * - `chips`   [modifier, label][] — what the filter can be narrowed to
- * - `letters` { base, dir, list, current } — the A–Z row
+ * - `letters` { base, dir, list, current } — the members-index letter picker
  *
- * The letters are a row of their own: twenty-seven of them never fit beside a
- * field. Everything else shares the first row. The field leads — it is the
- * thing you reach for — and the chips sit next to it because they narrow it.
+ * One row. The field leads — it is the thing you reach for — and the chips
+ * sit next to it because they narrow it. Letters are a menu, not a strip:
+ * twenty-seven of them never fit beside a field.
  */
 export function pageBar({ tabs, tools, filter, chips, letters } = {}) {
   const row = [
     filter ? filterField(filter) : '',
     chips?.length ? chipRow(chips) : '',
     tabs?.length ? tabStrip(tabs) : '',
+    letters ? letterPick(letters) : '',
     tools ? treeTools() : '',
   ].join('');
-  const rows = `${row ? `<div class="pb-row">${row}</div>` : ''}${letters ? letterStrip(letters) : ''}`;
-  return rows ? `<div class="pagebar">${rows}</div>` : '';
+  return row ? `<div class="pagebar"><div class="pb-row">${row}</div></div>` : '';
 }

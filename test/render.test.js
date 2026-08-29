@@ -70,16 +70,19 @@ test('layout links assets absolutely so a page works at any depth', () => {
 test('the nav names the DayZ-facing sections, and marks the page once', () => {
   const html = layout({ title: 'x', base: '', active: 'globals/typedefs/', versionPath: '', content: '' });
   const labels = [
-    'Topics', 'Classes', 'Index', 'Hierarchy',
-    'Members', 'Methods', 'Fields', 'Globals', 'Files', 'Constants', 'Typedefs', 'Enums', 'Values', 'Macros', 'Changelog',
+    'Topics', 'Classes', 'Hierarchy',
+    'Members', 'Methods', 'Fields', 'Globals', 'Files', '1_Core', '4_World', '5_Mission',
+    'Constants', 'Typedefs', 'Enums', 'Values', 'Macros', 'Changelog',
   ];
   for (const l of labels) assert.ok(html.includes(`>${l}</a>`), `nav is missing ${l}`);
+  assert.ok(html.includes('href="topics/"'), 'Topics is /topics/');
   assert.ok(html.includes('href="classes/"'), 'Classes is /classes/');
-  assert.ok(html.includes('href="classes/index/"'), 'Index is /classes/index/');
   assert.ok(html.includes('href="classes/fields/"'), 'Members is /classes/fields/');
   assert.ok(html.includes('href="classes/fields/functions/"'), 'Methods is /classes/fields/functions/');
   assert.ok(html.includes('href="classes/fields/variables/"'), 'Fields is /classes/fields/variables/');
-  assert.ok(html.includes('>All topics</a>'), 'Topics menu starts with All topics');
+  assert.ok(html.includes('href="files/#4_World"'), 'Files menu has the script layers');
+  assert.ok(!html.includes('href="classes/index/"'), 'Class Index is not a nav entry');
+  assert.ok(!html.includes('>All topics</a>'), 'Topics is a link, not a menu of every topic');
   assert.ok(!html.includes('>Modules</a>'));
   assert.ok(!html.includes('>Data Structures</a>'));
   assert.ok(!html.includes('>Data Structure Index</a>'));
@@ -90,7 +93,13 @@ test('the nav names the DayZ-facing sections, and marks the page once', () => {
   assert.ok(!html.includes('href="changes/"'));
   assert.ok(!html.includes('href="compare/"'));
   assert.ok(!html.includes('>Welcome</a>'), 'the brand is home; Welcome is not repeated');
-  assert.ok(!html.includes('>File List</a>'), 'Files is a link, not a menu of File List plus Globals');
+  assert.ok(!html.includes('>File List</a>'), 'Files is the script tree, not Doxygen File List');
+  let last = -1;
+  for (const href of ['href="classes/"', 'href="files/"', 'href="globals/"', 'href="topics/"']) {
+    const at = html.indexOf(href);
+    assert.ok(at > last, `${href} is out of DayZ order`);
+    last = at;
+  }
   assert.equal(html.match(/nav-(?:item|sub) active"/g).length, 1, 'exactly one entry is the current page');
   assert.ok(html.includes('<a class="nav-item on" href="globals/"'), 'Globals is the current section');
   assert.ok(html.includes('<details class="nav-sec nav-here">'), 'Globals is current but shut');

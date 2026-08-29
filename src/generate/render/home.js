@@ -124,17 +124,17 @@ export function renderHome(ctx) {
   ${stat(s.files, 'script files', base + 'files/')}
 </section>
 <div class="cards">
-  <a class="card" href="${base}topics/">
-    <h3>Topics</h3>
-    <p>The ${site.groups.size} topics the scripts group themselves into — math, physics, entities, UI and the constant tables.</p>
-  </a>
   <a class="card" href="${base}classes/">
     <h3>Classes</h3>
-    <p>All ${s.classes.toLocaleString('en-US')} classes, with an alphabetical index, the inheritance tree and every member.</p>
+    <p>All ${s.classes.toLocaleString('en-US')} classes, the inheritance tree, and every member.</p>
   </a>
   <a class="card" href="${base}files/">
     <h3>Files</h3>
-    <p>All ${s.files.toLocaleString('en-US')} script files with their sources, plus everything declared outside a class.</p>
+    <p>All ${s.files.toLocaleString('en-US')} script files in the layout the game ships: 1_Core through 5_Mission.</p>
+  </a>
+  <a class="card" href="${base}topics/">
+    <h3>Topics</h3>
+    <p>The ${site.groups.size} topics the scripts group themselves into — math, physics, entities, UI and the constant tables.</p>
   </a>
 </div>
 ${linkCards(explore)}

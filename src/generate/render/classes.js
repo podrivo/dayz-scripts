@@ -4,7 +4,7 @@
 // One class's own page is render/class.js.
 
 import { esc, layout, condBadges, briefOf } from '../html.js';
-import { letterTitle, pageBar } from './pagebar.js';
+import { classTabs, letterTitle, pageBar } from './pagebar.js';
 
 /** Classes: every class with its brief, the way Doxygen annotates them. */
 export function renderAnnotated(ctx, letters) {
@@ -31,8 +31,8 @@ ${sections}`;
     title: 'Classes',
     active: 'classes/',
     bar: pageBar({
+      tabs: classTabs(base, 'classes/'),
       filter: 'Filter classes…',
-      letters: { base, dir: 'classes/', list: letters.keys() },
     }),
     description: `All ${site.classes.size} DayZ Enforce Script classes, with descriptions.`,
     breadcrumbs: [{ label: 'Classes' }],
@@ -58,8 +58,8 @@ ${sections}`;
     title: 'Class Index',
     active: 'classes/index/',
     bar: pageBar({
+      tabs: classTabs(base, 'classes/index/'),
       filter: 'Filter classes…',
-      letters: { base, dir: 'classes/', list: letters.keys() },
     }),
     breadcrumbs: [{ label: 'Classes', href: `${base}classes/` }, { label: 'Index' }],
     content,
@@ -84,8 +84,8 @@ export function renderClassesLetter(ctx, letter, names, letters) {
     title: `Classes ${letterTitle(letter)}`,
     active: 'classes/',
     bar: pageBar({
+      tabs: classTabs(base, `classes/${letter}/`),
       filter: 'Filter classes…',
-      letters: { base, dir: 'classes/', list: letters, current: letter },
     }),
     breadcrumbs: [
       { label: 'Classes', href: `${base}classes/` },
@@ -101,29 +101,24 @@ export function renderClassesLetter(ctx, letter, names, letters) {
 export function renderFields(ctx, letter, letters, kind) {
   const { base } = ctx;
   const KINDS = {
-    all: ['Members', 'classes/fields/', 'Every member and method declared by a class.', 'All'],
-    functions: ['Members — Methods', 'classes/fields/functions/', 'Every method declared by a class.', 'Methods'],
-    variables: ['Members — Fields', 'classes/fields/variables/', 'Every variable and constant declared by a class.', 'Fields'],
+    all: ['Members', 'classes/fields/', 'Every member and method declared by a class.'],
+    functions: ['Members — Methods', 'classes/fields/functions/', 'Every method declared by a class.'],
+    variables: ['Members — Fields', 'classes/fields/variables/', 'Every variable and constant declared by a class.'],
   };
   const [title, dir, blurb] = KINDS[kind];
-  const tabs = Object.entries(KINDS).map(([, [, d, , tab]]) => [`${base}${d}`, tab, d === dir]);
-
-  const body = letter
-    ? /* html */ `<dl class="fields" id="fieldsList" data-kind="${kind}" data-letter="${esc(letter)}"></dl>
-<p class="members-fallback">Assembling the list from the class index.</p>`
-    : `<p class="muted">Pick a letter above.</p>`;
 
   const content = /* html */ `
 <h1>${title}${letter ? ` — ${letterTitle(letter)}` : ''}</h1>
 <p>${blurb} The same name is often declared by many classes, so each one links to every class that has it.</p>
-${body}`;
+<dl class="fields" id="fieldsList" data-kind="${kind}"${letter ? ` data-letter="${esc(letter)}"` : ''}></dl>
+<p class="members-fallback">${letter ? 'Assembling the list from the class index.' : 'Type to find a member, or pick a letter.'}</p>`;
   return layout({
     ...ctx,
     title: letter ? `${title} ${letterTitle(letter)}` : title,
     active: dir,
     bar: pageBar({
-      tabs,
-      filter: letter ? 'Filter members…' : '',
+      tabs: classTabs(base, dir),
+      filter: 'Filter members…',
       letters: { base, dir, list: letters, current: letter },
     }),
     breadcrumbs: [

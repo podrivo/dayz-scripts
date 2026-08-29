@@ -35,16 +35,6 @@ export function renderModulesIndex(ctx) {
   });
 }
 
-/**
- * The top-level topic a module sits under. The sidebar lists only those, so
- * this is what a nested topic's page highlights.
- */
-function rootTopic(site, name) {
-  let n = name;
-  for (let p = site.groups.get(n)?.parent; p; p = site.groups.get(n)?.parent) n = p;
-  return n;
-}
-
 export function renderModule(ctx, mod) {
   const { site, base } = ctx;
 
@@ -207,7 +197,7 @@ ${section('Variable Documentation', defBlocks(varEntries))}`;
   return layout({
     ...ctx,
     title: mod.label,
-    active: `topics/${rootTopic(site, mod.name)}/`,
+    active: 'topics/',
     bar: declared >= 12 ? pageBar({ filter: 'Filter this topic…' }) : '',
     description: `${mod.label} — DayZ Enforce Script API topic`,
     breadcrumbs: [{ label: 'Topics', href: `${base}topics/` }, { label: mod.label }],

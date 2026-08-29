@@ -1,7 +1,7 @@
 // The script files: the tree at /files/, and one file's source at
 // /files/<Dir>/<Name.c>/.
 
-import { esc, layout, EXT } from '../html.js';
+import { esc, layout, EXT, FILE_LAYERS } from '../html.js';
 import { fileHref } from './shared.js';
 import { pageBar } from './pagebar.js';
 
@@ -20,7 +20,7 @@ export function renderFilesIndex(ctx) {
     return `<li class="tree-file"><a href="${fileHref(site, base, f.path)}"><code>${esc(f.name)}</code></a>${what ? ` <span class="muted">${what}</span>` : ''}</li>`;
   };
 
-  const dirNode = (d, depth) => /* html */ `<li><details${depth < 1 ? ' open' : ''}><summary><code>${esc(d.name)}</code> <span class="count">${d.count.toLocaleString('en-US')}</span></summary>
+  const dirNode = (d, depth) => /* html */ `<li${depth < 1 ? ` id="${esc(d.name)}"` : ''}><details${depth < 1 ? ' open' : ''}><summary><code>${esc(d.name)}</code> <span class="count">${d.count.toLocaleString('en-US')}</span></summary>
 <ul>${d.dirs.map((k) => dirNode(k, depth + 1)).join('')}${d.files.map(fileRow).join('')}</ul></details></li>`;
 
   const content = /* html */ `
@@ -31,7 +31,14 @@ export function renderFilesIndex(ctx) {
     ...ctx,
     title: 'File List',
     active: 'files/',
-    bar: pageBar({ tools: true, filter: 'Filter files and directories…' }),
+    bar: pageBar({
+      tabs: [
+        [`${base}files/`, 'Files', true],
+        ...FILE_LAYERS.map((n) => [`${base}files/#${n}`, n, false]),
+      ],
+      tools: true,
+      filter: 'Filter files and directories…',
+    }),
     breadcrumbs: [{ label: 'Files' }],
     content,
   });

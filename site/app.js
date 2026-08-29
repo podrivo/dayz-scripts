@@ -10,7 +10,7 @@
    deferred and the page is fully parsed before any of this runs. */
 
 import { initTheme, initBrand } from './app/theme.js';
-import { initNav, initNavTopics } from './app/nav.js';
+import { initNav } from './app/nav.js';
 import { initBuilds, initVersionPicker } from './app/builds.js';
 import { recordVisit } from './app/recent.js';
 import { initSearch } from './app/search.js';
@@ -32,7 +32,6 @@ import { initMinimap } from './app/minimap.js';
 initTheme();
 initBrand();
 initNav();
-initNavTopics();
 initBuilds();
 initVersionPicker();
 
