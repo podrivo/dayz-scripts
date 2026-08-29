@@ -602,7 +602,8 @@ h3.member-name .ordinal { font-size: 12px; font-weight: 400; color: var(--fg2); 
   flex: none; width: 108px; height: calc(100vh - var(--h-top));
   padding: 14px 12px; border-left: 1px solid var(--line);
 }
-.mm-track { position: relative; height: 100%; cursor: pointer; touch-action: none; }
+.mm-track { position: relative; height: 100%; cursor: grab; touch-action: none; }
+.mm-track.grabbing { cursor: grabbing; }
 
 /* One bar per pixel row. Width stands in for the length of the line and the
    offset for its indentation, which is what makes the column read as code

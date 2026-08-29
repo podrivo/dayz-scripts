@@ -7,9 +7,13 @@
 //
 // Anything the dictionary misses — files added after that snapshot — falls back
 // to the name the file declares: `contextmenu.c` holds `class ContextMenu`, so
-// it is displayed as `ContextMenu.c`. Whatever neither resolves stays as it is,
-// which is why this only ever affects presentation. URLs keep the lowercase
-// spelling so existing links, redirects and the search index stay valid.
+// it is displayed as `ContextMenu.c`. Whatever neither resolves stays as it is.
+//
+// This spelling is a file's URL as well as its label, so that /files/ names a
+// file the way /class/ names a class. That makes a URL depend on more than the
+// path — the dictionary, and for the handful it misses the declared type name —
+// so site/notfound.js resolves any casing back to the current spelling, which
+// covers both the lowercase form and a spelling an earlier build produced.
 
 import fs from 'node:fs';
 

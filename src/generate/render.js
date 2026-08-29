@@ -21,8 +21,16 @@ function anchorFor(used, name) {
   return a;
 }
 
-function fileHref(base, path) {
-  return `${base}files/${path.replace(/^scripts\//, '')}/`;
+/**
+ * A file's URL, spelled the way the game's own tree spells it, which is also
+ * the way the page displays it and the way every other kind of page names
+ * itself: /files/1_Core/WorkbenchApi.c/ beside /class/PlayerBase/. The sources
+ * we parse lowercase every path, so this goes through src/generate/casing.js
+ * to get the capitalisation back; site/notfound.js forwards the lowercase
+ * spelling, and any older one, to whatever the current build calls it.
+ */
+function fileHref(site, base, path) {
+  return `${base}files/${shown(site, path)}/`;
 }
 
 /** How many callers to show, and the point past which the rest are only
@@ -99,14 +107,14 @@ function referencesBlock(item, ctx, scope = null) {
   return `<div class="xref xref-out"><span class="xref-label">References</span> ${writeList(items)}.</div>`;
 }
 
-function fileLineHref(base, path, line) {
-  return `${fileHref(base, path)}#L${line}`;
+function fileLineHref(site, base, path, line) {
+  return `${fileHref(site, base, path)}#L${line}`;
 }
 
 /**
- * How a script path is spelled for the reader. URLs keep the lowercase
- * spelling the sources use; only what is shown gets the game's own
- * capitalisation back (see src/generate/casing.js).
+ * How a script path is spelled, for the reader and in its URL alike: the
+ * game's own capitalisation, restored from the lowercase spelling the sources
+ * we parse use (see src/generate/casing.js).
  */
 function shown(site, path) {
   return site.paths.get(path) || path.replace(/^scripts\//, '');
@@ -117,7 +125,7 @@ function locationLinks(site, base, locations) {
   return locations
     .map(
       (l) =>
-        `<a href="${fileLineHref(base, l.path, l.line)}"><code>${esc(shown(site, l.path))}</code>:${l.line}</a>` +
+        `<a href="${fileLineHref(site, base, l.path, l.line)}"><code>${esc(shown(site, l.path))}</code>:${l.line}</a>` +
         (l.forward ? ' <span class="muted">(declaration)</span>' : '')
     )
     .join('<br>');
@@ -491,7 +499,7 @@ ${doc}</div>`;
     const id = anchorFor(used, m.name);
     const doc = m.doc ? `<div class="member-doc">${renderDoc(m.doc, site, base)}</div>` : '';
     const src = m.file
-      ? `<a class="member-src" href="${fileLineHref(base, m.file, m.line)}" title="View source">src</a>`
+      ? `<a class="member-src" href="${fileLineHref(site, base, m.file, m.line)}" title="View source">src</a>`
       : '';
     return `<div class="member" id="${id}">
 <div class="member-sig"><code>${methodSig(m, site, base)}</code>${condBadges(m.cond)}${src}<a class="anchor" href="#${id}" aria-label="Link to ${esc(m.name)}">#</a></div>
@@ -653,7 +661,7 @@ const byName = (a, b) => a.name.localeCompare(b.name);
 
 /** The contents of each Globals tab, so the "All" tab can reuse them. */
 function globalSections(ctx, site, base) {
-  const src = (item) => `<a class="member-src" href="${fileLineHref(base, item.file, item.line)}">src</a>`;
+  const src = (item) => `<a class="member-src" href="${fileLineHref(site, base, item.file, item.line)}">src</a>`;
   const used = new Set();
 
   const functions = [...site.functions].sort(byName).map((fn) => {
@@ -801,7 +809,7 @@ export function renderFilesIndex(ctx) {
     ]
       .filter(Boolean)
       .join(', ');
-    return `<li class="tree-file"><a href="${fileHref(base, f.path)}"><code>${esc(f.name)}</code></a>${what ? ` <span class="muted">${what}</span>` : ''}</li>`;
+    return `<li class="tree-file"><a href="${fileHref(site, base, f.path)}"><code>${esc(f.name)}</code></a>${what ? ` <span class="muted">${what}</span>` : ''}</li>`;
   };
 
   const dirNode = (d, depth) => `<li><details${depth < 1 ? ' open' : ''}><summary><code>${esc(d.name)}</code> <span class="count">${d.count.toLocaleString('en-US')}</span></summary>
@@ -878,7 +886,7 @@ export function renderModule(ctx, mod) {
         .join('')}</ul>`
     : '';
 
-  const src = (item) => `<a class="member-src" href="${fileLineHref(base, item.file, item.line)}">src</a>`;
+  const src = (item) => `<a class="member-src" href="${fileLineHref(site, base, item.file, item.line)}">src</a>`;
   const varRows = (items) =>
     items.length
       ? `<table class="list"><tbody>${[...items]
@@ -1207,5 +1215,7 @@ export function render404(ctx) {
 <h1>Page not found</h1>
 <p>This page doesn't exist in this version of the documentation. It may have been added in a newer DayZ version, or removed.</p>
 <p><a href="${ctx.root}">Go to the latest documentation</a> or use the search box above.</p>`;
-  return layout({ ...ctx, title: 'Not found', noindex: true, content });
+  // site/notfound.js reads the url and forwards a mis-cased one to the page it
+  // names, which is why it belongs here and nowhere else.
+  return layout({ ...ctx, title: 'Not found', noindex: true, script: 'notfound.js', content });
 }

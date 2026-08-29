@@ -434,6 +434,7 @@ ${social}
 </div>
 </div>
 <script src="/assets/app.js" defer></script>
+${o.script ? `<script src="/assets/${o.script}" defer></script>` : ''}
 ${ANALYTICS}
 </body>
 </html>`;

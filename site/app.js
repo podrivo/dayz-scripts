@@ -262,8 +262,8 @@
     f: ['func', (n, o) => `globals/functions/#${o}`],
     d: ['macro', (n, o) => `globals/macros/#${o}`],
     g: ['topic', (n, o) => `topics/${o}/`],
-    // Paths are indexed as displayed; the URL is that spelling lowercased.
-    F: ['file', (n, o) => `files/${o.toLowerCase()}/`],
+    // Paths are indexed as displayed, which is also how the URL spells them.
+    F: ['file', (n, o) => `files/${o}/`],
   };
 
   /* Which kinds carry a real owner, and so can be narrowed by one. */
@@ -844,7 +844,9 @@
     const fileByLower = new Map();
     const fileByBase = new Map();
     for (const p of list('files')) {
-      const url = `files/${p.toLowerCase()}/`;
+      // Looked up case-insensitively, since a path in source can be spelled
+      // any way; the URL it resolves to is the indexed spelling.
+      const url = `files/${p}/`;
       fileByLower.set(p.toLowerCase(), url);
       const base = p.split('/').pop().toLowerCase();
       fileByBase.set(base, fileByBase.has(base) ? null : url);
@@ -1917,6 +1919,7 @@
       dragging = false;
       startY = e.clientY;
       tip.hidden = true;
+      track.classList.add('grabbing');
     });
     track.addEventListener('pointermove', (e) => {
       const y = at(e);
@@ -1936,13 +1939,17 @@
     // pixels tall, so honour the nearest one instead of the raw position.
     track.addEventListener('pointerup', (e) => {
       down = false;
+      track.classList.remove('grabbing');
       if (dragging) return;
       const b = nearest(at(e));
       if (b) b.it.el.scrollIntoView({ block: 'start', behavior: still.matches ? 'auto' : 'smooth' });
       else centre(at(e), true);
     });
     // without this a cancelled gesture leaves the rail scrolling on hover
-    track.addEventListener('pointercancel', () => { down = false; });
+    track.addEventListener('pointercancel', () => {
+      down = false;
+      track.classList.remove('grabbing');
+    });
     track.addEventListener('pointerleave', () => { tip.hidden = true; });
 
     addEventListener('scroll', sync, { passive: true });

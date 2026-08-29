@@ -75,7 +75,7 @@ test('URLs resolve to the renderer they name', () => {
     ['files/', 'index'],
     ['changelog/', 'index'],
     ['community/', 'index'],
-    ['files/3_game/foo.c/', 'file'],
+    ['files/3_Game/Foo.c/', 'file'],
     ['search.json', 'search'],
   ]) {
     const p = resolve(site, rel, opts);
@@ -102,7 +102,7 @@ test('only the sidecars the site fetches are marked as assets', () => {
   const assets = all.filter((p) => p.asset).map((p) => p.rel);
   assert.deepEqual(assets, [
     'diff.json',
-    'files/3_game/foo.c/links.json',
+    'files/3_Game/Foo.c/links.json',
     'search.json',
     'nav.json',
     'api.json',
@@ -121,7 +121,7 @@ test('the machine API is latest-only', () => {
 // Hashing every class's dependencies costs ~155ms per build. A URL lookup walks
 // past most of the site to find its page and must not pay that on the way.
 test('dependency hashes are deferred until a page is actually written', () => {
-  for (const rel of ['class/Foo/', 'enum/EFoo/', 'files/3_game/foo.c/']) {
+  for (const rel of ['class/Foo/', 'enum/EFoo/', 'files/3_Game/Foo.c/']) {
     const p = resolve(site, rel, opts);
     assert.equal(typeof p.deps, 'function', `${rel} computes its deps eagerly`);
   }

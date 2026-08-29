@@ -16,8 +16,8 @@
 //   docs:     {"class/PlayerBase/#OnJumpStart": "Called when jumping.", ...},
 // }
 // URLs are reconstructed client-side: class/<name>/, enum/<name>/, ... File
-// paths are stored the way they are displayed and lowercased back into a URL,
-// since that is exactly how the two spellings relate (see casing.js).
+// paths are stored the way they are displayed, which is also how their URL
+// spells them (see casing.js).
 //
 // Everything a page anchors is indexed, because with 89% of members carrying
 // no documentation, looking a name up is most of what this site is for. The
