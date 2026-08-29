@@ -310,10 +310,37 @@
     return '';
   }
 
+  /* A name's initials — its first character, every capital, and whatever
+     follows an underscore — so `eehb` can reach EEHitBy and `gg` GetGame the
+     way the fingers that type these names all day expect. Cached because the
+     same 60k names are asked again on every keystroke. */
+  const initialsCache = new Map();
+  function initialsOf(name) {
+    let s = initialsCache.get(name);
+    if (s === undefined) {
+      s = name[0];
+      for (let i = 1; i < name.length; i++) {
+        const c = name.charCodeAt(i);
+        if (c >= 65 && c <= 90) s += name[i];
+        else if (name.charCodeAt(i - 1) === 95) s += name[i];
+      }
+      s = s.toLowerCase();
+      initialsCache.set(name, s);
+    }
+    return s;
+  }
+
   function score(name, q, qlc) {
     const nlc = name.toLowerCase();
     const i = nlc.indexOf(qlc);
-    if (i === -1) return -1;
+    if (i === -1) {
+      // No substring hit: try the initials. Capped below any substring match,
+      // so `gg` still puts a name containing "gg" ahead of every G…G… one.
+      if (qlc.length < 2 || !/^[a-z0-9]+$/.test(qlc)) return -1;
+      const ini = initialsOf(name);
+      if (!ini.startsWith(qlc)) return -1;
+      return 35 + (ini.length === qlc.length ? 40 : 0) - Math.min(ini.length - qlc.length, 20);
+    }
     let s = 100 - Math.min(i, 50) - Math.min(name.length - q.length, 30);
     if (i === 0) s += 60;
     if (name === q) s += 100;
@@ -365,7 +392,8 @@
   }
 
   function runSearch(q) {
-    if (!entries || q.length < 2) { hide(); return; }
+    if (q.length < 2) { showHome(); return; }
+    if (!entries) { hide(); return; }
     const qlc = q.toLowerCase();
     const scored = scopedMatches(q) || [];
     const seen = new Set(scored.map((x) => x[1]));
@@ -389,11 +417,25 @@
       return;
     }
     const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    // What to underline in a name: the query, or on a scoped query the member
+    // part of it. An initials match has no one substring to point at.
+    const scoped = q.match(/^([A-Za-z_]\w*)(::|\.)(\w*)$/);
+    const needles = [q.toLowerCase(), scoped?.[3]?.toLowerCase()].filter((n) => n);
+    const mark = (name) => {
+      const nlc = name.toLowerCase();
+      for (const n of needles) {
+        const i = nlc.indexOf(n);
+        if (i >= 0) {
+          return `${esc(name.slice(0, i))}<mark>${esc(name.slice(i, i + n.length))}</mark>${esc(name.slice(i + n.length))}`;
+        }
+      }
+      return esc(name);
+    };
     resultsEl.innerHTML = list
       .map((e) => {
         const ctx = ctxFor(e);
         const desc = e[3]?.replace(/`/g, '').replace(/\s+/g, ' ').trim();
-        return `<a href="${BASE}${urlFor(e)}"><span class="tag tag-${e[0]}">${KIND[e[0]][0]}</span><span class="search-main"><span>${esc(e[1])}</span>${desc ? `<span class="search-desc">${esc(desc)}</span>` : ''}</span>${ctx ? `<span class="ctx">${esc(ctx)}</span>` : ''}</a>`;
+        return `<a href="${BASE}${urlFor(e)}"><span class="tag tag-${e[0]}">${KIND[e[0]][0]}</span><span class="search-main"><span>${mark(e[1])}</span>${desc ? `<span class="search-desc">${esc(desc)}</span>` : ''}</span>${ctx ? `<span class="ctx">${esc(ctx)}</span>` : ''}</a>`;
       })
       .join('');
     resultsEl.hidden = false;
@@ -417,6 +459,92 @@
 
   function hide() { resultsEl.hidden = true; sel = -1; }
 
+  /* ---------- recent & pinned pages ----------
+     What the empty palette shows instead of nothing: the pages this browser
+     keeps coming back to. A modder lives in the same five classes for weeks,
+     and the fastest search is the one that is already answered when the box
+     opens. Entries are the search index's own [kind, name, owner] tuples, so
+     the result renderer and urlFor serve them unchanged; they are stored as
+     version-relative URLs and resolved against BASE, so a list built on one
+     build follows you into another. */
+  const RECENT_MAX = 12;
+
+  const readPages = (key) => {
+    try {
+      const list = JSON.parse(localStorage.getItem(key) || '[]');
+      return Array.isArray(list)
+        ? list.filter((e) => Array.isArray(e) && KIND[e[0]] && typeof e[1] === 'string' && typeof e[2] === 'string')
+        : [];
+    } catch { return []; }
+  };
+  const writePages = (key, list) => {
+    try { localStorage.setItem(key, JSON.stringify(list)); } catch {}
+  };
+
+  /* The pages worth remembering are the ones with a name: a class, an enum, a
+     file. The file's display casing is read off its own title, since the URL
+     only knows the lowercase spelling. */
+  function pageEntry() {
+    let m = /^class\/([^/]+)\//.exec(VPATH);
+    if (m) return ['c', m[1], m[1]];
+    m = /^enum\/([^/]+)\/$/.exec(VPATH);
+    if (m) return ['e', m[1], m[1]];
+    if (/^files\/.+\//.test(VPATH)) {
+      const display = $('.file-title code')?.textContent;
+      if (display) return ['F', display.split('/').pop(), display];
+    }
+    return null;
+  }
+
+  const hereEntry = pageEntry();
+  if (hereEntry) {
+    const rec = readPages('recent').filter((e) => urlFor(e) !== urlFor(hereEntry));
+    rec.unshift(hereEntry);
+    writePages('recent', rec.slice(0, RECENT_MAX));
+  }
+
+  // What showHome last rendered, in row order, for the pin buttons to index.
+  let homeRows = [];
+
+  function showHome() {
+    sel = -1;
+    const pinned = readPages('pinned');
+    const pinnedUrls = new Set(pinned.map(urlFor));
+    // The page under the palette is not somewhere to go, and a pinned page
+    // does not need saying twice.
+    const recent = readPages('recent').filter((e) => !pinnedUrls.has(urlFor(e)) && urlFor(e) !== VPATH);
+    if (!pinned.length && !recent.length) { hide(); return; }
+    homeRows = [...pinned, ...recent];
+    const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const row = (e, i, on) => {
+      const ctx = ctxFor(e);
+      return `<a href="${BASE}${urlFor(e)}"><span class="tag tag-${e[0]}">${KIND[e[0]][0]}</span><span class="search-main"><span>${esc(e[1])}</span></span>${ctx ? `<span class="ctx">${esc(ctx)}</span>` : ''}<button type="button" class="pin${on ? ' on' : ''}" data-i="${i}" title="${on ? 'Unpin' : 'Pin to the top of this list'}" aria-label="${on ? 'Unpin' : 'Pin'} ${esc(e[1])}"><i class="ic ic-pin" aria-hidden="true"></i></button></a>`;
+    };
+    const sec = (label, rows) => (rows.length ? `<div class="search-sec">${label}</div>${rows.join('')}` : '');
+    resultsEl.innerHTML =
+      sec('Pinned', pinned.map((e, i) => row(e, i, true))) +
+      sec('Recently viewed', recent.map((e, i) => row(e, pinned.length + i, false)));
+    resultsEl.hidden = false;
+  }
+
+  resultsEl?.addEventListener('click', (e) => {
+    const btn = e.target.closest('.pin');
+    if (!btn) return;
+    e.preventDefault();
+    // showHome() below replaces these rows, and a detached target no longer
+    // answers to .closest('.palette-box') — without this the backdrop handler
+    // would read the click as outside the box and close the palette.
+    e.stopPropagation();
+    const entry = homeRows[+btn.dataset.i];
+    if (!entry) return;
+    const pinned = readPages('pinned');
+    const at = pinned.findIndex((p) => urlFor(p) === urlFor(entry));
+    if (at >= 0) pinned.splice(at, 1);
+    else pinned.push(entry);
+    writePages('pinned', pinned);
+    showHome();
+  });
+
   function move(delta) {
     const items = [...resultsEl.querySelectorAll('a')];
     if (!items.length) return;
@@ -434,6 +562,9 @@
     document.body.classList.add('palette-open');
     input.focus();
     input.select();
+    // The home state comes from localStorage, so it does not wait on the
+    // index fetch the way a query has to.
+    runSearch(input.value.trim());
     loadIndex().then(() => runSearch(input.value.trim()));
   }
 
