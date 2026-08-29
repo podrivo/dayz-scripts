@@ -117,6 +117,7 @@ const TYPES = {
   '.ico': 'image/x-icon',
   '.png': 'image/png',
   '.txt': 'text/plain; charset=utf-8',
+  '.xml': 'application/atom+xml; charset=utf-8',
 };
 
 // The build list the client stamps the chrome from, which the generator writes

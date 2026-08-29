@@ -830,15 +830,18 @@ table.list td:first-child > code { white-space: normal; }
 /* ---- tooltips ----
    Icon-only controls opt in with data-tip. The box itself is one node,
    placed by site/app/tooltip.js: above, then below, then a side, and
-   slid along the other axis so a corner control cannot push it off-screen. */
+   slid along the other axis so a corner control cannot push it off-screen.
+   Chrome labels stay one tight line (max-content); a glossary sentence
+   (site/app/glossary.js) wraps at a readable measure instead. */
 .tip {
   position: fixed; z-index: 70;
   padding: 5px 8px; border-radius: 8px;
   background: var(--fg); color: var(--bg);
   box-shadow: 0 4px 16px color-mix(in srgb, var(--fg) 18%, transparent);
   font-size: 12px; font-weight: 500; line-height: 16px;
-  max-width: calc(100vw - 16px);
-  white-space: nowrap; pointer-events: none;
+  width: max-content;
+  max-width: min(340px, calc(100vw - 16px));
+  pointer-events: none;
   visibility: hidden; opacity: 0;
   transition: opacity .15s ease, visibility .15s ease;
 }
@@ -846,6 +849,9 @@ table.list td:first-child > code { white-space: normal; }
 @media (prefers-reduced-motion: reduce) {
   .tip { transition: none; }
 }
+
+/* A keyword that has picked up its meaning says it is holding one. */
+.kw[data-tip], .tok-kw[data-tip], .badge-mod[data-tip] { cursor: help; }
 
 /* ---- contributing a note ----
    The pencil on a note and the chip on a declaration without one. Both stay

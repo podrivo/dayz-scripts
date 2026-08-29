@@ -21,6 +21,7 @@ import { initShare } from './app/share.js';
 import { initInlineCode } from './app/highlight.js';
 import { initHistory } from './app/history.js';
 import { initNotes } from './app/notes.js';
+import { initGlossary } from './app/glossary.js';
 import { initTooltip } from './app/tooltip.js';
 import { initCopyBlocks, initCopySignatures } from './app/copy.js';
 import { initLlmCopy } from './app/llm.js';
@@ -51,6 +52,9 @@ initInlineCode();
 // what gets added to a declaration once the page is up
 initHistory();
 initNotes();
+// before the tooltip: the glossary lays data-tip on a keyword during the
+// same pointerover the tooltip then reads it on
+initGlossary();
 initTooltip();
 initCopyBlocks();
 initCopySignatures();

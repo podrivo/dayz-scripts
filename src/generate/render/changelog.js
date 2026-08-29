@@ -38,6 +38,7 @@ export function renderCompare(ctx) {
 <noscript><p>The changelog is built in the browser and needs JavaScript.</p></noscript>
 <div class="cmp" id="compare" aria-live="polite" aria-busy="true"><p class="muted">Loading builds…</p></div>
 <h2 id="release-notes">Release notes</h2>
+<p class="muted">New builds land here as they ship — follow along with the <a href="/feed.xml">Atom feed</a>.</p>
 <div class="releases">
 ${renderReleases(ctx, { highlight: false, absolute: true })}
 </div>`;

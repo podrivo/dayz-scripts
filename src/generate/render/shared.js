@@ -145,7 +145,7 @@ ${links
 
 export const byName = (a, b) => a.name.localeCompare(b.name);
 
-function fmtDate(iso) {
+export function fmtDate(iso) {
   return new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', {
     month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC',
   });
@@ -158,7 +158,7 @@ const versionNo = (version) => {
 };
 
 /** "1.29 Update 1" from the oldest of that version. `builds` is newest-first. */
-function updateNames(builds) {
+export function updateNames(builds) {
   const count = new Map();
   const seen = new Map();
   for (const v of builds) count.set(v.version, (count.get(v.version) || 0) + 1);

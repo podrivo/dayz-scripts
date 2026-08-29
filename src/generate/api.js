@@ -187,6 +187,7 @@ The script sources are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are
 - [Search index](${SITE_URL}/search.json): compact name index the site search uses
 - [Community notes](${SITE_URL}/assets/notes.json): community-written notes on undocumented declarations, keyed by \`Type\` or \`Type.Member\`. Not from Bohemia, and not covered by the license above
 - [Build list](${SITE_URL}/assets/versions.json): every documented PC build
+- [Build feed](${SITE_URL}/feed.xml): Atom feed of new PC stable builds as they are documented
 
 ## Human documentation
 

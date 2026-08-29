@@ -12,6 +12,7 @@ import path from 'node:path';
 import { CACHE_DIR } from '../util.js';
 import { buildSearchIndex } from './search.js';
 import { buildApi, renderLlmsTxt } from './api.js';
+import { renderFeed } from './feed.js';
 import { buildFileLinks, chainBuilder } from './srclinks.js';
 import { recordingSite, classDeps, enumDeps, membersDeps } from './memo.js';
 import {
@@ -236,6 +237,15 @@ export function* pages(site, opts) {
       kind: 'index',
       asset: true,
       render: () => renderLlmsTxt(site),
+    };
+    // The build feed, for the readers and bots that would rather be told a
+    // new build is up than come and look. One per site, like the API above.
+    yield {
+      rel: 'feed.xml',
+      file: 'feed.xml',
+      kind: 'index',
+      asset: true,
+      render: () => renderFeed(versions),
     };
   }
 }
