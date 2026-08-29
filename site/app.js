@@ -481,14 +481,24 @@
     try { localStorage.setItem(key, JSON.stringify(list)); } catch {}
   };
 
-  /* The pages worth remembering are the ones with a name: a class, an enum, a
-     file. The file's display casing is read off its own title, since the URL
-     only knows the lowercase spelling. */
+  /* The pages worth remembering are the ones naming a declaration you came
+     looking for: a class, an enum, a topic, a source file. The indexes above
+     them — the class list, the hierarchy, the globals tabs, the changelog —
+     are one click away in the nav and would only crowd out the five pages
+     someone is actually working in.
+     Two spellings have to be read off the page rather than the URL: a file's
+     display casing, since the URL only knows the lowercase form, and a
+     topic's label, since its URL carries the \defgroup name instead. */
   function pageEntry() {
     let m = /^class\/([^/]+)\//.exec(VPATH);
     if (m) return ['c', m[1], m[1]];
     m = /^enum\/([^/]+)\/$/.exec(VPATH);
     if (m) return ['e', m[1], m[1]];
+    m = /^modules\/([^/]+)\/$/.exec(VPATH);
+    if (m) {
+      const label = $('.main h1')?.textContent.trim();
+      if (label) return ['g', label, m[1]];
+    }
     if (/^files\/.+\//.test(VPATH)) {
       const display = $('.file-title code')?.textContent;
       if (display) return ['F', display.split('/').pop(), display];
