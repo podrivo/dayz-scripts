@@ -8,7 +8,7 @@ sources.
 **Site:** [diff.yadz.app](https://diff.yadz.app) ·
 **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
 
-[![PlayerBase on DIFF](screenshot.png)](https://diff.yadz.app/class/PlayerBase/)
+[![PlayerBase on DIFF](screenshot.png)](https://diff.yadz.app/classes/PlayerBase/)
 
 Search, inheritance trees, syntax-highlighted sources, and a changelog across
 every published PC stable build. Most of the API
@@ -17,7 +17,7 @@ has no official doc comment — the site shows where each member is used, and
 
 ## What's on the site
 
-- [Classes](https://diff.yadz.app/classes/) — annotated list, [A–Z index](https://diff.yadz.app/classes/index/), [inheritance tree](https://diff.yadz.app/hierarchy/), and every inherited member on `/class/<Name>/members/`
+- [Classes](https://diff.yadz.app/classes/) — annotated list, [A–Z index](https://diff.yadz.app/classes/index/), [inheritance tree](https://diff.yadz.app/hierarchy/), and every inherited member on `/classes/<Name>/members/`
 - [Topics](https://diff.yadz.app/topics/) — the `\defgroup` groups the sources wrap themselves into (math, physics, entities, widgets, …)
 - [Files](https://diff.yadz.app/files/) — the script tree, plus [globals](https://diff.yadz.app/globals/) declared outside a class
 - [Changelog](https://diff.yadz.app/changelog/) — API diff between any two builds; every class and enum page also unfolds its own build-by-build history
@@ -53,7 +53,7 @@ A community note is a short annotation on a class, enum, or member. Add it to
 }
 ```
 
-[![Community note on PlayerBase](screenshot-notes.png)](https://diff.yadz.app/class/PlayerBase/)
+[![Community note on PlayerBase](screenshot-notes.png)](https://diff.yadz.app/classes/PlayerBase/)
 
 Edit that file and open a pull request. `Type.Member` covers every overload of
 that name; enum values key off the value name; backticks render as code. Notes

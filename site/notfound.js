@@ -1,7 +1,7 @@
 // Sends a mis-cased URL to the page it was reaching for.
 //
 // Every URL here is spelled the way the sources spell the thing it names:
-// /class/PlayerBase/, /topics/DeveloperRPC/, /files/1_Core/WorkbenchApi.c/.
+// /classes/PlayerBase/, /topics/DeveloperRPC/, /files/1_Core/WorkbenchApi.c/.
 // None of those is guessable from a lowercased copy of itself, and the whole
 // lowercase form is what this site served for files until recently, so it has
 // to keep resolving. No slug collides with another once lowercased, so the
@@ -20,12 +20,12 @@
 
 const NAMES = {
   topics: (index) => index.topics.map(([name]) => name),
-  class: (index) => index.classes,
+  classes: (index) => index.classes,
   enum: (index) => index.enums,
   files: (index) => index.files,
 };
 
-const match = /^\/(?:v\/([^/]+)\/)?(topics|class|enum|files)\/(.+)\/$/i.exec(location.pathname);
+const match = /^\/(?:v\/([^/]+)\/)?(topics|classes|enum|files)\/(.+)\/$/i.exec(location.pathname);
 
 if (match) {
   const [, build, rawKind, rawSlug] = match;

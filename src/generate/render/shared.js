@@ -30,7 +30,7 @@ export function shown(site, path) {
 /**
  * A file's URL, spelled the way the game's own tree spells it, which is also
  * the way the page displays it and the way every other kind of page names
- * itself: /files/1_Core/WorkbenchApi.c/ beside /class/PlayerBase/. The sources
+ * itself: /files/1_Core/WorkbenchApi.c/ beside /classes/PlayerBase/. The sources
  * we parse lowercase every path, so this goes through src/generate/casing.js
  * to get the capitalisation back; site/notfound.js forwards the lowercase
  * spelling, and any older one, to whatever the current build calls it.
@@ -76,7 +76,7 @@ export function refName(owner, name, scope, base, linked) {
   const label = owner && owner !== scope ? `<span class="xref-owner">${esc(owner)}.</span>${esc(name)}()` : `${esc(name)}()`;
   if (!linked) return label;
   const anchor = name.replace(/[^\w]/g, '_');
-  const href = owner ? `${base}class/${owner}/#${anchor}` : `${base}globals/functions/#${anchor}`;
+  const href = owner ? `${base}classes/${owner}/#${anchor}` : `${base}globals/functions/#${anchor}`;
   return `<a href="${href}">${label}</a>`;
 }
 

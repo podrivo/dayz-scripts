@@ -127,7 +127,7 @@ export function renderModule(ctx, mod) {
             const owner = e.owner
               ? `<span class="owner-of">${
                   site.classes.has(e.owner)
-                    ? `<a href="${base}class/${e.owner}/">${esc(e.owner)}</a>`
+                    ? `<a href="${base}classes/${e.owner}/">${esc(e.owner)}</a>`
                     : site.enums.has(e.owner)
                       ? `<a href="${base}enum/${e.owner}/">${esc(e.owner)}</a>`
                       : esc(e.owner)

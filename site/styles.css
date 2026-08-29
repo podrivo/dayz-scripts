@@ -769,6 +769,8 @@ table.list td:first-child > code { white-space: normal; }
 .th-date { color: var(--fg2); font-size: 12.5px; font-weight: 400; }
 .th-new { margin: 2px 0; color: var(--added); font-size: 13.5px; }
 .th-row { display: flex; align-items: baseline; gap: 8px; padding: 2px 0; }
+/* display:flex above would otherwise beat the UA's [hidden] { display:none } */
+.th-row[hidden] { display: none; }
 .th-op { flex: none; width: 14px; text-align: center; font-weight: 700; }
 .th-added .th-op { color: var(--added); }
 .th-removed .th-op { color: var(--removed); }
@@ -780,6 +782,12 @@ table.list td:first-child > code { white-space: normal; }
 .th-link { text-decoration: none; }
 .th-link:hover code { text-decoration: underline; }
 .th-tail { margin: 2px 0 8px; color: var(--fg2); font-size: 13px; }
+/* Aligned under the declarations: the op column is 14px wide plus the 8px gap. */
+.th-more {
+  margin: 2px 0 0 22px; padding: 0; border: 0; background: none;
+  color: var(--accent); font: inherit; font-size: 13px; cursor: pointer;
+}
+.th-more:hover { text-decoration: underline; }
 
 .member { padding: 10px 12px; margin: 0 -12px; border-radius: 10px; }
 .member:hover { background: var(--bg2); }
@@ -817,6 +825,25 @@ table.list td:first-child > code { white-space: normal; }
   text-transform: uppercase; letter-spacing: 0.04em; vertical-align: 1px;
 }
 .enum-table .note-community { margin: 6px 0 0; }
+
+/* ---- tooltips ----
+   Icon-only controls opt in with data-tip. The box itself is one node,
+   placed by site/app/tooltip.js: above when there is room, below when the
+   header or the window edge is in the way, and centred on the control. */
+.tip {
+  position: fixed; z-index: 70;
+  padding: 5px 8px; border-radius: 8px;
+  background: var(--fg); color: var(--bg);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--fg) 18%, transparent);
+  font-size: 12px; font-weight: 500; line-height: 16px;
+  white-space: nowrap; pointer-events: none;
+  visibility: hidden; opacity: 0;
+  transition: opacity .15s ease, visibility .15s ease;
+}
+.tip.on { visibility: visible; opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .tip { transition: none; }
+}
 
 /* ---- contributing a note ----
    The pencil on a note and the chip on a declaration without one. Both stay

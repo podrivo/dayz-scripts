@@ -39,7 +39,7 @@ export function buildFileLinks(fileModel, chainOf) {
   for (const c of fileModel.classes) {
     // A forward declaration has no body, so nothing is written inside it.
     if (!c.forward && c.endLine) scopes.push([c.line, c.endLine, chainOf(c.name)]);
-    const url = `class/${c.name}/`;
+    const url = `classes/${c.name}/`;
     decls.push([c.line, url]);
     // Overloads share the plain anchor: the class page numbers the second and
     // later ones, but landing on the first is what the reader wanted anyway.

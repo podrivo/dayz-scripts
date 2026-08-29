@@ -1,7 +1,7 @@
 // The home page at /, and the release history it ends with.
 
 import { esc, layout, EXT, SITE_TITLE } from '../html.js';
-import { OFFICIAL_LINKS, DISCORD_LINKS, FORUM_THREADS, VERSION_TITLES, YADZ_DISCORD } from '../content.js';
+import { OFFICIAL_LINKS, DISCORD_LINKS, FORUM_THREADS, VERSION_TITLES } from '../content.js';
 import { linkCards } from './shared.js';
 
 function fmtDate(iso) {
@@ -95,12 +95,12 @@ export function renderHome(ctx) {
     `<a class="stat" href="${href}"><strong>${n.toLocaleString('en-US')}</strong><span>${label}</span></a>`;
 
   const explore = [
-    ['PlayerBase', `${base}class/PlayerBase/`, 'The player entity'],
-    ['ItemBase', `${base}class/ItemBase/`, 'Base of all items'],
-    ['EntityAI', `${base}class/EntityAI/`, 'Base of interactive entities'],
-    ['ActionBase', `${base}class/ActionBase/`, 'Player actions'],
-    ['DayZInfected', `${base}class/DayZInfected/`, 'The infected'],
-    ['CarScript', `${base}class/CarScript/`, 'Vehicles'],
+    ['PlayerBase', `${base}classes/PlayerBase/`, 'The player entity'],
+    ['ItemBase', `${base}classes/ItemBase/`, 'Base of all items'],
+    ['EntityAI', `${base}classes/EntityAI/`, 'Base of interactive entities'],
+    ['ActionBase', `${base}classes/ActionBase/`, 'Player actions'],
+    ['DayZInfected', `${base}classes/DayZInfected/`, 'The infected'],
+    ['CarScript', `${base}classes/CarScript/`, 'Vehicles'],
   ];
 
   const releases = renderReleases(ctx);
@@ -148,7 +148,7 @@ ${communityLinks}
 ${releases}
 </div>
 <h2 id="about">About</h2>
-<p>DIFF is generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff/tree/main/scripts" ${EXT}>DayZ Script Diff</a> sources, so it covers what ships in the game's script files — engine internals are not part of it. It is actively maintained, so if you find a bug or have a suggestion, share it on <a href="${YADZ_DISCORD}" ${EXT}>YADZ's Discord</a>.</p>
+<p>DIFF is generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff/tree/main/scripts" ${EXT}>DayZ Script Diff</a> sources, so it covers what ships in the game's script files — engine internals are not part of it. The stack it is built with, and how to collaborate, are on <a href="${base}about/">About</a>.</p>
 <p class="muted">This is not an official documentation and it is not affiliated with <a href="https://dayz.com/" ${EXT}>DayZ</a> or <a href="https://www.bohemia.net/" ${EXT}>Bohemia Interactive</a>. The script sources shown here are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are licensed under the <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License (DPL)</a>. They have been modified for presentation — parsed, reorganized and reformatted into these pages — from the originals in <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff/tree/main/scripts" ${EXT}>DayZ Script Diff</a>, and are offered as-is, without warranties of any kind. DAYZ®, ENFUSION® and BOHEMIA INTERACTIVE® are registered trademarks of BOHEMIA INTERACTIVE a.s. All other trademarks and copyrights are the property of their respective owners.</p>`;
 
   return layout({

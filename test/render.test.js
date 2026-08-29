@@ -45,10 +45,10 @@ const site = (meta) => {
 // root whether it is served from / or from /v/<build>/, so base matches too.
 // xref matches what the latest build passes: caller lists are only shown there,
 // and that is the case worth testing.
-const ctx = (s) => ({ site: s, versions: [], base: '../../', root: '../../', versionPath: 'class/Foo/', xref: true });
+const ctx = (s) => ({ site: s, versions: [], base: '../../', root: '../../', versionPath: 'classes/Foo/', xref: true });
 
 test('layout carries no build identity', () => {
-  const opts = { title: 'Foo', base: '../../', versionPath: 'class/Foo/', content: '<p>x</p>' };
+  const opts = { title: 'Foo', base: '../../', versionPath: 'classes/Foo/', content: '<p>x</p>' };
   assert.equal(layout(opts), layout(opts));
 
   const html = layout(opts);
@@ -58,7 +58,7 @@ test('layout carries no build identity', () => {
 });
 
 test('layout links assets absolutely so a page works at any depth', () => {
-  const html = layout({ title: 'Foo', base: '../../', versionPath: 'class/Foo/', content: '' });
+  const html = layout({ title: 'Foo', base: '../../', versionPath: 'classes/Foo/', content: '' });
   assert.ok(html.includes('href="/assets/styles.css"'));
   // A module, because /assets/app.js imports the features in site/app/ by
   // relative path; the generator has to copy that directory across too.
@@ -215,10 +215,10 @@ test('a class page depends on whether the names it calls are still unambiguous',
   const shared = withRival(['Other']);
 
   const foo = alone.classes.get('Foo');
-  assert.match(renderClass(ctx(alone), foo), /class\/Tools\/#Helper/, 'a lone declaration is linked');
+  assert.match(renderClass(ctx(alone), foo), /classes\/Tools\/#Helper/, 'a lone declaration is linked');
   assert.doesNotMatch(
     renderClass(ctx(shared), shared.classes.get('Foo')),
-    /class\/Tools\/#Helper/,
+    /classes\/Tools\/#Helper/,
     'a name two classes declare is not'
   );
   assert.notEqual(
@@ -233,9 +233,9 @@ test('a class page depends on whether the names it calls are still unambiguous',
 // at the site root instead, which is both the right answer for a crawler
 // looking at an archived build and the only one that keeps a page reusable.
 test('canonical and og:url name the page, never the build that rendered it', () => {
-  const html = layout({ title: 'Foo', base: '../../', versionPath: 'class/Foo/', content: '' });
+  const html = layout({ title: 'Foo', base: '../../', versionPath: 'classes/Foo/', content: '' });
   const canon = html.match(/<link rel="canonical" href="([^"]*)">/)[1];
-  assert.equal(canon, `${SITE_URL}/class/Foo/`);
+  assert.equal(canon, `${SITE_URL}/classes/Foo/`);
   assert.ok(!canon.includes('/v/'), 'canonical must not name a build');
   assert.ok(html.includes(`<meta property="og:url" content="${canon}">`), 'og:url must agree with it');
   assert.equal(html.match(/<meta property="og:title" content="([^"]*)">/)[1], `Foo · Class · ${SITE_TITLE}`);

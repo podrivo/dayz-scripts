@@ -10,7 +10,7 @@ export const BASE = document.body.dataset.base || '';
 /** The site root. Assets are absolute so a page works at any depth. */
 export const ROOT = '/';
 
-/** This page's path within its build, e.g. "class/PlayerBase/". */
+/** This page's path within its build, e.g. "classes/PlayerBase/". */
 export const VPATH = document.body.dataset.vpath || '';
 
 /* This site's own repository, where a community note is written. Here rather
@@ -47,7 +47,9 @@ export const pathBuild = location.pathname.match(/^\/v\/([^/]+)\//)?.[1];
  * community notes both hang off it, and neither has any other way to ask.
  */
 export const pageType = (() => {
-  const m = /^class\/([^/]+)\/$/.exec(VPATH) || /^enum\/([^/]+)\/$/.exec(VPATH);
+  const m = /^classes\/([^/]+)\/$/.exec(VPATH) || /^enum\/([^/]+)\/$/.exec(VPATH);
   if (!m) return null;
-  return { kind: VPATH.startsWith('class/') ? 'class' : 'enum', name: m[1] };
+  const name = m[1];
+  if (VPATH.startsWith('classes/') && (name === 'index' || name === 'fields' || /^[a-z_]$/.test(name))) return null;
+  return { kind: VPATH.startsWith('classes/') ? 'class' : 'enum', name };
 })();

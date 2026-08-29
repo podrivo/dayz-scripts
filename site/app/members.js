@@ -42,7 +42,7 @@ export function initAllMembers() {
           : shadows
             ? '<span class="badge badge-override" title="Also declared further up the chain">override</span>'
             : '';
-        return /* html */ `<tr><td><a href="${BASE}class/${from}/#${anchorOf(name)}"><code>${esc(name)}${r.method ? '()' : ''}</code></a></td><td><a href="${BASE}class/${from}/">${esc(from)}</a></td><td>${badge}</td></tr>`;
+        return /* html */ `<tr><td><a href="${BASE}classes/${from}/#${anchorOf(name)}"><code>${esc(name)}${r.method ? '()' : ''}</code></a></td><td><a href="${BASE}classes/${from}/">${esc(from)}</a></td><td>${badge}</td></tr>`;
       })
       .join('');
 
@@ -98,7 +98,7 @@ export function initFieldsIndex() {
     const names = [...owners.keys()].sort((a, b) => a.localeCompare(b));
     fieldsList.innerHTML = names
       .map((name) => {
-        const dd = owners.get(name).map((c) => `<a href="${BASE}class/${c}/#${anchorOf(name)}">${esc(c)}</a>`).join(' ');
+        const dd = owners.get(name).map((c) => `<a href="${BASE}classes/${c}/#${anchorOf(name)}">${esc(c)}</a>`).join(' ');
         return /* html */ `<dt><code>${esc(name)}</code></dt><dd>${dd}</dd>`;
       })
       .join('');

@@ -20,28 +20,6 @@
 
 import { esc } from '../html.js';
 
-/**
- * The access chips a class page carries.
- *
- * Doxygen split a class into public / protected / private / static sections;
- * ours lists members in one run and puts the modifiers in the signature,
- * which reads better but leaves no way to ask for just the ones you can call
- * from outside. These filter over what the signature already says. "Public"
- * is the absence of the other two rather than a keyword, because that is what
- * it is in the language.
- */
-export const ACCESS_CHIPS = [
-  ['', 'All'],
-  // First because it is the one that pays: 89% of members carry no comment,
-  // so this is the difference between a page you read and a page you scroll.
-  ['@documented', 'Documented'],
-  ['!private,protected', 'Public'],
-  ['protected', 'Protected'],
-  ['private', 'Private'],
-  ['static', 'Static'],
-  ['proto', 'Engine'],
-];
-
 export const letterTitle = (l) => (l === '_' ? 'Other' : l.toUpperCase());
 
 /** Sibling pages of the one you are on: the Globals kinds, the Members kinds. */
@@ -105,7 +83,7 @@ const treeTools = () =>
  */
 const filterField = (placeholder) =>
   /* html */ `<div class="pb-filter">
-<button type="button" class="pb-search-btn" aria-label="${esc(placeholder)}" aria-expanded="false" aria-controls="pageFilter"><i class="ic ic-search" aria-hidden="true"></i></button>
+<button type="button" class="pb-search-btn" aria-label="${esc(placeholder)}" aria-expanded="false" aria-controls="pageFilter" data-tip="Filter this page"><i class="ic ic-search" aria-hidden="true"></i></button>
 <input type="search" id="pageFilter" class="pb-input" placeholder="${esc(placeholder)}" autocomplete="off" spellcheck="false" aria-label="${esc(placeholder)}" tabindex="-1">
 <span class="pb-count" id="filterCount" aria-live="polite"></span>
 </div>`;

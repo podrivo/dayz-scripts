@@ -13,9 +13,9 @@
 //   macros:   ["DIAG_DEVELOPER", ...],
 //   topics:   [["GameConstants", "Game constants"], ...],
 //   files:    ["4_World/Entities/....c", ...],
-//   docs:     {"class/PlayerBase/#OnJumpStart": "Called when jumping.", ...},
+//   docs:     {"classes/PlayerBase/#OnJumpStart": "Called when jumping.", ...},
 // }
-// URLs are reconstructed client-side: class/<name>/, enum/<name>/, ... File
+// URLs are reconstructed client-side: classes/<name>/, enum/<name>/, ... File
 // paths are stored the way they are displayed, which is also how their URL
 // spells them (see casing.js).
 //
@@ -45,13 +45,13 @@ export function buildSearchIndex(site) {
   const vars = [];
   for (const [name, c] of site.classes) {
     const ci = classIdx.get(name);
-    addDoc(`class/${name}/`, c.doc);
+    addDoc(`classes/${name}/`, c.doc);
     // One entry per name per owner: a page has one anchor for it either way,
     // and overloads would otherwise fill the results with identical rows.
     const seenM = new Set();
     for (const m of c.methods) {
       if (m.kind) continue; // skip ctors/dtors
-      addDoc(`class/${name}/#${anchorOf(m.name)}`, m.doc);
+      addDoc(`classes/${name}/#${anchorOf(m.name)}`, m.doc);
       if (seenM.has(m.name)) continue;
       seenM.add(m.name);
       methods.push([ci, m.name]);
@@ -61,7 +61,7 @@ export function buildSearchIndex(site) {
       if (seenV.has(v.name)) continue;
       seenV.add(v.name);
       vars.push([ci, v.name]);
-      addDoc(`class/${name}/#${anchorOf(v.name)}`, v.doc);
+      addDoc(`classes/${name}/#${anchorOf(v.name)}`, v.doc);
     }
   }
 

@@ -15,7 +15,7 @@ export function renderHierarchy(ctx) {
 
   const renderNode = (name, depth) => {
     const kids = site.children.get(name) || [];
-    const link = `<a href="${base}class/${name}/">${esc(name)}</a>`;
+    const link = `<a href="${base}classes/${name}/">${esc(name)}</a>`;
     if (!kids.length) return `<li>${link}</li>`;
     const open = depth < 1 ? ' open' : '';
     return /* html */ `<li><details${open}><summary>${link} <span class="count">${kids.length}</span></summary>

@@ -27,7 +27,7 @@ export const CHANGED = '~';
  * import from here.
  */
 export const DIFF_KINDS = [
-  ['class', 'Classes', (n) => `class/${n}/`],
+  ['class', 'Classes', (n) => `classes/${n}/`],
   ['enum', 'Enums', (n) => `enum/${n}/`],
   ['func', 'Global functions', (n) => `globals/functions/#${n}`],
   ['const', 'Constants', (n) => `globals/constants/#${n}`],

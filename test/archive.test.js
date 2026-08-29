@@ -4,26 +4,26 @@ import { layout, lastPacked, ARCHIVE_MARK, SITE_TITLE, pageInner, pageMeta } fro
 import { pageExceptions, unpackPage, fillArchiveTemplate, locateArchive } from '../src/generate/archive.js';
 
 test('unchanged rels are absent from the exception map', () => {
-  const latest = new Map([['class/Foo/', 'aaa'], ['class/Bar/', 'bbb']]);
-  const archive = new Map([['class/Foo/', 'aaa'], ['class/Bar/', 'ccc'], ['class/Old/', 'ddd']]);
+  const latest = new Map([['classes/Foo/', 'aaa'], ['classes/Bar/', 'bbb']]);
+  const archive = new Map([['classes/Foo/', 'aaa'], ['classes/Bar/', 'ccc'], ['classes/Old/', 'ddd']]);
   assert.deepEqual(pageExceptions(archive, latest), {
-    'class/Bar/': 'ccc',
-    'class/Old/': 'ddd',
+    'classes/Bar/': 'ccc',
+    'classes/Old/': 'ddd',
   });
 });
 
 test('locateArchive splits /v/<build>/… and adds a trailing slash', () => {
-  assert.deepEqual(locateArchive('/v/1.24.1/class/Foo/'), { build: '1.24.1', rel: 'class/Foo/' });
-  assert.deepEqual(locateArchive('/v/1.24.1/class/Foo'), { build: '1.24.1', rel: 'class/Foo/' });
+  assert.deepEqual(locateArchive('/v/1.24.1/classes/Foo/'), { build: '1.24.1', rel: 'classes/Foo/' });
+  assert.deepEqual(locateArchive('/v/1.24.1/classes/Foo'), { build: '1.24.1', rel: 'classes/Foo/' });
   assert.deepEqual(locateArchive('/v/1.24.1/search.json'), { build: '1.24.1', rel: 'search.json' });
-  assert.equal(locateArchive('/class/Foo/'), null);
+  assert.equal(locateArchive('/classes/Foo/'), null);
 });
 
 test('packed inners round-trip through the archive template', () => {
   const html = layout({
     title: 'Foo',
     base: '../../',
-    versionPath: 'class/Foo/',
+    versionPath: 'classes/Foo/',
     description: 'A class',
     active: 'classes/',
     // The page bar is chrome, so it is not in the body an archive stores; it
@@ -35,7 +35,7 @@ test('packed inners round-trip through the archive template', () => {
   const { meta, inner } = unpackPage(lastPacked);
   assert.equal(meta.title, `Foo · Class · ${SITE_TITLE}`);
   assert.equal(meta.base, '../../');
-  assert.equal(meta.vpath, 'class/Foo/');
+  assert.equal(meta.vpath, 'classes/Foo/');
   assert.match(inner, /<h1>Foo<\/h1>/);
   assert.doesNotMatch(inner, /<!DOCTYPE html>/);
   assert.doesNotMatch(inner, /pagebar/);
@@ -69,7 +69,7 @@ test('pageInner is the main of a layout, without the document chrome', () => {
   assert.ok(inner.includes('<h1>x</h1>'));
   assert.equal(pageMeta(o).title, `x · ${SITE_TITLE}`);
   assert.equal(pageMeta({ title: '', versionPath: '' }).title, SITE_TITLE);
-  assert.equal(pageMeta({ title: 'Foo', versionPath: 'class/Foo/' }).title, `Foo · Class · ${SITE_TITLE}`);
+  assert.equal(pageMeta({ title: 'Foo', versionPath: 'classes/Foo/' }).title, `Foo · Class · ${SITE_TITLE}`);
   assert.equal(pageMeta({ title: 'EFoo', versionPath: 'enum/EFoo/' }).title, `EFoo · Enum · ${SITE_TITLE}`);
   assert.equal(pageMeta({ title: 'Foo.c', versionPath: 'files/3_Game/Foo.c/' }).title, `Foo.c · File · ${SITE_TITLE}`);
   assert.equal(pageMeta({ title: 'File List', versionPath: 'files/' }).title, `File List · ${SITE_TITLE}`);

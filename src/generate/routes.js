@@ -18,7 +18,7 @@ import {
   renderHome, renderAnnotated, renderClassesIndex, renderClassesLetter, renderClass,
   renderClassMembers, renderFields, renderEnum, renderGlobals, renderModulesIndex,
   renderModule, renderFilesIndex, renderFile, renderHierarchy, renderCompare,
-  renderCommunity,
+  renderCommunity, renderAbout,
 } from './render.js';
 
 /**
@@ -105,7 +105,7 @@ export function* pages(site, opts) {
   // class pages, and for anything with a base the flat list of everything it
   // inherits as well
   for (const cls of site.classes.values()) {
-    const rel = `class/${cls.name}/`;
+    const rel = `classes/${cls.name}/`;
     yield page(rel, 'class', (seen) => renderClass(seeing(rel, seen), cls), () => classDeps(site, cls, isLatest));
     if (site.ancestorsOf(cls.name).some((n) => site.classes.has(n))) {
       const mrel = `${rel}members/`;
@@ -164,6 +164,7 @@ export function* pages(site, opts) {
   // Links off the site. Hand-maintained rather than derived, so it renders the
   // same in every build and costs one stored copy across all of them.
   yield page('community/', 'index', () => renderCommunity(ctx('community/')));
+  yield page('about/', 'index', () => renderAbout(ctx('about/')));
 
   // file pages with embedded source
   const fileModels = new Map(site.rawFiles.map((f) => [f.path, f]));

@@ -49,7 +49,7 @@ test('the dump names the build and carries the DPL', () => {
 test('a class carries inheritance, members, signatures and a human URL', () => {
   const foo = buildApi(siteOf()).classes.find((c) => c.name === 'Foo');
   assert.equal(foo.base, 'Bar');
-  assert.equal(foo.url, 'class/Foo/');
+  assert.equal(foo.url, 'classes/Foo/');
   assert.equal(foo.brief, 'A class.');
   assert.equal(foo.file, '3_Game/Foo.c');
   assert.equal(foo.methods[0].name, 'Do');
@@ -68,9 +68,9 @@ test('enums, typedefs and topics are in the dump', () => {
 
 test('the search index carries declaration briefs', () => {
   const search = buildSearchIndex(siteOf());
-  assert.equal(search.docs['class/Foo/'], 'A class.');
-  assert.equal(search.docs['class/Foo/#m_Count'], 'Stored count.');
-  assert.equal(search.docs['class/Foo/#Do'], 'Performs the operation.');
+  assert.equal(search.docs['classes/Foo/'], 'A class.');
+  assert.equal(search.docs['classes/Foo/#m_Count'], 'Stored count.');
+  assert.equal(search.docs['classes/Foo/#Do'], 'Performs the operation.');
 });
 
 test('llms.txt points at the dump and states the license', () => {

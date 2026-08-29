@@ -1,5 +1,5 @@
-// One class: /class/<Name>/, and the flat list of everything it inherits at
-// /class/<Name>/members/.
+// One class: /classes/<Name>/, and the flat list of everything it inherits at
+// /classes/<Name>/members/.
 
 import {
   esc, layout, linkType, condBadges, modBadges, methodSig, varSig,
@@ -8,7 +8,7 @@ import {
 import {
   anchorFor, callersBlock, fileLineHref, locationLinks, referencesBlock,
 } from './shared.js';
-import { ACCESS_CHIPS, pageBar } from './pagebar.js';
+import { pageBar } from './pagebar.js';
 
 export function renderClass(ctx, cls) {
   const { site, base } = ctx;
@@ -21,7 +21,7 @@ export function renderClass(ctx, cls) {
     ? `<p class="chain">${[cls.name, ...ancestors]
         .map((n, i) => {
           if (i === 0) return `<strong>${esc(n)}</strong>`;
-          return site.classes.has(n) ? `<a href="${base}class/${n}/">${esc(n)}</a>` : esc(n);
+          return site.classes.has(n) ? `<a href="${base}classes/${n}/">${esc(n)}</a>` : esc(n);
         })
         .join(' <span class="chain-sep">›</span> ')}</p>`
     : '';
@@ -31,13 +31,13 @@ export function renderClass(ctx, cls) {
   // holds a documented class is already part of what this page depends on
   // (see classDeps), so the link cannot go stale.
   const allMembers = ancestors.some((n) => site.classes.has(n))
-    ? `<p class="all-members"><a href="${base}class/${cls.name}/members/">All members, including inherited</a></p>`
+    ? `<p class="all-members"><a href="${base}classes/${cls.name}/members/">All members, including inherited</a></p>`
     : '';
 
   const kids = site.children.get(cls.name) || [];
   const derived = kids.length
     ? /* html */ `<details class="derived"><summary>Derived by ${kids.length} class${kids.length > 1 ? 'es' : ''}</summary>
-<div class="derived-list">${kids.map((k) => `<a href="${base}class/${k}/">${esc(k)}</a>`).join(' ')}</div></details>`
+<div class="derived-list">${kids.map((k) => `<a href="${base}classes/${k}/">${esc(k)}</a>`).join(' ')}</div></details>`
     : '';
 
   const basesNote =
@@ -78,7 +78,7 @@ ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}
   // PlayerBase alone declares 876 members.
   const total = cls.members.length + cls.methods.length;
   const bar = total >= 12
-    ? pageBar({ filter: `Filter ${total.toLocaleString('en-US')} members…`, chips: ACCESS_CHIPS })
+    ? pageBar({ filter: `Filter ${total.toLocaleString('en-US')} members…` })
     : '';
 
   const locations = locationLinks(
@@ -159,7 +159,7 @@ export function renderClassMembers(ctx, cls) {
   // of those pages is static and lists its own members in full.
   const chainHtml = chain.length > 1
     ? `<p class="chain">${chain
-        .map((n, i) => (i === 0 ? `<strong>${esc(n)}</strong>` : `<a href="${base}class/${n}/">${esc(n)}</a>`))
+        .map((n, i) => (i === 0 ? `<strong>${esc(n)}</strong>` : `<a href="${base}classes/${n}/">${esc(n)}</a>`))
         .join(' <span class="chain-sep">›</span> ')}</p>`
     : '';
 
@@ -167,7 +167,7 @@ export function renderClassMembers(ctx, cls) {
 <h1>All members of ${esc(cls.name)}</h1>
 ${chainHtml}
 <p>Everything callable on a <code>${esc(cls.name)}</code>, its own and everything it inherits from the ${(chain.length - 1).toLocaleString('en-US')} ${chain.length === 2 ? 'class' : 'classes'} above. Each name links to the class that declares it; where a name is declared more than once in the chain, the nearest one is the one that answers.</p>
-<p><a href="${base}class/${cls.name}/">Back to ${esc(cls.name)}</a></p>
+<p><a href="${base}classes/${cls.name}/">Back to ${esc(cls.name)}</a></p>
 <table class="list all-members-table" id="allMembers" data-chain="${esc(chain.join(','))}">
 <thead><tr><th>Member</th><th>Declared by</th><th></th></tr></thead>
 <tbody></tbody></table>

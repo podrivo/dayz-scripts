@@ -150,7 +150,7 @@ function addTimeline(main, hist, builds, rec, here) {
     return document.getElementById(id) ? `#${id}` : null;
   };
 
-  const rowHtml = (row) => {
+  const rowHtml = (row, hidden) => {
     const [op, name] = row;
     const [cls, sign] = OPS[op];
     const linked = (text) => {
@@ -163,8 +163,13 @@ function addTimeline(main, hist, builds, rec, here) {
       : op === '+'
         ? linked(row[2])
         : `<code class="old">${esc(row[2])}</code>`;
-    return `<div class="th-row th-${cls}"><span class="th-op" aria-hidden="true">${sign}</span>${inner}</div>`;
+    return `<div class="th-row th-${cls}"${hidden ? ' hidden' : ''}><span class="th-op" aria-hidden="true">${sign}</span>${inner}</div>`;
   };
+
+  // How many of the rows still hidden to show at once: five, except that a
+  // step is never allowed to leave a single row behind — six remaining show
+  // as six, so "See more" always pays for the click.
+  const step = (remaining) => (remaining <= 6 ? remaining : 5);
 
   const entryHtml = ({ idx, added, rows }) => {
     const b = builds[idx];
@@ -175,7 +180,14 @@ function addTimeline(main, hist, builds, rec, here) {
     const born = added
       ? `<p class="th-new">${pageType.kind === 'class' ? 'Class' : 'Enum'} added in this build.</p>`
       : '';
-    return `<div class="th-build">${head}${born}${rows.map(rowHtml).join('')}</div>`;
+    // Every row is rendered; the ones past the cap wait, hidden, for the
+    // button below them, so seeing more never rebuilds anything.
+    const shown = step(rows.length);
+    const list = rows.map((row, i) => rowHtml(row, i >= shown)).join('');
+    const more = rows.length > shown
+      ? `<button type="button" class="th-more">See more (${rows.length - shown})</button>`
+      : '';
+    return `<div class="th-build">${head}${born}${list}${more}</div>`;
   };
 
   async function load() {
@@ -210,6 +222,19 @@ function addTimeline(main, hist, builds, rec, here) {
     body.innerHTML = entries.map(entryHtml).join('') + tail;
     summary.innerHTML = `History <span class="count">${entries.length}</span>`;
   }
+
+  // "See more" unhides the next handful in its own build and keeps or drops
+  // itself by what is left. One delegated listener, since the buttons are
+  // rebuilt with the body.
+  body.addEventListener('click', (e) => {
+    const btn = e.target.closest('.th-more');
+    if (!btn) return;
+    const hidden = [...btn.closest('.th-build').querySelectorAll('.th-row[hidden]')];
+    const n = step(hidden.length);
+    for (const row of hidden.slice(0, n)) row.hidden = false;
+    if (hidden.length > n) btn.textContent = `See more (${hidden.length - n})`;
+    else btn.remove();
+  });
 
   let state = 'idle';
   details.addEventListener('toggle', () => {

@@ -58,7 +58,7 @@ export function renderFile(ctx, fileEntry, fileModel, source) {
   const declList = [];
   for (const c of fileModel.classes) {
     if (!declList.some((d) => d.name === c.name)) {
-      declList.push({ kind: 'class', name: c.name, href: `${base}class/${c.name}/`, line: c.line });
+      declList.push({ kind: 'class', name: c.name, href: `${base}classes/${c.name}/`, line: c.line });
     }
   }
   for (const e of fileModel.enums) declList.push({ kind: 'enum', name: e.name, href: `${base}enum/${e.name}/`, line: e.line });

@@ -16,7 +16,7 @@ export function renderAnnotated(ctx, letters) {
           const c = site.classes.get(n);
           const brief = c.doc ? briefOf(c.doc, site, base) : '';
           const badges = (c.modded ? '<span class="badge badge-mod">modded</span>' : '') + condBadges(c.cond);
-          return `<tr><td><a href="${base}class/${n}/">${esc(n)}</a>${badges}</td><td>${brief}</td></tr>`;
+          return `<tr><td><a href="${base}classes/${n}/">${esc(n)}</a>${badges}</td><td>${brief}</td></tr>`;
         })
         .join('\n');
       return /* html */ `<h2 id="${l}">${letterTitle(l)} <span class="count">${names.length}</span></h2>
@@ -46,7 +46,7 @@ export function renderClassesIndex(ctx, letters) {
   const sections = [...letters.entries()]
     .map(
       ([l, names]) => /* html */ `<h2 id="${l}"><a href="${base}classes/${l}/">${letterTitle(l)}</a> <span class="count">${names.length}</span></h2>
-<div class="namegrid">${names.map((n) => `<a href="${base}class/${n}/">${esc(n)}</a>`).join('')}</div>`
+<div class="namegrid">${names.map((n) => `<a href="${base}classes/${n}/">${esc(n)}</a>`).join('')}</div>`
     )
     .join('\n');
   const content = /* html */ `
@@ -73,7 +73,7 @@ export function renderClassesLetter(ctx, letter, names, letters) {
       const c = site.classes.get(n);
       const brief = c.doc ? briefOf(c.doc, site, base) : '';
       const badges = (c.modded ? '<span class="badge badge-mod">modded</span>' : '') + condBadges(c.cond);
-      return `<tr><td><a href="${base}class/${n}/">${esc(n)}</a>${badges}</td><td>${brief}</td></tr>`;
+      return `<tr><td><a href="${base}classes/${n}/">${esc(n)}</a>${badges}</td><td>${brief}</td></tr>`;
     })
     .join('\n');
   const content = /* html */ `
@@ -97,7 +97,7 @@ export function renderClassesLetter(ctx, letter, names, letters) {
 
 /** Members: every member and method of every class, by initial.
  *  Letter pages are a shell; the rows are composed in the browser from
- *  search.json by site/app/members.js, the same way /class/<Name>/members/ is. */
+ *  search.json by site/app/members.js, the same way /classes/<Name>/members/ is. */
 export function renderFields(ctx, letter, letters, kind) {
   const { base } = ctx;
   const KINDS = {

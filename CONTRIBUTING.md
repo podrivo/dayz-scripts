@@ -57,12 +57,13 @@ names the file.
 | `/` | `src/generate/render/home.js` |
 | `/topics/`, `/topics/<Name>/` | `src/generate/render/topics.js` |
 | `/classes/`, `/classes/index/`, `/classes/<letter>/`, `/classes/fields/…` | `src/generate/render/classes.js` |
-| `/class/<Name>/`, `/class/<Name>/members/` | `src/generate/render/class.js` |
+| `/classes/<Name>/`, `/classes/<Name>/members/` | `src/generate/render/class.js` |
 | `/enum/<Name>/`, `/globals/…` | `src/generate/render/globals.js` |
 | `/files/`, `/files/<Dir>/<Name.c>/` | `src/generate/render/files.js` |
 | `/hierarchy/` | `src/generate/render/hierarchy.js` |
 | `/changelog/` | `src/generate/render/changelog.js` |
 | `/community/` | `src/generate/render/community.js` |
+| `/about/` | `src/generate/render/about.js` |
 | 404 | `src/generate/render/notfound.js` |
 
 Everything around a page body — `<head>`, the header, the nav bar, the search
@@ -87,7 +88,7 @@ nothing at runtime, and editors with the common
 extension will syntax-highlight and format the markup inside them.
 
 Hand-written prose that is not derived from a build — the homepage blurbs, the
-community links, the release threads — is in `src/generate/content.js`.
+community links, the about page, the release threads — is in `src/generate/content.js`.
 
 ## Where is the behaviour?
 

@@ -6,12 +6,13 @@
 //   /                             render/home.js
 //   /topics/  /topics/<Name>/     render/topics.js
 //   /classes/ …  /classes/fields/ render/classes.js
-//   /class/<Name>/  …/members/    render/class.js
+//   /classes/<Name>/  …/members/  render/class.js
 //   /enum/<Name>/  /globals/…     render/globals.js
 //   /files/  /files/<Dir>/<F.c>/  render/files.js
 //   /hierarchy/                   render/hierarchy.js
 //   /changelog/                   render/changelog.js
 //   /community/                   render/community.js
+//   /about/                       render/about.js
 //   404                           render/notfound.js
 //
 // The chrome around every body — the head, header, nav and search palette —
@@ -31,4 +32,5 @@ export { renderFilesIndex, renderFile } from './render/files.js';
 export { renderHierarchy } from './render/hierarchy.js';
 export { renderCompare } from './render/changelog.js';
 export { renderCommunity } from './render/community.js';
+export { renderAbout } from './render/about.js';
 export { render404 } from './render/notfound.js';

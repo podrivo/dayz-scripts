@@ -1,7 +1,7 @@
-// Hand-maintained content for the home page and /community/: links off the
-// site, plus the official forum thread for each PC stable update. None of it
-// can be derived from the script sources, so it lives here and grows as new
-// builds ship.
+// Hand-maintained content for the home page, /community/ and /about/: links
+// off the site, plus the official forum thread for each PC stable update.
+// None of it can be derived from the script sources, so it lives here and
+// grows as new builds ship.
 
 /** Where the site is served from, for the absolute URLs that have to name it:
  *  the sitemap, robots.txt, and the canonical and OpenGraph tags on a page. */
@@ -100,6 +100,12 @@ export const COMMUNITY_SECTIONS = [
 ];
 
 export const YADZ_DISCORD = 'https://discord.gg/nbrHqZCpA6';
+
+/** How to reach the people who build this site. Only on /about/. */
+export const COLLABORATION_LINKS = [
+  ['GitHub', REPO_URL, 'Issues, pull requests, and community notes'],
+  ["YADZ's Discord", YADZ_DISCORD, 'Feedback on the site'],
+];
 
 /** Marketing name of a game version, when the whole version carries one. */
 export const VERSION_TITLES = {

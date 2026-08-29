@@ -328,6 +328,12 @@ const fileRedirects = [
   '/file/* /files/:splat 301',
   '/v/:build/file/* /v/:build/files/:splat 301',
 ];
+const classRedirects = [
+  '/class/* /classes/:splat 301',
+  '/class/ /classes/ 301',
+  '/v/:build/class/* /v/:build/classes/:splat 301',
+  '/v/:build/class/ /v/:build/classes/ 301',
+];
 
 // every domain this site has been served from, pointing at the current one
 fs.writeFileSync(
@@ -341,6 +347,7 @@ fs.writeFileSync(
     ...fieldRedirects,
     ...topicRedirects,
     ...fileRedirects,
+    ...classRedirects,
     `/v/${buildList[0].label}/* /:splat 301`,
     ...minorRedirects,
     '/v/:build/* /archive.html 200',

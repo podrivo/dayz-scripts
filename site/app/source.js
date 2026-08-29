@@ -39,7 +39,7 @@ export function sourceResolver(links) {
   // Kept as a map of its own as well, since resolve.str below asks the same
   // question of a quoted name.
   const types = new Map();
-  for (const n of list('classes')) { types.set(n, `class/${n}/`); claim(n, `class/${n}/`); }
+  for (const n of list('classes')) { types.set(n, `classes/${n}/`); claim(n, `classes/${n}/`); }
   for (const n of list('enums')) { types.set(n, `enum/${n}/`); claim(n, `enum/${n}/`); }
   // Enforce declares a bare `typedef X;` beside `class X` for a couple of dozen
   // names — BaseContainer, Physics, ResourceName. The two spell one thing, so
@@ -52,8 +52,8 @@ export function sourceResolver(links) {
   const macros = new Set(list('macros'));
   for (const n of macros) claim(n, `globals/macros/#${anchorOf(n)}`);
   for (const [ei, v] of list('values')) claim(v, `enum/${index.enums[ei]}/#${v}`);
-  for (const [ci, m] of list('methods')) claim(m, `class/${index.classes[ci]}/#${anchorOf(m)}`);
-  for (const [ci, v] of list('vars')) claim(v, `class/${index.classes[ci]}/#${anchorOf(v)}`);
+  for (const [ci, m] of list('methods')) claim(m, `classes/${index.classes[ci]}/#${anchorOf(m)}`);
+  for (const [ci, v] of list('vars')) claim(v, `classes/${index.classes[ci]}/#${anchorOf(v)}`);
 
   // Which classes declare each member name, which is the question a scoped
   // lookup asks of every class in the chain.
@@ -94,7 +94,7 @@ export function sourceResolver(links) {
     const os = chain && owners.get(name);
     if (os) {
       for (const ci of chain) {
-        if (os.includes(ci)) return `${BASE}class/${index.classes[ci]}/#${anchorOf(name)}`;
+        if (os.includes(ci)) return `${BASE}classes/${index.classes[ci]}/#${anchorOf(name)}`;
       }
     }
     const url = map.get(name);
@@ -220,7 +220,7 @@ export function initSourceView() {
         // number rather than over it because the number belongs to the
         // selection now (see site/app/share.js).
         const url = declAt?.get(i + 1);
-        const to = url ? `<a class="ldoc ic" href="${BASE}${url}" title="Go to documentation" aria-label="Documentation for this declaration"></a>` : '';
+        const to = url ? `<a class="ldoc ic" href="${BASE}${url}" data-tip="Go to docs" aria-label="Documentation for this declaration"></a>` : '';
         return `<span class="line${url ? ' decl' : ''}" id="L${i + 1}">${to}${l}\n</span>`;
       })
       .join('');

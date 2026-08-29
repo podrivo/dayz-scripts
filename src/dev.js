@@ -176,6 +176,7 @@ const RENDERERS = [
   [/^hierarchy\//, 'render/hierarchy.js'],
   [/^changelog\//, 'render/changelog.js'],
   [/^community\//, 'render/community.js'],
+  [/^about\//, 'render/about.js'],
 ];
 
 /** Line two of view-source, and after the doctype: a comment ahead of it puts
@@ -211,6 +212,7 @@ function relocated(rel) {
     if (rel.startsWith(`${a}/`)) return `topics/${rel.slice(a.length + 1)}`;
   }
   if (rel.startsWith('file/')) return `files/${rel.slice('file/'.length)}`;
+  if (rel.startsWith('class/')) return `classes/${rel.slice('class/'.length)}`;
   return null;
 }
 
@@ -224,7 +226,7 @@ function handle(req, res) {
     res.writeHead(302, { location: '/' });
     return res.end();
   }
-  // Clean URLs: every page is a directory, so /class/Foo means /class/Foo/.
+  // Clean URLs: every page is a directory, so /classes/Foo means /classes/Foo/.
   if (!pathname.endsWith('/') && !path.extname(pathname)) {
     res.writeHead(301, { location: `${pathname}/` });
     return res.end();

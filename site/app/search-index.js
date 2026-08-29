@@ -13,9 +13,9 @@ import { BASE, ROOT, anchorOf } from './dom.js';
    and is the name itself for the kinds that stand alone. `text` is the doc
    brief and community note, joined, which is what a query also searches. */
 export const KIND = {
-  c: ['class', (n, o) => `class/${o}/`],
-  m: ['method', (n, o) => `class/${o}/#${anchorOf(n)}`],
-  v: ['field', (n, o) => `class/${o}/#${anchorOf(n)}`],
+  c: ['class', (n, o) => `classes/${o}/`],
+  m: ['method', (n, o) => `classes/${o}/#${anchorOf(n)}`],
+  v: ['field', (n, o) => `classes/${o}/#${anchorOf(n)}`],
   e: ['enum', (n, o) => `enum/${o}/`],
   V: ['value', (n, o) => `enum/${o}/#${n}`],
   t: ['typedef', (n, o) => `globals/typedefs/#${o}`],

@@ -30,7 +30,7 @@ const CHANGED = '~';
    from; the keys are the ones diff.json uses, so a mismatch would show up as
    an empty section rather than as wrong data. */
 const KINDS = [
-  { key: 'class', label: 'Classes', url: (n) => `class/${n}/` },
+  { key: 'class', label: 'Classes', url: (n) => `classes/${n}/` },
   { key: 'enum', label: 'Enums', url: (n) => `enum/${n}/` },
   { key: 'func', label: 'Global functions', url: (n) => `globals/functions/#${n}` },
   { key: 'const', label: 'Constants', url: (n) => `globals/constants/#${n}` },

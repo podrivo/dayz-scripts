@@ -74,7 +74,7 @@ function field(site, v) {
 export function buildApi(site) {
   const classes = [...site.classes.values()].sort(byName).map((c) => {
     const { file, line } = loc(site, c);
-    const o = { name: c.name, url: `class/${c.name}/` };
+    const o = { name: c.name, url: `classes/${c.name}/` };
     if (c.generics) o.generics = c.generics;
     if (c.baseName) o.base = c.baseName;
     if (c.bases.length > 1) o.bases = c.bases.map((b) => (b.cond?.length ? { name: b.base, cond: b.cond } : b.base));
@@ -195,5 +195,6 @@ The script sources are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are
 - [Topics](${SITE_URL}/topics/): the \\defgroup groups the sources wrap themselves into
 - [Changelog](${SITE_URL}/changelog/): API diff between any two builds
 - [Community](${SITE_URL}/community/): official references, Discord servers, editors, build tools and data explorers for DayZ modding
+- [About](${SITE_URL}/about/): the stack, and how to collaborate
 `;
 }

@@ -21,6 +21,7 @@ import { initShare } from './app/share.js';
 import { initInlineCode } from './app/highlight.js';
 import { initHistory } from './app/history.js';
 import { initNotes } from './app/notes.js';
+import { initTooltip } from './app/tooltip.js';
 import { initCopyBlocks, initCopySignatures } from './app/copy.js';
 import { initPageBar } from './app/pagebar.js';
 import { initTreeTools, initFilter } from './app/filter.js';
@@ -49,6 +50,7 @@ initInlineCode();
 // what gets added to a declaration once the page is up
 initHistory();
 initNotes();
+initTooltip();
 initCopyBlocks();
 initCopySignatures();
 

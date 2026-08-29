@@ -67,7 +67,7 @@ test('URLs resolve to the renderer they name', () => {
     ['classes/', 'index'],
     ['classes/index/', 'index'],
     ['classes/f/', 'index'],
-    ['class/Foo/', 'class'],
+    ['classes/Foo/', 'class'],
     ['enum/EFoo/', 'enum'],
     ['globals/functions/', 'index'],
     ['globals/constants/', 'index'],
@@ -75,6 +75,7 @@ test('URLs resolve to the renderer they name', () => {
     ['files/', 'index'],
     ['changelog/', 'index'],
     ['community/', 'index'],
+    ['about/', 'index'],
     ['files/3_Game/Foo.c/', 'file'],
     ['search.json', 'search'],
   ]) {
@@ -85,13 +86,13 @@ test('URLs resolve to the renderer they name', () => {
 });
 
 test('an unknown URL resolves to nothing', () => {
-  for (const rel of ['class/Nope/', 'enum/Nope/', 'nonsense/', 'class/Foo', 'annotated/', 'changes/', 'compare/', 'module/Topic/', 'globals/variables/']) {
+  for (const rel of ['classes/Nope/', 'enum/Nope/', 'nonsense/', 'classes/Foo', 'class/Foo/', 'annotated/', 'changes/', 'compare/', 'module/Topic/', 'globals/variables/']) {
     assert.equal(resolve(site, rel, opts), null, `${JSON.stringify(rel)} resolved`);
   }
 });
 
 test('pages go under their directory, sidecars stand alone', () => {
-  assert.equal(resolve(site, 'class/Foo/', opts).file, 'class/Foo/index.html');
+  assert.equal(resolve(site, 'classes/Foo/', opts).file, 'classes/Foo/index.html');
   assert.equal(resolve(site, '', opts).file, 'index.html');
   assert.equal(resolve(site, 'search.json', opts).file, 'search.json');
 });
@@ -121,21 +122,21 @@ test('the machine API is latest-only', () => {
 // Hashing every class's dependencies costs ~155ms per build. A URL lookup walks
 // past most of the site to find its page and must not pay that on the way.
 test('dependency hashes are deferred until a page is actually written', () => {
-  for (const rel of ['class/Foo/', 'enum/EFoo/', 'files/3_Game/Foo.c/']) {
+  for (const rel of ['classes/Foo/', 'enum/EFoo/', 'files/3_Game/Foo.c/']) {
     const p = resolve(site, rel, opts);
     assert.equal(typeof p.deps, 'function', `${rel} computes its deps eagerly`);
   }
-  assert.equal(typeof resolve(site, 'class/Foo/', opts).deps(), 'string');
+  assert.equal(typeof resolve(site, 'classes/Foo/', opts).deps(), 'string');
   assert.equal(resolve(site, 'topics/', opts).deps, undefined);
 });
 
 test('a resolved page renders without a memo behind it', () => {
   // The generator always passes the set that records type lookups; the dev
   // server passes nothing, and both have to work.
-  for (const rel of ['', 'class/Foo/', 'enum/EFoo/', 'changelog/']) {
+  for (const rel of ['', 'classes/Foo/', 'enum/EFoo/', 'changelog/', 'about/']) {
     const html = resolve(site, rel, opts).render();
     assert.match(html, /^<!DOCTYPE html>/, `${rel} did not render a document`);
   }
-  assert.match(resolve(site, 'class/Foo/', opts).render(new Set()), /^<!DOCTYPE html>/);
+  assert.match(resolve(site, 'classes/Foo/', opts).render(new Set()), /^<!DOCTYPE html>/);
   assert.deepEqual(Object.keys(JSON.parse(resolve(site, 'nav.json', opts).render())), ['topics']);
 });

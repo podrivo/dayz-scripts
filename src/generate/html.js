@@ -33,7 +33,7 @@ export function slug(title) {
 }
 
 export function typeUrl(name, kind) {
-  if (kind === 'class') return `class/${name}/`;
+  if (kind === 'class') return `classes/${name}/`;
   if (kind === 'enum') return `enum/${name}/`;
   if (kind === 'typedef') return `globals/typedefs/#${name}`;
   return null;
@@ -178,6 +178,7 @@ const NAV = [
   ['topics/', 'Topics'],
   ['changelog/', 'Changelog'],
   ['community/', 'Community'],
+  ['about/', 'About'],
 ];
 
 /** Whether `active` names this branch or anything under it. */
@@ -260,9 +261,15 @@ export const SITE_TITLE = 'DIFF, DayZ Internal File Finder by YADZ';
 /** Last packed inner produced by layout(), for the generator's _b store. */
 export let lastPacked = '';
 
-/** Kind a leaf URL sits under, so /class/Foo/ titles as "Foo · Class · …". */
+/** A class's own page (or its inherited-members list), not the Classes indexes. */
+function isClassLeaf(vpath) {
+  const m = /^classes\/([^/]+)\/(members\/)?$/.exec(vpath);
+  return Boolean(m && m[1] !== 'index' && m[1] !== 'fields' && !/^[a-z_]$/.test(m[1]));
+}
+
+/** Kind a leaf URL sits under, so /classes/Foo/ titles as "Foo · Class · …". */
 function titleKind(vpath) {
-  if (vpath.startsWith('class/')) return 'Class';
+  if (isClassLeaf(vpath)) return 'Class';
   if (vpath.startsWith('enum/')) return 'Enum';
   if (vpath.startsWith('files/') && vpath !== 'files/') return 'File';
   if (vpath.startsWith('topics/') && vpath !== 'topics/') return 'Topic';
@@ -370,7 +377,7 @@ ${social}
 <button class="ver-btn" id="verBtn" aria-haspopup="true" aria-expanded="false" title="Switch DayZ build"><span class="ver-label"></span><i class="ic ic-chev"></i></button>
 <nav class="ver-menu" id="verMenu" aria-label="DayZ builds" hidden></nav>
 </div>
-<button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme (M)"><i class="ic ic-theme"></i></button>
+<button class="theme-btn" id="themeBtn" aria-label="Toggle theme" data-tip="Toggle light and dark"><i class="ic ic-theme"></i></button>
 </header>
 ${o.bar || ''}
 <div class="shell">
