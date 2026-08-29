@@ -850,24 +850,35 @@ pre.code, pre.attrs {
 .file-decls .kw { opacity: 0.75; font-size: 12px; }
 
 .srcwrap { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+/* Enfusion source is written with hard tabs against a four-column stop — the
+   columns of `=` in constants.c only line up at that width — and the browser
+   default of eight leaves them ragged. */
+pre.src, pre.code, pre.attrs { tab-size: 4; }
 pre.src {
   margin: 0; padding: 12px 0; overflow-x: auto;
   background: var(--code-bg); font-size: 13px; line-height: 1.5;
   counter-reset: ln;
 }
-pre.src .line { display: block; position: relative; padding: 0 14px 0 0; }
+pre.src .line { display: block; position: relative; padding: 0 14px 0 80px; }
 /* A line is the handle for sharing itself — click anywhere on it that is not
    a link (site/app/share.js) — so the whole row lights up under the pointer
    to say so, and the number, being the part of the row that is nothing but
    the handle, darkens with it. The code keeps the text cursor it has earned:
    selecting it by hand still works, and the click only lands once nothing is
-   selected. The left padding is the lane the documentation icon below sits
-   in; the width is the digits themselves, since the box-sizing rule at the
-   top of this file does not reach pseudo-elements. Four digits is the most
-   any page needs — the longest file in any build is 9,793 lines. */
+   selected. Its own left padding is the lane the documentation icon below
+   sits in; the width is the digits themselves, since the box-sizing rule at
+   the top of this file does not reach pseudo-elements. Four digits is the
+   most any page needs — the longest file in any build is 9,793 lines.
+
+   Out of flow, and the gutter it would have taken given to the line as
+   padding instead: a tab is measured from the content edge of the block it
+   is in, so anything sitting in front of the code shifts every tab stop by
+   its own width and lands them off the character grid, which is what left
+   the columns of `=` in constants.c ragged. */
 pre.src .line::before {
   counter-increment: ln; content: counter(ln);
-  display: inline-block; width: 40px; padding: 0 12px 0 15px; margin-right: 12px;
+  position: absolute; left: 0; top: 0;
+  width: 40px; padding: 0 12px 0 15px;
   text-align: right; color: var(--com); user-select: none; cursor: pointer;
   border-right: 1px solid var(--line);
 }
