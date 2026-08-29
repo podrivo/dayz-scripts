@@ -67,10 +67,19 @@ names the file.
 
 Everything around a page body — `<head>`, the header, the nav bar, the search
 palette, the footer — is `layout()` in `src/generate/html.js`, which is also
-where signatures, doc comments and the filter field are rendered. The pieces
-more than one page needs (source links, "Referenced by", the A–Z bar) are in
-`src/generate/render/shared.js`. `src/generate/render.js` is a barrel that
-re-exports the lot, so importers need not know which file a renderer is in.
+where signatures and doc comments are rendered. The pieces more than one page
+needs (source links, "Referenced by") are in `src/generate/render/shared.js`.
+`src/generate/render.js` is a barrel that re-exports the lot, so importers
+need not know which file a renderer is in.
+
+Everything that acts on the page you are already on — the filter field, the
+A–Z, expand and collapse, the tabs to a page's siblings — is one bar under
+the site nav, built by `pageBar()` in `src/generate/render/pagebar.js`. A page
+asks for the parts it wants and passes the result to `layout()` as `bar`,
+which hangs it below the header, outside `<main>`, so it spans the window.
+A new control goes in that one file rather than in each renderer that wants
+it. Being outside the body, it travels with an archived page in the meta line
+rather than in the stored body; see `ARCHIVE_MARK` in `src/generate/html.js`.
 
 HTML-bearing template literals are prefixed with `/* html */`. It costs
 nothing at runtime, and editors with the common
@@ -100,6 +109,7 @@ works on is on the page, which is how one script serves ~660,000 pages.
 | "Added in" / "Changed in" badges | `site/app/history.js` |
 | Community notes | `site/app/notes.js` |
 | Copy buttons, the override stub | `site/app/copy.js` |
+| The page bar under the nav | `site/app/pagebar.js` |
 | The page filter, expand/collapse | `site/app/filter.js` |
 | The member and field tables | `site/app/members.js` |
 | Table of contents | `site/app/toc.js` |

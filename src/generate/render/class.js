@@ -3,11 +3,12 @@
 
 import {
   esc, layout, linkType, condBadges, modBadges, methodSig, varSig,
-  renderDoc, briefOf, filterBar, slug, ACCESS_CHIPS,
+  renderDoc, briefOf, slug,
 } from '../html.js';
 import {
   anchorFor, callersBlock, fileLineHref, locationLinks, referencesBlock,
 } from './shared.js';
+import { ACCESS_CHIPS, pageBar } from './pagebar.js';
 
 export function renderClass(ctx, cls) {
   const { site, base } = ctx;
@@ -76,8 +77,8 @@ ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}
   // A short class reads as a list; a long one has to be searched, and
   // PlayerBase alone declares 876 members.
   const total = cls.members.length + cls.methods.length;
-  const filter = total >= 12
-    ? filterBar(`Filter ${total.toLocaleString('en-US')} members…`, ACCESS_CHIPS)
+  const bar = total >= 12
+    ? pageBar({ filter: `Filter ${total.toLocaleString('en-US')} members…`, chips: ACCESS_CHIPS })
     : '';
 
   const locations = locationLinks(
@@ -108,7 +109,6 @@ ${allMembers}
 ${derived}
 ${attrs}
 ${cls.doc ? `<div class="class-doc">${renderDoc(cls.doc, site, base)}</div>` : ''}
-${filter}
 ${section('Constants', constants, memberBlock)}
 ${section('Members', vars, memberBlock)}
 ${section('Constructors', ctors, methodBlock)}
@@ -121,6 +121,7 @@ ${section('Methods', methods, methodBlock)}
     ...ctx,
     title: cls.name,
     active: 'classes/',
+    bar,
     description: brief || `${cls.name} class — DayZ Enforce Script API`,
     content,
   });
@@ -167,7 +168,6 @@ export function renderClassMembers(ctx, cls) {
 ${chainHtml}
 <p>Everything callable on a <code>${esc(cls.name)}</code>, its own and everything it inherits from the ${(chain.length - 1).toLocaleString('en-US')} ${chain.length === 2 ? 'class' : 'classes'} above. Each name links to the class that declares it; where a name is declared more than once in the chain, the nearest one is the one that answers.</p>
 <p><a href="${base}class/${cls.name}/">Back to ${esc(cls.name)}</a></p>
-${filterBar('Filter members…')}
 <table class="list all-members-table" id="allMembers" data-chain="${esc(chain.join(','))}">
 <thead><tr><th>Member</th><th>Declared by</th><th></th></tr></thead>
 <tbody></tbody></table>
@@ -177,6 +177,7 @@ ${filterBar('Filter members…')}
     ...ctx,
     title: `${cls.name} — all members`,
     active: 'classes/',
+    bar: pageBar({ filter: 'Filter members…' }),
     description: `Every member of ${cls.name}, its own and those inherited from ${chain.slice(1).join(', ')}.`,
     content,
   });

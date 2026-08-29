@@ -74,10 +74,14 @@
   --w-search: 600px;
   --h-top: 56px;
   --gutter: 36px;
+  /* What the page bar measures, on the pages that carry one. Zero here so
+     every page that does not gets the header's offset and nothing more;
+     site/app/pagebar.js overwrites it where there is a bar. */
+  --h-bar: 0px;
 }
 
 * { box-sizing: border-box; }
-html { scroll-padding-top: calc(var(--h-top) + 16px); }
+html { scroll-padding-top: calc(var(--h-top) + var(--h-bar) + 16px); }
 
 /* Nearly every name on this site is one long unbroken word — a signature, a
    file path, UniversalTemperatureSourceLambdaBaseImpl — and a word that cannot
@@ -469,7 +473,7 @@ body.palette-open { overflow: hidden; }
 }
 
 /* ---- shell ---- */
-.shell { display: flex; min-height: calc(100vh - var(--h-top)); }
+.shell { display: flex; min-height: calc(100vh - var(--h-top) - var(--h-bar)); }
 
 /* Site nav lives in the header: a row of sections, with the ones that have
    children opening as menus. The same markup becomes the slide-out drawer
@@ -598,8 +602,8 @@ h3.member-name .ordinal { font-size: 12px; font-weight: 400; color: var(--fg2); 
    screen. app.js builds it, and only when a file is long enough to need one.
    Phones never get it: there is no room and no pointer to hover with. */
 .minimap {
-  position: sticky; top: var(--h-top);
-  flex: none; width: 108px; height: calc(100vh - var(--h-top));
+  position: sticky; top: calc(var(--h-top) + var(--h-bar));
+  flex: none; width: 108px; height: calc(100vh - var(--h-top) - var(--h-bar));
   padding: 14px 12px; border-left: 1px solid var(--line);
 }
 .mm-track { position: relative; height: 100%; cursor: grab; touch-action: none; }
@@ -653,6 +657,12 @@ h2 { font-size: 19px; margin: 64px 0 16px; }
 h3 { font-size: 16px; margin: 20px 0 8px; }
 
 .count { font-size: 13px; font-weight: 500; color: var(--fg2); }
+
+/* The 64px is a section break, for the second Methods on a class or the B
+   after the A's. Classes and Globals start with an h2, and that one is the
+   page beginning, not a new section — it should sit as close as the intro
+   paragraph does on Files and Topics. */
+.main > h1 + h2 { margin-top: 16px; }
 
 .main > h1:has(+ .crumbs),
 .main > h1:has(+ .chain) { margin-bottom: 4px; }
@@ -732,20 +742,6 @@ table.list td:first-child { white-space: nowrap; }
    hold the column — and the page — open past the width of the window. */
 table.list td:first-child > code { white-space: normal; }
 .enum-table td:first-child { white-space: normal; }
-
-.letters { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 6px; }
-.letter {
-  display: inline-flex; width: 32px; height: 32px; align-items: center; justify-content: center;
-  border: 1px solid var(--line); border-radius: 8px; font-weight: 600;
-}
-.letter:hover { border-color: var(--accent2); text-decoration: none; }
-.letter.active { background: var(--accent-bg); border-color: var(--accent2); color: var(--accent); }
-
-/* Sub-page switchers on the data field and globals indexes. */
-.tabs { display: flex; flex-wrap: wrap; gap: 4px; margin: 16px 0 4px; border-bottom: 1px solid var(--line); }
-.tab { padding: 7px 14px; border-radius: 8px 8px 0 0; font-size: 14px; color: var(--fg2); margin-bottom: -1px; }
-.tab:hover { background: var(--bg3); text-decoration: none; }
-.tab.active { color: var(--accent); font-weight: 600; border: 1px solid var(--line); border-bottom-color: var(--bg); background: var(--bg); }
 
 /* Name-only index: many short links read better as columns than as a table. */
 .namegrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2px 16px; margin: 10px 0 22px; font-size: 14px; }
@@ -1011,23 +1007,156 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 .tok-link { color: inherit; text-decoration: none; }
 .tok-link:hover { text-decoration: underline; text-decoration-color: var(--accent2); }
 
-/* ---- hierarchy ---- */
 /* ---- page filter ----
    Everything it narrows is hidden with [hidden]. The UA stylesheet covers
    that on its own for rows and member blocks, but only where this file has
    not given the element a display of its own, which outranks it. */
 .fields dd[hidden], .toc a[hidden] { display: none; }
 
-.filterbar { display: flex; align-items: center; gap: 10px; margin: 14px 0 4px; }
+/* The changelog builds its own filter in site/compare.js, in the page rather
+   than in a bar; the page bar's own field is .pb-filter below. */
 .filter-input {
-  flex: 1; max-width: 340px; height: 34px; padding: 0 12px;
+  flex: 1; min-width: 0; max-width: 340px; height: 34px; padding: 0 12px;
   border: 1px solid var(--line); border-radius: 8px;
   background: var(--bg); color: var(--fg); font: inherit; font-size: 14px;
 }
 .filter-input:focus { outline: none; border-color: var(--accent2); }
 .filter-input::-webkit-search-cancel-button { cursor: pointer; }
 .filter-count { color: var(--fg2); font-size: 13px; white-space: nowrap; }
-.filter-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 4px; }
+.filterbar { display: flex; align-items: center; gap: 10px; margin: 14px 0 4px; }
+
+/* ---- the page bar ----
+   Everything that acts on the page you are already on, gathered into one
+   strip under the site nav: the tabs to this page's siblings, expand and
+   collapse, the filter field and what narrows it, and the A-Z. Built by
+   src/generate/render/pagebar.js.
+
+   A second bar under the first, so it spans the window the way the header
+   does rather than stopping at the edge of the text column, and it hangs
+   below it in the document for the same reason. Sticky, because a control
+   that scrolls away is no use to the page it narrows. Its height is
+   published as --h-bar by site/app/pagebar.js, which is what keeps anchors
+   from landing underneath it. */
+.pagebar {
+  /* Under the header and under the drawer the nav becomes on a phone, which
+     slides across it. */
+  position: sticky; top: var(--h-top); z-index: 30;
+  padding: 0 var(--gutter);
+  border-bottom: 1px solid var(--line);
+}
+/* The header's own backdrop, for the same reason: two solid bars stacked
+   would read as a wall, and the page needs to look like it is passing behind
+   them rather than stopping at them. */
+.pagebar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  pointer-events: none;
+}
+
+/* Everything but the letters. They share a line because the two that would
+   fight for it never meet: the chips are a class page, and the tabs and the
+   tree tools are not. */
+.pb-row { display: flex; align-items: center; gap: 8px; min-height: 50px; padding: 8px 0; }
+
+/* Rows that scroll rather than wrap, so the bar keeps its height — it is
+   sticky, and a bar that grows a line as the window narrows moves the page
+   under it. */
+.pb-tabs, .pb-chips, .pb-letters {
+  display: flex; min-width: 0; overflow-x: auto; scrollbar-width: none;
+}
+.pb-tabs::-webkit-scrollbar, .pb-chips::-webkit-scrollbar,
+.pb-letters::-webkit-scrollbar { display: none; }
+
+/* Sub-page switchers: the Globals kinds, the Members kinds. */
+.pb-tabs { gap: 2px; }
+.pb-tab {
+  flex: none; display: inline-flex; align-items: center;
+  height: 36px; padding: 0 12px; border-radius: 8px;
+  color: var(--fg2); font-size: 14px;
+}
+.pb-tab:hover { background: var(--bg3); color: var(--fg); text-decoration: none; }
+.pb-tab.active { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
+
+/* One height across the bar, the header's, so the row reads as one control
+   strip rather than as a handful of unrelated widgets. */
+.pb-tools { display: flex; flex: none; gap: 8px; }
+.pb-tools .btn { height: 36px; padding: 0 12px; }
+
+/* The header search trigger's colours on a 36px icon. Opening it is a
+   width change, so the rest of the bar slides rather than jumping. */
+.pb-filter {
+  display: flex; align-items: center;
+  flex: none; width: 36px; height: 36px;
+  overflow: hidden;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: var(--bg2); color: var(--fg2);
+  transition: width .2s ease;
+}
+.pb-filter:hover, .pb-filter.open:focus-within { border-color: var(--accent2); }
+.pb-filter.open { width: 220px; }
+.pb-search-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  flex: none; width: 36px; height: 36px; padding: 0;
+  border: none; background: none; color: inherit;
+  font: inherit; cursor: pointer;
+}
+.pb-input {
+  flex: 1; min-width: 0; width: 0; height: 100%; padding: 0;
+  border: none; outline: none; background: none;
+  color: var(--fg); font: inherit; font-size: 14px;
+}
+.pb-filter:not(.open) .pb-input,
+.pb-filter:not(.open) .pb-count { visibility: hidden; position: absolute; }
+.pb-input::-webkit-search-cancel-button { cursor: pointer; }
+.pb-count { flex: none; margin-left: auto; padding-right: 8px; font-size: 12px; white-space: nowrap; }
+
+.pb-chips { flex: none; gap: 4px; }
+
+/* A-Z, on its own line. Fixed 36px squares overflow the column (26 of
+   them plus gaps is wider than the page), so they share the row instead
+   and only scroll once a letter would drop below a usable hit target. */
+.pb-letters { gap: 4px; padding-bottom: 8px; }
+.pb-letter {
+  flex: 1 1 0; display: inline-flex; min-width: 32px; height: 36px;
+  align-items: center; justify-content: center;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: var(--bg2); color: var(--fg); font-size: 13px; font-weight: 600;
+}
+.pb-letter:hover { border-color: var(--accent2); text-decoration: none; }
+.pb-letter.active { background: var(--accent-bg); border-color: var(--accent2); color: var(--accent); }
+
+/* The chips as a menu, which is what they become on a narrow screen: seven
+   of them beside a field is a row nobody can read, and the one in force is
+   the only one worth the space. site/app/pagebar.js adds the class and the
+   button, so without it they stay a row and stay reachable. */
+.pb-menu-btn {
+  flex: none; display: inline-flex; align-items: center; gap: 6px;
+  height: 36px; padding: 0 10px;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: var(--bg2); color: var(--fg); font: inherit; font-size: 13px; cursor: pointer;
+}
+.pb-menu-btn:hover { border-color: var(--accent2); }
+.pb-menu-btn::after {
+  content: ''; flex: none; width: 10px; height: 10px;
+  background: currentColor; opacity: .5;
+  --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M2 3.5l3 3 3-3'/%3E%3C/svg%3E");
+  -webkit-mask: var(--chev) center / 10px no-repeat;
+  mask: var(--chev) center / 10px no-repeat;
+}
+.pb-has-menu .pb-chips {
+  display: none; position: absolute; z-index: 60;
+  top: 100%; right: var(--gutter);
+  flex-direction: column; min-width: 170px; padding: 6px;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+.pb-has-menu.open .pb-chips { display: flex; }
+.pb-has-menu .pf { padding: 7px 10px; border-radius: 6px; font-size: 13px; text-align: left; }
 
 /* ---- table of contents ----
    Where this page's own sections are, beside it. The third column only exists
@@ -1040,8 +1169,8 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
    reads as the column having come loose. The nav and the text stay where they
    are; only the slack moves. */
 .toc {
-  position: sticky; top: var(--h-top); align-self: flex-start;
-  flex: none; width: 200px; max-height: calc(100vh - var(--h-top));
+  position: sticky; top: calc(var(--h-top) + var(--h-bar)); align-self: flex-start;
+  flex: none; width: 200px; max-height: calc(100vh - var(--h-top) - var(--h-bar));
   margin-left: auto;
   padding: 26px 16px 20px; overflow-y: auto;
   border-left: 1px solid var(--line);
@@ -1063,7 +1192,7 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 
 @media (max-width: 1179px) { .toc { display: none; } }
 
-.hierarchy-tools { margin-bottom: 12px; }
+/* ---- trees ---- */
 .btn {
   padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px;
   background: var(--bg2); color: var(--fg); font-size: 13px; cursor: pointer;

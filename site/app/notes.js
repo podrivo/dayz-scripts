@@ -107,10 +107,8 @@ export function initNotes() {
       const own = ownText ? noteEl(ownText, type) : $('.class-doc', main) ? null : askEl(type);
       if (own) {
         const doc = $('.class-doc', main);
-        const filter = $('.filterbar', main);
         const h2 = main.querySelector('h2');
         if (doc) doc.after(own);
-        else if (filter) filter.before(own);
         else if (h2) h2.before(own);
         else main.append(own);
       }

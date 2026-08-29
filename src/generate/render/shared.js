@@ -128,18 +128,6 @@ export function referencesBlock(item, ctx, scope = null) {
   return /* html */ `<div class="xref xref-out"><span class="xref-label">References</span> ${writeList(items)}.</div>`;
 }
 
-/** Row of A-Z shortcuts shared by the class and data-field indexes. */
-export function letterBar(base, dir, letters, current) {
-  return /* html */ `<div class="letters">${[...letters]
-    .map(
-      (l) =>
-        `<a class="letter${l === current ? ' active' : ''}" href="${base}${dir}${l}/">${l === '_' ? '#' : l.toUpperCase()}</a>`
-    )
-    .join('')}</div>`;
-}
-
-export const letterTitle = (l) => (l === '_' ? 'Other' : l.toUpperCase());
-
 /** Grid of [label, url, description] cards. `ext` marks them as leaving. */
 export function linkCards(links, ext = false) {
   return /* html */ `<div class="cards">

@@ -229,11 +229,13 @@ export function initShare() {
   // promise is shared with the version picker, so asking costs nothing.
   identity();
 
-  // A link arrived at from somewhere else lands highlighted and scrolled, but
-  // without the strip: nobody asked to share anything yet.
+  // A link arrived at from somewhere else lands highlighted and scrolled, with
+  // the strip already up: whoever followed it is one step from passing it on,
+  // widening it, or putting it down, and the strip is where all three live.
   sel = parseHash(location.hash);
   anchor = sel?.from ?? null;
   showSelection();
+  showBar();
 
   preEl.addEventListener('mousedown', onDown);
   addEventListener('hashchange', () => {

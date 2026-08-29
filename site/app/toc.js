@@ -60,13 +60,16 @@ function buildToc(main) {
 
   const margins = heads.map((h) => parseFloat(getComputedStyle(h).marginTop) || 0);
 
-  /** Last heading whose section has reached the sticky header. Count the
-      heading's top margin: that gap is this section, not the previous one,
-      and a TOC click parks the heading on scroll-padding-top, which sat
-      below the old heading-box threshold. Above every section, the title. */
+  /** Last heading whose section has reached the sticky chrome — the header,
+      and the page bar under it where there is one. Count the heading's top
+      margin: that gap is this section, not the previous one, and a TOC click
+      parks the heading on scroll-padding-top, which sat below the old
+      heading-box threshold. Above every section, the title. */
   const spy = () => {
     let cur = titleLink;
-    const line = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--h-top')) || 56;
+    const css = getComputedStyle(document.documentElement);
+    const px = (name, fallback) => parseFloat(css.getPropertyValue(name)) || fallback;
+    const line = px('--h-top', 56) + px('--h-bar', 0);
     for (let i = 0; i < heads.length; i++) {
       if (heads[i].hidden) continue;
       if (heads[i].getBoundingClientRect().top - margins[i] > line) break;

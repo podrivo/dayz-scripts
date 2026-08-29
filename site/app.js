@@ -22,6 +22,7 @@ import { initInlineCode } from './app/highlight.js';
 import { initHistory } from './app/history.js';
 import { initNotes } from './app/notes.js';
 import { initCopyBlocks, initCopySignatures } from './app/copy.js';
+import { initPageBar } from './app/pagebar.js';
 import { initTreeTools, initFilter } from './app/filter.js';
 import { initAllMembers, initFieldsIndex } from './app/members.js';
 import { initToc } from './app/toc.js';
@@ -52,8 +53,10 @@ initNotes();
 initCopyBlocks();
 initCopySignatures();
 
-// moving around a long page. The filter goes first: the two pages below
-// build their rows from search.json and hand them back to it when they land.
+// moving around a long page. The bar holds the controls; the filter goes
+// before the two pages below, which build their rows from search.json and
+// hand them back to it when they land.
+initPageBar();
 initTreeTools();
 initFilter();
 initAllMembers();

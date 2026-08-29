@@ -1,6 +1,7 @@
 // The inheritance tree at /hierarchy/.
 
-import { esc, layout, filterBar } from '../html.js';
+import { esc, layout } from '../html.js';
+import { pageBar } from './pagebar.js';
 
 export function renderHierarchy(ctx) {
   const { site, base } = ctx;
@@ -24,13 +25,12 @@ export function renderHierarchy(ctx) {
   const content = /* html */ `
 <h1>Class Hierarchy</h1>
 <p>Expand a node to see the classes derived from it. Top-level entries either have no base class or extend an engine class that is not defined in scripts.</p>
-<div class="hierarchy-tools"><button id="expandAll" class="btn">Expand all</button> <button id="collapseAll" class="btn">Collapse all</button></div>
-${filterBar('Filter classes…')}
 <ul class="tree">${roots.map((r) => renderNode(r, 0)).join('\n')}</ul>`;
   return layout({
     ...ctx,
     title: 'Class Hierarchy',
     active: 'hierarchy/',
+    bar: pageBar({ tools: true, filter: 'Filter classes…' }),
     breadcrumbs: [{ label: 'Classes', href: `${base}classes/` }, { label: 'Hierarchy' }],
     content,
   });

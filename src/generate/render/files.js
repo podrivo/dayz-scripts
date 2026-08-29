@@ -1,8 +1,9 @@
 // The script files: the tree at /files/, and one file's source at
 // /files/<Dir>/<Name.c>/.
 
-import { esc, layout, filterBar, EXT } from '../html.js';
+import { esc, layout, EXT } from '../html.js';
 import { fileHref } from './shared.js';
+import { pageBar } from './pagebar.js';
 
 export function renderFilesIndex(ctx) {
   const { site, base } = ctx;
@@ -25,10 +26,15 @@ export function renderFilesIndex(ctx) {
   const content = /* html */ `
 <h1>File List <span class="count">${site.files.length.toLocaleString('en-US')}</span></h1>
 <p>Every script file, in the directory layout the game ships them in. Expand a directory to see its files.</p>
-<div class="hierarchy-tools"><button id="expandAll" class="btn">Expand all</button> <button id="collapseAll" class="btn">Collapse all</button></div>
-${filterBar('Filter files and directories…')}
 <ul class="tree">${site.dirRoots.map((d) => dirNode(d, 0)).join('')}${site.rootFiles.map(fileRow).join('')}</ul>`;
-  return layout({ ...ctx, title: 'File List', active: 'files/', breadcrumbs: [{ label: 'Files' }], content });
+  return layout({
+    ...ctx,
+    title: 'File List',
+    active: 'files/',
+    bar: pageBar({ tools: true, filter: 'Filter files and directories…' }),
+    breadcrumbs: [{ label: 'Files' }],
+    content,
+  });
 }
 
 /**

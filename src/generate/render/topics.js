@@ -2,11 +2,12 @@
 // one topic's page at /topics/<Name>/.
 
 import {
-  esc, layout, linkType, condBadges, methodSig, varSig, renderDoc, briefOf, filterBar, slug,
+  esc, layout, linkType, condBadges, methodSig, varSig, renderDoc, briefOf, slug,
 } from '../html.js';
 import {
   anchorFor, byName, callersBlock, fileLineHref, referencesBlock,
 } from './shared.js';
+import { pageBar } from './pagebar.js';
 
 export function renderModulesIndex(ctx) {
   const { site, base } = ctx;
@@ -22,13 +23,12 @@ export function renderModulesIndex(ctx) {
   const content = /* html */ `
 <h1>Topics <span class="count">${site.groups.size}</span></h1>
 <p>Engine-facing APIs and constant tables the scripts group themselves into — math, physics, entities, UI and the rest. Classes and constants that belong to a topic link back to it.</p>
-<div class="hierarchy-tools"><button id="expandAll" class="btn">Expand all</button> <button id="collapseAll" class="btn">Collapse all</button></div>
-${filterBar('Filter topics…')}
 <ul class="tree">${site.moduleRoots.map((n) => node(n, 0)).join('')}</ul>`;
   return layout({
     ...ctx,
     title: 'Topics',
     active: 'topics/',
+    bar: pageBar({ tools: true, filter: 'Filter topics…' }),
     description: 'DayZ Enforce Script API grouped into topics: math, physics, entities, UI, constants and more.',
     breadcrumbs: [{ label: 'Topics' }],
     content,
@@ -189,7 +189,6 @@ ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e
 ${parent}
 ${mod.desc ? `<div class="class-doc">${renderDoc(mod.desc.replace(/[\\@](def|addto)group\s+\S+[^\n]*/, '').replace(/@[{}]/g, ''), site, base)}</div>` : ''}
 ${empty}
-${fnEntries.length + varEntries.length + valueEntries.length >= 12 ? filterBar('Filter this topic…') : ''}
 ${section('Topics', children)}
 ${section('Classes', nameList(mod.classes, 'class'))}
 ${section('Macros', macroRows)}
@@ -202,10 +201,14 @@ ${section('Value Documentation', defBlocks(valueEntries))}
 ${section('Function Documentation', defBlocks(fnEntries))}
 ${section('Variable Documentation', defBlocks(varEntries))}`;
 
+  // A short topic reads as a list; a long one has to be searched.
+  const declared = fnEntries.length + varEntries.length + valueEntries.length;
+
   return layout({
     ...ctx,
     title: mod.label,
     active: `topics/${rootTopic(site, mod.name)}/`,
+    bar: declared >= 12 ? pageBar({ filter: 'Filter this topic…' }) : '',
     description: `${mod.label} — DayZ Enforce Script API topic`,
     breadcrumbs: [{ label: 'Topics', href: `${base}topics/` }, { label: mod.label }],
     content,

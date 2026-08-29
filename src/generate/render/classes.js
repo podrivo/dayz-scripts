@@ -3,8 +3,8 @@
 //
 // One class's own page is render/class.js.
 
-import { esc, layout, condBadges, briefOf, filterBar } from '../html.js';
-import { letterBar, letterTitle } from './shared.js';
+import { esc, layout, condBadges, briefOf } from '../html.js';
+import { letterTitle, pageBar } from './pagebar.js';
 
 /** Classes: every class with its brief, the way Doxygen annotates them. */
 export function renderAnnotated(ctx, letters) {
@@ -25,13 +25,15 @@ export function renderAnnotated(ctx, letters) {
     .join('\n');
   const content = /* html */ `
 <h1>Classes <span class="count">${site.classes.size.toLocaleString('en-US')}</span></h1>
-${letterBar(base, 'classes/', letters.keys())}
-${filterBar('Filter classes…')}
 ${sections}`;
   return layout({
     ...ctx,
     title: 'Classes',
     active: 'classes/',
+    bar: pageBar({
+      filter: 'Filter classes…',
+      letters: { base, dir: 'classes/', list: letters.keys() },
+    }),
     description: `All ${site.classes.size} DayZ Enforce Script classes, with descriptions.`,
     breadcrumbs: [{ label: 'Classes' }],
     content,
@@ -50,13 +52,15 @@ export function renderClassesIndex(ctx, letters) {
   const content = /* html */ `
 <h1>Class Index <span class="count">${site.classes.size.toLocaleString('en-US')}</span></h1>
 <p>All class names, alphabetically. Follow a letter for the same list with descriptions.</p>
-${letterBar(base, 'classes/', letters.keys())}
-${filterBar('Filter classes…')}
 ${sections}`;
   return layout({
     ...ctx,
     title: 'Class Index',
     active: 'classes/index/',
+    bar: pageBar({
+      filter: 'Filter classes…',
+      letters: { base, dir: 'classes/', list: letters.keys() },
+    }),
     breadcrumbs: [{ label: 'Classes', href: `${base}classes/` }, { label: 'Index' }],
     content,
   });
@@ -74,13 +78,15 @@ export function renderClassesLetter(ctx, letter, names, letters) {
     .join('\n');
   const content = /* html */ `
 <h1>Classes — ${letterTitle(letter)} <span class="count">${names.length}</span></h1>
-${letterBar(base, 'classes/', letters, letter)}
-${filterBar('Filter classes…')}
 <table class="list"><tbody>${rows}</tbody></table>`;
   return layout({
     ...ctx,
     title: `Classes ${letterTitle(letter)}`,
     active: 'classes/',
+    bar: pageBar({
+      filter: 'Filter classes…',
+      letters: { base, dir: 'classes/', list: letters, current: letter },
+    }),
     breadcrumbs: [
       { label: 'Classes', href: `${base}classes/` },
       { label: letterTitle(letter) },
@@ -100,9 +106,7 @@ export function renderFields(ctx, letter, letters, kind) {
     variables: ['Members — Fields', 'classes/fields/variables/', 'Every variable and constant declared by a class.', 'Fields'],
   };
   const [title, dir, blurb] = KINDS[kind];
-  const tabs = Object.entries(KINDS)
-    .map(([, [, d, , tab]]) => `<a class="tab${d === dir ? ' active' : ''}" href="${base}${d}">${tab}</a>`)
-    .join('');
+  const tabs = Object.entries(KINDS).map(([, [, d, , tab]]) => [`${base}${d}`, tab, d === dir]);
 
   const body = letter
     ? /* html */ `<dl class="fields" id="fieldsList" data-kind="${kind}" data-letter="${esc(letter)}"></dl>
@@ -112,14 +116,16 @@ export function renderFields(ctx, letter, letters, kind) {
   const content = /* html */ `
 <h1>${title}${letter ? ` — ${letterTitle(letter)}` : ''}</h1>
 <p>${blurb} The same name is often declared by many classes, so each one links to every class that has it.</p>
-<div class="tabs">${tabs}</div>
-${letterBar(base, dir, letters, letter)}
-${letter ? filterBar('Filter members…') : ''}
 ${body}`;
   return layout({
     ...ctx,
     title: letter ? `${title} ${letterTitle(letter)}` : title,
     active: dir,
+    bar: pageBar({
+      tabs,
+      filter: letter ? 'Filter members…' : '',
+      letters: { base, dir, list: letters, current: letter },
+    }),
     breadcrumbs: [
       { label: 'Classes', href: `${base}classes/` },
       { label: 'Members', href: `${base}classes/fields/` },

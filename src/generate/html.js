@@ -32,51 +32,6 @@ export function slug(title) {
   return title.toLowerCase().replace(/[^\w]+/g, '-').replace(/^-|-$/g, '');
 }
 
-/**
- * The type-to-filter field the long pages carry.
- *
- * An index of six thousand classes, a tree of two thousand files or a class
- * with nine hundred members is only navigable if you can narrow it, and every
- * one of those pages already holds everything it would need to: the filtering
- * is done in the browser over the rows, chips, tree nodes and member blocks
- * that are on the page, so it costs no bytes beyond this field and works
- * offline. See site/app/filter.js.
- */
-export function filterBar(placeholder, chips = []) {
-  const row = chips.length
-    ? `<div class="filter-chips">${chips
-        .map(([mod, label], i) =>
-          `<button type="button" class="pf${i ? '' : ' active'}" data-mod="${esc(mod)}" aria-pressed="${!i}">${esc(label)}</button>`)
-        .join('')}</div>`
-    : '';
-  return /* html */ `<div class="filterbar">
-<input type="search" id="pageFilter" class="filter-input" placeholder="${esc(placeholder)}" autocomplete="off" spellcheck="false" aria-label="${esc(placeholder)}">
-<span class="filter-count" id="filterCount" aria-live="polite"></span>
-</div>${row}`;
-}
-
-/**
- * The access chips a class page carries.
- *
- * Doxygen split a class into public / protected / private / static sections;
- * ours lists members in one run and puts the modifiers in the signature,
- * which reads better but leaves no way to ask for just the ones you can call
- * from outside. These filter over what the signature already says. "Public"
- * is the absence of the other two rather than a keyword, because that is what
- * it is in the language.
- */
-export const ACCESS_CHIPS = [
-  ['', 'All'],
-  // First because it is the one that pays: 89% of members carry no comment,
-  // so this is the difference between a page you read and a page you scroll.
-  ['@documented', 'Documented'],
-  ['!private,protected', 'Public'],
-  ['protected', 'Protected'],
-  ['private', 'Private'],
-  ['static', 'Static'],
-  ['proto', 'Engine'],
-];
-
 export function typeUrl(name, kind) {
   if (kind === 'class') return `class/${name}/`;
   if (kind === 'enum') return `enum/${name}/`;
@@ -311,7 +266,7 @@ const FOOTER = /* html */ `<footer class="foot">
  * Tokens layout() interpolates when building the archive shell. They cannot
  * appear in a real page, and they pass through esc() unchanged.
  */
-export const ARCHIVE_MARK = { title: '§T§', desc: '§D§', base: '§B§', vpath: '§P§', inner: '§C§' };
+export const ARCHIVE_MARK = { title: '§T§', desc: '§D§', base: '§B§', vpath: '§P§', bar: '§R§', inner: '§C§' };
 
 export const SITE_TITLE = 'DIFF, DayZ Internal File Finder by YADZ';
 
@@ -339,6 +294,11 @@ export function pageMeta(o) {
     base: o.base,
     vpath: o.versionPath || '',
     active: o.active ?? '',
+    // The page bar spans the window, so it is chrome rather than body and
+    // sits outside <main>. It still differs from page to page, so an
+    // archived build has to carry it: it travels in the meta line beside the
+    // title, and layout() leaves a mark for it in the shell.
+    bar: o.bar || '',
   };
 }
 
@@ -363,9 +323,12 @@ export function pageInner(o) {
 
 /**
  * Full page layout.
- * opts: { title, base, active, breadcrumbs, content, description, versionPath, footer }
+ * opts: { title, base, active, bar, breadcrumbs, content, description, versionPath, footer }
  *  - base: relative prefix from this page to the VERSION root (e.g. "../../")
  *  - active: the nav entry this page sits under, as a version-relative dir
+ *  - bar: the page's secondary bar, from pageBar() in render/pagebar.js. It
+ *    hangs under the header, outside <main>, so it spans the window; the
+ *    archive carries it in the meta line rather than in the body.
  *  - versionPath: path of this page relative to version root (for the switcher)
  *
  * Deliberately carries no build, version or date, and links to assets by
@@ -422,6 +385,7 @@ ${social}
 </div>
 <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme (M)"><i class="ic ic-theme"></i></button>
 </header>
+${o.bar || ''}
 <div class="shell">
 <main class="main">${inner}</main>
 </div>

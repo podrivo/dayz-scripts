@@ -26,6 +26,10 @@ test('packed inners round-trip through the archive template', () => {
     versionPath: 'class/Foo/',
     description: 'A class',
     active: 'classes/',
+    // The page bar is chrome, so it is not in the body an archive stores; it
+    // rides in the meta line instead, and losing it would cost an archived
+    // page its filter without anything else looking wrong.
+    bar: '<div class="pagebar">controls</div>',
     content: '<h1>Foo</h1><p>hello</p>',
   });
   const { meta, inner } = unpackPage(lastPacked);
@@ -34,12 +38,14 @@ test('packed inners round-trip through the archive template', () => {
   assert.equal(meta.vpath, 'class/Foo/');
   assert.match(inner, /<h1>Foo<\/h1>/);
   assert.doesNotMatch(inner, /<!DOCTYPE html>/);
+  assert.doesNotMatch(inner, /pagebar/);
 
   const tpl = layout({
     title: ARCHIVE_MARK.title,
     description: ARCHIVE_MARK.desc,
     base: ARCHIVE_MARK.base,
     versionPath: ARCHIVE_MARK.vpath,
+    bar: ARCHIVE_MARK.bar,
     content: ARCHIVE_MARK.inner,
     footer: false,
   });
@@ -48,6 +54,8 @@ test('packed inners round-trip through the archive template', () => {
   assert.match(filled, /data-base="\.\.\/\.\.\/"/);
   assert.match(filled, /<h1>Foo<\/h1>/);
   assert.match(filled, /<footer class="foot">/);
+  // and above the body it belongs to, where the layout puts it
+  assert.ok(filled.indexOf('<div class="pagebar">controls</div>') < filled.indexOf('<main'));
   for (const needle of ['1.29', '163709', ARCHIVE_MARK.title]) {
     assert.ok(!filled.includes(needle), `filled layout leaked ${needle}`);
   }

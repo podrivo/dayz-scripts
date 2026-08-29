@@ -176,7 +176,7 @@ export function initFilter() {
     refreshToc();
   }
 
-  $('.filter-chips')?.addEventListener('click', (e) => {
+  $('.pb-chips')?.addEventListener('click', (e) => {
     const btn = e.target.closest('button[data-mod]');
     if (!btn) return;
     for (const el of btn.parentElement.children) {

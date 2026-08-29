@@ -2,11 +2,12 @@
 // enum's own page at /enum/<Name>/.
 
 import {
-  esc, layout, linkType, condBadges, methodSig, varSig, renderDoc, briefOf, filterBar,
+  esc, layout, linkType, condBadges, methodSig, varSig, renderDoc, briefOf,
 } from '../html.js';
 import {
   anchorFor, byName, callersBlock, fileLineHref, locationLinks, referencesBlock,
 } from './shared.js';
+import { pageBar } from './pagebar.js';
 
 export function renderEnum(ctx, en) {
   const { site, base } = ctx;
@@ -121,9 +122,7 @@ ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
 export function renderGlobals(ctx, kind) {
   const { site, base } = ctx;
   const label = GLOBAL_KINDS.find(([k]) => k === kind)[1];
-  const tabs = GLOBAL_KINDS.map(
-    ([k, l]) => `<a class="tab${k === kind ? ' active' : ''}" href="${base}globals/${k}">${l}</a>`
-  ).join('');
+  const tabs = GLOBAL_KINDS.map(([k, l]) => [`${base}globals/${k}`, l, k === kind]);
 
   const counts = {
     functions: site.functions.length,
@@ -161,14 +160,13 @@ export function renderGlobals(ctx, kind) {
 
   const content = /* html */ `
 <h1>Globals${key ? ` — ${label}` : ''}${key ? ` <span class="count">${counts[key].toLocaleString('en-US')}</span>` : ''}</h1>
-<div class="tabs">${tabs}</div>
-${filterBar(`Filter ${key ? label.toLowerCase() : 'globals'}…`)}
 ${body}`;
 
   return layout({
     ...ctx,
     title: key ? `Globals — ${label}` : 'Globals',
     active: `globals/${kind}`,
+    bar: pageBar({ tabs, filter: `Filter ${key ? label.toLowerCase() : 'globals'}…` }),
     breadcrumbs: [
       { label: 'Globals', href: key ? `${base}globals/` : undefined },
       ...(key ? [{ label }] : []),

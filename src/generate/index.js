@@ -505,6 +505,7 @@ fs.writeFileSync(
     description: ARCHIVE_MARK.desc,
     base: ARCHIVE_MARK.base,
     versionPath: ARCHIVE_MARK.vpath,
+    bar: ARCHIVE_MARK.bar,
     content: ARCHIVE_MARK.inner,
     footer: false,
   })
