@@ -1,7 +1,7 @@
-// Hand-maintained content for the home page, /community/ and /about/: links
-// off the site, plus the official forum thread for each PC stable update.
-// None of it can be derived from the script sources, so it lives here and
-// grows as new builds ship.
+// Hand-maintained content for /community/ and /about/: links off the site,
+// plus the official forum thread for each PC stable update. None of it can
+// be derived from the script sources, so it lives here and grows as new
+// builds ship.
 
 /** Where the site is served from, for the absolute URLs that have to name it:
  *  the sitemap, robots.txt, and the canonical and OpenGraph tags on a page. */
@@ -26,16 +26,14 @@ export const OFFICIAL_LINKS = [
   ['DayZ Tools', 'https://store.steampowered.com/app/830640/DayZ_Tools/', 'Official modding tools on Steam'],
 ];
 
-/** Bohemia's own modding material. Only on /community/, since it answers a
- *  question the home page has not raised yet. */
+/** Bohemia's own modding material. */
 export const OFFICIAL_MODDING_LINKS = [
   ['Modding Basics', 'https://community.bistudio.com/wiki/DayZ:Modding_Basics', 'Official walkthrough: project drive, config.cpp, packing, first script'],
   ['Modding Samples', 'https://github.com/BohemiaInteractive/DayZ-Samples', 'Sample mods to start a project from'],
   ['Central Economy', 'https://github.com/BohemiaInteractive/DayZ-Central-Economy', 'The vanilla loot economy files, as the game ships them'],
 ];
 
-/** The servers to ask in. On the home page as well as /community/, since the
- *  page above them tells a newcomer to go read their pinned messages. */
+/** The servers to ask in. */
 export const DISCORD_LINKS = [
   ['DayZ Modders', 'https://discord.gg/dayz-modders-452035973786632194', 'Discord · modding and scripting help'],
   ['DayZ Academy', 'https://discord.gg/BMnpGEzKdx', 'Discord · modders and server owners'],

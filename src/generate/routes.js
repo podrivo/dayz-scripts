@@ -54,7 +54,7 @@ export const TOPIC_ALIASES = ['module', 'modules', 'topic'];
  *
  * opts:
  *   isLatest  whether this build is served from the site root
- *   versions  the build list, for the homepage releases
+ *   versions  the build list, for the changelog releases
  *   srcDir    where this build's sources were extracted
  *   blobs     path -> blob sha, the whole dependency of a file page
  *   changes   () => ({ diff, prevLabel }), called only if diff.json renders,

@@ -176,10 +176,9 @@ function updateNames(builds) {
  * document, merged with the forum threads. Builds whose scripts never reached
  * the Script Diff repository still show up, with their thread only.
  *
- * `highlight` marks the build this page was generated for — home does, so the
- * current update reads as the one you are on. /changelog/ does not: those
- * bytes have to stay identical across builds (see layout() in html.js), so
- * no group is left open and docs links are rooted at `/`.
+ * `highlight` marks the build this page was generated for. /changelog/ does
+ * not: those bytes have to stay identical across builds (see layout() in
+ * html.js), so no group is left open and docs links are rooted at `/`.
  */
 export function renderReleases(ctx, { highlight = true, absolute = false } = {}) {
   const { site, root, versions } = ctx;
