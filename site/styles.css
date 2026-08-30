@@ -839,10 +839,15 @@ pre.code, pre.attrs {
 .locations { font-size: var(--text-sm); line-height: 2; }
 
 /* ---- source view ---- */
-.file-title { display: flex; align-items: center; gap: 8px; }
+.file-title {
+  display: grid;
+  grid-template-columns: minmax(0, max-content) auto;
+  align-items: center;
+  column-gap: 8px;
+}
 .file-gh {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 24px; height: 24px; flex: none;
+  width: 24px; height: 24px;
   color: var(--fg2);
 }
 .file-gh:hover { color: var(--fg); text-decoration: none; }
@@ -1406,6 +1411,7 @@ details.cmp-change { padding: 0; }
   .palette-hints { display: none; }
   table.list td:first-child { white-space: normal; }
   .minimap { display: none; }
+  .file-gh { width: 36px; height: 36px; }
   .cmp-stage { gap: 8px; }
   .cmp-mid { flex-direction: row; padding: 0; }
 }
