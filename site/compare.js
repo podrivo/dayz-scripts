@@ -531,6 +531,7 @@ ${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}`;
       op = btn.dataset.op;
       apply();
       try { globalThis.gtag?.('event', 'compare_filter', { filter_op: op || 'all' }); } catch { /* blocked or absent */ }
+      try { globalThis.posthog?.capture?.('compare_filter', { filter_op: op || 'all' }); } catch { /* blocked or absent */ }
     });
   }
 
@@ -580,6 +581,7 @@ ${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}`;
     store();
     draw();
     try { globalThis.gtag?.('event', 'compare_builds', { from_build: from, to_build: to }); } catch { /* blocked or absent */ }
+    try { globalThis.posthog?.capture?.('compare_builds', { from_build: from, to_build: to }); } catch { /* blocked or absent */ }
   }
 
   fromSel.addEventListener('change', () => choose(fromSel.value, true));

@@ -4,9 +4,10 @@
 
 export const $ = (s, el) => (el || document).querySelector(s);
 
-/** A GA4 event, when the snippet has loaded. Safe with no analytics and in tests. */
+/** A GA4 / PostHog event, when the snippet has loaded. Safe with no analytics and in tests. */
 export const track = (name, params) => {
   try { globalThis.gtag?.('event', name, params); } catch { /* blocked or absent */ }
+  try { globalThis.posthog?.capture?.(name, params); } catch { /* blocked or absent */ }
 };
 
 /** Prefix from this page to its build's root, e.g. "../../". */

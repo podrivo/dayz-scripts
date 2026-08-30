@@ -16,6 +16,9 @@ export const REPO_URL = 'https://github.com/yadzapp/diff';
  *  two sets of numbers stay one series across the move. */
 export const ANALYTICS_ID = 'G-R8ZT2QC248';
 
+/** PostHog project token. Public, like ANALYTICS_ID: it ships in the page. */
+export const POSTHOG_KEY = 'phc_nQv26gW5YJWEVvLcAWFLsBdgoGRFFUZfCrt948xfRdDP';
+
 export const OFFICIAL_LINKS = [
   ['DayZ.com', 'https://dayz.com/', 'Official game website and news'],
   ['DayZ Forums', 'https://forums.dayz.com/', 'Announcements and stable update threads'],

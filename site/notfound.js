@@ -29,6 +29,7 @@ const match = /^\/(?:v\/([^/]+)\/)?(topics|classes|enum|files)\/(.+)\/$/i.exec(l
 
 const track404 = (recovered) => {
   try { globalThis.gtag?.('event', 'not_found', { recovered }); } catch { /* blocked or absent */ }
+  try { globalThis.posthog?.capture?.('not_found', { recovered }); } catch { /* blocked or absent */ }
 };
 
 if (!match) track404(false);
