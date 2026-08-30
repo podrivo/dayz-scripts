@@ -6,6 +6,11 @@
 // small and the client can ignore events newer than the build it is viewing.
 // A type that is already in the oldest tracked build is not "added" there; the
 // client prints Since, because the archive does not go further back.
+//
+// The same walk also keeps every added/changed row, written to timelines.json
+// so the History disclosure does not have to fetch the per-build diffs. Events
+// survive a remove-and-readd; the badge record does not, and archived pages
+// of the earlier life still need those rows.
 
 import { ADDED, REMOVED, CHANGED, diffModels } from './diff.js';
 
@@ -51,6 +56,32 @@ export function applyDiff(history, diff, build) {
   applyKind(history.enum, diff.enum, build);
 }
 
+export function seedTimelines() {
+  return { class: new Map(), enum: new Map() };
+}
+
+function applyTimelineKind(map, kind, build) {
+  if (!kind) return;
+  const changed = new Map((kind.changed || []).map((e) => [e.name, e.rows]));
+  for (const name of kind.added || []) {
+    const events = map.get(name) || [];
+    events.push({ build, added: true, rows: changed.get(name) || [] });
+    map.set(name, events);
+    changed.delete(name);
+  }
+  for (const [name, rows] of changed) {
+    if (!rows.length) continue;
+    const events = map.get(name) || [];
+    events.push({ build, added: false, rows });
+    map.set(name, events);
+  }
+}
+
+export function applyTimeline(timelines, diff, build) {
+  applyTimelineKind(timelines.class, diff.class, build);
+  applyTimelineKind(timelines.enum, diff.enum, build);
+}
+
 function packMembers(members, idx) {
   const out = {};
   for (const [name, ev] of members) {
@@ -83,19 +114,60 @@ export function serializeHistory(history, versions) {
   };
 }
 
+function packEvents(events, alive, idx) {
+  const out = {};
+  for (const [name, list] of events) {
+    if (!alive.has(name)) continue;
+    const packed = [];
+    for (const ev of list) {
+      const i = idx.get(ev.build);
+      if (i == null) continue;
+      packed.push([i, ev.added ? 1 : 0, ev.rows]);
+    }
+    packed.sort((a, b) => a[0] - b[0]);
+    if (packed.length) out[name] = packed;
+  }
+  return out;
+}
+
+/** Same indices as serializeHistory. Only names that still have a badge record. */
+export function serializeTimelines(timelines, history, versions) {
+  const idx = new Map(versions.map((v, i) => [v.build, i]));
+  return {
+    builds: versions.map((v) => v.build),
+    class: packEvents(timelines.class, history.class, idx),
+    enum: packEvents(timelines.enum, history.enum, idx),
+  };
+}
+
+const emptyPacked = { builds: [], class: {}, enum: {} };
+
 /**
- * Walk every build oldest → newest. Used by the dev server, which never
+ * Walk every build oldest → newest. Used by src/dev.js, which never
  * generates; generate itself applies each diff as it goes instead.
  */
-export function buildHistory(versions, siteFor) {
+export function buildHistoryAssets(versions, siteFor) {
   let history = null;
+  const timelines = seedTimelines();
   let prev = null;
   for (const v of [...versions].reverse()) {
     const site = siteFor(v.label);
     if (!site) continue;
     if (!history) history = seedHistory(site);
-    else applyDiff(history, diffModels(site, prev), site.build);
+    else {
+      const diff = diffModels(site, prev);
+      applyDiff(history, diff, site.build);
+      applyTimeline(timelines, diff, site.build);
+    }
     prev = site;
   }
-  return history ? serializeHistory(history, versions) : { builds: [], class: {}, enum: {} };
+  if (!history) return { history: emptyPacked, timelines: emptyPacked };
+  return {
+    history: serializeHistory(history, versions),
+    timelines: serializeTimelines(timelines, history, versions),
+  };
+}
+
+export function buildHistory(versions, siteFor) {
+  return buildHistoryAssets(versions, siteFor).history;
 }

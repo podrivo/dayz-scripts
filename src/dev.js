@@ -18,7 +18,7 @@ import path from 'node:path';
 import { CACHE_DIR, DATA_DIR, ROOT, extractSources, readJson } from './util.js';
 import { buildSiteModel } from './generate/model.js';
 import { diffModels } from './generate/diff.js';
-import { buildHistory } from './generate/history.js';
+import { buildHistoryAssets } from './generate/history.js';
 import { resolve as resolvePage, TOPIC_ALIASES } from './generate/routes.js';
 import { render404 } from './generate/render.js';
 import { sendWorkshop } from './workshop.js';
@@ -127,21 +127,28 @@ const versionsAsset = JSON.stringify(
   versions.map((v) => ({ build: v.build, version: v.version, date: v.date, sha: v.sha }))
 );
 
-function historyAsset() {
+function historyAssets() {
   const cache = path.join(CACHE_DIR, `history-${upstreamHead || latest.sha}.json`);
   try {
-    return fs.readFileSync(cache, 'utf8');
-  } catch {
-    const json = JSON.stringify(buildHistory(versions, (label) => siteFor(label, { sources: false })));
-    fs.mkdirSync(CACHE_DIR, { recursive: true });
-    fs.writeFileSync(cache, json);
-    return json;
-  }
+    const data = JSON.parse(fs.readFileSync(cache, 'utf8'));
+    if (data.history && data.timelines) return data;
+  } catch { /* missing or the old history-only cache */ }
+  const data = buildHistoryAssets(versions, (label) => siteFor(label, { sources: false }));
+  fs.mkdirSync(CACHE_DIR, { recursive: true });
+  fs.writeFileSync(cache, JSON.stringify(data));
+  return data;
+}
+
+const packedAssets = {};
+function assetJson(name) {
+  if (!packedAssets[name]) packedAssets[name] = JSON.stringify(historyAssets()[name]);
+  return packedAssets[name];
 }
 
 function sendAsset(res, name) {
   if (name === 'versions.json') return send(res, 200, 'application/json', versionsAsset);
-  if (name === 'history.json') return send(res, 200, 'application/json', historyAsset());
+  if (name === 'history.json') return send(res, 200, 'application/json', assetJson('history'));
+  if (name === 'timelines.json') return send(res, 200, 'application/json', assetJson('timelines'));
   // Subpaths are allowed, because /assets/app.js imports /assets/app/*.js, but
   // only ones that stay inside site/: `..` in a URL is a path traversal, and
   // the generator's copy of these files is a flat directory served by Netlify

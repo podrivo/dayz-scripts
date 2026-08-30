@@ -30,7 +30,7 @@ import { pages as sitePages, TOPIC_ALIASES } from './routes.js';
 import { render404 } from './render.js';
 import { layout, lastPacked, ARCHIVE_MARK } from './html.js';
 import { pageExceptions } from './archive.js';
-import { seedHistory, applyDiff, serializeHistory } from './history.js';
+import { seedHistory, applyDiff, applyTimeline, seedTimelines, serializeHistory, serializeTimelines } from './history.js';
 
 const t0 = Date.now();
 const clock = () => process.hrtime.bigint();
@@ -466,6 +466,7 @@ function renderVersion(site, diff, prevLabel, versionIndex, blobs) {
 // 2ms. There is nothing here to move off the critical path.
 let prevSite = null;
 let history = null;
+const timelines = seedTimelines();
 const ordered = [...buildList].reverse();
 for (const v of ordered) {
   extractSources(v);
@@ -480,7 +481,10 @@ for (const v of ordered) {
   const diff = prevSite ? diffModels(site, prevSite) : null;
   timers.diff += since(t);
   if (!history) history = seedHistory(site);
-  else applyDiff(history, diff, site.build);
+  else {
+    applyDiff(history, diff, site.build);
+    applyTimeline(timelines, diff, site.build);
+  }
 
   memo.startBuild(site.typeIndex, prevSite?.typeIndex);
   const versionIndex = buildList.findIndex((x) => x.label === v.label);
@@ -556,6 +560,7 @@ dropStaleTrees();
 
 if (history) {
   fs.writeFileSync(path.join(assetsDir, 'history.json'), JSON.stringify(serializeHistory(history, buildList)));
+  fs.writeFileSync(path.join(assetsDir, 'timelines.json'), JSON.stringify(serializeTimelines(timelines, history, buildList)));
 }
 
 // sitemap for the latest version only, from the paths recorded while writing

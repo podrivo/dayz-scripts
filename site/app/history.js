@@ -8,9 +8,8 @@
 
    history.json only says first and last, which is all a badge can wear. The
    whole story — every build that touched this type, member by member — is in
-   the per-build diff.json sidecars, and the History disclosure below fetches
-   the run of them on demand and lays it out as a timeline, the way
-   site/compare.js fetches the same files to compare two builds. */
+   /assets/timelines.json, packed the same way, and the History disclosure
+   below fetches that on demand and lays it out as a timeline. */
 
 import { $, ROOT, esc, fmtDate, anchorOf, pageType, track } from './dom.js';
 import { current, identity } from './builds.js';
@@ -108,13 +107,12 @@ export function initHistory() {
 
 /* ---------- the timeline ----------
    A History disclosure beside the badges, on every class and enum page.
-   Opening it fetches the diffs and renders every build that touched this
-   type, newest first. Fetched rather than shipped for the same reason the
-   badges are, and on demand rather than on load because most visits never
-   ask: the widest run — a class present since 1.19, viewed at the latest
-   build — is the changelog's widest comparison, about 250 KB over the wire.
+   Opening it fetches timelines.json and renders every build that touched
+   this type, newest first. Fetched rather than shipped for the same reason
+   the badges are, and on demand rather than on load because most visits
+   never ask.
 
-   Only diffs at or before the build being viewed are fetched at all, so an
+   Only events at or before the build being viewed are shown, so an
    archived page tells the story as it stood then. */
 
 /** What a row says happened, matching src/generate/diff.js. */
@@ -136,11 +134,11 @@ function addTimeline(main, hist, builds, rec, here) {
   anchor.after(details);
 
   const oldest = hist.builds.length - 1;
-  // The run to fetch: from the build being viewed back to where the type
+  // The run to show: from the build being viewed back to where the type
   // appeared. When the record cannot bound it — the type predates tracking,
   // or (after a remove-and-readd) the record names a build newer than this
-  // page's — the whole span back to the oldest build does. Build diffs are
-  // each build against its predecessor, so the oldest build has none.
+  // page's — the whole span back to the oldest build does. The oldest
+  // build has no diff, so nothing is packed for it.
   const stop = rec.added >= here && rec.added < oldest ? rec.added : oldest - 1;
 
   // A declaration still on this page gets a link; one that was removed, or an
@@ -192,25 +190,14 @@ function addTimeline(main, hist, builds, rec, here) {
   };
 
   async function load() {
-    const steps = await Promise.all(
-      // Newest first, which is the order the timeline reads in.
-      Array.from({ length: Math.max(0, stop - here + 1) }, (_, j) => here + j).map((idx) => {
-        const b = hist.builds[idx];
-        return fetch(idx === 0 ? ROOT + 'diff.json' : `/v/${b}/diff.json`)
-          .then((r) => (r.ok ? r.json() : null))
-          .catch(() => null)
-          .then((diff) => ({ idx, diff }));
-      })
-    );
-    if (steps.some((s) => s.diff === null)) throw new Error('missing diff');
+    const data = await fetch(ROOT + 'assets/timelines.json')
+      .then((r) => (r.ok ? r.json() : null));
+    if (!data) throw new Error('missing timelines');
 
     const entries = [];
-    for (const { idx, diff } of steps) {
-      const k = diff.kinds?.[pageType.kind];
-      if (!k) continue;
-      const added = k.added.includes(pageType.name);
-      const rows = k.changed.find((e) => e.name === pageType.name)?.rows || [];
-      if (added || rows.length) entries.push({ idx, added, rows });
+    for (const [idx, added, rows] of data[pageType.kind]?.[pageType.name] || []) {
+      if (idx < here || idx > stop) continue;
+      entries.push({ idx, added, rows });
     }
 
     // Nothing said "added", so the type was already in the oldest build the
