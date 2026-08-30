@@ -40,14 +40,12 @@ ${COMMUNITY_SECTIONS.map(section).join('\n')}
   "PlayerBase": "Server-side only outside of simulation callbacks.",
   "PlayerBase.SetQuantity": "Clamps to the config maximum instead of failing; read it back with \`GetQuantity()\`."
 }</code></pre>
-<p>Add an entry and open a pull request on <a href="${REPO_URL}" ${EXT}>GitHub</a>. <code>Type.Member</code> covers every overload of that name, enum values key off the value name, and text between backticks renders as code. The build rejects a key that is not <code>Type</code> or <code>Type.Member</code>, an empty note, or an unclosed backtick. Merged notes go live on the next deploy.</p>
-<p class="muted endnote">Everything outside the two official sections is community-made: not affiliated with, endorsed by, or supported by DayZ or Bohemia Interactive, and each carries its own license and terms. Links are offered as-is. This site is generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a> and is not affiliated with <a href="https://www.bohemia.net/" ${EXT}>Bohemia Interactive</a> either; the script sources it documents are © BOHEMIA INTERACTIVE a.s. and licensed under the <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License (DPL)</a>.</p>`;
+<p>Add an entry and open a pull request on <a href="${REPO_URL}" ${EXT}>GitHub</a>. <code>Type.Member</code> covers every overload of that name, enum values key off the value name, and text between backticks renders as code. The build rejects a key that is not <code>Type</code> or <code>Type.Member</code>, an empty note, or an unclosed backtick. Merged notes go live on the next deploy.</p>`;
 
   return layout({
     ...ctx,
     title: 'Community',
     active: 'community/',
-    footer: false,
     description: 'DayZ modding resources: official references, Discord servers, editors, build tools, object and map data, and agent tooling.',
     breadcrumbs: [{ label: 'Community' }],
     content,

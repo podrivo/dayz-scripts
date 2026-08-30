@@ -196,6 +196,6 @@ The script sources are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are
 - [Topics](${SITE_URL}/topics/): the \\defgroup groups the sources wrap themselves into
 - [Changelog](${SITE_URL}/changelog/): API diff between any two builds
 - [Community](${SITE_URL}/community/): official references, Discord servers, editors, build tools and data explorers for DayZ modding
-- [About](${SITE_URL}/about/): the stack, and how to collaborate
+- [About](${SITE_URL}/about/): agents, the stack, and how to collaborate
 `;
 }

@@ -9,7 +9,7 @@
    Loaded as a module (see layout() in src/generate/html.js), so it is
    deferred and the page is fully parsed before any of this runs. */
 
-import { initTheme, initBrand } from './app/theme.js';
+import { initTheme } from './app/theme.js';
 import { initNav } from './app/nav.js';
 import { initBuilds, initVersionPicker } from './app/builds.js';
 import { recordVisit } from './app/recent.js';
@@ -33,7 +33,6 @@ import { initMinimap } from './app/minimap.js';
 
 // the chrome: header, navigation, and which build this page is
 initTheme();
-initBrand();
 initNav();
 initBuilds();
 initVersionPicker();

@@ -47,7 +47,6 @@ test('packed inners round-trip through the archive template', () => {
     versionPath: ARCHIVE_MARK.vpath,
     bar: ARCHIVE_MARK.bar,
     content: ARCHIVE_MARK.inner,
-    footer: false,
   });
   const filled = fillArchiveTemplate(tpl, meta, inner);
   assert.ok(filled.includes(`<title>Foo · Class · ${SITE_TITLE}</title>`));

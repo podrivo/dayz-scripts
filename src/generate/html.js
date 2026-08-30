@@ -2,7 +2,7 @@
 // rendering. Pure template-literal functions, no dependencies.
 
 import { parseDoc } from '../parser/docparse.js';
-import { SITE_URL, ANALYTICS_ID, POSTHOG_KEY } from './content.js';
+import { SITE_URL, ANALYTICS_ID, POSTHOG_KEY, REPO_URL } from './content.js';
 
 // Analytics, carried over from the Doxygen site so its numbers continue rather
 // than restart. Loaded async and last, after the script the page actually
@@ -172,8 +172,6 @@ const NAV = [
   ['globals/', 'Globals'],
   ['topics/', 'Topics'],
   ['changelog/', 'Changelog'],
-  ['community/', 'Community'],
-  ['about/', 'About'],
 ];
 
 /** Whether this section owns `active`: its own path, anything under it,
@@ -214,9 +212,24 @@ const SEARCH_FILTERS = [
     `<button type="button" class="pf${i ? '' : ' active'}" data-kinds="${kinds}" aria-pressed="${!i}">${label}</button>`)
   .join('');
 
-const FOOTER = /* html */ `<footer class="foot">
-<p>Generated from <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a> · Not affiliated with <a href="https://www.bohemia.net/" ${EXT}>Bohemia Interactive</a> · <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a></p>
+const BRAND = /* html */ `<span class="brand-in" aria-hidden="true"><span class="brand-w"><span class="brand-l">D</span><span class="brand-rest">ayZ</span></span><span class="brand-w"><span class="brand-l">I</span><span class="brand-rest">nternal</span></span><span class="brand-w"><span class="brand-l">F</span><span class="brand-rest">ile</span></span><span class="brand-w"><span class="brand-l">F</span><span class="brand-rest">inder</span></span></span>`;
+
+function footer(base) {
+  return /* html */ `<footer class="foot">
+<div class="foot-in">
+<a class="brand" href="/" aria-label="DIFF">${BRAND}</a>
+<nav class="foot-nav" aria-label="Footer">
+<a href="${base}about/">About</a>
+<a href="${base}community/">Community</a>
+<a href="${REPO_URL}" ${EXT}>GitHub</a>
+<a href="https://yadz.app/" ${EXT}>YADZ</a>
+<a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a>
+<a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a>
+</nav>
+<p>This is not official documentation and is not affiliated with <a href="https://dayz.com/" ${EXT}>DayZ</a> or <a href="https://www.bohemia.net/" ${EXT}>Bohemia Interactive</a>. The script sources shown here are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are licensed under the <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License (DPL)</a>. They have been modified for presentation — parsed, reorganized and reformatted — from the originals in <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff/tree/main/scripts" ${EXT}>DayZ Script Diff</a>, and are offered as-is, without warranties of any kind. Community notes and outbound links are community-made and carry their own licenses. DAYZ®, ENFUSION® and BOHEMIA INTERACTIVE® are registered trademarks of BOHEMIA INTERACTIVE a.s. All other trademarks and copyrights are the property of their respective owners.</p>
+</div>
 </footer>`;
+}
 
 /**
  * Tokens layout() interpolates when building the archive shell. They cannot
@@ -265,8 +278,8 @@ export function pageMeta(o) {
 }
 
 /**
- * The contents of `<main>`: breadcrumbs, body, footer. Archived builds store
- * this instead of a full document so the layout chrome is not paid per body.
+ * The contents of `<main>`: breadcrumbs and body. Archived builds store this
+ * instead of a full document so the layout chrome is not paid per body.
  */
 export function pageInner(o) {
   const trail = o.breadcrumbs?.length > 1 ? o.breadcrumbs.slice(0, -1) : [];
@@ -277,10 +290,9 @@ export function pageInner(o) {
     : '';
   const close = '</h1>';
   const titleAt = o.content.indexOf(close);
-  const body = crumbs && titleAt !== -1
+  return crumbs && titleAt !== -1
     ? `${o.content.slice(0, titleAt + close.length)}\n${crumbs}${o.content.slice(titleAt + close.length)}`
     : `${crumbs}${o.content}`;
-  return o.footer === false ? body : `${body}${FOOTER}`;
 }
 
 /**
@@ -291,6 +303,7 @@ export function pageInner(o) {
  *  - bar: the page's secondary bar, from pageBar() in render/pagebar.js. It
  *    hangs under the header, outside <main>, so it spans the window; the
  *    archive carries it in the meta line rather than in the body.
+ *  - footer: omit the site footer (archive inners do not carry it; the shell does)
  *  - versionPath: path of this page relative to version root (for the switcher)
  *
  * Deliberately carries no build, version or date, and links to assets by
@@ -334,12 +347,12 @@ ${social}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
-<script>try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}try{if(sessionStorage.getItem('brand-on')){document.documentElement.dataset.brand='on';document.documentElement.classList.add('brand-snap')}}catch(e){}</script>
+<script>try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body data-base="${o.base}" data-vpath="${esc(o.versionPath || '')}">
 <header class="top">
 <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><i class="ic ic-menu"></i></button>
-<a class="brand" href="/" aria-label="DIFF"><span class="brand-in" aria-hidden="true"><span class="brand-w"><span class="brand-l">D</span><span class="brand-rest">ayZ</span></span><span class="brand-w"><span class="brand-l">I</span><span class="brand-rest">nternal</span></span><span class="brand-w"><span class="brand-l">F</span><span class="brand-rest">ile</span></span><span class="brand-w"><span class="brand-l">F</span><span class="brand-rest">inder</span></span></span></a>
+<a class="brand" href="/">DIFF</a>
 <nav class="nav" id="nav" aria-label="Site">${nav}</nav>
 <button class="search-trigger" id="searchBtn" aria-label="Search"><i class="ic ic-search"></i><span>Search…</span><kbd id="searchKbd">⌘K</kbd></button>
 <div class="verpicker">
@@ -352,6 +365,7 @@ ${o.bar || ''}
 <div class="shell">
 <main class="main">${inner}</main>
 </div>
+${o.footer === false ? '' : footer(o.base || '')}
 <div class="palette" id="palette" hidden>
 <div class="palette-box" role="dialog" aria-modal="true" aria-label="Search">
 <div class="palette-field">
