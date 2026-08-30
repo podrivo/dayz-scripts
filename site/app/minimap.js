@@ -25,7 +25,6 @@ export function initMinimap() {
   if (!srcEl || !main) return;
 
   const wide = matchMedia('(min-width: 901px)');
-  const still = matchMedia('(prefers-reduced-motion: reduce)');
 
   let mm, track, view, items, bars = [], scale = 1;
 
@@ -99,17 +98,6 @@ export function initMinimap() {
     view.style.height = `${vh.toFixed(1)}px`;
   }
 
-  /** The bar under (or within a few pixels of) a point on the rail. */
-  function nearest(y) {
-    let best = null;
-    let bd = 9;
-    for (const b of bars) {
-      const d = y < b.y ? b.y - y : Math.max(0, y - b.y - b.h);
-      if (d < bd) { bd = d; best = b; }
-    }
-    return best;
-  }
-
   function buildMinimap() {
     if (mm) return;
     items = collect();
@@ -131,43 +119,29 @@ export function initMinimap() {
     let origin = 0;
     const at = (e) => e.clientY - origin;
     // Centre the viewport on the point pressed, the way a minimap does.
-    const centre = (y, smooth) => {
+    const centre = (y) => {
       const th = track.clientHeight;
       const t = Math.max(0, Math.min(th, y));
       const max = Math.max(0, pageH() - innerHeight);
-      scrollTo({
-        top: Math.max(0, Math.min(max, t / scale - innerHeight / 2)),
-        behavior: smooth && !still.matches ? 'smooth' : 'auto',
-      });
+      scrollTo({ top: Math.max(0, Math.min(max, t / scale - innerHeight / 2)) });
     };
 
     let down = false;
-    let dragging = false;
-    let startY = 0;
 
     track.addEventListener('pointerdown', (e) => {
       e.preventDefault(); // don't start a text selection in the page behind
       track.setPointerCapture(e.pointerId);
       down = true;
-      dragging = false;
-      startY = e.clientY;
       origin = track.getBoundingClientRect().top;
       track.classList.add('grabbing');
+      centre(at(e));
     });
     track.addEventListener('pointermove', (e) => {
-      if (!down) return;
-      if (!dragging && Math.abs(e.clientY - startY) > 3) dragging = true;
-      if (dragging) centre(at(e), false);
+      if (down) centre(at(e));
     });
-    // A press that never moved is aimed at something: bars are one or two
-    // pixels tall, so honour the nearest one instead of the raw position.
-    track.addEventListener('pointerup', (e) => {
+    track.addEventListener('pointerup', () => {
       down = false;
       track.classList.remove('grabbing');
-      if (dragging) return;
-      const b = nearest(at(e));
-      if (b) b.it.el.scrollIntoView({ block: 'start', behavior: still.matches ? 'auto' : 'smooth' });
-      else centre(at(e), true);
     });
     // without this a cancelled gesture leaves the rail scrolling on hover
     track.addEventListener('pointercancel', () => {

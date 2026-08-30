@@ -88,7 +88,13 @@ export function initTooltip() {
 
   function reveal() {
     if (!host) return;
-    tip.textContent = host.dataset.tip || '';
+    tip.replaceChildren(host.dataset.tip || '');
+    if (host.target === '_blank') {
+      const ic = document.createElement('i');
+      ic.className = 'ic ic-ext';
+      ic.setAttribute('aria-hidden', 'true');
+      tip.append(ic);
+    }
     place();
     tip.classList.add('on');
     place();

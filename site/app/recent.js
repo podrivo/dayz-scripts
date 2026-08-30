@@ -42,7 +42,7 @@ function pageEntry() {
     if (label) return ['g', label, m[1]];
   }
   if (/^files\/.+\//.test(VPATH)) {
-    const display = $('.file-title code')?.textContent;
+    const display = $('.file-title')?.firstChild?.textContent?.trim();
     if (display) return ['F', display.split('/').pop(), display];
   }
   return null;
