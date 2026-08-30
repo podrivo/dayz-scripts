@@ -93,7 +93,7 @@ html { scroll-padding-top: calc(var(--h-top) + var(--h-bar) + 16px); }
    do not wrap at all and scroll inside their box. */
 body {
   margin: 0;
-  font: 15px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font: 16px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background: var(--bg);
   color: var(--fg);
   overflow-wrap: anywhere;
@@ -118,7 +118,7 @@ a:hover { text-decoration: underline; text-decoration-color: currentColor; }
 
 code, pre, kbd {
   font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
-  font-size: 0.92em;
+  font-size: 14px;
 }
 
 code { background: var(--code-bg); padding: 0.1em 0.35em; border-radius: 4px; }
@@ -148,7 +148,7 @@ pre code { background: none; padding: 0; }
   flex: none;
   position: relative;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 16px;
   color: var(--accent);
   white-space: nowrap;
   text-decoration: none;
@@ -316,7 +316,7 @@ html.brand-snap .search-trigger, html.brand-snap .search-trigger > span, html.br
 .palette-field input::-webkit-search-cancel-button { display: none; }
 .palette-field kbd {
   padding: 0 6px; border: 1px solid var(--line); border-radius: 4px;
-  color: var(--fg2); font-size: 11px; line-height: 18px;
+  color: var(--fg2); font-size: 12px; line-height: 18px;
 }
 /* Category tabs. They scroll rather than wrap so the field above them never
    moves as the box grows, which matters when the palette opens under the
@@ -339,11 +339,11 @@ html.brand-snap .search-trigger, html.brand-snap .search-trigger > span, html.br
 }
 .palette-hints code {
   padding: 0 4px; border: 1px solid var(--line); border-radius: 4px;
-  background: var(--bg); font-size: 11px;
+  background: var(--bg); font-size: 12px;
 }
 .palette-hints kbd {
   padding: 0 5px; border: 1px solid var(--line); border-radius: 4px;
-  background: var(--bg); font-size: 11px; line-height: 16px;
+  background: var(--bg); font-size: 12px; line-height: 16px;
 }
 body.palette-open { overflow: hidden; }
 
@@ -359,11 +359,11 @@ body.palette-open { overflow: hidden; }
   gap: 9px 14px; margin: 0; padding: 0 18px 16px;
 }
 .help-list dt { display: flex; gap: 4px; justify-content: flex-end; }
-.help-list dd { margin: 0; color: var(--fg2); font-size: 13.5px; }
+.help-list dd { margin: 0; color: var(--fg2); font-size: 14px; }
 .help-list kbd {
   padding: 1px 6px; border: 1px solid var(--line); border-radius: 4px;
   background: var(--bg2); color: var(--fg2);
-  font-size: 11px; line-height: 17px; white-space: nowrap;
+  font-size: 12px; line-height: 17px; white-space: nowrap;
 }
 
 /* no flex-grow: the box hugs its results instead of filling the viewport */
@@ -379,7 +379,7 @@ body.palette-open { overflow: hidden; }
 .search-results .tag {
   flex: none; width: 52px; height: 18px; border-radius: 4px;
   display: inline-flex; align-items: center; justify-content: center;
-  font-size: 10px; font-weight: 700; color: #fff;
+  font-size: 12px; font-weight: 700; color: #fff;
 }
 /* One per search kind, taken from the syntax palette and kept dark enough for
    white text in both themes. Kinds that name the same thing at two levels —
@@ -394,7 +394,7 @@ body.palette-open { overflow: hidden; }
   display: flex; flex: 1; min-width: 0; flex-direction: column;
 }
 .search-results .search-desc {
-  overflow: hidden; color: var(--fg2); font-size: 11px;
+  overflow: hidden; color: var(--fg2); font-size: 12px;
   text-overflow: ellipsis; white-space: nowrap;
 }
 .search-results .ctx { color: var(--fg2); font-size: 12px; margin-left: auto; white-space: nowrap; }
@@ -407,7 +407,7 @@ body.palette-open { overflow: hidden; }
 /* Pinned / Recently viewed headings on the empty palette. */
 .search-sec {
   padding: 10px 10px 4px; color: var(--fg2);
-  font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em;
+  font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em;
 }
 /* The pin toggle on a home-state row: invisible until the row is under the
    pointer or keyboard, except where it is already pinned and says so. */
@@ -433,7 +433,7 @@ body.palette-open { overflow: hidden; }
 .ver-btn {
   display: inline-flex; align-items: center; height: 36px; padding: 0 10px;
   border: 1px solid var(--line); border-radius: 8px;
-  background: var(--bg2); color: var(--fg); font-size: 13.5px; cursor: pointer;
+  background: var(--bg2); color: var(--fg); font-size: 14px; cursor: pointer;
 }
 .ver-btn:hover { border-color: var(--accent2); }
 /* filled by app.js; reserve the width so the header doesn't shift */
@@ -453,7 +453,7 @@ body.palette-open { overflow: hidden; }
 .ver-menu a {
   display: block;
   margin-top: 2px; padding: 6px 10px; border-radius: 6px;
-  color: var(--fg); font-size: 13.5px;
+  color: var(--fg); font-size: 14px;
 }
 .ver-menu a:hover { background: var(--bg3); text-decoration: none; }
 .ver-menu a.cur { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
@@ -468,7 +468,7 @@ body.palette-open { overflow: hidden; }
 }
 .ver-latest {
   padding: 0 7px; border: 1px solid var(--accent2); border-radius: 10px;
-  color: var(--accent); font-size: 10.5px; font-weight: 600; line-height: 16px;
+  color: var(--accent); font-size: 12px; font-weight: 600; line-height: 16px;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -531,7 +531,7 @@ body.palette-open { overflow: hidden; }
 
 .nav-kids a {
   display: block; padding: 6px 10px; border-radius: 6px;
-  color: var(--fg); font-size: 13.5px;
+  color: var(--fg); font-size: 14px;
 }
 .nav-kids a:hover { background: var(--bg3); text-decoration: none; }
 .nav-kids a.active { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
@@ -539,7 +539,7 @@ body.palette-open { overflow: hidden; }
 .nav-group + .nav-group, .nav-kids > a + .nav-group { margin-top: 4px; padding-top: 4px; border-top: 1px solid var(--line); }
 .nav-label {
   padding: 8px 10px 2px; color: var(--fg2);
-  font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
 }
 .nav-label:hover { background: none; color: var(--fg); }
 .nav-group .nav-sub { padding-left: 18px; }
@@ -547,18 +547,18 @@ body.palette-open { overflow: hidden; }
 /* Heading of one documented member in a module page's documentation sections,
    with the type it belongs to trailing it. */
 h3.member-name {
-  margin: 22px 0 6px; font-size: 15px;
+  margin: 22px 0 6px; font-size: 16px;
   font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
   display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;
   border-top: 1px solid var(--line); padding-top: 14px;
 }
 h3.member-name .ordinal { font-size: 12px; font-weight: 400; color: var(--fg2); }
-.owner-of { margin-left: auto; font-size: 12.5px; font-weight: 400; color: var(--fg2); }
+.owner-of { margin-left: auto; font-size: 12px; font-weight: 400; color: var(--fg2); }
 
 /* Cross-references for a member. Reads as a footnote to the signature above it,
    not as a section of its own. */
-.xref { margin: 6px 0 0; font-size: 12.5px; line-height: 1.7; color: var(--fg2); }
-.xref-label { text-transform: uppercase; letter-spacing: .04em; font-size: 11px; opacity: .7; }
+.xref { margin: 6px 0 0; font-size: 12px; line-height: 1.7; color: var(--fg2); }
+.xref-label { text-transform: uppercase; letter-spacing: .04em; font-size: 12px; opacity: .7; }
 .xref a { color: var(--fg2); }
 .xref a:hover { color: var(--accent); }
 .xref-owner { opacity: .6; }
@@ -579,7 +579,7 @@ h3.member-name .ordinal { font-size: 12px; font-weight: 400; color: var(--fg2); 
 .main > p:not(.chain, .locations), .hero p,
 .class-doc, .member-doc { max-width: var(--w-prose); }
 
-.foot { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--fg2); font-size: 13px; }
+.foot { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--fg2); font-size: 14px; }
 
 /* ---- source minimap ----
    A six-thousand-line source file squashed into one column beside itself — a
@@ -614,7 +614,7 @@ h3.member-name .ordinal { font-size: 12px; font-weight: 400; color: var(--fg2); 
   padding: 0 3px 0 4px; border-left: 2px solid var(--accent2);
   background: var(--bg); color: var(--fg2);
   font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
-  font-size: 9.5px; line-height: 12px;
+  font-size: 12px; line-height: 12px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
@@ -642,11 +642,11 @@ h3.member-name .ordinal { font-size: 12px; font-weight: 400; color: var(--fg2); 
 }
 
 /* ---- content ---- */
-h1 { font-size: 26px; line-height: 1.3; margin: 0 0 12px; color: var(--accent); }
-h2 { font-size: 19px; margin: 64px 0 16px; }
+h1 { font-size: 24px; line-height: 1.3; margin: 0 0 12px; color: var(--accent); }
+h2 { font-size: 20px; margin: 64px 0 16px; }
 h3 { font-size: 16px; margin: 20px 0 8px; }
 
-.count { font-size: 13px; font-weight: 500; color: var(--fg2); }
+.count { font-size: 14px; font-weight: 500; color: var(--fg2); }
 
 /* The 64px is a section break, for the second Methods on a class or the B
    after the A's. Classes and Globals start with an h2, and that one is the
@@ -656,7 +656,7 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 
 .main > h1:has(+ .crumbs),
 .main > h1:has(+ .chain) { margin-bottom: 4px; }
-.crumbs { font-size: 13px; color: var(--fg2); margin: 0 0 16px; }
+.crumbs { font-size: 14px; color: var(--fg2); margin: 0 0 16px; }
 .crumb-sep { margin: 0 6px; opacity: 0.6; }
 
 .hero p { font-size: 16px; }
@@ -671,13 +671,13 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 }
 .stat:hover { border-color: var(--accent2); text-decoration: none; }
 .stat strong { font-size: 20px; color: var(--accent); }
-.stat span { font-size: 12.5px; color: var(--fg2); }
+.stat span { font-size: 12px; color: var(--fg2); }
 
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .card { padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; color: var(--fg); transition: border-color .15s ease; }
 .card:hover { border-color: var(--accent2); text-decoration: none; }
 .card h3 { margin: 0 0 4px; color: var(--accent); }
-.card p { margin: 0; color: var(--fg2); font-size: 13.5px; }
+.card p { margin: 0; color: var(--fg2); font-size: 14px; }
 .card-ext { position: relative; }
 .card-ext h3 { padding-right: 22px; }
 .card-ext .ic-ext { position: absolute; top: 12px; right: 12px; color: var(--accent2); transition: color .15s ease; }
@@ -701,7 +701,7 @@ h3 { font-size: 16px; margin: 20px 0 8px; }
 /* ---- badges ---- */
 .badge {
   display: inline-block; margin-left: 8px; padding: 1px 7px;
-  border-radius: 20px; font-size: 11.5px; font-weight: 600; vertical-align: 2px;
+  border-radius: 20px; font-size: 12px; font-weight: 600; vertical-align: 2px;
   font-family: ui-monospace, Menlo, Consolas, monospace;
 }
 .badge-mod { background: var(--accent-bg); color: var(--accent); }
@@ -719,12 +719,12 @@ a.badge:hover { color: inherit; text-decoration: underline; }
 .all-members { margin: 6px 0; font-size: 14px; }
 .all-members-table td:first-child { width: 55%; }
 .all-members-table td:last-child { width: 1%; white-space: nowrap; }
-.members-fallback { color: var(--fg2); font-size: 13px; }
+.members-fallback { color: var(--fg2); font-size: 14px; }
 
 /* ---- tables ---- */
 table.list { width: 100%; border-collapse: collapse; font-size: 14px; }
 table.list td, table.list th { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
-table.list th { color: var(--fg2); font-weight: 600; font-size: 13px; }
+table.list th { color: var(--fg2); font-weight: 600; font-size: 14px; }
 table.list tr:hover td { background: var(--bg2); }
 table.list td:first-child { white-space: nowrap; }
 /* Except where the first column holds a whole declaration rather than a name.
@@ -746,8 +746,8 @@ table.list td:first-child > code { white-space: normal; }
 .modkids { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 16px; }
 
 /* ---- class page ---- */
-.class-title .kw { color: var(--kw); font-weight: 500; font-size: 0.8em; }
-.generics { color: var(--fg2); font-weight: 400; font-size: 0.75em; margin-left: 2px; }
+.class-title .kw { color: var(--kw); font-weight: 500; font-size: 20px; }
+.generics { color: var(--fg2); font-weight: 400; font-size: 12px; margin-left: 2px; }
 
 .chain { color: var(--fg2); font-size: 14px; }
 .chain-sep { opacity: 0.5; margin: 0 2px; }
@@ -767,8 +767,8 @@ table.list td:first-child > code { white-space: normal; }
 .th-build { margin: 0 0 18px; }
 .th-body > .th-build:last-of-type { margin-bottom: 8px; }
 .th-head { display: flex; align-items: baseline; gap: 8px; margin: 0 0 4px; font-weight: 600; }
-.th-date { color: var(--fg2); font-size: 12.5px; font-weight: 400; }
-.th-new { margin: 2px 0; color: var(--added); font-size: 13.5px; }
+.th-date { color: var(--fg2); font-size: 12px; font-weight: 400; }
+.th-new { margin: 2px 0; color: var(--added); font-size: 14px; }
 .th-row { display: flex; align-items: baseline; gap: 8px; padding: 2px 0; }
 /* display:flex above would otherwise beat the UA's [hidden] { display:none } */
 .th-row[hidden] { display: none; }
@@ -776,17 +776,17 @@ table.list td:first-child > code { white-space: normal; }
 .th-added .th-op { color: var(--added); }
 .th-removed .th-op { color: var(--removed); }
 .th-changed .th-op { color: var(--warn-line); }
-.th-row code { background: none; padding: 0; font-size: 13px; white-space: pre-wrap; }
+.th-row code { background: none; padding: 0; font-size: 14px; white-space: pre-wrap; }
 .th-row .old { text-decoration: line-through; opacity: 0.6; }
 .th-decl { min-width: 0; }
 .th-decl code { display: block; }
 .th-link { text-decoration: none; }
 .th-link:hover code { text-decoration: underline; }
-.th-tail { margin: 2px 0 8px; color: var(--fg2); font-size: 13px; }
+.th-tail { margin: 2px 0 8px; color: var(--fg2); font-size: 14px; }
 /* Aligned under the declarations: the op column is 14px wide plus the 8px gap. */
 .th-more {
   margin: 2px 0 0 22px; padding: 0; border: 0; background: none;
-  color: var(--accent); font: inherit; font-size: 13px; cursor: pointer;
+  color: var(--accent); font: inherit; font-size: 14px; cursor: pointer;
 }
 .th-more:hover { text-decoration: underline; }
 
@@ -811,7 +811,7 @@ table.list td:first-child > code { white-space: normal; }
 .lit { color: var(--num); }
 .muted { color: var(--fg2); }
 
-.doc-brief { font-size: 1.02em; }
+.doc-brief { font-size: 16px; }
 .doc-params { margin: 8px 0; }
 .doc-params dt { margin-top: 6px; }
 .doc-params dd { margin: 2px 0 2px 20px; color: var(--fg2); }
@@ -822,7 +822,7 @@ table.list td:first-child > code { white-space: normal; }
 .note-community code { background: color-mix(in srgb, currentColor 12%, transparent); }
 .note-tag {
   display: inline-block; margin-right: 8px; padding: 1px 6px; border-radius: 5px;
-  background: var(--accent2); color: var(--bg); font-size: 11px; font-weight: 600;
+  background: var(--accent2); color: var(--bg); font-size: 12px; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.04em; vertical-align: 1px;
 }
 .enum-table .note-community { margin: 6px 0 0; }
@@ -876,24 +876,24 @@ table.list td:first-child > code { white-space: normal; }
    is inserted on its own hover: whichever arrives first, this one sits last */
 .note-add {
   order: 1; padding: 1px 8px; border: 1px dashed var(--line); border-radius: 6px;
-  color: var(--fg2); font-size: 11px; line-height: 16px; white-space: nowrap;
+  color: var(--fg2); font-size: 12px; line-height: 16px; white-space: nowrap;
   opacity: 0; transition: opacity .15s ease;
 }
 .note-add:hover { color: var(--accent); border-color: var(--accent2); }
 .member:hover .note-add, .enum-table tr:hover .note-add,
 .note-add:focus-visible { opacity: 1; }
-.note-ask { margin: 10px 0; color: var(--fg2); font-size: 13.5px; }
+.note-ask { margin: 10px 0; color: var(--fg2); font-size: 14px; }
 
 pre.code, pre.attrs {
   background: var(--code-bg); border: 1px solid var(--line); border-radius: 10px;
-  padding: 12px 14px; overflow-x: auto; font-size: 13px; line-height: 1.55;
+  padding: 12px 14px; overflow-x: auto; font-size: 14px; line-height: 1.55;
 }
 
 .locations { font-size: 14px; line-height: 2; }
 
 /* ---- source view ---- */
-.file-actions { margin: 0 0 14px; font-size: 13.5px; }
-.file-decls { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 0 16px; font-size: 13.5px; }
+.file-actions { margin: 0 0 14px; font-size: 14px; }
+.file-decls { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 0 16px; font-size: 14px; }
 .file-decls .kw { opacity: 0.75; font-size: 12px; }
 
 .srcwrap { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
@@ -903,7 +903,7 @@ pre.code, pre.attrs {
 pre.src, pre.code, pre.attrs { tab-size: 4; }
 pre.src {
   margin: 0; padding: 12px 0; overflow-x: auto;
-  background: var(--code-bg); font-size: 13px; line-height: 1.5;
+  background: var(--code-bg); font-size: 14px; line-height: 1.5;
   counter-reset: ln;
 }
 pre.src .line { display: block; position: relative; padding: 0 14px 0 80px; }
@@ -977,7 +977,7 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 .copy-btn {
   padding: 2px 8px; border: 1px solid var(--line); border-radius: 6px;
   background: var(--bg); color: var(--fg2);
-  font: inherit; font-size: 11px; line-height: 16px; cursor: pointer;
+  font: inherit; font-size: 12px; line-height: 16px; cursor: pointer;
 }
 .copy-btn::before { content: "Copy"; }
 .copy-btn:hover { color: var(--accent); border-color: var(--accent2); }
@@ -1077,7 +1077,7 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 }
 .filter-input:focus { outline: none; border-color: var(--accent2); }
 .filter-input::-webkit-search-cancel-button { cursor: pointer; }
-.filter-count { color: var(--fg2); font-size: 13px; white-space: nowrap; }
+.filter-count { color: var(--fg2); font-size: 14px; white-space: nowrap; }
 .filterbar { display: flex; align-items: center; gap: 10px; margin: 14px 0 4px; }
 
 /* ---- the page bar ----
@@ -1175,7 +1175,7 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
   display: inline-flex; align-items: center; gap: 6px;
   height: 36px; padding: 0 10px;
   border: 1px solid var(--line); border-radius: 8px;
-  background: var(--bg2); color: var(--fg); font-size: 13px; cursor: pointer;
+  background: var(--bg2); color: var(--fg); font-size: 14px; cursor: pointer;
   list-style: none;
 }
 .pb-pick > summary::-webkit-details-marker { display: none; }
@@ -1198,7 +1198,7 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
   display: inline-flex; min-width: 28px; height: 32px;
   align-items: center; justify-content: center;
   border-radius: 6px;
-  color: var(--fg); font-size: 13px; font-weight: 600;
+  color: var(--fg); font-size: 14px; font-weight: 600;
 }
 .pb-letter:hover { background: var(--bg3); text-decoration: none; }
 .pb-letter.active { background: var(--accent-bg); color: var(--accent); }
@@ -1211,7 +1211,7 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
   flex: none; display: inline-flex; align-items: center; gap: 6px;
   height: 36px; padding: 0 10px;
   border: 1px solid var(--line); border-radius: 8px;
-  background: var(--bg2); color: var(--fg); font: inherit; font-size: 13px; cursor: pointer;
+  background: var(--bg2); color: var(--fg); font: inherit; font-size: 14px; cursor: pointer;
 }
 .pb-menu-btn:hover { border-color: var(--accent2); }
 .pb-menu-btn::after {
@@ -1229,7 +1229,7 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
   box-shadow: var(--shadow);
 }
 .pb-has-menu.open .pb-chips { display: flex; }
-.pb-has-menu .pf { padding: 7px 10px; border-radius: 6px; font-size: 13px; text-align: left; }
+.pb-has-menu .pf { padding: 7px 10px; border-radius: 6px; font-size: 14px; text-align: left; }
 
 /* ---- table of contents ----
    Where this page's own sections are, beside it. The third column only exists
@@ -1249,26 +1249,26 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
   border-left: 1px solid var(--line);
 }
 .toc-title {
-  margin: 0 0 8px; color: var(--fg2); font-size: 11px; font-weight: 600;
+  margin: 0 0 8px; color: var(--fg2); font-size: 12px; font-weight: 600;
   letter-spacing: 0.06em; text-transform: uppercase;
 }
 .toc nav { display: flex; flex-direction: column; gap: 1px; }
 .toc a {
   display: block; padding: 3px 8px; border-left: 2px solid transparent;
-  color: var(--fg2); font-size: 13px; line-height: 1.4;
+  color: var(--fg2); font-size: 14px; line-height: 1.4;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .toc a:hover { color: var(--fg); text-decoration: none; }
 .toc a.cur { color: var(--accent); border-left-color: var(--accent2); font-weight: 600; }
 .toc .toc-1 { margin-bottom: 4px; }
-.toc .toc-3 { padding-left: 18px; font-size: 12.5px; }
+.toc .toc-3 { padding-left: 18px; font-size: 12px; }
 
 @media (max-width: 1179px) { .toc { display: none; } }
 
 /* ---- trees ---- */
 .btn {
   padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px;
-  background: var(--bg2); color: var(--fg); font-size: 13px; cursor: pointer;
+  background: var(--bg2); color: var(--fg); font-size: 14px; cursor: pointer;
 }
 .btn:hover { border-color: var(--accent2); }
 ul.tree, ul.tree ul { list-style: none; padding-left: 20px; margin: 0; }
@@ -1277,7 +1277,7 @@ ul.tree li { margin: 1px 0; }
 ul.tree summary { cursor: pointer; padding: 1px 4px; border-radius: 6px; }
 ul.tree summary:hover { background: var(--bg3); }
 ul.tree .tree-file { padding-left: 4px; font-size: 14px; }
-ul.tree .tree-file .muted { font-size: 12.5px; }
+ul.tree .tree-file .muted { font-size: 12px; }
 
 /* ---- diff ---- */
 .diff-class { border: 1px solid var(--line); border-radius: 10px; margin: 8px 0; padding: 8px 14px; }
@@ -1319,7 +1319,7 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
 .cmp-pick span {
   flex: none;
   color: var(--fg2);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1352,7 +1352,7 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
 .cmp-swap { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; border-radius: 999px; }
 .cmp-swap:disabled { cursor: default; opacity: 1; background: none; border-color: transparent; }
 .cmp-swap:disabled:hover { border-color: transparent; }
-.cmp-span { color: var(--fg2); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-align: center; line-height: 1.45; white-space: nowrap; }
+.cmp-span { color: var(--fg2); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-align: center; line-height: 1.45; white-space: nowrap; }
 .ic-swap {
   width: 15px; height: 15px;
   --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='1.6'%3E%3Cpath d='M2 5h11l-3-3m3 9H2l3 3'/%3E%3C/svg%3E");
@@ -1383,14 +1383,14 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
   margin: 0 0 4px;
   padding: 2px 2px 0;
   color: var(--fg2);
-  font-size: 13px;
+  font-size: 14px;
 }
 .cmp-time strong { color: var(--fg); font-weight: 650; }
 
 .cmp-kind { margin-bottom: 8px; }
 .cmp-kind h2 { margin: 36px 0 14px; }
 .cmp-kind:first-of-type h2 { margin-top: 28px; }
-.cmp-kind h3 { color: var(--fg2); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+.cmp-kind h3 { color: var(--fg2); font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
 .cmp [hidden] { display: none; }
 
 .cmp-split {
@@ -1408,7 +1408,7 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
 .cmp-split > .cmp-col h3 { margin: 0 0 10px; }
 .cmp-split .namegrid { margin: 0; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
 .cmp-name { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; }
-.cmp-empty { margin: 0; color: var(--fg2); font-size: 13.5px; }
+.cmp-empty { margin: 0; color: var(--fg2); font-size: 14px; }
 .cmp-change {
   margin: 8px 0;
   padding: 10px 14px 12px;
@@ -1435,7 +1435,7 @@ details.cmp-change { padding: 0; }
 .cmp-builds { display: inline-flex; flex-wrap: wrap; gap: 3px; }
 .cmp-build {
   padding: 1px 5px; border: 1px solid var(--line); border-radius: 4px;
-  color: var(--fg2); background: var(--bg2); font: 10px/1.4 ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  color: var(--fg2); background: var(--bg2); font: 12px/1.4 ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
 }
 .cmp-name .cmp-builds { margin-top: 2px; }
 .cmp-pair-head {
@@ -1444,7 +1444,7 @@ details.cmp-change { padding: 0; }
   gap: 0 16px;
   margin: 4px 0 6px;
   color: var(--fg2);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
