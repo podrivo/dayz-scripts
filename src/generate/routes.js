@@ -121,7 +121,7 @@ export function* pages(site, opts) {
     ['functions', 'classes/fields/functions/'],
     ['variables', 'classes/fields/variables/'],
   ]) {
-    yield page(dir, 'index', () => renderFields(ctx(dir), null, fieldLetters, kind));
+    yield page(dir, 'index', () => renderFields(ctx(dir), 'a', fieldLetters, kind));
     for (const l of fieldLetters) {
       const rel = `${dir}${l}/`;
       yield page(rel, 'index', () => renderFields(ctx(rel), l, fieldLetters, kind));

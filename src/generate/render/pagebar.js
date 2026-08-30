@@ -44,10 +44,10 @@ const letterPick = ({ base, dir, list, current }) => {
   return /* html */ `<details class="pb-pick"><summary>${esc(label)}</summary><nav class="pb-pick-menu" aria-label="By letter">${links}</nav></details>`;
 };
 
-/** Sibling kinds of the Classes section, the same list the header menu holds. */
+/** Sibling kinds of the Classes section. */
 export function classTabs(base, active) {
   return [
-    ['classes/', 'Classes'],
+    ['classes/', 'All'],
     ['hierarchy/', 'Hierarchy'],
     ['classes/fields/', 'Members'],
     ['classes/fields/functions/', 'Methods'],

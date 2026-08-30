@@ -20,20 +20,19 @@ export function renderFilesIndex(ctx) {
     return `<li class="tree-file"><a href="${fileHref(site, base, f.path)}"><code>${esc(f.name)}</code></a>${what ? ` <span class="muted">${what}</span>` : ''}</li>`;
   };
 
-  const dirNode = (d, depth) => /* html */ `<li${depth < 1 ? ` id="${esc(d.name)}"` : ''}><details${depth < 1 ? ' open' : ''}><summary><code>${esc(d.name)}</code> <span class="count">${d.count.toLocaleString('en-US')}</span></summary>
+  const dirNode = (d, depth) => /* html */ `<li${depth < 1 ? ` data-layer="${esc(d.name)}"` : ''}><details${depth < 1 ? ' open' : ''}><summary><code>${esc(d.name)}</code> <span class="count">${d.count.toLocaleString('en-US')}</span></summary>
 <ul>${d.dirs.map((k) => dirNode(k, depth + 1)).join('')}${d.files.map(fileRow).join('')}</ul></details></li>`;
 
   const content = /* html */ `
-<h1>File List <span class="count">${site.files.length.toLocaleString('en-US')}</span></h1>
-<p>Every script file, in the directory layout the game ships them in. Expand a directory to see its files.</p>
+<h1>Files <span class="count">${site.files.length.toLocaleString('en-US')}</span></h1>
 <ul class="tree">${site.dirRoots.map((d) => dirNode(d, 0)).join('')}${site.rootFiles.map(fileRow).join('')}</ul>`;
   return layout({
     ...ctx,
-    title: 'File List',
+    title: 'Files',
     active: 'files/',
     bar: pageBar({
       tabs: [
-        [`${base}files/`, 'Files', true],
+        [`${base}files/`, 'All', true],
         ...FILE_LAYERS.map((n) => [`${base}files/#${n}`, n, false]),
       ],
       tools: true,
@@ -86,7 +85,7 @@ ${decls}
     ...ctx,
     title: short,
     active: 'files/',
-    breadcrumbs: [{ label: 'File List', href: `${base}files/` }, { label: short }],
+    breadcrumbs: [{ label: 'Files', href: `${base}files/` }, { label: short }],
     content,
   });
 }

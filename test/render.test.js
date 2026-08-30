@@ -69,18 +69,15 @@ test('layout links assets absolutely so a page works at any depth', () => {
 
 test('the nav names the DayZ-facing sections, and marks the page once', () => {
   const html = layout({ title: 'x', base: '', active: 'globals/typedefs/', versionPath: '', content: '' });
-  const labels = [
-    'Topics', 'Classes', 'Hierarchy',
-    'Members', 'Methods', 'Fields', 'Globals', 'Files', '1_Core', '4_World', '5_Mission',
-    'Constants', 'Typedefs', 'Enums', 'Values', 'Macros', 'Changelog',
-  ];
+  const labels = ['Topics', 'Classes', 'Globals', 'Files', 'Changelog'];
   for (const l of labels) assert.ok(html.includes(`>${l}</a>`), `nav is missing ${l}`);
   assert.ok(html.includes('href="topics/"'), 'Topics is /topics/');
   assert.ok(html.includes('href="classes/"'), 'Classes is /classes/');
-  assert.ok(html.includes('href="classes/fields/"'), 'Members is /classes/fields/');
-  assert.ok(html.includes('href="classes/fields/functions/"'), 'Methods is /classes/fields/functions/');
-  assert.ok(html.includes('href="classes/fields/variables/"'), 'Fields is /classes/fields/variables/');
-  assert.ok(html.includes('href="files/#4_World"'), 'Files menu has the script layers');
+  assert.ok(html.includes('href="files/"'), 'Files is /files/');
+  assert.ok(html.includes('href="globals/"'), 'Globals is /globals/');
+  assert.ok(!html.includes('href="classes/fields/"'), 'Members lives on the page bar, not the header');
+  assert.ok(!html.includes('href="files/#4_World"'), 'file layers live on the page bar, not the header');
+  assert.ok(!html.includes('class="nav-sec"'), 'header sections are links, not hover menus');
   assert.ok(!html.includes('href="classes/index/"'), 'Class Index is not a nav entry');
   assert.ok(!html.includes('>All topics</a>'), 'Topics is a link, not a menu of every topic');
   assert.ok(!html.includes('>Modules</a>'));
@@ -100,16 +97,15 @@ test('the nav names the DayZ-facing sections, and marks the page once', () => {
     assert.ok(at > last, `${href} is out of DayZ order`);
     last = at;
   }
-  assert.equal(html.match(/nav-(?:item|sub) active"/g).length, 1, 'exactly one entry is the current page');
-  assert.ok(html.includes('<a class="nav-item on" href="globals/"'), 'Globals is the current section');
-  assert.ok(html.includes('<details class="nav-sec nav-here">'), 'Globals is current but shut');
-  assert.ok(!html.includes('nav-sec nav-here" open'), 'menus are not served open');
+  assert.equal(html.match(/nav-item active"/g).length, 1, 'exactly one entry is the current page');
+  assert.ok(html.includes('<a class="nav-item active" href="globals/"'), 'Globals is the current section');
 });
 
-test('a section that repeats itself as its first child marks the child', () => {
+test('a section is marked when the page sits under it', () => {
   const html = layout({ title: 'x', base: '', active: 'classes/', versionPath: '', content: '' });
-  assert.ok(html.includes('<a class="nav-sub active" href="classes/"'));
-  assert.ok(!html.includes('nav-item active'), 'the heading is not marked as well');
+  assert.ok(html.includes('<a class="nav-item active" href="classes/"'));
+  const hierarchy = layout({ title: 'x', base: '', active: 'hierarchy/', versionPath: '', content: '' });
+  assert.ok(hierarchy.includes('<a class="nav-item active" href="classes/"'), 'Hierarchy counts as Classes');
 });
 
 // The module topics differ from build to build, so they are fetched from

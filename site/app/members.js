@@ -66,8 +66,7 @@ export function initAllMembers() {
 }
 
 /** The data-fields index: every member name of the build, by initial.
- *  A letter page paints the whole letter. The landing page waits for a
- *  query — the full list cannot live in the DOM. */
+ *  A letter page paints the whole letter. The landing page opens on A. */
 export function initFieldsIndex() {
   const fieldsList = $('#fieldsList');
   if (!fieldsList) return;

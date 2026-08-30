@@ -159,82 +159,37 @@ export function briefOf(rawDoc, site, base) {
   return inlineDoc(d.brief, site, base);
 }
 
-// Two shapes. A section with kinds (Classes, Files, Globals) is a menu of
-// those kinds, repeated as page-bar tabs. A section that is one list
-// (Topics) is a link: the list is the page, and the filter finds a row.
-// Order is how a DayZ scripter looks: a class or a file first, engine
-// topic groups last. Labels are the DayZ names (Topics, Classes, Members)
-// rather than Doxygen's C-mode ones (Modules, Data Structures, Data Fields).
+// Header entries are links. A section with kinds (Classes, Files, Globals)
+// keeps those kinds on the page bar, not in a hover menu. Order is how a
+// DayZ scripter looks: a class or a file first, engine topic groups last.
+// Labels are the DayZ names (Topics, Classes) rather than Doxygen's C-mode
+// ones (Modules, Data Structures).
 export const FILE_LAYERS = ['1_Core', '2_GameLib', '3_Game', '4_World', '5_Mission'];
 
 const NAV = [
-  ['classes/', 'Classes', [
-    ['classes/', 'Classes'],
-    ['hierarchy/', 'Hierarchy'],
-    ['classes/fields/', 'Members'],
-    ['classes/fields/functions/', 'Methods'],
-    ['classes/fields/variables/', 'Fields'],
-  ]],
-  ['files/', 'Files', [
-    ['files/', 'Files'],
-    ...FILE_LAYERS.map((n) => [`files/#${n}`, n]),
-  ]],
-  ['globals/', 'Globals', [
-    ['globals/', 'All'],
-    ['globals/functions/', 'Functions'],
-    ['globals/constants/', 'Constants'],
-    ['globals/typedefs/', 'Typedefs'],
-    ['globals/enums/', 'Enums'],
-    ['globals/values/', 'Values'],
-    ['globals/macros/', 'Macros'],
-  ]],
+  ['classes/', 'Classes', ['hierarchy/']],
+  ['files/', 'Files'],
+  ['globals/', 'Globals'],
   ['topics/', 'Topics'],
   ['changelog/', 'Changelog'],
   ['community/', 'Community'],
   ['about/', 'About'],
 ];
 
-/** Whether `active` names this branch or anything under it. */
-function navHolds(nodes, active) {
-  return nodes.some(([href, , kids]) => href === active || (Array.isArray(kids) && navHolds(kids, active)));
+/** Whether this section owns `active`: its own path, anything under it,
+ *  or an extra path that lives with it (Hierarchy sits with Classes). */
+function navHolds(href, extra, active) {
+  if (!active) return false;
+  if (href === active || active.startsWith(href)) return true;
+  return extra?.some((p) => p === active || active.startsWith(p)) ?? false;
 }
 
-function navLink(href, label, cls, here, base) {
-  return `<a class="${cls}${here ? ' active' : ''}" href="${base}${href}"${here ? ' aria-current="page"' : ''}>${esc(label)}</a>`;
-}
-
-/** Flattened children of a dropdown: groups become a heading plus their
- *  links, so Members is visible without a second click. */
-function navPanel(nodes, active, base) {
-  return nodes
-    .map(([href, label, kids]) => {
-      const list = Array.isArray(kids) ? kids : null;
-      const here = href === active && !list?.some(([h]) => h === active);
-      if (!list) return navLink(href, label, 'nav-sub', here, base);
-      return `<div class="nav-group">${navLink(href, label, 'nav-label', here, base)}${navPanel(list, active, base)}</div>`;
-    })
-    .join('');
-}
-
-/**
- * The bar itself. `active` is the version-relative directory of the page's
- * place in it; where a section and its first child share that directory, the
- * child is the one marked, so a page is highlighted once.
- */
+/** The bar itself. `active` is the version-relative directory of the page. */
 function navLevel(nodes, active, base) {
   return nodes
-    .map(([href, label, kids]) => {
-      const list = Array.isArray(kids) ? kids : null;
-      const here = href === active && !list?.some(([h]) => h === active);
-      const holds = here || !!(list && navHolds(list, active));
-      // A section that holds the page is marked `on` so the bar still says
-      // where you are when the exact entry is a child.
-      const on = holds && !here;
-      const a = `<a class="nav-item${here ? ' active' : ''}${on ? ' on' : ''}" href="${base}${href}"${here ? ' aria-current="page"' : ''}>${esc(label)}</a>`;
-      if (!list) return a;
-      // Menus stay shut: serving them open would pin a panel under the bar
-      // on every page they hold.
-      return `<details class="nav-sec${holds ? ' nav-here' : ''}"><summary>${a}</summary><div class="nav-kids">${navPanel(list, active, base)}</div></details>`;
+    .map(([href, label, extra]) => {
+      const here = navHolds(href, extra, active);
+      return `<a class="nav-item${here ? ' active' : ''}" href="${base}${href}"${here ? ' aria-current="page"' : ''}>${esc(label)}</a>`;
     })
     .join('');
 }
