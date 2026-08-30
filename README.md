@@ -31,7 +31,7 @@ repository.
 Older builds stay at `/v/<build>/…`. The PC stable changelog, official links and
 community links are on the [homepage](https://diff.yadz.app/); the links
 themselves are hand-maintained in `src/generate/content.js`. Bugs and
-suggestions for this site: [YADZ Discord](https://discord.gg/nbrHqZCpA6).
+suggestions for this site: [Discord](https://discord.yadz.app/).
 
 ## For language models
 

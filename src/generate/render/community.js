@@ -25,7 +25,7 @@ ${linkCards(links, true)}`;
   const content = /* html */ `
 <h1>Community</h1>
 <p>Most of the DayZ script API carries no documentation, and there is no official reference that fills the gap. These are the places that do: the official pages that exist, the servers where questions get answered, and the tools and references the community maintains.</p>
-<p>Have something that belongs here? Suggest it on <a href="${YADZ_DISCORD}" ${EXT}>YADZ's Discord</a>.</p>
+<p>Have something that belongs here? Suggest it on <a href="${YADZ_DISCORD}" ${EXT}>Discord</a> or open a pull request on <a href="${REPO_URL}" ${EXT}>GitHub</a>.</p>
 <h2 id="official">Official</h2>
 ${linkCards(OFFICIAL_LINKS, true)}
 <h2 id="official-modding">Official modding docs</h2>

@@ -100,12 +100,12 @@ export const COMMUNITY_SECTIONS = [
   },
 ];
 
-export const YADZ_DISCORD = 'https://discord.gg/nbrHqZCpA6';
+export const YADZ_DISCORD = 'https://discord.yadz.app/';
 
 /** How to reach the people who build this site. Only on /about/. */
 export const COLLABORATION_LINKS = [
   ['GitHub', REPO_URL, 'Issues, pull requests, and community notes'],
-  ["YADZ's Discord", YADZ_DISCORD, 'Feedback on the site'],
+  ['Discord', YADZ_DISCORD, 'Feedback on the site'],
 ];
 
 /** Marketing name of a game version, when the whole version carries one. */

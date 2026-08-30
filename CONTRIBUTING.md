@@ -177,5 +177,5 @@ config. Worth knowing about:
 Small and focused is easiest to review. Say what changed and why; if it is a
 rendering change, a before/after screenshot helps. Run `npm test` first.
 
-Bugs and questions: [YADZ Discord](https://discord.gg/nbrHqZCpA6), or open an
+Bugs and questions: [Discord](https://discord.yadz.app/), or open an
 issue.
