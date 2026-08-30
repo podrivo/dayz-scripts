@@ -25,10 +25,23 @@ export const KIND = {
   g: ['topic', (n, o) => `topics/${o}/`],
   // Paths are indexed as displayed, which is also how the URL spells them.
   F: ['file', (n, o) => `files/${o}/`],
+  // Site pages, not a declaration. `owner` is the version-relative URL.
+  p: ['page', (n, o) => o],
 };
 
 /** Which kinds carry a real owner, and so can be narrowed by one. */
 export const SCOPED = new Set(['m', 'v', 'V']);
+
+/* Hand-written destinations the API index does not name. Same on every build,
+   so they live here rather than in search.json — archived indexes stay
+   searchable for them without being regenerated. */
+const PAGES = [
+  ['Home', '', 'Browsable documentation for the DayZ Enforce Script sources'],
+  ['Community', 'community/', 'Official references, Discord servers, editors, build tools and community notes'],
+  ['About', 'about/', 'Agents, the stack, and how to collaborate'],
+  ['Changelog', 'changelog/', 'What changed in the script API between two game builds'],
+  ['Hierarchy', 'hierarchy/', 'What extends what, from engine types down through every scripted subclass'],
+];
 
 /* The raw index and the flat entry list, as live bindings: whoever awaited
    loadIndex() sees them filled in. */
@@ -62,6 +75,7 @@ export function loadIndex() {
       const noteKey = SCOPED.has(e[0]) ? `${e[2]}.${e[1]}` : e[1];
       e[3] = [index.docs?.[urlFor(e)], notes[noteKey]].filter(Boolean).join(' ');
     }
+    for (const [title, path, desc] of PAGES) entries.push(['p', title, path, desc]);
   })());
 }
 

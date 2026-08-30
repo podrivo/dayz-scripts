@@ -345,7 +345,7 @@ body.palette-open { overflow: hidden; }
 .tag-V { background: #6f4a8c; } .tag-t { background: #2b7f76; }
 .tag-k { background: #a35c00; } .tag-f { background: #3f6b4d; }
 .tag-d { background: #8a5a3c; } .tag-g { background: #55578c; }
-.tag-F { background: #5a6270; }
+.tag-F { background: #5a6270; } .tag-p { background: #4a5a6b; }
 .search-results .search-main {
   display: flex; flex: 1; min-width: 0; flex-direction: column;
 }

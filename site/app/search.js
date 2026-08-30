@@ -11,7 +11,7 @@ const RESULTS_MAX = 60;
 
 /* Ranking nudges by kind: a class outranks its own methods when both match,
    and a topic outranks the constants filed under it. */
-const KIND_BONUS = { c: 20, e: 12, g: 10, m: 5, v: 3 };
+const KIND_BONUS = { c: 20, e: 12, g: 10, p: 20, m: 5, v: 3 };
 
 /* A name's initials — its first character, every capital, and whatever
    follows an underscore — so `eehb` can reach EEHitBy and `gg` GetGame the
