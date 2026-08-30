@@ -23,15 +23,13 @@ export function renderHierarchy(ctx) {
   };
 
   const content = /* html */ `
-<h1>Class Hierarchy</h1>
-<p>Expand a node to see the classes derived from it. Top-level entries either have no base class or extend an engine class that is not defined in scripts.</p>
+<h1>Hierarchy</h1>
 <ul class="tree">${roots.map((r) => renderNode(r, 0)).join('\n')}</ul>`;
   return layout({
     ...ctx,
-    title: 'Class Hierarchy',
+    title: 'Hierarchy',
     active: 'hierarchy/',
     bar: pageBar({ tabs: classTabs(base, 'hierarchy/') }),
-    breadcrumbs: [{ label: 'Classes', href: `${base}classes/` }, { label: 'Hierarchy' }],
     content,
   });
 }

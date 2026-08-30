@@ -133,6 +133,7 @@ export function renderGlobals(ctx, kind) {
     macros: site.defines.length,
   };
   const key = kind === '' ? null : kind.replace('/', '');
+  const total = Object.values(counts).reduce((n, c) => n + c, 0);
 
   // The "All" tab is an index of names rather than a copy of the six pages
   // below it: repeating them costs more bytes than the whole rest of the site.
@@ -159,18 +160,14 @@ export function renderGlobals(ctx, kind) {
         .join('\n');
 
   const content = /* html */ `
-<h1>Globals${key ? ` — ${label}` : ''}${key ? ` <span class="count">${counts[key].toLocaleString('en-US')}</span>` : ''}</h1>
+<h1>${key ? label : 'Globals'} <span class="count">${(key ? counts[key] : total).toLocaleString('en-US')}</span></h1>
 ${body}`;
 
   return layout({
     ...ctx,
-    title: key ? `Globals — ${label}` : 'Globals',
+    title: key ? label : 'Globals',
     active: `globals/${kind}`,
     bar: pageBar({ tabs }),
-    breadcrumbs: [
-      { label: 'Globals', href: key ? `${base}globals/` : undefined },
-      ...(key ? [{ label }] : []),
-    ],
     content,
   });
 }

@@ -92,15 +92,14 @@ export function renderClassesLetter(ctx, letter, names, letters) {
 export function renderFields(ctx, letter, letters, kind) {
   const { base } = ctx;
   const KINDS = {
-    all: ['Members', 'classes/fields/', 'Every member and method declared by a class.'],
-    functions: ['Members — Methods', 'classes/fields/functions/', 'Every method declared by a class.'],
-    variables: ['Members — Fields', 'classes/fields/variables/', 'Every variable and constant declared by a class.'],
+    all: ['Members', 'classes/fields/'],
+    functions: ['Methods', 'classes/fields/functions/'],
+    variables: ['Fields', 'classes/fields/variables/'],
   };
-  const [title, dir, blurb] = KINDS[kind];
+  const [title, dir] = KINDS[kind];
 
   const content = /* html */ `
 <h1>${title}${letter ? ` — ${letterTitle(letter)}` : ''}</h1>
-<p>${blurb} The same name is often declared by many classes, so each one links to every class that has it.</p>
 <dl class="fields" id="fieldsList" data-kind="${kind}"${letter ? ` data-letter="${esc(letter)}"` : ''}></dl>
 <p class="members-fallback">${letter ? 'Assembling the list from the class index.' : 'Pick a letter.'}</p>`;
   return layout({
@@ -111,11 +110,6 @@ export function renderFields(ctx, letter, letters, kind) {
       tabs: classTabs(base, dir),
       letters: { base, dir, list: letters, current: letter },
     }),
-    breadcrumbs: [
-      { label: 'Classes', href: `${base}classes/` },
-      { label: 'Members', href: `${base}classes/fields/` },
-      ...(letter ? [{ label: letterTitle(letter) }] : []),
-    ],
     content,
   });
 }

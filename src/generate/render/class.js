@@ -8,6 +8,7 @@ import {
 import {
   anchorFor, callersBlock, fileLineHref, locationLinks, referencesBlock,
 } from './shared.js';
+import { classTabs, pageBar } from './pagebar.js';
 
 export function renderClass(ctx, cls) {
   const { site, base } = ctx;
@@ -113,6 +114,7 @@ ${section('Methods', methods, methodBlock)}
     ...ctx,
     title: cls.name,
     active: 'classes/',
+    bar: pageBar({ tabs: classTabs(base, '') }),
     description: brief || `${cls.name} class — DayZ Enforce Script API`,
     content,
   });
@@ -168,6 +170,7 @@ ${chainHtml}
     ...ctx,
     title: `${cls.name} — all members`,
     active: 'classes/',
+    bar: pageBar({ tabs: classTabs(base, '') }),
     description: `Every member of ${cls.name}, its own and those inherited from ${chain.slice(1).join(', ')}.`,
     content,
   });
