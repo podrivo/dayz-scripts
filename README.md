@@ -1,9 +1,10 @@
-# DIFF — DayZ Scripts Documentation by YADZ
+# DIFF — DayZ Internal File Finder by YADZ
 
-Browsable documentation for the DayZ scripts API (Enforce Script), generated
-from the official
+A DayZ scripts documentation website. Browsable documentation for the
+DayZ Enforce Script sources — every class, method, enum and constant —
+generated from the official
 [DayZ Script Diff](https://github.com/BohemiaInteractive/DayZ-Script-Diff)
-sources.
+repository.
 
 **Site:** [diff.yadz.app](https://diff.yadz.app) ·
 **Source:** [yadzapp/diff](https://github.com/yadzapp/diff) ·
