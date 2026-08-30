@@ -1270,7 +1270,7 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
    page bar: same strip, same height, same glass as Classes / Hierarchy. */
 .cmp-stage {
   display: grid;
-  grid-template-columns: minmax(0, 24rem) auto minmax(0, 24rem);
+  grid-template-columns: auto auto auto;
   justify-content: start;
   gap: 8px 16px;
   align-items: center;
@@ -1284,6 +1284,7 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
   display: flex;
   align-items: center;
   gap: 10px;
+  width: 12.25rem;
   min-width: 0;
   height: 36px;
   padding: 0 10px 0 12px;
@@ -1291,7 +1292,7 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
   border-radius: 8px;
   background: var(--bg2);
 }
-.cmp-pick span {
+.cmp-pick > span:first-child {
   flex: none;
   color: var(--fg2);
   font-size: var(--text-xs);
@@ -1300,21 +1301,42 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
   text-transform: uppercase;
   pointer-events: none;
 }
-.cmp-pick select {
+.cmp-sel {
+  position: relative;
   flex: 1;
   min-width: 0;
-  width: auto;
-  max-width: none;
+  display: block;
+  height: 36px;
+}
+.cmp-sel::after {
+  content: attr(data-face);
+  position: absolute;
+  inset: 0 1.25em 0 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--fg);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+.cmp-pick select {
+  width: 100%;
+  min-width: 0;
   height: 36px;
   padding: 0;
   border: none;
   border-radius: 0;
   background: transparent;
-  color: var(--fg);
+  color: transparent;
   font: inherit;
   font-size: var(--text-sm);
   font-weight: 600;
 }
+.cmp-pick select option,
+.cmp-pick select optgroup { color: var(--fg); }
 .cmp-pick:focus-within { border-color: var(--accent2); }
 .cmp-pick select:focus { outline: none; }
 .cmp-mid {

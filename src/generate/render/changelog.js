@@ -22,7 +22,7 @@ import { renderReleases } from './shared.js';
  */
 export function renderCompare(ctx) {
   const card = (side, label) => /* html */ `<label class="cmp-pick" data-side="${side}">
-  <span>${label}</span><select id="cmp${label}" aria-label="Compare ${side} build"></select>
+  <span>${label}</span><span class="cmp-sel"><select id="cmp${label}" aria-label="Compare ${side} build"></select></span>
 </label>`;
   const bar = /* html */ `<div class="pagebar" hidden>
 <form class="cmp-stage" id="cmpBar">

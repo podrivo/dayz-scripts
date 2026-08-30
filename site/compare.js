@@ -324,6 +324,13 @@ export function initCompare({ builds, fmtDate, current }) {
         `${esc(b.name || b.build)} (${esc(b.build.split('.').pop())}) — ${esc(fmtDate(b.date))}</option>`;
     }
     sel.innerHTML = html + (version ? '</optgroup>' : '');
+    face(sel);
+  };
+
+  const face = (sel) => {
+    const el = sel.parentElement;
+    const b = byBuild.get(sel.value);
+    if (el?.classList.contains('cmp-sel')) el.dataset.face = b?.name || sel.value;
   };
 
   /** URL, then the last pair the reader picked, then this version's changelog. */
@@ -577,6 +584,8 @@ ${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}`;
     }
     fromSel.value = from;
     toSel.value = to;
+    face(fromSel);
+    face(toSel);
     stampPair();
     store();
     draw();
@@ -590,6 +599,8 @@ ${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}`;
     ({ from, to } = defaults());
     fromSel.value = from;
     toSel.value = to;
+    face(fromSel);
+    face(toSel);
     stampPair();
     store();
     draw();
@@ -599,6 +610,8 @@ ${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}`;
     ({ from, to } = read());
     fromSel.value = from;
     toSel.value = to;
+    face(fromSel);
+    face(toSel);
     stampPair();
     draw();
   });
