@@ -5,3 +5,8 @@
 [build]
   publish = "dist"
   command = "npm run build"
+
+[[redirects]]
+  from = "/api/workshop"
+  to = "/.netlify/functions/workshop"
+  status = 200

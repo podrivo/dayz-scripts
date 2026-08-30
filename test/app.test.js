@@ -111,6 +111,13 @@ test('the client runs end to end on a page where every feature is absent', async
 // the shape of the bug this whole file is here to catch. The import cannot
 // resolve outside a browser; that the failure is caught rather than thrown,
 // and says so on the page, is the point.
+test('the workshop list says so when it cannot load', async () => {
+  const box = stubEl();
+  await run({ querySelector: (s) => (s === '#workshop-list' ? box : null) });
+  await settle();
+  assert.match(box.textContent, /could not be loaded/);
+});
+
 test('the changelog hands off to compare.js, and says so when it cannot', async () => {
   const compare = stubEl();
   await run({ querySelector: (s) => (s === '#compare' ? compare : null) });

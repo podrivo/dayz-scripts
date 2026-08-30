@@ -258,7 +258,7 @@ pre code { background: none; padding: 0; }
 .palette-box {
   display: flex; flex-direction: column; width: 100%; max-width: var(--w-search);
   max-height: 100%; overflow: hidden;
-  background: var(--bg); border: 1px solid var(--line); border-radius: 14px;
+  background: var(--bg); border-radius: 16px;
   box-shadow: var(--shadow);
 }
 .palette-field {

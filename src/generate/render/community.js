@@ -16,7 +16,8 @@ import { linkCards } from './shared.js';
  *
  * The lists are hand-maintained in src/generate/content.js. Nothing here is
  * derived from a build, so these bytes are identical across all of them and
- * the page keeps its hard link; see layout() in src/generate/html.js.
+ * the page keeps its hard link; see layout() in src/generate/html.js. The
+ * Workshop section is an empty shell, filled by site/app/workshop.js.
  */
 export function renderCommunity(ctx) {
   const section = ({ id, title, links }) => /* html */ `<h2 id="${id}">${esc(title)}</h2>
@@ -32,6 +33,10 @@ ${linkCards(OFFICIAL_LINKS, true)}
 ${linkCards(OFFICIAL_MODDING_LINKS, true)}
 <h2 id="discord">Discord servers</h2>
 ${linkCards(DISCORD_LINKS, true)}
+<h2 id="workshop">Steam Workshop</h2>
+<p>The most subscribed DayZ mods on Steam, fetched when you open this page. <a href="https://steamcommunity.com/app/221100/workshop/" ${EXT}>Browse all</a>.</p>
+<div id="workshop-stats" class="stats" hidden></div>
+<div id="workshop-list" aria-live="polite" aria-busy="true"><p class="muted">Loading workshop…</p></div>
 ${COMMUNITY_SECTIONS.map(section).join('\n')}
 <h2 id="notes">Community notes</h2>
 <p>Most of the script API has no doc comment. A community note fills one in: a short annotation on a class, enum or member — what an argument expects, whether a call is server-only, what a method does that its name does not say. Notes show up on that declaration's page, labelled as community writing rather than Bohemia's, and on every build at once.</p>
@@ -46,7 +51,7 @@ ${COMMUNITY_SECTIONS.map(section).join('\n')}
     ...ctx,
     title: 'Community',
     active: 'community/',
-    description: 'DayZ modding resources: official references, Discord servers, editors, build tools, object and map data, and agent tooling.',
+    description: 'DayZ modding resources: official references, Discord servers, Steam Workshop, editors, build tools, object and map data, and agent tooling.',
     breadcrumbs: [{ label: 'Community' }],
     content,
   });

@@ -16,6 +16,7 @@ import { recordVisit } from './app/recent.js';
 import { initSearch } from './app/search.js';
 import { initShortcuts } from './app/shortcuts.js';
 import { initChangelog } from './app/changelog.js';
+import { initWorkshop } from './app/workshop.js';
 import { initSourceView } from './app/source.js';
 import { initShare } from './app/share.js';
 import { initInlineCode } from './app/highlight.js';
@@ -43,6 +44,7 @@ initShortcuts();
 
 // the source view, and the one page that fetches its own behaviour
 initChangelog();
+initWorkshop();
 initSourceView();
 initShare();
 initInlineCode();

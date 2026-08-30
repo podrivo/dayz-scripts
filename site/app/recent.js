@@ -67,9 +67,9 @@ export function recordVisit() {
 export function homeList() {
   const pinned = readPages('pinned');
   const pinnedUrls = new Set(pinned.map(urlFor));
-  // The page under the palette is not somewhere to go, and a pinned page
-  // does not need saying twice.
-  const recent = readPages('recent').filter((e) => !pinnedUrls.has(urlFor(e)) && urlFor(e) !== VPATH);
+  // A pinned page does not need saying twice. The page under the palette
+  // stays first so the list includes where you already are.
+  const recent = readPages('recent').filter((e) => !pinnedUrls.has(urlFor(e)));
   if (!pinned.length && !recent.length) return null;
 
   const row = (e, i, on) => {

@@ -21,6 +21,7 @@ import { diffModels } from './generate/diff.js';
 import { buildHistory } from './generate/history.js';
 import { resolve as resolvePage, TOPIC_ALIASES } from './generate/routes.js';
 import { render404 } from './generate/render.js';
+import { sendWorkshop } from './workshop.js';
 
 const PORT = process.env.PORT || 3000;
 const SITE_DIR = path.join(ROOT, 'site');
@@ -221,6 +222,7 @@ function handle(req, res) {
   const pathname = decodeURIComponent(new URL(req.url, 'http://x').pathname);
 
   if (pathname === '/__dev/events') return events(res);
+  if (pathname === '/api/workshop') return sendWorkshop(res);
   if (pathname.startsWith('/assets/')) return sendAsset(res, pathname.slice('/assets/'.length));
   // Matches the `/v/ / 302` rule the generator writes into dist/_redirects.
   if (pathname === '/v/') {
