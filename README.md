@@ -10,12 +10,15 @@ repository.
 **Source:** [yadzapp/diff](https://github.com/yadzapp/diff) ·
 **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
 
-[![PlayerBase on DIFF](screenshot.png)](https://diff.yadz.app/classes/PlayerBase/)
-
-Search, inheritance trees, syntax-highlighted sources, and a changelog across
-every published PC stable build. Most of the API
-has no official doc comment — the site shows where each member is used, and
-[community notes](#community-notes) are where the rest can be written down.
+- 🔍 **Search** — find any class, method, enum, or constant
+- 🌳 **Inheritance trees** — see the full type hierarchy and inherited members
+- 📄 **Syntax-highlighted sources** — browse the script files as they ship
+- 📋 **Changelog** — API diff between any two PC stable builds
+- 🔗 **Usage** — where each member is called, when the sources have no official docs
+- 📝 **Community notes** — short annotations on types and members
+- 📦 **Build archive** — older PC stables stay at `/v/<build>/`
+- 🤖 **LLM-ready** — `api.json`, `llms.txt`, and Copy for LLM on class and enum pages
+- 📡 **Feed** — new builds as they ship, as Atom
 
 ## What's on the site
 
@@ -59,8 +62,6 @@ A community note is a short annotation on a class, enum, or member. Add it to
   "PlayerBase.SetQuantity": "Clamps to the config maximum instead of failing; read it back with `GetQuantity()`."
 }
 ```
-
-[![Community note on PlayerBase](screenshot-notes.png)](https://diff.yadz.app/classes/PlayerBase/)
 
 Edit that file and open a pull request. `Type.Member` covers every overload of
 that name; enum values key off the value name; backticks render as code. Notes
