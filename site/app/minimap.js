@@ -7,8 +7,8 @@
 
    Source pages only. Every other long page here is a list of named things,
    and a list of nine hundred methods is nine hundred identical marks that
-   say nothing; those are served by the table of contents and the filter
-   field, which name what the rail could only gesture at. Code is the one
+   say nothing; those are served by the table of contents, which names
+   what the rail could only gesture at. Code is the one
    thing on this site with a texture worth mapping.
 
    Built here rather than in the markup because it is measured, throwaway

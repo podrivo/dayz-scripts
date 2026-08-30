@@ -7,7 +7,6 @@
 
 import { $, BASE, anchorOf, esc } from './dom.js';
 import { index, loadIndex } from './search-index.js';
-import { rescanFilter } from './filter.js';
 
 /** All members of a class: its own and everything it inherits. */
 export function initAllMembers() {
@@ -51,9 +50,6 @@ export function initAllMembers() {
     $('.members-fallback').textContent =
       `${rows.length.toLocaleString()} members, ${inherited.toLocaleString()} of them inherited.`;
     $('h1').insertAdjacentHTML('beforeend', ` <span class="count">${rows.length.toLocaleString()}</span>`);
-    const filter = $('#pageFilter');
-    if (filter) filter.placeholder = `Filter ${rows.length.toLocaleString()} members…`;
-    rescanFilter();
   }).catch(() => {
     // .catch rather than a second argument to .then, so that a failure while
     // building the rows is caught too and not just a failure to fetch them.
@@ -66,17 +62,17 @@ export function initAllMembers() {
 }
 
 /** The data-fields index: every member name of the build, by initial.
- *  A letter page paints the whole letter. The landing page opens on A. */
+ *  A letter page paints the whole letter. */
 export function initFieldsIndex() {
   const fieldsList = $('#fieldsList');
   if (!fieldsList) return;
 
   const kind = fieldsList.dataset.kind;
   const letter = fieldsList.dataset.letter || '';
+  if (!letter) return;
+
   const letterOf = (n) => (/^[a-z]/i.test(n) ? n[0].toLowerCase() : '_');
-  const filter = $('#pageFilter');
   const fallback = $('.members-fallback');
-  const hint = 'Type to find a member, or pick a letter.';
 
   const collect = (pred) => {
     const owners = new Map();
@@ -102,33 +98,14 @@ export function initFieldsIndex() {
       })
       .join('');
     if (fallback) {
-      fallback.textContent = names.length ? `${names.length.toLocaleString()} names.` : hint;
+      fallback.textContent = names.length ? `${names.length.toLocaleString()} names.` : 'No names.';
     }
-    rescanFilter();
     return names.length;
   };
 
   loadIndex().then(() => {
-    if (letter) {
-      const n = paint(collect((name) => letterOf(name) === letter));
-      $('h1').insertAdjacentHTML('beforeend', ` <span class="count">${n.toLocaleString()}</span>`);
-      if (filter) filter.placeholder = `Filter ${n.toLocaleString()} fields…`;
-      return;
-    }
-
-    const MIN = 2;
-    const run = () => {
-      const q = (filter?.value || '').trim().toLowerCase();
-      if (q.length < MIN) {
-        fieldsList.innerHTML = '';
-        if (fallback) fallback.textContent = hint;
-        rescanFilter();
-        return;
-      }
-      paint(collect((name) => name.toLowerCase().includes(q)));
-    };
-    filter?.addEventListener('input', run);
-    run();
+    const n = paint(collect((name) => letterOf(name) === letter));
+    $('h1').insertAdjacentHTML('beforeend', ` <span class="count">${n.toLocaleString()}</span>`);
   }).catch(() => {
     if (fallback) fallback.textContent = 'The list could not be loaded.';
   });

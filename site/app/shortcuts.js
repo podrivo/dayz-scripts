@@ -17,7 +17,7 @@ const SHORTCUTS = [
   [['↵'], 'Open the selected result'],
   [['M'], 'Switch between light and dark'],
   [['?'], 'This list'],
-  [['Esc'], 'Close an overlay, or clear the page filter'],
+  [['Esc'], 'Close an overlay'],
 ];
 
 let help = null;

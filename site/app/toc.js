@@ -8,8 +8,7 @@
 
 import { $ } from './dom.js';
 
-/* Set by buildToc, and called by the page filter when a whole section
-   disappears. A no-op on every page that has no contents panel. */
+/* Set by buildToc. A no-op on every page that has no contents panel. */
 let refresh = () => {};
 
 /** Re-mark the panel after something on the page was hidden or shown. */

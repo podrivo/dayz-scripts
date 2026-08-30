@@ -7,7 +7,6 @@ import {
 import {
   anchorFor, byName, callersBlock, fileLineHref, referencesBlock,
 } from './shared.js';
-import { pageBar } from './pagebar.js';
 
 export function renderModulesIndex(ctx) {
   const { site, base } = ctx;
@@ -28,7 +27,6 @@ export function renderModulesIndex(ctx) {
     ...ctx,
     title: 'Topics',
     active: 'topics/',
-    bar: pageBar({ tools: true, filter: 'Filter topics…' }),
     description: 'DayZ Enforce Script API grouped into topics: math, physics, entities, UI, constants and more.',
     breadcrumbs: [{ label: 'Topics' }],
     content,
@@ -191,14 +189,10 @@ ${section('Value Documentation', defBlocks(valueEntries))}
 ${section('Function Documentation', defBlocks(fnEntries))}
 ${section('Variable Documentation', defBlocks(varEntries))}`;
 
-  // A short topic reads as a list; a long one has to be searched.
-  const declared = fnEntries.length + varEntries.length + valueEntries.length;
-
   return layout({
     ...ctx,
     title: mod.label,
     active: 'topics/',
-    bar: declared >= 12 ? pageBar({ filter: 'Filter this topic…' }) : '',
     description: `${mod.label} — DayZ Enforce Script API topic`,
     breadcrumbs: [{ label: 'Topics', href: `${base}topics/` }, { label: mod.label }],
     content,

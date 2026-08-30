@@ -166,7 +166,7 @@ ${body}`;
     ...ctx,
     title: key ? `Globals — ${label}` : 'Globals',
     active: `globals/${kind}`,
-    bar: pageBar({ tabs, filter: `Filter ${key ? label.toLowerCase() : 'globals'}…` }),
+    bar: pageBar({ tabs }),
     breadcrumbs: [
       { label: 'Globals', href: key ? `${base}globals/` : undefined },
       ...(key ? [{ label }] : []),

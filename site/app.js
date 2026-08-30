@@ -26,7 +26,6 @@ import { initTooltip } from './app/tooltip.js';
 import { initCopyBlocks, initCopySignatures } from './app/copy.js';
 import { initLlmCopy } from './app/llm.js';
 import { initPageBar } from './app/pagebar.js';
-import { initTreeTools, initFilter } from './app/filter.js';
 import { initAllMembers, initFieldsIndex } from './app/members.js';
 import { initToc } from './app/toc.js';
 import { initMinimap } from './app/minimap.js';
@@ -59,12 +58,8 @@ initCopyBlocks();
 initCopySignatures();
 initLlmCopy();
 
-// moving around a long page. The bar holds the controls; the filter goes
-// before the two pages below, which build their rows from search.json and
-// hand them back to it when they land.
+// moving around a long page
 initPageBar();
-initTreeTools();
-initFilter();
 initAllMembers();
 initFieldsIndex();
 initToc();

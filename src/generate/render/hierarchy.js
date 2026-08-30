@@ -30,7 +30,7 @@ export function renderHierarchy(ctx) {
     ...ctx,
     title: 'Class Hierarchy',
     active: 'hierarchy/',
-    bar: pageBar({ tabs: classTabs(base, 'hierarchy/'), tools: true, filter: 'Filter classes…' }),
+    bar: pageBar({ tabs: classTabs(base, 'hierarchy/') }),
     breadcrumbs: [{ label: 'Classes', href: `${base}classes/` }, { label: 'Hierarchy' }],
     content,
   });

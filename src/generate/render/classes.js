@@ -30,10 +30,7 @@ ${sections}`;
     ...ctx,
     title: 'Classes',
     active: 'classes/',
-    bar: pageBar({
-      tabs: classTabs(base, 'classes/'),
-      filter: 'Filter classes…',
-    }),
+    bar: pageBar({ tabs: classTabs(base, 'classes/') }),
     description: `All ${site.classes.size} DayZ Enforce Script classes, with descriptions.`,
     breadcrumbs: [{ label: 'Classes' }],
     content,
@@ -57,10 +54,7 @@ ${sections}`;
     ...ctx,
     title: 'Class Index',
     active: 'classes/index/',
-    bar: pageBar({
-      tabs: classTabs(base, 'classes/index/'),
-      filter: 'Filter classes…',
-    }),
+    bar: pageBar({ tabs: classTabs(base, 'classes/index/') }),
     breadcrumbs: [{ label: 'Classes', href: `${base}classes/` }, { label: 'Index' }],
     content,
   });
@@ -83,10 +77,7 @@ export function renderClassesLetter(ctx, letter, names, letters) {
     ...ctx,
     title: `Classes ${letterTitle(letter)}`,
     active: 'classes/',
-    bar: pageBar({
-      tabs: classTabs(base, `classes/${letter}/`),
-      filter: 'Filter classes…',
-    }),
+    bar: pageBar({ tabs: classTabs(base, `classes/${letter}/`) }),
     breadcrumbs: [
       { label: 'Classes', href: `${base}classes/` },
       { label: letterTitle(letter) },
@@ -111,14 +102,13 @@ export function renderFields(ctx, letter, letters, kind) {
 <h1>${title}${letter ? ` — ${letterTitle(letter)}` : ''}</h1>
 <p>${blurb} The same name is often declared by many classes, so each one links to every class that has it.</p>
 <dl class="fields" id="fieldsList" data-kind="${kind}"${letter ? ` data-letter="${esc(letter)}"` : ''}></dl>
-<p class="members-fallback">${letter ? 'Assembling the list from the class index.' : 'Type to find a member, or pick a letter.'}</p>`;
+<p class="members-fallback">${letter ? 'Assembling the list from the class index.' : 'Pick a letter.'}</p>`;
   return layout({
     ...ctx,
     title: letter ? `${title} ${letterTitle(letter)}` : title,
     active: dir,
     bar: pageBar({
       tabs: classTabs(base, dir),
-      filter: 'Filter members…',
       letters: { base, dir, list: letters, current: letter },
     }),
     breadcrumbs: [

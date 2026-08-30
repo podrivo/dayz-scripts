@@ -8,7 +8,6 @@ import {
 import {
   anchorFor, callersBlock, fileLineHref, locationLinks, referencesBlock,
 } from './shared.js';
-import { pageBar } from './pagebar.js';
 
 export function renderClass(ctx, cls) {
   const { site, base } = ctx;
@@ -74,13 +73,6 @@ ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}
   const section = (title, items, block) =>
     items.length ? `<h2 id="${slug(title)}">${title} <span class="count">${items.length}</span></h2>\n${items.map(block).join('\n')}` : '';
 
-  // A short class reads as a list; a long one has to be searched, and
-  // PlayerBase alone declares 876 members.
-  const total = cls.members.length + cls.methods.length;
-  const bar = total >= 12
-    ? pageBar({ filter: `Filter ${total.toLocaleString('en-US')} members…` })
-    : '';
-
   const locations = locationLinks(
     site,
     base,
@@ -121,7 +113,6 @@ ${section('Methods', methods, methodBlock)}
     ...ctx,
     title: cls.name,
     active: 'classes/',
-    bar,
     description: brief || `${cls.name} class — DayZ Enforce Script API`,
     content,
   });
@@ -177,7 +168,6 @@ ${chainHtml}
     ...ctx,
     title: `${cls.name} — all members`,
     active: 'classes/',
-    bar: pageBar({ filter: 'Filter members…' }),
     description: `Every member of ${cls.name}, its own and those inherited from ${chain.slice(1).join(', ')}.`,
     content,
   });

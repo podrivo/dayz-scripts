@@ -6,9 +6,7 @@ generated from the official
 [DayZ Script Diff](https://github.com/BohemiaInteractive/DayZ-Script-Diff)
 repository.
 
-**Site:** [diff.yadz.app](https://diff.yadz.app) ·
-**Source:** [yadzapp/diff](https://github.com/yadzapp/diff) ·
-**Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
+**Site:** [diff.yadz.app](https://diff.yadz.app)
 
 - 🔍 **Search** — find any class, method, enum, or constant
 - 🌳 **Inheritance trees** — see the full type hierarchy and inherited members
@@ -101,18 +99,16 @@ The pipeline is `src/fetch.js` → `src/parse-all.js` → `src/generate/` (or
 the writer and the dev server read. Page reuse, source links and the
 Enforce Script parser are documented in the files that implement them.
 
-[CONTRIBUTING.md](CONTRIBUTING.md) maps the rest: which file renders which
-URL, where the client-side behaviour lives, and the invariants to keep.
-
 When a new PC stable ships, add its forum thread (if it has one) in
 `src/generate/content.js`. Builds without a thread still appear.
 
-## Deployment
+## Contributing
 
-`.github/workflows/build.yml` runs on a daily schedule, on push, and on
-manual dispatch. It skips when upstream has no new commit; otherwise it
-fetches, parses, and commits `data/`. That commit is what triggers Netlify
-to run `npm run build` and deploy.
+The usual path is a pull request. Notes go in `site/notes.json` (see
+[Community notes](#community-notes)); everything else lives in this repo.
+[CONTRIBUTING.md](CONTRIBUTING.md) maps which file renders which URL, where
+the client-side behaviour lives, and the invariants to keep. Bugs and
+suggestions: [Discord](https://discord.yadz.app/).
 
 ## License
 

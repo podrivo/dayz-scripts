@@ -1,10 +1,9 @@
 /* The secondary bar, on the pages that carry one.
 
-   What is in it is the generator's business (src/generate/render/pagebar.js)
-   and what the field and the chips do is site/app/filter.js. This is the bar
-   itself: how tall it is, which the rest of the page has to know because the
-   bar is sticky and everything that scrolls to a heading has to clear it, and
-   the one thing in it that does not fit a phone. */
+   What is in it is the generator's business (src/generate/render/pagebar.js).
+   This is the bar itself: how tall it is, which the rest of the page has to
+   know because the bar is sticky and everything that scrolls to a heading
+   has to clear it, and the one thing in it that does not fit a phone. */
 
 import { $ } from './dom.js';
 
@@ -51,7 +50,7 @@ function chipMenu(bar) {
     bar.classList.toggle('open', open);
     btn.setAttribute('aria-expanded', String(open));
   });
-  // The chip itself is filter.js's to handle; all this wants is the name of
+  // The chip click is whoever owns the chips; all this wants is the name of
   // the one that won and the menu shut behind it.
   chips.addEventListener('click', (e) => {
     if (!e.target.closest('button[data-mod]')) return;
@@ -83,35 +82,51 @@ function chipMenu(bar) {
   apply();
 }
 
-/**
- * The filter starts as an icon in the header search's box. Opening it
- * reveals the field; closing it (empty, and the focus has left) puts the
- * icon back. A value keeps it open, including one the browser restored
- * across a back navigation.
- */
-function filterToggle(bar) {
-  const wrap = $('.pb-filter', bar);
-  const input = $('#pageFilter', wrap);
-  const btn = $('.pb-search-btn', wrap);
-  if (!wrap || !input || !btn) return;
+/** File-list layer tabs (`#1_Core` …) hide the other trees instead of
+ *  scrolling to a heading. Only the files index ships hash tabs over a tree. */
+function fileLayerTabs() {
+  const layerTabs = [...document.querySelectorAll('.pb-tab[href*="#"]')];
+  const main = $('.main');
+  if (!layerTabs.length || !main) return;
 
-  const setOpen = (on) => {
-    wrap.classList.toggle('open', on);
-    btn.setAttribute('aria-expanded', String(on));
-    input.tabIndex = on ? 0 : -1;
-    if (on) input.focus();
+  const trees = [...main.querySelectorAll('ul.tree')];
+  const layerOf = (tab) => {
+    const href = tab.getAttribute('href') || '';
+    const i = href.indexOf('#');
+    return i === -1 ? '' : decodeURIComponent(href.slice(i + 1));
+  };
+  let layer = decodeURIComponent(location.hash.slice(1));
+
+  const apply = () => {
+    for (const t of trees) {
+      for (const li of t.children) {
+        li.hidden = !!(layer && li.dataset.layer !== layer);
+      }
+    }
+    for (const tab of document.querySelectorAll('.pb-tab')) {
+      const on = layerOf(tab) === layer;
+      tab.classList.toggle('active', on);
+      if (on) tab.setAttribute('aria-current', 'page');
+      else tab.removeAttribute('aria-current');
+    }
   };
 
-  btn.addEventListener('click', () => setOpen(true));
-  input.addEventListener('blur', () => {
-    if (!input.value.trim()) setOpen(false);
+  const tabs = layerTabs[0].parentElement;
+  tabs.addEventListener('click', (e) => {
+    const tab = e.target.closest('a.pb-tab');
+    if (!tab || !tabs.contains(tab)) return;
+    e.preventDefault();
+    const next = layerOf(tab);
+    if (next === layer) return;
+    history.pushState(null, '', next ? `#${next}` : location.pathname + location.search);
+    layer = next;
+    apply();
   });
-  // filter.js eats Escape when the field has a value, to clear it. An empty
-  // field lets it through, and that is the way to put the icon back.
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !input.value) setOpen(false);
+  addEventListener('popstate', () => {
+    layer = decodeURIComponent(location.hash.slice(1));
+    apply();
   });
-  if (input.value) setOpen(true);
+  if (layer) apply();
 }
 
 /** Shut the letter picker when the click is outside it. */
@@ -133,7 +148,7 @@ export function initPageBar() {
   const bar = $('.pagebar');
   if (!bar) return;
   trackHeight(bar);
-  filterToggle(bar);
   chipMenu(bar);
   letterPick(bar);
+  fileLayerTabs();
 }

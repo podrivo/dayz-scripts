@@ -35,8 +35,6 @@ export function renderFilesIndex(ctx) {
         [`${base}files/`, 'All', true],
         ...FILE_LAYERS.map((n) => [`${base}files/#${n}`, n, false]),
       ],
-      tools: true,
-      filter: 'Filter files and directories…',
     }),
     breadcrumbs: [{ label: 'Files' }],
     content,

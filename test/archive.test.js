@@ -28,7 +28,7 @@ test('packed inners round-trip through the archive template', () => {
     active: 'classes/',
     // The page bar is chrome, so it is not in the body an archive stores; it
     // rides in the meta line instead, and losing it would cost an archived
-    // page its filter without anything else looking wrong.
+    // page its tabs without anything else looking wrong.
     bar: '<div class="pagebar">controls</div>',
     content: '<h1>Foo</h1><p>hello</p>',
   });

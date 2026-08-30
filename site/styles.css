@@ -547,7 +547,7 @@ h3.member-name .ordinal { font-size: var(--text-xs); font-weight: 400; color: va
    A six-thousand-line source file squashed into one column beside itself — a
    bar per line, plus a window marking what is on screen. VS Code's minimap,
    used as a scrollbar you can read. The other long pages are lists of named
-   things and get the table of contents and the filter field instead.
+   things and get the table of contents instead.
 
    It sits in the shell as a third column rather than pinned to the viewport
    edge, so it stays against the text instead of drifting away on a wide
@@ -1033,8 +1033,7 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
    not given the element a display of its own, which outranks it. */
 .fields dd[hidden], .toc a[hidden] { display: none; }
 
-/* The changelog builds its own filter in site/compare.js, in the page rather
-   than in a bar; the page bar's own field is .pb-filter below. */
+/* The changelog builds its own filter in site/compare.js. */
 .filter-input {
   flex: 1; min-width: 0; max-width: 340px; height: 34px; padding: 0 12px;
   border: 1px solid var(--line); border-radius: 8px;
@@ -1047,14 +1046,13 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 
 /* ---- the page bar ----
    Everything that acts on the page you are already on, gathered into one
-   strip under the site nav: the tabs to this page's siblings, expand and
-   collapse, the filter field and what narrows it, and the A-Z. Built by
-   src/generate/render/pagebar.js.
+   strip under the site nav: the tabs to this page's siblings and the A-Z.
+   Built by src/generate/render/pagebar.js.
 
    A second bar under the first, so it spans the window the way the header
    does rather than stopping at the edge of the text column, and it hangs
    below it in the document for the same reason. Sticky, because a control
-   that scrolls away is no use to the page it narrows. Its height is
+   that scrolls away is no use to the page it belongs to. Its height is
    published as --h-bar by site/app/pagebar.js, which is what keeps anchors
    from landing underneath it. */
 .pagebar {
@@ -1097,39 +1095,6 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 }
 .pb-tab:hover { background: var(--bg3); color: var(--fg); text-decoration: none; }
 .pb-tab.active { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
-
-/* One height across the bar, the header's, so the row reads as one control
-   strip rather than as a handful of unrelated widgets. */
-.pb-tools { display: flex; flex: none; gap: 8px; }
-.pb-tools .btn { height: 36px; padding: 0 12px; }
-
-/* The header search trigger's colours on a 36px icon. Opening it is a
-   width change, so the rest of the bar slides rather than jumping. */
-.pb-filter {
-  display: flex; align-items: center;
-  flex: none; width: 36px; height: 36px;
-  overflow: hidden;
-  border: 1px solid var(--line); border-radius: 8px;
-  background: var(--bg2); color: var(--fg2);
-  transition: width .2s ease;
-}
-.pb-filter:hover, .pb-filter.open:focus-within { border-color: var(--accent2); }
-.pb-filter.open { width: 220px; }
-.pb-search-btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  flex: none; width: 36px; height: 36px; padding: 0;
-  border: none; background: none; color: inherit;
-  font: inherit; cursor: pointer;
-}
-.pb-input {
-  flex: 1; min-width: 0; width: 0; height: 100%; padding: 0;
-  border: none; outline: none; background: none;
-  color: var(--fg); font: inherit; font-size: var(--text-sm);
-}
-.pb-filter:not(.open) .pb-input,
-.pb-filter:not(.open) .pb-count { visibility: hidden; position: absolute; }
-.pb-input::-webkit-search-cancel-button { cursor: pointer; }
-.pb-count { flex: none; margin-left: auto; padding-right: 8px; font-size: var(--text-xs); white-space: nowrap; }
 
 .pb-chips { flex: none; gap: 4px; }
 
