@@ -135,26 +135,10 @@ function fileLayerTabs() {
   if (layer) apply();
 }
 
-/** Shut the letter picker when the click is outside it. */
-function letterPick(bar) {
-  const pick = $('.pb-pick', bar);
-  if (!pick) return;
-  addEventListener('click', (e) => {
-    if (pick.open && !e.target.closest('.pb-pick')) pick.open = false;
-  });
-  addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && pick.open) {
-      e.stopPropagation();
-      pick.open = false;
-    }
-  });
-}
-
 export function initPageBar() {
   const bar = $('.pagebar');
   if (!bar) return;
   trackHeight(bar);
   chipMenu(bar);
-  letterPick(bar);
   fileLayerTabs();
 }

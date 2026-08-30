@@ -1090,39 +1090,19 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 
 .pb-chips { flex: none; gap: 4px; }
 
-/* Members-index letter picker. Twenty-seven letters do not fit in the row,
-   so they hang from a button the way the access chips do on a phone. */
-.pb-pick { position: relative; flex: none; }
-.pb-pick > summary {
-  display: inline-flex; align-items: center; gap: 6px;
-  height: 36px; padding: 0 10px;
-  border: 1px solid var(--line); border-radius: 8px;
-  background: var(--bg2); color: var(--fg); font-size: var(--text-sm); cursor: pointer;
-  list-style: none;
-}
-.pb-pick > summary::-webkit-details-marker { display: none; }
-.pb-pick > summary:hover { border-color: var(--accent2); }
-.pb-pick > summary::after {
-  content: ''; flex: none; width: 10px; height: 10px;
-  background: currentColor; opacity: .5;
-  --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M2 3.5l3 3 3-3'/%3E%3C/svg%3E");
-  -webkit-mask: var(--chev) center / 10px no-repeat;
-  mask: var(--chev) center / 10px no-repeat;
-}
-.pb-pick-menu {
-  position: absolute; z-index: 60; top: calc(100% + 4px); left: 0;
-  display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px;
-  min-width: 220px; padding: 6px;
-  background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
-  box-shadow: var(--shadow);
+/* Members-index letters. Their own row so all twenty-seven stay visible. */
+.pagebar:has(.pb-letters) .pb-row { padding-bottom: 2px; min-height: 0; }
+.pb-letters {
+  display: flex; flex-wrap: wrap; gap: 2px;
+  padding: 4px 0 8px;
 }
 .pb-letter {
-  display: inline-flex; min-width: 28px; height: 32px;
+  display: inline-flex; min-width: 28px; height: 28px;
   align-items: center; justify-content: center;
   border-radius: 6px;
-  color: var(--fg); font-size: var(--text-sm); font-weight: 600;
+  color: var(--fg2); font-size: var(--text-sm); font-weight: 600;
 }
-.pb-letter:hover { background: var(--bg3); text-decoration: none; }
+.pb-letter:hover { background: var(--bg3); color: var(--fg); text-decoration: none; }
 .pb-letter.active { background: var(--accent-bg); color: var(--accent); }
 
 /* The chips as a menu, which is what they become on a narrow screen: seven

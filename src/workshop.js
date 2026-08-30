@@ -3,7 +3,75 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT } from './util.js';
+import { ROOT, readJson } from './util.js';
+
+const CATALOG = path.join(ROOT, 'site', 'workshop.json');
+const workshopHref = (id) => `https://steamcommunity.com/sharedfiles/filedetails/?id=${id}`;
+
+function catalogMod(it) {
+  const id = String(it.id);
+  return {
+    name: it.title,
+    id,
+    url: it.url || workshopHref(id),
+    description: it.description || '',
+    tags: it.tags || [],
+    preview: it.preview || '',
+    created: it.created || '',
+    updated: it.updated || '',
+  };
+}
+
+function fillMod(existing, it) {
+  const extra = catalogMod(it);
+  let changed = false;
+  const next = { ...existing };
+  for (const [k, v] of Object.entries(extra)) {
+    if (v === '' || (Array.isArray(v) && !v.length)) continue;
+    if (next[k] === undefined || next[k] === '') {
+      next[k] = v;
+      changed = true;
+    }
+  }
+  return changed ? next : existing;
+}
+
+function growCatalog(items) {
+  if (process.env.NETLIFY || process.env.CI || !items.length) return;
+  let catalog;
+  try {
+    catalog = readJson(CATALOG);
+  } catch {
+    return;
+  }
+  const mapIds = new Set((catalog.maps || []).map((m) => m.id && String(m.id)).filter(Boolean));
+  const byId = new Map((catalog.mods || []).map((m) => [String(m.id), m]));
+  const added = [];
+  let filled = 0;
+  for (const it of items) {
+    const id = String(it.id);
+    if (!id || mapIds.has(id)) continue;
+    const prev = byId.get(id);
+    if (!prev) {
+      const entry = catalogMod(it);
+      byId.set(id, entry);
+      added.push(entry);
+      continue;
+    }
+    const next = fillMod(prev, it);
+    if (next !== prev) {
+      byId.set(id, next);
+      filled++;
+    }
+  }
+  if (!added.length && !filled) return;
+  catalog.mods = [...byId.values()];
+  fs.writeFileSync(CATALOG, `${JSON.stringify(catalog, null, 2)}\n`);
+  const bits = [];
+  if (added.length) bits.push(`added ${added.map((m) => m.name).join(', ')}`);
+  if (filled) bits.push(`filled ${filled}`);
+  console.log(`workshop.json: ${bits.join('; ')}`);
+}
 
 const envFile = path.join(ROOT, '.env');
 if (fs.existsSync(envFile)) {
@@ -58,6 +126,7 @@ export async function workshopPayload() {
       cursor: '*',
       filetype: 0,
       return_short_description: true,
+      return_tags: true,
     }),
     queryFiles(key, { query_type: 9, numperpage: 1, cursor: '*', filetype: 1, totalonly: true }).catch(() => null),
     fetch(PLAYERS)
@@ -76,10 +145,18 @@ export async function workshopPayload() {
         id: String(it.publishedfileid),
         title: it.title,
         subscriptions: Number(it.subscriptions || it.lifetime_subscriptions || 0),
-        url: `https://steamcommunity.com/sharedfiles/filedetails/?id=${it.publishedfileid}`,
+        url: workshopHref(it.publishedfileid),
+        description: (it.short_description || '').replace(/\s+/g, ' ').trim().slice(0, 280),
+        tags: (it.tags || []).map((t) => t.tag).filter(Boolean),
+        preview: it.preview_url || '',
+        created: it.time_created ? new Date(it.time_created * 1000).toISOString().slice(0, 10) : '',
+        updated: it.time_updated ? new Date(it.time_updated * 1000).toISOString().slice(0, 10) : '',
       })),
   };
-  if (body.items.length) cache = { at: Date.now(), body };
+  if (body.items.length) {
+    cache = { at: Date.now(), body };
+    growCatalog(body.items);
+  }
   return body;
 }
 

@@ -1,7 +1,20 @@
 // Hand-maintained content for /community/ and /about/: links off the site,
 // plus the official forum thread for each PC stable update. None of it can
 // be derived from the script sources, so it lives here and grows as new
-// builds ship.
+// builds ship. Maps and known Workshop mods live in site/workshop.json.
+
+import path from 'node:path';
+import { ROOT, readJson } from '../util.js';
+
+const catalog = readJson(path.join(ROOT, 'site', 'workshop.json'));
+const workshopHref = (id) => `https://steamcommunity.com/sharedfiles/filedetails/?id=${id}`;
+const mapLink = (m) => {
+  const url = m.url || workshopHref(m.id);
+  if (m.kind === 'official') {
+    return [m.name, url, `${m.note}. World ${m.world}, mission ${m.mission}`];
+  }
+  return [m.name, url, `Workshop · world ${m.world}`];
+};
 
 /** Where the site is served from, for the absolute URLs that have to name it:
  *  the sitemap, robots.txt, and the canonical and OpenGraph tags on a page. */
@@ -36,24 +49,8 @@ export const OFFICIAL_MODDING_LINKS = [
   ['Central Economy', 'https://github.com/BohemiaInteractive/DayZ-Central-Economy', 'The vanilla loot economy files, as the game ships them'],
 ];
 
-/** Official terrains. Livonia joined the base game in 1.25; Sakhal is Frostline. */
-export const OFFICIAL_MAPS = [
-  ['Chernarus+', 'https://community.bistudio.com/wiki/Chernarus', 'Base game. World chernarusplus, mission dayzOffline.chernarusplus'],
-  ['Livonia', 'https://dayz.wiki.gg/wiki/Livonia', 'Included since 1.25. World enoch, mission dayzOffline.enoch'],
-  ['Sakhal', 'https://store.steampowered.com/app/2968040/DayZ_Frostline/', 'Frostline DLC. World sakhal, mission dayzOffline.sakhal'],
-];
-
-/** Community terrains people actually run. Workshop items, not official. */
-export const WORKSHOP_MAPS = [
-  ['Namalsk', 'https://steamcommunity.com/sharedfiles/filedetails/?id=2289456201', 'Workshop · world namalsk'],
-  ['Deer Isle', 'https://steamcommunity.com/sharedfiles/filedetails/?id=1602372402', 'Workshop · world deerisle'],
-  ['Banov', 'https://steamcommunity.com/sharedfiles/filedetails/?id=2415195639', 'Workshop · world banov'],
-  ['Takistan Plus', 'https://steamcommunity.com/sharedfiles/filedetails/?id=2563233742', 'Workshop · world takistanplus'],
-  ['Esseker', 'https://steamcommunity.com/sharedfiles/filedetails/?id=2462896799', 'Workshop · world esseker'],
-  ['Bitterroot', 'https://steamcommunity.com/sharedfiles/filedetails/?id=2906823750', 'Workshop · world bitterroot'],
-  ['Chiemsee', 'https://steamcommunity.com/sharedfiles/filedetails/?id=1580589252', 'Workshop · world chiemsee'],
-  ['Alteria', 'https://steamcommunity.com/sharedfiles/filedetails/?id=3296994216', 'Workshop · world alteria'],
-];
+export const OFFICIAL_MAPS = catalog.maps.filter((m) => m.kind === 'official').map(mapLink);
+export const WORKSHOP_MAPS = catalog.maps.filter((m) => m.kind === 'workshop').map(mapLink);
 
 /** The servers to ask in. */
 export const DISCORD_LINKS = [

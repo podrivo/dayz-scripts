@@ -28,9 +28,8 @@ const tabStrip = (tabs) =>
     )
     .join('')}</nav>`;
 
-/** Letter picker, only on the members index — that list cannot fit on one page. */
-const letterPick = ({ base, dir, list, current }) => {
-  const label = !current ? 'Letter' : current === '_' ? '#' : current.toUpperCase();
+/** Letter strip, only on the members index — that list cannot fit on one page. */
+const letterRow = ({ base, dir, list, current }) => {
   const links = [...list]
     .map((l) => {
       const text = l === '_' ? '#' : l.toUpperCase();
@@ -38,7 +37,7 @@ const letterPick = ({ base, dir, list, current }) => {
       return `<a class="pb-letter${on ? ' active' : ''}" href="${base}${dir}${l}/"${on ? ' aria-current="page"' : ''}>${text}</a>`;
     })
     .join('');
-  return /* html */ `<details class="pb-pick"><summary>${esc(label)}</summary><nav class="pb-pick-menu" aria-label="By letter">${links}</nav></details>`;
+  return /* html */ `<nav class="pb-letters" aria-label="By letter">${links}</nav>`;
 };
 
 /** Sibling kinds of the Classes section. */
@@ -74,16 +73,17 @@ const chipRow = (chips) =>
  *
  * - `tabs`    [href, label, active][] — the sibling pages of this one
  * - `chips`   [modifier, label][] — what the list can be narrowed to
- * - `letters` { base, dir, list, current } — the members-index letter picker
+ * - `letters` { base, dir, list, current } — the members-index letters
  *
- * One row. Letters are a menu, not a strip: twenty-seven of them never fit
- * beside the tabs.
+ * Tabs and chips share a row. Letters are a second row: twenty-seven of them
+ * never fit beside the tabs, and a strip is how they stay visible.
  */
 export function pageBar({ tabs, chips, letters } = {}) {
   const row = [
     chips?.length ? chipRow(chips) : '',
     tabs?.length ? tabStrip(tabs) : '',
-    letters ? letterPick(letters) : '',
   ].join('');
-  return row ? `<div class="pagebar"><div class="pb-row">${row}</div></div>` : '';
+  const az = letters ? letterRow(letters) : '';
+  if (!row && !az) return '';
+  return `<div class="pagebar">${row ? `<div class="pb-row">${row}</div>` : ''}${az}</div>`;
 }

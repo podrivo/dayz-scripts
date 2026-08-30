@@ -1,0 +1,211 @@
+{
+  "maps": [
+    {
+      "name": "Chernarus+",
+      "kind": "official",
+      "world": "chernarusplus",
+      "mission": "dayzOffline.chernarusplus",
+      "url": "https://community.bistudio.com/wiki/Chernarus",
+      "note": "Base game"
+    },
+    {
+      "name": "Livonia",
+      "kind": "official",
+      "world": "enoch",
+      "mission": "dayzOffline.enoch",
+      "url": "https://dayz.wiki.gg/wiki/Livonia",
+      "note": "Included since 1.25"
+    },
+    {
+      "name": "Sakhal",
+      "kind": "official",
+      "world": "sakhal",
+      "mission": "dayzOffline.sakhal",
+      "url": "https://store.steampowered.com/app/2968040/DayZ_Frostline/",
+      "note": "Frostline DLC"
+    },
+    {
+      "name": "Namalsk",
+      "kind": "workshop",
+      "world": "namalsk",
+      "id": "2289456201",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2289456201"
+    },
+    {
+      "name": "Deer Isle",
+      "kind": "workshop",
+      "world": "deerisle",
+      "id": "1602372402",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1602372402"
+    },
+    {
+      "name": "Banov",
+      "kind": "workshop",
+      "world": "banov",
+      "id": "2415195639",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2415195639"
+    },
+    {
+      "name": "Takistan Plus",
+      "kind": "workshop",
+      "world": "takistanplus",
+      "id": "2563233742",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2563233742"
+    },
+    {
+      "name": "Esseker",
+      "kind": "workshop",
+      "world": "esseker",
+      "id": "2462896799",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2462896799"
+    },
+    {
+      "name": "Bitterroot",
+      "kind": "workshop",
+      "world": "bitterroot",
+      "id": "2906823750",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2906823750"
+    },
+    {
+      "name": "Chiemsee",
+      "kind": "workshop",
+      "world": "chiemsee",
+      "id": "1580589252",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1580589252"
+    },
+    {
+      "name": "Alteria",
+      "kind": "workshop",
+      "world": "alteria",
+      "id": "3296994216",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3296994216"
+    }
+  ],
+  "mods": [
+    {
+      "name": "CF",
+      "id": "1559212036",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1559212036",
+      "description": "This is a Community framework for DayZ SA. One notable feature is it aims to resolve the issue of conflicting RPC type ID's and mods. For help on using this mod in your own projects, follow this README on github the Community-Framework github here. Install",
+      "tags": [
+        "Mod"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/1303178882177497765/484890DF6AC1AE6484045A7C4458E0D1D35DBD05/",
+      "created": "2018-11-07",
+      "updated": "2026-02-19"
+    },
+    {
+      "name": "Code Lock",
+      "id": "1646187754",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1646187754",
+      "description": "Introduction: Code Lock is aimed at simplifying the base combination lock. No longer will you have to scramble to lock a gate that gives access to your base. There are also tons of configurable settings for this mod including logs, raid times, raid setting",
+      "tags": [
+        "Mod",
+        "Character",
+        "Environment",
+        "Equipment",
+        "Props"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/754842852191533742/A7044E09EFD347E788B5B77D832F7D61845CFA06/",
+      "created": "2019-02-05",
+      "updated": "2024-11-01"
+    },
+    {
+      "name": "VPPAdminTools",
+      "id": "1828439124",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1828439124",
+      "description": "Rent your DayZ Server From: https://i.imgur.com/CrXpSAE.png DZServers.Host This is the official Steam Workshop page for VPPAdminTools. Join our Discord (click image above) to leave feedback / suggestions. Project source code & contributions: https://i.imgu",
+      "tags": [
+        "Mod"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/17252369608484396380/5CFB22B1C3776DFB3CFA37C828399F142EDF3FDE/",
+      "created": "2019-08-08",
+      "updated": "2026-07-15"
+    },
+    {
+      "name": "BuilderItems",
+      "id": "1565871491",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1565871491",
+      "description": "BuilderItems is a mod that allows server owners to have a much wider range of options when placing details on the map. This is not the editor itself, but a mod to give you more options with the editor! You still need to download and use community offline m",
+      "tags": [
+        "Mod",
+        "Environment",
+        "Props"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/38938569345445671/96AF022788642B1D87D8948E932208B771C4115D/",
+      "created": "2018-11-16",
+      "updated": "2024-11-26"
+    },
+    {
+      "name": "Dabs Framework",
+      "id": "2545327648",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2545327648",
+      "description": "Dabs Framework is an Open Source, lightweight modding framework, designed to give modders and server owners tools to quickly and effectively create new mods for the community. Source Code: All source code is available on the Github Monetization: You are he",
+      "tags": [
+        "Mechanics",
+        "Mod"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/15185888921370759744/0B07310EF6B10AF16E61D0BE50EA7637E7FDFAEF/",
+      "created": "2021-07-12",
+      "updated": "2026-05-30"
+    },
+    {
+      "name": "FlipTransport",
+      "id": "1832448183",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1832448183",
+      "description": "Description Ever drove your vehicle so fast around a corner that it flipped? Or your vehicle launched so far into the sky your friends lost sight of you? Well when the vehicle finally decides to come down from the sky and roll over on it's side or on it's",
+      "tags": [
+        "Mod",
+        "Mechanics",
+        "Vehicle"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/2490019128130409302/491A57251322EB1671BCC91601A685AAD9DB29FF/",
+      "created": "2019-08-12",
+      "updated": "2024-10-13"
+    },
+    {
+      "name": "WindstridesClothingPack",
+      "id": "1797720064",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1797720064",
+      "description": "v13.4 https://media.giphy.com/media/LmfXVQNAC4Y3w5Udzb/giphy.gif https://media.giphy.com/media/igsIiFmeetB0yGfoCS/giphy.gif This mod pack will bring to life clothing items that i think fits the post-apocalyptic Chernarus. All the items in this pack feature",
+      "tags": [
+        "Mod",
+        "Character",
+        "Economy",
+        "Equipment"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/1663480226053881998/C4E472AE3BA243A415A92853DE9869120743D3A2/",
+      "created": "2019-07-09",
+      "updated": "2024-10-23"
+    },
+    {
+      "name": "BaseBuildingPlus",
+      "id": "1710977250",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1710977250",
+      "description": "Updated for 1.27! After 2+ years, BBP has been updated with some fixes for the 1.27 update. Visit the discord to view the fixes, please report any other bugs to the discord so I can get those fixed. Thanks! BBP 2.0 update was released for Dayz 1.18, it bro",
+      "tags": [
+        "Economy",
+        "Environment",
+        "Equipment",
+        "Props",
+        "Mod"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/1836915105922968803/C7D90B8C5FA3366374884009F01B67DA15ADABD9/",
+      "created": "2019-04-13",
+      "updated": "2025-03-22"
+    },
+    {
+      "name": "Advanced Weapon Scopes",
+      "id": "2143128974",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2143128974",
+      "description": "This mod is designed as almost complete replacement for vanilla scopes for providing more smooth game experience since only my scopes has unique abilities. My recomendation is getting rid of any vanilla scopes except PU, Kobra, PSO and 1PN51. Mod content:",
+      "tags": [
+        "Mod",
+        "Equipment"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/1843657354507658651/495F60928EF8B618A0BB4CBBCAF6F8D27B396887/",
+      "created": "2020-06-26",
+      "updated": "2023-11-10"
+    }
+  ]
+}

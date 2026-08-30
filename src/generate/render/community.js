@@ -14,10 +14,11 @@ import { linkCards } from './shared.js';
  * It closes with community notes, which are the way to add documentation here
  * rather than link to it elsewhere.
  *
- * The lists are hand-maintained in src/generate/content.js. Nothing here is
- * derived from a build, so these bytes are identical across all of them and
- * the page keeps its hard link; see layout() in src/generate/html.js. The
- * Workshop section is an empty shell, filled by site/app/workshop.js.
+ * The lists are hand-maintained in src/generate/content.js. Maps and known
+ * Workshop mods are site/workshop.json. Nothing here is derived from a build,
+ * so these bytes are identical across all of them and the page keeps its hard
+ * link; see layout() in src/generate/html.js. The Workshop section is an empty
+ * shell, filled by site/app/workshop.js.
  */
 export function renderCommunity(ctx) {
   const section = ({ id, title, links }) => /* html */ `<h2 id="${id}">${esc(title)}</h2>
