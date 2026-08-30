@@ -40,33 +40,39 @@ export function renderHome(ctx) {
   ${stat(s.globals, 'constants', base + 'globals/constants/')}
   ${stat(s.files, 'script files', base + 'files/')}
 </section>
-<div class="cards">
-  <a class="card" href="${base}classes/">
-    <h3>Classes</h3>
-    <p>All ${s.classes.toLocaleString('en-US')} classes and every member.</p>
-  </a>
-  <a class="card" href="${base}files/">
-    <h3>Files</h3>
-    <p>All ${s.files.toLocaleString('en-US')} script files in the layout the game ships: 1_Core through 5_Mission.</p>
-  </a>
-  <a class="card" href="${base}topics/">
-    <h3>Topics</h3>
-    <p>The ${site.groups.size} topics the scripts group themselves into — math, physics, entities, UI and the constant tables.</p>
-  </a>
-  <a class="card" href="${base}hierarchy/">
-    <h3>Hierarchy</h3>
-    <p>What extends what, from engine types down through every scripted subclass.</p>
-  </a>
-  <a class="card" href="${base}globals/">
-    <h3>Globals</h3>
-    <p>Functions, constants, enums, typedefs and macros declared outside a class.</p>
-  </a>
-  <a class="card" href="${base}changelog/">
-    <h3>Changelog</h3>
-    <p>What changed in the script API between two game builds.</p>
-  </a>
-</div>
-${linkCards(explore)}
+<section>
+  <h2>Browse</h2>
+  <div class="cards">
+    <a class="card" href="${base}classes/">
+      <h3>Classes</h3>
+      <p>All ${s.classes.toLocaleString('en-US')} classes and every member.</p>
+    </a>
+    <a class="card" href="${base}files/">
+      <h3>Files</h3>
+      <p>All ${s.files.toLocaleString('en-US')} script files in the layout the game ships: 1_Core through 5_Mission.</p>
+    </a>
+    <a class="card" href="${base}topics/">
+      <h3>Topics</h3>
+      <p>The ${site.groups.size} topics the scripts group themselves into — math, physics, entities, UI and the constant tables.</p>
+    </a>
+    <a class="card" href="${base}hierarchy/">
+      <h3>Hierarchy</h3>
+      <p>What extends what, from engine types down through every scripted subclass.</p>
+    </a>
+    <a class="card" href="${base}globals/">
+      <h3>Globals</h3>
+      <p>Functions, constants, enums, typedefs and macros declared outside a class.</p>
+    </a>
+    <a class="card" href="${base}changelog/">
+      <h3>Changelog</h3>
+      <p>What changed in the script API between two game builds.</p>
+    </a>
+  </div>
+</section>
+<section>
+  <h2>Start here</h2>
+  ${linkCards(explore)}
+</section>
 </div>`;
 
   return layout({
