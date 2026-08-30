@@ -165,10 +165,17 @@ function addTimeline(main, hist, builds, rec, here) {
     return `<div class="th-row th-${cls}"${hidden ? ' hidden' : ''}><span class="th-op" aria-hidden="true">${sign}</span>${inner}</div>`;
   };
 
-  // How many of the rows still hidden to show at once: five, except that a
-  // step is never allowed to leave a single row behind — six remaining show
-  // as six, so "See more" always pays for the click.
-  const step = (remaining) => (remaining <= 6 ? remaining : 5);
+  // First glance is five. A click with a long tail opens ten, and a step
+  // never leaves a single row behind — six remaining show as six, eleven
+  // as eleven — so the button always pays for the click.
+  const step = (remaining, first) => {
+    const n = first ? 5 : 10;
+    return remaining <= n + 1 ? remaining : n;
+  };
+  const moreLabel = (hidden) => {
+    const n = step(hidden);
+    return n < hidden ? `See ${n} more` : `See all (${hidden})`;
+  };
 
   const entryHtml = ({ idx, added, rows }) => {
     const b = builds[idx];
@@ -181,10 +188,10 @@ function addTimeline(main, hist, builds, rec, here) {
       : '';
     // Every row is rendered; the ones past the cap wait, hidden, for the
     // button below them, so seeing more never rebuilds anything.
-    const shown = step(rows.length);
+    const shown = step(rows.length, true);
     const list = rows.map((row, i) => rowHtml(row, i >= shown)).join('');
     const more = rows.length > shown
-      ? `<button type="button" class="th-more">See more (${rows.length - shown})</button>`
+      ? `<button type="button" class="th-more">${moreLabel(rows.length - shown)}</button>`
       : '';
     return `<div class="th-build">${head}${born}${list}${more}</div>`;
   };
@@ -220,7 +227,7 @@ function addTimeline(main, hist, builds, rec, here) {
     const hidden = [...btn.closest('.th-build').querySelectorAll('.th-row[hidden]')];
     const n = step(hidden.length);
     for (const row of hidden.slice(0, n)) row.hidden = false;
-    if (hidden.length > n) btn.textContent = `See more (${hidden.length - n})`;
+    if (hidden.length > n) btn.textContent = moreLabel(hidden.length - n);
     else btn.remove();
   });
 
