@@ -104,14 +104,38 @@ function packKind(map, idx) {
   return out;
 }
 
-/** Newest-first `versions` (the same order as assets/versions.json). */
-export function serializeHistory(history, versions) {
+function packCounts(events, alive, idx) {
+  const out = {};
+  for (const [name, list] of events) {
+    if (!alive.has(name)) continue;
+    const packed = [];
+    for (const ev of list) {
+      const i = idx.get(ev.build);
+      if (i != null) packed.push(i);
+    }
+    packed.sort((a, b) => a - b);
+    if (packed.length) out[name] = packed;
+  }
+  return out;
+}
+
+/** Newest-first `versions` (the same order as assets/versions.json).
+ *  `changes` is the event indices only, so the button can count without
+ *  fetching timelines.json. */
+export function serializeHistory(history, versions, timelines) {
   const idx = new Map(versions.map((v, i) => [v.build, i]));
-  return {
+  const packed = {
     builds: versions.map((v) => v.build),
     class: packKind(history.class, idx),
     enum: packKind(history.enum, idx),
   };
+  if (timelines) {
+    packed.changes = {
+      class: packCounts(timelines.class, history.class, idx),
+      enum: packCounts(timelines.enum, history.enum, idx),
+    };
+  }
+  return packed;
 }
 
 function packEvents(events, alive, idx) {
@@ -163,7 +187,7 @@ export function buildHistoryAssets(versions, siteFor) {
   }
   if (!history) return { history: emptyPacked, timelines: emptyPacked };
   return {
-    history: serializeHistory(history, versions),
+    history: serializeHistory(history, versions, timelines),
     timelines: serializeTimelines(timelines, history, versions),
   };
 }

@@ -8,10 +8,11 @@
 
    history.json only says first and last, which is all a badge can wear. The
    whole story — every build that touched this type, member by member — is in
-   /assets/timelines.json, packed the same way, and the History disclosure
-   below fetches that on demand and lays it out as a timeline. */
+   /assets/timelines.json, packed the same way, and the History button beside
+   the title fetches that on demand and lays it out in a panel. */
 
 import { $, ROOT, esc, fmtDate, anchorOf, pageType, track } from './dom.js';
+import { closeOthers, onOverlay } from './overlay.js';
 import { current, identity } from './builds.js';
 
 const typeRec = (p) =>
@@ -106,11 +107,10 @@ export function initHistory() {
 }
 
 /* ---------- the timeline ----------
-   A History disclosure beside the badges, on every class and enum page.
-   Opening it fetches timelines.json and renders every build that touched
-   this type, newest first. Fetched rather than shipped for the same reason
-   the badges are, and on demand rather than on load because most visits
-   never ask.
+   A 24px History button beside the title, on every class and enum page.
+   Opening it fetches timelines.json and slides a panel in from the right.
+   Fetched rather than shipped for the same reason the badges are, and on
+   demand rather than on load because most visits never ask.
 
    Only events at or before the build being viewed are shown, so an
    archived page tells the story as it stood then. */
@@ -119,19 +119,48 @@ export function initHistory() {
 const OPS = { '+': ['added', '+'], '-': ['removed', '−'], '~': ['changed', '±'] };
 
 function addTimeline(main, hist, builds, rec, here) {
-  const anchor =
-    $('.all-members', main) || $('.alt-bases', main) ||
-    $('.in-module', main) || $('.chain', main) || $('h1.class-title', main);
-  if (!anchor) return;
+  const title = $('h1.class-title', main);
+  if (!title) return;
 
-  const details = document.createElement('details');
-  details.className = 'type-history';
-  const summary = document.createElement('summary');
-  summary.textContent = 'History';
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'hist-btn';
+  btn.textContent = 'Changes';
+  btn.setAttribute('aria-label', 'Changes');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.dataset.tip = 'What changed in this type';
+  const llm = $('.copy-llm', title);
+  if (llm) title.insertBefore(btn, llm);
+  else title.append(btn);
+
+  const wrap = document.createElement('div');
+  wrap.className = 'hist-panel';
+  wrap.setAttribute('aria-hidden', 'true');
+  const box = document.createElement('div');
+  box.className = 'hist-panel-box';
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-modal', 'true');
+  box.setAttribute('aria-label', 'Changes');
+  box.tabIndex = -1;
+  const bar = document.createElement('div');
+  bar.className = 'hist-bar';
+  const heading = document.createElement('p');
+  heading.className = 'hist-title';
+  heading.textContent = 'Changes';
+  const closeBtn = document.createElement('button');
+  closeBtn.type = 'button';
+  closeBtn.className = 'hist-close';
+  closeBtn.setAttribute('aria-label', 'Close');
+  const closeIc = document.createElement('i');
+  closeIc.className = 'ic ic-x';
+  closeIc.setAttribute('aria-hidden', 'true');
+  closeBtn.append(closeIc);
+  bar.append(heading, closeBtn);
   const body = document.createElement('div');
   body.className = 'th-body';
-  details.append(summary, body);
-  anchor.after(details);
+  box.append(bar, body);
+  wrap.append(box);
+  document.body.append(wrap);
 
   const oldest = hist.builds.length - 1;
   // The run to show: from the build being viewed back to where the type
@@ -140,6 +169,17 @@ function addTimeline(main, hist, builds, rec, here) {
   // page's — the whole span back to the oldest build does. The oldest
   // build has no diff, so nothing is packed for it.
   const stop = rec.added >= here && rec.added < oldest ? rec.added : oldest - 1;
+  const n = (hist.changes?.[pageType.kind]?.[pageType.name] || [])
+    .filter((i) => i >= here && i <= stop).length;
+  const stamp = (el) => {
+    const count = document.createElement('span');
+    count.className = 'count';
+    count.textContent = String(n);
+    el.replaceChildren('Changes ', count);
+  };
+  stamp(btn);
+  stamp(heading);
+  btn.setAttribute('aria-label', `Changes, ${n} builds`);
 
   // A declaration still on this page gets a link; one that was removed, or an
   // old spelling, is text. Enum rows are anchored by value name, members by
@@ -215,35 +255,65 @@ function addTimeline(main, hist, builds, rec, here) {
       : `<p class="th-tail">${entries.length ? 'Present' : 'Unchanged'} in every tracked build, from ${esc(floor?.name || '')} (${esc(floor?.build || '')}).</p>`;
 
     body.innerHTML = entries.map(entryHtml).join('') + tail;
-    summary.innerHTML = `History <span class="count">${entries.length}</span>`;
   }
 
   // "See more" unhides the next handful in its own build and keeps or drops
   // itself by what is left. One delegated listener, since the buttons are
   // rebuilt with the body.
   body.addEventListener('click', (e) => {
-    const btn = e.target.closest('.th-more');
-    if (!btn) return;
-    const hidden = [...btn.closest('.th-build').querySelectorAll('.th-row[hidden]')];
-    const n = step(hidden.length);
-    for (const row of hidden.slice(0, n)) row.hidden = false;
-    if (hidden.length > n) btn.textContent = moreLabel(hidden.length - n);
-    else btn.remove();
+    const more = e.target.closest('.th-more');
+    if (more) {
+      const hidden = [...more.closest('.th-build').querySelectorAll('.th-row[hidden]')];
+      const n = step(hidden.length);
+      for (const row of hidden.slice(0, n)) row.hidden = false;
+      if (hidden.length > n) more.textContent = moreLabel(hidden.length - n);
+      else more.remove();
+      return;
+    }
+    if (e.target.closest('.th-link')) close();
   });
 
   let state = 'idle';
-  details.addEventListener('toggle', () => {
-    if (details.open) track('open_history');
-    if (!details.open || state !== 'idle') return;
+  let from = null;
+
+  function open() {
+    if (wrap.classList.contains('on')) return;
+    closeOthers(close);
+    from = document.activeElement;
+    wrap.classList.add('on');
+    wrap.setAttribute('aria-hidden', 'false');
+    btn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('hist-open');
+    track('open_history');
+    box.focus();
+    if (state !== 'idle') return;
     state = 'loading';
     body.innerHTML = '<p class="muted">Loading the history…</p>';
     load().then(
       () => { state = 'done'; },
       () => {
-        // back to idle, so closing and reopening tries again
         state = 'idle';
         body.innerHTML = '<p class="muted">Part of the history could not be loaded. Close and reopen to try again.</p>';
       }
     );
+  }
+
+  function close() {
+    if (!wrap.classList.contains('on')) return;
+    wrap.classList.remove('on');
+    wrap.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('hist-open');
+    from?.focus?.();
+  }
+
+  onOverlay(close);
+  btn.addEventListener('click', () => (wrap.classList.contains('on') ? close() : open()));
+  closeBtn.addEventListener('click', close);
+  wrap.addEventListener('click', (e) => {
+    if (!e.target.closest('.hist-panel-box')) close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
   });
 }

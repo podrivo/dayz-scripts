@@ -559,7 +559,7 @@ for (const hash of bHashes) {
 dropStaleTrees();
 
 if (history) {
-  fs.writeFileSync(path.join(assetsDir, 'history.json'), JSON.stringify(serializeHistory(history, buildList)));
+  fs.writeFileSync(path.join(assetsDir, 'history.json'), JSON.stringify(serializeHistory(history, buildList, timelines)));
   fs.writeFileSync(path.join(assetsDir, 'timelines.json'), JSON.stringify(serializeTimelines(timelines, history, buildList)));
 }
 

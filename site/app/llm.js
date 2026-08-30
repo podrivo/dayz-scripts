@@ -25,7 +25,7 @@ const clean = (s) => s.replace(/\s+/g, ' ').trim();
  */
 function textOf(el) {
   const c = el.cloneNode(true);
-  for (const junk of c.querySelectorAll('.anchor, .copy-btn, .member-src, .note-tag, .note-edit, .note-add')) junk.remove();
+  for (const junk of c.querySelectorAll('.anchor, .copy-btn, .hist-btn, .member-src, .note-tag, .note-edit, .note-add')) junk.remove();
   for (const block of c.querySelectorAll('p, div, li, pre, br')) block.append('\n');
   return c.textContent;
 }

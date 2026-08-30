@@ -131,7 +131,7 @@ function historyAssets() {
   const cache = path.join(CACHE_DIR, `history-${upstreamHead || latest.sha}.json`);
   try {
     const data = JSON.parse(fs.readFileSync(cache, 'utf8'));
-    if (data.history && data.timelines) return data;
+    if (data.history?.changes && data.timelines) return data;
   } catch { /* missing or the old history-only cache */ }
   const data = buildHistoryAssets(versions, (label) => siteFor(label, { sources: false }));
   fs.mkdirSync(CACHE_DIR, { recursive: true });

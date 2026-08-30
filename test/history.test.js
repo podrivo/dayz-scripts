@@ -92,8 +92,11 @@ test('serializeTimelines packs a later add and a member change, newest first', (
     { build: '1.19.1' },
   ];
   const packed = serializeTimelines(timelines, hist, versions);
+  const counts = serializeHistory(hist, versions, timelines).changes;
 
   assert.deepEqual(packed.builds, ['1.28.1', '1.24.1', '1.19.1']);
+  assert.deepEqual(counts.class.Bar, [1]);
+  assert.deepEqual(counts.class.Foo, [0, 1]);
   assert.equal(packed.class.Bar[0][0], 1, 'Bar was added in 1.24.1');
   assert.equal(packed.class.Bar[0][1], 1);
   assert.deepEqual(packed.class.Bar[0][2], []);
@@ -145,5 +148,6 @@ test('buildHistoryAssets walks history and timelines together', () => {
   };
   const { history, timelines } = buildHistoryAssets(versions, (label) => sites[label]);
   assert.equal(history.class.Foo[1].Extra, 0);
+  assert.deepEqual(history.changes.class.Foo, [0]);
   assert.deepEqual(timelines.class.Foo, [[0, 0, [['+', 'Extra', 'void Extra()']]]]);
 });
