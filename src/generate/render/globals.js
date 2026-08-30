@@ -106,14 +106,14 @@ ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
     )
     .join('\n');
 
-  const table = (head, rows) =>
-    rows ? `<table class="list">${head}<tbody>${rows}</tbody></table>` : '<p class="muted">None.</p>';
+  const table = (head, rows, cls = 'list') =>
+    rows ? `<table class="${cls}">${head}<tbody>${rows}</tbody></table>` : '<p class="muted">None.</p>';
 
   return {
     functions: functions.length ? functions.join('\n') : '<p class="muted">None.</p>',
     constants: constants || '<p class="muted">None.</p>',
     typedefs: table('<thead><tr><th>Alias</th><th>Type</th><th></th></tr></thead>', typedefs),
-    enums: table('', enums),
+    enums: table('', enums, 'list enum-index'),
     values: table('<thead><tr><th>Name</th><th>Enum</th><th>Value</th></tr></thead>', values),
     macros: table('<thead><tr><th>Name</th><th>Value</th><th></th></tr></thead>', macros),
   };

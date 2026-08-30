@@ -756,6 +756,11 @@ table.list td:first-child { white-space: nowrap; }
    hold the column — and the page — open past the width of the window. */
 table.list td:first-child > code { white-space: normal; }
 .enum-table td:first-child { white-space: normal; }
+/* Name, count, brief. Fixed so body's overflow-wrap:anywhere cannot
+   collapse the first two columns to a single character. */
+table.list.enum-index { table-layout: fixed; }
+table.list.enum-index td:first-child { width: 34%; white-space: normal; }
+table.list.enum-index td:nth-child(2) { width: 7em; white-space: nowrap; }
 
 /* Name-only index: many short links read better as columns than as a table. */
 .namegrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2px 16px; margin: 10px 0 22px; font-size: var(--text-sm); }
