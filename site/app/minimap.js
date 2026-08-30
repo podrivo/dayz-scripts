@@ -51,12 +51,21 @@ export function initMinimap() {
     });
   }
 
+  /** Document height the rail maps, stopping at the footer so a drag to the
+      bottom of the track lands on the last lines, not the site chrome. */
+  function pageH() {
+    const foot = $('.foot');
+    return foot
+      ? Math.max(1, foot.getBoundingClientRect().top + scrollY)
+      : document.documentElement.scrollHeight;
+  }
+
   /** Project the lines onto the rail, one bar per pixel row. */
   function place() {
     const th = track.clientHeight;
     const tw = track.clientWidth;
     if (!th || !tw) return; // rail is hidden (narrow viewport)
-    scale = th / document.documentElement.scrollHeight;
+    scale = th / pageH();
 
     // A long file puts a dozen lines on the same row. Keep the longest and
     // the shallowest, so the row still describes them.
@@ -84,8 +93,10 @@ export function initMinimap() {
 
   function sync() {
     if (!view) return;
-    view.style.top = `${(scrollY * scale).toFixed(1)}px`;
-    view.style.height = `${Math.max(8, innerHeight * scale).toFixed(1)}px`;
+    const vh = Math.max(8, innerHeight * scale);
+    const y = Math.max(0, Math.min(track.clientHeight - vh, scrollY * scale));
+    view.style.top = `${y.toFixed(1)}px`;
+    view.style.height = `${vh.toFixed(1)}px`;
   }
 
   /** The bar under (or within a few pixels of) a point on the rail. */
@@ -103,7 +114,7 @@ export function initMinimap() {
     if (mm) return;
     items = collect();
     // Not worth a rail if the page barely scrolls or has nothing to point at.
-    if (items.length < 8 || document.documentElement.scrollHeight < innerHeight * 1.8) return;
+    if (items.length < 8 || pageH() < innerHeight * 1.8) return;
 
     mm = document.createElement('aside');
     mm.className = 'minimap';
@@ -114,12 +125,21 @@ export function initMinimap() {
     place();
     sync();
 
-    const at = (e) => e.clientY - track.getBoundingClientRect().top;
+    // Frozen at pointerdown. The rail is sticky, and at the footer it
+    // unsticks — reading the live rect there feeds the drag and the page
+    // runs away under the pointer.
+    let origin = 0;
+    const at = (e) => e.clientY - origin;
     // Centre the viewport on the point pressed, the way a minimap does.
-    const centre = (y, smooth) => scrollTo({
-      top: Math.max(0, y / scale - innerHeight / 2),
-      behavior: smooth && !still.matches ? 'smooth' : 'auto',
-    });
+    const centre = (y, smooth) => {
+      const th = track.clientHeight;
+      const t = Math.max(0, Math.min(th, y));
+      const max = Math.max(0, pageH() - innerHeight);
+      scrollTo({
+        top: Math.max(0, Math.min(max, t / scale - innerHeight / 2)),
+        behavior: smooth && !still.matches ? 'smooth' : 'auto',
+      });
+    };
 
     let down = false;
     let dragging = false;
@@ -131,6 +151,7 @@ export function initMinimap() {
       down = true;
       dragging = false;
       startY = e.clientY;
+      origin = track.getBoundingClientRect().top;
       track.classList.add('grabbing');
     });
     track.addEventListener('pointermove', (e) => {

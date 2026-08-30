@@ -5,6 +5,11 @@ import { esc, layout, EXT, FILE_LAYERS } from '../html.js';
 import { fileHref } from './shared.js';
 import { pageBar } from './pagebar.js';
 
+const fileTabs = (base, layer) => [
+  [`${base}files/`, 'All', !layer],
+  ...FILE_LAYERS.map((n) => [`${base}files/#${n}`, n, n === layer]),
+];
+
 export function renderFilesIndex(ctx) {
   const { site, base } = ctx;
 
@@ -30,12 +35,7 @@ export function renderFilesIndex(ctx) {
     ...ctx,
     title: 'Files',
     active: 'files/',
-    bar: pageBar({
-      tabs: [
-        [`${base}files/`, 'All', true],
-        ...FILE_LAYERS.map((n) => [`${base}files/#${n}`, n, false]),
-      ],
-    }),
+    bar: pageBar({ tabs: fileTabs(base, '') }),
     breadcrumbs: [{ label: 'Files' }],
     content,
   });
@@ -79,10 +79,12 @@ export function renderFile(ctx, fileEntry, fileModel, source) {
 ${decls}
 <div class="srcwrap"><pre class="src" id="src"><code>${esc(source)}</code></pre></div>`;
 
+  const layer = FILE_LAYERS.find((n) => short === n || short.startsWith(`${n}/`)) || '';
   return layout({
     ...ctx,
     title: short,
     active: 'files/',
+    bar: pageBar({ tabs: fileTabs(base, layer) }),
     breadcrumbs: [{ label: 'Files', href: `${base}files/` }, { label: short }],
     content,
   });

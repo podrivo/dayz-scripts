@@ -83,13 +83,13 @@ function chipMenu(bar) {
 }
 
 /** File-list layer tabs (`#1_Core` …) hide the other trees instead of
- *  scrolling to a heading. Only the files index ships hash tabs over a tree. */
+ *  scrolling to a heading. File pages wear the same tabs as links back to
+ *  the index; only the files index ships a tree to filter. */
 function fileLayerTabs() {
   const layerTabs = [...document.querySelectorAll('.pb-tab[href*="#"]')];
   const main = $('.main');
-  if (!layerTabs.length || !main) return;
-
-  const trees = [...main.querySelectorAll('ul.tree')];
+  const trees = [...(main?.querySelectorAll('ul.tree') ?? [])];
+  if (!layerTabs.length || !trees.length) return;
   const headingCount = $('h1 .count', main);
   const allCount = headingCount?.textContent ?? '';
   const layerOf = (tab) => {
