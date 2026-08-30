@@ -2,8 +2,8 @@
 
 import { esc, layout, EXT } from '../html.js';
 import {
-  OFFICIAL_LINKS, OFFICIAL_MODDING_LINKS, DISCORD_LINKS, COMMUNITY_SECTIONS,
-  YADZ_DISCORD, REPO_URL,
+  OFFICIAL_LINKS, OFFICIAL_MODDING_LINKS, OFFICIAL_MAPS, WORKSHOP_MAPS,
+  DISCORD_LINKS, COMMUNITY_SECTIONS, YADZ_DISCORD, REPO_URL,
 } from '../content.js';
 import { linkCards } from './shared.js';
 
@@ -37,6 +37,11 @@ ${linkCards(DISCORD_LINKS, true)}
 <p>The most subscribed DayZ mods on Steam, fetched when you open this page. <a href="https://steamcommunity.com/app/221100/workshop/" ${EXT}>Browse all</a>.</p>
 <div id="workshop-stats" class="stats" hidden></div>
 <div id="workshop-list" aria-live="polite" aria-busy="true"><p class="muted">Loading workshop…</p></div>
+<h2 id="maps">Maps</h2>
+<p>Official terrains ship with the dedicated server. Livonia has been in the base game since 1.25; Sakhal needs the Frostline DLC. A server picks one with <code>template="dayzOffline.&lt;world&gt;"</code> in <code>serverDZ.cfg</code>.</p>
+${linkCards(OFFICIAL_MAPS, true)}
+<p>Community terrains load as Workshop mods. These are the ones servers actually run.</p>
+${linkCards(WORKSHOP_MAPS, true)}
 ${COMMUNITY_SECTIONS.map(section).join('\n')}
 <h2 id="notes">Community notes</h2>
 <p>Most of the script API has no doc comment. A community note fills one in: a short annotation on a class, enum or member — what an argument expects, whether a call is server-only, what a method does that its name does not say. Notes show up on that declaration's page, labelled as community writing rather than Bohemia's, and on every build at once.</p>

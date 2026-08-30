@@ -36,6 +36,25 @@ export const OFFICIAL_MODDING_LINKS = [
   ['Central Economy', 'https://github.com/BohemiaInteractive/DayZ-Central-Economy', 'The vanilla loot economy files, as the game ships them'],
 ];
 
+/** Official terrains. Livonia joined the base game in 1.25; Sakhal is Frostline. */
+export const OFFICIAL_MAPS = [
+  ['Chernarus+', 'https://community.bistudio.com/wiki/Chernarus', 'Base game. World chernarusplus, mission dayzOffline.chernarusplus'],
+  ['Livonia', 'https://dayz.wiki.gg/wiki/Livonia', 'Included since 1.25. World enoch, mission dayzOffline.enoch'],
+  ['Sakhal', 'https://store.steampowered.com/app/2968040/DayZ_Frostline/', 'Frostline DLC. World sakhal, mission dayzOffline.sakhal'],
+];
+
+/** Community terrains people actually run. Workshop items, not official. */
+export const WORKSHOP_MAPS = [
+  ['Namalsk', 'https://steamcommunity.com/sharedfiles/filedetails/?id=2289456201', 'Workshop · world namalsk'],
+  ['Deer Isle', 'https://steamcommunity.com/sharedfiles/filedetails/?id=1602372402', 'Workshop · world deerisle'],
+  ['Banov', 'https://steamcommunity.com/sharedfiles/filedetails/?id=2415195639', 'Workshop · world banov'],
+  ['Takistan Plus', 'https://steamcommunity.com/sharedfiles/filedetails/?id=2563233742', 'Workshop · world takistanplus'],
+  ['Esseker', 'https://steamcommunity.com/sharedfiles/filedetails/?id=2462896799', 'Workshop · world esseker'],
+  ['Bitterroot', 'https://steamcommunity.com/sharedfiles/filedetails/?id=2906823750', 'Workshop · world bitterroot'],
+  ['Chiemsee', 'https://steamcommunity.com/sharedfiles/filedetails/?id=1580589252', 'Workshop · world chiemsee'],
+  ['Alteria', 'https://steamcommunity.com/sharedfiles/filedetails/?id=3296994216', 'Workshop · world alteria'],
+];
+
 /** The servers to ask in. */
 export const DISCORD_LINKS = [
   ['DayZ Modders', 'https://discord.gg/dayz-modders-452035973786632194', 'Discord · modding and scripting help'],
