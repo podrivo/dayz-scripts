@@ -12,7 +12,7 @@
    of the window hands it over without the trip up there, along with the code
    as text and the same lines on GitHub. */
 
-import { $, VPATH, pathBuild, typing } from './dom.js';
+import { $, VPATH, pathBuild, typing, track } from './dom.js';
 import { current, identity } from './builds.js';
 import { copyText } from './copy.js';
 
@@ -113,6 +113,7 @@ function buildBar() {
   if (gh) {
     gh.target = '_blank';
     gh.rel = 'noopener';
+    gh.addEventListener('click', () => track('view_github', { source: 'share' }));
   }
 
   el.append(what, clear, link, code, ...(gh ? [gh] : []));
@@ -234,6 +235,7 @@ export function initShare() {
   // widening it, or putting it down, and the strip is where all three live.
   sel = parseHash(location.hash);
   anchor = sel?.from ?? null;
+  if (sel) track('landed_deep_link', { line_from: sel.from, line_to: sel.to });
   showSelection();
   showBar();
 

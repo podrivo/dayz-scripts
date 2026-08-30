@@ -8,7 +8,7 @@
    hundreds of thousands. The overlay wears the palette's own box and
    backdrop, so a second modal costs no second set of styles. */
 
-import { $, typing } from './dom.js';
+import { $, typing, track } from './dom.js';
 import { closeOthers, onOverlay } from './overlay.js';
 
 const SHORTCUTS = [
@@ -66,6 +66,7 @@ function openHelp() {
   helpFrom = document.activeElement;
   help.hidden = false;
   document.body.classList.add('palette-open');
+  track('open_shortcuts');
   $('.help-box', help).focus();
 }
 

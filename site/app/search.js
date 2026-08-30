@@ -65,6 +65,10 @@ function textScore(text, q) {
 }
 
 const SCOPED_QUERY = /^([A-Za-z_]\w*)(::|\.)(\w*)$/;
+const scopedQuery = (q) => {
+  const m = q.match(SCOPED_QUERY);
+  return !!(m && !(m[2] === '.' && m[3].length < 2));
+};
 
 /**
  * `Class.Member` and `Class::Member`, which is how anyone who has read the
@@ -124,7 +128,7 @@ export function initSearch() {
     if (!list.length) {
       resultsEl.innerHTML = `<div class="search-empty">No results for “${q.replace(/[<>&]/g, '')}”</div>`;
       resultsEl.hidden = false;
-      track('search', { search_term: q.slice(0, 100), search_results: 0 });
+      track('search', { search_term: q.slice(0, 100), search_results: 0, search_scoped: scopedQuery(q) });
       return;
     }
     // What to underline in a name: the query, or on a scoped query the member
@@ -181,6 +185,7 @@ export function initSearch() {
       el.setAttribute('aria-pressed', String(on));
     }
     kinds = btn.dataset.kinds ? new Set(btn.dataset.kinds) : null;
+    track('search_filter', { filter_kind: btn.textContent });
     input.focus();
     runSearch(input.value.trim());
   });
@@ -189,7 +194,7 @@ export function initSearch() {
     const q = input.value.trim();
     const kind = a.querySelector('.tag')?.className.match(/tag-(\S+)/)?.[1];
     const name = KIND[kind]?.[0];
-    if (q.length >= 2) track('search', { search_term: q.slice(0, 100), result_kind: name });
+    if (q.length >= 2) track('search', { search_term: q.slice(0, 100), result_kind: name, search_scoped: scopedQuery(q) });
     else track('select_content', { content_type: name || 'recent' });
   }
 
@@ -217,8 +222,9 @@ export function initSearch() {
     items[sel].scrollIntoView({ block: 'nearest' });
   }
 
-  function openPalette() {
+  function openPalette(method) {
     if (!palette || !palette.hidden) return;
+    track('search_open', { method });
     closeOthers(closePalette); // one overlay at a time: both hold the body's scroll
     palette.hidden = false;
     document.body.classList.add('palette-open');
@@ -247,7 +253,7 @@ export function initSearch() {
   }
 
   let timer;
-  trigger?.addEventListener('click', openPalette);
+  trigger?.addEventListener('click', () => openPalette('click'));
   input.addEventListener('input', () => {
     clearTimeout(timer);
     timer = setTimeout(async () => { await loadIndex(); runSearch(input.value.trim()); }, 80);
@@ -266,10 +272,10 @@ export function initSearch() {
   document.addEventListener('keydown', (e) => {
     if (e.key.toLowerCase() === 'k' && (e.metaKey || e.ctrlKey)) {
       e.preventDefault();
-      palette.hidden ? openPalette() : closePalette();
+      palette.hidden ? openPalette('k') : closePalette();
     } else if (e.key === '/' && palette.hidden && !typing()) {
       e.preventDefault();
-      openPalette();
+      openPalette('/');
     }
   });
 }

@@ -530,6 +530,7 @@ ${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}`;
       for (const el of ops.children) el.setAttribute('aria-pressed', String(el === btn));
       op = btn.dataset.op;
       apply();
+      try { globalThis.gtag?.('event', 'compare_filter', { filter_op: op || 'all' }); } catch { /* blocked or absent */ }
     });
   }
 

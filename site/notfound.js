@@ -27,6 +27,12 @@ const NAMES = {
 
 const match = /^\/(?:v\/([^/]+)\/)?(topics|classes|enum|files)\/(.+)\/$/i.exec(location.pathname);
 
+const track404 = (recovered) => {
+  try { globalThis.gtag?.('event', 'not_found', { recovered }); } catch { /* blocked or absent */ }
+};
+
+if (!match) track404(false);
+
 if (match) {
   const [, build, rawKind, rawSlug] = match;
   const kind = rawKind.toLowerCase();
@@ -41,12 +47,13 @@ if (match) {
     .then((r) => r.json())
     .then((index) => NAMES[kind](index).find((name) => name.toLowerCase() === wanted))
     .then((name) => {
-      if (!name) return;
+      if (!name) { track404(false); return; }
       // Compared decoded, because `name` is: an encoded path would look
       // different from an identical decoded one and bounce forever.
       const target = `${root}${kind}/${name}/`;
-      if (target === decodeURIComponent(location.pathname)) return;
+      if (target === decodeURIComponent(location.pathname)) { track404(false); return; }
+      track404(true);
       location.replace(target + location.search + location.hash);
     })
-    .catch(() => {});
+    .catch(() => { track404(false); });
 }

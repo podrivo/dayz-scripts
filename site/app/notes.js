@@ -93,6 +93,7 @@ function noteEl(text, key) {
 export function initNotes() {
   const main = $('.main');
   if (!pageType || !main) return;
+  $('.all-members a')?.addEventListener('click', () => track('view_all_members'));
 
   const type = pageType.name;
   const keyFor = (el) => `${type}.${el.id.replace(/-\d+$/, '')}`;

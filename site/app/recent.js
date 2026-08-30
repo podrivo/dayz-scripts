@@ -8,7 +8,7 @@
    stored as version-relative URLs and resolved against BASE, so a list built
    on one build follows you into another. */
 
-import { $, BASE, VPATH, esc, track } from './dom.js';
+import { $, BASE, VPATH, esc, track, pageType } from './dom.js';
 import { KIND, ctxFor, urlFor } from './search-index.js';
 
 const RECENT_MAX = 12;
@@ -35,11 +35,8 @@ const writePages = (key, list) => {
    display casing, since the URL only knows the lowercase form, and a
    topic's label, since its URL carries the \defgroup name instead. */
 function pageEntry() {
-  let m = /^class\/([^/]+)\//.exec(VPATH);
-  if (m) return ['c', m[1], m[1]];
-  m = /^enum\/([^/]+)\/$/.exec(VPATH);
-  if (m) return ['e', m[1], m[1]];
-  m = /^topics\/([^/]+)\/$/.exec(VPATH);
+  if (pageType) return [pageType.kind === 'class' ? 'c' : 'e', pageType.name, pageType.name];
+  const m = /^topics\/([^/]+)\/$/.exec(VPATH);
   if (m) {
     const label = $('.main h1')?.textContent.trim();
     if (label) return ['g', label, m[1]];
@@ -55,7 +52,9 @@ function pageEntry() {
 export function recordVisit() {
   const here = pageEntry();
   if (!here) return;
-  const rec = readPages('recent').filter((e) => urlFor(e) !== urlFor(here));
+  const prev = readPages('recent');
+  if (prev.some((e) => urlFor(e) === urlFor(here))) track('return_visit', { content_type: KIND[here[0]][0] });
+  const rec = prev.filter((e) => urlFor(e) !== urlFor(here));
   rec.unshift(here);
   writePages('recent', rec.slice(0, RECENT_MAX));
 }

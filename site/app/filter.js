@@ -7,7 +7,7 @@
    globals tabs and a nine-hundred-member class alike. Nothing is fetched
    and nothing is added to the HTML but the field itself. */
 
-import { $ } from './dom.js';
+import { $, track } from './dom.js';
 import { refreshToc } from './toc.js';
 
 /* Set by initFilter, and called by members.js once the one page whose rows
@@ -174,6 +174,17 @@ export function initFilter() {
         : '';
     }
     refreshToc();
+    return n;
+  }
+
+  function reportFilter(n) {
+    const q = filterInput.value.trim();
+    if (!q && !access) return;
+    track('page_filter', {
+      search_term: q.slice(0, 100),
+      filter_matches: n,
+      filter_access: !!access,
+    });
   }
 
   $('.pb-chips')?.addEventListener('click', (e) => {
@@ -185,13 +196,13 @@ export function initFilter() {
       el.setAttribute('aria-pressed', String(on));
     }
     access = btn.dataset.mod ? chipTest(btn.dataset.mod) : null;
-    apply();
+    reportFilter(apply());
   });
 
   let pending;
   filterInput.addEventListener('input', () => {
     clearTimeout(pending);
-    pending = setTimeout(apply, 60);
+    pending = setTimeout(() => reportFilter(apply()), 60);
   });
   filterInput.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && filterInput.value) {

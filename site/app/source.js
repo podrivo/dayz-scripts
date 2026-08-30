@@ -3,7 +3,7 @@
    Everything here runs only on /files/…/, which is the one kind of page that
    ships raw source. */
 
-import { $, BASE, VPATH, anchorOf, pathBuild } from './dom.js';
+import { $, BASE, VPATH, anchorOf, pathBuild, track } from './dom.js';
 import { index, loadIndex } from './search-index.js';
 import { loadPagesMap } from './builds.js';
 import { TOKEN_RE, highlight, newlines } from './highlight.js';
@@ -207,6 +207,7 @@ function addFolds(srcEl, text) {
 export function initSourceView() {
   const srcEl = $('#src code');
   if (!srcEl) return;
+  $('#ghSrc')?.addEventListener('click', () => track('view_github', { source: 'page' }));
 
   const raw = srcEl.textContent;
   const paint = (resolve, decls) => {
