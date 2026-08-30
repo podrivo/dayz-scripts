@@ -108,22 +108,113 @@ function inlineDoc(text, site, base) {
   html = html.replace(/[\\@]p\s+(\S+)/g, (_, w) => `<code>${w}</code>`);
   html = html.replace(/[\\@]b\s+(\S+)/g, (_, w) => `<strong>${w}</strong>`);
   html = html.replace(/[\\@]n\b/g, '<br>');
-  html = html.replace(/(https?:\/\/[^\s<]+)/g, `<a href="$1" ${EXT}>$1</a>`);
-  // linkify known type names when they appear as standalone words
+  html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, `<a href="$2" ${EXT}>$1</a>`);
+  html = html.replace(/(?<!href=")(https?:\/\/[^\s<"]+)/g, `<a href="$1" ${EXT}>$1</a>`);
+  // Link types in text nodes only — not inside href or already-built tags.
+  // Doxygen `%Word` means "this word, unlinked"; strip the % after.
   if (site) {
-    html = html.replace(/\b([A-Z]\w{2,})\b/g, (word) => {
-      const kind = site.typeIndex.get(word);
-      return kind ? `<a href="${base}${typeUrl(word, kind)}">${word}</a>` : word;
+    html = html.replace(/(<[^>]+>)|([^<]+)/g, (all, tag, text) => {
+      if (tag) return tag;
+      return text.replace(/(?<!%)\b([A-Z]\w{2,})\b/g, (word) => {
+        const kind = site.typeIndex.get(word);
+        return kind ? `<a href="${base}${typeUrl(word, kind)}">${word}</a>` : word;
+      });
     });
   }
+  html = html.replace(/%([A-Za-z_]\w*)/g, '$1');
   return html;
 }
 
+const TABLE_ROW = /^\s*\|/;
+const TABLE_SEP = /^\s*\|[\s:|-]*---/;
+
+function mdCells(line) {
+  let s = line.trim();
+  if (s.startsWith('|')) s = s.slice(1);
+  if (s.endsWith('|')) s = s.slice(0, -1);
+  const cells = [];
+  let cur = '';
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === '\\' && s[i + 1] === '|') {
+      cur += '|';
+      i++;
+    } else if (s[i] === '|') {
+      cells.push(cur.trim());
+      cur = '';
+    } else {
+      cur += s[i];
+    }
+  }
+  cells.push(cur.trim());
+  return cells;
+}
+
+function atTable(lines, i) {
+  if (!TABLE_ROW.test(lines[i] || '')) return false;
+  for (let j = i; j < Math.min(lines.length, i + 6); j++) {
+    if (TABLE_SEP.test(lines[j])) return true;
+  }
+  return false;
+}
+
+function takeTable(lines, start, site, base) {
+  const rows = [];
+  let i = start;
+  while (i < lines.length) {
+    const line = lines[i];
+    if (!line.trim()) break;
+    if (TABLE_ROW.test(line)) {
+      rows.push(line.trim());
+      i++;
+      continue;
+    }
+    if (rows.length) {
+      rows[rows.length - 1] += ' ' + line.trim();
+      i++;
+      continue;
+    }
+    break;
+  }
+  const parsed = rows
+    .filter((r) => !TABLE_SEP.test(r))
+    .map((r) => mdCells(r).map((c) => inlineDoc(c, site, base)));
+  if (!parsed.length) return { html: '', next: i };
+  const [head, ...body] = parsed;
+  const th = `<tr>${head.map((c) => `<th>${c}</th>`).join('')}</tr>`;
+  const tr = body.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join('')}</tr>`).join('');
+  return {
+    html: `<table class="list doc-table"><thead>${th}</thead><tbody>${tr}</tbody></table>`,
+    next: i,
+  };
+}
+
 function paragraphs(text, site, base) {
-  return text
-    .split(/\n{2,}/)
-    .map((p) => `<p>${inlineDoc(p.trim(), site, base).replaceAll('\n', ' ')}</p>`)
-    .join('');
+  const lines = text.split('\n');
+  const out = [];
+  const prose = [];
+  const flush = () => {
+    const t = prose.join('\n').trim();
+    if (t) out.push(`<p>${inlineDoc(t, site, base).replaceAll('\n', ' ')}</p>`);
+    prose.length = 0;
+  };
+  for (let i = 0; i < lines.length;) {
+    if (atTable(lines, i)) {
+      flush();
+      const taken = takeTable(lines, i, site, base);
+      if (taken.html) out.push(taken.html);
+      i = taken.next;
+      continue;
+    }
+    if (!lines[i].trim()) {
+      flush();
+      i++;
+      continue;
+    }
+    prose.push(lines[i]);
+    i++;
+  }
+  flush();
+  return out.join('\n');
 }
 
 /** Render a raw doc comment into rich HTML. */

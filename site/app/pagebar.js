@@ -11,13 +11,13 @@ import { $ } from './dom.js';
 const NARROW = matchMedia('(max-width: 700px)');
 
 /**
- * Publish the bar's height as --h-bar. Read by the anchor scroll offset in
- * styles.css and by the table of contents' scroll spy. Measured rather than
- * declared because the chips collapsing changes it.
+ * Publish the bar's height as --h-bar-size. --h-bar follows it in CSS so
+ * hide-on-scroll can zero the offset without fighting this inline value.
+ * Measured rather than declared because the chips collapsing changes it.
  */
 function trackHeight(bar) {
   const publish = () =>
-    document.documentElement.style.setProperty('--h-bar', `${Math.round(bar.offsetHeight)}px`);
+    document.documentElement.style.setProperty('--h-bar-size', `${Math.round(bar.offsetHeight)}px`);
   publish();
   new ResizeObserver(publish).observe(bar);
 }

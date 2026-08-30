@@ -9,6 +9,20 @@ import {
 } from './shared.js';
 import { pageBar } from './pagebar.js';
 
+// The tabs, split the way Doxygen splits them.
+const GLOBAL_KINDS = [
+  ['', 'All'],
+  ['functions/', 'Functions'],
+  ['constants/', 'Constants'],
+  ['typedefs/', 'Typedefs'],
+  ['enums/', 'Enums'],
+  ['values/', 'Values'],
+  ['macros/', 'Macros'],
+];
+
+const globalTabs = (base, kind) =>
+  GLOBAL_KINDS.map(([k, l]) => [`${base}globals/${k}`, l, k === kind]);
+
 export function renderEnum(ctx, en) {
   const { site, base } = ctx;
   const rows = en.values
@@ -26,21 +40,10 @@ ${en.doc ? `<div class="class-doc">${renderDoc(en.doc, site, base)}</div>` : ''}
     ...ctx,
     title: en.name,
     active: 'globals/enums/',
-    breadcrumbs: [{ label: 'Enums', href: `${base}globals/enums/` }, { label: en.name }],
+    bar: pageBar({ tabs: globalTabs(base, 'enums/') }),
     content,
   });
 }
-
-// The tabs, split the way Doxygen splits them.
-const GLOBAL_KINDS = [
-  ['', 'All'],
-  ['functions/', 'Functions'],
-  ['constants/', 'Constants'],
-  ['typedefs/', 'Typedefs'],
-  ['enums/', 'Enums'],
-  ['values/', 'Values'],
-  ['macros/', 'Macros'],
-];
 
 /** The contents of each Globals tab, so the "All" tab can reuse them. */
 function globalSections(ctx, site, base) {
@@ -122,7 +125,7 @@ ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
 export function renderGlobals(ctx, kind) {
   const { site, base } = ctx;
   const label = GLOBAL_KINDS.find(([k]) => k === kind)[1];
-  const tabs = GLOBAL_KINDS.map(([k, l]) => [`${base}globals/${k}`, l, k === kind]);
+  const tabs = globalTabs(base, kind);
 
   const counts = {
     functions: site.functions.length,

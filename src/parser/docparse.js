@@ -111,12 +111,17 @@ export function parseDoc(text) {
   if (brief) result.brief = brief.trim();
   if (desc) {
     // No explicit \brief: first sentence/line of the description is the brief.
+    // A markdown table is data, not a one-line summary — leave it in desc.
     if (!result.brief) {
       const firstBreak = desc.indexOf('\n\n');
       const first = firstBreak === -1 ? desc : desc.slice(0, firstBreak);
-      result.brief = first.replace(/\s+/g, ' ').trim();
-      const restDesc = firstBreak === -1 ? '' : desc.slice(firstBreak).trim();
-      if (restDesc) result.desc = restDesc;
+      if (/^\s*\|/.test(first) && /\|[\s:|-]*---/.test(first)) {
+        result.desc = desc;
+      } else {
+        result.brief = first.replace(/\s+/g, ' ').trim();
+        const restDesc = firstBreak === -1 ? '' : desc.slice(firstBreak).trim();
+        if (restDesc) result.desc = restDesc;
+      }
     } else {
       result.desc = desc;
     }

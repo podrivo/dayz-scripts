@@ -83,7 +83,8 @@ export function initHistory() {
     const title = $('h1.class-title', main);
     if (title && visible(rec.added)) {
       const b = addedBadge(rec.added);
-      if (b) title.append(b);
+      const llm = b && $('.copy-llm', title);
+      if (b) (llm ? title.insertBefore(b, llm) : title.append(b));
     }
     for (const mem of main.querySelectorAll('.member[id]')) {
       const ev = memberEv(rec.members[mem.id]);

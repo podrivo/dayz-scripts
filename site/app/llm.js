@@ -142,7 +142,7 @@ function pageMarkdown(main) {
   return out.join('\n\n') + '\n';
 }
 
-/** The button, under the title of every class and enum page. */
+/** The button, beside the title of every class and enum page. */
 export function initLlmCopy() {
   if (!pageType) return;
   const main = $('.main');
@@ -161,8 +161,5 @@ export function initLlmCopy() {
     copyText(pageMarkdown(main), btn, 'llm');
   });
 
-  const tools = document.createElement('p');
-  tools.className = 'page-tools';
-  tools.append(btn);
-  title.after(tools);
+  title.append(btn);
 }

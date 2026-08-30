@@ -340,6 +340,12 @@ test('plain description becomes brief', () => {
   assert.equal(d.brief, 'Module containing compiled scripts.');
 });
 
+test('a markdown table stays in the description', () => {
+  const d = parseDoc('| A | B |\n| --- | --- |\n| 1 | 2 |');
+  assert.equal(d.brief, undefined);
+  assert.match(d.desc, /\| A \| B \|/);
+});
+
 // ---------------------------------------------------------------------------
 // Pathological cases: parser must never throw and always recover
 
