@@ -5,7 +5,7 @@
    HTML. Everything here recovers them from the URL and /assets/versions.json
    and stamps them back into the chrome. */
 
-import { $, ROOT, VPATH, fmtDate, pathBuild } from './dom.js';
+import { $, ROOT, VPATH, fmtDate, pathBuild, track } from './dom.js';
 
 let pagesMapPromise;
 
@@ -103,7 +103,10 @@ export function initVersionPicker() {
   });
   verMenu.addEventListener('click', (e) => {
     const a = e.target.closest('a');
-    if (a && location.hash) a.href += location.hash; // keep deep links across builds
+    if (!a) return;
+    if (location.hash) a.href += location.hash; // keep deep links across builds
+    if (a.classList.contains('cur')) return;
+    track('switch_build', { build: /\/v\/([^/]+)\//.exec(a.getAttribute('href'))?.[1] || 'latest' });
   });
   verBtn.parentElement.addEventListener('keydown', (e) => {
     if (verMenu.hidden) return;

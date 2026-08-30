@@ -158,7 +158,7 @@ export function initLlmCopy() {
     // Resolved long before anyone clicks; awaited so the Markdown can name
     // the build, and given up on rather than blocking the copy if it fails.
     await identity().catch(() => {});
-    copyText(pageMarkdown(main), btn);
+    copyText(pageMarkdown(main), btn, 'llm');
   });
 
   const tools = document.createElement('p');

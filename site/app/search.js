@@ -2,7 +2,7 @@
    than an always-visible field in the header. Ranks this build's whole index
    (see search-index.js) against what has been typed. */
 
-import { $, BASE, esc, typing } from './dom.js';
+import { $, BASE, esc, typing, track } from './dom.js';
 import { KIND, SCOPED, ctxFor, entries, loadIndex, urlFor } from './search-index.js';
 import { homeList, togglePin } from './recent.js';
 import { closeOthers, onOverlay } from './overlay.js';
@@ -124,6 +124,7 @@ export function initSearch() {
     if (!list.length) {
       resultsEl.innerHTML = `<div class="search-empty">No results for “${q.replace(/[<>&]/g, '')}”</div>`;
       resultsEl.hidden = false;
+      track('search', { search_term: q.slice(0, 100), search_results: 0 });
       return;
     }
     // What to underline in a name: the query, or on a scoped query the member
@@ -184,7 +185,17 @@ export function initSearch() {
     runSearch(input.value.trim());
   });
 
+  function follow(a) {
+    const q = input.value.trim();
+    const kind = a.querySelector('.tag')?.className.match(/tag-(\S+)/)?.[1];
+    const name = KIND[kind]?.[0];
+    if (q.length >= 2) track('search', { search_term: q.slice(0, 100), result_kind: name });
+    else track('select_content', { content_type: name || 'recent' });
+  }
+
   resultsEl.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (a && !e.target.closest('.pin')) follow(a);
     const btn = e.target.closest('.pin');
     if (!btn) return;
     e.preventDefault();
@@ -246,7 +257,7 @@ export function initSearch() {
     else if (e.key === 'ArrowUp') { e.preventDefault(); move(-1); }
     else if (e.key === 'Enter') {
       const t = resultsEl.querySelector('a.sel') || resultsEl.querySelector('a');
-      if (t) location.href = t.href;
+      if (t) { follow(t); location.href = t.href; }
     } else if (e.key === 'Escape') { closePalette(); }
   });
   palette.addEventListener('click', (e) => {

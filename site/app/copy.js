@@ -7,11 +7,12 @@
    nine hundred buttons is a page's worth of DOM for an affordance only one
    is ever using. */
 
-import { $, VPATH } from './dom.js';
+import { $, VPATH, track } from './dom.js';
 
 /** Copy, and let the button say so for a moment. Shared with the share bar,
     which is another row of the same buttons doing the same thing. */
-export function copyText(text, btn) {
+export function copyText(text, btn, kind) {
+  if (kind) track('copy', { copy_type: kind });
   const label = btn.getAttribute('aria-label');
   navigator.clipboard?.writeText(text).then(() => {
     btn.classList.add('copied');
@@ -47,7 +48,7 @@ export function initCopyBlocks() {
     box.classList.add('has-copy');
     const btn = copyButton();
     btn.classList.add('copy-block');
-    btn.addEventListener('click', () => copyText(pre.textContent, btn));
+    btn.addEventListener('click', () => copyText(pre.textContent, btn, 'code'));
     box.prepend(btn);
   }
 }
@@ -123,8 +124,8 @@ export function initCopySignatures() {
   }
   let sigFor = null;
   let stub = null;
-  sigCopy.addEventListener('click', () => sigFor && copyText(sigFor.textContent.trim(), sigCopy));
-  sigOverride?.addEventListener('click', () => stub && copyText(stub, sigOverride));
+  sigCopy.addEventListener('click', () => sigFor && copyText(sigFor.textContent.trim(), sigCopy, 'signature'));
+  sigOverride?.addEventListener('click', () => stub && copyText(stub, sigOverride, 'override'));
   main.addEventListener('pointerover', (e) => {
     const sig = e.target.closest?.('.member-sig');
     const code = sig && $('code', sig);

@@ -12,7 +12,7 @@
    the run of them on demand and lays it out as a timeline, the way
    site/compare.js fetches the same files to compare two builds. */
 
-import { $, ROOT, esc, fmtDate, anchorOf, pageType } from './dom.js';
+import { $, ROOT, esc, fmtDate, anchorOf, pageType, track } from './dom.js';
 import { current, identity } from './builds.js';
 
 const typeRec = (p) =>
@@ -238,6 +238,7 @@ function addTimeline(main, hist, builds, rec, here) {
 
   let state = 'idle';
   details.addEventListener('toggle', () => {
+    if (details.open) track('open_history');
     if (!details.open || state !== 'idle') return;
     state = 'loading';
     body.innerHTML = '<p class="muted">Loading the history…</p>';

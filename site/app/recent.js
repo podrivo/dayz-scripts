@@ -8,7 +8,7 @@
    stored as version-relative URLs and resolved against BASE, so a list built
    on one build follows you into another. */
 
-import { $, BASE, VPATH, esc } from './dom.js';
+import { $, BASE, VPATH, esc, track } from './dom.js';
 import { KIND, ctxFor, urlFor } from './search-index.js';
 
 const RECENT_MAX = 12;
@@ -94,4 +94,5 @@ export function togglePin(entry) {
   if (at >= 0) pinned.splice(at, 1);
   else pinned.push(entry);
   writePages('pinned', pinned);
+  track('pin', { pinned: at < 0 });
 }

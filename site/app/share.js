@@ -101,10 +101,10 @@ function buildBar() {
   clear.setAttribute('aria-label', 'Clear the selection');
 
   const link = barBtn('share-link', 'Copy link');
-  link.addEventListener('click', () => copyText(shareUrl(), link));
+  link.addEventListener('click', () => copyText(shareUrl(), link, 'share_link'));
 
   const code = barBtn('share-code', 'Copy code');
-  code.addEventListener('click', () => copyText(selectedCode(), code));
+  code.addEventListener('click', () => copyText(selectedCode(), code, 'share_code'));
 
   // The page's own GitHub link, already pinned to this build's commit by
   // builds.js, which spells a line range the same way this page does.

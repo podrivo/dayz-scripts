@@ -578,6 +578,7 @@ ${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}`;
     stampPair();
     store();
     draw();
+    try { globalThis.gtag?.('event', 'compare_builds', { from_build: from, to_build: to }); } catch { /* blocked or absent */ }
   }
 
   fromSel.addEventListener('change', () => choose(fromSel.value, true));

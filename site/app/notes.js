@@ -13,7 +13,7 @@
    member does is the moment to say so, and it is not the moment to go
    looking for a JSON file. */
 
-import { $, REPO, ROOT, pageType } from './dom.js';
+import { $, REPO, ROOT, pageType, track } from './dom.js';
 
 /* Where a note gets written. GitHub can prefill a new issue but not an
    edit to a file that already exists, so this opens an issue holding the
@@ -152,5 +152,9 @@ export function initNotes() {
     const row = host.matches('tr');
     suggest.href = contribHref(row ? `${type}.${host.id}` : keyFor(host), null);
     (row ? host.cells[2] || host : $('.member-sig', host) || host).append(suggest);
+  });
+  main.addEventListener('click', (e) => {
+    const a = e.target.closest('.note-edit, .note-add, .note-ask a');
+    if (a) track('suggest_note', { note_action: a.classList.contains('note-edit') ? 'edit' : 'add' });
   });
 }
