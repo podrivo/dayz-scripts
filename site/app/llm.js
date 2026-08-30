@@ -153,7 +153,7 @@ export function initLlmCopy() {
   btn.type = 'button';
   btn.className = 'copy-btn copy-llm';
   btn.setAttribute('aria-label', 'Copy page for LLM');
-  btn.dataset.tip = 'Copy this page as Markdown, for pasting into an AI assistant';
+  btn.dataset.tip = 'Copy this page as Markdown';
   btn.addEventListener('click', async () => {
     // Resolved long before anyone clicks; awaited so the Markdown can name
     // the build, and given up on rather than blocking the copy if it fails.

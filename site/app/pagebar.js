@@ -90,6 +90,8 @@ function fileLayerTabs() {
   if (!layerTabs.length || !main) return;
 
   const trees = [...main.querySelectorAll('ul.tree')];
+  const headingCount = $('h1 .count', main);
+  const allCount = headingCount?.textContent ?? '';
   const layerOf = (tab) => {
     const href = tab.getAttribute('href') || '';
     const i = href.indexOf('#');
@@ -98,11 +100,15 @@ function fileLayerTabs() {
   let layer = decodeURIComponent(location.hash.slice(1));
 
   const apply = () => {
+    let layerCount = '';
     for (const t of trees) {
       for (const li of t.children) {
-        li.hidden = !!(layer && li.dataset.layer !== layer);
+        const hide = !!(layer && li.dataset.layer !== layer);
+        li.hidden = hide;
+        if (!hide && layer) layerCount = $('.count', li)?.textContent || '';
       }
     }
+    if (headingCount) headingCount.textContent = layer ? layerCount || allCount : allCount;
     for (const tab of document.querySelectorAll('.pb-tab')) {
       const on = layerOf(tab) === layer;
       tab.classList.toggle('active', on);

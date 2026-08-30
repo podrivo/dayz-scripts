@@ -354,7 +354,7 @@ ${social}
 <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><i class="ic ic-menu"></i></button>
 <a class="brand" href="/">DIFF</a>
 <nav class="nav" id="nav" aria-label="Site">${nav}</nav>
-<button class="search-trigger" id="searchBtn" aria-label="Search"><i class="ic ic-search"></i><span>Search…</span><kbd id="searchKbd">⌘K</kbd></button>
+<button class="search-trigger" id="searchBtn" aria-label="Search"><i class="ic ic-search"></i><kbd id="searchKbd">⌘K</kbd></button>
 <div class="verpicker">
 <button class="ver-btn" id="verBtn" aria-haspopup="true" aria-expanded="false" title="Switch DayZ build"><span class="ver-label"></span><i class="ic ic-chev"></i></button>
 <nav class="ver-menu" id="verMenu" aria-label="DayZ builds" hidden></nav>

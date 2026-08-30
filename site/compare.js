@@ -209,22 +209,20 @@ function pairHtml(row, showBuilds) {
 }
 
 /**
- * One name, as a filterable unit. `data-text` is what the filter matches and
- * `data-op` what the totals select, so narrowing never re-renders anything.
+ * One name, as a filterable unit. `data-op` is what the totals select, so
+ * narrowing never re-renders anything.
  */
 function nameHtml(kind, name, op, prefix, build) {
-  return `<a class="cmp-name" data-op="${op}" data-text="${esc(`${name} ${build || ''}`.toLowerCase())}"` +
-    ` href="${prefix}${kind.url(name)}"><span>${esc(name)}</span>${buildsHtml(build ? [build] : null)}</a>`;
+  return `<a class="cmp-name" data-op="${op}" href="${prefix}${kind.url(name)}"><span>${esc(name)}</span>${buildsHtml(build ? [build] : null)}</a>`;
 }
 
 function changedHtml(kind, entry, prefix) {
   const builds = [...new Set(entry.rows.flatMap((row) => row.builds || []))].sort(cmp);
   const pairs = entry.rows.map((row) => pairHtml(row, entry.rows.length > 1)).join('');
-  const text = esc(`${entry.name} ${builds.join(' ')} ${entry.rows.map((r) => r.slice(1).join(' ')).join(' ')}`.toLowerCase());
   const link = `<a href="${prefix}${kind.url(entry.name)}">${esc(entry.name)}</a>`;
   const heading = `${link} ${buildsHtml(builds)}`;
   const count = entry.rows.length > 1 ? ` <span class="count">${entry.rows.length}</span>` : '';
-  return `<details class="cmp-unit cmp-change" data-op="changed" data-text="${text}"><summary>${heading}${count}</summary>${pairs}</details>`;
+  return `<details class="cmp-unit cmp-change" data-op="changed"><summary>${heading}${count}</summary>${pairs}</details>`;
 }
 
 function colHtml(op, list, kind, prefix, landed) {
@@ -448,32 +446,20 @@ export function initCompare({ builds, fmtDate, current }) {
         `${op ? ` title="${esc(SCOPE)}"` : ''}><strong>${num(n)}</strong><span>${esc(label)}</span></button>`)
       .join('')}</section>
 ${time}
-<div class="filterbar">
-  <input type="search" id="cmpFilter" class="filter-input" placeholder="Filter these changes…" autocomplete="off" spellcheck="false" aria-label="Filter these changes">
-  <span class="filter-count" id="cmpCount" aria-live="polite"></span>
-</div>
 ${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}`;
     bindFilter();
   }
 
-  /* The page filter in site/app.js narrows what the generator put on a page;
-     this narrows what the block above just built, and adds the one axis that
-     filter has no way to express — which of the three things happened. Both are
-     pure show/hide over units that carry their own searchable text. */
+  /* The totals above narrow what the block just built to one of the three
+     things that happened. Pure show/hide — nothing is re-rendered. */
   function bindFilter() {
-    const input = document.getElementById('cmpFilter');
-    const count = document.getElementById('cmpCount');
     const ops = document.getElementById('cmpOps');
     const units = [...box.querySelectorAll('.cmp-name, .cmp-unit')];
     let op = '';
 
     const apply = () => {
-      const q = input.value.trim().toLowerCase();
-      let shown = 0;
       for (const el of units) {
-        const on = (!q || el.dataset.text.includes(q)) && (!op || el.dataset.op === op);
-        el.hidden = !on;
-        if (on) shown++;
+        el.hidden = !!(op && el.dataset.op !== op);
       }
       // A heading whose whole list filtered away, and a kind whose every
       // heading did, would otherwise be left standing as empty furniture. The
@@ -514,23 +500,8 @@ ${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}`;
         kind.hidden = !live;
         kind.querySelector('h2 .count').textContent = num(live);
       }
-      count.textContent = q || op
-        ? (shown ? `${num(shown)} of ${num(units.length)}` : 'no matches')
-        : '';
     };
 
-    let pending;
-    input.addEventListener('input', () => {
-      clearTimeout(pending);
-      pending = setTimeout(apply, 60);
-    });
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && input.value) {
-        e.stopPropagation();
-        input.value = '';
-        apply();
-      }
-    });
     ops.addEventListener('click', (e) => {
       const btn = e.target.closest('button[data-op]');
       if (!btn) return;

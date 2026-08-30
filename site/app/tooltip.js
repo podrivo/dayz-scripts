@@ -29,13 +29,16 @@ function view() {
 }
 
 /** Prefer top, then bottom, then the sides. Slide only on the other axis,
-    the way Base UI flips `side` and shifts `align`. */
+    the way Base UI flips `side` and shifts `align`. The sticky chrome is
+    a floor only when the host lives below it — a control in the header
+    would otherwise be pushed into the page. */
 function fit(host, tw, th) {
   const r = host.getBoundingClientRect();
   const v = view();
+  const chrome = chromeTop();
   const minX = v.x + PAD;
   const maxX = v.x + v.w - PAD;
-  const minY = v.y + chromeTop() + PAD;
+  const minY = v.y + (r.top < chrome ? PAD : chrome + PAD);
   const maxY = v.y + v.h - PAD;
   const cx = r.left + r.width / 2;
   const cy = r.top + r.height / 2;
