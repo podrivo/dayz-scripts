@@ -16,9 +16,6 @@ import { $, fmtDate, pageType } from './dom.js';
 import { copyText } from './copy.js';
 import { identity, current } from './builds.js';
 
-/** ItemBase is derived by hundreds of classes; name a screenful, count the rest. */
-const DERIVED_SHOWN = 30;
-
 const clean = (s) => s.replace(/\s+/g, ' ').trim();
 
 /**
@@ -98,12 +95,6 @@ function pageMarkdown(main) {
       out.push(clean(el.textContent));
     } else if (el.matches('.all-members')) {
       out.push(`All members, including inherited: ${location.origin}${location.pathname}members/`);
-    } else if (el.matches('.derived')) {
-      const names = [...el.querySelectorAll('.derived-list a')].map((a) => clean(a.textContent));
-      const head = clean($('summary', el)?.textContent || '');
-      const shown = names.slice(0, DERIVED_SHOWN).join(', ');
-      const more = names.length > DERIVED_SHOWN ? `, … and ${names.length - DERIVED_SHOWN} more` : '';
-      out.push(names.length ? `${head}: ${shown}${more}` : head);
     } else if (el.matches('pre.attrs') || $('pre.attrs', el)) {
       const pre = el.matches('pre.attrs') ? el : $('pre.attrs', el);
       out.push('```\n' + pre.textContent.trim() + '\n```');

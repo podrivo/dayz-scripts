@@ -59,6 +59,7 @@ function hideOnScroll() {
     const showBtn = y >= header.offsetHeight;
     toTop.classList.toggle('on', showBtn);
     if (!showBtn && document.activeElement === toTop) toTop.blur();
+    if ($('.mm-track.grabbing')) return;
     if (y < header.offsetHeight || pinned() || dy < -slack) {
       document.documentElement.classList.remove('top-hidden');
     } else if (dy > slack) {

@@ -14,16 +14,21 @@ export function renderClass(ctx, cls) {
   const { site, base } = ctx;
   const used = new Set();
 
-  // inheritance chain — hidden when the class stands alone, the same way a
-  // one-level breadcrumb is hidden once the title has said the name.
+  // inheritance chain — derived classes on the left, ancestors on the right,
+  // hidden when the class stands alone the same way a one-level breadcrumb
+  // is hidden once the title has said the name.
   const ancestors = site.ancestorsOf(cls.name);
-  const chain = ancestors.length
-    ? `<p class="chain">${[cls.name, ...ancestors]
-        .map((n, i) => {
-          if (i === 0) return `<strong>${esc(n)}</strong>`;
-          return site.classes.has(n) ? `<a href="${base}classes/${n}/">${esc(n)}</a>` : esc(n);
-        })
-        .join(' <span class="chain-sep">›</span> ')}</p>`
+  const kids = site.children.get(cls.name) || [];
+  const chainName = (n, current) => {
+    if (current) return `<strong>${esc(n)}</strong>`;
+    return site.classes.has(n) ? `<a href="${base}classes/${n}/">${esc(n)}</a>` : esc(n);
+  };
+  const sep = ' <span class="chain-sep">›</span> ';
+  const kidLinks = kids.map((n) => chainName(n, false)).join(', ');
+  const ancestorLinks = ancestors.map((n) => chainName(n, false)).join(sep);
+  const parts = [kidLinks, chainName(cls.name, true), ancestorLinks].filter(Boolean);
+  const chain = kids.length || ancestors.length
+    ? `<p class="chain">${parts.join(sep)}</p>`
     : '';
 
   // Only worth its own page when there is something above to inherit from;
@@ -32,12 +37,6 @@ export function renderClass(ctx, cls) {
   // (see classDeps), so the link cannot go stale.
   const allMembers = ancestors.some((n) => site.classes.has(n))
     ? `<p class="all-members"><a href="${base}classes/${cls.name}/members/">All members, including inherited</a></p>`
-    : '';
-
-  const kids = site.children.get(cls.name) || [];
-  const derived = kids.length
-    ? /* html */ `<details class="derived"><summary>Derived by ${kids.length} class${kids.length > 1 ? 'es' : ''}</summary>
-<div class="derived-list">${kids.map((k) => `<a href="${base}classes/${k}/">${esc(k)}</a>`).join(' ')}</div></details>`
     : '';
 
   const basesNote =
@@ -99,7 +98,6 @@ ${chain}
 ${module}
 ${basesNote}
 ${allMembers}
-${derived}
 ${attrs}
 ${cls.doc ? `<div class="class-doc">${renderDoc(cls.doc, site, base)}</div>` : ''}
 ${section('Constants', constants, memberBlock)}

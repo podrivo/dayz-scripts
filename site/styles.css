@@ -731,11 +731,11 @@ table.list.doc-table td:first-child { padding-left: 0; }
 .class-title .kw { color: var(--kw); font-weight: 500; font-size: var(--text-lg); }
 .generics { color: var(--fg2); font-weight: 400; font-size: var(--text-xs); margin-left: 2px; }
 
-.chain { color: var(--fg2); font-size: var(--text-sm); }
+.chain { color: var(--fg2); font-size: var(--text-xs); }
+.chain a { color: var(--fg2); }
 .chain-sep { opacity: 0.5; margin: 0 2px; }
 .alt-bases { font-size: var(--text-sm); color: var(--fg2); }
 
-.derived summary { cursor: pointer; color: var(--accent); font-size: var(--text-sm); }
 .derived-list { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 10px 4px; font-size: var(--text-sm); }
 
 /* ---- what happened to this type, build by build ----
@@ -781,7 +781,10 @@ table.list.doc-table td:first-child { padding-left: 0; }
 .member:hover .anchor, .member:target .anchor { opacity: 1; }
 /* nowrap because it is a button, not prose: three letters in a box, and the
    table column it usually sits in is narrow enough to break them apart */
-.member-src { font-size: var(--text-xs); color: var(--fg2); border: 1px solid var(--line); padding: 0 6px; border-radius: 8px; white-space: nowrap; }
+.member-src {
+  box-sizing: border-box; display: inline-flex; align-items: center; height: 24px;
+  font-size: var(--text-xs); color: var(--fg2); border: 1px solid var(--line); padding: 0 6px; border-radius: 8px; white-space: nowrap;
+}
 .member-src:hover { color: var(--accent); border-color: var(--accent2); text-decoration: none; }
 .member-doc { margin: 6px 0 0; font-size: var(--text-sm); color: var(--fg); }
 .member-doc p { margin: 4px 0; }
@@ -859,8 +862,9 @@ table.list.doc-table td:first-child { padding-left: 0; }
 /* order, because the chip is inserted on hover and the copy button beside it
    is inserted on its own hover: whichever arrives first, this one sits last */
 .note-add {
-  order: 1; padding: 1px 8px; border: 1px dashed var(--line); border-radius: 8px;
-  color: var(--fg2); font-size: var(--text-xs); line-height: 16px; white-space: nowrap;
+  order: 1; box-sizing: border-box; display: inline-flex; align-items: center;
+  height: 24px; padding: 0 8px; border: 1px dashed var(--line); border-radius: 8px;
+  color: var(--fg2); font-size: var(--text-xs); white-space: nowrap;
   opacity: 0; transition: opacity .15s ease;
 }
 .note-add:hover { color: var(--accent); border-color: var(--accent2); }
@@ -980,9 +984,15 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 .copy-btn.copied::before { content: "Copied"; }
 /* The block button floats over the top-right corner of the code it copies. */
 .has-copy { position: relative; }
-.copy-block { position: absolute; top: 8px; right: 8px; z-index: 2; opacity: 0; }
+.copy-block {
+  position: absolute; top: 8px; right: 8px; z-index: 2; opacity: 0;
+  box-sizing: border-box; display: inline-flex; align-items: center; height: 24px;
+}
 .has-copy:hover .copy-block, .copy-block:focus-visible, .copy-block.copied { opacity: 1; }
-.copy-sig, .copy-override { margin-left: 2px; opacity: 0; }
+.copy-sig, .copy-override {
+  box-sizing: border-box; display: inline-flex; align-items: center;
+  height: 24px; margin-left: 2px; opacity: 0;
+}
 .member-sig:hover .copy-sig, .copy-sig:focus-visible, .copy-sig.copied,
 .member-sig:hover .copy-override, .copy-override:focus-visible,
 .copy-override.copied { opacity: 1; }
@@ -991,7 +1001,12 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 .copy-override::before { content: "Override"; }
 
 /* The whole page as Markdown, beside a class or enum title. */
-.class-title .copy-llm { margin-left: 8px; vertical-align: 2px; }
+.class-title .badge-since,
+.class-title .copy-llm {
+  box-sizing: border-box; display: inline-flex; align-items: center;
+  height: 24px; border-radius: 8px; vertical-align: 2px;
+}
+.class-title .copy-llm { margin-left: 8px; }
 .copy-llm::before { content: "Copy for LLM"; }
 
 /* ---- sharing a range of lines ----

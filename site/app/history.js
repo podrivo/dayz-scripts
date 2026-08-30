@@ -122,7 +122,7 @@ const OPS = { '+': ['added', '+'], '-': ['removed', '−'], '~': ['changed', '±
 
 function addTimeline(main, hist, builds, rec, here) {
   const anchor =
-    $('.derived', main) || $('.all-members', main) || $('.alt-bases', main) ||
+    $('.all-members', main) || $('.alt-bases', main) ||
     $('.in-module', main) || $('.chain', main) || $('h1.class-title', main);
   if (!anchor) return;
 
