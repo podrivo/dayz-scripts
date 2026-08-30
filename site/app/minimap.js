@@ -3,7 +3,7 @@
    A rail beside a source file holding the whole of it at once: one bar per
    line, positioned and sized by where the line sits and how long it is, so
    the column reads as the shape of the code. Dragging scrolls, clicking
-   jumps to the line under the pointer, and hovering reads it out.
+   jumps to the line under the pointer.
 
    Source pages only. Every other long page here is a list of named things,
    and a list of nine hundred methods is nine hundred identical marks that
@@ -17,10 +17,7 @@
    exposes to a screen reader, so announcing all of them twice would only
    add noise. */
 
-import { $, esc } from './dom.js';
-
-const LABEL_MIN = 17; // px between a label and the line it names
-const LABEL_MAX = 96; // px of unlabelled rail before one gets sampled in
+import { $ } from './dom.js';
 
 export function initMinimap() {
   const srcEl = $('#src code');
@@ -30,7 +27,7 @@ export function initMinimap() {
   const wide = matchMedia('(min-width: 901px)');
   const still = matchMedia('(prefers-reduced-motion: reduce)');
 
-  let mm, track, view, tip, items, bars = [], marks = [], scale = 1;
+  let mm, track, view, items, bars = [], scale = 1;
 
   /** Every line with its document geometry, measured once per layout. Lines
       are uniform, so two reads give every offset and spare us thousands more.
@@ -48,41 +45,10 @@ export function initMinimap() {
         el,
         top: first.top + y0 + i * lh,
         h: lh,
-        name: `L${i + 1}`,
-        label: `${i + 1}  ${text}`.replace(/\s+/g, ' ').trim().slice(0, 90),
         indent: text.length - text.trimStart().length,
         len: text.trim().length,
       };
     });
-  }
-
-  /** The line nearest a point on the rail. They come out of collect() in
-      document order, so their rail positions are already sorted. */
-  function itemAt(list, y) {
-    let lo = 0;
-    let hi = list.length - 1;
-    while (lo < hi) {
-      const mid = (lo + hi) >> 1;
-      if (list[mid].top * scale < y) lo = mid + 1;
-      else hi = mid;
-    }
-    return list[lo];
-  }
-
-  /**
-   * The few line numbers that make the rail aimable, in rail coordinates.
-   * Sampled at a fixed spacing, and only where a line really sits close to
-   * the sample point — on a short file the nearest one can be half the rail
-   * away, and the label would point at the wrong thing.
-   */
-  function signposts(th) {
-    const out = [];
-    for (let y = LABEL_MAX; y < th - LABEL_MIN; y += LABEL_MAX) {
-      const it = itemAt(items, y);
-      const iy = it && Math.round(it.top * scale);
-      if (it && Math.abs(iy - y) < LABEL_MIN) out.push({ y: iy, text: it.name });
-    }
-    return out;
   }
 
   /** Project the lines onto the rail, one bar per pixel row. */
@@ -104,17 +70,14 @@ export function initMinimap() {
       if (!r) { rows.set(y, { y, x, w, h, it }); continue; }
       r.x = Math.min(r.x, x);
       r.h = Math.max(r.h, h);
-      // the fullest of them names the row, so the tip never reads out a blank
+      // the fullest of them owns the row, so a click lands on real text
       if (w > r.w) { r.w = w; r.it = it; }
     }
 
     bars = [...rows.values()];
-    marks = signposts(th);
     track.innerHTML = bars
       .map((b) => `<i class="mm-bar" style="top:${b.y}px;` +
         `left:${b.x.toFixed(1)}px;width:${b.w.toFixed(1)}px;height:${b.h}px"></i>`)
-      .join('') + marks
-      .map((m) => `<div class="mm-mark" style="top:${m.y}px"><span>${esc(m.text)}</span></div>`)
       .join('') + '<div class="mm-view"></div>';
     view = $('.mm-view', track);
   }
@@ -145,10 +108,9 @@ export function initMinimap() {
     mm = document.createElement('aside');
     mm.className = 'minimap';
     mm.setAttribute('aria-hidden', 'true');
-    mm.innerHTML = '<div class="mm-track"></div><div class="mm-tip" hidden></div>';
+    mm.innerHTML = '<div class="mm-track"></div>';
     main.after(mm);
     track = $('.mm-track', mm);
-    tip = $('.mm-tip', mm);
     place();
     sync();
 
@@ -169,22 +131,12 @@ export function initMinimap() {
       down = true;
       dragging = false;
       startY = e.clientY;
-      tip.hidden = true;
       track.classList.add('grabbing');
     });
     track.addEventListener('pointermove', (e) => {
-      const y = at(e);
-      if (!down) {
-        const b = nearest(y);
-        if (b) {
-          tip.textContent = b.it.label;
-          tip.style.top = `${b.y + track.offsetTop}px`;
-        }
-        tip.hidden = !b;
-        return;
-      }
+      if (!down) return;
       if (!dragging && Math.abs(e.clientY - startY) > 3) dragging = true;
-      if (dragging) centre(y, false);
+      if (dragging) centre(at(e), false);
     });
     // A press that never moved is aimed at something: bars are one or two
     // pixels tall, so honour the nearest one instead of the raw position.
@@ -201,7 +153,6 @@ export function initMinimap() {
       down = false;
       track.classList.remove('grabbing');
     });
-    track.addEventListener('pointerleave', () => { tip.hidden = true; });
 
     addEventListener('scroll', sync, { passive: true });
 
