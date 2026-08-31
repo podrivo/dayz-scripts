@@ -16,3 +16,12 @@
   from = "/api/workshop"
   to = "/.netlify/functions/workshop"
   status = 200
+
+# The old beta Netlify project builds from this repo too. Scoping `from` to its
+# hostname retires that URL without touching diff.yadz.app; `force` is required
+# so the redirect wins over files that exist in dist/.
+[[redirects]]
+  from = "https://beta-dayz-scripts.netlify.app/*"
+  to = "https://diff.yadz.app/:splat"
+  status = 301
+  force = true
