@@ -25,7 +25,7 @@ function historyBadge(kind, text, title, href) {
   const a = document.createElement('a');
   a.className = `badge badge-${kind}`;
   a.textContent = text;
-  a.title = title;
+  a.dataset.tip = title;
   a.href = href;
   return a;
 }
@@ -78,7 +78,7 @@ export function initHistory() {
         oldest ? 'since' : 'added',
         oldest ? `Since ${p.b.version}` : `Added in ${p.b.version}`,
         oldest
-          ? `Present in every tracked build from ${p.b.name} (${p.b.build})`
+          ? `Present since ${p.b.name}`
           : `First appeared in ${p.b.name} (${p.b.build})`,
         p.href,
       );

@@ -61,7 +61,7 @@ function askEl(key) {
   a.target = '_blank';
   a.rel = 'noopener';
   a.textContent = 'Suggest a note';
-  a.dataset.tip = 'Undocumented in the sources. Suggest a community note';
+  a.dataset.tip = 'Suggest a community note';
   a.setAttribute('aria-label', a.dataset.tip);
   return a;
 }
@@ -108,8 +108,10 @@ export function initNotes() {
       if (ownText) {
         const own = noteEl(ownText, type);
         const doc = $('.class-doc', main);
+        const table = $('.enum-table', main);
         const h2 = main.querySelector('h2');
         if (doc) doc.after(own);
+        else if (table) table.before(own);
         else if (h2) h2.before(own);
         else main.append(own);
       } else if (!$('.class-doc', main)) {
