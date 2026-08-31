@@ -112,11 +112,16 @@ The usual path is a pull request. Notes go in `site/notes.json` (see
 the client-side behaviour lives, and the invariants to keep. Bugs and
 suggestions: [Discord](https://discord.yadz.app/).
 
-## Thanks
+## Acknowledgements
 
-To [CreepyCrappyShow](https://creepycrappy.show/), for the support,
-insights, cool name ideas, and friendship along the way. This site is
-better for all of it! <3
+Special thanks to [CreepyCrappyShow](https://creepycrappy.show/), for all the
+support, insights, cool name ideas, and friendship along the way. This site is
+better for all of it! 💚
+
+To [Doxygen](https://github.com/doxygen/doxygen), the open-source generator,
+that generated the first versions of these docs, and to
+[Zeroy's DayZ Explorer](https://dayzexplorer.zeroy.com/), for the
+inspiration! 🙏
 
 ## License
 
