@@ -1,6 +1,7 @@
 // Topics: the \defgroup groups the sources declare. The tree at /topics/, and
 // one topic's page at /topics/<Name>/.
 
+import { parseDoc } from '../../parser/docparse.js';
 import {
   esc, layout, linkType, condBadges, methodSig, varSig, renderDoc, briefOf, slug,
 } from '../html.js';
@@ -102,8 +103,15 @@ export function renderModule(ctx, mod) {
     seenCount.set(e.item.name, (seenCount.get(e.item.name) || 0) + 1);
   }
   const numbering = new Map();
+  const extraOf = (e) => {
+    const d = parseDoc(e.item.doc);
+    if (d && (d.desc || d.deprecated || d.params || d.returns || d.notes || d.warnings || d.code || d.see)) return true;
+    if (!ctx.xref) return false;
+    return Boolean(e.item.calls?.length || site.callers?.get(e.item.name)?.length);
+  };
   for (const e of [...fnEntries, ...varEntries, ...valueEntries]) {
     e.id = anchorFor(used, e.item.name);
+    e.extra = extraOf(e);
     const total = seenCount.get(e.item.name);
     if (total > 1) {
       const n = (numbering.get(e.item.name) || 0) + 1;
@@ -117,22 +125,25 @@ export function renderModule(ctx, mod) {
       ? esc(e.item.name)
       : varSig(e.item, site, base);
 
-  /** Doxygen's summary tables: signature, brief, and a link to the detail below. */
+  /** Signature, brief, and src. more… only when a documentation block follows. */
   const declTable = (entries) =>
     entries.length
       ? /* html */ `<table class="list"><tbody>${entries
-          .map(
-            (e) => `<tr><td><code>${sigOf(e)}</code>${condBadges(e.item.cond)}</td><td>${
+          .map((e) => {
+            const source = e.item.file ? src(e.item) : '';
+            const more = e.extra ? `<a class="member-src" href="#${e.id}">more…</a>` : '';
+            return `<tr${e.extra ? '' : ` id="${e.id}"`}><td><code>${sigOf(e)}</code>${e.ordinal || ''}${condBadges(e.item.cond)}</td><td>${
               e.item.doc ? briefOf(e.item.doc, site, base) : ''
-            }</td><td><a class="member-src" href="#${e.id}">more…</a></td></tr>`
-          )
+            }</td><td>${source}${more}</td></tr>`;
+          })
           .join('\n')}</tbody></table>`
       : '';
 
-  /** Doxygen's documentation sections: the full block, repeated on this page. */
-  const defBlocks = (entries) =>
-    entries.length
-      ? entries
+  /** Full docs, refs, and callers — only for members the table cannot hold. */
+  const defBlocks = (entries) => {
+    const extra = entries.filter((e) => e.extra);
+    return extra.length
+      ? extra
           .map((e) => {
             const owner = e.owner
               ? `<span class="owner-of">${
@@ -152,6 +163,7 @@ ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e
           })
           .join('\n')
       : '';
+  };
 
   const macroRows = mod.defines.length
     ? `<table class="list"><tbody>${[...mod.defines]
@@ -181,9 +193,7 @@ ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e
       ? '<p class="muted">Nothing in this build is filed under this topic. The sources declare it, but everything it once held is commented out or has moved.</p>'
       : '';
 
-  // The order is Doxygen's own, from group/memberdecl/* then group/memberdef/*
-  // in src/layout.cpp: every declaration is summarised in a table first, then
-  // documented in full below. That is why their group pages ran to 300 KB.
+  // Tables first, then documentation only for members with more than a brief.
   const content = /* html */ `
 <h1>${esc(mod.label)}</h1>
 ${parent}
@@ -206,7 +216,6 @@ ${section('Variable Documentation', defBlocks(varEntries))}`;
     title: mod.label,
     active: 'topics/',
     description: `${mod.label} — DayZ Enforce Script API topic`,
-    breadcrumbs: [{ label: 'Topics', href: `${base}topics/` }, { label: mod.label }],
     content,
   });
 }

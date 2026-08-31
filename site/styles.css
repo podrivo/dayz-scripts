@@ -696,6 +696,7 @@ table.list { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 table.list td, table.list th { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
 table.list th { color: var(--fg2); font-weight: 600; font-size: var(--text-sm); }
 table.list tr:hover td { background: var(--bg2); }
+table.list tr:target td { background: var(--accent-bg); }
 /* Source chips in list rows stay out of the way, same as on a member
    signature. The "more…" jump on topic summaries also uses this class
    but points at an in-page id, so it stays visible. */
@@ -703,6 +704,7 @@ table.list a.member-src:not([href^="#"]) { opacity: 0; pointer-events: none; }
 table.list tr:hover a.member-src,
 table.list tr:target a.member-src,
 table.list a.member-src:focus-visible { opacity: 1; pointer-events: auto; }
+table.list:has(.member-src) td:last-child { width: 1%; white-space: nowrap; }
 table.list td:first-child { white-space: nowrap; }
 /* Except where the first column holds a whole declaration rather than a name.
    A name is short enough to keep on one line and reads worse broken; a
@@ -1062,8 +1064,8 @@ a.badge-since:hover, a.badge-added:hover, a.badge-changed:hover {
   box-sizing: border-box; display: inline-flex; align-items: center;
   height: 24px; opacity: 0; pointer-events: none;
 }
-.member:hover .copy-sig, .copy-sig:focus-visible, .copy-sig.copied,
-.member:hover .copy-override, .copy-override:focus-visible,
+.member:hover .copy-sig, .member:target .copy-sig, .copy-sig:focus-visible, .copy-sig.copied,
+.member:hover .copy-override, .member:target .copy-override, .copy-override:focus-visible,
 .copy-override.copied { opacity: 1; pointer-events: auto; }
 /* Specificity keeps .copy-btn.copied::before ahead of this one, so the label
    still becomes "Copied" for the moment after a click. */

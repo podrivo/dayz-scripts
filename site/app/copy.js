@@ -124,10 +124,7 @@ export function initCopySignatures() {
   }
   let sigFor = null;
   let stub = null;
-  sigCopy.addEventListener('click', () => sigFor && copyText(sigFor.textContent.trim(), sigCopy, 'signature'));
-  sigOverride?.addEventListener('click', () => stub && copyText(stub, sigOverride, 'override'));
-  main.addEventListener('pointerover', (e) => {
-    const mem = e.target.closest?.('.member');
+  const attach = (mem) => {
     const sig = mem && $('.member-sig', mem);
     const code = sig && $('code', sig);
     if (!code || code === sigFor) return;
@@ -137,5 +134,9 @@ export function initCopySignatures() {
     stub = overrideStub(code, cls);
     if (stub) sig.append(sigOverride);
     else sigOverride.remove();
-  });
+  };
+  sigCopy.addEventListener('click', () => sigFor && copyText(sigFor.textContent.trim(), sigCopy, 'signature'));
+  sigOverride?.addEventListener('click', () => stub && copyText(stub, sigOverride, 'override'));
+  main.addEventListener('pointerover', (e) => attach(e.target.closest?.('.member')));
+  attach($('.member:target', main));
 }
