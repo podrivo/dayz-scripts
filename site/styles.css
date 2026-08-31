@@ -842,14 +842,14 @@ table.list.doc-table td:first-child { padding-left: 0; }
 }
 .th-more:hover { text-decoration: underline; }
 
-.member { padding: 10px 12px; margin: 0 -12px; border-radius: 16px; }
+.member { padding: 10px 12px; margin: 0 -12px; border-radius: 16px; transition: background-color .15s ease; }
 .member:hover { background: var(--bg2); }
 .member:target { background: var(--accent-bg); outline: 1px solid var(--accent2); }
 .member-sig { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .member-sig > code { background: none; padding: 0; font-size: var(--text-sm); order: 0; }
 .member-sig > .badge { order: 1; }
-.member-sig > .anchor { order: 2; opacity: 0; font-weight: 600; }
-.member-sig > .member-src { order: 3; opacity: 0; pointer-events: none; }
+.member-sig > .anchor { order: 2; opacity: 0; font-weight: 600; transition: opacity .15s ease; }
+.member-sig > .member-src { order: 3; opacity: 0; pointer-events: none; transition: opacity .15s ease; }
 .member-sig > .copy-btn { order: 4; }
 .member-sig > .note-add { order: 5; }
 .member:hover .anchor, .member:target .anchor,
@@ -1070,6 +1070,7 @@ a.badge-since:hover, a.badge-added:hover, a.badge-changed:hover {
 .copy-sig, .copy-override {
   box-sizing: border-box; display: inline-flex; align-items: center;
   height: 24px; opacity: 0; pointer-events: none;
+  transition: opacity .15s ease;
 }
 .member:hover .copy-sig, .member:target .copy-sig, .copy-sig:focus-visible, .copy-sig.copied,
 .member:hover .copy-override, .member:target .copy-override, .copy-override:focus-visible,
