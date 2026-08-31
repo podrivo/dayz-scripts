@@ -146,9 +146,8 @@ function extraPrimaryLabel(url) {
 }
 
 export function linkCards(links, ext = false) {
-  const ordered = [...links].sort((a, b) => a[0].localeCompare(b[0], 'en', { sensitivity: 'base' }));
   return /* html */ `<div class="cards">
-${ordered.map((link) => linkCard(link, ext)).join('\n')}
+${links.map((link) => linkCard(link, ext)).join('\n')}
 </div>`;
 }
 

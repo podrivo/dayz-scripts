@@ -20,6 +20,7 @@ function catalogMod(it) {
     preview: it.preview || '',
     created: it.created || '',
     updated: it.updated || '',
+    subscriptions: Number(it.subscriptions || 0) || undefined,
   };
 }
 
@@ -28,7 +29,7 @@ function fillMod(existing, it) {
   let changed = false;
   const next = { ...existing };
   for (const [k, v] of Object.entries(extra)) {
-    if (v === '' || (Array.isArray(v) && !v.length)) continue;
+    if (v === '' || v === undefined || (Array.isArray(v) && !v.length)) continue;
     if (next[k] === undefined || next[k] === '') {
       next[k] = v;
       changed = true;

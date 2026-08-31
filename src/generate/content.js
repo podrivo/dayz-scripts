@@ -9,13 +9,12 @@ import { ROOT, readJson } from '../util.js';
 const catalog = readJson(path.join(ROOT, 'site', 'workshop.json'));
 const workshopHref = (id) => `https://steamcommunity.com/sharedfiles/filedetails/?id=${id}`;
 const alpha = (links) => links.toSorted((a, b) => a[0].localeCompare(b[0], 'en', { sensitivity: 'base' }));
+const fmtCount = (n) => Number(n).toLocaleString('en-US');
 const mapLink = (m) => {
   if (m.kind === 'official') {
     return [m.name, m.url, `${m.note}. World ${m.world}, mission ${m.mission}`];
   }
-  const card = [m.name, workshopHref(m.id), `Workshop · world ${m.world}`];
-  if (m.site) card.push([['Website', m.site]]);
-  return card;
+  return [m.name, workshopHref(m.id), m.subscriptions ? `${fmtCount(m.subscriptions)} subscribers` : 'Steam Workshop'];
 };
 
 /** Where the site is served from, for the absolute URLs that have to name it:
@@ -34,15 +33,17 @@ export const ANALYTICS_ID = 'G-R8ZT2QC248';
 /** PostHog project token. Public, like ANALYTICS_ID: it ships in the page. */
 export const POSTHOG_KEY = 'phc_nQv26gW5YJWEVvLcAWFLsBdgoGRFFUZfCrt948xfRdDP';
 
-export const OFFICIAL_LINKS = alpha([
-  ['Community Wiki', 'https://community.bistudio.com/wiki/Category:DayZ', 'Bohemia Interactive wiki pages for DayZ'],
+export const OFFICIAL_LINKS = [
   ['DayZ.com', 'https://dayz.com/', 'Official game website and news'],
-  ['DayZ Forums', 'https://forums.dayz.com/', 'Announcements and stable update threads'],
-  ['DayZ Tools', 'https://store.steampowered.com/app/830640/DayZ_Tools/', 'Official modding tools on Steam'],
-  ['Enforce Script Syntax', 'https://community.bistudio.com/wiki/DayZ:Enforce_Script_Syntax', 'The language itself: types, operators and keywords'],
-  ['Feedback Tracker', 'https://feedback.bistudio.com/tag/dayz/', 'Report bugs and follow known issues'],
-  ['GitHub Repositories', 'https://github.com/orgs/BohemiaInteractive/repositories?q=dayz', 'Official Bohemia Interactive DayZ repos'],
-]);
+  ...alpha([
+    ['Community Wiki', 'https://community.bistudio.com/wiki/Category:DayZ', 'Bohemia Interactive wiki pages for DayZ'],
+    ['DayZ Forums', 'https://forums.dayz.com/', 'Announcements and stable update threads'],
+    ['DayZ Tools', 'https://store.steampowered.com/app/830640/DayZ_Tools/', 'Official modding tools on Steam'],
+    ['Enforce Script Syntax', 'https://community.bistudio.com/wiki/DayZ:Enforce_Script_Syntax', 'The language itself: types, operators and keywords'],
+    ['Feedback Tracker', 'https://feedback.bistudio.com/tag/dayz/', 'Report bugs and follow known issues'],
+    ['GitHub Repositories', 'https://github.com/orgs/BohemiaInteractive/repositories?q=dayz', 'Official Bohemia Interactive DayZ repos'],
+  ]),
+];
 
 /** Bohemia's own modding material. */
 export const OFFICIAL_MODDING_LINKS = alpha([
@@ -55,11 +56,13 @@ export const OFFICIAL_MAPS = alpha(catalog.maps.filter((m) => m.kind === 'offici
 export const WORKSHOP_MAPS = alpha(catalog.maps.filter((m) => m.kind === 'workshop').map(mapLink));
 
 /** The servers to ask in. */
-export const DISCORD_LINKS = alpha([
-  ['DayZ Academy', 'https://discord.gg/BMnpGEzKdx', 'Discord · modders and server owners'],
-  ['DayZ Editor', 'https://discord.gg/dayz-editor-738181536029081662', 'Discord · support for the DayZ Editor mod'],
+export const DISCORD_LINKS = [
   ['DayZ Modders', 'https://discord.gg/dayz-modders-452035973786632194', 'Discord · modding and scripting help'],
-]);
+  ...alpha([
+    ['DayZ Academy', 'https://discord.gg/BMnpGEzKdx', 'Discord · modders and server owners'],
+    ['DayZ Editor', 'https://discord.gg/dayz-editor-738181536029081662', 'Discord · support for the DayZ Editor mod'],
+  ]),
+];
 
 /**
  * What the community has built around the scripts, grouped the way /community/
@@ -136,6 +139,7 @@ export const COMMUNITY_SECTIONS = [
       ['DZMap', 'https://dzmap.woozymasta.ru', 'Self-hosted tile server and GeoJSON locations for DayZ maps',
         [['GitHub', 'https://github.com/WoozyMasta/dzmap']]],
       ['iZurvive', 'https://izurvive.com/', 'Interactive maps with loot spawn layers'],
+      ['xam.nu', 'https://dayz.xam.nu/', 'Interactive maps for official and Workshop terrains'],
       ['MetricZ', 'https://github.com/WoozyMasta/metricz', 'In-game metrics mod, with a Prometheus exporter for A2S and RCon',
         [['Exporter', 'https://github.com/WoozyMasta/metricz-exporter']]],
       ['RaG Economy Manager', 'https://github.com/Tyson89/RaG-Economy-Manager', 'Inspect and edit mission economy XML without hand-editing'],

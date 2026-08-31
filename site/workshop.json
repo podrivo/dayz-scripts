@@ -1,7 +1,7 @@
 {
   "maps": [
     {
-      "name": "Chernarus+",
+      "name": "Chernarus",
       "kind": "official",
       "world": "chernarusplus",
       "mission": "dayzOffline.chernarusplus",
@@ -30,57 +30,79 @@
       "world": "namalsk",
       "id": "2289456201",
       "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2289456201",
-      "site": "https://www.nightstalkers.cz/"
+      "subscriptions": 1256013,
+      "created": "2020-11-16",
+      "updated": "2025-02-25"
     },
     {
-      "name": "Deer Isle",
+      "name": "DeerIsle",
       "kind": "workshop",
       "world": "deerisle",
       "id": "1602372402",
       "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1602372402",
-      "site": "https://deerisle-wiki.jimdosite.com/"
+      "subscriptions": 873175,
+      "created": "2018-12-25",
+      "updated": "2025-06-04"
     },
     {
       "name": "Banov",
       "kind": "workshop",
       "world": "banov",
       "id": "2415195639",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2415195639"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2415195639",
+      "subscriptions": 233720,
+      "created": "2021-03-05",
+      "updated": "2026-06-21"
     },
     {
       "name": "Takistan Plus",
       "kind": "workshop",
       "world": "takistanplus",
       "id": "2563233742",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2563233742"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2563233742",
+      "subscriptions": 237094,
+      "created": "2021-08-01",
+      "updated": "2026-04-15"
     },
     {
       "name": "Esseker",
       "kind": "workshop",
       "world": "esseker",
       "id": "2462896799",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2462896799"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2462896799",
+      "subscriptions": 153598,
+      "created": "2021-04-20",
+      "updated": "2021-07-20"
     },
     {
       "name": "Bitterroot",
       "kind": "workshop",
       "world": "bitterroot",
       "id": "2906823750",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2906823750"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2906823750",
+      "subscriptions": 154240,
+      "created": "2022-12-25",
+      "updated": "2025-05-19"
     },
     {
       "name": "Chiemsee",
       "kind": "workshop",
       "world": "chiemsee",
       "id": "1580589252",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1580589252"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1580589252",
+      "subscriptions": 82718,
+      "created": "2018-12-02",
+      "updated": "2024-12-24"
     },
     {
       "name": "Alteria",
       "kind": "workshop",
       "world": "alteria",
       "id": "3296994216",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3296994216"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3296994216",
+      "subscriptions": 79206,
+      "created": "2024-07-26",
+      "updated": "2025-05-03"
     },
     {
       "name": "Hashima Islands",
@@ -88,7 +110,9 @@
       "world": "hashima",
       "id": "2781560371",
       "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2781560371",
-      "site": "https://hashima.gg/"
+      "subscriptions": 49736,
+      "created": "2022-03-19",
+      "updated": "2025-06-08"
     },
     {
       "name": "Melkart",
@@ -96,70 +120,99 @@
       "world": "melkart",
       "id": "2716445223",
       "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2716445223",
-      "site": "https://sites.google.com/view/melkartdayz"
+      "subscriptions": 146958,
+      "created": "2022-01-12",
+      "updated": "2024-04-03"
     },
     {
       "name": "Deadfall",
       "kind": "workshop",
       "world": "deadfall",
       "id": "3050117454",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3050117454"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3050117454",
+      "subscriptions": 71006,
+      "created": "2023-10-13",
+      "updated": "2025-07-06"
     },
     {
       "name": "Iztek",
       "kind": "workshop",
       "world": "iztek",
       "id": "2978912938",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2978912938"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2978912938",
+      "subscriptions": 3535,
+      "created": "2023-05-21",
+      "updated": "2024-02-29"
     },
     {
       "name": "Rostow",
       "kind": "workshop",
       "world": "rostow",
       "id": "2344585107",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2344585107"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2344585107",
+      "subscriptions": 47466,
+      "created": "2021-01-01",
+      "updated": "2026-04-15"
     },
     {
       "name": "Nyheim",
       "kind": "workshop",
       "world": "nyheim",
       "id": "2633522605",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2633522605"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2633522605",
+      "subscriptions": 11809,
+      "created": "2021-10-21",
+      "updated": "2023-05-27"
     },
     {
       "name": "Anastara",
       "kind": "workshop",
       "world": "anastara",
       "id": "2973953648",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2973953648"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2973953648",
+      "subscriptions": 18878,
+      "created": "2023-05-10",
+      "updated": "2025-01-15"
     },
     {
       "name": "Avalon",
       "kind": "workshop",
       "world": "avalon",
       "id": "3225634444",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3225634444"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3225634444",
+      "subscriptions": 28744,
+      "created": "2024-04-18",
+      "updated": "2026-07-31"
     },
     {
       "name": "Malvinas",
       "kind": "workshop",
       "world": "malvinas",
       "id": "3390173486",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3390173486"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3390173486",
+      "subscriptions": 1932,
+      "created": "2024-12-23",
+      "updated": "2025-09-16"
     },
     {
       "name": "Valning",
       "kind": "workshop",
       "world": "valning",
       "id": "1880753439",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1880753439"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1880753439",
+      "subscriptions": 87001,
+      "created": "2019-10-05",
+      "updated": "2020-11-26"
     },
     {
       "name": "Pripyat",
       "kind": "workshop",
       "world": "pripyat",
       "id": "3136720512",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3136720512"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3136720512",
+      "subscriptions": 34739,
+      "created": "2024-01-11",
+      "updated": "2025-12-14"
     },
     {
       "name": "Azalea",
@@ -167,77 +220,109 @@
       "world": "azalea",
       "id": "2977981023",
       "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2977981023",
-      "site": "https://azaleamap.com/"
+      "subscriptions": 8861,
+      "created": "2023-05-19",
+      "updated": "2026-08-29"
     },
     {
       "name": "Vela",
       "kind": "workshop",
       "world": "vela",
       "id": "2794308565",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2794308565"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2794308565",
+      "subscriptions": 4276,
+      "created": "2022-04-14",
+      "updated": "2024-09-05"
     },
     {
       "name": "Stuart Island",
       "kind": "workshop",
       "world": "stuartisland",
       "id": "1936423383",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1936423383"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1936423383",
+      "subscriptions": 14316,
+      "created": "2019-12-14",
+      "updated": "2020-04-27"
     },
     {
       "name": "Antoria",
       "kind": "workshop",
       "world": "antoria",
       "id": "2966495799",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2966495799"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2966495799",
+      "subscriptions": 11528,
+      "created": "2023-04-24",
+      "updated": "2026-08-10"
     },
     {
       "name": "Arsteinen",
       "kind": "workshop",
       "world": "arsteinen",
       "id": "2982575649",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2982575649"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2982575649",
+      "subscriptions": 12464,
+      "created": "2023-05-30",
+      "updated": "2025-10-21"
     },
     {
       "name": "PNW",
       "kind": "workshop",
       "world": "pnw",
       "id": "3290318225",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3290318225"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3290318225",
+      "subscriptions": 42326,
+      "created": "2024-07-16",
+      "updated": "2026-04-28"
     },
     {
       "name": "Sahrani",
       "kind": "workshop",
       "world": "sahrani",
       "id": "3508468461",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3508468461"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3508468461",
+      "subscriptions": 9424,
+      "created": "2025-06-25",
+      "updated": "2026-01-23"
     },
     {
       "name": "ROS",
       "kind": "workshop",
       "world": "ros",
       "id": "2390417799",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2390417799"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2390417799",
+      "subscriptions": 1129,
+      "created": "2021-02-10",
+      "updated": "2024-07-28"
     },
     {
       "name": "Raman",
       "kind": "workshop",
       "world": "raman",
       "id": "3401182744",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3401182744"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3401182744",
+      "subscriptions": 10588,
+      "created": "2025-01-05",
+      "updated": "2026-04-15"
     },
     {
       "name": "Onforin",
       "kind": "workshop",
       "world": "onforin",
       "id": "3445058656",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3445058656"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3445058656",
+      "subscriptions": 1127,
+      "created": "2025-03-15",
+      "updated": "2026-05-16"
     },
     {
       "name": "Yiprit",
       "kind": "workshop",
       "world": "yiprit",
       "id": "2780320171",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2780320171"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2780320171",
+      "subscriptions": 9813,
+      "created": "2022-03-17",
+      "updated": "2023-12-09"
     },
     {
       "name": "Vis Island",
@@ -251,35 +336,60 @@
       "kind": "workshop",
       "world": "nhchernobyl",
       "id": "2727569951",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2727569951"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2727569951",
+      "subscriptions": 90751,
+      "created": "2022-01-22",
+      "updated": "2024-10-15"
     },
     {
       "name": "NukeZ Zone",
       "kind": "workshop",
       "world": "nukezzone",
       "id": "2828800987",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2828800987"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2828800987",
+      "subscriptions": 1988,
+      "created": "2022-07-01",
+      "updated": "2025-08-16"
     },
     {
       "name": "Novikostok",
       "kind": "workshop",
       "world": "novikostok",
       "id": "3553075906",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3553075906"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3553075906",
+      "subscriptions": 9781,
+      "created": "2025-08-21",
+      "updated": "2026-07-08"
     },
     {
       "name": "Lux Redux",
       "kind": "workshop",
       "world": "lux",
       "id": "3371742728",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3371742728"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3371742728",
+      "subscriptions": 28365,
+      "created": "2024-11-25",
+      "updated": "2025-05-29"
     },
     {
       "name": "Green County",
       "kind": "workshop",
       "world": "greencounty",
       "id": "2128098372",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2128098372"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2128098372",
+      "subscriptions": 16995,
+      "created": "2020-06-12",
+      "updated": "2026-08-12"
+    },
+    {
+      "name": "Chernarus2035",
+      "kind": "workshop",
+      "world": "Chernarus2035",
+      "id": "3638582966",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3638582966",
+      "subscriptions": 37273,
+      "created": "2026-01-03",
+      "updated": "2026-03-29"
     }
   ],
   "mods": [
@@ -293,7 +403,8 @@
       ],
       "preview": "https://images.steamusercontent.com/ugc/1303178882177497765/484890DF6AC1AE6484045A7C4458E0D1D35DBD05/",
       "created": "2018-11-07",
-      "updated": "2026-02-19"
+      "updated": "2026-02-19",
+      "subscriptions": 4890037
     },
     {
       "name": "Code Lock",
@@ -309,7 +420,8 @@
       ],
       "preview": "https://images.steamusercontent.com/ugc/754842852191533742/A7044E09EFD347E788B5B77D832F7D61845CFA06/",
       "created": "2019-02-05",
-      "updated": "2024-11-01"
+      "updated": "2024-11-01",
+      "subscriptions": 4265254
     },
     {
       "name": "VPPAdminTools",
@@ -321,7 +433,8 @@
       ],
       "preview": "https://images.steamusercontent.com/ugc/17252369608484396380/5CFB22B1C3776DFB3CFA37C828399F142EDF3FDE/",
       "created": "2019-08-08",
-      "updated": "2026-07-15"
+      "updated": "2026-07-15",
+      "subscriptions": 3795010
     },
     {
       "name": "BuilderItems",
@@ -335,7 +448,8 @@
       ],
       "preview": "https://images.steamusercontent.com/ugc/38938569345445671/96AF022788642B1D87D8948E932208B771C4115D/",
       "created": "2018-11-16",
-      "updated": "2024-11-26"
+      "updated": "2024-11-26",
+      "subscriptions": 2974729
     },
     {
       "name": "Dabs Framework",
@@ -348,7 +462,8 @@
       ],
       "preview": "https://images.steamusercontent.com/ugc/15185888921370759744/0B07310EF6B10AF16E61D0BE50EA7637E7FDFAEF/",
       "created": "2021-07-12",
-      "updated": "2026-05-30"
+      "updated": "2026-05-30",
+      "subscriptions": 3415296
     },
     {
       "name": "FlipTransport",
@@ -362,7 +477,8 @@
       ],
       "preview": "https://images.steamusercontent.com/ugc/2490019128130409302/491A57251322EB1671BCC91601A685AAD9DB29FF/",
       "created": "2019-08-12",
-      "updated": "2024-10-13"
+      "updated": "2024-10-13",
+      "subscriptions": 3032350
     },
     {
       "name": "WindstridesClothingPack",
@@ -377,7 +493,8 @@
       ],
       "preview": "https://images.steamusercontent.com/ugc/1663480226053881998/C4E472AE3BA243A415A92853DE9869120743D3A2/",
       "created": "2019-07-09",
-      "updated": "2024-10-23"
+      "updated": "2024-10-23",
+      "subscriptions": 2934562
     },
     {
       "name": "BaseBuildingPlus",
@@ -393,7 +510,8 @@
       ],
       "preview": "https://images.steamusercontent.com/ugc/1836915105922968803/C7D90B8C5FA3366374884009F01B67DA15ADABD9/",
       "created": "2019-04-13",
-      "updated": "2025-03-22"
+      "updated": "2025-03-22",
+      "subscriptions": 2829777
     },
     {
       "name": "Advanced Weapon Scopes",
@@ -406,7 +524,8 @@
       ],
       "preview": "https://images.steamusercontent.com/ugc/1843657354507658651/495F60928EF8B618A0BB4CBBCAF6F8D27B396887/",
       "created": "2020-06-26",
-      "updated": "2023-11-10"
+      "updated": "2023-11-10",
+      "subscriptions": 2707864
     }
   ]
 }
