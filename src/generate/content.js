@@ -45,10 +45,16 @@ export const OFFICIAL_LINKS = [
 
 /** Bohemia's own modding material. */
 export const OFFICIAL_MODDING_LINKS = alpha([
+  ['Administration Logs', 'https://community.bistudio.com/wiki/DayZ:Administration_Logs', 'The .ADM file: every logged event and the serverDZ.cfg switches'],
   ['Central Economy', 'https://github.com/BohemiaInteractive/DayZ-Central-Economy', 'The vanilla loot economy files, as the game ships them'],
+  ['Central Economy Configuration', 'https://community.bistudio.com/wiki/DayZ:Central_Economy_Configuration', 'globals.xml and cfgEconomyCore.xml: cleanup, backups, CE logging'],
   ['Diag Menu', 'https://community.bistudio.com/wiki/DayZ:Diag_Menu', 'Debug menu in DayZDiag_x64.exe: Win+Alt in a 3D viewport'],
+  ['Error Codes', 'https://community.bistudio.com/wiki/DayZ:Error_Codes', 'Every connect and kick error code the client can show, decoded'],
+  ['Gameplay Settings', 'https://community.bistudio.com/wiki/DayZ:Gameplay_Settings', 'Every cfggameplay.json parameter, with defaults'],
+  ['Mission File Overrides', 'https://community.bistudio.com/wiki/DayZ:Central_Economy_mission_files_modding', 'How custom CE XML merges over vanilla: types, events, globals, messages'],
   ['Modding Basics', 'https://community.bistudio.com/wiki/DayZ:Modding_Basics', 'Official walkthrough: project drive, config.cpp, packing, first script'],
   ['Modding Samples', 'https://github.com/BohemiaInteractive/DayZ-Samples', 'Sample mods to start a project from'],
+  ['Script Debugging', 'https://community.bistudio.com/wiki/DayZ:Workbench_Script_Debugging', 'Attach Workbench to DayZDiag_x64.exe for breakpoints and live output'],
 ]);
 
 export const OFFICIAL_MAPS = alpha(catalog.maps.filter((m) => !m.id).map(mapLink));
