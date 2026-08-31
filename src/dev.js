@@ -16,6 +16,7 @@ import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 import { CACHE_DIR, DATA_DIR, ROOT, extractSources, readJson } from './util.js';
+import { doxygenRedirect } from './doxygen.js';
 import { buildSiteModel } from './generate/model.js';
 import { diffModels } from './generate/diff.js';
 import { buildHistoryAssets } from './generate/history.js';
@@ -231,6 +232,11 @@ function handle(req, res) {
   if (pathname === '/__dev/events') return events(res);
   if (pathname === '/api/workshop') return sendWorkshop(res);
   if (pathname.startsWith('/assets/')) return sendAsset(res, pathname.slice('/assets/'.length));
+  const doxygenTarget = doxygenRedirect(pathname);
+  if (doxygenTarget) {
+    res.writeHead(301, { location: doxygenTarget });
+    return res.end();
+  }
   // Matches the `/v/ / 302` rule the generator writes into dist/_redirects.
   if (pathname === '/v/') {
     res.writeHead(302, { location: '/' });

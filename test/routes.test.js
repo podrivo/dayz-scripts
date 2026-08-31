@@ -8,6 +8,8 @@ import assert from 'node:assert/strict';
 import { parseFile } from '../src/parser/index.js';
 import { buildSiteModel } from '../src/generate/model.js';
 import { pages, resolve } from '../src/generate/routes.js';
+import { doxygenRedirect } from '../src/doxygen.js';
+import { handler as doxygenHandler } from '../netlify/functions/doxygen.js';
 
 const SOURCE = `
 /** \\defgroup Topic Some topic
@@ -39,6 +41,20 @@ function fixture() {
 const site = fixture();
 const opts = { isLatest: true, versions: [] };
 const all = [...pages(site, opts)];
+
+test('archived Doxygen pages redirect to clean URLs', async () => {
+  assert.equal(doxygenRedirect('/d0/d05/class_remote_player_meta.html'), '/classes/RemotePlayerMeta/');
+  assert.equal(doxygenRedirect('/d0/d10/group___r_p_c.html'), '/topics/RPC/');
+  assert.equal(
+    doxygenRedirect('/d1/d23/_plugin_remote_player_debug_client_8c.html'),
+    '/files/scripts/4_World/Plugins/PluginBase/PluginDeveloper/PluginRemotePlayerDebugClient.c/'
+  );
+  assert.equal(doxygenRedirect('/annotated.html'), '/classes/');
+  assert.equal(doxygenRedirect('/not-a-doxygen-page.html'), null);
+  const response = await doxygenHandler({ queryStringParameters: { path: 'd0/d05/class_remote_player_meta.html' } });
+  assert.equal(response.statusCode, 301);
+  assert.equal(response.headers.location, '/classes/RemotePlayerMeta/');
+});
 
 test('every page the generator writes is reachable by URL', () => {
   assert.ok(all.length > 20, `only ${all.length} pages`);

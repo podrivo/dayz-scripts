@@ -22,6 +22,7 @@ import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { Worker } from 'node:worker_threads';
 import { CACHE_DIR, DATA_DIR, DIST_DIR, ROOT, extractSources, readJson, sourceBlobs } from '../util.js';
+import { doxygenStaticRedirects } from '../doxygen.js';
 import { buildSiteModel } from './model.js';
 import { diffModels } from './diff.js';
 import { SITE_URL } from './content.js';
@@ -334,6 +335,9 @@ const classRedirects = [
   '/v/:build/class/* /v/:build/classes/:splat 301',
   '/v/:build/class/ /v/:build/classes/ 301',
 ];
+const doxygenFunctionRedirects = '0123456789abcdef'.split('').map(
+  (hex) => `/d${hex}/* /.netlify/functions/doxygen?path=d${hex}/:splat 200`
+);
 // Netlify 301s mixed-case static paths to lowercase. Pages with a capital
 // live under _s/ (see publishFile) so the public URL is not a static file.
 const caseRewrites = [
@@ -351,6 +355,8 @@ fs.writeFileSync(
     `https://dayz-docs.yadz.app/* ${SITE_URL}/:splat 301!`,
     `https://dayz-scripts.yadz.app/* ${SITE_URL}/:splat 301!`,
     '/v/ / 302',
+    ...doxygenStaticRedirects,
+    ...doxygenFunctionRedirects,
     ...moveRedirects,
     ...fieldRedirects,
     ...topicRedirects,

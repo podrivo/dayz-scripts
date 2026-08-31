@@ -8,6 +8,7 @@ import path from 'node:path';
 import readline from 'node:readline/promises';
 import { spawnSync } from 'node:child_process';
 import { DATA_DIR, DIST_DIR, ROOT } from './util.js';
+import { doxygenRedirect } from './doxygen.js';
 import { sendWorkshop } from './workshop.js';
 
 const PORT = process.env.PORT || 3000;
@@ -90,6 +91,11 @@ const TYPES = {
 const server = http.createServer((req, res) => {
   let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
   if (p === '/api/workshop') return sendWorkshop(res);
+  const doxygenTarget = doxygenRedirect(p);
+  if (doxygenTarget) {
+    res.writeHead(301, { location: doxygenTarget });
+    return res.end();
+  }
   let file = path.join(DIST_DIR, p);
   if (p.endsWith('/')) file = path.join(file, 'index.html');
   else if (!path.extname(file) && fs.existsSync(path.join(file, 'index.html'))) {

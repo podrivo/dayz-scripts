@@ -11,6 +11,7 @@
     "fetch": "node src/fetch.js",
     "parse": "node src/parse-all.js",
     "generate": "node src/generate/index.js",
+    "generate:doxygen-redirects": "node src/generate/doxygen-map.js",
     "generate:latest": "BUILD_VERSIONS=1 node src/generate/index.js",
     "generate:verify": "BUILD_VERSIONS=6 GENERATE_VERIFY=1 node src/generate/index.js",
     "build": "node src/fetch.js && node src/parse-all.js && node src/generate/index.js",
