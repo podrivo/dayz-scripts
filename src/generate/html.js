@@ -2,7 +2,7 @@
 // rendering. Pure template-literal functions, no dependencies.
 
 import { parseDoc } from '../parser/docparse.js';
-import { SITE_URL, ANALYTICS_ID, POSTHOG_KEY, REPO_URL } from './content.js';
+import { SITE_URL, ANALYTICS_ID, POSTHOG_KEY, REPO_URL, YADZ_DISCORD } from './content.js';
 
 // Analytics, carried over from the Doxygen site so its numbers continue rather
 // than restart. Loaded async and last, after the script the page actually
@@ -312,10 +312,9 @@ function footer(base) {
 <nav class="foot-nav" aria-label="Footer">
 <a href="${base}about/">About</a>
 <a href="${base}community/">Community</a>
+<span class="foot-sep" aria-hidden="true"></span>
 <a href="${REPO_URL}" ${EXT}>GitHub</a>
-<a href="https://yadz.app/" ${EXT}>YADZ</a>
-<a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ Script Diff</a>
-<a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a>
+<a href="${YADZ_DISCORD}" ${EXT}>Discord</a>
 </nav>
 <p>This is not official documentation and is not affiliated with <a href="https://dayz.com/" ${EXT}>DayZ</a> or <a href="https://www.bohemia.net/" ${EXT}>Bohemia Interactive</a>. The script sources shown here are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are licensed under the <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License (DPL)</a>. They have been modified for presentation — parsed, reorganized and reformatted — from the originals in <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff/tree/main/scripts" ${EXT}>DayZ Script Diff</a>, and are offered as-is, without warranties of any kind. Community notes and outbound links are community-made and carry their own licenses. DAYZ®, ENFUSION® and BOHEMIA INTERACTIVE® are registered trademarks of BOHEMIA INTERACTIVE a.s. All other trademarks and copyrights are the property of their respective owners.</p>
 </div>

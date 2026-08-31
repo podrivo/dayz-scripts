@@ -1,7 +1,7 @@
 // The about page at /about/.
 
 import { layout, EXT, SITE_TITLE } from '../html.js';
-import { REPO_URL, COLLABORATION_LINKS } from '../content.js';
+import { REPO_URL, COLLABORATION_LINKS, YADZ_DISCORD } from '../content.js';
 import { linkCards } from './shared.js';
 
 /** Machine-readable files agents should fetch instead of scraping HTML. */
@@ -36,7 +36,7 @@ ${linkCards(AGENT_LINKS)}
 <p>Type is <a href="https://rsms.me/inter/" ${EXT}>Inter</a>, loaded from <a href="https://fonts.google.com/specimen/Inter" ${EXT}>Google Fonts</a> as a variable face with optical size, with the system UI stack behind it. Code, signatures and shortcuts use the platform monospace stack — ui-monospace, SF Mono, Cascadia Code, Menlo, Consolas.</p>
 <p>The source lives on <a href="${REPO_URL}" ${EXT}>GitHub</a>. The site is hosted on <a href="https://www.netlify.com/" ${EXT}>Netlify</a>. It is written and edited in <a href="https://cursor.com/" ${EXT}>Cursor</a> with multiple LLMs. The generator is <a href="${REPO_URL}/blob/main/LICENSE" ${EXT}>MIT</a>; the script sources it documents are © <a href="https://www.bohemia.net/" ${EXT}>Bohemia Interactive</a> and licensed under the <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a>.</p>
 <h2 id="collaborations">Collaborations</h2>
-<p>Bug reports, suggestions, and community notes are welcome.</p>
+<p>Bug reports, suggestions, and community notes are welcome. Open an issue or a pull request on <a href="${REPO_URL}" ${EXT}>GitHub</a>, or just leave a message on <a href="${YADZ_DISCORD}" ${EXT}>Discord</a>.</p>
 ${linkCards(COLLABORATION_LINKS, true)}`;
 
   return layout({
