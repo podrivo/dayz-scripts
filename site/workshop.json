@@ -29,14 +29,16 @@
       "kind": "workshop",
       "world": "namalsk",
       "id": "2289456201",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2289456201"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2289456201",
+      "site": "https://www.nightstalkers.cz/"
     },
     {
       "name": "Deer Isle",
       "kind": "workshop",
       "world": "deerisle",
       "id": "1602372402",
-      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1602372402"
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1602372402",
+      "site": "https://deerisle-wiki.jimdosite.com/"
     },
     {
       "name": "Banov",
@@ -79,6 +81,205 @@
       "world": "alteria",
       "id": "3296994216",
       "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3296994216"
+    },
+    {
+      "name": "Hashima Islands",
+      "kind": "workshop",
+      "world": "hashima",
+      "id": "2781560371",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2781560371",
+      "site": "https://hashima.gg/"
+    },
+    {
+      "name": "Melkart",
+      "kind": "workshop",
+      "world": "melkart",
+      "id": "2716445223",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2716445223",
+      "site": "https://sites.google.com/view/melkartdayz"
+    },
+    {
+      "name": "Deadfall",
+      "kind": "workshop",
+      "world": "deadfall",
+      "id": "3050117454",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3050117454"
+    },
+    {
+      "name": "Iztek",
+      "kind": "workshop",
+      "world": "iztek",
+      "id": "2978912938",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2978912938"
+    },
+    {
+      "name": "Rostow",
+      "kind": "workshop",
+      "world": "rostow",
+      "id": "2344585107",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2344585107"
+    },
+    {
+      "name": "Nyheim",
+      "kind": "workshop",
+      "world": "nyheim",
+      "id": "2633522605",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2633522605"
+    },
+    {
+      "name": "Anastara",
+      "kind": "workshop",
+      "world": "anastara",
+      "id": "2973953648",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2973953648"
+    },
+    {
+      "name": "Avalon",
+      "kind": "workshop",
+      "world": "avalon",
+      "id": "3225634444",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3225634444"
+    },
+    {
+      "name": "Malvinas",
+      "kind": "workshop",
+      "world": "malvinas",
+      "id": "3390173486",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3390173486"
+    },
+    {
+      "name": "Valning",
+      "kind": "workshop",
+      "world": "valning",
+      "id": "1880753439",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1880753439"
+    },
+    {
+      "name": "Pripyat",
+      "kind": "workshop",
+      "world": "pripyat",
+      "id": "3136720512",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3136720512"
+    },
+    {
+      "name": "Azalea",
+      "kind": "workshop",
+      "world": "azalea",
+      "id": "2977981023",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2977981023",
+      "site": "https://azaleamap.com/"
+    },
+    {
+      "name": "Vela",
+      "kind": "workshop",
+      "world": "vela",
+      "id": "2794308565",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2794308565"
+    },
+    {
+      "name": "Stuart Island",
+      "kind": "workshop",
+      "world": "stuartisland",
+      "id": "1936423383",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1936423383"
+    },
+    {
+      "name": "Antoria",
+      "kind": "workshop",
+      "world": "antoria",
+      "id": "2966495799",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2966495799"
+    },
+    {
+      "name": "Arsteinen",
+      "kind": "workshop",
+      "world": "arsteinen",
+      "id": "2982575649",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2982575649"
+    },
+    {
+      "name": "PNW",
+      "kind": "workshop",
+      "world": "pnw",
+      "id": "3290318225",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3290318225"
+    },
+    {
+      "name": "Sahrani",
+      "kind": "workshop",
+      "world": "sahrani",
+      "id": "3508468461",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3508468461"
+    },
+    {
+      "name": "ROS",
+      "kind": "workshop",
+      "world": "ros",
+      "id": "2390417799",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2390417799"
+    },
+    {
+      "name": "Raman",
+      "kind": "workshop",
+      "world": "raman",
+      "id": "3401182744",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3401182744"
+    },
+    {
+      "name": "Onforin",
+      "kind": "workshop",
+      "world": "onforin",
+      "id": "3445058656",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3445058656"
+    },
+    {
+      "name": "Yiprit",
+      "kind": "workshop",
+      "world": "yiprit",
+      "id": "2780320171",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2780320171"
+    },
+    {
+      "name": "Vis Island",
+      "kind": "workshop",
+      "world": "visisland",
+      "id": "3031438368",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3031438368"
+    },
+    {
+      "name": "NH Chernobyl",
+      "kind": "workshop",
+      "world": "nhchernobyl",
+      "id": "2727569951",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2727569951"
+    },
+    {
+      "name": "NukeZ Zone",
+      "kind": "workshop",
+      "world": "nukezzone",
+      "id": "2828800987",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2828800987"
+    },
+    {
+      "name": "Novikostok",
+      "kind": "workshop",
+      "world": "novikostok",
+      "id": "3553075906",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3553075906"
+    },
+    {
+      "name": "Lux Redux",
+      "kind": "workshop",
+      "world": "lux",
+      "id": "3371742728",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3371742728"
+    },
+    {
+      "name": "Green County",
+      "kind": "workshop",
+      "world": "greencounty",
+      "id": "2128098372",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2128098372"
     }
   ],
   "mods": [

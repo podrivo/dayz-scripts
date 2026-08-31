@@ -9,11 +9,12 @@ import { ROOT, readJson } from '../util.js';
 const catalog = readJson(path.join(ROOT, 'site', 'workshop.json'));
 const workshopHref = (id) => `https://steamcommunity.com/sharedfiles/filedetails/?id=${id}`;
 const mapLink = (m) => {
-  const url = m.url || workshopHref(m.id);
   if (m.kind === 'official') {
-    return [m.name, url, `${m.note}. World ${m.world}, mission ${m.mission}`];
+    return [m.name, m.url, `${m.note}. World ${m.world}, mission ${m.mission}`];
   }
-  return [m.name, url, `Workshop · world ${m.world}`];
+  const card = [m.name, workshopHref(m.id), `Workshop · world ${m.world}`];
+  if (m.site) card.push([['Website', m.site]]);
+  return card;
 };
 
 /** Where the site is served from, for the absolute URLs that have to name it:

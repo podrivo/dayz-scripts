@@ -138,6 +138,7 @@ function extraPrimaryLabel(url) {
   try {
     const u = new URL(url);
     if (u.hostname === 'marketplace.visualstudio.com') return 'Marketplace';
+    if (u.hostname === 'steamcommunity.com') return 'Workshop';
     if (u.hostname === 'github.com' && u.pathname.includes('/wiki')) return 'Wiki';
     if (u.hostname === 'github.com') return 'GitHub';
   } catch { /* keep Website */ }
