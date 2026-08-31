@@ -37,9 +37,7 @@ ${linkCards(AGENT_LINKS)}
 <p>The source lives on <a href="${REPO_URL}" ${EXT}>GitHub</a>. The site is hosted on <a href="https://www.netlify.com/" ${EXT}>Netlify</a>. It is written and edited in <a href="https://cursor.com/" ${EXT}>Cursor</a> with multiple LLMs. The generator is <a href="${REPO_URL}/blob/main/LICENSE" ${EXT}>MIT</a>; the script sources it documents are © <a href="https://www.bohemia.net/" ${EXT}>Bohemia Interactive</a> and licensed under the <a href="https://www.bohemia.net/community/licenses/dayz-public-license-dpl" ${EXT}>DayZ Public License</a>.</p>
 <h2 id="collaborations">Collaborations</h2>
 <p>Bug reports, suggestions, and community notes are welcome.</p>
-${linkCards(COLLABORATION_LINKS, true)}
-<h2 id="thanks">Thanks</h2>
-<p>To <a href="https://creepycrappy.show/" ${EXT}>CreepyCrappyShow</a>, for all the support, insights, cool name ideas, and friendship along the way. This site is better for all of it! &lt;3</p>`;
+${linkCards(COLLABORATION_LINKS, true)}`;
 
   return layout({
     ...ctx,
