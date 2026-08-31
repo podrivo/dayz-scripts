@@ -103,6 +103,7 @@ function scopedMatches(q) {
 export function initSearch() {
   const palette = $('#palette');
   const trigger = $('#searchBtn');
+  const notfoundTrigger = $('#notfoundSearchBtn');
   const input = $('#search');
   const resultsEl = $('#searchResults');
   const filtersEl = $('#searchFilters');
@@ -254,6 +255,7 @@ export function initSearch() {
 
   let timer;
   trigger?.addEventListener('click', () => openPalette('click'));
+  notfoundTrigger?.addEventListener('click', () => openPalette('notfound'));
   input.addEventListener('input', () => {
     clearTimeout(timer);
     timer = setTimeout(async () => { await loadIndex(); runSearch(input.value.trim()); }, 80);

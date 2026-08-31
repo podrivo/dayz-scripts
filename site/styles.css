@@ -284,6 +284,11 @@ html.top-hidden .pagebar { top: min(-56px, calc(-1 * var(--h-bar-size, 0px))); }
   border: 1px solid var(--line); border-radius: 8px;
   color: var(--fg2); font-size: var(--text-xs); line-height: 18px; background: var(--bg);
 }
+.search-trigger.notfound-search {
+  justify-content: flex-start; width: min(100%, var(--w-search)); height: 44px;
+  margin: 24px 0 0; padding: 0 10px 0 12px;
+}
+.notfound-search span { flex: 1; text-align: left; }
 
 .palette {
   position: fixed; inset: 0; z-index: 100;
