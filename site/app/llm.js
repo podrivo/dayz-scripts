@@ -25,7 +25,7 @@ const clean = (s) => s.replace(/\s+/g, ' ').trim();
  */
 function textOf(el) {
   const c = el.cloneNode(true);
-  for (const junk of c.querySelectorAll('.anchor, .copy-btn, .hist-btn, .member-src, .note-tag, .note-edit, .note-add')) junk.remove();
+  for (const junk of c.querySelectorAll('.anchor, .copy-btn, .hist-btn, .member-src, .note-tag, .note-edit, .note-add, .note-ask')) junk.remove();
   for (const block of c.querySelectorAll('p, div, li, pre, br')) block.append('\n');
   return c.textContent;
 }
@@ -87,7 +87,7 @@ function pageMarkdown(main) {
     if (el.matches('h1.class-title')) {
       const c = el.cloneNode(true);
       const badges = badgesOf(c);
-      for (const b of c.querySelectorAll('.badge')) b.remove();
+      for (const b of c.querySelectorAll('.badge, .note-ask')) b.remove();
       out.push(`# ${clean(c.textContent)}${badges ? ` ${badges}` : ''}`);
     } else if (el.matches('.chain')) {
       out.push(`Inheritance: ${clean(el.textContent)}`);

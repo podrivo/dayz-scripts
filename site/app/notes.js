@@ -55,15 +55,15 @@ function editEl(key, current) {
    about it either, since a class carrying a doc comment is not the one
    crying out for a note. */
 function askEl(key) {
-  const p = document.createElement('p');
-  p.className = 'note-ask';
   const a = document.createElement('a');
+  a.className = 'note-ask';
   a.href = contribHref(key, null);
   a.target = '_blank';
   a.rel = 'noopener';
-  a.textContent = 'Suggest a community note';
-  p.append(document.createTextNode('Undocumented in the sources. '), a);
-  return p;
+  a.textContent = 'Suggest a note';
+  a.dataset.tip = 'Undocumented in the sources. Suggest a community note';
+  a.setAttribute('aria-label', a.dataset.tip);
+  return a;
 }
 
 // Marked as community writing, because the docs it sits beside are
@@ -105,13 +105,19 @@ export function initNotes() {
       const noteFor = (key) => (typeof notes[key] === 'string' && notes[key] ? notes[key] : null);
 
       const ownText = noteFor(type);
-      const own = ownText ? noteEl(ownText, type) : $('.class-doc', main) ? null : askEl(type);
-      if (own) {
+      if (ownText) {
+        const own = noteEl(ownText, type);
         const doc = $('.class-doc', main);
         const h2 = main.querySelector('h2');
         if (doc) doc.after(own);
         else if (h2) h2.before(own);
         else main.append(own);
+      } else if (!$('.class-doc', main)) {
+        const actions = $('.title-actions', main);
+        if (actions) {
+          actions.append(askEl(type));
+          actions.hidden = false;
+        }
       }
       for (const mem of main.querySelectorAll('.member[id]')) {
         const key = keyFor(mem);
@@ -155,7 +161,7 @@ export function initNotes() {
     (row ? host.cells[2] || host : $('.member-sig', host) || host).append(suggest);
   });
   main.addEventListener('click', (e) => {
-    const a = e.target.closest('.note-edit, .note-add, .note-ask a');
+    const a = e.target.closest('.note-edit, .note-add, .note-ask');
     if (a) track('suggest_note', { note_action: a.classList.contains('note-edit') ? 'edit' : 'add' });
   });
 }

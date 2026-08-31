@@ -681,9 +681,6 @@ h3 { font-size: var(--text-base); line-height: var(--text-base--line-height); ma
 .badge-override { margin: 0; background: var(--note-bg); color: var(--note-line); cursor: help; }
 a.badge { text-decoration: none; }
 a.badge:hover { color: inherit; text-decoration: underline; }
-.badge-since { background: var(--bg3); color: var(--fg2); font-weight: 500; }
-.badge-added { background: var(--accent-bg); color: var(--added); }
-.badge-changed { background: var(--note-bg); color: var(--note-line); }
 
 .all-members { margin: 6px 0; font-size: var(--text-sm); }
 .all-members-table td:first-child { width: 55%; }
@@ -777,13 +774,6 @@ table.list.doc-table td:first-child { padding-left: 0; }
 .member-sig > code { background: none; padding: 0; font-size: var(--text-sm); }
 .member-sig .anchor { opacity: 0; font-weight: 600; }
 .member:hover .anchor, .member:target .anchor { opacity: 1; }
-/* nowrap because it is a button, not prose: three letters in a box, and the
-   table column it usually sits in is narrow enough to break them apart */
-.member-src {
-  box-sizing: border-box; display: inline-flex; align-items: center; height: 24px;
-  font-size: var(--text-xs); color: var(--fg2); border: 1px solid var(--line); padding: 0 6px; border-radius: 8px; white-space: nowrap;
-}
-.member-src:hover { color: var(--accent); border-color: var(--accent2); text-decoration: none; }
 .member-doc { margin: 6px 0 0; font-size: var(--text-sm); color: var(--fg); }
 .member-doc p { margin: 4px 0; }
 
@@ -864,16 +854,9 @@ table.list.doc-table td:first-child { padding-left: 0; }
 }
 /* order, because the chip is inserted on hover and the copy button beside it
    is inserted on its own hover: whichever arrives first, this one sits last */
-.note-add {
-  order: 1; box-sizing: border-box; display: inline-flex; align-items: center;
-  height: 24px; padding: 0 8px; border: 1px dashed var(--line); border-radius: 8px;
-  color: var(--fg2); font-size: var(--text-xs); white-space: nowrap;
-  opacity: 0; transition: opacity .15s ease;
-}
-.note-add:hover { color: var(--accent); border-color: var(--accent2); }
+.note-add { order: 1; opacity: 0; transition: opacity .15s ease; }
 .member:hover .note-add, .enum-table tr:hover .note-add,
 .note-add:focus-visible { opacity: 1; }
-.note-ask { margin: 10px 0; color: var(--fg2); font-size: var(--text-sm); }
 
 pre.code, pre.attrs {
   background: var(--code-bg); border: 1px solid var(--line); border-radius: 10px;
@@ -975,14 +958,27 @@ pre.src .line:hover .fold, .fold[aria-expanded="false"] { opacity: 1; }
 pre.src .line.folded { background: var(--bg2); }
 pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 
-/* ---- copy ---- */
-.copy-btn {
-  padding: 2px 8px; border: 1px solid var(--line); border-radius: 8px;
+/* ---- chips ----
+   Title actions, member-row src/copy/history, and the note invitations
+   share one 24×8 outlined chip so a row of them reads as one set. */
+.copy-btn, .hist-btn, .note-ask, .note-add, .member-src,
+.badge-since, .badge-added, .badge-changed {
+  box-sizing: border-box; display: inline-flex; align-items: center;
+  height: 24px; padding: 0 8px;
+  border: 1px solid var(--line); border-radius: 8px;
   background: var(--bg); color: var(--fg2);
-  font: inherit; font-size: var(--text-xs); line-height: 16px; cursor: pointer;
+  font: inherit; font-size: var(--text-xs); font-weight: 500; line-height: 16px;
+  white-space: nowrap; text-decoration: none;
 }
+.copy-btn, .hist-btn { cursor: pointer; }
+.badge-added { background: var(--accent-bg); color: var(--added); }
+.badge-changed { background: var(--note-bg); color: var(--note-line); }
 .copy-btn::before { content: "Copy"; }
-.copy-btn:hover { color: var(--accent); border-color: var(--accent2); }
+.copy-btn:hover, .hist-btn:hover, .hist-btn[aria-expanded="true"],
+.note-ask:hover, .note-add:hover, .member-src:hover,
+a.badge-since:hover, a.badge-added:hover, a.badge-changed:hover {
+  color: var(--accent); border-color: var(--accent2); text-decoration: none;
+}
 .copy-btn.copied { color: var(--added); border-color: var(--added); }
 .copy-btn.copied::before { content: "Copied"; }
 /* The block button floats over the top-right corner of the code it copies. */
@@ -994,7 +990,7 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 .has-copy:hover .copy-block, .copy-block:focus-visible, .copy-block.copied { opacity: 1; }
 .copy-sig, .copy-override {
   box-sizing: border-box; display: inline-flex; align-items: center;
-  height: 24px; margin-left: 2px; opacity: 0;
+  height: 24px; opacity: 0;
 }
 .member-sig:hover .copy-sig, .copy-sig:focus-visible, .copy-sig.copied,
 .member-sig:hover .copy-override, .copy-override:focus-visible,
@@ -1005,27 +1001,15 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 
 /* The whole page as Markdown, beside a class or enum title. */
 .class-title .title-actions {
-  display: inline-flex; align-items: center; vertical-align: 2px;
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-left: 8px; vertical-align: 2px;
 }
 .class-title .title-actions[hidden] { display: none; }
-.class-title .badge-since,
-.class-title .copy-llm,
-.class-title .hist-btn {
-  box-sizing: border-box; display: inline-flex; align-items: center;
-  height: 24px; border-radius: 8px; vertical-align: 2px;
-}
-.class-title .copy-llm,
-.class-title .hist-btn { margin-left: 8px; }
+.class-title .title-actions > * { margin-left: 0; }
+.member-sig > .badge, .member-sig > .copy-btn, .member-sig > .note-add { margin-left: 0; }
 .copy-llm::before { content: "Copy for LLM"; }
 
-.hist-btn {
-  padding: 0 8px; border: 1px solid var(--line); border-radius: 8px;
-  background: var(--bg); color: var(--fg2);
-  font: inherit; font-size: var(--text-xs); line-height: 16px; cursor: pointer;
-  gap: 4px;
-}
-.hist-btn:hover,
-.hist-btn[aria-expanded="true"] { color: var(--accent); border-color: var(--accent2); }
+.hist-btn { gap: 4px; }
 .hist-btn .count { font: inherit; color: inherit; }
 
 .hist-panel {
@@ -1115,7 +1099,7 @@ body.hist-open { overflow: hidden; }
 }
 .share-clear:hover { color: var(--accent); background: var(--bg2); }
 
-.share-bar .copy-btn { padding: 4px 12px; font-size: var(--text-sm); line-height: 20px; }
+.share-bar .copy-btn { height: auto; padding: 4px 12px; font-size: var(--text-sm); line-height: 20px; }
 .share-link::before { content: "Copy link"; }
 .share-code::before { content: "Copy code"; }
 /* A link wearing a button, so the row reads as one set of choices. */
