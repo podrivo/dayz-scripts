@@ -696,6 +696,13 @@ table.list { width: 100%; border-collapse: collapse; font-size: var(--text-sm); 
 table.list td, table.list th { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
 table.list th { color: var(--fg2); font-weight: 600; font-size: var(--text-sm); }
 table.list tr:hover td { background: var(--bg2); }
+/* Source chips in list rows stay out of the way, same as on a member
+   signature. The "more…" jump on topic summaries also uses this class
+   but points at an in-page id, so it stays visible. */
+table.list a.member-src:not([href^="#"]) { opacity: 0; pointer-events: none; }
+table.list tr:hover a.member-src,
+table.list tr:target a.member-src,
+table.list a.member-src:focus-visible { opacity: 1; pointer-events: auto; }
 table.list td:first-child { white-space: nowrap; }
 /* Except where the first column holds a whole declaration rather than a name.
    A name is short enough to keep on one line and reads worse broken; a
@@ -727,6 +734,56 @@ table.list.doc-table td:first-child { padding-left: 0; }
 
 .in-module { font-size: var(--text-sm); color: var(--fg2); }
 .modkids { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 16px; }
+
+/* Catalog: topics and the inheritance index. Most roots have no children;
+   the ones that do show one level, and a bush stays folded. Deeper nests
+   live on the topic or class page. */
+.catalog {
+  column-count: 2;
+  column-gap: 40px;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+}
+.catalog > li {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  padding: 0 0 16px;
+}
+.catalog-head,
+.catalog-kids li {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.catalog-head a::after,
+.catalog-kids a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.catalog-head .count { margin-left: auto; font-variant-numeric: tabular-nums; }
+.catalog-kids {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 1px 0 0;
+  padding: 0 0 0 14px;
+  list-style: none;
+  font-size: var(--text-sm);
+}
+.catalog-kids .count { margin-left: auto; font-variant-numeric: tabular-nums; }
+.catalog-kids a { color: var(--fg2); }
+.catalog-kids a:hover { color: var(--accent); text-decoration: none; }
+.catalog-more { margin: 1px 0 0 14px; }
+.catalog-more .catalog-kids { padding-left: 0; margin-top: 2px; }
+.catalog-more > summary {
+  cursor: pointer;
+  color: var(--fg2);
+  font-size: var(--text-sm);
+}
+.catalog-more > summary:hover { color: var(--fg); }
 
 /* ---- class page ---- */
 .class-title .kw { color: var(--kw); font-weight: 500; font-size: var(--text-lg); }
@@ -1524,6 +1581,7 @@ details.cmp-change { padding: 0; }
 
 
 @media (max-width: 640px) {
+  .catalog { column-count: 1; }
   .cmp-split,
   .cmp-pair,
   .cmp-pair-head { grid-template-columns: 1fr; }

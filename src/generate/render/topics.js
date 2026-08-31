@@ -10,19 +10,31 @@ import {
 
 export function renderModulesIndex(ctx) {
   const { site, base } = ctx;
-  const node = (name, depth) => {
+  const kid = (name) => {
+    const mod = site.groups.get(name);
+    const total = site.moduleTotal(name);
+    const count = total ? ` <span class="count">${total.toLocaleString('en-US')}</span>` : '';
+    return `<li><a href="${base}topics/${name}/">${esc(mod.label)}</a>${count}</li>`;
+  };
+  const root = (name) => {
     const mod = site.groups.get(name);
     const total = site.moduleTotal(name);
     const link = `<a href="${base}topics/${name}/">${esc(mod.label)}</a>`;
-    const count = total ? ` <span class="count">${total.toLocaleString('en-US')}</span>` : '';
-    if (!mod.children.length) return `<li>${link}${count}</li>`;
-    return /* html */ `<li><details${depth < 1 ? ' open' : ''}><summary>${link}${count}</summary>
-<ul>${mod.children.map((k) => node(k, depth + 1)).join('')}</ul></details></li>`;
+    const count = total ? `<span class="count">${total.toLocaleString('en-US')}</span>` : '';
+    const n = mod.children.length;
+    let kids = '';
+    if (n) {
+      const list = `<ul class="catalog-kids">${mod.children.map(kid).join('')}</ul>`;
+      kids = n > 8
+        ? `<details class="catalog-more"><summary>${n} topics</summary>${list}</details>`
+        : list;
+    }
+    return `<li><div class="catalog-head">${link}${count}</div>${kids}</li>`;
   };
   const content = /* html */ `
 <h1>Topics <span class="count">${site.groups.size}</span></h1>
 <p>Engine-facing APIs and constant tables the scripts group themselves into — math, physics, entities, UI and the rest. Classes and constants that belong to a topic link back to it.</p>
-<ul class="tree">${site.moduleRoots.map((n) => node(n, 0)).join('')}</ul>`;
+<ul class="catalog">${site.moduleRoots.map(root).join('')}</ul>`;
   return layout({
     ...ctx,
     title: 'Topics',

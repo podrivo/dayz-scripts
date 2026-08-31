@@ -13,18 +13,30 @@ export function renderHierarchy(ctx) {
   }
   roots.sort((a, b) => a.localeCompare(b));
 
-  const renderNode = (name, depth) => {
-    const kids = site.children.get(name) || [];
+  const kidsOf = (name) => site.children.get(name) || [];
+  const kid = (name) => {
+    const n = kidsOf(name).length;
+    const count = n ? ` <span class="count">${n}</span>` : '';
+    return `<li><a href="${base}classes/${name}/">${esc(name)}</a>${count}</li>`;
+  };
+  const root = (name) => {
+    const kids = kidsOf(name);
+    const n = kids.length;
     const link = `<a href="${base}classes/${name}/">${esc(name)}</a>`;
-    if (!kids.length) return `<li>${link}</li>`;
-    const open = depth < 1 ? ' open' : '';
-    return /* html */ `<li><details${open}><summary>${link} <span class="count">${kids.length}</span></summary>
-<ul>${kids.map((k) => renderNode(k, depth + 1)).join('')}</ul></details></li>`;
+    const count = n ? `<span class="count">${n}</span>` : '';
+    let childList = '';
+    if (n) {
+      const list = `<ul class="catalog-kids">${kids.map(kid).join('')}</ul>`;
+      childList = n > 8
+        ? `<details class="catalog-more"><summary>${n} classes</summary>${list}</details>`
+        : list;
+    }
+    return `<li><div class="catalog-head">${link}${count}</div>${childList}</li>`;
   };
 
   const content = /* html */ `
-<h1>Hierarchy</h1>
-<ul class="tree">${roots.map((r) => renderNode(r, 0)).join('\n')}</ul>`;
+<h1>Hierarchy <span class="count">${site.classes.size.toLocaleString('en-US')}</span></h1>
+<ul class="catalog">${roots.map(root).join('')}</ul>`;
   return layout({
     ...ctx,
     title: 'Hierarchy',
