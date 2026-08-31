@@ -3,8 +3,9 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, readJson } from './util.js';
 
+const ROOT = process.cwd();
+const readJson = (file) => JSON.parse(fs.readFileSync(file, 'utf8'));
 const CATALOG = path.join(ROOT, 'site', 'workshop.json');
 const workshopHref = (id) => `https://steamcommunity.com/sharedfiles/filedetails/?id=${id}`;
 
