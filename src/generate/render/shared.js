@@ -134,6 +134,16 @@ export function referencesBlock(item, ctx, scope = null) {
  * leaving. extras is optional [['GitHub', url], ...] so a project site and
  * its repo share one card instead of two.
  */
+function extraPrimaryLabel(url) {
+  try {
+    const u = new URL(url);
+    if (u.hostname === 'marketplace.visualstudio.com') return 'Marketplace';
+    if (u.hostname === 'github.com' && u.pathname.includes('/wiki')) return 'Wiki';
+    if (u.hostname === 'github.com') return 'GitHub';
+  } catch { /* keep Website */ }
+  return 'Website';
+}
+
 export function linkCards(links, ext = false) {
   return /* html */ `<div class="cards">
 ${links.map((link) => linkCard(link, ext)).join('\n')}
@@ -150,7 +160,7 @@ function linkCard([label, url, desc, extras], ext) {
   ${icon}${body}
 </a>`;
   }
-  const links = [['Website', url], ...extras]
+  const links = [[extraPrimaryLabel(url), url], ...extras]
     .map(([name, href]) => `<a href="${esc(href)}"${attrs}>${esc(name)}</a>`)
     .join('');
   return `<div class="card${ext ? ' card-ext' : ''}">
