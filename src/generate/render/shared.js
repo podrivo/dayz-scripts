@@ -129,17 +129,35 @@ export function referencesBlock(item, ctx, scope = null) {
   return /* html */ `<div class="xref xref-out"><span class="xref-label">References</span> ${writeList(items)}.</div>`;
 }
 
-/** Grid of [label, url, description] cards. `ext` marks them as leaving. */
+/**
+ * Grid of [label, url, description, extras?] cards. `ext` marks them as
+ * leaving. extras is optional [['GitHub', url], ...] so a project site and
+ * its repo share one card instead of two.
+ */
 export function linkCards(links, ext = false) {
   return /* html */ `<div class="cards">
-${links
-  .map(
-    ([label, url, desc]) => `<a class="card${ext ? ' card-ext' : ''}" href="${url}"${ext ? ` ${EXT}` : ''}>
-  ${ext ? '<i class="ic ic-ext" aria-hidden="true"></i>\n  ' : ''}<h3>${esc(label)}</h3>
-  <p>${esc(desc)}</p>
-</a>`
-  )
-  .join('\n')}
+${links.map((link) => linkCard(link, ext)).join('\n')}
+</div>`;
+}
+
+function linkCard([label, url, desc, extras], ext) {
+  const attrs = ext ? ` ${EXT}` : '';
+  const icon = ext ? '<i class="ic ic-ext" aria-hidden="true"></i>\n  ' : '';
+  const body = `<h3>${esc(label)}</h3>
+  <p>${esc(desc)}</p>`;
+  if (!extras?.length) {
+    return `<a class="card${ext ? ' card-ext' : ''}" href="${esc(url)}"${attrs}>
+  ${icon}${body}
+</a>`;
+  }
+  const also = extras
+    .map(([name, href]) => `<a class="card-also" href="${esc(href)}"${attrs}>${esc(name)}</a>`)
+    .join(' ');
+  return `<div class="card${ext ? ' card-ext' : ''}">
+  ${icon}<a class="card-main" href="${esc(url)}"${attrs}>
+  ${body}
+  </a>
+  ${also}
 </div>`;
 }
 
