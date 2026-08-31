@@ -127,7 +127,8 @@ export function initCopySignatures() {
   sigCopy.addEventListener('click', () => sigFor && copyText(sigFor.textContent.trim(), sigCopy, 'signature'));
   sigOverride?.addEventListener('click', () => stub && copyText(stub, sigOverride, 'override'));
   main.addEventListener('pointerover', (e) => {
-    const sig = e.target.closest?.('.member-sig');
+    const mem = e.target.closest?.('.member');
+    const sig = mem && $('.member-sig', mem);
     const code = sig && $('code', sig);
     if (!code || code === sigFor) return;
     sigFor = code;

@@ -54,7 +54,7 @@ function globalSections(ctx, site, base) {
     const id = anchorFor(used, fn.name);
     const doc = fn.doc ? `<div class="member-doc">${renderDoc(fn.doc, site, base)}</div>` : '';
     return /* html */ `<div class="member" id="${id}">
-<div class="member-sig"><code>${methodSig(fn, site, base)}</code>${condBadges(fn.cond)}${src(fn)}<a class="anchor" href="#${id}">#</a></div>
+<div class="member-sig"><code>${methodSig(fn, site, base)}</code>${condBadges(fn.cond)}<a class="anchor" href="#${id}">#</a>${src(fn)}</div>
 ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
   });
 

@@ -774,10 +774,16 @@ table.list.doc-table td:first-child { padding-left: 0; }
 .member { padding: 10px 12px; margin: 0 -12px; border-radius: 16px; }
 .member:hover { background: var(--bg2); }
 .member:target { background: var(--accent-bg); outline: 1px solid var(--accent2); }
-.member-sig { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-.member-sig > code { background: none; padding: 0; font-size: var(--text-sm); }
-.member-sig .anchor { opacity: 0; font-weight: 600; }
-.member:hover .anchor, .member:target .anchor { opacity: 1; }
+.member-sig { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.member-sig > code { background: none; padding: 0; font-size: var(--text-sm); order: 0; }
+.member-sig > .badge { order: 1; }
+.member-sig > .anchor { order: 2; opacity: 0; font-weight: 600; }
+.member-sig > .member-src { order: 3; opacity: 0; pointer-events: none; }
+.member-sig > .copy-btn { order: 4; }
+.member-sig > .note-add { order: 5; }
+.member:hover .anchor, .member:target .anchor,
+.member:hover .member-src, .member:target .member-src, .member-src:focus-visible { opacity: 1; }
+.member:hover .member-src, .member:target .member-src, .member-src:focus-visible { pointer-events: auto; }
 .member-doc { margin: 6px 0 0; font-size: var(--text-sm); color: var(--fg); }
 .member-doc p { margin: 4px 0; }
 
@@ -856,9 +862,7 @@ table.list.doc-table td:first-child { padding-left: 0; }
   width: 16px; height: 16px;
   --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M4 4l8 8M12 4l-8 8'/%3E%3C/svg%3E");
 }
-/* order, because the chip is inserted on hover and the copy button beside it
-   is inserted on its own hover: whichever arrives first, this one sits last */
-.note-add { order: 1; opacity: 0; transition: opacity .15s ease; }
+.note-add { opacity: 0; transition: opacity .15s ease; }
 .member:hover .note-add, .enum-table tr:hover .note-add,
 .note-add:focus-visible { opacity: 1; }
 
@@ -994,11 +998,11 @@ a.badge-since:hover, a.badge-added:hover, a.badge-changed:hover {
 .has-copy:hover .copy-block, .copy-block:focus-visible, .copy-block.copied { opacity: 1; }
 .copy-sig, .copy-override {
   box-sizing: border-box; display: inline-flex; align-items: center;
-  height: 24px; opacity: 0;
+  height: 24px; opacity: 0; pointer-events: none;
 }
-.member-sig:hover .copy-sig, .copy-sig:focus-visible, .copy-sig.copied,
-.member-sig:hover .copy-override, .copy-override:focus-visible,
-.copy-override.copied { opacity: 1; }
+.member:hover .copy-sig, .copy-sig:focus-visible, .copy-sig.copied,
+.member:hover .copy-override, .copy-override:focus-visible,
+.copy-override.copied { opacity: 1; pointer-events: auto; }
 /* Specificity keeps .copy-btn.copied::before ahead of this one, so the label
    still becomes "Copied" for the moment after a click. */
 .copy-override::before { content: "Override"; }

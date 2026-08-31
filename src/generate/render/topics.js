@@ -135,7 +135,7 @@ export function renderModule(ctx, mod) {
             const source = e.item.file ? src(e.item) : '';
             return /* html */ `<div class="member" id="${e.id}">
 <h3 class="member-name">${esc(e.item.name)}${e.ordinal || ''}${owner}</h3>
-<div class="member-sig"><code>${sigOf(e)}</code>${condBadges(e.item.cond)}${source}<a class="anchor" href="#${e.id}">#</a></div>
+<div class="member-sig"><code>${sigOf(e)}</code>${condBadges(e.item.cond)}<a class="anchor" href="#${e.id}">#</a>${source}</div>
 ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e.owner)}</div>`;
           })
           .join('\n')

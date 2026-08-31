@@ -66,7 +66,7 @@ ${doc}</div>`;
       ? `<a class="member-src" href="${fileLineHref(site, base, m.file, m.line)}" title="View source">src</a>`
       : '';
     return /* html */ `<div class="member" id="${id}">
-<div class="member-sig"><code>${methodSig(m, site, base)}</code>${condBadges(m.cond)}${src}<a class="anchor" href="#${id}" aria-label="Link to ${esc(m.name)}">#</a></div>
+<div class="member-sig"><code>${methodSig(m, site, base)}</code>${condBadges(m.cond)}<a class="anchor" href="#${id}" aria-label="Link to ${esc(m.name)}">#</a>${src}</div>
 ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}</div>`;
   };
 
