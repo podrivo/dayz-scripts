@@ -75,6 +75,7 @@ export const COMMUNITY_SECTIONS = [
       ['DayZ Wiki', 'https://dayz.wiki.gg/', 'Community-run gameplay and item wiki'],
       ['Custom lockable items', 'https://github.com/salutesh/DayZ-Expansion-Scripts/wiki/%5BModding%5D-Creating-a-custom-openable-closable-and-or-lockable-item', 'Expansion wiki: openable, closable and lockable items',
         [['Example', 'https://github.com/TrueDolphin/CodeLock-Example']]],
+      ['Custom script modules', 'https://wrdg.net/posts/dayz/custom-script-module-exploitation', 'How ScriptModule.LoadScript works; the retail-client hole was closed in 1.24'],
     ],
   },
   {
@@ -86,6 +87,9 @@ export const COMMUNITY_SECTIONS = [
       ['DayZ CE Schema', 'https://marketplace.visualstudio.com/items?itemName=rvost.dayz-ce-schema', 'VS Code validation and completion for Central Economy XML',
         [['GitHub', 'https://github.com/rvost/dayz-ce-schema/']]],
       ["Mikero's Tools", 'https://mikero.bytex.digital/', 'PBO packing and file conversion tools'],
+      ['DayZExtract', 'https://github.com/wrdg/DayZExtract', 'Faster PBO extract than DayZ Tools Extract or DayZ2P'],
+      ['Bisign2Bikey', 'https://github.com/wrdg/Bisign2Bikey', 'Pulls a .bikey out of .bisign files for DayZ and Arma'],
+      ['edds2png', 'https://github.com/wrdg/edds2png', 'Converts Enfusion DDS (.edds) images to PNG'],
       ['RaG DayZ Tools', 'https://github.com/Tyson89/RaG-DayZ-Tools', 'PBO builder, inspector and game data extractor'],
       ['DayZ Labs', 'https://borcioo.github.io/dayz-labs/', 'Dev launcher for server, client, builds and logs',
         [['GitHub', 'https://github.com/Borcioo/dayz-labs']]],
