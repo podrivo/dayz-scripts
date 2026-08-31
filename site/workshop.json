@@ -1,0 +1,497 @@
+{
+  "maps": [
+    {
+      "name": "Chernarus",
+      "url": "https://community.bistudio.com/wiki/Chernarus",
+      "note": "Base game"
+    },
+    {
+      "name": "Livonia",
+      "url": "https://dayz.wiki.gg/wiki/Livonia",
+      "note": "Included since 1.25"
+    },
+    {
+      "name": "Sakhal",
+      "url": "https://store.steampowered.com/app/2968040/DayZ_Frostline/",
+      "note": "Frostline DLC"
+    },
+    {
+      "name": "Namalsk",
+      "id": "2289456201",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2289456201",
+      "preview": "https://images.steamusercontent.com/ugc/1753561829216587857/B1346B115B990BD8D70940BA2BDDEF020E429C6D/",
+      "subscriptions": 1256013,
+      "created": "2020-11-16",
+      "updated": "2025-02-25"
+    },
+    {
+      "name": "DeerIsle",
+      "id": "1602372402",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1602372402",
+      "preview": "https://images.steamusercontent.com/ugc/10492572888761623926/6A464D85A725D7C01E2232A8243E0BCF5DD7C30A/",
+      "subscriptions": 873175,
+      "created": "2018-12-25",
+      "updated": "2025-06-04"
+    },
+    {
+      "name": "Banov",
+      "id": "2415195639",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2415195639",
+      "preview": "https://images.steamusercontent.com/ugc/14372047456929364334/A895F5347C2280A7CE669B20F268375220ECAF49/",
+      "subscriptions": 233720,
+      "created": "2021-03-05",
+      "updated": "2026-06-21"
+    },
+    {
+      "name": "Takistan Plus",
+      "id": "2563233742",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2563233742",
+      "preview": "https://images.steamusercontent.com/ugc/16029449999447161056/0C79F5E0E72D9F2C1E1A1B5BC156CD305E91AE01/",
+      "subscriptions": 237094,
+      "created": "2021-08-01",
+      "updated": "2026-04-15"
+    },
+    {
+      "name": "Esseker",
+      "id": "2462896799",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2462896799",
+      "preview": "https://images.steamusercontent.com/ugc/1702908137016695606/BC148A6B579856CEE1C0BFB1AF73DE7199E4041F/",
+      "subscriptions": 153598,
+      "created": "2021-04-20",
+      "updated": "2021-07-20"
+    },
+    {
+      "name": "Bitterroot",
+      "id": "2906823750",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2906823750",
+      "preview": "https://images.steamusercontent.com/ugc/2048626881349115183/97793DAC734FDA051FCBA2C4BC7C291F1960D361/",
+      "subscriptions": 154240,
+      "created": "2022-12-25",
+      "updated": "2025-05-19"
+    },
+    {
+      "name": "Chiemsee",
+      "id": "1580589252",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1580589252",
+      "preview": "https://images.steamusercontent.com/ugc/943969003349579085/7C72EF95F2EF49BCEAE0879AFC2732B144DBD50D/",
+      "subscriptions": 82718,
+      "created": "2018-12-02",
+      "updated": "2024-12-24"
+    },
+    {
+      "name": "Alteria",
+      "id": "3296994216",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3296994216",
+      "preview": "https://images.steamusercontent.com/ugc/12745609030835504236/A45136003EF75E713D40D10018B0734F24B5F71A/",
+      "subscriptions": 79206,
+      "created": "2024-07-26",
+      "updated": "2025-05-03"
+    },
+    {
+      "name": "Hashima Islands",
+      "id": "2781560371",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2781560371",
+      "preview": "https://images.steamusercontent.com/ugc/18682744009162165/A47BA3B6B3919705003C0E2ED2B225FF5BAD9D05/",
+      "subscriptions": 49736,
+      "created": "2022-03-19",
+      "updated": "2025-06-08"
+    },
+    {
+      "name": "Melkart",
+      "id": "2716445223",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2716445223",
+      "preview": "https://images.steamusercontent.com/ugc/2490001734562640637/E82CA96F782D3C420F9D0076433CC53CB0143259/",
+      "subscriptions": 146958,
+      "created": "2022-01-12",
+      "updated": "2024-04-03"
+    },
+    {
+      "name": "Deadfall",
+      "id": "3050117454",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3050117454",
+      "preview": "https://images.steamusercontent.com/ugc/2182617746142527872/B5F13B207F68AA6B194367FA8892F055C515E9D5/",
+      "subscriptions": 71006,
+      "created": "2023-10-13",
+      "updated": "2025-07-06"
+    },
+    {
+      "name": "Iztek",
+      "id": "2978912938",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2978912938",
+      "preview": "https://images.steamusercontent.com/ugc/2466354670983635248/3963842DC5996D390B73790AA65A7AA3310EEC87/",
+      "subscriptions": 3535,
+      "created": "2023-05-21",
+      "updated": "2024-02-29"
+    },
+    {
+      "name": "Rostow",
+      "id": "2344585107",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2344585107",
+      "preview": "https://images.steamusercontent.com/ugc/16149958140786653178/EF0C9ED166FC0C7641CDFD97CF60D0617D1B0CC2/",
+      "subscriptions": 47466,
+      "created": "2021-01-01",
+      "updated": "2026-04-15"
+    },
+    {
+      "name": "Nyheim",
+      "id": "2633522605",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2633522605",
+      "preview": "https://images.steamusercontent.com/ugc/2054249661371478762/22244D7BFC83CD2879E8AD7E0F3B2036BEB45E76/",
+      "subscriptions": 11809,
+      "created": "2021-10-21",
+      "updated": "2023-05-27"
+    },
+    {
+      "name": "Anastara",
+      "id": "2973953648",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2973953648",
+      "preview": "https://images.steamusercontent.com/ugc/6292545187838882/E76559FA3FFA27F27C48C8E38B026F33F9729F09/",
+      "subscriptions": 18878,
+      "created": "2023-05-10",
+      "updated": "2025-01-15"
+    },
+    {
+      "name": "Avalon",
+      "id": "3225634444",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3225634444",
+      "preview": "https://images.steamusercontent.com/ugc/14113434480707978514/42DE7C6F1A0AB0EDE52D7F1E6214DB24548326FD/",
+      "subscriptions": 28744,
+      "created": "2024-04-18",
+      "updated": "2026-07-31"
+    },
+    {
+      "name": "Malvinas",
+      "id": "3390173486",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3390173486",
+      "preview": "https://images.steamusercontent.com/ugc/12355523633645735909/D0CFDDCB5C420F393969AD5E9D0EFDA2D1A91463/",
+      "subscriptions": 1932,
+      "created": "2024-12-23",
+      "updated": "2025-09-16"
+    },
+    {
+      "name": "Valning",
+      "id": "1880753439",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1880753439",
+      "preview": "https://images.steamusercontent.com/ugc/1259268007356269851/539EB9ECB8C93780F42546C0E7990C01ABE1A276/",
+      "subscriptions": 87001,
+      "created": "2019-10-05",
+      "updated": "2020-11-26"
+    },
+    {
+      "name": "Pripyat",
+      "id": "3136720512",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3136720512",
+      "preview": "https://images.steamusercontent.com/ugc/15676908397057476189/F172CB15D9A6A3D861B83EA895D0B48D4B48A644/",
+      "subscriptions": 34739,
+      "created": "2024-01-11",
+      "updated": "2025-12-14"
+    },
+    {
+      "name": "Azalea",
+      "id": "2977981023",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2977981023",
+      "preview": "https://images.steamusercontent.com/ugc/9876502593781456883/C3BC7E413E9C91946CA2BAAE9E540D20A5CF4B68/",
+      "subscriptions": 8861,
+      "created": "2023-05-19",
+      "updated": "2026-08-29"
+    },
+    {
+      "name": "Vela",
+      "id": "2794308565",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2794308565",
+      "preview": "https://images.steamusercontent.com/ugc/2001318143261571508/FC749C2409245E6F42F5B0B3B4122E55A1961059/",
+      "subscriptions": 4276,
+      "created": "2022-04-14",
+      "updated": "2024-09-05"
+    },
+    {
+      "name": "Stuart Island",
+      "id": "1936423383",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1936423383",
+      "preview": "https://images.steamusercontent.com/ugc/1022823957667180978/11AB8647F8C1139824689EE8413F017B787C083F/",
+      "subscriptions": 14316,
+      "created": "2019-12-14",
+      "updated": "2020-04-27"
+    },
+    {
+      "name": "Antoria",
+      "id": "2966495799",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2966495799",
+      "preview": "https://images.steamusercontent.com/ugc/14946797024817332896/DBAA0EF961A85699A1136F84E29DD6A08280F40C/",
+      "subscriptions": 11528,
+      "created": "2023-04-24",
+      "updated": "2026-08-10"
+    },
+    {
+      "name": "Arsteinen",
+      "id": "2982575649",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2982575649",
+      "preview": "https://images.steamusercontent.com/ugc/15028615610310088356/9BE1C55D63DAA2407759185EA923728BE05D4FF8/",
+      "subscriptions": 12464,
+      "created": "2023-05-30",
+      "updated": "2025-10-21"
+    },
+    {
+      "name": "PNW",
+      "id": "3290318225",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3290318225",
+      "preview": "https://images.steamusercontent.com/ugc/16059449239423396462/97424CF7B28860D5EC539569267587C0EDC44EC8/",
+      "subscriptions": 42326,
+      "created": "2024-07-16",
+      "updated": "2026-04-28"
+    },
+    {
+      "name": "Sahrani",
+      "id": "3508468461",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3508468461",
+      "preview": "https://images.steamusercontent.com/ugc/15262984414986080417/2CB2D713242C2E2D72CA97CA380C13AB2AF8FCD4/",
+      "subscriptions": 9424,
+      "created": "2025-06-25",
+      "updated": "2026-01-23"
+    },
+    {
+      "name": "ROS",
+      "id": "2390417799",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2390417799",
+      "preview": "https://images.steamusercontent.com/ugc/2504648580557627753/8C8C97061B7129A38E0611152C75B8C9185B0CBD/",
+      "subscriptions": 1129,
+      "created": "2021-02-10",
+      "updated": "2024-07-28"
+    },
+    {
+      "name": "Raman",
+      "id": "3401182744",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3401182744",
+      "preview": "https://images.steamusercontent.com/ugc/12750321470722064062/4A893938ABD6BB070C68D19D307F5028EA95E5CA/",
+      "subscriptions": 10588,
+      "created": "2025-01-05",
+      "updated": "2026-04-15"
+    },
+    {
+      "name": "Onforin",
+      "id": "3445058656",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3445058656",
+      "preview": "https://images.steamusercontent.com/ugc/10302585433713275220/A8E72EC0250B8D80E79E85D7C6E5024B5730D2BC/",
+      "subscriptions": 1127,
+      "created": "2025-03-15",
+      "updated": "2026-05-16"
+    },
+    {
+      "name": "Yiprit",
+      "id": "2780320171",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2780320171",
+      "preview": "https://images.steamusercontent.com/ugc/1853803414287497999/9F232865EE4D21B5FD572821A7D506A482281BB4/",
+      "subscriptions": 9813,
+      "created": "2022-03-17",
+      "updated": "2023-12-09"
+    },
+    {
+      "name": "NH Chernobyl",
+      "id": "2727569951",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2727569951",
+      "preview": "https://images.steamusercontent.com/ugc/1815514859112880777/6F5A5B818B09C53140D8A8093B8E82F4992795FC/",
+      "subscriptions": 90751,
+      "created": "2022-01-22",
+      "updated": "2024-10-15"
+    },
+    {
+      "name": "NukeZ Zone",
+      "id": "2828800987",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2828800987",
+      "preview": "https://images.steamusercontent.com/ugc/11854921348485158412/EC54751F4B77FC03F9100D147AD15E02E8D35D5A/",
+      "subscriptions": 1988,
+      "created": "2022-07-01",
+      "updated": "2025-08-16"
+    },
+    {
+      "name": "Novikostok",
+      "id": "3553075906",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3553075906",
+      "preview": "https://images.steamusercontent.com/ugc/18129968594917875788/FD6031A936A668DC7ACACE408F1201986276ECAD/",
+      "subscriptions": 9781,
+      "created": "2025-08-21",
+      "updated": "2026-07-08"
+    },
+    {
+      "name": "Lux Redux",
+      "id": "3371742728",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3371742728",
+      "preview": "https://images.steamusercontent.com/ugc/12517348890903337506/B16BA8F50C458C9AF8DCA8BAE34D4FBF646C5A00/",
+      "subscriptions": 28365,
+      "created": "2024-11-25",
+      "updated": "2025-05-29"
+    },
+    {
+      "name": "Green County",
+      "id": "2128098372",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2128098372",
+      "preview": "https://images.steamusercontent.com/ugc/14428347975838268959/4BB7A42E2C281FD092DE065CAF7BD0EF04EA8B76/",
+      "subscriptions": 16995,
+      "created": "2020-06-12",
+      "updated": "2026-08-12"
+    },
+    {
+      "name": "Chernarus2035",
+      "id": "3638582966",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3638582966",
+      "preview": "https://images.steamusercontent.com/ugc/11811572845358476829/53FECB901FC7708158973CA9451B37881B01653C/",
+      "subscriptions": 37273,
+      "created": "2026-01-03",
+      "updated": "2026-03-29"
+    },
+    {
+      "name": "The Channel",
+      "id": "3597294600",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3597294600",
+      "preview": "https://images.steamusercontent.com/ugc/15867856647693327094/4230CE480F56BB52A03FCD28E45551325763F72C/",
+      "subscriptions": 6763,
+      "created": "2025-11-01",
+      "updated": "2026-04-30"
+    },
+    {
+      "name": "The Outpost",
+      "id": "3465875155",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3465875155",
+      "preview": "https://images.steamusercontent.com/ugc/11471248617366549568/209D0C27D5BD85BA6BB81173C64EA309E1B9B5FE/",
+      "subscriptions": 492,
+      "created": "2025-04-18",
+      "updated": "2025-12-08"
+    }
+  ],
+  "mods": [
+    {
+      "name": "CF",
+      "id": "1559212036",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1559212036",
+      "description": "This is a Community framework for DayZ SA. One notable feature is it aims to resolve the issue of conflicting RPC type ID's and mods. For help on using this mod in your own projects, follow this README on github the Community-Framework github here. Install",
+      "tags": [
+        "Mod"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/1303178882177497765/484890DF6AC1AE6484045A7C4458E0D1D35DBD05/",
+      "created": "2018-11-07",
+      "updated": "2026-02-19",
+      "subscriptions": 4890037
+    },
+    {
+      "name": "Code Lock",
+      "id": "1646187754",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1646187754",
+      "description": "Introduction: Code Lock is aimed at simplifying the base combination lock. No longer will you have to scramble to lock a gate that gives access to your base. There are also tons of configurable settings for this mod including logs, raid times, raid setting",
+      "tags": [
+        "Mod",
+        "Character",
+        "Environment",
+        "Equipment",
+        "Props"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/754842852191533742/A7044E09EFD347E788B5B77D832F7D61845CFA06/",
+      "created": "2019-02-05",
+      "updated": "2024-11-01",
+      "subscriptions": 4265254
+    },
+    {
+      "name": "VPPAdminTools",
+      "id": "1828439124",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1828439124",
+      "description": "Rent your DayZ Server From: https://i.imgur.com/CrXpSAE.png DZServers.Host This is the official Steam Workshop page for VPPAdminTools. Join our Discord (click image above) to leave feedback / suggestions. Project source code & contributions: https://i.imgu",
+      "tags": [
+        "Mod"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/17252369608484396380/5CFB22B1C3776DFB3CFA37C828399F142EDF3FDE/",
+      "created": "2019-08-08",
+      "updated": "2026-07-15",
+      "subscriptions": 3795010
+    },
+    {
+      "name": "BuilderItems",
+      "id": "1565871491",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1565871491",
+      "description": "BuilderItems is a mod that allows server owners to have a much wider range of options when placing details on the map. This is not the editor itself, but a mod to give you more options with the editor! You still need to download and use community offline m",
+      "tags": [
+        "Mod",
+        "Environment",
+        "Props"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/38938569345445671/96AF022788642B1D87D8948E932208B771C4115D/",
+      "created": "2018-11-16",
+      "updated": "2024-11-26",
+      "subscriptions": 2974729
+    },
+    {
+      "name": "Dabs Framework",
+      "id": "2545327648",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2545327648",
+      "description": "Dabs Framework is an Open Source, lightweight modding framework, designed to give modders and server owners tools to quickly and effectively create new mods for the community. Source Code: All source code is available on the Github Monetization: You are he",
+      "tags": [
+        "Mechanics",
+        "Mod"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/15185888921370759744/0B07310EF6B10AF16E61D0BE50EA7637E7FDFAEF/",
+      "created": "2021-07-12",
+      "updated": "2026-05-30",
+      "subscriptions": 3415296
+    },
+    {
+      "name": "FlipTransport",
+      "id": "1832448183",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1832448183",
+      "description": "Description Ever drove your vehicle so fast around a corner that it flipped? Or your vehicle launched so far into the sky your friends lost sight of you? Well when the vehicle finally decides to come down from the sky and roll over on it's side or on it's",
+      "tags": [
+        "Mod",
+        "Mechanics",
+        "Vehicle"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/2490019128130409302/491A57251322EB1671BCC91601A685AAD9DB29FF/",
+      "created": "2019-08-12",
+      "updated": "2024-10-13",
+      "subscriptions": 3032350
+    },
+    {
+      "name": "WindstridesClothingPack",
+      "id": "1797720064",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1797720064",
+      "description": "v13.4 https://media.giphy.com/media/LmfXVQNAC4Y3w5Udzb/giphy.gif https://media.giphy.com/media/igsIiFmeetB0yGfoCS/giphy.gif This mod pack will bring to life clothing items that i think fits the post-apocalyptic Chernarus. All the items in this pack feature",
+      "tags": [
+        "Mod",
+        "Character",
+        "Economy",
+        "Equipment"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/1663480226053881998/C4E472AE3BA243A415A92853DE9869120743D3A2/",
+      "created": "2019-07-09",
+      "updated": "2024-10-23",
+      "subscriptions": 2934562
+    },
+    {
+      "name": "BaseBuildingPlus",
+      "id": "1710977250",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1710977250",
+      "description": "Updated for 1.27! After 2+ years, BBP has been updated with some fixes for the 1.27 update. Visit the discord to view the fixes, please report any other bugs to the discord so I can get those fixed. Thanks! BBP 2.0 update was released for Dayz 1.18, it bro",
+      "tags": [
+        "Economy",
+        "Environment",
+        "Equipment",
+        "Props",
+        "Mod"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/1836915105922968803/C7D90B8C5FA3366374884009F01B67DA15ADABD9/",
+      "created": "2019-04-13",
+      "updated": "2025-03-22",
+      "subscriptions": 2829777
+    },
+    {
+      "name": "Advanced Weapon Scopes",
+      "id": "2143128974",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2143128974",
+      "description": "This mod is designed as almost complete replacement for vanilla scopes for providing more smooth game experience since only my scopes has unique abilities. My recomendation is getting rid of any vanilla scopes except PU, Kobra, PSO and 1PN51. Mod content:",
+      "tags": [
+        "Mod",
+        "Equipment"
+      ],
+      "preview": "https://images.steamusercontent.com/ugc/1843657354507658651/495F60928EF8B618A0BB4CBBCAF6F8D27B396887/",
+      "created": "2020-06-26",
+      "updated": "2023-11-10",
+      "subscriptions": 2707864
+    }
+  ]
+}

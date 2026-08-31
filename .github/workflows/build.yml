@@ -1,0 +1,122 @@
+name: Sync script data
+
+on:
+  schedule:
+    - cron: '13 */6 * * *' # every 6h UTC; skips early when upstream has no new commit
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Re-parse even if upstream is unchanged
+        type: boolean
+        default: false
+
+concurrency:
+  group: sync-data
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  keepalive:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Keep this schedule enabled
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/build.yml/enable"
+
+  sync:
+    if: github.event_name != 'push' || !startsWith(github.event.head_commit.message, 'Update parsed DayZ script data')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check upstream for changes
+        id: upstream
+        run: |
+          HEAD=$(git ls-remote https://github.com/BohemiaInteractive/DayZ-Script-Diff.git refs/heads/main | cut -f1)
+          echo "head=$HEAD" >> "$GITHUB_OUTPUT"
+          echo "Upstream head: $HEAD"
+          if [[ -f data/versions.json ]]; then
+            COMMITTED=$(node -p "require('./data/versions.json').upstreamHead")
+            echo "committed=$COMMITTED" >> "$GITHUB_OUTPUT"
+            echo "Committed head: $COMMITTED"
+          else
+            echo "committed=" >> "$GITHUB_OUTPUT"
+            echo "No committed versions.json"
+          fi
+
+      - name: Decide whether to sync
+        id: decide
+        run: |
+          if [[ "${{ github.event_name }}" != "schedule" || "${{ inputs.force }}" == "true" || "${{ steps.upstream.outputs.head }}" != "${{ steps.upstream.outputs.committed }}" ]]; then
+            echo "sync=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Upstream unchanged - skipping."
+            echo "sync=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Restore upstream clone
+        if: steps.decide.outputs.sync == 'true'
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: upstream-${{ steps.upstream.outputs.head }}
+          restore-keys: |
+            upstream-
+
+      - name: Test parser
+        if: steps.decide.outputs.sync == 'true'
+        run: npm test
+
+      - name: Fetch upstream versions
+        if: steps.decide.outputs.sync == 'true'
+        run: npm run fetch
+
+      - name: Parse all versions
+        if: steps.decide.outputs.sync == 'true'
+        env:
+          FORCE_PARSE: ${{ inputs.force == true && '1' || '' }}
+        run: |
+          if [[ -z "$FORCE_PARSE" && "${{ github.event_name }}" == "push" && "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]]; then
+            if git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" | grep -qE '^(src/parser/|src/parse-all\.js$)'; then
+              export FORCE_PARSE=1
+            fi
+          fi
+          npm run parse
+
+      - name: Commit data
+        if: steps.decide.outputs.sync == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --staged --quiet; then
+            echo "No data changes to commit."
+            exit 0
+          fi
+          git commit -m "Update parsed DayZ script data" -m "Upstream ${{ steps.upstream.outputs.head }}"
+          git push
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Sync script data"
+            echo "- Event: \`${{ github.event_name }}\`"
+            echo "- Upstream: \`${{ steps.upstream.outputs.head }}\`"
+            echo "- In repo: \`${{ steps.upstream.outputs.committed }}\`"
+            echo "- Sync: \`${{ steps.decide.outputs.sync }}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
