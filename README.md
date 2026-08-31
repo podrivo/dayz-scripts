@@ -112,6 +112,12 @@ The usual path is a pull request. Notes go in `site/notes.json` (see
 the client-side behaviour lives, and the invariants to keep. Bugs and
 suggestions: [Discord](https://discord.yadz.app/).
 
+## Thanks
+
+To [CreepyCrappyShow](https://creepycrappy.show/), for the support,
+insights, cool name ideas, and friendship along the way. This site is
+better for all of it! <3
+
 ## License
 
 **This generator** (`src/`, `site/`, `test/`, and the build configuration) is
