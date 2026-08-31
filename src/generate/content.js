@@ -46,6 +46,7 @@ export const OFFICIAL_LINKS = [
 /** Bohemia's own modding material. */
 export const OFFICIAL_MODDING_LINKS = alpha([
   ['Central Economy', 'https://github.com/BohemiaInteractive/DayZ-Central-Economy', 'The vanilla loot economy files, as the game ships them'],
+  ['Diag Menu', 'https://community.bistudio.com/wiki/DayZ:Diag_Menu', 'Debug menu in DayZDiag_x64.exe: Win+Alt in a 3D viewport'],
   ['Modding Basics', 'https://community.bistudio.com/wiki/DayZ:Modding_Basics', 'Official walkthrough: project drive, config.cpp, packing, first script'],
   ['Modding Samples', 'https://github.com/BohemiaInteractive/DayZ-Samples', 'Sample mods to start a project from'],
 ]);
