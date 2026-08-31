@@ -122,21 +122,52 @@ export function initCopySignatures() {
     sigOverride.title = `Copy a modded class ${cls} override of this method`;
     sigOverride.setAttribute('aria-label', 'Copy override');
   }
-  let sigFor = null;
+  let hoverFor = null;
+  let targetFor = null;
   let stub = null;
-  const attach = (mem) => {
+  const targetCopy = copyButton();
+  targetCopy.classList.add('copy-sig');
+
+  const codeOf = (mem) => {
     const sig = mem && $('.member-sig', mem);
     const code = sig && $('code', sig);
-    if (!code || code === sigFor) return;
-    sigFor = code;
-    sig.append(sigCopy);
-    if (!sigOverride) return;
-    stub = overrideStub(code, cls);
-    if (stub) sig.append(sigOverride);
-    else sigOverride.remove();
+    return code ? { sig, code } : null;
   };
-  sigCopy.addEventListener('click', () => sigFor && copyText(sigFor.textContent.trim(), sigCopy, 'signature'));
+  const targeted = () => {
+    const id = location.hash.slice(1);
+    const mem = id && document.getElementById(id);
+    return mem?.classList.contains('member') ? mem : null;
+  };
+  const parkTarget = () => {
+    const host = targeted();
+    const found = codeOf(host);
+    if (!found) {
+      targetCopy.remove();
+      targetFor = null;
+      return;
+    }
+    targetFor = found.code;
+    found.sig.append(targetCopy);
+    if (hoverFor === targetFor) {
+      sigCopy.remove();
+      hoverFor = null;
+    }
+  };
+
+  sigCopy.addEventListener('click', () => hoverFor && copyText(hoverFor.textContent.trim(), sigCopy, 'signature'));
+  targetCopy.addEventListener('click', () => targetFor && copyText(targetFor.textContent.trim(), targetCopy, 'signature'));
   sigOverride?.addEventListener('click', () => stub && copyText(stub, sigOverride, 'override'));
-  main.addEventListener('pointerover', (e) => attach(e.target.closest?.('.member')));
-  attach($('.member:target', main));
+  main.addEventListener('pointerover', (e) => {
+    const mem = e.target.closest?.('.member');
+    const found = codeOf(mem);
+    if (!found || found.code === hoverFor || found.code === targetFor) return;
+    hoverFor = found.code;
+    found.sig.append(sigCopy);
+    if (!sigOverride) return;
+    stub = overrideStub(found.code, cls);
+    if (stub) found.sig.append(sigOverride);
+    else sigOverride.remove();
+  });
+  window.addEventListener('hashchange', parkTarget);
+  parkTarget();
 }
