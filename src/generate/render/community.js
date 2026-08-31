@@ -27,22 +27,22 @@ ${linkCards(links, true)}`;
   const content = /* html */ `
 <h1>Community</h1>
 <p>Most of the DayZ script API carries no documentation, and there is no official reference that fills the gap. These are the places that do: the official pages that exist, the servers where questions get answered, and the tools and references the community maintains.</p>
+<div id="workshop-stats" class="stats" hidden></div>
 <h2 id="official">Official</h2>
 ${linkCards(OFFICIAL_LINKS, true)}
 <h2 id="official-modding">Official modding docs</h2>
 ${linkCards(OFFICIAL_MODDING_LINKS, true)}
 <h2 id="discord">Discord servers</h2>
 ${linkCards(DISCORD_LINKS, true)}
+${COMMUNITY_SECTIONS.map(section).join('\n')}
 <h2 id="workshop">Steam Workshop</h2>
 <p>The most subscribed DayZ mods on Steam, fetched when you open this page. <a href="https://steamcommunity.com/app/221100/workshop/" ${EXT}>Browse all</a>.</p>
-<div id="workshop-stats" class="stats" hidden></div>
 <div id="workshop-list" aria-live="polite" aria-busy="true"><p class="muted">Loading workshop…</p></div>
 <h2 id="maps">Maps</h2>
 <p>Official terrains ship with the dedicated server. Livonia has been in the base game since 1.25; Sakhal needs the Frostline DLC. A server picks one with <code>template="dayzOffline.&lt;world&gt;"</code> in <code>serverDZ.cfg</code>.</p>
 ${linkCards(OFFICIAL_MAPS, true)}
 <p>Community terrains load as Workshop mods. These are the ones servers actually run.</p>
 ${linkCards(WORKSHOP_MAPS, true)}
-${COMMUNITY_SECTIONS.map(section).join('\n')}
 <h2 id="notes">Community notes</h2>
 <p>Most of the script API has no doc comment. A community note fills one in: a short annotation on a class, enum or member — what an argument expects, whether a call is server-only, what a method does that its name does not say. Notes show up on that declaration's page, labelled as community writing rather than Bohemia's, and on every build at once.</p>
 <p>They live in one file, <code>site/notes.json</code>, keyed by a type name or <code>Type.Member</code>:</p>
