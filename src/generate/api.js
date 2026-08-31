@@ -4,7 +4,8 @@
 // "what does SetQuantity take." This file is the signatures, inheritance,
 // locations and doc briefs of every declaration. Latest-only — older builds
 // keep the HTML archive — and fetched as /api.json, never written into a page.
-// See renderLlmsTxt for the index that points here.
+// See renderLlmsTxt for the index that points here, and renderAgentMd for
+// how an agent should look a type up.
 
 import { parseDoc } from '../parser/docparse.js';
 import { SITE_URL } from './content.js';
@@ -177,12 +178,13 @@ export function renderLlmsTxt(site) {
 
 > Browsable documentation for the DayZ Enforce Script API, generated from the official DayZ Script Diff sources. Latest PC stable build: ${site.build}.
 
-The HTML site is for humans. Language models should prefer the machine-readable files below over scraping class pages.
+The HTML site is for humans. Language models should prefer the machine-readable files below over scraping class pages. How to look a type up is in [agent.md](${SITE_URL}/agent.md).
 
 The script sources are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are licensed under the [DayZ Public License (DPL)](${DPL}). They have been modified here only for presentation. This is not official documentation and is not affiliated with DayZ or Bohemia Interactive.
 
 ## Machine-readable
 
+- [How to look things up](${SITE_URL}/agent.md): fetch the dump, overlay notes, do not scrape pages
 - [Latest build API](${SITE_URL}/api.json): every class, method, field, enum, global, typedef and macro of ${site.build}, with signatures, inheritance, file locations and doc briefs
 - [Search index](${SITE_URL}/search.json): compact name index the site search uses
 - [Community notes](${SITE_URL}/assets/notes.json): community-written notes on undocumented declarations, keyed by \`Type\` or \`Type.Member\`. Not from Bohemia, and not covered by the license above
@@ -197,5 +199,27 @@ The script sources are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are
 - [Changelog](${SITE_URL}/changelog/): API diff between any two builds
 - [Community](${SITE_URL}/community/): official references, Discord servers, editors, build tools and data explorers for DayZ modding
 - [About](${SITE_URL}/about/): agents, the stack, and how to collaborate
+`;
+}
+
+/** How an agent should look a type up, without scraping class pages. */
+export function renderAgentMd(site) {
+  return `# ${SITE_TITLE}
+
+> How to read this documentation as an agent. Latest PC stable build: ${site.build}.
+
+Do not scrape class pages. Fetch the JSON.
+
+## Look a type up
+
+1. Fetch [${SITE_URL}/api.json](${SITE_URL}/api.json). Every class, method, field, enum, global, typedef and macro of ${site.build}, with signatures, inheritance, file locations and doc briefs. Find a type by \`name\`; members live on \`methods\` and \`members\`. Relative \`url\` values are from the site root.
+2. Overlay [${SITE_URL}/assets/notes.json](${SITE_URL}/assets/notes.json). Community notes keyed by \`Type\` or \`Type.Member\`. Not from Bohemia, and not covered by the license below.
+3. If you only have a name, [${SITE_URL}/search.json](${SITE_URL}/search.json) is the compact index the site search uses.
+
+\`api.json\` is latest-only. Older builds keep the HTML archive at \`/v/<build>/\`. The catalog of machine-readable files is [${SITE_URL}/llms.txt](${SITE_URL}/llms.txt).
+
+## License
+
+The script sources are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are licensed under the [DayZ Public License (DPL)](${DPL}). They have been modified here only for presentation. This is not official documentation and is not affiliated with DayZ or Bohemia Interactive.
 `;
 }

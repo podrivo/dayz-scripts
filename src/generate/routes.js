@@ -11,7 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { CACHE_DIR } from '../util.js';
 import { buildSearchIndex } from './search.js';
-import { buildApi, renderLlmsTxt } from './api.js';
+import { buildApi, renderLlmsTxt, renderAgentMd } from './api.js';
 import { renderFeed } from './feed.js';
 import { buildFileLinks, chainBuilder } from './srclinks.js';
 import { recordingSite, classDeps, enumDeps, membersDeps } from './memo.js';
@@ -237,6 +237,13 @@ export function* pages(site, opts) {
       kind: 'index',
       asset: true,
       render: () => renderLlmsTxt(site),
+    };
+    yield {
+      rel: 'agent.md',
+      file: 'agent.md',
+      kind: 'index',
+      asset: true,
+      render: () => renderAgentMd(site),
     };
     // The build feed, for the readers and bots that would rather be told a
     // new build is up than come and look. One per site, like the API above.

@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseFile } from '../src/parser/index.js';
 import { buildSiteModel } from '../src/generate/model.js';
-import { buildApi, renderLlmsTxt } from '../src/generate/api.js';
+import { buildApi, renderLlmsTxt, renderAgentMd } from '../src/generate/api.js';
 import { buildSearchIndex } from '../src/generate/search.js';
 import { SITE_URL } from '../src/generate/content.js';
 
@@ -77,8 +77,19 @@ test('llms.txt points at the dump and states the license', () => {
   const txt = renderLlmsTxt(siteOf());
   assert.match(txt, /^# DIFF/);
   assert.match(txt, new RegExp(`${SITE_URL}/api.json`));
+  assert.match(txt, new RegExp(`${SITE_URL}/agent.md`));
   assert.match(txt, /DayZ Public License/);
   assert.match(txt, /1\.29\.0/);
+});
+
+test('agent.md tells an agent to fetch the dump instead of scraping', () => {
+  const md = renderAgentMd(siteOf());
+  assert.match(md, /^# DIFF/);
+  assert.match(md, /Do not scrape class pages/);
+  assert.match(md, new RegExp(`${SITE_URL}/api.json`));
+  assert.match(md, new RegExp(`${SITE_URL}/llms.txt`));
+  assert.match(md, /DayZ Public License/);
+  assert.match(md, /1\.29\.0/);
 });
 
 // The overlay is hand-edited by contributors rather than generated, and

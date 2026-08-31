@@ -7,6 +7,7 @@ import { linkCards } from './shared.js';
 /** Machine-readable files agents should fetch instead of scraping HTML. */
 const AGENT_LINKS = [
   ['llms.txt', '/llms.txt', 'Where agents start: what to fetch, and the license that covers it'],
+  ['agent.md', '/agent.md', 'How to look a type up without scraping class pages'],
   ['api.json', '/api.json', 'Latest build: every class, method, field, enum, global, typedef and macro'],
   ['search.json', '/search.json', 'Compact name index the site search uses'],
   ['notes.json', '/assets/notes.json', 'Community notes, keyed by Type or Type.Member'],
@@ -26,7 +27,7 @@ export function renderAbout(ctx) {
 <p>DIFF, DayZ Internal File Finder by <a href="https://yadz.app/" ${EXT}>YADZ</a>. Browsable documentation for the <a href="https://community.bistudio.com/wiki/DayZ:Enforce_Script_Syntax" ${EXT}>DayZ Enforce Script</a> sources — every class, method, enum and constant of <a href="https://dayz.com/" ${EXT}>DayZ</a>, generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ&nbsp;Script&nbsp;Diff</a> repository. It covers what ships in the game's script files; engine internals are not part of it.</p>
 <p>Made for anyone wandering the DayZ modding and scripting world, and meant to be quicker to browse than the raw sources. There is no official detailed documentation on the subject, so community content is your best friend.</p>
 <h2 id="agents">Agents</h2>
-<p>The HTML pages are for people. Agents should start at <a href="/llms.txt"><code>llms.txt</code></a> and fetch the JSON rather than scraping class pages. <code>api.json</code> is latest-only; older builds keep the HTML archive at <code>/v/&lt;build&gt;/</code>. The script sources it describes are under the DPL; community notes are not.</p>
+<p>The HTML pages are for people. Agents should start at <a href="/llms.txt"><code>llms.txt</code></a> and fetch the JSON rather than scraping class pages. How to look a type up is in <a href="/agent.md"><code>agent.md</code></a>. <code>api.json</code> is latest-only; older builds keep the HTML archive at <code>/v/&lt;build&gt;/</code>. The script sources it describes are under the DPL; community notes are not.</p>
 <p>For pasting into a chat by hand, every class and enum page has a Copy for LLM button under its title: the page as Markdown — signatures, inheritance, docs and community notes — with its build and source named.</p>
 ${linkCards(AGENT_LINKS)}
 <p>Tools that let an agent run and test a DayZ mod, rather than only read the API, live under <a href="/community/#agents">Agents &amp; automation</a> on Community.</p>

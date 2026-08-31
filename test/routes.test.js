@@ -108,16 +108,18 @@ test('only the sidecars the site fetches are marked as assets', () => {
     'nav.json',
     'api.json',
     'llms.txt',
+    'agent.md',
     'feed.xml',
   ]);
-  for (const rel of assets) assert.match(rel, /\.(json|txt|xml)$/, `${rel} is not a sidecar`);
-  assert.ok(all.every((p) => p.asset || !/\.(json|txt|xml)$/.test(p.rel)), 'a sidecar is being counted as a page');
+  for (const rel of assets) assert.match(rel, /\.(json|txt|xml|md)$/, `${rel} is not a sidecar`);
+  assert.ok(all.every((p) => p.asset || !/\.(json|txt|xml|md)$/.test(p.rel)), 'a sidecar is being counted as a page');
 });
 
 test('the machine API and the feed are latest-only', () => {
   const older = [...pages(site, { isLatest: false, versions: [] })].map((p) => p.rel);
   assert.ok(!older.includes('api.json'));
   assert.ok(!older.includes('llms.txt'));
+  assert.ok(!older.includes('agent.md'));
   assert.ok(!older.includes('feed.xml'));
 });
 

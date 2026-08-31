@@ -15,7 +15,7 @@ repository.
 - 🔗 **Usage** — where each member is called, when the sources have no official docs
 - 📝 **Community notes** — short annotations on types and members
 - 📦 **Build archive** — older PC stables stay at `/v/<build>/`
-- 🤖 **LLM-ready** — `api.json`, `llms.txt`, and Copy for LLM on class and enum pages
+- 🤖 **LLM-ready** — `api.json`, `llms.txt`, `agent.md`, and Copy for LLM on class and enum pages
 - 📡 **Feed** — new builds as they ship, as Atom
 
 ## What's on the site
@@ -35,8 +35,10 @@ suggestions for this site: [Discord](https://discord.yadz.app/).
 
 The HTML pages are for people. Agents should start at
 [`/llms.txt`](https://diff.yadz.app/llms.txt) and fetch the JSON rather than
-scraping class pages.
+scraping class pages. How to look a type up is in
+[`/agent.md`](https://diff.yadz.app/agent.md).
 
+- [`/agent.md`](https://diff.yadz.app/agent.md) — fetch the dump, overlay notes, do not scrape pages
 - [`/api.json`](https://diff.yadz.app/api.json) — latest build: every class, method, field, enum, global, typedef and macro, with signatures, inheritance, file locations and doc briefs
 - [`/search.json`](https://diff.yadz.app/search.json) — compact name index the site search uses
 - [`/assets/notes.json`](https://diff.yadz.app/assets/notes.json) — community notes, keyed by `Type` or `Type.Member`
