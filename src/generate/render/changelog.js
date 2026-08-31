@@ -24,8 +24,9 @@ export function renderCompare(ctx) {
   const card = (side, label) => /* html */ `<label class="cmp-pick" data-side="${side}">
   <span>${label}</span><span class="cmp-sel"><select id="cmp${label}" aria-label="Compare ${side} build"></select></span>
 </label>`;
-  const bar = /* html */ `<div class="pagebar" hidden>
-<form class="cmp-stage" id="cmpBar">
+  const content = /* html */ `
+<h1>Changelog</h1>
+<form class="cmp-stage" id="cmpBar" hidden>
   ${card('from', 'From')}
   <div class="cmp-mid">
     <button type="button" class="btn cmp-swap" id="cmpReset" disabled aria-hidden="true"><i class="ic ic-swap"></i></button>
@@ -33,8 +34,6 @@ export function renderCompare(ctx) {
   </div>
   ${card('to', 'To')}
 </form>
-</div>`;
-  const content = /* html */ `
 <noscript><p>The changelog is built in the browser and needs JavaScript.</p></noscript>
 <div class="cmp" id="compare" aria-live="polite" aria-busy="true"><p class="muted">Loading builds…</p></div>
 <h2 id="release-notes">Release notes</h2>
@@ -48,7 +47,6 @@ ${renderReleases(ctx, { highlight: false, absolute: true })}
     active: 'changelog/',
     description: 'What changed in the DayZ Enforce Script API between two game builds.',
     breadcrumbs: [{ label: 'Changelog' }],
-    bar,
     content,
   });
 }

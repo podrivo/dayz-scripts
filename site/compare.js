@@ -532,8 +532,6 @@ ${groupsHtml(diff, prefixFor(from, latest), prefixFor(to, latest))}`;
   fill(fromSel, from);
   fill(toSel, to);
   bar.hidden = false;
-  const nav = bar.closest('.pagebar');
-  if (nav) nav.hidden = false;
   stampPair();
   store();
   draw();

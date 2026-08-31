@@ -756,7 +756,12 @@ table.list.doc-table td:first-child { padding-left: 0; }
   display: flex;
   align-items: baseline;
   gap: 10px;
+  padding: 1px 6px;
+  margin: 0 -6px;
+  border-radius: 6px;
 }
+.catalog-head:hover,
+.catalog-kids li:hover { background: var(--bg2); }
 .catalog-head a::after,
 .catalog-kids a::after {
   content: "";
@@ -1104,16 +1109,17 @@ a.badge-since:hover, a.badge-added:hover, a.badge-changed:hover {
 .hist-panel-box:focus-visible { outline: none; }
 .hist-bar {
   position: sticky; top: 0; z-index: 1;
-  display: flex; align-items: center; gap: 12px;
-  padding: 14px 18px; border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; gap: 8px;
+  flex: none; height: 56px; padding: 0 18px;
+  border-bottom: 1px solid var(--line);
   background: var(--bg);
 }
 .hist-title { margin: 0; flex: 1; font-size: var(--text-sm); font-weight: 600; }
 .hist-title .count { color: var(--fg2); font-weight: 500; }
 .hist-close {
   box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center;
-  width: 24px; height: 24px; padding: 0; border: 1px solid var(--line); border-radius: 8px;
-  background: var(--bg); color: var(--fg2); cursor: pointer;
+  width: 32px; height: 32px; padding: 0; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--bg2); color: var(--fg2); cursor: pointer; flex: none;
 }
 .hist-close:hover { color: var(--accent); border-color: var(--accent2); }
 body.hist-open { overflow: hidden; }
@@ -1132,8 +1138,8 @@ body.hist-open { overflow: hidden; }
   width: max-content; max-width: calc(100% - 24px); margin: 0 auto;
   display: flex; align-items: center; flex-wrap: wrap; gap: 10px;
   padding: 10px 12px;
-  border-radius: 16px;
-  background: var(--bg); box-shadow: var(--shadow); font-size: var(--text-sm);
+  border: 1px solid var(--accent2); border-radius: 16px;
+  background: var(--bg3); box-shadow: var(--shadow); font-size: var(--text-sm); color: var(--fg);
   /* Away, and on its way in or out the rest of the time. Visibility rather
      than display so there is something to animate, and delayed by the length
      of the fade so the strip leaves the tab order only once it has gone. */
@@ -1146,7 +1152,7 @@ body.hist-open { overflow: hidden; }
 }
 /* Which lines are held, and the way to let go of them: one pair, closer to
    each other than to the buttons that act on them. */
-.share-what { margin-right: -4px; color: var(--fg2); white-space: nowrap; }
+.share-what { margin-right: -4px; color: var(--fg); white-space: nowrap; }
 /* A drawn cross rather than the × character, which carries its own idea of
    where the middle of a line is and lands high in the box whatever the box
    does. This one is centred by the mask inside a square centred by the flex,
@@ -1164,7 +1170,7 @@ body.hist-open { overflow: hidden; }
 }
 .share-clear:hover { color: var(--accent); background: var(--bg2); }
 
-.share-bar .copy-btn { height: auto; padding: 4px 12px; font-size: var(--text-sm); line-height: 20px; }
+.share-bar .copy-btn { height: auto; padding: 4px 12px; font-size: var(--text-sm); line-height: 20px; color: var(--fg); }
 .share-link::before { content: "Copy link"; }
 .share-code::before { content: "Copy code"; }
 /* A link wearing a button, so the row reads as one set of choices. */
@@ -1346,18 +1352,16 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
 
 /* ---- compare two builds ----
    Two product cards, then a two-column sheet: removed under From, added
-   under To, changed signatures as a From / To pair. The picker is the
-   page bar: same strip, same height, same glass as Classes / Hierarchy. */
+   under To, changed signatures as a From / To pair. The pickers sit
+   under the Changelog title. */
 .cmp-stage {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: start;
   gap: 8px 16px;
   align-items: center;
-  min-height: 50px;
   max-width: 100%;
-  margin: 0;
-  padding: 8px 0;
+  margin: 0 0 24px;
 }
 .cmp-stage[hidden] { display: none; }
 .cmp-pick {
@@ -1389,6 +1393,21 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
   display: block;
   height: 32px;
 }
+.cmp-sel::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  translate: 0 -50%;
+  background: currentColor;
+  opacity: .5;
+  --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M2 3.5l3 3 3-3'/%3E%3C/svg%3E");
+  -webkit-mask: var(--chev) center / 10px no-repeat;
+  mask: var(--chev) center / 10px no-repeat;
+  pointer-events: none;
+}
 .cmp-sel::after {
   content: attr(data-face);
   position: absolute;
@@ -1404,6 +1423,8 @@ tr.changed .old { text-decoration: line-through; opacity: 0.6; }
   pointer-events: none;
 }
 .cmp-pick select {
+  appearance: none;
+  -webkit-appearance: none;
   width: 100%;
   min-width: 0;
   height: 32px;

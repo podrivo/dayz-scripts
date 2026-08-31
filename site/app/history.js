@@ -279,6 +279,7 @@ function addTimeline(main, hist, builds, rec, here) {
   body.addEventListener('click', (e) => {
     const more = e.target.closest('.th-more');
     if (more) {
+      e.stopPropagation();
       const hidden = [...more.closest('.th-build').querySelectorAll('.th-row[hidden]')];
       const n = step(hidden.length);
       for (const row of hidden.slice(0, n)) row.hidden = false;
