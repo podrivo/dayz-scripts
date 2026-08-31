@@ -8,6 +8,7 @@ import { ROOT, readJson } from '../util.js';
 
 const catalog = readJson(path.join(ROOT, 'site', 'workshop.json'));
 const workshopHref = (id) => `https://steamcommunity.com/sharedfiles/filedetails/?id=${id}`;
+const alpha = (links) => links.toSorted((a, b) => a[0].localeCompare(b[0], 'en', { sensitivity: 'base' }));
 const mapLink = (m) => {
   if (m.kind === 'official') {
     return [m.name, m.url, `${m.note}. World ${m.world}, mission ${m.mission}`];
@@ -33,32 +34,32 @@ export const ANALYTICS_ID = 'G-R8ZT2QC248';
 /** PostHog project token. Public, like ANALYTICS_ID: it ships in the page. */
 export const POSTHOG_KEY = 'phc_nQv26gW5YJWEVvLcAWFLsBdgoGRFFUZfCrt948xfRdDP';
 
-export const OFFICIAL_LINKS = [
+export const OFFICIAL_LINKS = alpha([
+  ['Community Wiki', 'https://community.bistudio.com/wiki/Category:DayZ', 'Bohemia Interactive wiki pages for DayZ'],
   ['DayZ.com', 'https://dayz.com/', 'Official game website and news'],
   ['DayZ Forums', 'https://forums.dayz.com/', 'Announcements and stable update threads'],
-  ['Community Wiki', 'https://community.bistudio.com/wiki/Category:DayZ', 'Bohemia Interactive wiki pages for DayZ'],
+  ['DayZ Tools', 'https://store.steampowered.com/app/830640/DayZ_Tools/', 'Official modding tools on Steam'],
   ['Enforce Script Syntax', 'https://community.bistudio.com/wiki/DayZ:Enforce_Script_Syntax', 'The language itself: types, operators and keywords'],
   ['Feedback Tracker', 'https://feedback.bistudio.com/tag/dayz/', 'Report bugs and follow known issues'],
   ['GitHub Repositories', 'https://github.com/orgs/BohemiaInteractive/repositories?q=dayz', 'Official Bohemia Interactive DayZ repos'],
-  ['DayZ Tools', 'https://store.steampowered.com/app/830640/DayZ_Tools/', 'Official modding tools on Steam'],
-];
+]);
 
 /** Bohemia's own modding material. */
-export const OFFICIAL_MODDING_LINKS = [
+export const OFFICIAL_MODDING_LINKS = alpha([
+  ['Central Economy', 'https://github.com/BohemiaInteractive/DayZ-Central-Economy', 'The vanilla loot economy files, as the game ships them'],
   ['Modding Basics', 'https://community.bistudio.com/wiki/DayZ:Modding_Basics', 'Official walkthrough: project drive, config.cpp, packing, first script'],
   ['Modding Samples', 'https://github.com/BohemiaInteractive/DayZ-Samples', 'Sample mods to start a project from'],
-  ['Central Economy', 'https://github.com/BohemiaInteractive/DayZ-Central-Economy', 'The vanilla loot economy files, as the game ships them'],
-];
+]);
 
-export const OFFICIAL_MAPS = catalog.maps.filter((m) => m.kind === 'official').map(mapLink);
-export const WORKSHOP_MAPS = catalog.maps.filter((m) => m.kind === 'workshop').map(mapLink);
+export const OFFICIAL_MAPS = alpha(catalog.maps.filter((m) => m.kind === 'official').map(mapLink));
+export const WORKSHOP_MAPS = alpha(catalog.maps.filter((m) => m.kind === 'workshop').map(mapLink));
 
 /** The servers to ask in. */
-export const DISCORD_LINKS = [
-  ['DayZ Modders', 'https://discord.gg/dayz-modders-452035973786632194', 'Discord · modding and scripting help'],
+export const DISCORD_LINKS = alpha([
   ['DayZ Academy', 'https://discord.gg/BMnpGEzKdx', 'Discord · modders and server owners'],
   ['DayZ Editor', 'https://discord.gg/dayz-editor-738181536029081662', 'Discord · support for the DayZ Editor mod'],
-];
+  ['DayZ Modders', 'https://discord.gg/dayz-modders-452035973786632194', 'Discord · modding and scripting help'],
+]);
 
 /**
  * What the community has built around the scripts, grouped the way /community/
@@ -69,79 +70,79 @@ export const COMMUNITY_SECTIONS = [
   {
     id: 'reference',
     title: 'Reference & guides',
-    links: [
-      ['Enforce Script cheat sheet', 'https://gist.github.com/creativ3lab/49a4055c6b5c87d2c9ccb08ad04d5b86', 'The syntax reference as one scrollable page'],
-      ['DayZ Modding Wiki', 'https://github.com/StarDZ-Team/DayZ-Modding-Wiki', 'Open wiki on the language, layouts, engine API and its traps'],
-      ['DayZ Wiki', 'https://dayz.wiki.gg/', 'Community-run gameplay and item wiki'],
+    links: alpha([
       ['Custom lockable items', 'https://github.com/salutesh/DayZ-Expansion-Scripts/wiki/%5BModding%5D-Creating-a-custom-openable-closable-and-or-lockable-item', 'Expansion wiki: openable, closable and lockable items',
         [['Example', 'https://github.com/TrueDolphin/CodeLock-Example']]],
       ['Custom script modules', 'https://wrdg.net/posts/dayz/custom-script-module-exploitation', 'How ScriptModule.LoadScript works; the retail-client hole was closed in 1.24'],
-    ],
+      ['DayZ Modding Wiki', 'https://github.com/StarDZ-Team/DayZ-Modding-Wiki', 'Open wiki on the language, layouts, engine API and its traps'],
+      ['DayZ Wiki', 'https://dayz.wiki.gg/', 'Community-run gameplay and item wiki'],
+      ['Enforce Script cheat sheet', 'https://gist.github.com/creativ3lab/49a4055c6b5c87d2c9ccb08ad04d5b86', 'The syntax reference as one scrollable page'],
+    ]),
   },
   {
     id: 'tooling',
     title: 'Editors & tooling',
-    links: [
-      ['EnScript for VS Code', 'https://marketplace.visualstudio.com/items?itemName=forestbelton.bohemia-enscript', 'Enforce Script highlighting and language support'],
-      ['DevZ Tools', 'https://marketplace.visualstudio.com/items?itemName=devz-tools.devz-tools', 'VS Code extension around an Enforce Script language server'],
+    links: alpha([
+      ['Bisign2Bikey', 'https://github.com/wrdg/Bisign2Bikey', 'Pulls a .bikey out of .bisign files for DayZ and Arma'],
+      ['Community Offline Mode', 'https://github.com/Arkensor/DayZCommunityOfflineMode', 'Single-player mission for exploring and testing without a server'],
       ['DayZ CE Schema', 'https://marketplace.visualstudio.com/items?itemName=rvost.dayz-ce-schema', 'VS Code validation and completion for Central Economy XML',
         [['GitHub', 'https://github.com/rvost/dayz-ce-schema/']]],
-      ["Mikero's Tools", 'https://mikero.bytex.digital/', 'PBO packing and file conversion tools'],
-      ['DayZExtract', 'https://github.com/wrdg/DayZExtract', 'Faster PBO extract than DayZ Tools Extract or DayZ2P'],
-      ['Bisign2Bikey', 'https://github.com/wrdg/Bisign2Bikey', 'Pulls a .bikey out of .bisign files for DayZ and Arma'],
-      ['edds2png', 'https://github.com/wrdg/edds2png', 'Converts Enfusion DDS (.edds) images to PNG'],
-      ['RaG DayZ Tools', 'https://github.com/Tyson89/RaG-DayZ-Tools', 'PBO builder, inspector and game data extractor'],
+      ['DayZ Editor', 'https://github.com/InclementDab/DayZ-Editor', 'In-game 3D editor for building scenes and exporting them'],
+      ['DayZ Imageset Editor', 'https://github.com/Strykar86/DayZ-Imageset-Editor', 'Visual layout editor and atlas packer for .imageset files'],
       ['DayZ Labs', 'https://borcioo.github.io/dayz-labs/', 'Dev launcher for server, client, builds and logs',
         [['GitHub', 'https://github.com/Borcioo/dayz-labs']]],
-      ['DayzModTool', 'https://github.com/accuratealx/DayzModTool', 'Windows replacement for DayZ Tools: P: drive, PBO packing and stringtable'],
       ['DayZ Mod Template', 'https://github.com/InclementDab/DayZ-Mod-Template', 'Starter repo with Workbench project, build tools and script folders'],
-      ['DayZ Imageset Editor', 'https://github.com/Strykar86/DayZ-Imageset-Editor', 'Visual layout editor and atlas packer for .imageset files'],
-      ['DayZ Editor', 'https://github.com/InclementDab/DayZ-Editor', 'In-game 3D editor for building scenes and exporting them'],
-      ['Community Offline Mode', 'https://github.com/Arkensor/DayZCommunityOfflineMode', 'Single-player mission for exploring and testing without a server'],
-    ],
+      ['DayzModTool', 'https://github.com/accuratealx/DayzModTool', 'Windows replacement for DayZ Tools: P: drive, PBO packing and stringtable'],
+      ['DayZExtract', 'https://github.com/wrdg/DayZExtract', 'Faster PBO extract than DayZ Tools Extract or DayZ2P'],
+      ['DevZ Tools', 'https://marketplace.visualstudio.com/items?itemName=devz-tools.devz-tools', 'VS Code extension around an Enforce Script language server'],
+      ['edds2png', 'https://github.com/wrdg/edds2png', 'Converts Enfusion DDS (.edds) images to PNG'],
+      ['EnScript for VS Code', 'https://marketplace.visualstudio.com/items?itemName=forestbelton.bohemia-enscript', 'Enforce Script highlighting and language support'],
+      ["Mikero's Tools", 'https://mikero.bytex.digital/', 'PBO packing and file conversion tools'],
+      ['RaG DayZ Tools', 'https://github.com/Tyson89/RaG-DayZ-Tools', 'PBO builder, inspector and game data extractor'],
+    ]),
   },
   {
     id: 'frameworks',
     title: 'Frameworks & libraries',
-    links: [
+    links: alpha([
       ['Community Framework', 'https://github.com/Arkensor/DayZ-CommunityFramework', 'The RPC and utility layer most script mods are built on'],
+      ['Community Online Tools', 'https://github.com/Jacob-Mango/DayZ-CommunityOnlineTools', 'Modular in-game admin GUI that other mods add menus to'],
       ['Dabs Framework', 'https://github.com/InclementDab/DayZ-Dabs-Framework', 'Open-source MVC framework, events manager and Workbench plugins'],
       ['DayZ Expansion', 'https://dayzexpansion.com/', 'Mod framework wiki, guides and configuration',
         [['GitHub', 'https://github.com/salutesh/DayZ-Expansion-Scripts']]],
-      ['Community Online Tools', 'https://github.com/Jacob-Mango/DayZ-CommunityOnlineTools', 'Modular in-game admin GUI that other mods add menus to'],
       ['DayZ Universal API', 'https://github.com/DaemonForge/DayZ-UniveralApi', 'Cross-server API backend with auth, Discord and database helpers'],
-      ['VPP Admin Tools', 'https://github.com/VanillaPlusPlus/VPP-Admin-Tools', 'In-game administrator tools for managing players and servers'],
       ['InfinityDayZ', 'https://github.com/EnfusionModders/InfinityDayZ', 'Server C++ plugins that register custom proto methods'],
-    ],
+      ['VPP Admin Tools', 'https://github.com/VanillaPlusPlus/VPP-Admin-Tools', 'In-game administrator tools for managing players and servers'],
+    ]),
   },
   {
     id: 'agents',
     title: 'Agents & automation',
-    links: [
+    links: alpha([
       ['DayZ MCP', 'https://github.com/willy92wins/dayz-mcp', 'MCP server that lets an agent run and test a mod in game'],
       ['Lake-Dayz-MCP', 'https://github.com/ZeripeDaniel/Lake-Dayz-MCP', 'MCP that pre-flights Enforce mods before you pack a PBO'],
       ['Modding Knowledge Pack', 'https://github.com/willy92wins/DayZ-Modding-Knowledge-Pack/', 'Agent skills and notes on scripts, models and infrastructure'],
-    ],
+    ]),
   },
   {
     id: 'data',
     title: 'Game data & servers',
-    links: [
+    links: alpha([
+      ['Central Economy Schema', 'https://github.com/rvost/DayZ-Central-Economy-Schema', 'Unofficial XSD schemas that validate types.xml and the rest'],
+      ['CFTools Cloud', 'https://cftools.cloud/', 'Server management, player and ban tools'],
+      ['DayZ Types Splitter', 'https://github.com/Borcioo/Dayz-Types-Splitter/', 'Split types.xml by category and emit the cfgeconomycore snippet'],
+      ['dayz-ctl', 'https://dayz-ctl.woozymasta.ru/', 'Linux CLI launcher: server browser, mods and Proton',
+        [['GitHub', 'https://github.com/WoozyMasta/dayz-ctl']]],
+      ['DZMap', 'https://dzmap.woozymasta.ru', 'Self-hosted tile server and GeoJSON locations for DayZ maps',
+        [['GitHub', 'https://github.com/WoozyMasta/dzmap']]],
+      ['iZurvive', 'https://izurvive.com/', 'Interactive maps with loot spawn layers'],
+      ['MetricZ', 'https://github.com/WoozyMasta/metricz', 'In-game metrics mod, with a Prometheus exporter for A2S and RCon',
+        [['Exporter', 'https://github.com/WoozyMasta/metricz-exporter']]],
+      ['RaG Economy Manager', 'https://github.com/Tyson89/RaG-Economy-Manager', 'Inspect and edit mission economy XML without hand-editing'],
       ["Sam's Object Finder", 'https://samsobjectfinder.com/', 'Every placeable object, with types.xml entries and maps',
         [['GitHub', 'https://github.com/samgeekman/samsdayzobjectfinder']]],
       ['WOBO Tools', 'https://wobo.tools/', 'Item, weapon and loot data explorer'],
-      ['Central Economy Schema', 'https://github.com/rvost/DayZ-Central-Economy-Schema', 'Unofficial XSD schemas that validate types.xml and the rest'],
-      ['RaG Economy Manager', 'https://github.com/Tyson89/RaG-Economy-Manager', 'Inspect and edit mission economy XML without hand-editing'],
-      ['DayZ Types Splitter', 'https://github.com/Borcioo/Dayz-Types-Splitter/', 'Split types.xml by category and emit the cfgeconomycore snippet'],
-      ['iZurvive', 'https://izurvive.com/', 'Interactive maps with loot spawn layers'],
-      ['DZMap', 'https://dzmap.woozymasta.ru', 'Self-hosted tile server and GeoJSON locations for DayZ maps',
-        [['GitHub', 'https://github.com/WoozyMasta/dzmap']]],
-      ['CFTools Cloud', 'https://cftools.cloud/', 'Server management, player and ban tools'],
-      ['MetricZ', 'https://github.com/WoozyMasta/metricz', 'In-game metrics mod, with a Prometheus exporter for A2S and RCon',
-        [['Exporter', 'https://github.com/WoozyMasta/metricz-exporter']]],
-      ['dayz-ctl', 'https://dayz-ctl.woozymasta.ru/', 'Linux CLI launcher: server browser, mods and Proton',
-        [['GitHub', 'https://github.com/WoozyMasta/dayz-ctl']]],
-    ],
+    ]),
   },
 ];
 
