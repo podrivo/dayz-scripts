@@ -145,6 +145,10 @@ a:hover { text-decoration: underline; text-decoration-color: currentColor; }
   text-underline-offset: 2px;
   text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
 }
+:is(.hero p, .main > p:not(.chain, .locations), .releases,
+    .class-doc, .member-doc, .doc-params dd, .foot p) a:hover {
+  text-decoration-color: currentColor;
+}
 
 code, pre, kbd {
   font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
@@ -650,15 +654,13 @@ h3 { font-size: var(--text-base); line-height: var(--text-base--line-height); ma
 .stat span { font-size: var(--text-sm); color: var(--fg2); }
 
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.card { padding: 14px 16px; border: 1px solid var(--line); border-radius: 16px; color: var(--fg); cursor: pointer; transition: border-color .15s ease; }
+.card { padding: 14px 16px; border: 1px solid var(--line); border-radius: 16px; color: var(--fg); transition: border-color .15s ease; }
+a.card { cursor: pointer; }
 .card:hover { border-color: var(--accent2); text-decoration: none; }
 .card h3 { margin: 0 0 4px; color: var(--accent); }
 .card p { margin: 0; color: var(--fg2); font-size: var(--text-sm); }
-.card:has(.card-also) { display: flex; flex-direction: column; }
-.card-main { display: block; flex: 1; color: inherit; }
-.card-main:hover { text-decoration: none; }
-.card-main::after { content: ''; position: absolute; inset: 0; }
-.card-also { position: relative; z-index: 1; display: inline-block; margin-top: 8px; font-size: var(--text-sm); color: var(--accent); }
+.card-links { display: flex; gap: 12px; margin-top: 8px; }
+.card-links a { font-size: var(--text-sm); }
 .card-ext { position: relative; }
 .card-ext h3 { padding-right: 22px; }
 .card-ext .ic-ext { position: absolute; top: 12px; right: 12px; color: color-mix(in srgb, var(--fg2) 40%, transparent); transition: color .15s ease; pointer-events: none; }

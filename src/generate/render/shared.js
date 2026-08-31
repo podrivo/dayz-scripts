@@ -150,14 +150,12 @@ function linkCard([label, url, desc, extras], ext) {
   ${icon}${body}
 </a>`;
   }
-  const also = extras
-    .map(([name, href]) => `<a class="card-also" href="${esc(href)}"${attrs}>${esc(name)}</a>`)
-    .join(' ');
+  const links = [['Website', url], ...extras]
+    .map(([name, href]) => `<a href="${esc(href)}"${attrs}>${esc(name)}</a>`)
+    .join('');
   return `<div class="card${ext ? ' card-ext' : ''}">
-  ${icon}<a class="card-main" href="${esc(url)}"${attrs}>
-  ${body}
-  </a>
-  ${also}
+  ${icon}${body}
+  <div class="card-links">${links}</div>
 </div>`;
 }
 
