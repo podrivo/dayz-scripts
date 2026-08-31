@@ -11,9 +11,7 @@ const workshopHref = (id) => `https://steamcommunity.com/sharedfiles/filedetails
 const alpha = (links) => links.toSorted((a, b) => a[0].localeCompare(b[0], 'en', { sensitivity: 'base' }));
 const fmtCount = (n) => Number(n).toLocaleString('en-US');
 const mapLink = (m) => {
-  if (m.kind === 'official') {
-    return [m.name, m.url, `${m.note}. World ${m.world}, mission ${m.mission}`];
-  }
+  if (!m.id) return [m.name, m.url, m.note];
   return [m.name, workshopHref(m.id), m.subscriptions ? `${fmtCount(m.subscriptions)} subscribers` : 'Steam Workshop'];
 };
 
@@ -52,8 +50,8 @@ export const OFFICIAL_MODDING_LINKS = alpha([
   ['Modding Samples', 'https://github.com/BohemiaInteractive/DayZ-Samples', 'Sample mods to start a project from'],
 ]);
 
-export const OFFICIAL_MAPS = alpha(catalog.maps.filter((m) => m.kind === 'official').map(mapLink));
-export const WORKSHOP_MAPS = alpha(catalog.maps.filter((m) => m.kind === 'workshop').map(mapLink));
+export const OFFICIAL_MAPS = alpha(catalog.maps.filter((m) => !m.id).map(mapLink));
+export const WORKSHOP_MAPS = alpha(catalog.maps.filter((m) => m.id).map(mapLink));
 
 /** The servers to ask in. */
 export const DISCORD_LINKS = [
