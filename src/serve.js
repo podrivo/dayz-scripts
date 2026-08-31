@@ -97,7 +97,9 @@ const server = http.createServer((req, res) => {
     return res.end();
   }
   if (!fs.existsSync(file)) {
-    if (/^\/v\/[^/]+\//.test(p) && p.endsWith('/')) file = path.join(DIST_DIR, 'archive.html');
+    const shadowed = path.join(DIST_DIR, '_s', p.slice(1), p.endsWith('/') ? 'index.html' : '');
+    if (fs.existsSync(shadowed)) file = shadowed;
+    else if (/^\/v\/[^/]+\//.test(p) && p.endsWith('/')) file = path.join(DIST_DIR, 'archive.html');
     else {
       file = path.join(DIST_DIR, '404.html');
       res.statusCode = 404;

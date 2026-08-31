@@ -334,6 +334,14 @@ const classRedirects = [
   '/v/:build/class/* /v/:build/classes/:splat 301',
   '/v/:build/class/ /v/:build/classes/ 301',
 ];
+// Netlify 301s mixed-case static paths to lowercase. Pages with a capital
+// live under _s/ (see publishFile) so the public URL is not a static file.
+const caseRewrites = [
+  '/classes/* /_s/classes/:splat 200',
+  '/files/* /_s/files/:splat 200',
+  '/enum/* /_s/enum/:splat 200',
+  '/topics/* /_s/topics/:splat 200',
+];
 
 // every domain this site has been served from, pointing at the current one
 fs.writeFileSync(
@@ -348,13 +356,14 @@ fs.writeFileSync(
     ...topicRedirects,
     ...fileRedirects,
     ...classRedirects,
+    ...caseRewrites,
     `/v/${buildList[0].label}/* /:splat 301`,
     ...minorRedirects,
     '/v/:build/* /archive.html 200',
     '',
   ].join('\n')
 );
-fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /v/\nDisallow: /_b/\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /v/\nDisallow: /_b/\nDisallow: /_s/\nSitemap: ${SITE_URL}/sitemap.xml\n`);
 
 // ---- rendering ------------------------------------------------------------
 
@@ -374,6 +383,13 @@ function verifyReuse(key, hit, render) {
 
 const latestHashes = new Map(); // rel -> packed/asset hash of the latest build
 const archives = []; // { label, hashes }
+
+/** Disk path for a page. Netlify lowercases static files, so a path with a
+ *  capital is stored under _s/ and rewritten back to the public URL. */
+function publishFile(versionDir, file, isLatest, label) {
+  if (file === file.toLowerCase()) return path.join(versionDir, file);
+  return path.join(DIST_DIR, '_s', isLatest ? file : path.join('v', label, file));
+}
 
 /**
  * Write every page of one build. The site map itself lives in
@@ -424,7 +440,7 @@ function renderVersion(site, diff, prevLabel, versionIndex, blobs) {
     renderTimers[p.kind] += since(t);
     memoStats.rendered++;
 
-    if (p.keep || isLatest) writeFile(path.join(versionDir, p.file), html);
+    if (p.keep || isLatest) writeFile(publishFile(versionDir, p.file, isLatest, site.label), html);
 
     if (p.asset) {
       const stored = p.keep || isLatest
