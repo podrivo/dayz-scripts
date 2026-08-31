@@ -6,6 +6,12 @@
   publish = "dist"
   command = "npm run build"
 
+# Default NFT tracing follows ROOT/fs in src/util.js and ships data/ + .cache/
+# with the workshop function (250 MB upload limit).
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["!data/**", "!.cache/**", "!dist/**"]
+
 [[redirects]]
   from = "/api/workshop"
   to = "/.netlify/functions/workshop"
