@@ -11,37 +11,53 @@ const fmt = (n) => Number(n).toLocaleString('en-US');
 const card = (it) => `<a class="card card-ext" href="${esc(it.url)}" target="_blank" rel="noopener">
   <i class="ic ic-ext" aria-hidden="true"></i>
   <h3>${esc(it.title)}</h3>
-  <p>${esc(fmt(it.subscriptions))} subscribers</p>
+  <p>${it.subscriptions ? `${esc(fmt(it.subscriptions))} subscribers` : 'Steam Workshop'}</p>
 </a>`;
 const stat = (n, label, href) =>
   `<a class="stat" href="${esc(href)}" target="_blank" rel="noopener"><strong>${esc(fmt(n))}</strong><span>${esc(label)}</span></a>`;
+
+const fromCatalog = (catalog) => ({
+  items: (catalog.mods || []).map((m) => ({
+    title: m.name,
+    url: m.url,
+    subscriptions: m.subscriptions,
+  })),
+});
 
 export function initWorkshop() {
   const box = $('#workshop-list');
   if (!box) return;
   const stats = $('#workshop-stats');
-  fetch('/api/workshop', { cache: 'no-store' })
-    .then((r) => {
-      if (!r.ok) throw new Error();
-      return r.json();
-    })
-    .then((data) => {
-      if (!data.items?.length) throw new Error();
-      if (stats) {
+  const paint = (data) => {
+    if (!data.items?.length) throw new Error();
+    if (stats) {
+      const html = [
+        data.players ? stat(data.players, 'playing now', STORE) : '',
+        data.total ? stat(data.total, 'workshop items', WORKSHOP) : '',
+        data.collections ? stat(data.collections, 'collections', COLLECTIONS) : '',
+      ].join('');
+      if (html) {
         stats.hidden = false;
-        stats.innerHTML = [
-          data.players ? stat(data.players, 'playing now', STORE) : '',
-          data.total ? stat(data.total, 'workshop items', WORKSHOP) : '',
-          data.collections ? stat(data.collections, 'collections', COLLECTIONS) : '',
-        ].join('');
+        stats.innerHTML = html;
       }
-      box.setAttribute('aria-busy', 'false');
-      box.className = 'cards';
-      box.innerHTML = data.items.map(card).join('');
-    })
-    .catch(() => {
+    }
+    box.setAttribute('aria-busy', 'false');
+    box.className = 'cards';
+    box.innerHTML = data.items.map(card).join('');
+  };
+  const load = (url, map) =>
+    fetch(url, { cache: 'no-store' })
+      .then((r) => {
+        if (!r.ok) throw new Error();
+        return r.json();
+      })
+      .then((data) => paint(map ? map(data) : data));
+
+  load('/api/workshop').catch(() =>
+    load('/assets/workshop.json', fromCatalog).catch(() => {
       box.setAttribute('aria-busy', 'false');
       box.className = 'muted';
       box.textContent = 'Workshop items could not be loaded. Try reloading the page.';
-    });
+    }),
+  );
 }

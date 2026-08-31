@@ -105,6 +105,28 @@ function steamError(status, message) {
   return err;
 }
 
+function catalogBody() {
+  try {
+    const items = (readJson(CATALOG).mods || [])
+      .filter((it) => it.id && it.name)
+      .slice(0, COUNT)
+      .map((it) => ({
+        id: String(it.id),
+        title: it.name,
+        subscriptions: Number(it.subscriptions || 0),
+        url: it.url || workshopHref(it.id),
+        description: it.description || '',
+        tags: it.tags || [],
+        preview: it.preview || '',
+        created: it.created || '',
+        updated: it.updated || '',
+      }));
+    return items.length ? { total: 0, collections: 0, players: 0, items } : null;
+  } catch {
+    return null;
+  }
+}
+
 async function queryFiles(key, input) {
   const url = new URL(STEAM);
   url.searchParams.set('key', key);
@@ -116,48 +138,58 @@ async function queryFiles(key, input) {
 
 export async function workshopPayload() {
   if (cache && Date.now() - cache.at < TTL_MS) return cache.body;
-  const key = process.env.STEAM_API_KEY;
-  if (!key) throw steamError(503, 'missing key');
-
-  const [listed, collections, players] = await Promise.all([
-    queryFiles(key, {
-      query_type: 9,
-      numperpage: COUNT,
-      cursor: '*',
-      filetype: 0,
-      return_short_description: true,
-      return_tags: true,
-    }),
-    queryFiles(key, { query_type: 9, numperpage: 1, cursor: '*', filetype: 1, totalonly: true }).catch(() => null),
-    fetch(PLAYERS)
-      .then((r) => (r.ok ? r.json() : null))
-      .catch(() => null),
-  ]);
-
-  const details = listed.response?.publishedfiledetails || [];
-  const body = {
-    total: listed.response?.total ?? details.length,
-    collections: collections?.response?.total ?? 0,
-    players: players?.response?.player_count ?? 0,
-    items: details
-      .filter((it) => it?.publishedfileid && it.title && !Number(it.banned))
-      .map((it) => ({
-        id: String(it.publishedfileid),
-        title: it.title,
-        subscriptions: Number(it.subscriptions || it.lifetime_subscriptions || 0),
-        url: workshopHref(it.publishedfileid),
-        description: (it.short_description || '').replace(/\s+/g, ' ').trim().slice(0, 280),
-        tags: (it.tags || []).map((t) => t.tag).filter(Boolean),
-        preview: it.preview_url || '',
-        created: it.time_created ? new Date(it.time_created * 1000).toISOString().slice(0, 10) : '',
-        updated: it.time_updated ? new Date(it.time_updated * 1000).toISOString().slice(0, 10) : '',
-      })),
+  const fallback = (err) => {
+    const body = catalogBody();
+    if (body) return body;
+    throw err;
   };
-  if (body.items.length) {
-    cache = { at: Date.now(), body };
-    growCatalog(body.items);
+  const key = process.env.STEAM_API_KEY;
+  if (!key) return fallback(steamError(503, 'missing key'));
+
+  try {
+    const [listed, collections, players] = await Promise.all([
+      queryFiles(key, {
+        query_type: 9,
+        numperpage: COUNT,
+        cursor: '*',
+        filetype: 0,
+        return_short_description: true,
+        return_tags: true,
+      }),
+      queryFiles(key, { query_type: 9, numperpage: 1, cursor: '*', filetype: 1, totalonly: true }).catch(() => null),
+      fetch(PLAYERS)
+        .then((r) => (r.ok ? r.json() : null))
+        .catch(() => null),
+    ]);
+
+    const details = listed.response?.publishedfiledetails || [];
+    const body = {
+      total: listed.response?.total ?? details.length,
+      collections: collections?.response?.total ?? 0,
+      players: players?.response?.player_count ?? 0,
+      items: details
+        .filter((it) => it?.publishedfileid && it.title && !Number(it.banned))
+        .map((it) => ({
+          id: String(it.publishedfileid),
+          title: it.title,
+          subscriptions: Number(it.subscriptions || it.lifetime_subscriptions || 0),
+          url: workshopHref(it.publishedfileid),
+          description: (it.short_description || '').replace(/\s+/g, ' ').trim().slice(0, 280),
+          tags: (it.tags || []).map((t) => t.tag).filter(Boolean),
+          preview: it.preview_url || '',
+          created: it.time_created ? new Date(it.time_created * 1000).toISOString().slice(0, 10) : '',
+          updated: it.time_updated ? new Date(it.time_updated * 1000).toISOString().slice(0, 10) : '',
+        })),
+    };
+    if (body.items.length) {
+      cache = { at: Date.now(), body };
+      growCatalog(body.items);
+      return body;
+    }
+    return catalogBody() || body;
+  } catch (err) {
+    return fallback(err);
   }
-  return body;
 }
 
 export function sendWorkshop(res) {

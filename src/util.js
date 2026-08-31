@@ -2,7 +2,13 @@ import { execFileSync, execSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
-export const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
+export const ROOT = (() => {
+  try {
+    return path.resolve(new URL('..', import.meta.url).pathname);
+  } catch {
+    return process.cwd();
+  }
+})();
 export const CACHE_DIR = path.join(ROOT, '.cache');
 export const DATA_DIR = path.join(ROOT, 'data');
 export const DIST_DIR = path.join(ROOT, 'dist');

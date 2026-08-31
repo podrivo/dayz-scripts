@@ -135,7 +135,8 @@ export function initCopySignatures() {
   };
   const targeted = () => {
     const id = location.hash.slice(1);
-    const mem = id && document.getElementById(id);
+    if (!id) return null;
+    const mem = document.getElementById(id);
     return mem?.classList.contains('member') ? mem : null;
   };
   const parkTarget = () => {
