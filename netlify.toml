@@ -16,3 +16,11 @@
   from = "/api/workshop"
   to = "/.netlify/functions/workshop"
   status = 200
+
+# This branch deploys to the retired beta Netlify project. Force every path
+# over to the production site so bookmarks keep working.
+[[redirects]]
+  from = "/*"
+  to = "https://diff.yadz.app/:splat"
+  status = 301
+  force = true
