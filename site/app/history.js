@@ -38,9 +38,23 @@ const changelogHref = (builds, idx) => {
     : '/changelog/';
 };
 
+function titleActions(title) {
+  let el = $('.title-actions', title);
+  if (!el) {
+    el = document.createElement('span');
+    el.className = 'title-actions';
+    el.hidden = true;
+    title.append(el);
+  }
+  return el;
+}
+
 export function initHistory() {
   const main = $('.main');
   if (!pageType || !main) return;
+
+  const title = $('h1.class-title', main);
+  const actions = title && titleActions(title);
 
   Promise.all([
     fetch(ROOT + 'assets/history.json').then((r) => (r.ok ? r.json() : null)),
@@ -80,11 +94,10 @@ export function initHistory() {
       );
     };
 
-    const title = $('h1.class-title', main);
-    if (title && visible(rec.added)) {
+    if (actions && visible(rec.added)) {
       const b = addedBadge(rec.added);
-      const llm = b && $('.copy-llm', title);
-      if (b) (llm ? title.insertBefore(b, llm) : title.append(b));
+      const llm = b && $('.copy-llm', actions);
+      if (b) (llm ? actions.insertBefore(b, llm) : actions.append(b));
     }
     for (const mem of main.querySelectorAll('.member[id]')) {
       const ev = memberEv(rec.members[mem.id]);
@@ -103,7 +116,9 @@ export function initHistory() {
     }
 
     addTimeline(main, hist, builds, rec, here);
-  }).catch(() => {});
+  }).catch(() => {}).finally(() => {
+    if (actions) actions.hidden = false;
+  });
 }
 
 /* ---------- the timeline ----------
@@ -129,9 +144,10 @@ function addTimeline(main, hist, builds, rec, here) {
   btn.setAttribute('aria-label', 'Changes');
   btn.setAttribute('aria-expanded', 'false');
   btn.dataset.tip = 'What changed in this type';
-  const llm = $('.copy-llm', title);
-  if (llm) title.insertBefore(btn, llm);
-  else title.append(btn);
+  const actions = titleActions(title);
+  const llm = $('.copy-llm', actions);
+  if (llm) actions.insertBefore(btn, llm);
+  else actions.append(btn);
 
   const wrap = document.createElement('div');
   wrap.className = 'hist-panel';

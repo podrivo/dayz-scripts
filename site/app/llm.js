@@ -152,5 +152,6 @@ export function initLlmCopy() {
     copyText(pageMarkdown(main), btn, 'llm');
   });
 
-  title.append(btn);
+  const actions = $('.title-actions', title);
+  (actions || title).append(btn);
 }
