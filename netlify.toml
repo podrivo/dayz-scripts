@@ -10,7 +10,7 @@
 # with the workshop function (250 MB upload limit).
 [functions]
   node_bundler = "esbuild"
-  included_files = ["!data/**", "!.cache/**", "!dist/**"]
+  included_files = ["site/workshop.json", "!data/**", "!.cache/**", "!dist/**"]
 
 [[redirects]]
   from = "/api/workshop"

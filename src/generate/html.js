@@ -440,7 +440,7 @@ ${social}
 <script>try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body data-base="${o.base}" data-vpath="${esc(o.versionPath || '')}">
-<script>try{const v=document.body.dataset.vpath;if(v){const b=location.pathname.match(/^\/v\/[^/]+\//);const w=(b?b[0]:'/')+v;if(decodeURIComponent(location.pathname)!==w)history.replaceState(null,'',w+location.search+location.hash)}}catch(e){}</script>
+<script>try{const v=document.body.dataset.vpath;if(v){const b=location.pathname.match(/^\\/v\\/[^/]+\\//);const w=(b?b[0]:'/')+v;if(decodeURIComponent(location.pathname)!==w)history.replaceState(null,'',w+location.search+location.hash)}}catch(e){}</script>
 <header class="top">
 <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><i class="ic ic-menu"></i></button>
 <a class="brand" href="/">DIFF</a>
