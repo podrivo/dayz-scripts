@@ -27,6 +27,7 @@ import { initTooltip } from './app/tooltip.js';
 import { initCopyBlocks, initCopySignatures } from './app/copy.js';
 import { initLlmCopy } from './app/llm.js';
 import { initPageBar } from './app/pagebar.js';
+import { initTree } from './app/tree.js';
 import { initAllMembers, initFieldsIndex } from './app/members.js';
 import { initToc } from './app/toc.js';
 import { initMinimap } from './app/minimap.js';
@@ -62,6 +63,7 @@ initLlmCopy();
 
 // moving around a long page
 initPageBar();
+initTree();
 initAllMembers();
 initFieldsIndex();
 initToc();

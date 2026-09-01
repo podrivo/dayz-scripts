@@ -113,6 +113,7 @@ works on is on the page, which is how one script serves ~660,000 pages.
 | Copy buttons, the override stub | `site/app/copy.js` |
 | "Copy for LLM" on a class or enum | `site/app/llm.js` |
 | The page bar under the nav | `site/app/pagebar.js` |
+| Arrow keys on the files tree | `site/app/tree.js` |
 | The member and field tables | `site/app/members.js` |
 | Table of contents | `site/app/toc.js` |
 | The source minimap | `site/app/minimap.js` |

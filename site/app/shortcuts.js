@@ -13,8 +13,9 @@ import { closeOthers, onOverlay } from './overlay.js';
 
 const SHORTCUTS = [
   [[/Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent) ? '⌘ K' : 'Ctrl K', '/'], 'Search'],
-  [['↑', '↓'], 'Move through the results'],
-  [['↵'], 'Open the selected result'],
+  [['↑', '↓'], 'Move through search results or the file tree'],
+  [['←', '→'], 'Collapse or expand a folder'],
+  [['↵'], 'Open the selected result or file'],
   [['M'], 'Switch between light and dark'],
   [['?'], 'This list'],
   [['Esc'], 'Close an overlay'],

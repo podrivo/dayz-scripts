@@ -36,7 +36,16 @@ export function writeJson(file, value) {
 export function extractSources(v) {
   const dir = path.join(CACHE_DIR, 'src', v.label);
   const marker = path.join(dir, '.sha');
-  if (fs.existsSync(marker) && fs.readFileSync(marker, 'utf8') === v.sha) return dir;
+  const scripts = path.join(dir, 'scripts');
+  // A leftover .sha with no scripts/ used to short-circuit and leave every
+  // file page reading a path that is not there.
+  if (
+    fs.existsSync(marker) &&
+    fs.readFileSync(marker, 'utf8') === v.sha &&
+    fs.existsSync(scripts)
+  ) {
+    return dir;
+  }
   fs.rmSync(dir, { recursive: true, force: true });
   fs.mkdirSync(dir, { recursive: true });
   execSync(`git -C "${UPSTREAM_DIR}" archive ${v.sha} scripts | tar -x -C "${dir}"`, { stdio: 'inherit' });
