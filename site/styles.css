@@ -737,11 +737,33 @@ body[data-vpath="credits/"] .main {
 
 .credits-tail { height: 100vh; overflow-anchor: none; }
 
+.credits-go {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 20;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: none;
+  color: var(--fg2);
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+.credits-go:hover { color: var(--fg); }
+
 .credits-track {
   position: fixed;
   left: 24px;
   bottom: 24px;
   z-index: 20;
+  opacity: 0;
+  pointer-events: none;
 }
 .credits-track-frame {
   position: relative;

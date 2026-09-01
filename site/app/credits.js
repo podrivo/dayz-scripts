@@ -25,23 +25,16 @@ export function initCredits() {
   let playing = false;
   mountTrack();
   $('.credits-track-frame')?.addEventListener('click', () => pauseTrack(yt));
-  loadPlayer((p) => {
-    yt = p;
-    playTrack(p);
-  });
+  loadPlayer((p) => { yt = p; });
 
   if (location.hash) return;
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const tail = spacer('credits-tail');
-  main.append(tail);
+  const go = mountGo();
+  go.addEventListener('click', begin);
 
-  const restoreScroll = history.scrollRestoration;
-  history.scrollRestoration = 'manual';
-  scrollTo(0, 0);
-
-  document.body.classList.add('credits-cinema');
-  playing = true;
+  let tail;
+  let restoreScroll;
   let raf = 0;
   let last = 0;
   let begun = 0;
@@ -153,18 +146,25 @@ export function initCredits() {
     document.removeEventListener('focusin', onFocus);
   };
 
-  addEventListener('mousemove', onMove, { passive: true });
-  addEventListener('wheel', takeControl, { passive: true });
-  addEventListener('touchmove', takeControl, { passive: true });
-  addEventListener('touchstart', showUi, { passive: true });
-  addEventListener('keydown', onKey);
-  document.addEventListener('focusin', onFocus);
-
-  startTimer = setTimeout(() => {
-    if (!playing) return;
+  function begin() {
+    if (playing) return;
+    go.remove();
+    tail = spacer('credits-tail');
+    main.append(tail);
+    restoreScroll = history.scrollRestoration;
+    history.scrollRestoration = 'manual';
+    scrollTo(0, 0);
+    document.body.classList.add('credits-cinema');
+    playing = true;
     playTrack(yt);
+    addEventListener('mousemove', onMove, { passive: true });
+    addEventListener('wheel', takeControl, { passive: true });
+    addEventListener('touchmove', takeControl, { passive: true });
+    addEventListener('touchstart', showUi, { passive: true });
+    addEventListener('keydown', onKey);
+    document.addEventListener('focusin', onFocus);
     raf = requestAnimationFrame(tick);
-  }, SCROLL_AT);
+  }
 }
 
 function fitTitle(el) {
@@ -180,6 +180,16 @@ function fitTitle(el) {
   if (document.fonts?.ready) document.fonts.ready.then(run);
   else run();
   new ResizeObserver(run).observe(el);
+}
+
+function mountGo() {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'credits-go';
+  btn.setAttribute('aria-label', 'Start credits');
+  btn.textContent = '\u2193';
+  document.body.append(btn);
+  return btn;
 }
 
 function mountTrack() {
@@ -199,7 +209,7 @@ function loadPlayer(ready) {
       height: 360,
       playerVars: {
         origin: location.origin,
-        autoplay: 1,
+        autoplay: 0,
         rel: 0,
         modestbranding: 1,
         playsinline: 1,
