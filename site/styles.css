@@ -1555,8 +1555,18 @@ body.hist-open { overflow: hidden; }
 .filetree ul.tree summary,
 .filetree ul.tree .tree-file { width: max-content; min-width: 100%; }
 .filetree ul.tree code { white-space: nowrap; }
+/* The tree /files/ hands over carries what its own page had room to say —
+   a count on every folder, "56 globals" after every file. In a 248px rail
+   that is the width gone on the part that is not the name, and it would make
+   the same column look one way when it was adopted and another when it was
+   built, so it is dropped rather than shipped twice over. */
+.filetree ul.tree .count,
+.filetree ul.tree .muted { display: none; }
 
 @media (max-width: 1179px) { .filetree { display: none; } }
+
+/* What is left in main at /files/ once the tree is in the column. */
+.files-lede { max-width: 46ch; color: var(--fg2); }
 
 /* ---- trees ---- */
 .btn {

@@ -82,72 +82,6 @@ function chipMenu(bar) {
   apply();
 }
 
-/** File-list layer tabs (`#1_Core` …) hide the other trees instead of
- *  scrolling to a heading. A deeper hash (`#4_World/Plugins/…`) still
- *  filters to that layer; site/app/tree.js opens the folder path. File pages
- *  wear the same tabs as links back to the index; only the files index ships
- *  a tree to filter. */
-function fileLayerTabs() {
-  const layerTabs = [...document.querySelectorAll('.pb-tab[href*="#"]')];
-  const main = $('.main');
-  const trees = [...(main?.querySelectorAll('ul.tree') ?? [])];
-  if (!layerTabs.length || !trees.length) return;
-  const headingCount = $('h1 .count', main);
-  const allCount = headingCount?.textContent ?? '';
-  const layerOf = (tab) => {
-    const href = tab.getAttribute('href') || '';
-    const i = href.indexOf('#');
-    return i === -1 ? '' : decodeURIComponent(href.slice(i + 1));
-  };
-  // `#4_World/Plugins` filters like `#4_World`; the rest of the path is the
-  // folder tree.js reveals.
-  const layerFrom = (hash) => {
-    const path = decodeURIComponent(hash.startsWith('#') ? hash.slice(1) : hash);
-    if (!path) return '';
-    const i = path.indexOf('/');
-    return i === -1 ? path : path.slice(0, i);
-  };
-  let layer = layerFrom(location.hash);
-
-  const apply = () => {
-    let layerCount = '';
-    for (const t of trees) {
-      for (const li of t.children) {
-        const hide = !!(layer && li.dataset.layer !== layer);
-        li.hidden = hide;
-        if (!hide && layer) layerCount = $('.count', li)?.textContent || '';
-      }
-    }
-    if (headingCount) headingCount.textContent = layer ? layerCount || allCount : allCount;
-    for (const tab of document.querySelectorAll('.pb-tab')) {
-      const on = layerOf(tab) === layer;
-      tab.classList.toggle('active', on);
-      if (on) tab.setAttribute('aria-current', 'page');
-      else tab.removeAttribute('aria-current');
-    }
-  };
-
-  const tabs = layerTabs[0].parentElement;
-  tabs.addEventListener('click', (e) => {
-    const tab = e.target.closest('a.pb-tab');
-    if (!tab || !tabs.contains(tab)) return;
-    e.preventDefault();
-    const next = layerOf(tab);
-    if (next === layer && !location.hash.slice(1).includes('/')) return;
-    history.pushState(null, '', next ? `#${next}` : location.pathname + location.search);
-    layer = next;
-    apply();
-  });
-  // Only tab clicks, the initial hash, and back/forward change the layer.
-  // tree.js replaceStates the folder path as you arrow — that must not light
-  // these tabs or hide roots mid-browse.
-  addEventListener('popstate', () => {
-    layer = layerFrom(location.hash);
-    apply();
-  });
-  if (layer) apply();
-}
-
 /**
  * Left and right along a strip of links.
  *
@@ -192,7 +126,6 @@ export function initPageBar() {
   if (!bar) return;
   trackHeight(bar);
   chipMenu(bar);
-  fileLayerTabs();
   // The section tabs, and the A–Z of the members index: both are one row of
   // links, and twenty-seven letters is a long way round by Tab alone.
   arrowRows(bar);

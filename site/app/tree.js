@@ -93,6 +93,39 @@ function pathOf(summary) {
   return parts.join('/');
 }
 
+/* Which folders the reader left open.
+
+   The tree arrives shut. 2,825 files under six roots is a wall of names, and
+   the ones a modder wants are the two or three folders they live in for
+   weeks — so the folders they open are kept, by path, and the tree comes back
+   the way they left it: here, and in the column beside a source file.
+
+   Only the open ones are written; shut is the default and costs nothing to
+   say. A saved path that no longer names a folder, a build having moved it,
+   opens as much of itself as still exists and falls out on the next write. */
+const STORE = 'tree';
+
+const readOpen = () => {
+  try {
+    const list = JSON.parse(localStorage.getItem(STORE) || '[]');
+    return Array.isArray(list) ? list.filter((p) => typeof p === 'string') : [];
+  } catch { return []; /* private mode */ }
+};
+
+/* Read off the tree rather than tracked, so it does not matter what opened a
+   folder, and once per turn rather than per folder: restoring a dozen of them
+   fires a toggle for each, and so does revealing the file being read. */
+let queued = false;
+function saveOpen(tree) {
+  if (queued) return;
+  queued = true;
+  setTimeout(() => {
+    queued = false;
+    const open = [...tree.querySelectorAll('details[open] > summary')].map((s) => pathOf(s));
+    try { localStorage.setItem(STORE, JSON.stringify(open)); } catch { /* private mode */ }
+  });
+}
+
 /**
  * Wire the arrows to one `ul.tree`.
  *
@@ -123,6 +156,15 @@ export function wireTree(tree, { claim = KEYS, hash = false, start = null, box =
   const { signal } = off;
   let cur = null;
   let syncing = false;
+
+  /* Put back what was left open, and only that: folders are opened here,
+     never shut. A column is built with the way down to the file it stands
+     beside already expanded (site/app/filetree.js), which is the one folder
+     the reader did not ask for but does have to see. */
+  for (const path of readOpen()) openPath(tree, path);
+  // A <details> toggle does not bubble, so it is taken on the way down. Every
+  // way a folder moves arrives here: a click, an arrow, a file revealed.
+  tree.addEventListener('toggle', () => saveOpen(tree), { capture: true, signal });
 
   const rows = () => tree.querySelectorAll('summary, .tree-file > a');
   let stop = null;

@@ -2,9 +2,10 @@
 
    /files/ is the whole tree as a page. This is that same tree as a column
    next to one file's source, so reading a folder means clicking down it
-   rather than going back to the index and finding your place again. Only the
-   folders on the way to the open file start expanded: 2,825 files is not a
-   list anyone scrolls.
+   rather than going back to the index and finding your place again. It comes
+   up as the reader left it (site/app/tree.js), with the folders down to the
+   open file expanded on top of that: 2,825 files is not a list anyone
+   scrolls, and the file being read is the one row that has to be in it.
 
    Built here rather than in the markup for the reason the minimap is. A file
    page's bytes have to stay identical across every build that did not touch
@@ -25,7 +26,7 @@
    below that the column belongs to the text. */
 
 import { $, VPATH, esc, pathBuild } from './dom.js';
-import { wireTree, ARROWS, openPath } from './tree.js';
+import { wireTree, ARROWS, openPath, dropIndexTree } from './tree.js';
 
 /* The rows are spelled absolutely, unlike every link the generator writes.
    A relative href is measured from the page holding it, and this column
@@ -130,14 +131,15 @@ export function showFile(vpath) {
   handle.select(a);
 }
 
-function fill(column, tree, paths) {
-  tree.innerHTML = rows(foldersOf(paths), '');
-
-  // The open file is where the arrows start and the one row Tab stops on: it
-  // is the only row on the page the reader has already chosen, so Down means
-  // the file after this one from the moment the page is up, with nothing to
-  // click first. Home and End stay with the source; see ARROWS.
-  const cur = $('.tree-cur > a', tree);
+/**
+ * Give a tree to a column: the arrows, the press target, and the scroll.
+ *
+ * `cur` is where the arrows start and the one row Tab stops on — the open
+ * file where there is one, so Down means the file after this one from the
+ * moment the page is up, with nothing to click first. Home and End stay with
+ * the source; see ARROWS.
+ */
+function wire(column, tree, cur) {
   const handle = wireTree(tree, { claim: ARROWS, start: cur, box: column });
   live = { column, tree, handle };
 
@@ -156,6 +158,22 @@ function fill(column, tree, paths) {
   // Park it mid-column — the folders above it can be hundreds of rows deep.
   // Assigned rather than scrolled into view, which would take the page along.
   if (cur) column.scrollTop = cur.offsetTop - column.clientHeight / 2;
+  return handle;
+}
+
+function fill(column, tree, list) {
+  tree.innerHTML = rows(foldersOf(list), '');
+  wire(column, tree, $('.tree-cur > a', tree));
+}
+
+function newColumn() {
+  const column = document.createElement('aside');
+  column.className = 'filetree';
+  column.setAttribute('aria-label', 'Files');
+  // A label, not a link. /files/ is one breadcrumb away, and a link here is
+  // one more thing between Tab and the tree.
+  column.innerHTML = '<p class="filetree-title">All files</p><ul class="tree"></ul>';
+  return column;
 }
 
 /** Wide enough for a column beside the source; below this the page is the text. */
@@ -178,12 +196,7 @@ export function openColumn() {
   const main = $('.main');
   if (live || !main || !ROOM.matches) return Promise.resolve();
 
-  const column = document.createElement('aside');
-  column.className = 'filetree';
-  column.setAttribute('aria-label', 'Files');
-  // A label, not a link. /files/ is one breadcrumb away, and a link here is
-  // one more thing between Tab and the tree.
-  column.innerHTML = '<p class="filetree-title">All files</p><ul class="tree"></ul>';
+  const column = newColumn();
   main.before(column);
 
   return load().then((list) => {
@@ -198,12 +211,60 @@ export function openColumn() {
   });
 }
 
+/**
+ * /files/ hands its tree over to the column.
+ *
+ * The index ships the whole tree in its markup and has to: that is the page a
+ * reader without scripts gets, and it is where all 2,825 file pages are
+ * linked from. So the column takes that very node instead of fetching
+ * files.json and drawing a second copy of the same thing beside it. Nothing
+ * is built, nothing is fetched, and the folders the page opened stay open.
+ *
+ * What is left in main is the landing: the heading, the count, and a line
+ * saying where the tree went. Opening a file replaces it (site/app/swap.js).
+ */
+function adoptIndexTree() {
+  const main = $('.main');
+  const tree = main && $('ul.tree', main);
+  // Narrow, or already taken: below the column's width the index stays the
+  // full-width page it has always been.
+  if (!tree || live || !ROOM.matches) return;
+
+  const column = newColumn();
+  main.before(column);
+  $('ul.tree', column).replaceWith(tree);
+
+  /* The index writes its links relative to itself, and the column outlives
+     the page it came from: two files later, `../files/x` is measured from
+     somewhere four folders down and points at nothing. Absolute is what a
+     built column uses and what these have to become. */
+  for (const a of tree.querySelectorAll('.tree-file > a')) a.setAttribute('href', a.pathname);
+
+  // It may already answer the arrows as the page's own tree; it is the
+  // column's now, on the column's terms.
+  dropIndexTree();
+  const handle = wire(column, tree, $('summary', tree));
+
+  main.insertAdjacentHTML(
+    'beforeend',
+    '<p class="files-lede">Every script file in this build, in the column beside this. ' +
+      'Pick one to read its source.</p>'
+  );
+
+  /* A breadcrumb names a folder — files/#4_World/Classes — and so did the
+     tabs that used to stand above this page. Opening what it names is all
+     that is left of the hash here: it is not written back as the reader
+     moves, because the next thing opened is a file, and on a file the hash
+     counts lines (site/app/share.js). */
+  const path = decodeURIComponent(location.hash.slice(1));
+  const summary = path && openPath(tree, path);
+  if (summary) handle.select(summary);
+}
+
 export function initFileTree() {
-  // On the index the tree is the page and needs no column — but a file is one
-  // click away, so the paths are asked for while nothing is waiting on them
-  // and the column that click raises has them already.
   if (VPATH === 'files/') {
-    if (ROOM.matches) setTimeout(load, 0);
+    ROOM.addEventListener('change', adoptIndexTree);
+    adoptIndexTree();
     return;
   }
   if (!CUR) return;

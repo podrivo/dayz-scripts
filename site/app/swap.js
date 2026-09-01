@@ -150,8 +150,27 @@ function go(url, rel, push) {
     });
 }
 
+/**
+ * Resolve the chrome's links against the page that served them. Header and
+ * footer are written relative to their own depth and are the one thing a swap
+ * leaves standing while the URL moves beneath it: the nav /files/ arrives with
+ * says `../files/`, which four directories down is
+ * /files/2_GameLib/components/files/. Read once, as absolute paths, they hold
+ * wherever the reader goes next.
+ */
+function pinChrome() {
+  for (const a of document.querySelectorAll('.top a[href], .foot a[href]')) {
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('/') || href.startsWith('#')) continue;
+    if (a.origin !== location.origin) continue;
+    a.setAttribute('href', a.pathname + a.search + a.hash);
+  }
+}
+
 export function initSwap() {
   if (!window.history?.pushState || !window.DOMParser) return;
+
+  pinChrome();
 
   document.addEventListener('click', (e) => {
     // Everything the browser has its own answer for: a modified click is a

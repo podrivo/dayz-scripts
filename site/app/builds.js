@@ -74,10 +74,12 @@ export function initVersionPicker() {
   const verMenu = $('#verMenu');
   if (!verBtn) return;
 
-  let loaded = false;
+  // Which page the menu was built for: every row is this page in another
+  // build, so one swapped in under it (site/app/swap.js) wants it again.
+  let filledFor = null;
   async function fillMenu() {
-    if (loaded) return;
-    loaded = true;
+    if (filledFor === VPATH) return;
+    filledFor = VPATH;
     const builds = await identity();
     let html = '';
     let version = '';

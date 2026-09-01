@@ -3,14 +3,15 @@
 
 import { esc, layout, EXT } from '../html.js';
 import { fileHref } from './shared.js';
-import { pageBar } from './pagebar.js';
 
-const rootNames = (site) => site.dirRoots.map((d) => d.name);
-
-const fileTabs = (base, layer, roots) => [
-  [`${base}files/`, 'All', !layer],
-  ...roots.map((n) => [`${base}files/#${n}`, n, n === layer]),
-];
+/* No page bar anywhere under /files/. The layer tabs that used to sit here —
+   All, 1_Core, 4_World — named the top folders of the tree, and the tree is
+   now a column standing beside every page of this section rather than a page
+   of its own you went back to (site/app/filetree.js). Naming the same six
+   folders twice, once as a row that filters and once as rows that open, was
+   two of everything; the column won because it is the one that is always
+   there. Without a bar the column and the minimap reach the header on their
+   own: --h-bar falls back to 0px. */
 
 export function renderFilesIndex(ctx) {
   const { site, base } = ctx;
@@ -28,17 +29,20 @@ export function renderFilesIndex(ctx) {
     return `<li class="tree-file"><a href="${fileHref(site, base, f.path)}"><code>${esc(f.name)}</code></a>${what ? ` <span class="muted">${what}</span>` : ''}</li>`;
   };
 
-  const dirNode = (d, depth) => /* html */ `<li${depth < 1 ? ` data-layer="${esc(d.name)}"` : ''}><details${depth < 1 ? ' open' : ''}><summary><code>${esc(d.name)}</code> <span class="count">${d.count.toLocaleString('en-US')}</span></summary>
-<ul>${d.dirs.map((k) => dirNode(k, depth + 1)).join('')}${d.files.map(fileRow).join('')}</ul></details></li>`;
+  // Every folder shut. Which ones a reader wants open is theirs to say, and
+  // site/app/tree.js remembers the answer; opening the six roots for them was
+  // a guess that put four hundred rows between the top of the tree and the
+  // second one.
+  const dirNode = (d) => /* html */ `<li><details><summary><code>${esc(d.name)}</code> <span class="count">${d.count.toLocaleString('en-US')}</span></summary>
+<ul>${d.dirs.map(dirNode).join('')}${d.files.map(fileRow).join('')}</ul></details></li>`;
 
   const content = /* html */ `
 <h1>Files <span class="count">${site.files.length.toLocaleString('en-US')}</span></h1>
-<ul class="tree">${site.dirRoots.map((d) => dirNode(d, 0)).join('')}${site.rootFiles.map(fileRow).join('')}</ul>`;
+<ul class="tree">${site.dirRoots.map(dirNode).join('')}${site.rootFiles.map(fileRow).join('')}</ul>`;
   return layout({
     ...ctx,
     title: 'Files',
     active: 'files/',
-    bar: pageBar({ tabs: fileTabs(base, '', rootNames(site)) }),
     breadcrumbs: [{ label: 'Files' }],
     content,
   });
@@ -89,13 +93,10 @@ export function renderFile(ctx, fileEntry, fileModel, source) {
 ${decls}
 <div class="srcwrap"><pre class="src" id="src"><code>${esc(source)}</code></pre></div>`;
 
-  const roots = rootNames(site);
-  const layer = roots.find((n) => short === n || short.startsWith(`${n}/`)) || '';
   return layout({
     ...ctx,
     title: name,
     active: 'files/',
-    bar: pageBar({ tabs: fileTabs(base, layer, roots) }),
     breadcrumbs,
     content,
   });

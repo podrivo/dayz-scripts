@@ -66,8 +66,12 @@ initLlmCopy();
 
 // moving around a long page
 initPageBar();
-initTree();
+// The column first: at /files/ it takes the tree out of the page and into
+// itself, and initTree then finds nothing left in main to wire — which is
+// what should happen, since the column wires it on its own terms. Narrow,
+// nothing is taken and initTree has the tree as before.
 initFileTree();
+initTree();
 initAllMembers();
 initFieldsIndex();
 initCredits();
