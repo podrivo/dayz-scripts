@@ -635,6 +635,18 @@ h3 { font-size: var(--text-base); line-height: var(--text-base--line-height); ma
    paragraph does on Files and Topics. */
 .main > h1 + h2 { margin-top: 16px; }
 
+.credits-names {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 12rem));
+  gap: 8px 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--text-sm);
+}
+.credits-names li { display: flex; flex-direction: column; }
+.credits-names .muted { font-size: var(--text-xs); }
+
 .main > h1:has(+ .crumbs),
 .main > h1:has(+ .chain) { margin-bottom: 4px; }
 .crumbs { font-size: var(--text-sm); color: var(--fg2); margin: 0 0 16px; }

@@ -7,6 +7,7 @@ import assert from 'node:assert/strict';
 import { layout, SITE_TITLE } from '../src/generate/html.js';
 import { buildSiteModel } from '../src/generate/model.js';
 import { renderClass, renderEnum, renderCompare, renderFields } from '../src/generate/render.js';
+import { collectCredits } from '../src/generate/render/credits.js';
 import { classDeps } from '../src/generate/memo.js';
 import { SITE_URL } from '../src/generate/content.js';
 
@@ -258,6 +259,27 @@ test('the 404 page asks not to be indexed and claims no canonical', () => {
   const html = layout({ title: 'Not found', base: '/', versionPath: '', noindex: true, content: '' });
   assert.match(html, /<meta name="robots" content="noindex">/);
   assert.ok(!html.includes('rel="canonical"'), '404 must not claim to be a page');
+});
+
+test('credits keep the current roll and move departed names to memoir', () => {
+  const now = {
+    Departments: [
+      { DepartmentName: '', Sections: [{ SectionName: '#scripters', SectionLines: ['Ada', 'Bea'] }] },
+      { DepartmentName: '#legal_notices', Sections: [{ SectionName: 'OpenSSL', SectionLines: ['Copyright (c) 1998'] }] },
+    ],
+  };
+  const then = {
+    Departments: [
+      { DepartmentName: '', Sections: [{ SectionName: '#scripters', SectionLines: ['Ada', 'Cyd'] }] },
+    ],
+  };
+  const { departments, memoir } = collectCredits([now, then]);
+  assert.deepEqual(
+    departments[0].Sections[0].SectionLines,
+    ['Ada', 'Bea'],
+    'the current roll is the latest file'
+  );
+  assert.deepEqual(memoir, [{ name: 'Cyd', role: 'Scripters' }]);
 });
 
 test('a class page without docs does not fall back to a versioned description', () => {

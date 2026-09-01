@@ -6,7 +6,7 @@
    Wide viewports only — there is no room for a third column below that, and
    the headings are a short scroll away on a phone. */
 
-import { $ } from './dom.js';
+import { $, VPATH } from './dom.js';
 
 /* Set by buildToc. A no-op on every page that has no contents panel. */
 let refresh = () => {};
@@ -92,6 +92,7 @@ function buildToc(main) {
 }
 
 export function initToc() {
+  if (VPATH === 'credits/') return;
   const main = $('.main');
   if (!main) return;
   const roomForToc = matchMedia('(min-width: 1180px)');

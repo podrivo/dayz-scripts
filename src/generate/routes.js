@@ -19,7 +19,7 @@ import {
   renderHome, renderAnnotated, renderClassesIndex, renderClassesLetter, renderClass,
   renderClassMembers, renderFields, renderEnum, renderGlobals, renderModulesIndex,
   renderModule, renderFilesIndex, renderFile, renderHierarchy, renderCompare,
-  renderCommunity, renderAbout,
+  renderCommunity, renderAbout, renderCredits,
 } from './render.js';
 
 /**
@@ -166,6 +166,7 @@ export function* pages(site, opts) {
   // same in every build and costs one stored copy across all of them.
   yield page('community/', 'index', () => renderCommunity(ctx('community/')));
   yield page('about/', 'index', () => renderAbout(ctx('about/')));
+  yield page('credits/', 'index', () => renderCredits(ctx('credits/')));
 
   // file pages with embedded source
   const fileModels = new Map(site.rawFiles.map((f) => [f.path, f]));

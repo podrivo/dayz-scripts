@@ -39,6 +39,7 @@ const PAGES = [
   ['Home', '', 'Browsable documentation for the DayZ Enforce Script sources'],
   ['Community', 'community/', 'Official references, Discord servers, editors, build tools and community notes'],
   ['About', 'about/', 'Agents, the stack, and how to collaborate'],
+  ['Credits', 'credits/', 'The DayZ credits roll, across every documented build'],
   ['Changelog', 'changelog/', 'What changed in the script API between two game builds'],
   ['Hierarchy', 'hierarchy/', 'What extends what, from engine types down through every scripted subclass'],
 ];

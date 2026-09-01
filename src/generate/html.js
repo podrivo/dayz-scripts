@@ -310,6 +310,7 @@ function footer(base) {
 <nav class="foot-nav" aria-label="Footer">
 <a href="${base}about/">About</a>
 <a href="${base}community/">Community</a>
+<a href="${base}credits/">Credits</a>
 <span class="foot-sep" aria-hidden="true"></span>
 <a href="${REPO_URL}" ${EXT}>GitHub</a>
 <a href="${YADZ_DISCORD}" ${EXT}>Discord</a>

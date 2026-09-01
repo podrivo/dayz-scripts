@@ -199,6 +199,7 @@ The script sources are © BOHEMIA INTERACTIVE a.s., all rights reserved, and are
 - [Changelog](${SITE_URL}/changelog/): API diff between any two builds
 - [Community](${SITE_URL}/community/): official references, Discord servers, editors, build tools and data explorers for DayZ modding
 - [About](${SITE_URL}/about/): agents, the stack, and how to collaborate
+- [Credits](${SITE_URL}/credits/): the DayZ credits roll, across every documented build
 `;
 }
 
