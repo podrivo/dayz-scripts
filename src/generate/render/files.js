@@ -14,11 +14,12 @@ export function renderFilesIndex(ctx) {
   const { site, base } = ctx;
 
   const fileRow = (f) => {
+    const n = (count, one, many) => count && `${count} ${count === 1 ? one : many}`;
     const what = [
-      f.counts.classes && `${f.counts.classes} classes`,
-      f.counts.enums && `${f.counts.enums} enums`,
-      f.counts.functions && `${f.counts.functions} functions`,
-      f.counts.globals && `${f.counts.globals} globals`,
+      n(f.counts.classes, 'class', 'classes'),
+      n(f.counts.enums, 'enum', 'enums'),
+      n(f.counts.functions, 'function', 'functions'),
+      n(f.counts.globals, 'global', 'globals'),
     ]
       .filter(Boolean)
       .join(', ');
