@@ -31,9 +31,8 @@ const writePages = (key, list) => {
    them — the class list, the hierarchy, the globals tabs, the changelog —
    are one click away in the nav and would only crowd out the five pages
    someone is actually working in.
-   Two spellings have to be read off the page rather than the URL: a file's
-   display casing, since the URL only knows the lowercase form, and a
-   topic's label, since its URL carries the \defgroup name instead. */
+   A topic's label is read off the page: its URL carries the \defgroup name
+   instead. File paths use the URL's own spelling (display casing). */
 function pageEntry() {
   if (pageType) return [pageType.kind === 'class' ? 'c' : 'e', pageType.name, pageType.name];
   const m = /^topics\/([^/]+)\/$/.exec(VPATH);
@@ -42,7 +41,7 @@ function pageEntry() {
     if (label) return ['g', label, m[1]];
   }
   if (/^files\/.+\//.test(VPATH)) {
-    const display = $('.file-title')?.firstChild?.textContent?.trim();
+    const display = decodeURIComponent(VPATH.slice('files/'.length).replace(/\/$/, ''));
     if (display) return ['F', display.split('/').pop(), display];
   }
   return null;

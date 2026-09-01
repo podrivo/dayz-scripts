@@ -51,6 +51,18 @@ export function renderFile(ctx, fileEntry, fileModel, source) {
   // fileEntry.display is derived from these same bytes plus the static
   // dictionary, so the page still depends on nothing but the source blob.
   const short = fileEntry.display;
+  const name = fileEntry.name;
+  const parts = short.split('/');
+  const breadcrumbs = [{ label: 'Files', href: `${base}files/` }];
+  for (let i = 0; i < parts.length - 1; i++) {
+    const seg = parts[i];
+    breadcrumbs.push(
+      i === 0 && FILE_LAYERS.includes(seg)
+        ? { label: seg, href: `${base}files/#${seg}` }
+        : { label: seg }
+    );
+  }
+  breadcrumbs.push({ label: name });
 
   const declList = [];
   for (const c of fileModel.classes) {
@@ -74,16 +86,17 @@ export function renderFile(ctx, fileEntry, fileModel, source) {
   const github = `https://github.com/BohemiaInteractive/DayZ-Script-Diff/blob/main/${fileEntry.path}`;
 
   const content = /* html */ `
-<h1 class="file-title">${esc(short)} <a id="ghSrc" class="file-gh" href="${github}" ${EXT} data-tip="View source file" aria-label="View source file"><i class="ic ic-github" aria-hidden="true"></i></a></h1>
+<h1 class="file-title">${esc(name)} <a id="ghSrc" class="file-gh" href="${github}" ${EXT} data-tip="View source file" aria-label="View source file"><i class="ic ic-github" aria-hidden="true"></i></a></h1>
 ${decls}
 <div class="srcwrap"><pre class="src" id="src"><code>${esc(source)}</code></pre></div>`;
 
   const layer = FILE_LAYERS.find((n) => short === n || short.startsWith(`${n}/`)) || '';
   return layout({
     ...ctx,
-    title: short,
+    title: name,
     active: 'files/',
     bar: pageBar({ tabs: fileTabs(base, layer) }),
+    breadcrumbs,
     content,
   });
 }
