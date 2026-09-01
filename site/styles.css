@@ -748,14 +748,18 @@ body[data-vpath="credits/"] .main {
   justify-content: center;
   width: 40px;
   height: 40px;
+  padding: 0;
   border: 0;
   background: none;
   color: var(--fg2);
   cursor: pointer;
-  font-size: 20px;
+  overflow: hidden;
+  font-size: 24px;
   line-height: 1;
 }
+.credits-go > span { transition: transform 0.18s ease; }
 .credits-go:hover { color: var(--fg); }
+.credits-go:hover > span { transform: translateY(8px); }
 
 .credits-track {
   position: fixed;
@@ -789,6 +793,11 @@ body[data-vpath="credits/"] .main {
   max-width: none !important;
   transform: translate(-50%, calc(-50% - 40px));
   border: 0;
+  pointer-events: none;
+}
+
+body[data-vpath="credits/"]:not(.credits-done) :is(.top, .foot, .to-top) {
+  opacity: 0;
   pointer-events: none;
 }
 

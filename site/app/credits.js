@@ -6,9 +6,6 @@
 import { $, typing, VPATH } from './dom.js';
 
 const SPEED = 88;
-const IDLE_MS = 2400;
-const FADE_MS = 1400;
-const SCROLL_AT = FADE_MS - 300;
 const EASE_MS = 1600;
 const KEYS = new Set(['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' ']);
 const VIDEO = '_JgmJahM1R0';
@@ -27,21 +24,37 @@ export function initCredits() {
   $('.credits-track-frame')?.addEventListener('click', () => pauseTrack(yt));
   loadPlayer((p) => { yt = p; });
 
-  if (location.hash) return;
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (location.hash || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.body.classList.add('credits-done');
+    return;
+  }
 
   const go = mountGo();
-  go.addEventListener('click', begin);
+  go.addEventListener('click', (e) => {
+    e.stopPropagation();
+    begin();
+  });
+
+  const reveal = () => {
+    document.body.classList.add('credits-done');
+    removeEventListener('click', reveal);
+    removeEventListener('scroll', dismissGo);
+  };
+
+  const dismissGo = () => {
+    if (!scrollY) return;
+    go.remove();
+    reveal();
+  };
+
+  addEventListener('click', reveal);
+  addEventListener('scroll', dismissGo, { passive: true });
 
   let tail;
   let restoreScroll;
   let raf = 0;
   let last = 0;
   let begun = 0;
-  let hideTimer = 0;
-  let startTimer = 0;
-  let lx;
-  let ly;
 
   const tick = (now) => {
     if (!playing) return;
@@ -62,27 +75,13 @@ export function initCredits() {
     raf = requestAnimationFrame(tick);
   };
 
-  const showUi = () => {
-    if (!playing) return;
-    document.documentElement.classList.remove('top-hidden');
-    document.body.classList.add('credits-ui');
-    clearTimeout(hideTimer);
-    hideTimer = setTimeout(() => {
-      if (!playing) return;
-      if ($('.top:hover') || $('.foot:hover')) {
-        showUi();
-        return;
-      }
-      document.body.classList.remove('credits-ui');
-    }, IDLE_MS);
-  };
-
   const dropSpacers = () => {
     tail.remove();
   };
 
   const endCinema = () => {
     document.body.classList.remove('credits-cinema', 'credits-ui');
+    document.body.classList.add('credits-done');
     document.documentElement.classList.remove('top-hidden');
     history.scrollRestoration = restoreScroll || 'auto';
     detach();
@@ -92,7 +91,6 @@ export function initCredits() {
     if (!playing) return;
     playing = false;
     pauseTrack(yt);
-    clearTimeout(startTimer);
     cancelAnimationFrame(raf);
     document.documentElement.classList.remove('top-hidden');
     document.body.classList.add('credits-ui');
@@ -106,7 +104,6 @@ export function initCredits() {
     if (!playing) return;
     playing = false;
     pauseTrack(yt);
-    clearTimeout(startTimer);
     cancelAnimationFrame(raf);
     document.body.classList.add('credits-ui');
     dropSpacers();
@@ -114,40 +111,23 @@ export function initCredits() {
     setTimeout(endCinema, 400);
   };
 
-  const onMove = (e) => {
-    if (lx == null) {
-      lx = e.clientX;
-      ly = e.clientY;
-      return;
-    }
-    if (Math.hypot(e.clientX - lx, e.clientY - ly) < 6) return;
-    lx = e.clientX;
-    ly = e.clientY;
-    showUi();
-  };
-
   const onKey = (e) => {
     if (typing() || e.metaKey || e.ctrlKey || e.altKey) return;
     if (KEYS.has(e.key)) takeControl();
   };
 
-  const onFocus = (e) => {
-    if (e.target.closest('.top, .foot, .palette')) showUi();
-  };
-
   const detach = () => {
-    clearTimeout(hideTimer);
-    clearTimeout(startTimer);
-    removeEventListener('mousemove', onMove);
+    removeEventListener('click', takeControl);
     removeEventListener('wheel', takeControl);
     removeEventListener('touchmove', takeControl);
-    removeEventListener('touchstart', showUi);
     removeEventListener('keydown', onKey);
-    document.removeEventListener('focusin', onFocus);
   };
 
   function begin() {
     if (playing) return;
+    removeEventListener('click', reveal);
+    removeEventListener('scroll', dismissGo);
+    document.body.classList.remove('credits-done');
     go.remove();
     tail = spacer('credits-tail');
     main.append(tail);
@@ -157,12 +137,10 @@ export function initCredits() {
     document.body.classList.add('credits-cinema');
     playing = true;
     playTrack(yt);
-    addEventListener('mousemove', onMove, { passive: true });
+    addEventListener('click', takeControl);
     addEventListener('wheel', takeControl, { passive: true });
     addEventListener('touchmove', takeControl, { passive: true });
-    addEventListener('touchstart', showUi, { passive: true });
     addEventListener('keydown', onKey);
-    document.addEventListener('focusin', onFocus);
     raf = requestAnimationFrame(tick);
   }
 }
@@ -187,7 +165,10 @@ function mountGo() {
   btn.type = 'button';
   btn.className = 'credits-go';
   btn.setAttribute('aria-label', 'Start credits');
-  btn.textContent = '\u2193';
+  const arrow = document.createElement('span');
+  arrow.setAttribute('aria-hidden', 'true');
+  arrow.textContent = '\u2193';
+  btn.append(arrow);
   document.body.append(btn);
   return btn;
 }
