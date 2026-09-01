@@ -29,6 +29,7 @@ import { initLlmCopy } from './app/llm.js';
 import { initPageBar } from './app/pagebar.js';
 import { initTree } from './app/tree.js';
 import { initAllMembers, initFieldsIndex } from './app/members.js';
+import { initCredits } from './app/credits.js';
 import { initToc } from './app/toc.js';
 import { initMinimap } from './app/minimap.js';
 
@@ -66,5 +67,6 @@ initPageBar();
 initTree();
 initAllMembers();
 initFieldsIndex();
+initCredits();
 initToc();
 initMinimap();

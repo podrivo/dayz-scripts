@@ -5,7 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { DATA_DIR, UPSTREAM_DIR, git, readJson } from '../../util.js';
-import { esc, layout, slug } from '../html.js';
+import { esc, EXT, layout, slug } from '../html.js';
 
 const ACRONYMS = new Set(['ceo', 'pr', 'qa']);
 const LEGAL_MARK = /copyright|©|\(c\)|portions of this/i;
@@ -122,20 +122,21 @@ function renderSection(sec, used, tag) {
   const lines = (sec.SectionLines || []).map((l) => String(l).trim()).filter(Boolean);
   if (!title && !lines.length) return '';
   const head = title ? `<${tag} id="${esc(headingId(title, used))}">${esc(title)}</${tag}>` : '';
-  if (!lines.length) return head;
-  if (isLegalSection(sec)) {
-    return `${head}${lines.map((l) => `<p>${esc(l)}</p>`).join('')}`;
+  if (!lines.length) {
+    return title ? `<section class="credits-dept">${head}</section>` : '';
   }
-  return `${head}${nameList(lines)}`;
+  if (isLegalSection(sec)) {
+    return `<div class="credits-legal">${head}${lines.map((l) => `<p>${esc(l)}</p>`).join('')}</div>`;
+  }
+  return `<div class="credits-role">${head}${nameList(lines)}</div>`;
 }
 
 function renderDept(dept, used) {
   const title = creditLabel(dept.DepartmentName);
   const sections = dept.Sections || [];
-  if (!title) return sections.map((s) => renderSection(s, used, 'h2')).join('');
-  return `<h2 id="${esc(headingId(title, used))}">${esc(title)}</h2>${sections
-    .map((s) => renderSection(s, used, 'h3'))
-    .join('')}`;
+  const body = sections.map((s) => renderSection(s, used, title ? 'h3' : 'h2')).join('');
+  if (!title) return body;
+  return `<section class="credits-dept"><h2 id="${esc(headingId(title, used))}">${esc(title)}</h2>${body}</section>`;
 }
 
 export function renderCredits(ctx) {
@@ -152,21 +153,30 @@ export function renderCredits(ctx) {
     alumniGroups.get(role).push(p.name);
   }
   const memoirBlock = memoir.length
-    ? `<h2 id="alumni">Alumni</h2>${[...alumniGroups.keys()]
+    ? `<section class="credits-dept"><h2 id="alumni">Alumni</h2>${[...alumniGroups.keys()]
         .sort((a, b) => a.localeCompare(b, 'en'))
-        .map((role) => `<h3 id="${esc(headingId(role, used))}">${esc(role)}</h3>${nameList(alumniGroups.get(role))}`)
-        .join('')}`
+        .map(
+          (role) =>
+            `<div class="credits-role"><h3 id="${esc(headingId(role, used))}">${esc(role)}</h3>${nameList(alumniGroups.get(role))}</div>`
+        )
+        .join('')}</section>`
     : '';
 
+  used.add('music');
+  used.add('innocence-died-screaming');
+  const musicBlock = `<section class="credits-dept"><h2 id="music">Music</h2><div class="credits-role"><h3 id="innocence-died-screaming">Innocence Died Screaming</h3><ul class="credits-names"><li>Nick Fox<span class="muted"><a href="https://www.nickfoxaudio.com" ${EXT}>nickfoxaudio.com</a></span></li></ul></div></section>`;
+
   const content = /* html */ `
-<h1>Credits</h1>
-<p>Found in the game files. It might be outdated.</p>
+<div class="credits-title"><h1><span class="d">D</span><span class="a">A</span><span class="y">Y</span><span class="z">Z</span></h1></div>
+<div class="credits">
 ${peopleHtml}
-${memoirBlock}`;
+${memoirBlock}
+${musicBlock}
+</div>`;
 
   return layout({
     ...ctx,
-    title: 'Credits',
+    title: 'DayZ',
     active: 'credits/',
     description: 'The DayZ credits roll, across every documented build.',
     breadcrumbs: [{ label: 'Credits' }],
