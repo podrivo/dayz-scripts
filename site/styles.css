@@ -738,17 +738,17 @@ body[data-vpath="credits/"] .main {
 .credits-tail { height: 100vh; overflow-anchor: none; }
 
 .credits-track {
-  position: absolute;
-  left: 50%;
-  top: 50%;
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
   z-index: 20;
-  transform: translate(calc(-50% - 1vw), -50%);
 }
 .credits-track-frame {
   position: relative;
-  width: 216px;
+  width: 80px;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  border-radius: 8px;
   background: #000;
   cursor: pointer;
 }
@@ -762,10 +762,10 @@ body[data-vpath="credits/"] .main {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 1920px !important;
-  height: 1080px !important;
+  width: 640px !important;
+  height: 360px !important;
   max-width: none !important;
-  transform: translate(-50%, calc(-50% - 200px));
+  transform: translate(-50%, calc(-50% - 40px));
   border: 0;
   pointer-events: none;
 }

@@ -27,7 +27,7 @@ export function initCredits() {
   $('.credits-track-frame')?.addEventListener('click', () => pauseTrack(yt));
   loadPlayer((p) => {
     yt = p;
-    if (playing) playTrack(p);
+    playTrack(p);
   });
 
   if (location.hash) return;
@@ -186,9 +186,7 @@ function mountTrack() {
   const box = document.createElement('aside');
   box.className = 'credits-track';
   box.innerHTML = `<div class="credits-track-frame"><div id="credits-yt"></div></div>`;
-  const title = $('.credits-title');
-  if (title) title.prepend(box);
-  else document.body.append(box);
+  document.body.append(box);
 }
 
 function loadPlayer(ready) {
@@ -197,8 +195,8 @@ function loadPlayer(ready) {
     if (!Player) return;
     new Player('credits-yt', {
       videoId: VIDEO,
-      width: 1920,
-      height: 1080,
+      width: 640,
+      height: 360,
       playerVars: {
         origin: location.origin,
         autoplay: 1,
@@ -215,7 +213,6 @@ function loadPlayer(ready) {
       },
       events: {
         onReady: (e) => {
-          cueStart(e.target);
           ready(e.target);
         },
       },
@@ -235,10 +232,6 @@ function loadPlayer(ready) {
     s.src = 'https://www.youtube.com/iframe_api';
     document.head.append(s);
   }
-}
-
-function cueStart(p) {
-  try { p?.cueVideoById?.({ videoId: VIDEO, startSeconds: START }); } catch { /* player not ready */ }
 }
 
 function playTrack(p) {

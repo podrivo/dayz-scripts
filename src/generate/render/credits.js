@@ -164,7 +164,7 @@ export function renderCredits(ctx) {
 
   used.add('music');
   used.add('innocence-died-screaming');
-  const musicBlock = `<section class="credits-dept"><h2 id="music">Music</h2><div class="credits-role"><h3 id="innocence-died-screaming">Innocence Died Screaming</h3><ul class="credits-names"><li>Nick Fox<span class="muted"><a href="https://www.nickfoxaudio.com" ${EXT}>nickfoxaudio.com</a></span></li></ul></div></section>`;
+  const musicBlock = `<section class="credits-dept"><h2 id="music">Music</h2><div class="credits-role"><h3 id="innocence-died-screaming">Innocence Died Screaming</h3><ul class="credits-names"><li>Nick Fox<span class="muted"><a href="https://www.nickfoxaudio.com" ${EXT}>nickfoxaudio.com</a> <a href="https://www.youtube.com/watch?v=_JgmJahM1R0" ${EXT}>youtube.com</a></span></li></ul></div></section>`;
 
   const content = /* html */ `
 <div class="credits-title"><h1><span class="d">D</span><span class="a">A</span><span class="y">Y</span><span class="z">Z</span></h1></div>
