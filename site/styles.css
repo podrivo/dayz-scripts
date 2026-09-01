@@ -1359,6 +1359,10 @@ ul.tree .tree-file a.tree-cur {
   background: var(--accent-bg);
   outline: none;
 }
+ul.tree summary.tree-cur code,
+ul.tree .tree-file a.tree-cur code {
+  background: transparent;
+}
 ul.tree .tree-file { padding-left: 4px; font-size: var(--text-sm); }
 ul.tree .tree-file .muted { font-size: var(--text-xs); }
 ul.tree .tree-file a { border-radius: 6px; padding: 1px 4px; margin-left: -4px; }

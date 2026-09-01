@@ -101,9 +101,9 @@ export function initTree() {
     const folder = el.tagName === 'SUMMARY' ? el : parentOf(el);
     const path = folder ? pathOf(folder) : '';
     if (decodeURIComponent(location.hash.slice(1)) === path) return;
-    // replaceState: arrowing through folders must not flood the history stack.
+    // replaceState only — pagebar listens to popstate/clicks, not this, so
+    // arrowing does not activate a layer tab or hide the other roots.
     history.replaceState(null, '', path ? `#${path}` : location.pathname + location.search);
-    dispatchEvent(new Event('files-hash'));
   };
 
   const focusItem = (el) => {
@@ -151,6 +151,8 @@ export function initTree() {
   document.addEventListener('keydown', (e) => {
     if (!KEYS.has(e.key) || e.metaKey || e.ctrlKey || e.altKey) return;
     if (typing() || document.body.classList.contains('palette-open')) return;
+    // Leave arrows alone while focus is in the layer tabs — those are click-only.
+    if (document.activeElement?.closest('.pagebar')) return;
 
     const list = visibleItems(tree);
     if (!list.length) return;

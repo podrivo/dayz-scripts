@@ -138,13 +138,13 @@ function fileLayerTabs() {
     layer = next;
     apply();
   });
-  const syncFromHash = () => {
+  // Only tab clicks, the initial hash, and back/forward change the layer.
+  // tree.js replaceStates the folder path as you arrow — that must not light
+  // these tabs or hide roots mid-browse.
+  addEventListener('popstate', () => {
     layer = layerFrom(location.hash);
     apply();
-  };
-  addEventListener('popstate', syncFromHash);
-  // tree.js replaceStates the hash as you select folders; that skips popstate.
-  addEventListener('files-hash', syncFromHash);
+  });
   if (layer) apply();
 }
 
