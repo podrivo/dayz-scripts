@@ -221,10 +221,23 @@ function onUp() {
   drag = null;
 }
 
+/* The two listeners below watch the window rather than the page, so they are
+   laid down once however many source pages are swapped through this document
+   (site/app/swap.js). Everything else here is re-read per page. */
+let wired = false;
+
 export function initShare() {
   preEl = $('#src');
   srcEl = $('#src code');
-  if (!srcEl) return;
+  if (!srcEl) {
+    // Swapped to a page with no listing: drop the strip and the selection
+    // rather than leave them describing the file that has gone.
+    sel = null;
+    marked = null;
+    anchor = null;
+    showBar();
+    return;
+  }
 
   // Which build this is, ready long before anyone clicks a line. The one
   // promise is shared with the version picker, so asking costs nothing.
@@ -240,6 +253,9 @@ export function initShare() {
   showBar();
 
   preEl.addEventListener('mousedown', onDown);
+
+  if (wired) return;
+  wired = true;
   addEventListener('hashchange', () => {
     sel = parseHash(location.hash);
     anchor = sel?.from ?? null;

@@ -40,6 +40,19 @@ export let current = null;
 let identityPromise = null;
 
 /**
+ * Write the build onto the page. The label is chrome and wants it once; the
+ * GitHub link belongs to the listing, so a page swapped in under this one
+ * (site/app/swap.js) has a fresh, unpinned link and has to ask again.
+ */
+export function stampBuild() {
+  if (!current) return;
+  const label = $('.ver-label');
+  if (label) label.textContent = current.name;
+  const gh = $('#ghSrc');
+  if (gh && current.sha) gh.href = gh.href.replace('/blob/main/', `/blob/${current.sha}/`);
+}
+
+/**
  * The build list, named, with `current` set and the chrome stamped. Every
  * feature that needs to know which build this is awaits this one promise, so
  * versions.json is fetched once however many of them are on the page.
@@ -48,10 +61,7 @@ export function identity() {
   return (identityPromise ||= loadBuilds().then((builds) => {
     if (Array.isArray(builds)) nameBuilds(builds);
     current = (pathBuild && builds.find((b) => b.build === pathBuild)) || builds[0];
-    const label = $('.ver-label');
-    if (label) label.textContent = current.name;
-    const gh = $('#ghSrc');
-    if (gh && current.sha) gh.href = gh.href.replace('/blob/main/', `/blob/${current.sha}/`);
+    stampBuild();
     return builds;
   }));
 }

@@ -148,10 +148,52 @@ function fileLayerTabs() {
   if (layer) apply();
 }
 
+/**
+ * Left and right along a strip of links.
+ *
+ * The bar is a row, so the arrows that mean "along a row" everywhere else on
+ * the page should mean it here too. Until this they meant nothing at all: the
+ * files tree gives the arrows up whenever focus is inside the bar
+ * (site/app/tree.js), on the grounds that the bar is not the tree, and
+ * nothing on the other side picked them up — so tabbing into the bar left
+ * four dead keys and no way on without the pointer.
+ *
+ * Focus only, never activation. These are links to other pages, and a strip
+ * that opened one every time an arrow moved along it could not be walked at
+ * all; Enter opens the one you stop on, the same as for any other link. Tab
+ * still reaches each of them, so this adds a way through without taking the
+ * ordinary one away.
+ *
+ * Listening on the bar rather than on the strips inside it: site/app/swap.js
+ * rewrites what the bar holds on every file it swaps in, and a listener on a
+ * strip would go out with the markup it was attached to.
+ */
+function arrowRows(bar) {
+  bar.addEventListener('keydown', (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
+    const nav = document.activeElement?.closest?.('.pb-tabs, .pb-letters');
+    if (!nav) return;
+    const links = [...nav.querySelectorAll('a')];
+    const i = links.indexOf(document.activeElement);
+    if (i === -1) return;
+    const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+    let to;
+    if (step) to = (i + step + links.length) % links.length;
+    else if (e.key === 'Home') to = 0;
+    else if (e.key === 'End') to = links.length - 1;
+    else return;
+    e.preventDefault();
+    links[to].focus();
+  });
+}
+
 export function initPageBar() {
   const bar = $('.pagebar');
   if (!bar) return;
   trackHeight(bar);
   chipMenu(bar);
   fileLayerTabs();
+  // The section tabs, and the A–Z of the members index: both are one row of
+  // links, and twenty-seven letters is a long way round by Tab alone.
+  arrowRows(bar);
 }

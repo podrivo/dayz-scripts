@@ -1,4 +1,5 @@
-/* Arrow-key walking of the files tree at /files/.
+/* Arrow-key walking of a files tree: the page at /files/, and the same tree
+   as a column beside a source file (site/app/filetree.js).
 
    Folders are native <details>; files are links. This moves focus among the
    rows that are currently visible (open ancestors, not layer-filtered), expands
@@ -9,6 +10,10 @@
 import { $, typing, VPATH } from './dom.js';
 
 const KEYS = new Set(['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Home', 'End']);
+
+/** The arrows alone, for a tree that is a column beside a page rather than the
+    page itself: there Home and End still belong to the source. */
+export const ARROWS = new Set(['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight']);
 
 function visibleItems(tree) {
   const out = [];
@@ -55,7 +60,7 @@ function firstChildOf(summary) {
 }
 
 /** Walk `ul.tree` along a display path, opening each folder; return its summary. */
-function openPath(tree, path) {
+export function openPath(tree, path) {
   if (!path) return null;
   let ul = tree;
   let summary = null;
@@ -88,13 +93,50 @@ function pathOf(summary) {
   return parts.join('/');
 }
 
-export function initTree() {
-  if (VPATH !== 'files/') return;
-  const tree = $('.main ul.tree');
-  if (!tree) return;
-
+/**
+ * Wire the arrows to one `ul.tree`.
+ *
+ * opts:
+ *   claim  which of KEYS this tree answers to, on the document. A tree that is
+ *          the page takes all of them; one that is a column beside a page
+ *          takes the arrows and leaves Home and End to the page, where they
+ *          mean the top and bottom of the source rather than the first and
+ *          last of three thousand rows.
+ *   hash   whether the focused folder is written to the URL. Only at /files/:
+ *          on a file page the hash is a line range (site/app/share.js).
+ *   start  the row to begin at, and the tree's single tab stop. Given one,
+ *          the rows stop being individual tab stops the way a tree widget's
+ *          do: Tab lands on the open file rather than walking three thousand
+ *          rows to reach it, and the arrows do the rest.
+ *   box    the element the tree scrolls inside, where it is not the page.
+ *          Walking the sidebar has to move the sidebar and nothing else, and
+ *          scrollIntoView reaches past a sticky column to the document and
+ *          takes the source along with it.
+ */
+export function wireTree(tree, { claim = KEYS, hash = false, start = null, box = null } = {}) {
+  // Everything below hangs off this so the wiring can be taken down again.
+  // The keydown listener is on the document, not the tree, so a tree whose
+  // rows have been replaced under it — the index's, once site/app/swap.js
+  // puts a listing where the index was — would go on answering the arrows
+  // and moving focus into a handful of detached rows.
+  const off = new AbortController();
+  const { signal } = off;
   let cur = null;
   let syncing = false;
+
+  const rows = () => tree.querySelectorAll('summary, .tree-file > a');
+  let stop = null;
+  const holdStop = (el) => {
+    const next = el || start;
+    if (!start || next === stop) return;
+    if (stop) stop.tabIndex = -1;
+    stop = next;
+    if (stop) stop.tabIndex = 0;
+  };
+  if (start) {
+    for (const r of rows()) r.tabIndex = -1;
+    holdStop(start);
+  }
 
   // Focus stays on summary / file link; the highlight paints the whole row
   // (summary, or the li.tree-file) so files match folders.
@@ -103,10 +145,12 @@ export function initTree() {
     if (cur) paint(cur)?.classList.remove('tree-cur');
     cur = el;
     if (cur) paint(cur)?.classList.add('tree-cur');
+    holdStop(cur);
   };
+  if (start) mark(start);
 
   const syncHash = (el) => {
-    if (syncing || !el) return;
+    if (!hash || syncing || !el) return;
     const folder = el.tagName === 'SUMMARY' ? el : parentOf(el);
     const path = folder ? pathOf(folder) : '';
     if (decodeURIComponent(location.hash.slice(1)) === path) return;
@@ -115,11 +159,23 @@ export function initTree() {
     history.replaceState(null, '', path ? `#${path}` : location.pathname + location.search);
   };
 
+  const reveal = (el) => {
+    if (!box) {
+      el.scrollIntoView({ block: 'nearest' });
+      return;
+    }
+    // offsetParent is the column itself, which is positioned.
+    const top = el.offsetTop;
+    const bottom = top + el.offsetHeight;
+    if (top < box.scrollTop) box.scrollTop = top;
+    else if (bottom > box.scrollTop + box.clientHeight) box.scrollTop = bottom - box.clientHeight;
+  };
+
   const focusItem = (el) => {
     if (!el) return;
     mark(el);
     cur.focus({ preventScroll: true });
-    cur.scrollIntoView({ block: 'nearest' });
+    reveal(cur);
     syncHash(el);
   };
 
@@ -132,7 +188,7 @@ export function initTree() {
       if (summary) {
         mark(summary);
         cur.focus({ preventScroll: true });
-        cur.scrollIntoView({ block: 'nearest' });
+        reveal(cur);
       }
     } finally {
       syncing = false;
@@ -144,13 +200,15 @@ export function initTree() {
     if (!t || !tree.contains(t)) return;
     if (cur !== t) mark(t);
     syncHash(t);
-  });
+  }, { signal });
 
-  addEventListener('popstate', revealHash);
-  revealHash();
+  if (hash) {
+    addEventListener('popstate', revealHash, { signal });
+    revealHash();
+  }
 
   document.addEventListener('keydown', (e) => {
-    if (!KEYS.has(e.key) || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (!claim.has(e.key) || e.metaKey || e.ctrlKey || e.altKey) return;
     if (typing() || document.body.classList.contains('palette-open')) return;
     // Leave arrows alone while focus is in the layer tabs — those are click-only.
     if (document.activeElement?.closest('.pagebar')) return;
@@ -190,14 +248,21 @@ export function initTree() {
 
     if (e.key === 'ArrowRight') {
       e.preventDefault();
-      if (el.tagName === 'SUMMARY') {
-        const details = el.parentElement;
-        if (!details.open) {
-          details.open = true;
-          return;
-        }
-        focusItem(firstChildOf(el));
+      // Right means "into this". A shut folder opens, an open one hands over
+      // to its first row, and a file — which has nothing below it — opens
+      // itself, the same as clicking it: beside a listing that is a swap
+      // rather than a page load (site/app/swap.js), so the tree does not move
+      // and the arrows carry on from the row that was just opened.
+      if (el.tagName !== 'SUMMARY') {
+        el.click();
+        return;
       }
+      const details = el.parentElement;
+      if (!details.open) {
+        details.open = true;
+        return;
+      }
+      focusItem(firstChildOf(el));
       return;
     }
 
@@ -212,5 +277,34 @@ export function initTree() {
       }
       focusItem(parentOf(el));
     }
-  });
+  }, { signal });
+
+  return {
+    /* Move the highlight and the tab stop from outside — for a column beside
+       a page, when the page it sits next to is replaced without a reload and
+       the reader got there by some other link than one of these rows. Focus
+       is left where it is: the reader may be reading the source, and the
+       arrows pick up from the marked row whether or not the tree holds it. */
+    select(el) {
+      if (!el || el === cur) return;
+      mark(el);
+      reveal(el);
+    },
+    destroy: () => off.abort(),
+  };
+}
+
+/* The tree that is the /files/ page, while it is still the page. */
+let index = null;
+
+export function initTree() {
+  if (VPATH !== 'files/') return;
+  const tree = $('.main ul.tree');
+  if (tree) index = wireTree(tree, { hash: true });
+}
+
+/** Let the index's tree go, when a listing has taken the place it was in. */
+export function dropIndexTree() {
+  index?.destroy();
+  index = null;
 }

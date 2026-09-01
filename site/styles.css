@@ -1526,6 +1526,38 @@ body.hist-open { overflow: hidden; }
 
 @media (max-width: 1179px) { .toc { display: none; } }
 
+/* ---- files column ----
+   The tree from /files/ beside one file's source. It takes the slot the table
+   of contents would have had — a source page has no sections for one — and
+   goes on the left, because it is where the file came from rather than what
+   is inside it. Built in the browser (site/app/filetree.js) so a file page's
+   bytes stay the same in every build; hidden on the same terms as the
+   contents panel, since below that width the column belongs to the code. */
+/* The full height rather than as much of it as the rows need, the way the
+   minimap takes it: a rule that stops two thirds of the way down reads as the
+   column having run out, and a tree with one root open is most of them. */
+.filetree {
+  position: sticky; top: calc(var(--h-top) + var(--h-bar));
+  flex: none; width: 248px; height: calc(100vh - var(--h-top) - var(--h-bar));
+  padding: 26px 12px 20px var(--gutter); overflow: auto;
+  border-right: 1px solid var(--line);
+  transition: top 0.4s cubic-bezier(0.22, 1, 0.36, 1), height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.filetree-title {
+  margin: 0 0 8px; color: var(--fg2); font-size: var(--text-xs);
+  font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+}
+/* On its own page the tree is the column and has room to breathe. Here it is
+   a rail: no width cap to sit under, a tighter indent, and rows that scroll
+   sideways rather than wrapping a path onto two lines. */
+.filetree ul.tree { max-width: none; font-size: var(--text-sm); }
+.filetree ul.tree ul { padding-left: 11px; }
+.filetree ul.tree summary,
+.filetree ul.tree .tree-file { width: max-content; min-width: 100%; }
+.filetree ul.tree code { white-space: nowrap; }
+
+@media (max-width: 1179px) { .filetree { display: none; } }
+
 /* ---- trees ---- */
 .btn {
   padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px;

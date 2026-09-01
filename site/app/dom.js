@@ -10,14 +10,24 @@ export const track = (name, params) => {
   try { globalThis.posthog?.capture?.(name, params); } catch { /* blocked or absent */ }
 };
 
+/* Which page is showing.
+ *
+ * These three are reassigned rather than fixed, because site/app/swap.js
+ * replaces one page's body with another's without a reload and everything
+ * below has to describe the page in front of the reader, not the one the
+ * server sent. A module import is a live binding, so anything that reads
+ * these inside a function body follows the swap on its own; a module that
+ * copied one into a constant of its own at load time would not, and none do.
+ */
+
 /** Prefix from this page to its build's root, e.g. "../../". */
-export const BASE = document.body.dataset.base || '';
+export let BASE = '';
 
 /** The site root. Assets are absolute so a page works at any depth. */
 export const ROOT = '/';
 
 /** This page's path within its build, e.g. "classes/PlayerBase/". */
-export const VPATH = document.body.dataset.vpath || '';
+export let VPATH = '';
 
 /* This site's own repository, where a community note is written. Here rather
    than stamped into every page: it is the same string on all of them and this
@@ -52,10 +62,22 @@ export const pathBuild = location.pathname.match(/^\/v\/([^/]+)\//)?.[1];
  * The class or enum this page documents, or null. The history badges and the
  * community notes both hang off it, and neither has any other way to ask.
  */
-export const pageType = (() => {
-  const m = /^classes\/([^/]+)\/$/.exec(VPATH) || /^enum\/([^/]+)\/$/.exec(VPATH);
+export let pageType = null;
+
+function typeOf(vpath) {
+  const m = /^classes\/([^/]+)\/$/.exec(vpath) || /^enum\/([^/]+)\/$/.exec(vpath);
   if (!m) return null;
   const name = m[1];
-  if (VPATH.startsWith('classes/') && (name === 'index' || name === 'fields' || /^[a-z_]$/.test(name))) return null;
-  return { kind: VPATH.startsWith('classes/') ? 'class' : 'enum', name };
-})();
+  if (vpath.startsWith('classes/') && (name === 'index' || name === 'fields' || /^[a-z_]$/.test(name))) return null;
+  return { kind: vpath.startsWith('classes/') ? 'class' : 'enum', name };
+}
+
+/** Point the three above at a page. Called once for the page the server sent,
+    and again by site/app/swap.js for each one swapped in after it. */
+export function setPage(base, vpath) {
+  BASE = base || '';
+  VPATH = vpath || '';
+  pageType = typeOf(VPATH);
+}
+
+setPage(document.body.dataset.base, document.body.dataset.vpath);

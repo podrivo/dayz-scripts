@@ -19,12 +19,27 @@
 
 import { $ } from './dom.js';
 
+/* The rail measures one particular listing, so a page swapped in under it
+   (site/app/swap.js) needs a new one rather than a repainted one. These hold
+   the last rail's window listeners and its observer so that building the next
+   one takes the old one down: left alone they would go on measuring a file
+   nobody is reading, once per navigation, for as long as the tab is open. */
+let stale = null;
+let watching = null;
+
 export function initMinimap() {
+  stale?.abort();
+  watching?.disconnect();
+  stale = null;
+  watching = null;
+  $('.minimap')?.remove();
+
   const srcEl = $('#src code');
   const main = $('.main');
   if (!srcEl || !main) return;
 
   const wide = matchMedia('(min-width: 901px)');
+  const { signal } = (stale = new AbortController());
 
   let mm, track, view, items, bars = [], scale = 1;
 
@@ -149,18 +164,19 @@ export function initMinimap() {
       track.classList.remove('grabbing');
     });
 
-    addEventListener('scroll', sync, { passive: true });
+    addEventListener('scroll', sync, { passive: true, signal });
 
     // The page can grow after load — a <details> opens, the window resizes, a
     // font settles — and every offset moves with it, so measure again.
     let pending;
-    new ResizeObserver(() => {
+    watching = new ResizeObserver(() => {
       clearTimeout(pending);
       pending = setTimeout(() => { items = collect(); place(); sync(); }, 120);
-    }).observe(document.body);
+    });
+    watching.observe(document.body);
   }
 
   const boot = () => { if (wide.matches) buildMinimap(); };
-  wide.addEventListener('change', boot);
+  wide.addEventListener('change', boot, { signal });
   boot();
 }

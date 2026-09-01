@@ -28,10 +28,12 @@ import { initCopyBlocks, initCopySignatures } from './app/copy.js';
 import { initLlmCopy } from './app/llm.js';
 import { initPageBar } from './app/pagebar.js';
 import { initTree } from './app/tree.js';
+import { initFileTree } from './app/filetree.js';
 import { initAllMembers, initFieldsIndex } from './app/members.js';
 import { initCredits } from './app/credits.js';
 import { initToc } from './app/toc.js';
 import { initMinimap } from './app/minimap.js';
+import { initSwap } from './app/swap.js';
 
 // the chrome: header, navigation, and which build this page is
 initTheme();
@@ -65,8 +67,13 @@ initLlmCopy();
 // moving around a long page
 initPageBar();
 initTree();
+initFileTree();
 initAllMembers();
 initFieldsIndex();
 initCredits();
 initToc();
 initMinimap();
+
+// last: from here on, moving between source files replaces the listing above
+// rather than the document, and runs the relevant few of these again
+initSwap();

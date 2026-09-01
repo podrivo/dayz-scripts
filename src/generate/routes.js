@@ -222,6 +222,21 @@ export function* pages(site, opts) {
     render: () => JSON.stringify({ topics: site.moduleRoots.map((n) => [n, site.groups.get(n).label]) }),
   };
 
+  // The tree the file pages show beside the source, for the reason nav.json
+  // exists: a tree inlined into 2,825 pages would be rewritten by every build
+  // that touched any one file and cost all of them their hard link. Its own
+  // sidecar rather than a second key in nav.json, so a page that only wants
+  // the topics does not fetch every path in the game to get them. Paths are
+  // spelled as they are displayed, which is also how their URL spells them.
+  yield {
+    rel: 'files.json',
+    file: 'files.json',
+    kind: 'index',
+    asset: true,
+    keep: true,
+    render: () => JSON.stringify(site.files.map((f) => f.display)),
+  };
+
   // Stable URLs for agents. Latest-only, and not `keep`, so archived builds
   // do not grow a second copy and /api.json always means the current dump.
   if (isLatest) {

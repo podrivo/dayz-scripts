@@ -123,6 +123,7 @@ test('only the sidecars the site fetches are marked as assets', () => {
     'files/3_Game/Foo.c/links.json',
     'search.json',
     'nav.json',
+    'files.json',
     'api.json',
     'llms.txt',
     'agent.md',
