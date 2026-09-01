@@ -9,13 +9,31 @@ import {
   anchorFor, byName, callersBlock, fileLineHref, referencesBlock,
 } from './shared.js';
 
+/** Strip the \defgroup line and @{ / @} so the comment body is left. */
+function topicDoc(raw) {
+  return (raw || '')
+    .replace(/[\\@](def|addto)group\s+\S+[^\n]*/g, '')
+    .replace(/@[{}]/g, '')
+    .replace(/\/\*\*?/g, '')
+    .trim();
+}
+
+/** The \desc / first sentence, when it says more than the topic's own title. */
+function topicBrief(mod) {
+  const brief = briefOf(topicDoc(mod.desc));
+  if (!brief) return '';
+  const plain = brief.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  if (!plain || plain.toLowerCase() === mod.label.toLowerCase() || /^[\\@]\w/.test(plain)) return '';
+  return `<span class="catalog-desc">${brief}</span>`;
+}
+
 export function renderModulesIndex(ctx) {
   const { site, base } = ctx;
   const kid = (name) => {
     const mod = site.groups.get(name);
     const total = site.moduleTotal(name);
     const count = total ? ` <span class="count">${total.toLocaleString('en-US')}</span>` : '';
-    return `<li><a href="${base}topics/${name}/">${esc(mod.label)}</a>${count}</li>`;
+    return `<li><a href="${base}topics/${name}/">${esc(mod.label)}</a>${count}${topicBrief(mod)}</li>`;
   };
   const root = (name) => {
     const mod = site.groups.get(name);
@@ -30,7 +48,7 @@ export function renderModulesIndex(ctx) {
         ? `<details class="catalog-more"><summary>${n} topics</summary>${list}</details>`
         : list;
     }
-    return `<li><div class="catalog-head">${link}${count}</div>${kids}</li>`;
+    return `<li><div class="catalog-head">${link}${count}${topicBrief(mod)}</div>${kids}</li>`;
   };
   const content = /* html */ `
 <h1>Topics <span class="count">${site.groups.size}</span></h1>
@@ -197,7 +215,7 @@ ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e
   const content = /* html */ `
 <h1>${esc(mod.label)}</h1>
 ${parent}
-${mod.desc ? `<div class="class-doc">${renderDoc(mod.desc.replace(/[\\@](def|addto)group\s+\S+[^\n]*/, '').replace(/@[{}]/g, ''), site, base)}</div>` : ''}
+${mod.desc ? `<div class="class-doc">${renderDoc(topicDoc(mod.desc), site, base)}</div>` : ''}
 ${empty}
 ${section('Topics', children)}
 ${section('Classes', nameList(mod.classes, 'class'))}
