@@ -796,11 +796,6 @@ body[data-vpath="credits/"] .main {
   pointer-events: none;
 }
 
-body[data-vpath="credits/"]:not(.credits-done) :is(.top, .foot, .to-top) {
-  opacity: 0;
-  pointer-events: none;
-}
-
 body.credits-cinema .top,
 html.top-hidden body.credits-cinema .top { top: 0; }
 body.credits-cinema :is(.top, .foot, .to-top) {

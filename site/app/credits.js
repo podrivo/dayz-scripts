@@ -24,10 +24,8 @@ export function initCredits() {
   $('.credits-track-frame')?.addEventListener('click', () => pauseTrack(yt));
   loadPlayer((p) => { yt = p; });
 
-  if (location.hash || matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.body.classList.add('credits-done');
-    return;
-  }
+  if (location.hash) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const go = mountGo();
   go.addEventListener('click', (e) => {
@@ -35,19 +33,11 @@ export function initCredits() {
     begin();
   });
 
-  const reveal = () => {
-    document.body.classList.add('credits-done');
-    removeEventListener('click', reveal);
-    removeEventListener('scroll', dismissGo);
-  };
-
   const dismissGo = () => {
     if (!scrollY) return;
     go.remove();
-    reveal();
+    removeEventListener('scroll', dismissGo);
   };
-
-  addEventListener('click', reveal);
   addEventListener('scroll', dismissGo, { passive: true });
 
   let tail;
@@ -81,7 +71,6 @@ export function initCredits() {
 
   const endCinema = () => {
     document.body.classList.remove('credits-cinema', 'credits-ui');
-    document.body.classList.add('credits-done');
     document.documentElement.classList.remove('top-hidden');
     history.scrollRestoration = restoreScroll || 'auto';
     detach();
@@ -125,9 +114,7 @@ export function initCredits() {
 
   function begin() {
     if (playing) return;
-    removeEventListener('click', reveal);
     removeEventListener('scroll', dismissGo);
-    document.body.classList.remove('credits-done');
     go.remove();
     tail = spacer('credits-tail');
     main.append(tail);
