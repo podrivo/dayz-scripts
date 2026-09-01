@@ -8,6 +8,17 @@ import { DATA_DIR, UPSTREAM_DIR, git, readJson } from '../../util.js';
 import { esc, EXT, layout, slug } from '../html.js';
 
 const ACRONYMS = new Set(['ceo', 'pr', 'qa']);
+const PLURALS = {
+  designer: 'Designers',
+  'lead designer': 'Lead Designers',
+  'lead scripter': 'Lead Scripters',
+  'project lead': 'Project Leads',
+  'art lead': 'Art Leads',
+  'audio lead': 'Audio Leads',
+  'quality assurance lead': 'Quality Assurance Leads',
+  'brand and pr manager': 'Brand and PR Managers',
+  'publishing director': 'Publishing Directors',
+};
 const LEGAL_MARK = /copyright|©|\(c\)|portions of this/i;
 
 function creditLabel(raw) {
@@ -25,6 +36,11 @@ function creditLabel(raw) {
       return w.charAt(0).toUpperCase() + w.slice(1);
     })
     .join(' ');
+}
+
+function roleTitle(title, count) {
+  if (!title || count < 2) return title;
+  return PLURALS[title.toLowerCase()] ?? title;
 }
 
 function isLegalLine(s) {
@@ -118,8 +134,8 @@ function nameList(lines) {
 }
 
 function renderSection(sec, used, tag) {
-  const title = creditLabel(sec.SectionName);
   const lines = (sec.SectionLines || []).map((l) => String(l).trim()).filter(Boolean);
+  const title = roleTitle(creditLabel(sec.SectionName), lines.length);
   if (!title && !lines.length) return '';
   const head = title ? `<${tag} id="${esc(headingId(title, used))}">${esc(title)}</${tag}>` : '';
   if (!lines.length) {
@@ -155,10 +171,11 @@ export function renderCredits(ctx) {
   const memoirBlock = memoir.length
     ? `<section class="credits-dept"><h2 id="alumni">Alumni</h2>${[...alumniGroups.keys()]
         .sort((a, b) => a.localeCompare(b, 'en'))
-        .map(
-          (role) =>
-            `<div class="credits-role"><h3 id="${esc(headingId(role, used))}">${esc(role)}</h3>${nameList(alumniGroups.get(role))}</div>`
-        )
+        .map((role) => {
+          const names = alumniGroups.get(role);
+          const heading = roleTitle(role, names.length);
+          return `<div class="credits-role"><h3 id="${esc(headingId(heading, used))}">${esc(heading)}</h3>${nameList(names)}</div>`;
+        })
         .join('')}</section>`
     : '';
 

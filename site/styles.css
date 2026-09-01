@@ -715,6 +715,7 @@ body[data-vpath="credits/"] .main {
 .credits-dept > :is(h2, h3) {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   margin: 0 0 32px;
   font-size: var(--text-xs);
@@ -727,7 +728,8 @@ body[data-vpath="credits/"] .main {
 .credits-dept > :is(h2, h3)::before,
 .credits-dept > :is(h2, h3)::after {
   content: "";
-  flex: 1;
+  flex: none;
+  width: 40px;
   height: 1px;
   background: var(--line);
 }
