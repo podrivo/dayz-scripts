@@ -83,8 +83,10 @@ function chipMenu(bar) {
 }
 
 /** File-list layer tabs (`#1_Core` …) hide the other trees instead of
- *  scrolling to a heading. File pages wear the same tabs as links back to
- *  the index; only the files index ships a tree to filter. */
+ *  scrolling to a heading. A deeper hash (`#4_World/Plugins/…`) still
+ *  filters to that layer; site/app/tree.js opens the folder path. File pages
+ *  wear the same tabs as links back to the index; only the files index ships
+ *  a tree to filter. */
 function fileLayerTabs() {
   const layerTabs = [...document.querySelectorAll('.pb-tab[href*="#"]')];
   const main = $('.main');
@@ -97,7 +99,15 @@ function fileLayerTabs() {
     const i = href.indexOf('#');
     return i === -1 ? '' : decodeURIComponent(href.slice(i + 1));
   };
-  let layer = decodeURIComponent(location.hash.slice(1));
+  // `#4_World/Plugins` filters like `#4_World`; the rest of the path is the
+  // folder tree.js reveals.
+  const layerFrom = (hash) => {
+    const path = decodeURIComponent(hash.startsWith('#') ? hash.slice(1) : hash);
+    if (!path) return '';
+    const i = path.indexOf('/');
+    return i === -1 ? path : path.slice(0, i);
+  };
+  let layer = layerFrom(location.hash);
 
   const apply = () => {
     let layerCount = '';
@@ -123,15 +133,18 @@ function fileLayerTabs() {
     if (!tab || !tabs.contains(tab)) return;
     e.preventDefault();
     const next = layerOf(tab);
-    if (next === layer) return;
+    if (next === layer && !location.hash.slice(1).includes('/')) return;
     history.pushState(null, '', next ? `#${next}` : location.pathname + location.search);
     layer = next;
     apply();
   });
-  addEventListener('popstate', () => {
-    layer = decodeURIComponent(location.hash.slice(1));
+  const syncFromHash = () => {
+    layer = layerFrom(location.hash);
     apply();
-  });
+  };
+  addEventListener('popstate', syncFromHash);
+  // tree.js replaceStates the hash as you select folders; that skips popstate.
+  addEventListener('files-hash', syncFromHash);
   if (layer) apply();
 }
 

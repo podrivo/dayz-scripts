@@ -56,11 +56,7 @@ export function renderFile(ctx, fileEntry, fileModel, source) {
   const breadcrumbs = [{ label: 'Files', href: `${base}files/` }];
   for (let i = 0; i < parts.length - 1; i++) {
     const seg = parts[i];
-    breadcrumbs.push(
-      i === 0 && FILE_LAYERS.includes(seg)
-        ? { label: seg, href: `${base}files/#${seg}` }
-        : { label: seg }
-    );
+    breadcrumbs.push({ label: seg, href: `${base}files/#${parts.slice(0, i + 1).join('/')}` });
   }
   breadcrumbs.push({ label: name });
 
