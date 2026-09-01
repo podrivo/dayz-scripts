@@ -96,6 +96,15 @@ export function initTree() {
   let cur = null;
   let syncing = false;
 
+  // Focus stays on summary / file link; the highlight paints the whole row
+  // (summary, or the li.tree-file) so files match folders.
+  const paint = (el) => (el.tagName === 'SUMMARY' ? el : el.closest('li.tree-file'));
+  const mark = (el) => {
+    if (cur) paint(cur)?.classList.remove('tree-cur');
+    cur = el;
+    if (cur) paint(cur)?.classList.add('tree-cur');
+  };
+
   const syncHash = (el) => {
     if (syncing || !el) return;
     const folder = el.tagName === 'SUMMARY' ? el : parentOf(el);
@@ -108,9 +117,7 @@ export function initTree() {
 
   const focusItem = (el) => {
     if (!el) return;
-    cur?.classList.remove('tree-cur');
-    cur = el;
-    cur.classList.add('tree-cur');
+    mark(el);
     cur.focus({ preventScroll: true });
     cur.scrollIntoView({ block: 'nearest' });
     syncHash(el);
@@ -123,9 +130,7 @@ export function initTree() {
     try {
       const summary = openPath(tree, path);
       if (summary) {
-        cur?.classList.remove('tree-cur');
-        cur = summary;
-        cur.classList.add('tree-cur');
+        mark(summary);
         cur.focus({ preventScroll: true });
         cur.scrollIntoView({ block: 'nearest' });
       }
@@ -137,11 +142,7 @@ export function initTree() {
   tree.addEventListener('focusin', (e) => {
     const t = e.target.closest('summary, .tree-file > a');
     if (!t || !tree.contains(t)) return;
-    if (cur !== t) {
-      cur?.classList.remove('tree-cur');
-      cur = t;
-      cur.classList.add('tree-cur');
-    }
+    if (cur !== t) mark(t);
     syncHash(t);
   });
 
@@ -157,8 +158,7 @@ export function initTree() {
     const list = visibleItems(tree);
     if (!list.length) return;
     if (cur && !list.includes(cur)) {
-      cur.classList.remove('tree-cur');
-      cur = null;
+      mark(null);
     }
 
     const i = cur ? list.indexOf(cur) : -1;

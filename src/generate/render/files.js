@@ -1,13 +1,15 @@
 // The script files: the tree at /files/, and one file's source at
 // /files/<Dir>/<Name.c>/.
 
-import { esc, layout, EXT, FILE_LAYERS } from '../html.js';
+import { esc, layout, EXT } from '../html.js';
 import { fileHref } from './shared.js';
 import { pageBar } from './pagebar.js';
 
-const fileTabs = (base, layer) => [
+const rootNames = (site) => site.dirRoots.map((d) => d.name);
+
+const fileTabs = (base, layer, roots) => [
   [`${base}files/`, 'All', !layer],
-  ...FILE_LAYERS.map((n) => [`${base}files/#${n}`, n, n === layer]),
+  ...roots.map((n) => [`${base}files/#${n}`, n, n === layer]),
 ];
 
 export function renderFilesIndex(ctx) {
@@ -36,7 +38,7 @@ export function renderFilesIndex(ctx) {
     ...ctx,
     title: 'Files',
     active: 'files/',
-    bar: pageBar({ tabs: fileTabs(base, '') }),
+    bar: pageBar({ tabs: fileTabs(base, '', rootNames(site)) }),
     breadcrumbs: [{ label: 'Files' }],
     content,
   });
@@ -48,7 +50,7 @@ export function renderFilesIndex(ctx) {
  * these bytes identical across every build that did not touch the file.
  */
 export function renderFile(ctx, fileEntry, fileModel, source) {
-  const { base } = ctx;
+  const { site, base } = ctx;
   // fileEntry.display is derived from these same bytes plus the static
   // dictionary, so the page still depends on nothing but the source blob.
   const short = fileEntry.display;
@@ -83,16 +85,17 @@ export function renderFile(ctx, fileEntry, fileModel, source) {
   const github = `https://github.com/BohemiaInteractive/DayZ-Script-Diff/blob/main/${fileEntry.path}`;
 
   const content = /* html */ `
-<h1 class="file-title">${esc(name)} <a id="ghSrc" class="file-gh" href="${github}" ${EXT} data-tip="View source file" aria-label="View source file"><i class="ic ic-github" aria-hidden="true"></i></a></h1>
+<h1 class="file-title">${esc(name)} <a id="ghSrc" class="copy-btn share-gh" href="${github}" ${EXT} data-tip="View source file in Github" aria-label="View source file in Github"></a></h1>
 ${decls}
 <div class="srcwrap"><pre class="src" id="src"><code>${esc(source)}</code></pre></div>`;
 
-  const layer = FILE_LAYERS.find((n) => short === n || short.startsWith(`${n}/`)) || '';
+  const roots = rootNames(site);
+  const layer = roots.find((n) => short === n || short.startsWith(`${n}/`)) || '';
   return layout({
     ...ctx,
     title: name,
     active: 'files/',
-    bar: pageBar({ tabs: fileTabs(base, layer) }),
+    bar: pageBar({ tabs: fileTabs(base, layer, roots) }),
     breadcrumbs,
     content,
   });

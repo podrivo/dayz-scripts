@@ -255,8 +255,6 @@ export function briefOf(rawDoc, site, base) {
 // DayZ scripter looks: a class or a file first, engine topic groups last.
 // Labels are the DayZ names (Topics, Classes) rather than Doxygen's C-mode
 // ones (Modules, Data Structures).
-export const FILE_LAYERS = ['1_Core', '2_GameLib', '3_Game', '4_World', '5_Mission'];
-
 const NAV = [
   ['classes/', 'Classes', ['hierarchy/']],
   ['files/', 'Files'],
