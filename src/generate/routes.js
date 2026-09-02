@@ -228,13 +228,23 @@ export function* pages(site, opts) {
   // sidecar rather than a second key in nav.json, so a page that only wants
   // the topics does not fetch every path in the game to get them. Paths are
   // spelled as they are displayed, which is also how their URL spells them.
+  //
+  // A row is [display, classes, enums, functions, globals], which is what the
+  // tree says beside a file's name and, added up, what it says beside a
+  // folder's. Trailing zeros are dropped — most files declare one kind of
+  // thing and plenty declare none — which is the difference between this
+  // costing 1.9 KB over the wire and costing five times that.
   yield {
     rel: 'files.json',
     file: 'files.json',
     kind: 'index',
     asset: true,
     keep: true,
-    render: () => JSON.stringify(site.files.map((f) => f.display)),
+    render: () => JSON.stringify(site.files.map((f) => {
+      const counts = [f.counts.classes, f.counts.enums, f.counts.functions, f.counts.globals];
+      while (counts.length && !counts.at(-1)) counts.pop();
+      return [f.display, ...counts];
+    })),
   };
 
   // Stable URLs for agents. Latest-only, and not `keep`, so archived builds

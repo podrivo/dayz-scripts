@@ -49,21 +49,46 @@ let CUR = fileOf(VPATH);
 
 const byName = (a, b) => a.localeCompare(b);
 
-/** The flat path list as folders: { dirs: Map<name, node>, files: [name] }. */
-function foldersOf(paths) {
-  const root = { dirs: new Map(), files: [] };
-  for (const p of paths) {
-    const parts = p.split('/');
+/**
+ * The flat list as folders: { dirs: Map<name, node>, files: [{name, decls}],
+ * count }, where count is every file at or below the folder — the number the
+ * index puts beside a folder's name, which is a sum rather than a stored
+ * figure and so is added up here.
+ *
+ * A row is [display, classes, enums, functions, globals] with trailing zeros
+ * dropped (src/generate/routes.js). Builds archived before the counts shipped
+ * list bare paths instead, and still have a tree to draw.
+ */
+function foldersOf(list) {
+  const root = { dirs: new Map(), files: [], count: 0 };
+  for (const row of list) {
+    const flat = typeof row === 'string';
+    const parts = (flat ? row : row[0]).split('/');
     const name = parts.pop();
     let node = root;
+    node.count++;
     for (const part of parts) {
       let kid = node.dirs.get(part);
-      if (!kid) node.dirs.set(part, (kid = { dirs: new Map(), files: [] }));
+      if (!kid) node.dirs.set(part, (kid = { dirs: new Map(), files: [], count: 0 }));
       node = kid;
+      node.count++;
     }
-    node.files.push(name);
+    node.files.push({ name, decls: flat ? '' : declsOf(row.slice(1)) });
   }
   return root;
+}
+
+/** "6 classes, 1 enum", the way fileRow in src/generate/render/files.js says it. */
+function declsOf([classes, enums, functions, globals]) {
+  const n = (count, one, many) => count && `${count} ${count === 1 ? one : many}`;
+  return [
+    n(classes, 'class', 'classes'),
+    n(enums, 'enum', 'enums'),
+    n(functions, 'function', 'functions'),
+    n(globals, 'global', 'globals'),
+  ]
+    .filter(Boolean)
+    .join(', ');
 }
 
 /** One folder's rows: subfolders first, then its own files, the way /files/
@@ -74,19 +99,21 @@ function rows(node, path) {
 
   const dirs = [...node.dirs.keys()].sort(byName).map((name) => {
     const sub = under(name);
+    const kid = node.dirs.get(name);
     const open = !!CUR && (CUR === sub || CUR.startsWith(`${sub}/`));
-    return `<li><details${open ? ' open' : ''}><summary><code>${esc(name)}</code></summary>` +
-      `<ul>${rows(node.dirs.get(name), sub)}</ul></details></li>`;
+    return `<li><details${open ? ' open' : ''}><summary><code>${esc(name)}</code> ` +
+      `<span class="count">${kid.count.toLocaleString('en-US')}</span></summary>` +
+      `<ul>${rows(kid, sub)}</ul></details></li>`;
   });
 
-  const files = node.files.sort(byName).map((name) => {
+  const files = node.files.sort((a, b) => byName(a.name, b.name)).map(({ name, decls }) => {
     const p = under(name);
     const cur = p === CUR;
     // Paths are listed as they are displayed, which is also how their URL
     // spells them; see fileHref in src/generate/render/shared.js.
     return `<li class="tree-file${cur ? ' tree-cur' : ''}">` +
       `<a href="${esc(AT)}files/${esc(p)}/"${cur ? ' aria-current="page"' : ''}>` +
-      `<code>${esc(name)}</code></a></li>`;
+      `<code>${esc(name)}</code></a>${decls ? ` <span class="muted">${decls}</span>` : ''}</li>`;
   });
 
   return dirs.join('') + files.join('');

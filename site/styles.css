@@ -1565,12 +1565,12 @@ body.hist-open { overflow: hidden; }
   .filetree ul.tree summary,
   .filetree ul.tree .tree-file { width: max-content; min-width: 100%; }
   .filetree ul.tree code { white-space: nowrap; }
-  /* The page can say a count on every folder and "56 globals" after every
-     file. In a 248px rail that is the width gone on the part that is not the
-     name, and it would make the same column look one way at /files/ and
-     another beside a source file. */
-  .filetree ul.tree .count,
-  .filetree ul.tree .muted { display: none; }
+  /* The count on a folder and the "6 classes, 1 enum" after a file say what is
+     inside without it being opened, which is much of what the tree is for, so
+     the rail carries them as the page does. They push a row past 248px more
+     often than a long name does; the row scrolls sideways for them the same
+     way it already scrolls for the name. */
+  .filetree ul.tree :is(.count, .muted) { white-space: nowrap; }
 }
 
 @media (max-width: 1179px) {
