@@ -324,7 +324,7 @@ function footer(base) {
  * Tokens layout() interpolates when building the archive shell. They cannot
  * appear in a real page, and they pass through esc() unchanged.
  */
-export const ARCHIVE_MARK = { title: '§T§', desc: '§D§', base: '§B§', vpath: '§P§', bar: '§R§', inner: '§C§' };
+export const ARCHIVE_MARK = { title: '§T§', desc: '§D§', base: '§B§', vpath: '§P§', bar: '§R§', aside: '§A§', inner: '§C§' };
 
 export const SITE_TITLE = 'DIFF, DayZ Internal File Finder by YADZ';
 
@@ -363,6 +363,9 @@ export function pageMeta(o) {
     // archived build has to carry it: it travels in the meta line beside the
     // title, and layout() leaves a mark for it in the shell.
     bar: o.bar || '',
+    // A column standing beside the body rather than inside it, and so outside
+    // <main> for the same reason the bar is. It travels the same way.
+    aside: o.aside || '',
   };
 }
 
@@ -386,8 +389,9 @@ export function pageInner(o) {
 
 /**
  * Full page layout.
- * opts: { title, base, active, bar, breadcrumbs, content, description, versionPath, footer }
+ * opts: { title, base, active, bar, aside, breadcrumbs, content, description, versionPath, footer }
  *  - base: relative prefix from this page to the VERSION root (e.g. "../../")
+ *  - aside: a column standing beside <main> in the shell (the files tree)
  *  - active: the nav entry this page sits under, as a version-relative dir
  *  - bar: the page's secondary bar, from pageBar() in render/pagebar.js. It
  *    hangs under the header, outside <main>, so it spans the window; the
@@ -452,7 +456,7 @@ ${social}
 <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" data-tip="Toggle light and dark"><i class="ic ic-theme"></i></button>
 </header>
 ${o.bar || ''}
-<div class="shell">
+<div class="shell">${o.aside || ''}
 <main class="main">${inner}</main>
 </div>
 ${o.footer === false ? '' : footer(o.base || '')}

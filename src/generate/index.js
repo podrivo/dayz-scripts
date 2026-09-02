@@ -539,6 +539,7 @@ fs.writeFileSync(
     base: ARCHIVE_MARK.base,
     versionPath: ARCHIVE_MARK.vpath,
     bar: ARCHIVE_MARK.bar,
+    aside: ARCHIVE_MARK.aside,
     content: ARCHIVE_MARK.inner,
   })
 );

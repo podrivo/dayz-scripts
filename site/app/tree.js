@@ -1,13 +1,11 @@
-/* Arrow-key walking of a files tree: the page at /files/, and the same tree
-   as a column beside a source file (site/app/filetree.js).
+/* Arrow-key walking of the files tree, wherever it is standing: the column at
+   /files/, and the same column beside a source file (site/app/filetree.js).
 
    Folders are native <details>; files are links. This moves focus among the
-   rows that are currently visible (open ancestors, not layer-filtered), expands
-   or collapses with the usual arrow keys, and keeps the URL hash on the
-   focused folder (`#4_World/Entities/Creatures`) so a selection is shareable
-   the same way a breadcrumb link is. */
+   rows that are currently visible — the ones under an open folder — and
+   expands or collapses with the usual arrow keys. */
 
-import { $, typing, VPATH } from './dom.js';
+import { $, typing } from './dom.js';
 
 const KEYS = new Set(['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Home', 'End']);
 
@@ -135,8 +133,6 @@ function saveOpen(tree) {
  *          takes the arrows and leaves Home and End to the page, where they
  *          mean the top and bottom of the source rather than the first and
  *          last of three thousand rows.
- *   hash   whether the focused folder is written to the URL. Only at /files/:
- *          on a file page the hash is a line range (site/app/share.js).
  *   start  the row to begin at, and the tree's single tab stop. Given one,
  *          the rows stop being individual tab stops the way a tree widget's
  *          do: Tab lands on the open file rather than walking three thousand
@@ -146,7 +142,7 @@ function saveOpen(tree) {
  *          scrollIntoView reaches past a sticky column to the document and
  *          takes the source along with it.
  */
-export function wireTree(tree, { claim = KEYS, hash = false, start = null, box = null } = {}) {
+export function wireTree(tree, { claim = KEYS, start = null, box = null } = {}) {
   // Everything below hangs off this so the wiring can be taken down again.
   // The keydown listener is on the document, not the tree, so a tree whose
   // rows have been replaced under it — the index's, once site/app/swap.js
@@ -155,7 +151,6 @@ export function wireTree(tree, { claim = KEYS, hash = false, start = null, box =
   const off = new AbortController();
   const { signal } = off;
   let cur = null;
-  let syncing = false;
 
   /* Put back what was left open, and only that: folders are opened here,
      never shut. A column is built with the way down to the file it stands
@@ -191,18 +186,11 @@ export function wireTree(tree, { claim = KEYS, hash = false, start = null, box =
   };
   if (start) mark(start);
 
-  const syncHash = (el) => {
-    if (!hash || syncing || !el) return;
-    const folder = el.tagName === 'SUMMARY' ? el : parentOf(el);
-    const path = folder ? pathOf(folder) : '';
-    if (decodeURIComponent(location.hash.slice(1)) === path) return;
-    // replaceState only — pagebar listens to popstate/clicks, not this, so
-    // arrowing does not activate a layer tab or hide the other roots.
-    history.replaceState(null, '', path ? `#${path}` : location.pathname + location.search);
-  };
-
   const reveal = (el) => {
-    if (!box) {
+    // A column with nowhere to scroll is not what has to move: below the width
+    // that makes it a rail, /files/ is the tree at full height and the page
+    // scrolls instead.
+    if (!box || box.scrollHeight <= box.clientHeight) {
       el.scrollIntoView({ block: 'nearest' });
       return;
     }
@@ -218,36 +206,13 @@ export function wireTree(tree, { claim = KEYS, hash = false, start = null, box =
     mark(el);
     cur.focus({ preventScroll: true });
     reveal(cur);
-    syncHash(el);
-  };
-
-  const revealHash = () => {
-    const path = decodeURIComponent(location.hash.slice(1));
-    if (!path) return;
-    syncing = true;
-    try {
-      const summary = openPath(tree, path);
-      if (summary) {
-        mark(summary);
-        cur.focus({ preventScroll: true });
-        reveal(cur);
-      }
-    } finally {
-      syncing = false;
-    }
   };
 
   tree.addEventListener('focusin', (e) => {
     const t = e.target.closest('summary, .tree-file > a');
     if (!t || !tree.contains(t)) return;
     if (cur !== t) mark(t);
-    syncHash(t);
   }, { signal });
-
-  if (hash) {
-    addEventListener('popstate', revealHash, { signal });
-    revealHash();
-  }
 
   document.addEventListener('keydown', (e) => {
     if (!claim.has(e.key) || e.metaKey || e.ctrlKey || e.altKey) return;
@@ -334,19 +299,4 @@ export function wireTree(tree, { claim = KEYS, hash = false, start = null, box =
     },
     destroy: () => off.abort(),
   };
-}
-
-/* The tree that is the /files/ page, while it is still the page. */
-let index = null;
-
-export function initTree() {
-  if (VPATH !== 'files/') return;
-  const tree = $('.main ul.tree');
-  if (tree) index = wireTree(tree, { hash: true });
-}
-
-/** Let the index's tree go, when a listing has taken the place it was in. */
-export function dropIndexTree() {
-  index?.destroy();
-  index = null;
 }

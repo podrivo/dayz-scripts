@@ -34,7 +34,6 @@ import { initMinimap } from './minimap.js';
 import { recordVisit } from './recent.js';
 import { identity, stampBuild } from './builds.js';
 import { openColumn, showFile } from './filetree.js';
-import { dropIndexTree } from './tree.js';
 
 /** Prefix every URL of this build shares, '/' or '/v/<build>/'. */
 const root = () => (pathBuild ? `/v/${pathBuild}/` : '/');
@@ -100,9 +99,6 @@ function paint(html, rel) {
 
 /** Run the features that describe a listing over the page now showing. */
 function reinit() {
-  // Coming from /files/, where the tree was the page: the rows it wired are
-  // gone with the rest of that page, and the column takes over from here.
-  dropIndexTree();
   // Which file, then the column: told first, a column going up for the first
   // time is built with this file already marked and its folders open.
   showFile(VPATH);

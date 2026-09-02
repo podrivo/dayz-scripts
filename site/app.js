@@ -27,7 +27,6 @@ import { initTooltip } from './app/tooltip.js';
 import { initCopyBlocks, initCopySignatures } from './app/copy.js';
 import { initLlmCopy } from './app/llm.js';
 import { initPageBar } from './app/pagebar.js';
-import { initTree } from './app/tree.js';
 import { initFileTree } from './app/filetree.js';
 import { initAllMembers, initFieldsIndex } from './app/members.js';
 import { initCredits } from './app/credits.js';
@@ -66,12 +65,7 @@ initLlmCopy();
 
 // moving around a long page
 initPageBar();
-// The column first: at /files/ it takes the tree out of the page and into
-// itself, and initTree then finds nothing left in main to wire — which is
-// what should happen, since the column wires it on its own terms. Narrow,
-// nothing is taken and initTree has the tree as before.
 initFileTree();
-initTree();
 initAllMembers();
 initFieldsIndex();
 initCredits();

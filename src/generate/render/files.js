@@ -36,14 +36,34 @@ export function renderFilesIndex(ctx) {
   const dirNode = (d) => /* html */ `<li><details><summary><code>${esc(d.name)}</code> <span class="count">${d.count.toLocaleString('en-US')}</span></summary>
 <ul>${d.dirs.map(dirNode).join('')}${d.files.map(fileRow).join('')}</ul></details></li>`;
 
+  /* The tree ships in the column it is read in.
+
+     It is the same column a source page carries (site/app/filetree.js), and
+     for a while this page shipped the tree inside <main> and let the browser
+     move it across once the scripts were up. That is a page arriving in one
+     shape and settling into another a moment later — a full-width tree that
+     jumps into a 248px rail — and no amount of doing it sooner makes it not
+     happen. Written where it belongs, there is nothing to move.
+
+     Only this page can do that. A source page's bytes have to be identical in
+     every build that did not touch the file, and a tree inlined into them
+     would be rewritten by every build; there the column is still built in the
+     browser from files.json. Here the tree is the content, and it changes with
+     the build anyway. */
+  const tree = /* html */ `<ul class="tree">${site.dirRoots.map(dirNode).join('')}${site.rootFiles.map(fileRow).join('')}</ul>`;
+  const aside = /* html */ `<aside class="filetree" aria-label="Files"><p class="filetree-title">All files</p>${tree}</aside>`;
+
+  // Below the column's width this is the whole page again, and the lede goes
+  // with the column it is describing; see styles.css.
   const content = /* html */ `
 <h1>Files <span class="count">${site.files.length.toLocaleString('en-US')}</span></h1>
-<ul class="tree">${site.dirRoots.map(dirNode).join('')}${site.rootFiles.map(fileRow).join('')}</ul>`;
+<p class="files-lede">Every script file in this build, in the column beside this. Pick one to read its source.</p>`;
   return layout({
     ...ctx,
     title: 'Files',
     active: 'files/',
     breadcrumbs: [{ label: 'Files' }],
+    aside,
     content,
   });
 }

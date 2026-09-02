@@ -1,20 +1,22 @@
 /* The files tree, beside the file.
 
-   /files/ is the whole tree as a page. This is that same tree as a column
-   next to one file's source, so reading a folder means clicking down it
-   rather than going back to the index and finding your place again. It comes
-   up as the reader left it (site/app/tree.js), with the folders down to the
-   open file expanded on top of that: 2,825 files is not a list anyone
-   scrolls, and the file being read is the one row that has to be in it.
+   The whole tree stands next to one file's source, so reading a folder means
+   clicking down it rather than going back to the index and finding your place
+   again. It comes up as the reader left it (site/app/tree.js), with the
+   folders down to the open file expanded on top of that: 2,825 files is not a
+   list anyone scrolls, and the file being read is the one row that has to be
+   in it.
 
-   Built here rather than in the markup for the reason the minimap is. A file
-   page's bytes have to stay identical across every build that did not touch
-   that file, which is what lets ~660,000 pages be hard links to a few
-   thousand; a tree inlined into them would be rewritten by every build and
-   undo that on every page at once. The paths come from files.json instead
-   (see src/generate/routes.js), which is the tree and nothing else — a fifth
-   of a percent of the search index the source view fetches for its links, so
-   the column fills in rather than arriving.
+   At /files/ the column arrives in the markup, where the tree is the page's
+   own content; there this only wires it. Beside a source file it is built
+   here instead, for the reason the minimap is: a file page's bytes have to
+   stay identical across every build that did not touch that file, which is
+   what lets ~660,000 pages be hard links to a few thousand, and a tree
+   inlined into them would be rewritten by every build and undo that on every
+   page at once. The paths come from files.json (see src/generate/routes.js),
+   which is the tree and nothing else — a fifth of a percent of the search
+   index the source view fetches for its links, so the column fills in rather
+   than arriving.
 
    The empty column goes in before the tree does, so the source is laid out
    once, in its final place, rather than being shunted right when the paths
@@ -22,11 +24,11 @@
 
    The arrows walk it as soon as the tree is there, starting from the open
    file, with nothing to focus or click first; Home and End are left to the
-   source. Wide viewports only, on the same terms as the table of contents:
-   below that the column belongs to the text. */
+   source. A column beside a source page is for wide viewports only, on the
+   same terms as the table of contents: below that the page is the text. */
 
 import { $, VPATH, esc, pathBuild } from './dom.js';
-import { wireTree, ARROWS, openPath, dropIndexTree } from './tree.js';
+import { wireTree, ARROWS, openPath } from './tree.js';
 
 /* The rows are spelled absolutely, unlike every link the generator writes.
    A relative href is measured from the page holding it, and this column
@@ -212,48 +214,30 @@ export function openColumn() {
 }
 
 /**
- * /files/ hands its tree over to the column.
+ * At /files/ the column is already there; all that is left is to wire it.
  *
- * The index ships the whole tree in its markup and has to: that is the page a
- * reader without scripts gets, and it is where all 2,825 file pages are
- * linked from. So the column takes that very node instead of fetching
- * files.json and drawing a second copy of the same thing beside it. Nothing
- * is built, nothing is fetched, and the folders the page opened stay open.
- *
- * What is left in main is the landing: the heading, the count, and a line
- * saying where the tree went. Opening a file replaces it (site/app/swap.js).
+ * That page's tree is its content — it is what a reader without scripts gets,
+ * and where all 2,825 file pages are linked from — so the generator writes it
+ * into the column rather than into the body, and there is nothing to fetch,
+ * build or move. Below the column's width the same markup is the full-width
+ * tree the page has always been; that is styles.css, not this.
  */
-function adoptIndexTree() {
-  const main = $('.main');
-  const tree = main && $('ul.tree', main);
-  // Narrow, or already taken: below the column's width the index stays the
-  // full-width page it has always been.
-  if (!tree || live || !ROOM.matches) return;
+function takeIndexColumn() {
+  const column = $('.filetree');
+  const tree = column && $('ul.tree', column);
+  if (!tree) return;
 
-  const column = newColumn();
-  main.before(column);
-  $('ul.tree', column).replaceWith(tree);
-
-  /* The index writes its links relative to itself, and the column outlives
-     the page it came from: two files later, `../files/x` is measured from
-     somewhere four folders down and points at nothing. Absolute is what a
-     built column uses and what these have to become. */
+  /* The links are the one thing the markup cannot get right. The generator
+     writes them relative to the page holding them, and this column outlives
+     that page: site/app/swap.js puts a source listing beside it and
+     `../files/x` is then measured from four folders down. Pinning them to
+     what they resolve to here is what a built column already does. */
   for (const a of tree.querySelectorAll('.tree-file > a')) a.setAttribute('href', a.pathname);
 
-  // It may already answer the arrows as the page's own tree; it is the
-  // column's now, on the column's terms.
-  dropIndexTree();
   const handle = wire(column, tree, $('summary', tree));
 
-  main.insertAdjacentHTML(
-    'beforeend',
-    '<p class="files-lede">Every script file in this build, in the column beside this. ' +
-      'Pick one to read its source.</p>'
-  );
-
-  /* A breadcrumb names a folder — files/#4_World/Classes — and so did the
-     tabs that used to stand above this page. Opening what it names is all
-     that is left of the hash here: it is not written back as the reader
+  /* A breadcrumb names a folder — files/#4_World/Classes. Opening what it
+     names is all the hash means here: it is not written back as the reader
      moves, because the next thing opened is a file, and on a file the hash
      counts lines (site/app/share.js). */
   const path = decodeURIComponent(location.hash.slice(1));
@@ -263,8 +247,7 @@ function adoptIndexTree() {
 
 export function initFileTree() {
   if (VPATH === 'files/') {
-    ROOM.addEventListener('change', adoptIndexTree);
-    adoptIndexTree();
+    takeIndexColumn();
     return;
   }
   if (!CUR) return;

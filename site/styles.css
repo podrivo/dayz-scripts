@@ -242,10 +242,13 @@ html.top-hidden .pagebar { top: min(-56px, calc(-1 * var(--h-bar-size, 0px))); }
   width: 20px; height: 20px;
   --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23fff' stroke-width='2'%3E%3Cpath d='M3 5h14M3 10h14M3 15h14'/%3E%3C/svg%3E");
 }
-.ic-chev {
-  width: 10px; height: 10px; margin-left: 6px; color: var(--fg2);
-  --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none' stroke='%23fff' stroke-width='1.5'%3E%3Cpath d='M2 3.5l3 3 3-3'/%3E%3C/svg%3E");
+/* Pointing down, and turned to face wherever else it is needed. Three things
+   draw this one: the build picker, a collapsible on the compare page, and the
+   folders in a tree. */
+:root {
+  --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M2 3.5l3 3 3-3'/%3E%3C/svg%3E");
 }
+.ic-chev { width: 10px; height: 10px; margin-left: 6px; color: var(--fg2); --ic: var(--chev); }
 .ic-search {
   width: 16px; height: 16px; flex: none;
   --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='1.8'%3E%3Ccircle cx='6.8' cy='6.8' r='4.6'/%3E%3Cpath d='M10.2 10.2 14 14'/%3E%3C/svg%3E");
@@ -1527,45 +1530,65 @@ body.hist-open { overflow: hidden; }
 @media (max-width: 1179px) { .toc { display: none; } }
 
 /* ---- files column ----
-   The tree from /files/ beside one file's source. It takes the slot the table
-   of contents would have had — a source page has no sections for one — and
-   goes on the left, because it is where the file came from rather than what
-   is inside it. Built in the browser (site/app/filetree.js) so a file page's
-   bytes stay the same in every build; hidden on the same terms as the
-   contents panel, since below that width the column belongs to the code. */
-/* The full height rather than as much of it as the rows need, the way the
-   minimap takes it: a rule that stops two thirds of the way down reads as the
-   column having run out, and a tree with one root open is most of them. */
-.filetree {
-  position: sticky; top: calc(var(--h-top) + var(--h-bar));
-  flex: none; width: 248px; height: calc(100vh - var(--h-top) - var(--h-bar));
-  padding: 26px 12px 20px var(--gutter); overflow: auto;
-  border-right: 1px solid var(--line);
-  transition: top 0.4s cubic-bezier(0.22, 1, 0.36, 1), height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.filetree-title {
-  margin: 0 0 8px; color: var(--fg2); font-size: var(--text-xs);
-  font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-}
-/* On its own page the tree is the column and has room to breathe. Here it is
-   a rail: no width cap to sit under, a tighter indent, and rows that scroll
-   sideways rather than wrapping a path onto two lines. */
-.filetree ul.tree { max-width: none; font-size: var(--text-sm); }
-.filetree ul.tree ul { padding-left: 11px; }
-.filetree ul.tree summary,
-.filetree ul.tree .tree-file { width: max-content; min-width: 100%; }
-.filetree ul.tree code { white-space: nowrap; }
-/* The tree /files/ hands over carries what its own page had room to say —
-   a count on every folder, "56 globals" after every file. In a 248px rail
-   that is the width gone on the part that is not the name, and it would make
-   the same column look one way when it was adopted and another when it was
-   built, so it is dropped rather than shipped twice over. */
-.filetree ul.tree .count,
-.filetree ul.tree .muted { display: none; }
+   The files tree standing beside the page instead of being one. It takes the
+   slot the table of contents would have had — a source page has no sections
+   for one — and goes on the left, because it is where the file came from
+   rather than what is inside it. At /files/ it is in the markup; beside a
+   source file it is built in the browser (site/app/filetree.js), so a file
+   page's bytes stay the same in every build.
 
-@media (max-width: 1179px) { .filetree { display: none; } }
+   Everything that makes it a rail is in the width query below, on the same
+   terms as the contents panel. Under that width there is no column: a source
+   page is the code, and /files/ is the full-width tree it always was — which
+   it goes back to by these rules not applying, rather than by another set
+   undoing them one at a time. */
+@media (min-width: 1180px) {
+  /* The full height rather than as much of it as the rows need, the way the
+     minimap takes it: a rule that stops two thirds of the way down reads as
+     the column having run out, and a tree with one root open is most of them. */
+  .filetree {
+    position: sticky; top: calc(var(--h-top) + var(--h-bar));
+    flex: none; width: 248px; height: calc(100vh - var(--h-top) - var(--h-bar));
+    padding: 26px 12px 20px var(--gutter); overflow: auto;
+    border-right: 1px solid var(--line);
+    transition: top 0.4s cubic-bezier(0.22, 1, 0.36, 1), height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .filetree-title {
+    margin: 0 0 8px; color: var(--fg2); font-size: var(--text-xs);
+    font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  /* As a page the tree has room to breathe. As a rail it has none: no width
+     cap to sit under, a tighter indent, and rows that scroll sideways rather
+     than wrapping a path onto two lines. */
+  .filetree ul.tree { max-width: none; font-size: var(--text-sm); }
+  .filetree ul.tree ul { padding-left: 11px; }
+  .filetree ul.tree summary,
+  .filetree ul.tree .tree-file { width: max-content; min-width: 100%; }
+  .filetree ul.tree code { white-space: nowrap; }
+  /* The page can say a count on every folder and "56 globals" after every
+     file. In a 248px rail that is the width gone on the part that is not the
+     name, and it would make the same column look one way at /files/ and
+     another beside a source file. */
+  .filetree ul.tree .count,
+  .filetree ul.tree .muted { display: none; }
+}
 
-/* What is left in main at /files/ once the tree is in the column. */
+@media (max-width: 1179px) {
+  /* A column left over from a wider window, on a page that is not the tree. */
+  body:not([data-vpath="files/"]) .filetree { display: none; }
+  /* At /files/ it is the page: under the heading that counts the files, at
+     the width the rest of the page has, and with nothing left to call a
+     column — the title above it and the line pointing at it both go. */
+  body[data-vpath="files/"] .shell { flex-direction: column; }
+  body[data-vpath="files/"] .filetree { order: 1; padding: 0 var(--gutter) 40px; }
+  /* Stacked, `flex: 1` on the body means it grows down the window and pushes
+     the tree off the fold; here it is only as tall as the heading it holds. */
+  body[data-vpath="files/"] .main { flex: none; padding-bottom: 8px; }
+  body[data-vpath="files/"] :is(.filetree-title, .files-lede) { display: none; }
+}
+
+/* What is beside the column at /files/, and all that is left of that page
+   where there is room for one. */
 .files-lede { max-width: 46ch; color: var(--fg2); }
 
 /* ---- trees ---- */
@@ -1575,7 +1598,9 @@ body.hist-open { overflow: hidden; }
 }
 .btn:hover { border-color: var(--accent2); }
 ul.tree, ul.tree ul { list-style: none; padding-left: 20px; margin: 0; }
-ul.tree { padding-left: 0; max-width: 28rem; }
+/* The gutter every folder's chevron stands in, and that every file is stepped
+   past so the names above and below each other start at one edge. */
+ul.tree { padding-left: 0; max-width: 28rem; --tree-mark: 10px; --tree-gap: 4px; }
 ul.tree li { margin: 1px 0; }
 ul.tree summary,
 ul.tree .tree-file {
@@ -1584,9 +1609,26 @@ ul.tree .tree-file {
   border-radius: 6px;
   box-sizing: border-box;
 }
-ul.tree .tree-file { display: block; }
+ul.tree .tree-file { display: block; padding-left: calc(4px + var(--tree-mark) + var(--tree-gap)); }
 ul.tree .tree-file[hidden] { display: none; }
-ul.tree summary { cursor: pointer; }
+
+/* The disclosure mark is this site's chevron rather than the browser's
+   triangle, which is drawn a little differently by each of them and matches
+   nothing else here. A <summary> is a list item and the triangle is its
+   marker, so `list-style` is what takes it away; Safari drew its own for
+   years and has to be told separately. ::marker could carry a different glyph
+   but not a transform, and turning to face down is the whole point. */
+ul.tree summary { cursor: pointer; list-style: none; }
+ul.tree summary::-webkit-details-marker { display: none; }
+ul.tree summary::before {
+  content: ''; display: inline-block; vertical-align: middle;
+  width: var(--tree-mark); height: var(--tree-mark); margin-right: var(--tree-gap);
+  background: currentColor; opacity: .5;
+  -webkit-mask: var(--chev) center / contain no-repeat;
+  mask: var(--chev) center / contain no-repeat;
+  transform: rotate(-90deg);
+}
+ul.tree details[open] > summary::before { transform: none; }
 ul.tree summary:hover,
 ul.tree .tree-file:hover { background: var(--bg3); }
 ul.tree summary.tree-cur,
@@ -1785,7 +1827,6 @@ details.cmp-change { padding: 0; }
 .cmp-change summary::after {
   content: ''; flex: none; width: 16px; height: 16px; margin-left: auto;
   background: currentColor; opacity: .45;
-  --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M2 3.5l3 3 3-3'/%3E%3C/svg%3E");
   -webkit-mask: var(--chev) center / 10px no-repeat;
   mask: var(--chev) center / 10px no-repeat;
   transform: rotate(-90deg);

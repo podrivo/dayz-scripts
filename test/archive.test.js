@@ -30,6 +30,9 @@ test('packed inners round-trip through the archive template', () => {
     // rides in the meta line instead, and losing it would cost an archived
     // page its tabs without anything else looking wrong.
     bar: '<div class="pagebar">controls</div>',
+    // The column beside the body is outside <main> for the same reason and
+    // rides along the same way; /files/ arrives with its tree in one.
+    aside: '<aside class="filetree">tree</aside>',
     content: '<h1>Foo</h1><p>hello</p>',
   });
   const { meta, inner } = unpackPage(lastPacked);
@@ -39,6 +42,7 @@ test('packed inners round-trip through the archive template', () => {
   assert.match(inner, /<h1>Foo<\/h1>/);
   assert.doesNotMatch(inner, /<!DOCTYPE html>/);
   assert.doesNotMatch(inner, /pagebar/);
+  assert.doesNotMatch(inner, /filetree/);
 
   const tpl = layout({
     title: ARCHIVE_MARK.title,
@@ -46,6 +50,7 @@ test('packed inners round-trip through the archive template', () => {
     base: ARCHIVE_MARK.base,
     versionPath: ARCHIVE_MARK.vpath,
     bar: ARCHIVE_MARK.bar,
+    aside: ARCHIVE_MARK.aside,
     content: ARCHIVE_MARK.inner,
   });
   const filled = fillArchiveTemplate(tpl, meta, inner);
@@ -55,6 +60,9 @@ test('packed inners round-trip through the archive template', () => {
   assert.match(filled, /<footer class="foot">/);
   // and above the body it belongs to, where the layout puts it
   assert.ok(filled.indexOf('<div class="pagebar">controls</div>') < filled.indexOf('<main'));
+  // the column beside it, inside the shell rather than above it
+  assert.ok(filled.indexOf('<div class="shell">') < filled.indexOf('<aside class="filetree">tree</aside>'));
+  assert.ok(filled.indexOf('<aside class="filetree">tree</aside>') < filled.indexOf('<main'));
   for (const needle of ['1.29', '163709', ARCHIVE_MARK.title]) {
     assert.ok(!filled.includes(needle), `filled layout leaked ${needle}`);
   }

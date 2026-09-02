@@ -32,6 +32,7 @@ export function fillArchiveTemplate(tpl, meta, inner) {
     .replaceAll(ARCHIVE_MARK.vpath, esc(meta.vpath))
     .replaceAll(ARCHIVE_MARK.base, meta.base)
     .replaceAll(ARCHIVE_MARK.bar, meta.bar || '')
+    .replaceAll(ARCHIVE_MARK.aside, meta.aside || '')
     .replaceAll(ARCHIVE_MARK.inner, inner);
 }
 

@@ -3,7 +3,7 @@
    pages that differ are filled from /_b/<sha> into the layout template. */
 (() => {
   'use strict';
-  const MARK = { title: '§T§', desc: '§D§', base: '§B§', vpath: '§P§', bar: '§R§', inner: '§C§' };
+  const MARK = { title: '§T§', desc: '§D§', base: '§B§', vpath: '§P§', bar: '§R§', aside: '§A§', inner: '§C§' };
   const SITE = 'DIFF, DayZ Internal File Finder by YADZ';
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
@@ -20,6 +20,7 @@
       .replaceAll(MARK.vpath, esc(meta.vpath))
       .replaceAll(MARK.base, meta.base)
       .replaceAll(MARK.bar, meta.bar || '')
+      .replaceAll(MARK.aside, meta.aside || '')
       .replaceAll(MARK.inner, inner);
 
   const write = (html) => {
