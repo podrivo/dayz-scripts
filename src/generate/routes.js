@@ -19,6 +19,7 @@ import {
   renderHome, renderAnnotated, renderClassesIndex, renderClassesLetter, renderClass,
   renderClassMembers, renderFields, renderEnum, renderGlobals, renderModulesIndex,
   renderModule, renderFilesIndex, renderFile, renderHierarchy, renderCompare,
+  renderGuidesIndex, renderScriptLayersGuide, renderEngineAndScriptGuide,
   renderCommunity, renderAbout, renderCredits,
 } from './render.js';
 
@@ -69,7 +70,7 @@ export function* pages(site, opts) {
     const depth = rel === '' ? 0 : rel.replace(/\/$/, '').split('/').length;
     const base = '../'.repeat(depth);
     const root = base + (isLatest ? '' : '../'.repeat(2));
-    return { site, versions, base, root, versionPath: rel, xref: isLatest };
+    return { site, versions, base, root, versionPath: rel, xref: isLatest, development: opts.development };
   };
 
   const page = (rel, kind, render, deps) => ({ rel, file: `${rel}index.html`, kind, render, deps });
@@ -167,6 +168,11 @@ export function* pages(site, opts) {
   yield page('community/', 'index', () => renderCommunity(ctx('community/')));
   yield page('about/', 'index', () => renderAbout(ctx('about/')));
   yield page('credits/', 'index', () => renderCredits(ctx('credits/')));
+  if (opts.development) {
+    yield page('guides/', 'index', () => renderGuidesIndex(ctx('guides/')));
+    yield page('guides/script-layers/', 'index', () => renderScriptLayersGuide(ctx('guides/script-layers/')));
+    yield page('guides/engine-and-script/', 'index', () => renderEngineAndScriptGuide(ctx('guides/engine-and-script/')));
+  }
 
   // file pages with embedded source
   const fileModels = new Map(site.rawFiles.map((f) => [f.path, f]));

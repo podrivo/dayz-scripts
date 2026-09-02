@@ -75,6 +75,7 @@ test('the nav names the DayZ-facing sections, and marks the page once', () => {
   assert.ok(html.includes('href="topics/"'), 'Topics is /topics/');
   assert.ok(html.includes('href="classes/"'), 'Classes is /classes/');
   assert.ok(html.includes('href="files/"'), 'Files is /files/');
+  assert.ok(!html.includes('href="guides/"'), 'Guides is hidden in production');
   assert.ok(html.includes('href="globals/"'), 'Globals is /globals/');
   assert.ok(!html.includes('href="classes/fields/"'), 'Members lives on the page bar, not the header');
   assert.ok(!html.includes('href="files/#4_World"'), 'file layers live on the page bar, not the header');
@@ -107,6 +108,8 @@ test('a section is marked when the page sits under it', () => {
   assert.ok(html.includes('<a class="nav-item active" href="classes/"'));
   const hierarchy = layout({ title: 'x', base: '', active: 'hierarchy/', versionPath: '', content: '' });
   assert.ok(hierarchy.includes('<a class="nav-item active" href="classes/"'), 'Hierarchy counts as Classes');
+  const guide = layout({ title: 'x', base: '', active: 'guides/script-layers/', versionPath: '', development: true, content: '' });
+  assert.ok(guide.includes('<a class="nav-item active" href="guides/"'), 'guide pages count as Guides');
 });
 
 // The module topics differ from build to build, so they are fetched from

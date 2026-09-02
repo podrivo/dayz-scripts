@@ -42,6 +42,9 @@ const PAGES = [
   ['Credits', 'credits/', 'The DayZ credits roll, across every documented build'],
   ['Changelog', 'changelog/', 'What changed in the script API between two game builds'],
   ['Hierarchy', 'hierarchy/', 'What extends what, from engine types down through every scripted subclass'],
+  ['Guides', 'guides/', 'Conceptual maps for the DayZ script API', true],
+  ['Script layers', 'guides/script-layers/', 'How 1_Core through 5_Mission compose and what belongs in each layer', true],
+  ['Engine APIs and script code', 'guides/engine-and-script/', 'How to distinguish engine declarations from readable script implementations', true],
 ];
 
 /* The raw index and the flat entry list, as live bindings: whoever awaited
@@ -76,7 +79,9 @@ export function loadIndex() {
       const noteKey = SCOPED.has(e[0]) ? `${e[2]}.${e[1]}` : e[1];
       e[3] = [index.docs?.[urlFor(e)], notes[noteKey]].filter(Boolean).join(' ');
     }
-    for (const [title, path, desc] of PAGES) entries.push(['p', title, path, desc]);
+    for (const [title, path, desc, development] of PAGES) {
+      if (!development || document.body.hasAttribute('data-development')) entries.push(['p', title, path, desc]);
+    }
   })());
 }
 

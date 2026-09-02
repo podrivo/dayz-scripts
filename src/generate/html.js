@@ -258,6 +258,7 @@ export function briefOf(rawDoc, site, base) {
 const NAV = [
   ['classes/', 'Classes', ['hierarchy/']],
   ['files/', 'Files'],
+  ['guides/', 'Guides'],
   ['globals/', 'Globals'],
   ['topics/', 'Topics'],
   ['changelog/', 'Changelog'],
@@ -343,6 +344,7 @@ function titleKind(vpath) {
   if (vpath.startsWith('enum/')) return 'Enum';
   if (vpath.startsWith('files/') && vpath !== 'files/') return 'File';
   if (vpath.startsWith('topics/') && vpath !== 'topics/') return 'Topic';
+  if (vpath.startsWith('guides/') && vpath !== 'guides/') return 'Guide';
   return '';
 }
 
@@ -414,7 +416,11 @@ export function layout(o) {
   const inner = pageInner(o);
   lastPacked = `${JSON.stringify(meta)}\n${inner}`;
   const desc = meta.description;
-  const nav = navLevel(NAV, o.active ?? null, o.base);
+  const nav = navLevel(
+    o.development ? NAV : NAV.filter(([href]) => href !== 'guides/'),
+    o.active ?? null,
+    o.base
+  );
   const url = `${SITE_URL}/${o.versionPath || ''}`;
   const social = o.noindex
     ? '<meta name="robots" content="noindex">'
@@ -442,7 +448,7 @@ ${social}
 <link rel="stylesheet" href="/assets/styles.css">
 <script>try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
-<body data-base="${o.base}" data-vpath="${esc(o.versionPath || '')}">
+<body data-base="${o.base}" data-vpath="${esc(o.versionPath || '')}"${o.development ? ' data-development' : ''}>
 <script>try{const v=document.body.dataset.vpath;if(v){const b=location.pathname.match(/^\\/v\\/[^/]+\\//);const w=(b?b[0]:'/')+v;if(decodeURIComponent(location.pathname)!==w)history.replaceState(null,'',w+location.search+location.hash)}}catch(e){}</script>
 <header class="top">
 <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-controls="nav" aria-expanded="false"><i class="ic ic-menu"></i></button>

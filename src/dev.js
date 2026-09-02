@@ -185,6 +185,7 @@ const RENDERERS = [
   [/^files\//, 'render/files.js'],
   [/^hierarchy\//, 'render/hierarchy.js'],
   [/^changelog\//, 'render/changelog.js'],
+  [/^guides\//, 'render/guides.js'],
   [/^community\//, 'render/community.js'],
   [/^about\//, 'render/about.js'],
 ];
@@ -260,7 +261,7 @@ function handle(req, res) {
   if (!site) return notFound(res, rel);
 
   const isLatest = label === latest.label;
-  const page = resolvePage(site, rel, { isLatest, versions, changes: changesFor(label) });
+  const page = resolvePage(site, rel, { isLatest, versions, changes: changesFor(label), development: true });
   if (!page) return notFound(res, rel);
 
   const body = page.render();

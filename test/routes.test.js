@@ -109,6 +109,15 @@ test('an unknown URL resolves to nothing', () => {
   }
 });
 
+test('guides are available only in development', () => {
+  for (const rel of ['guides/', 'guides/script-layers/', 'guides/engine-and-script/']) {
+    assert.equal(resolve(site, rel, opts), null, `${rel} shipped in production`);
+    const page = resolve(site, rel, { ...opts, development: true });
+    assert.equal(page.kind, 'index');
+    assert.match(page.render(), /^<!DOCTYPE html>/);
+  }
+});
+
 test('pages go under their directory, sidecars stand alone', () => {
   assert.equal(resolve(site, 'classes/Foo/', opts).file, 'classes/Foo/index.html');
   assert.equal(resolve(site, '', opts).file, 'index.html');

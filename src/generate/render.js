@@ -11,6 +11,7 @@
 //   /files/  /files/<Dir>/<F.c>/  render/files.js
 //   /hierarchy/                   render/hierarchy.js
 //   /changelog/                   render/changelog.js
+//   /guides/  /guides/<Name>/     render/guides.js
 //   /community/                   render/community.js
 //   /about/                       render/about.js
 //   /credits/                     render/credits.js
@@ -32,6 +33,9 @@ export { renderEnum, renderGlobals } from './render/globals.js';
 export { renderFilesIndex, renderFile } from './render/files.js';
 export { renderHierarchy } from './render/hierarchy.js';
 export { renderCompare } from './render/changelog.js';
+export {
+  renderGuidesIndex, renderScriptLayersGuide, renderEngineAndScriptGuide,
+} from './render/guides.js';
 export { renderCommunity } from './render/community.js';
 export { renderAbout } from './render/about.js';
 export { renderCredits } from './render/credits.js';
