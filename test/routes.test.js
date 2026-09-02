@@ -95,6 +95,7 @@ test('URLs resolve to the renderer they name', () => {
     ['credits/', 'index'],
     ['files/3_Game/Foo.c/', 'file'],
     ['search.json', 'search'],
+    ['xref-report.json', 'search'],
   ]) {
     const p = resolve(site, rel, opts);
     assert.ok(p, `no page at ${JSON.stringify(rel)}`);
@@ -124,6 +125,7 @@ test('only the sidecars the site fetches are marked as assets', () => {
     'search.json',
     'nav.json',
     'files.json',
+    'xref-report.json',
     'api.json',
     'llms.txt',
     'agent.md',
@@ -135,6 +137,7 @@ test('only the sidecars the site fetches are marked as assets', () => {
 
 test('the machine API and the feed are latest-only', () => {
   const older = [...pages(site, { isLatest: false, versions: [] })].map((p) => p.rel);
+  assert.ok(!older.includes('xref-report.json'));
   assert.ok(!older.includes('api.json'));
   assert.ok(!older.includes('llms.txt'));
   assert.ok(!older.includes('agent.md'));
@@ -161,4 +164,8 @@ test('a resolved page renders without a memo behind it', () => {
   }
   assert.match(resolve(site, 'classes/Foo/', opts).render(new Set()), /^<!DOCTYPE html>/);
   assert.deepEqual(Object.keys(JSON.parse(resolve(site, 'nav.json', opts).render())), ['topics']);
+  assert.deepEqual(
+    Object.keys(JSON.parse(resolve(site, 'xref-report.json', opts).render())),
+    ['build', 'summary', 'issues']
+  );
 });

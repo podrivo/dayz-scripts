@@ -150,18 +150,20 @@ function digestFor(site, key, compute) {
   return digest;
 }
 
-function callerDigest(site, name) {
-  return digestFor(site, `<${name}`, () => {
-    const list = site.callers?.get(name);
+function callerDigest(site, owner, name) {
+  const key = owner ? `${owner}.${name}` : name;
+  return digestFor(site, `<${key}`, () => {
+    const list = site.callers?.get(key);
     return list ? sha1(list.map((c) => (c.owner ? `${c.owner}.${c.name}` : c.name)).join(',')) : '';
   });
 }
 
-/** Where a called name resolves, which decides whether it prints as a link.
- *  A second class declaring the same name makes it ambiguous and unlinks it
- *  on every page that calls it. */
-function targetDigest(site, name) {
-  return digestFor(site, `>${name}`, () => site.refTargets?.get(name)?.owner ?? (site.refTargets?.has(name) ? '()' : ''));
+function targetDigest(resolution) {
+  const kind = resolution.ctor ? 'new:' : '';
+  if (resolution.target) {
+    return `${kind}${resolution.confidence}:${resolution.target.owner || ''}.${resolution.target.name}`;
+  }
+  return `${kind}${resolution.confidence}:${(resolution.candidates || []).join(',')}`;
 }
 
 export function classDeps(site, cls, xref = true) {
@@ -173,7 +175,10 @@ export function classDeps(site, cls, xref = true) {
   const module = cls.group ? site.groups.get(cls.group)?.label : '';
   const xrefs = xref
     ? cls.methods
-        .map((m) => `${callerDigest(site, m.name)}|${(m.calls || []).map((n) => targetDigest(site, n)).join(',')}`)
+        .map(
+          (m) =>
+            `${callerDigest(site, cls.name, m.name)}|${(site.callResolutions.get(m) || []).map(targetDigest).join(',')}`
+        )
         .join(';')
     : 'none';
   return sha1(`${chain}\n${kids}\n${module}\n${shownPaths(site, cls.locations)}\n${xrefs}\n${JSON.stringify(cls)}`);

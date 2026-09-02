@@ -9,6 +9,7 @@ import path from 'node:path';
 import { DATA_DIR, extractSources, readJson, walk, writeJson } from './util.js';
 import { parseFile } from './parser/index.js';
 
+const MODEL_VERSION = 3;
 const { versions } = readJson(path.join(DATA_DIR, 'versions.json'));
 const only = process.env.ONLY_VERSION; // minor ("1.29") or full build ("1.29.163709")
 
@@ -16,7 +17,7 @@ function parseVersion(v) {
   const modelFile = path.join(DATA_DIR, `model-${v.label}.json`);
   if (fs.existsSync(modelFile)) {
     const existing = readJson(modelFile);
-    if (existing.sha === v.sha && !process.env.FORCE_PARSE) {
+    if (existing.sha === v.sha && existing.modelVersion === MODEL_VERSION && !process.env.FORCE_PARSE) {
       console.log(`${v.label}: cached (${existing.stats.classes} classes)`);
       return existing.stats;
     }
@@ -24,7 +25,15 @@ function parseVersion(v) {
 
   const dir = extractSources(v);
   const files = walk(path.join(dir, 'scripts'), '.c', dir);
-  const model = { label: v.label, version: v.version, build: v.build, sha: v.sha, date: v.date, files: [] };
+  const model = {
+    modelVersion: MODEL_VERSION,
+    label: v.label,
+    version: v.version,
+    build: v.build,
+    sha: v.sha,
+    date: v.date,
+    files: [],
+  };
   const allDiags = [];
   const stats = { files: files.length, classes: 0, methods: 0, members: 0, enums: 0, typedefs: 0, globals: 0, functions: 0, documented: 0 };
 

@@ -86,15 +86,13 @@ export function refName(owner, name, scope, base, linked) {
  * most of this API the way to learn what something does is to read a place it
  * is already used, and this is the index of those places.
  *
- * The match is by name alone -- the parser does not resolve receivers -- so a
- * `Show` entry gathers every Show in the sources. Doxygen's heading is kept
- * because its own matching was no more exact, but the common names are folded
- * away by default: a 200-entry list is the noise its version drowned in.
+ * Receiver types and lexical class scope are resolved where the parsed source
+ * carries enough information; globally unique names are the fallback.
  */
 export function callersBlock(name, ctx, scope = null) {
   const { site, base } = ctx;
   if (!ctx.xref) return '';
-  const list = site.callers?.get(name);
+  const list = site.callers?.get(scope ? `${scope}.${name}` : name);
   if (!list?.length) return '';
 
   const link = (c) => refName(c.owner || null, c.name, scope, base, true);
@@ -109,22 +107,23 @@ export function callersBlock(name, ctx, scope = null) {
       : list.length <= CALLERS_LISTED
         ? `, <details class="xref-more"><summary>and ${extra} more</summary>${writeList(list.slice(CALLERS_SHOWN).map(link))}.</details>`
         : `, <span class="xref-rest">and ${extra.toLocaleString()} more.</span>`;
-  return /* html */ `<div class="xref"><span class="xref-label" title="Matched by name: the sources are not type-checked, so every method of this name is gathered">Referenced by</span> ${head}${rest}</div>`;
+  return /* html */ `<div class="xref"><span class="xref-label" title="Resolved from receiver types and lexical scope; globally unique names are used as a fallback">Referenced by</span> ${head}${rest}</div>`;
 }
 
 /**
- * What a body calls, which is Doxygen's "References". The parser records the
- * names a body names without resolving what they are called on, so a name is
- * linked only where one declaration in the build answers to it (83% of them);
- * the rest print as plain text, which is what definition.cpp does with a name
- * it cannot link either.
+ * What a body calls, which is Doxygen's "References". Unresolved and ambiguous
+ * calls remain plain text.
  */
 export function referencesBlock(item, ctx, scope = null) {
   const { site, base } = ctx;
   if (!ctx.xref || !item.calls?.length) return '';
-  const items = item.calls.map((n) => {
-    const t = site.refTargets?.get(n);
-    return refName(t?.owner || null, n, scope, base, Boolean(t));
+  const items = site.callResolutions.get(item).map((resolution) => {
+    const t = resolution.target;
+    if (resolution.ctor) {
+      const label = `new ${esc(resolution.name)}()`;
+      return t ? `<a href="${base}classes/${t.owner}/">${label}</a>` : label;
+    }
+    return refName(t?.owner || null, resolution.name, scope, base, Boolean(t));
   });
   return /* html */ `<div class="xref xref-out"><span class="xref-label">References</span> ${writeList(items)}.</div>`;
 }

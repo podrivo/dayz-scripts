@@ -228,6 +228,116 @@ test('a class page depends on whether the names it calls are still unambiguous',
   );
 });
 
+test('calls resolve by receiver type and lexical scope before unique-name fallback', () => {
+  const m = model(BUILD_A);
+  const foo = m.files[0].classes[0];
+  foo.base = 'Base';
+  foo.members.push({ name: 'm_Service', type: 'ref Service', line: 13, mods: [] });
+  foo.methods.push({
+    name: 'Call',
+    ret: 'void',
+    params: [
+      { type: 'Service', name: 'service' },
+      { type: 'ServiceContext', name: 'ctx' },
+      { type: 'ActionData', name: 'action' },
+    ],
+    line: 14,
+    mods: [],
+    calls: [
+      { name: 'Run', receiver: 'service' },
+      { name: 'Run', receiver: 'm_Service' },
+      { name: 'Ping' },
+      { name: 'Run', receiver: 'ctx' },
+      { name: 'Run', receiver: 'g_Service' },
+      { name: 'Run', receiver: 'action.m_Service' },
+      { name: 'Cast', receiver: 'Service' },
+      { name: 'Shared' },
+      { name: 'Run', receiver: 'unknown' },
+      { name: 'Missing' },
+      { name: 'Run', receiver: 'local' },
+      { name: 'Run', receiver: 'Fetch()' },
+      { name: 'Run', receiver: 'action.GetService()' },
+      { name: 'Service', ctor: true },
+      { name: 'Ghost', ctor: true },
+    ],
+    locals: { local: 'Service' },
+  });
+  foo.methods.push({ name: 'Fetch', ret: 'Service', params: [], line: 15, mods: [] });
+  m.files[0].typedefs.push({ name: 'ServiceContext', type: 'Service', line: 45 });
+  m.files[0].globals.push({ name: 'g_Service', type: 'Service', line: 46 });
+  m.files[0].functions.push({ name: 'Shared', ret: 'void', params: [], line: 47 });
+  m.files[0].classes.push(
+    {
+      name: 'Base', line: 50, mods: [], attrs: [], members: [],
+      methods: [{ name: 'Ping', ret: 'void', params: [], line: 51, mods: [] }],
+    },
+    {
+      name: 'Service', line: 60, mods: [], attrs: [], members: [],
+      methods: [{ name: 'Run', ret: 'void', params: [], line: 61, mods: [] }],
+    },
+    {
+      name: 'Rival', line: 70, mods: [], attrs: [], members: [],
+      methods: [
+        { name: 'Run', ret: 'void', params: [], line: 71, mods: [] },
+        { name: 'Shared', ret: 'void', params: [], line: 72, mods: [] },
+      ],
+    },
+    {
+      name: 'ActionData', line: 75, mods: [], attrs: [],
+      members: [{ name: 'm_Service', type: 'Service', line: 76, mods: [] }],
+      methods: [{ name: 'GetService', ret: 'Service', params: [], line: 77, mods: [] }],
+    },
+    {
+      name: 'Class', line: 80, mods: [], attrs: [], members: [],
+      methods: [{ name: 'Cast', ret: 'Class', params: [], line: 81, mods: ['static'] }],
+    }
+  );
+  const s = buildSiteModel(m);
+  const call = s.classes.get('Foo').methods.find((method) => method.name === 'Call');
+  const resolutions = s.callResolutions.get(call);
+
+  assert.deepEqual(
+    resolutions.map((r) => [r.receiver, r.name, r.target?.owner, r.confidence]),
+    [
+      ['service', 'Run', 'Service', 'typed'],
+      ['m_Service', 'Run', 'Service', 'typed'],
+      [undefined, 'Ping', 'Base', 'scope'],
+      ['ctx', 'Run', 'Service', 'typed'],
+      ['g_Service', 'Run', 'Service', 'typed'],
+      ['action.m_Service', 'Run', 'Service', 'typed'],
+      ['Service', 'Cast', 'Class', 'typed'],
+      [undefined, 'Shared', undefined, 'scope'],
+      ['unknown', 'Run', undefined, 'ambiguous'],
+      [undefined, 'Missing', undefined, 'unresolved'],
+      ['local', 'Run', 'Service', 'typed'],
+      ['Fetch()', 'Run', 'Service', 'typed'],
+      ['action.GetService()', 'Run', 'Service', 'typed'],
+      [undefined, 'Service', 'Service', 'typed'],
+      [undefined, 'Ghost', undefined, 'unresolved'],
+    ]
+  );
+  assert.deepEqual(s.xrefReport.summary, {
+    total: 15, typed: 10, scope: 2, unique: 0, ambiguous: 1, unresolved: 2,
+  });
+  assert.deepEqual(s.callers.get('Service.Run'), [{ owner: 'Foo', name: 'Call' }]);
+  assert.equal(s.callers.has('Rival.Run'), false);
+  assert.deepEqual(
+    s.xrefReport.issues.map((issue) => [issue.expression, issue.confidence, issue.candidates]),
+    [
+      ['Missing', 'unresolved', []],
+      ['new Ghost', 'unresolved', []],
+      ['unknown.Run', 'ambiguous', ['Rival.Run', 'Service.Run']],
+    ]
+  );
+
+  // A resolved constructor renders as a link to the class; an unresolved one
+  // stays plain text.
+  const html = renderClass(ctx(s), s.classes.get('Foo'));
+  assert.ok(html.includes(`<a href="../../classes/Service/">new Service()</a>`));
+  assert.ok(html.includes('new Ghost()'));
+  assert.ok(!html.includes(`>new Ghost()</a>`));
+});
+
 // The canonical URL is the one absolute URL a page carries, so it is also the
 // one place a build number could leak back into the bytes. It names the page
 // at the site root instead, which is both the right answer for a crawler

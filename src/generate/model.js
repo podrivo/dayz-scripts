@@ -322,50 +322,231 @@ export function buildSiteModel(model) {
     fields.set(l, sorted);
   }
 
-  // ---- callers
-  // Which functions name each function. The parser records the names a body
-  // calls without resolving what they are called on, so this is keyed by bare
-  // name: everything called "Show" shares one entry. That is imprecise for the
-  // common names and exact for the long tail, which is where it earns its
-  // keep -- 89% of members carry no documentation at all, and a real call site
-  // is the next best thing.
-  const callers = new Map();
-  const noteCall = (callee, caller) => {
-    let list = callers.get(callee);
-    if (!list) callers.set(callee, (list = []));
-    list.push(caller);
+  // ---- call resolution
+  const targetKey = (target) => target.owner ? `${target.owner}.${target.name}` : target.name;
+  const declarations = new Map();
+  const declare = (name, target) => {
+    let list = declarations.get(name);
+    if (!list) declarations.set(name, (list = new Map()));
+    list.set(targetKey(target), target);
   };
   for (const mc of classes.values()) {
-    for (const m of mc.methods) {
-      for (const callee of m.calls || []) noteCall(callee, { owner: mc.name, name: m.name });
+    for (const m of mc.methods) declare(m.name, { owner: mc.name, name: m.name, method: true });
+  }
+  for (const fn of functions) declare(fn.name, { name: fn.name, method: true });
+
+  const methodDeclInHierarchy = (start, name) => {
+    const seen = new Set();
+    let cur = start;
+    while (cur && !seen.has(cur)) {
+      seen.add(cur);
+      const cls = classes.get(cur);
+      if (!cls) return null;
+      const decl = cls.methods.find((m) => m.name === name);
+      if (decl) return { owner: cur, decl };
+      cur = baseClass(cls);
+    }
+    return null;
+  };
+  const methodInHierarchy = (start, name) => {
+    const found = methodDeclInHierarchy(start, name);
+    return found ? { owner: found.owner, name, method: true } : null;
+  };
+  // Same-named globals shadow by module load order (1_core … 5_mission), so
+  // the last declaration wins: `Game GetGame()` in gamelib is superseded by
+  // `DayZGame GetGame()` in 3_game.
+  const functionDecls = new Map();
+  for (const fn of functions) functionDecls.set(fn.name, fn);
+  const typeAliases = new Map(typedefs.map((item) => [item.name, item.type]));
+  const classInType = (type, seen = new Set()) => {
+    for (const word of type?.match(/[A-Za-z_]\w*/g) || []) {
+      if (classes.has(word)) return word;
+      if (typeAliases.has(word) && !seen.has(word)) {
+        seen.add(word);
+        const resolved = classInType(typeAliases.get(word), seen);
+        if (resolved) return resolved;
+      }
+    }
+    return undefined;
+  };
+  // DayZ aliases bases for modding (`typedef InventoryItem InventoryItemSuper`),
+  // so a hierarchy walk resolves the base through typedefs too.
+  const baseClass = (cls) => (cls.baseName ? classInType(cls.baseName) : undefined);
+  const baseOf = (name) => {
+    const cls = classes.get(name);
+    return cls ? baseClass(cls) : undefined;
+  };
+  const globalReceiverClasses = new Map();
+  for (const item of globals) {
+    const cls = classInType(item.type);
+    if (cls && (!globalReceiverClasses.has(item.name) || !item.cond)) {
+      globalReceiverClasses.set(item.name, cls);
     }
   }
-  for (const fn of functions) {
-    for (const callee of fn.calls || []) noteCall(callee, { name: fn.name });
-  }
-  for (const list of callers.values()) {
-    list.sort((a, b) => (a.owner || '').localeCompare(b.owner || '') || a.name.localeCompare(b.name));
-  }
-
-  // ---- reference targets
-  // The forward direction of the same index: the names a body calls, which
-  // Doxygen printed under "References". It resolved them by scope; nothing
-  // here type-checks the language, so a name earns a link only when one
-  // declaration in the whole build can answer to it. 83% of the 25k member
-  // names are that unambiguous. The rest print as plain text, which is what
-  // Doxygen did too when a name would not resolve (definition.cpp docifies
-  // the name rather than dropping it).
-  const refTargets = new Map();
-  const claim = (name, target) => {
-    if (refTargets.has(name)) refTargets.set(name, null); // now ambiguous
-    else refTargets.set(name, target);
+  const memberClass = (start, name) => {
+    const seen = new Set();
+    let cur = start;
+    while (cur && !seen.has(cur)) {
+      seen.add(cur);
+      const cls = classes.get(cur);
+      if (!cls) return null;
+      const resolved = classInType(cls.members.find((m) => m.name === name)?.type);
+      if (resolved) return resolved;
+      cur = baseClass(cls);
+    }
+    return null;
   };
-  for (const mc of classes.values()) {
-    for (const m of mc.methods) claim(m.name, { owner: mc.name, method: true });
-    for (const v of mc.members) claim(v.name, { owner: mc.name, method: false });
+  /** Class of a receiver chain: each segment is a field (`a.b`) or a call
+   *  (`GetGame()`), typed by locals, params, members, globals, class names
+   *  (static access) and return types, in that order of specificity. */
+  const receiverClass = (owner, fn, receiver) => {
+    let resolved = null;
+    const segments = receiver.split('.');
+    for (let i = 0; i < segments.length; i++) {
+      const isCall = segments[i].endsWith('()');
+      const name = isCall ? segments[i].slice(0, -2) : segments[i];
+      if (isCall) {
+        const found =
+          methodDeclInHierarchy(i === 0 ? owner : resolved, name) ||
+          (resolved ? methodDeclInHierarchy('Class', name) : null);
+        // `X.Cast(...)` is declared on Class as returning Class, but by
+        // convention it returns the receiver's own type.
+        if (name === 'Cast' && found?.owner === 'Class' && resolved) continue;
+        const decl = found?.decl || (i === 0 ? functionDecls.get(name) : null);
+        resolved = classInType(decl?.ret);
+      } else if (i === 0) {
+        resolved =
+          (name === 'this' ? owner : name === 'super' ? baseOf(owner) : null) ||
+          classInType(fn.params?.find((p) => p.name === name)?.type) ||
+          classInType(fn.locals?.[name]) ||
+          memberClass(owner, name) ||
+          globalReceiverClasses.get(name) ||
+          (classes.has(name) ? name : null);
+      } else {
+        resolved = memberClass(resolved, name);
+      }
+      if (!resolved) return null;
+    }
+    return resolved;
+  };
+  const normalizeCall = (call) => typeof call === 'string' ? { name: call } : call;
+  const resolveCall = (call, owner, fn) => {
+    const c = normalizeCall(call);
+    if (c.ctor) {
+      // `new X(...)` names a class, possibly through a typedef alias
+      // (`new TStringArray` is `array<string>`); the linked declaration is
+      // its constructor when one is written out, or the class page otherwise.
+      const cls = classInType(c.name);
+      if (cls) {
+        const target = methodInHierarchy(cls, cls) || { owner: cls, name: cls, method: true };
+        return { ...c, target, confidence: 'typed' };
+      }
+      return { ...c, confidence: 'unresolved', candidates: [] };
+    }
+    const candidates = [...(declarations.get(c.name)?.values() || [])];
+    let target = null;
+    let confidence;
+
+    if (c.receiver) {
+      let receiver;
+      const staticReceiver = classes.has(c.receiver);
+      if (c.receiver === 'this') receiver = owner;
+      else if (c.receiver === 'super') receiver = baseOf(owner);
+      else if (staticReceiver) receiver = c.receiver;
+      else receiver = receiverClass(owner, fn, c.receiver);
+      target = receiver && methodInHierarchy(receiver, c.name);
+      if (!target && receiver) target = methodInHierarchy('Class', c.name);
+      if (target) confidence = receiver && !['this', 'super'].includes(c.receiver) ? 'typed' : 'scope';
+      else if (receiver) {
+        return {
+          ...c,
+          confidence: 'unresolved',
+          candidates: candidates.map(targetKey).sort(),
+        };
+      }
+    } else if (owner) {
+      target = methodInHierarchy(owner, c.name);
+      if (!target) target = candidates.find((candidate) => !candidate.owner);
+      // Every script class descends from Class even when the written chain
+      // passes through an engine-only base, so its built-ins (ToString,
+      // IsInherited, …) are in scope everywhere.
+      if (!target) target = methodInHierarchy('Class', c.name);
+      if (target) confidence = 'scope';
+    } else if (candidates.some((candidate) => !candidate.owner)) {
+      target = candidates.find((candidate) => !candidate.owner);
+      confidence = 'scope';
+    }
+
+    if (!target && candidates.length === 1) {
+      target = candidates[0];
+      confidence = 'unique';
+    }
+    if (target) return { ...c, target, confidence };
+    return {
+      ...c,
+      confidence: candidates.length ? 'ambiguous' : 'unresolved',
+      candidates: candidates.map(targetKey).sort(),
+    };
+  };
+
+  const callResolutions = new Map();
+  const callerSets = new Map();
+  const summary = { total: 0, typed: 0, scope: 0, unique: 0, ambiguous: 0, unresolved: 0 };
+  const issueGroups = new Map();
+  const resolveBody = (fn, owner) => {
+    const resolutions = (fn.calls || []).map((call) => resolveCall(call, owner, fn));
+    callResolutions.set(fn, resolutions);
+    const caller = owner ? { owner, name: fn.name } : { name: fn.name };
+    const callerKey = owner ? `${owner}.${fn.name}` : fn.name;
+    for (const resolution of resolutions) {
+      summary.total++;
+      summary[resolution.confidence]++;
+      if (resolution.target) {
+        const key = targetKey(resolution.target);
+        let set = callerSets.get(key);
+        if (!set) callerSets.set(key, (set = new Map()));
+        set.set(callerKey, caller);
+        continue;
+      }
+      const expression = resolution.ctor
+        ? `new ${resolution.name}`
+        : resolution.receiver
+          ? `${resolution.receiver}.${resolution.name}`
+          : resolution.name;
+      const key = `${expression}\0${resolution.candidates?.join(',') || ''}`;
+      let issue = issueGroups.get(key);
+      if (!issue) {
+        issue = {
+          expression,
+          confidence: resolution.confidence,
+          candidates: resolution.candidates || [],
+          count: 0,
+          callers: [],
+        };
+        issueGroups.set(key, issue);
+      }
+      issue.count++;
+      if (issue.callers.length < 5 && !issue.callers.includes(callerKey)) issue.callers.push(callerKey);
+    }
+  };
+  for (const mc of classes.values()) for (const m of mc.methods) resolveBody(m, mc.name);
+  for (const fn of functions) resolveBody(fn, null);
+
+  const callers = new Map();
+  for (const [key, set] of callerSets) {
+    callers.set(
+      key,
+      [...set.values()].sort(
+        (a, b) => (a.owner || '').localeCompare(b.owner || '') || a.name.localeCompare(b.name)
+      )
+    );
   }
-  for (const fn of functions) claim(fn.name, { method: true });
-  for (const [name, t] of refTargets) if (!t) refTargets.delete(name);
+  const xrefReport = {
+    summary,
+    issues: [...issueGroups.values()].sort(
+      (a, b) => b.count - a.count || a.expression.localeCompare(b.expression)
+    ),
+  };
 
   return {
     label: model.label,
@@ -375,7 +556,8 @@ export function buildSiteModel(model) {
     sha: model.sha,
     stats: model.stats,
     callers,
-    refTargets,
+    callResolutions,
+    xrefReport,
     classes,
     enums,
     typedefs,

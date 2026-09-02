@@ -287,27 +287,76 @@ export class Parser {
   // ---- skipping ------------------------------------------------------------
 
   /** Skip a balanced {...} block; positioned ON the '{'.
-   *  Given a Set, records every name called inside it. A name followed by '('
-   *  is the whole test: the receiver is not resolved, so a call to Widget.Show
-   *  and one to PlayerBase.Show are recorded alike. That ambiguity is the
-   *  price of not type-checking the language, and the reason the pages built
-   *  from this gather every method of a name under one entry. */
-  skipBraces(calls) {
+   *  Given a Map, records every called name with the receiver expression it
+   *  is called on, when one can be read from the tokens: a chain of
+   *  identifiers and calls (`a.b.Show()`, `GetGame().GetMission()`), a class
+   *  name (`PlayerBase.Cast(...)`), or `new X(...)` (a constructor).
+   *  Given a second Map, records local declarations (`PlayerBase player = …`,
+   *  `foreach (Widget w : list)`) so those receivers can later be typed. */
+  skipBraces(calls, locals) {
     let depth = 0;
-    let prev = null;
+    const history = [];
+    const stmt = []; // tokens since the last statement boundary
     for (;;) {
       const t = this.sig();
       if (t.type === 'eof') return;
       this.pos++;
-      if (calls && t.value === '(' && prev?.type === 'ident' && !NOT_CALLS.has(prev.value)) {
-        calls.add(prev.value);
+      const name = history.at(-1);
+      if (calls && t.value === '(' && name?.type === 'ident' && !NOT_CALLS.has(name.value)) {
+        const segments = [];
+        let i = history.length - 2;
+        for (;;) {
+          if (history[i]?.value !== '.' && history[i]?.value !== '::') break;
+          const before = history[i - 1];
+          if (before?.type === 'ident') {
+            segments.unshift(before.value);
+            i -= 2;
+          } else if (before?.value === ')') {
+            // a call in the chain: scan back over its arguments to its name
+            let d = 0;
+            let j = i - 1;
+            while (j >= 0) {
+              if (history[j].value === ')') d++;
+              else if (history[j].value === '(' && --d === 0) break;
+              j--;
+            }
+            const callee = history[j - 1];
+            if (j <= 0 || callee?.type !== 'ident' || NOT_CALLS.has(callee.value)) {
+              segments.length = 0;
+              break;
+            }
+            segments.unshift(`${callee.value}()`);
+            i = j - 2;
+          } else {
+            segments.length = 0;
+            break;
+          }
+        }
+        const call = { name: name.value };
+        if (segments.length) call.receiver = segments.join('.');
+        else if (history.at(-2)?.value === 'new') call.ctor = true;
+        calls.set(`${call.ctor ? 'new ' : ''}${call.receiver || ''}\0${call.name}`, call);
+      }
+      if (locals && (t.value === '=' || t.value === ';' || t.value === ':' || t.value === ',')) {
+        const v = stmt.at(-1);
+        const prev = stmt.at(-2);
+        if (
+          stmt.length >= 2 && v?.type === 'ident' && !NOT_CALLS.has(stmt[0].value) &&
+          (prev?.type === 'ident' ||
+            (prev?.value === '>' && stmt.some((x) => x.value === '<'))) &&
+          !locals.has(v.value)
+        ) {
+          locals.set(v.value, stmt.slice(0, -1).map((x) => x.value).join(' '));
+        }
       }
       if (t.value === '{') depth++;
       else if (t.value === '}') {
         depth--;
         if (depth <= 0) return;
       }
-      prev = t;
+      if (';{}()=:,'.includes(t.value)) stmt.length = 0;
+      else stmt.push(t);
+      history.push(t);
     }
   }
 
@@ -843,10 +892,17 @@ export class Parser {
         const trail = this.takeTrailing(after.line);
         if (trail && !fn.doc) fn.doc = trail;
       } else if (after.value === '{') {
-        const calls = new Set();
-        this.skipBraces(calls);
-        calls.delete(name); // recursion is not a cross-reference worth listing
-        if (calls.size) fn.calls = [...calls].sort();
+        const calls = new Map();
+        const locals = new Map();
+        this.skipBraces(calls, locals);
+        calls.delete(`\0${name}`); // recursion is not a cross-reference worth listing
+        calls.delete(`this\0${name}`);
+        if (calls.size) {
+          fn.calls = [...calls.values()].sort(
+            (a, b) => a.name.localeCompare(b.name) || (a.receiver || '').localeCompare(b.receiver || '')
+          );
+          if (locals.size) fn.locals = Object.fromEntries(locals);
+        }
         this.eatIf(';');
       } else if (after.value === '}' || after.type === 'eof' || (after.type === 'ident' && after.line > closeLine)) {
         // Missing ';' after a prototype — the engine compiler tolerates this

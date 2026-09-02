@@ -142,6 +142,59 @@ test('override event methods', () => {
   assert.deepEqual(m.classes[0].methods[0].mods, ['protected', 'override', 'event']);
 });
 
+test('calls retain their direct receiver', () => {
+  const m = parseClean(`
+    class A {
+      void Call(Service service) {
+        service.Start();
+        this.Stop();
+        Utility.Ping();
+        action_data.m_Target.GetObject();
+        Local();
+      }
+    }
+  `);
+  assert.deepEqual(m.classes[0].methods[0].calls, [
+    { name: 'GetObject', receiver: 'action_data.m_Target' },
+    { name: 'Local' },
+    { name: 'Ping', receiver: 'Utility' },
+    { name: 'Start', receiver: 'service' },
+    { name: 'Stop', receiver: 'this' },
+  ]);
+});
+
+test('call chains, constructors, and local declarations are captured', () => {
+  const m = parseClean(`
+    class A {
+      void Call(Object obj) {
+        PlayerBase player = PlayerBase.Cast(obj);
+        player.GetIdentity();
+        GetGame().GetMission();
+        ref array<string> names = new array<string>;
+        InventoryLocation loc = new InventoryLocation();
+        foreach (Widget w : m_Widgets) {
+          w.Show(false);
+        }
+      }
+    }
+  `);
+  const fn = m.classes[0].methods[0];
+  assert.deepEqual(fn.calls, [
+    { name: 'Cast', receiver: 'PlayerBase' },
+    { name: 'GetGame' },
+    { name: 'GetIdentity', receiver: 'player' },
+    { name: 'GetMission', receiver: 'GetGame()' },
+    { name: 'InventoryLocation', ctor: true },
+    { name: 'Show', receiver: 'w' },
+  ]);
+  assert.deepEqual(fn.locals, {
+    player: 'PlayerBase',
+    names: 'ref array < string >',
+    loc: 'InventoryLocation',
+    w: 'Widget',
+  });
+});
+
 // ---------------------------------------------------------------------------
 // Members
 

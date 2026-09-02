@@ -251,6 +251,17 @@ export function* pages(site, opts) {
   // do not grow a second copy and /api.json always means the current dump.
   if (isLatest) {
     yield {
+      rel: 'xref-report.json',
+      file: 'xref-report.json',
+      kind: 'search',
+      asset: true,
+      render: () => JSON.stringify({
+        build: site.build,
+        summary: site.xrefReport.summary,
+        issues: site.xrefReport.issues,
+      }),
+    };
+    yield {
       rel: 'api.json',
       file: 'api.json',
       kind: 'search',
