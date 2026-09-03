@@ -47,12 +47,15 @@ export const OFFICIAL_LINKS = [
 /** Bohemia's own modding material. */
 export const OFFICIAL_MODDING_LINKS = alpha([
   ['Administration Logs', 'https://community.bistudio.com/wiki/DayZ:Administration_Logs', 'The .ADM file: every logged event and the serverDZ.cfg switches'],
+  ['Buldozer for Terrain Builder', 'https://community.bistudio.com/wiki/DayZ:Buldozer_for_Terrain_Builder', 'DayZ Buldozer setup and controls for Terrain Builder'],
   ['Central Economy', 'https://github.com/BohemiaInteractive/DayZ-Central-Economy', 'The vanilla loot economy files, as the game ships them'],
   ['Central Economy Configuration', 'https://community.bistudio.com/wiki/DayZ:Central_Economy_Configuration', 'globals.xml and cfgEconomyCore.xml: cleanup, backups, CE logging'],
+  ['Central Economy on Custom Terrains', 'https://community.bistudio.com/wiki/DayZ:Central_Economy_setup_for_custom_terrains', 'CE XML and hive setup when shipping your own map'],
   ['Contaminated Areas', 'https://community.bistudio.com/wiki/DayZ:Contaminated_Areas_Configuration', 'Static gas zones, particles and the 1.28 configuration format'],
   ['Diag Menu', 'https://community.bistudio.com/wiki/DayZ:Diag_Menu', 'Debug menu in DayZDiag_x64.exe: Win+Alt in a 3D viewport'],
   ['Error Codes', 'https://community.bistudio.com/wiki/DayZ:Error_Codes', 'Every connect and kick error code the client can show, decoded'],
   ['Gameplay Settings', 'https://community.bistudio.com/wiki/DayZ:Gameplay_Settings', 'Every cfggameplay.json parameter, with defaults'],
+  ['Generating Navigation Mesh', 'https://community.bistudio.com/wiki/DayZ:Generating_navigation_mesh', 'Navmesh for AI pathfinding on custom terrains'],
   ['Mission File Overrides', 'https://community.bistudio.com/wiki/DayZ:Central_Economy_mission_files_modding', 'How custom CE XML merges over vanilla: types, events, globals, messages'],
   ['Modding Basics', 'https://community.bistudio.com/wiki/DayZ:Modding_Basics', 'Official walkthrough: project drive, config.cpp, packing, first script'],
   ['Modding Samples', 'https://github.com/BohemiaInteractive/DayZ-Samples', 'Sample mods to start a project from'],
@@ -61,6 +64,7 @@ export const OFFICIAL_MODDING_LINKS = alpha([
   ['Script Debugging', 'https://community.bistudio.com/wiki/DayZ:Workbench_Script_Debugging', 'Attach Workbench to DayZDiag_x64.exe for breakpoints and live output'],
   ['Server Configuration', 'https://community.bistudio.com/wiki/DayZ:Server_Configuration', 'serverDZ.cfg, dayzsettings.xml and the launch parameters'],
   ['Spawn Gear', 'https://community.bistudio.com/wiki/DayZ:Spawning_Gear_Configuration', 'JSON presets for survivor models, clothing, attachments and cargo'],
+  ['Terrain Sample', 'https://community.bistudio.com/wiki/DayZ:Terrain_sample', 'Utes sample terrain from DayZ Samples: load, Buldozer and pack'],
   ['Underground Areas', 'https://community.bistudio.com/wiki/DayZ:Underground_Areas_Configuration', 'Darkness triggers, transition breadcrumbs and debugging'],
   ['Weather Configuration', 'https://community.bistudio.com/wiki/DayZ:Weather_Configuration', 'cfgweather.xml and the script-controlled alternatives'],
 ]);
@@ -84,10 +88,14 @@ export const DISCORD_LINKS = [
 export const VIDEO_LINKS = [
   ['Scripting Theory and Foundational Basics', 'https://www.youtube.com/watch?v=Da_IVQ7KMws', 'ItsATreee · 3h49m raw intro to DayZ script modding'],
   ...alpha([
+    ['Applied Windmask On Objects', 'https://www.youtube.com/watch?v=z64ZfiD24G8', 'ItsATreee · windmask on terrain objects'],
+    ['Create a DayZ map in less than 2 hours', 'https://www.youtube.com/watch?v=9KgE25NZ0lc', "Grampa's · end-to-end custom map demo"],
     ['DayZ Basic Animations Tutorial', 'https://youtu.be/sB1JDKOABQU', 'ItsATreee · animation basics for DayZ mods'],
     ['DayZ Modding playlist', 'https://www.youtube.com/watch?v=VxQ9XuCTAzU&list=PLuzWyA6urlZBU5JXHo0OOvgc80ahzjkRy', 'Zenarchist · soundsets, models and script modding'],
     ['DayZ Door Animations & Keycards', 'https://youtu.be/ZV3OHgA52hk', 'ItsATreee · door animations and keycard setup'],
+    ['DayZ Road Tool', 'https://youtu.be/AMIBgb3uE6o', 'DeanoZ · Terrain Builder road tool'],
     ['Opening binarized P3Ds', 'https://youtu.be/OUXQgH3k8n0', 'ItsATreee · inspect binarized models without de-binarizing'],
+    ['QGIS Game terrain tools', 'https://youtu.be/Ap0X3JpJzb4', 'Adanteh · real-world height and sat data into a terrain'],
   ]),
 ];
 
@@ -191,6 +199,20 @@ export const COMMUNITY_SECTIONS = [
         [['GitHub', 'https://github.com/samgeekman/samsdayzobjectfinder']]],
       ['WOBO Tools', 'https://wobo.tools/', 'Item, weapon and loot data explorer'],
       ['xam.nu', 'https://dayz.xam.nu/', 'Interactive maps for official and Workshop terrains'],
+    ]),
+  },
+  {
+    id: 'terrain',
+    title: 'Terrain & map making',
+    links: alpha([
+      ['Blud terrain tips', 'https://forums.bohemia.net/forums/topic/218834-musings-from-a-terrain-creator-bluds-do-and-do-nots/', 'Intermediate tips for Terrain Builder workflows'],
+      ['Google Map Customizer', 'http://www.chengfolio.com/google_map_customizer#satellitemap', 'High-res sat imagery export for satmaps'],
+      ['L3DT (Archive.org mirror)', 'https://archive.org/details/l3dt-unlim-dev-22.06.0.1-x-64', 'Heightmap tool mirror when the vendor site is down'],
+      ['Mapframe Information', 'https://github.com/pennyworth12345/A3_MMSI/wiki/Mapframe-Information', 'Pennyworth · Terrain Builder mapframe properties explained'],
+      ['Mask, Clutter and CfgSurfaces', 'https://github.com/pennyworth12345/A3_MMSI/wiki/How-the-Mask,-Clutter,-and-CfgSurfaces-work-together', 'Pennyworth · how surface mask tiles drive clutter'],
+      ['PMC Editing Wiki', 'https://pmc.editing.wiki/doku.php', 'Terrain tutorials (Arma lineage, still the usual reference)',
+        [['Arma 3 terrain', 'https://pmc.editing.wiki/doku.php?id=arma3:terrain']]],
+      ['QGIS Game Terrains', 'https://gitlab.com/Adanteh/qgis-game-terrains/wikis/home', 'QGIS plugin for real-world height, sat and mask data'],
     ]),
   },
 ];
