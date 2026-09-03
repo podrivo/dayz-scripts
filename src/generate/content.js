@@ -74,6 +74,7 @@ export const DISCORD_LINKS = [
   ...alpha([
     ['DayZ Academy', 'https://discord.gg/BMnpGEzKdx', 'Discord · modders and server owners'],
     ['DayZ Editor', 'https://discord.gg/dayz-editor-738181536029081662', 'Discord · support for the DayZ Editor mod'],
+    ['DayZ Expansion', 'https://discord.gg/t7BnkZZN5A', 'Discord · Expansion mods'],
   ]),
 ];
 
@@ -100,6 +101,7 @@ export const COMMUNITY_SECTIONS = [
     id: 'reference',
     title: 'Reference & guides',
     links: alpha([
+      ['BastionMod', 'https://github.com/Bastion-RP/BastionMod', 'Open-sourced RP pack: guns, clothing, buildings, crafting, UI and more'],
       ['Custom lockable items', 'https://github.com/salutesh/DayZ-Expansion-Scripts/wiki/%5BModding%5D-Creating-a-custom-openable-closable-and-or-lockable-item', 'Expansion wiki: openable, closable and lockable items',
         [['Example', 'https://github.com/TrueDolphin/CodeLock-Example']]],
       ['Custom script modules', 'https://wrdg.net/posts/dayz/custom-script-module-exploitation', 'How ScriptModule.LoadScript works; the retail-client hole was closed in 1.24'],
@@ -141,7 +143,8 @@ export const COMMUNITY_SECTIONS = [
       ['Community Online Tools', 'https://github.com/Jacob-Mango/DayZ-CommunityOnlineTools', 'Modular in-game admin GUI that other mods add menus to'],
       ['Dabs Framework', 'https://github.com/InclementDab/DayZ-Dabs-Framework', 'Open-source MVC framework, events manager and Workbench plugins'],
       ['DayZ Expansion', 'https://dayzexpansion.com/', 'Mod framework wiki, guides and configuration',
-        [['GitHub', 'https://github.com/salutesh/DayZ-Expansion-Scripts']]],
+        [['GitHub', 'https://github.com/salutesh/DayZ-Expansion-Scripts'],
+         ['Discord', 'https://discord.gg/t7BnkZZN5A']]],
       ['DayZ Universal API', 'https://github.com/DaemonForge/DayZ-UniveralApi', 'Cross-server API backend with auth, Discord and database helpers'],
       ['InfinityDayZ', 'https://github.com/EnfusionModders/InfinityDayZ', 'Server C++ plugins that register custom proto methods'],
       ['VPP Admin Tools', 'https://github.com/VanillaPlusPlus/VPP-Admin-Tools', 'In-game administrator tools for managing players and servers'],
