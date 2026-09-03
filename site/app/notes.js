@@ -139,18 +139,52 @@ export function initNotes() {
   /* One shared chip, moved to whichever declaration the pointer is over —
      the same bargain the signature copy button strikes in copy.js, and for
      the same reason: nine hundred members are nine hundred buttons only one
-     of which is ever in use. Wired up outside the fetch, so a notes.json
-     that fails to load still leaves the way to write one. */
-  const suggest = document.createElement('a');
-  suggest.className = 'note-add';
-  suggest.target = '_blank';
-  suggest.rel = 'noopener';
-  suggest.textContent = 'Suggest a note';
-  suggest.title = 'Suggest a community note for this declaration';
+     of which is ever in use. A second chip parks on :target so a deep link
+     still offers the invitation without needing a hover first. Wired up
+     outside the fetch, so a notes.json that fails to load still leaves the
+     way to write one. */
+  const makeSuggest = () => {
+    const a = document.createElement('a');
+    a.className = 'note-add';
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.textContent = 'Suggest a note';
+    a.title = 'Suggest a community note for this declaration';
+    return a;
+  };
+  const suggest = makeSuggest();
+  const targetSuggest = makeSuggest();
   let suggestFor = null;
+  let targetFor = null;
+
+  const hostOf = (id) => {
+    if (!id) return null;
+    const el = document.getElementById(id);
+    return el?.matches('.member[id], .enum-table tr[id]') ? el : null;
+  };
+  const mount = (a, host) => {
+    const row = host.matches('tr');
+    a.href = contribHref(row ? `${type}.${host.id}` : keyFor(host), null);
+    (row ? host.cells[2] || host : $('.member-sig', host) || host).append(a);
+  };
+  const parkTarget = () => {
+    const host = hostOf(location.hash.slice(1));
+    if (!host || $('.note-community', host)) {
+      targetSuggest.remove();
+      targetFor = null;
+      return;
+    }
+    targetFor = host;
+    mount(targetSuggest, host);
+    if (suggestFor === targetFor) {
+      suggest.remove();
+      suggestFor = null;
+    }
+  };
+
   main.addEventListener('pointerover', (e) => {
     const host = e.target.closest?.('.member[id], .enum-table tr[id]');
-    if (!host || host === suggestFor) return;
+    if (!host || host === suggestFor || host === targetFor) return;
     // whatever already carries a note is changed through that note's pencil
     if ($('.note-community', host)) {
       suggest.remove();
@@ -158,10 +192,10 @@ export function initNotes() {
       return;
     }
     suggestFor = host;
-    const row = host.matches('tr');
-    suggest.href = contribHref(row ? `${type}.${host.id}` : keyFor(host), null);
-    (row ? host.cells[2] || host : $('.member-sig', host) || host).append(suggest);
+    mount(suggest, host);
   });
+  window.addEventListener('hashchange', parkTarget);
+  parkTarget();
   main.addEventListener('click', (e) => {
     const a = e.target.closest('.note-edit, .note-add, .note-ask');
     if (a) track('suggest_note', { note_action: a.classList.contains('note-edit') ? 'edit' : 'add' });

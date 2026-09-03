@@ -55,18 +55,16 @@ export function renderClass(ctx, cls) {
     const id = anchorFor(used, v.name);
     const doc = v.doc ? `<div class="member-doc">${renderDoc(v.doc, site, base)}</div>` : '';
     return /* html */ `<div class="member" id="${id}">
-<div class="member-sig"><code>${varSig(v, site, base)}</code>${condBadges(v.cond)}<a class="anchor" href="#${id}" aria-label="Link to ${esc(v.name)}">#</a></div>
+<div class="member-sig"><code>${varSig(v, site, base)}</code>${condBadges(v.cond)}</div>
 ${doc}</div>`;
   };
 
   const methodBlock = (m) => {
     const id = anchorFor(used, m.name);
     const doc = m.doc ? `<div class="member-doc">${renderDoc(m.doc, site, base)}</div>` : '';
-    const src = m.file
-      ? `<a class="member-src" href="${fileLineHref(site, base, m.file, m.line)}" title="View source">src</a>`
-      : '';
-    return /* html */ `<div class="member" id="${id}">
-<div class="member-sig"><code>${methodSig(m, site, base)}</code>${condBadges(m.cond)}<a class="anchor" href="#${id}" aria-label="Link to ${esc(m.name)}">#</a>${src}</div>
+    const src = m.file ? ` data-src="${fileLineHref(site, base, m.file, m.line)}"` : '';
+    return /* html */ `<div class="member" id="${id}"${src}>
+<div class="member-sig"><code>${methodSig(m, site, base)}</code>${condBadges(m.cond)}</div>
 ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}</div>`;
   };
 

@@ -47,14 +47,15 @@ ${en.doc ? `<div class="class-doc">${renderDoc(en.doc, site, base)}</div>` : ''}
 
 /** The contents of each Globals tab, so the "All" tab can reuse them. */
 function globalSections(ctx, site, base) {
-  const src = (item) => `<a class="member-src" href="${fileLineHref(site, base, item.file, item.line)}">src</a>`;
+  const dataSrc = (item) =>
+    item.file ? ` data-src="${fileLineHref(site, base, item.file, item.line)}"` : '';
   const used = new Set();
 
   const functions = [...site.functions].sort(byName).map((fn) => {
     const id = anchorFor(used, fn.name);
     const doc = fn.doc ? `<div class="member-doc">${renderDoc(fn.doc, site, base)}</div>` : '';
-    return /* html */ `<div class="member" id="${id}">
-<div class="member-sig"><code>${methodSig(fn, site, base)}</code>${condBadges(fn.cond)}<a class="anchor" href="#${id}">#</a>${src(fn)}</div>
+    return /* html */ `<div class="member" id="${id}"${dataSrc(fn)}>
+<div class="member-sig"><code>${methodSig(fn, site, base)}</code>${condBadges(fn.cond)}</div>
 ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
   });
 
@@ -75,7 +76,7 @@ ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
         : 'Ungrouped';
       const rows = items
         .map(
-          (v) => `<tr id="${esc(v.name)}"><td><code>${varSig(v, site, base)}</code>${condBadges(v.cond)}</td><td>${v.doc ? briefOf(v.doc, site, base) : ''}</td><td>${src(v)}</td></tr>`
+          (v) => `<tr id="${esc(v.name)}"${dataSrc(v)}><td><code>${varSig(v, site, base)}</code>${condBadges(v.cond)}</td><td>${v.doc ? briefOf(v.doc, site, base) : ''}</td><td></td></tr>`
         )
         .join('\n');
       return /* html */ `<h3 id="${esc(g || 'ungrouped')}">${heading} <span class="count">${items.length}</span></h3>
@@ -85,7 +86,7 @@ ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
 
   const typedefs = [...site.typedefs].sort(byName)
     .map(
-      (t) => `<tr id="${esc(t.name)}"><td><code>${esc(t.name)}</code>${condBadges(t.cond)}</td><td><code>${linkType(t.type, site, base)}</code></td><td>${src(t)}</td></tr>`
+      (t) => `<tr id="${esc(t.name)}"${dataSrc(t)}><td><code>${esc(t.name)}</code>${condBadges(t.cond)}</td><td><code>${linkType(t.type, site, base)}</code></td><td></td></tr>`
     )
     .join('\n');
 
@@ -105,7 +106,7 @@ ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
 
   const macros = [...site.defines].sort(byName)
     .map(
-      (d) => `<tr id="${esc(d.name)}"><td><code>${esc(d.name)}</code>${condBadges(d.cond)}</td><td>${d.value ? `<code class="lit">${esc(d.value)}</code>` : ''}</td><td>${src(d)}</td></tr>`
+      (d) => `<tr id="${esc(d.name)}"${dataSrc(d)}><td><code>${esc(d.name)}</code>${condBadges(d.cond)}</td><td>${d.value ? `<code class="lit">${esc(d.value)}</code>` : ''}</td><td></td></tr>`
     )
     .join('\n');
 

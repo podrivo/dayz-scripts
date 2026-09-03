@@ -1,11 +1,11 @@
-/* Copy buttons.
+/* Copy buttons, and the other member-row chips that follow the pointer.
 
    Signatures are the thing people come here to take away, and selecting one
-   out of a line that also holds badges, a src link and an anchor is fiddly.
-   Code blocks get their own button; signatures share a single one that
-   follows the pointer, because a class page has nine hundred of them and
-   nine hundred buttons is a page's worth of DOM for an affordance only one
-   is ever using. */
+   out of a line that also holds badges is fiddly. #, src, Copy and Override
+   share one node each that moves onto the hovered (or :target) row — a class
+   page has nine hundred members, and nine hundred of each chip is a page's
+   worth of DOM for affordances only one row is ever using. The source URL
+   lives on data-src so the HTML does not pay for the <a> up front. */
 
 import { $, VPATH, track } from './dom.js';
 
@@ -31,6 +31,21 @@ function copyButton() {
   b.setAttribute('aria-label', 'Copy');
   b.title = 'Copy';
   return b;
+}
+
+function anchorLink() {
+  const a = document.createElement('a');
+  a.className = 'anchor';
+  a.textContent = '#';
+  return a;
+}
+
+function srcLink() {
+  const a = document.createElement('a');
+  a.className = 'member-src';
+  a.textContent = 'src';
+  a.title = 'View source';
+  return a;
 }
 
 /** One button per code block: source listings, doc examples, attribute lists. */
@@ -107,13 +122,43 @@ export function overrideStub(code, cls) {
   return `modded class ${cls}\n{\n\t${decl}\n\t{\n\t\t${body}\n\t}\n}\n`;
 }
 
-/** The one signature button, and beside it the override stub on a class page. */
+/** Mount # / src / Copy onto a member signature. */
+function mountMember(sig, mem, chips) {
+  const { anchor, src, copy } = chips;
+  if (mem.id) {
+    anchor.href = `#${mem.id}`;
+    anchor.setAttribute('aria-label', `Link to ${mem.id.replace(/-\d+$/, '')}`);
+    sig.append(anchor);
+  } else {
+    anchor.remove();
+  }
+  if (mem.dataset.src) {
+    src.href = mem.dataset.src;
+    sig.append(src);
+  } else {
+    src.remove();
+  }
+  sig.append(copy);
+}
+
+/** The shared chips for signatures, and the override stub on a class page. */
 export function initCopySignatures() {
   const main = $('.main');
   if (!main) return;
 
-  const sigCopy = copyButton();
-  sigCopy.classList.add('copy-sig');
+  const hover = {
+    anchor: anchorLink(),
+    src: srcLink(),
+    copy: copyButton(),
+  };
+  hover.copy.classList.add('copy-sig');
+  const target = {
+    anchor: anchorLink(),
+    src: srcLink(),
+    copy: copyButton(),
+  };
+  target.copy.classList.add('copy-sig');
+
   // Only a class page can name what the stub would be modding.
   const cls = /^class\/([^/]+)\/$/.exec(VPATH)?.[1];
   const sigOverride = cls && copyButton();
@@ -122,48 +167,87 @@ export function initCopySignatures() {
     sigOverride.title = `Copy a modded class ${cls} override of this method`;
     sigOverride.setAttribute('aria-label', 'Copy override');
   }
+
   let hoverFor = null;
-  let targetFor = null;
+  let targetFor = null; // .member code node, or a tr[data-src]
+  let srcRowFor = null;
   let stub = null;
-  const targetCopy = copyButton();
-  targetCopy.classList.add('copy-sig');
+  // One more src chip for table.list rows (constants, macros, topic summaries).
+  const rowSrc = srcLink();
 
   const codeOf = (mem) => {
     const sig = mem && $('.member-sig', mem);
     const code = sig && $('code', sig);
-    return code ? { sig, code } : null;
+    return code ? { sig, code, mem } : null;
   };
   const targeted = () => {
     const id = location.hash.slice(1);
     if (!id) return null;
-    const mem = document.getElementById(id);
-    return mem?.classList.contains('member') ? mem : null;
+    const el = document.getElementById(id);
+    if (el?.classList.contains('member')) return el;
+    if (el?.matches?.('tr[data-src]')) return el;
+    return null;
+  };
+  const clearTarget = () => {
+    target.anchor.remove();
+    target.src.remove();
+    target.copy.remove();
+    targetFor = null;
   };
   const parkTarget = () => {
     const host = targeted();
+    if (!host) {
+      clearTarget();
+      return;
+    }
+    if (host.matches('tr')) {
+      target.anchor.remove();
+      target.copy.remove();
+      target.src.href = host.dataset.src;
+      (host.cells[host.cells.length - 1] || host).append(target.src);
+      targetFor = host;
+      if (srcRowFor === host) {
+        rowSrc.remove();
+        srcRowFor = null;
+      }
+      return;
+    }
     const found = codeOf(host);
     if (!found) {
-      targetCopy.remove();
-      targetFor = null;
+      clearTarget();
       return;
     }
     targetFor = found.code;
-    found.sig.append(targetCopy);
+    mountMember(found.sig, found.mem, target);
     if (hoverFor === targetFor) {
-      sigCopy.remove();
+      hover.anchor.remove();
+      hover.src.remove();
+      hover.copy.remove();
       hoverFor = null;
     }
   };
 
-  sigCopy.addEventListener('click', () => hoverFor && copyText(hoverFor.textContent.trim(), sigCopy, 'signature'));
-  targetCopy.addEventListener('click', () => targetFor && copyText(targetFor.textContent.trim(), targetCopy, 'signature'));
+  hover.copy.addEventListener('click', () => hoverFor && copyText(hoverFor.textContent.trim(), hover.copy, 'signature'));
+  target.copy.addEventListener('click', () => {
+    if (targetFor?.nodeType === 1 && !targetFor.matches?.('tr')) {
+      copyText(targetFor.textContent.trim(), target.copy, 'signature');
+    }
+  });
   sigOverride?.addEventListener('click', () => stub && copyText(stub, sigOverride, 'override'));
+
   main.addEventListener('pointerover', (e) => {
+    const row = e.target.closest?.('table.list tr[data-src]');
+    if (row && row !== srcRowFor && row !== targetFor) {
+      srcRowFor = row;
+      rowSrc.href = row.dataset.src;
+      (row.cells[row.cells.length - 1] || row).append(rowSrc);
+    }
+
     const mem = e.target.closest?.('.member');
     const found = codeOf(mem);
     if (!found || found.code === hoverFor || found.code === targetFor) return;
     hoverFor = found.code;
-    found.sig.append(sigCopy);
+    mountMember(found.sig, found.mem, hover);
     if (!sigOverride) return;
     stub = overrideStub(found.code, cls);
     if (stub) found.sig.append(sigOverride);

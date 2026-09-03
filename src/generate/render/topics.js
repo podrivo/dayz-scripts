@@ -86,7 +86,8 @@ export function renderModule(ctx, mod) {
         .join('')}</ul>`
     : '';
 
-  const src = (item) => `<a class="member-src" href="${fileLineHref(site, base, item.file, item.line)}">src</a>`;
+  const dataSrc = (item) =>
+    item.file ? ` data-src="${fileLineHref(site, base, item.file, item.line)}"` : '';
 
   // Everything the topic declares, flattened the way Doxygen flattened it: a
   // group page there buckets members by shape rather than by owner, so a class
@@ -148,11 +149,10 @@ export function renderModule(ctx, mod) {
     entries.length
       ? /* html */ `<table class="list"><tbody>${entries
           .map((e) => {
-            const source = e.item.file ? src(e.item) : '';
             const more = e.extra ? `<a class="member-src" href="#${e.id}">more…</a>` : '';
-            return `<tr${e.extra ? '' : ` id="${e.id}"`}><td><code>${sigOf(e)}</code>${e.ordinal || ''}${condBadges(e.item.cond)}</td><td>${
+            return `<tr${e.extra ? '' : ` id="${e.id}"`}${dataSrc(e.item)}><td><code>${sigOf(e)}</code>${e.ordinal || ''}${condBadges(e.item.cond)}</td><td>${
               e.item.doc ? briefOf(e.item.doc, site, base) : ''
-            }</td><td>${source}${more}</td></tr>`;
+            }</td><td>${more}</td></tr>`;
           })
           .join('\n')}</tbody></table>`
       : '';
@@ -173,10 +173,9 @@ export function renderModule(ctx, mod) {
                 }</span>`
               : '';
             const doc = e.item.doc ? `<div class="member-doc">${renderDoc(e.item.doc, site, base)}</div>` : '';
-            const source = e.item.file ? src(e.item) : '';
-            return /* html */ `<div class="member" id="${e.id}">
+            return /* html */ `<div class="member" id="${e.id}"${dataSrc(e.item)}>
 <h3 class="member-name">${esc(e.item.name)}${e.ordinal || ''}${owner}</h3>
-<div class="member-sig"><code>${sigOf(e)}</code>${condBadges(e.item.cond)}<a class="anchor" href="#${e.id}">#</a>${source}</div>
+<div class="member-sig"><code>${sigOf(e)}</code>${condBadges(e.item.cond)}</div>
 ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e.owner)}</div>`;
           })
           .join('\n')
@@ -187,7 +186,7 @@ ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e
     ? `<table class="list"><tbody>${[...mod.defines]
         .sort(byName)
         .map(
-          (d) => `<tr id="${esc(d.name)}"><td><code>${esc(d.name)}</code>${condBadges(d.cond)}</td><td>${d.value ? `<code class="lit">${esc(d.value)}</code>` : ''}</td><td>${src(d)}</td></tr>`
+          (d) => `<tr id="${esc(d.name)}"${dataSrc(d)}><td><code>${esc(d.name)}</code>${condBadges(d.cond)}</td><td>${d.value ? `<code class="lit">${esc(d.value)}</code>` : ''}</td><td></td></tr>`
         )
         .join('\n')}</tbody></table>`
     : '';
@@ -196,7 +195,7 @@ ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e
     ? `<table class="list"><tbody>${[...mod.typedefs]
         .sort(byName)
         .map(
-          (t) => `<tr><td><code>${esc(t.name)}</code></td><td><code>${linkType(t.type, site, base)}</code></td><td>${src(t)}</td></tr>`
+          (t) => `<tr${dataSrc(t)}><td><code>${esc(t.name)}</code></td><td><code>${linkType(t.type, site, base)}</code></td><td></td></tr>`
         )
         .join('\n')}</tbody></table>`
     : '';

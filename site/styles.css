@@ -78,6 +78,17 @@
      every page that does not gets the header's offset and nothing more;
      site/app/pagebar.js writes --h-bar-size where there is a bar. */
   --h-bar: var(--h-bar-size, 0px);
+  /* Shared by hover-reveal affordances (#, src, Copy, Suggest a note, …). */
+  --fade: .15s ease;
+}
+
+/* Animatable show/hide for member-row chips. Transitioned on the row so
+   every child — including Copy / Suggest moved in after hover starts —
+   shares one fade instead of each running its own opacity transition. */
+@property --show {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
 }
 
 /* Type scale. Step names and line-heights follow Tailwind
@@ -912,11 +923,21 @@ table.list tr:hover td { background: var(--bg2); }
 table.list tr:target td { background: var(--accent-bg); }
 /* Source chips in list rows stay out of the way, same as on a member
    signature. The "more…" jump on topic summaries also uses this class
-   but points at an in-page id, so it stays visible. */
-table.list a.member-src:not([href^="#"]) { opacity: 0; pointer-events: none; }
+   but points at an in-page id, so it stays visible. data-src marks rows
+   that get an injected src chip on hover. */
+table.list a.member-src:not([href^="#"]) {
+  opacity: var(--show);
+  pointer-events: none;
+  transition: color var(--fade), border-color var(--fade);
+}
+table.list tr { transition: --show var(--fade); }
+table.list tr:hover,
+table.list tr:target { --show: 1; }
 table.list tr:hover a.member-src,
 table.list tr:target a.member-src,
-table.list a.member-src:focus-visible { opacity: 1; pointer-events: auto; }
+table.list a.member-src:focus-visible { pointer-events: auto; }
+table.list a.member-src:focus-visible { opacity: 1; }
+table.list:has([data-src]) td:last-child,
 table.list:has(.member-src) td:last-child { width: 1%; white-space: nowrap; }
 table.list td:first-child { white-space: nowrap; }
 /* Except where the first column holds a whole declaration rather than a name.
@@ -1058,19 +1079,23 @@ table.list.doc-table td:first-child { padding-left: 0; }
 }
 .th-more:hover { text-decoration: underline; }
 
-.member { padding: 10px 12px; margin: 0 -12px; border-radius: 16px; transition: background-color .15s ease; }
-.member:hover { background: var(--bg2); }
-.member:target { background: var(--accent-bg); outline: 1px solid var(--accent2); }
-.member-sig { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.member {
+  padding: 10px 12px; margin: 0 -12px; border-radius: 16px;
+  transition: background-color var(--fade), --show var(--fade);
+}
+.member:hover { background: var(--bg2); --show: 1; }
+.member:target { background: var(--accent-bg); outline: 1px solid var(--accent2); --show: 1; }
+.member-sig {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  /* Match the 24px chips so injecting them on hover does not grow the row. */
+  min-height: 24px;
+}
 .member-sig > code { background: none; padding: 0; font-size: var(--text-sm); order: 0; }
 .member-sig > .badge { order: 1; }
-.member-sig > .anchor { order: 2; opacity: 0; font-weight: 600; transition: opacity .15s ease; }
-.member-sig > .member-src { order: 3; opacity: 0; pointer-events: none; transition: opacity .15s ease; }
+.member-sig > .anchor { order: 2; font-weight: 600; }
+.member-sig > .member-src { order: 3; }
 .member-sig > .copy-btn { order: 4; }
 .member-sig > .note-add { order: 5; }
-.member:hover .anchor, .member:target .anchor,
-.member:hover .member-src, .member:target .member-src, .member-src:focus-visible { opacity: 1; }
-.member:hover .member-src, .member:target .member-src, .member-src:focus-visible { pointer-events: auto; }
 .member-doc { margin: 6px 0 0; font-size: var(--text-sm); color: var(--fg); }
 .member-doc p { margin: 4px 0; }
 
@@ -1149,10 +1174,6 @@ table.list.doc-table td:first-child { padding-left: 0; }
   width: 16px; height: 16px;
   --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M4 4l8 8M12 4l-8 8'/%3E%3C/svg%3E");
 }
-.note-add { opacity: 0; transition: opacity .15s ease; }
-.member:hover .note-add, .enum-table tr:hover .note-add,
-.note-add:focus-visible { opacity: 1; }
-
 pre.code, pre.attrs {
   background: var(--code-bg); border: 1px solid var(--line); border-radius: 10px;
   padding: 12px 14px; overflow-x: auto; font-size: var(--text-sm); line-height: 1.55;
@@ -1259,6 +1280,7 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
   background: var(--bg); color: var(--fg2);
   font: inherit; font-size: var(--text-xs); font-weight: 500; line-height: 16px;
   white-space: nowrap; text-decoration: none;
+  transition: color var(--fade), border-color var(--fade);
 }
 .copy-btn, .hist-btn { cursor: pointer; }
 .badge-added { background: var(--accent-bg); color: var(--added); }
@@ -1275,17 +1297,36 @@ a.badge-since:hover, a.badge-added:hover, a.badge-changed:hover {
 .has-copy { position: relative; }
 .copy-block {
   position: absolute; top: 8px; right: 8px; z-index: 2; opacity: 0;
+  pointer-events: none; transition: opacity var(--fade);
   box-sizing: border-box; display: inline-flex; align-items: center; height: 24px;
 }
-.has-copy:hover .copy-block, .copy-block:focus-visible, .copy-block.copied { opacity: 1; }
-.copy-sig, .copy-override {
-  box-sizing: border-box; display: inline-flex; align-items: center;
-  height: 24px; opacity: 0; pointer-events: none;
-  transition: opacity .15s ease;
+.has-copy:hover .copy-block, .copy-block:focus-visible, .copy-block.copied {
+  opacity: 1; pointer-events: auto;
 }
-.member:hover .copy-sig, .member:target .copy-sig, .copy-sig:focus-visible, .copy-sig.copied,
-.member:hover .copy-override, .member:target .copy-override, .copy-override:focus-visible,
-.copy-override.copied { opacity: 1; pointer-events: auto; }
+/* #, src, Copy, Override, Suggest a note — opacity tracks --show on the row. */
+.member-sig > .anchor,
+.member-sig > .member-src,
+.copy-sig, .copy-override,
+.note-add {
+  opacity: var(--show);
+  pointer-events: none;
+  transition: color var(--fade), border-color var(--fade);
+}
+.enum-table tr { transition: --show var(--fade); }
+.enum-table tr:hover,
+.enum-table tr:target { --show: 1; }
+.member:hover :is(.anchor, .member-src, .copy-sig, .copy-override, .note-add),
+.member:target :is(.anchor, .member-src, .copy-sig, .copy-override, .note-add),
+.enum-table tr:hover .note-add,
+.enum-table tr:target .note-add,
+:is(.member-src, .copy-sig, .copy-override, .note-add):focus-visible,
+.copy-sig.copied, .copy-override.copied {
+  pointer-events: auto;
+}
+:is(.member-src, .copy-sig, .copy-override, .note-add):focus-visible,
+.copy-sig.copied, .copy-override.copied {
+  opacity: 1;
+}
 /* Specificity keeps .copy-btn.copied::before ahead of this one, so the label
    still becomes "Copied" for the moment after a click. */
 .copy-override::before { content: "Override"; }
