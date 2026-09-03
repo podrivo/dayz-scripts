@@ -41,7 +41,7 @@ function editEl(key, current) {
   a.href = contribHref(key, current);
   a.target = '_blank';
   a.rel = 'noopener';
-  a.dataset.tip = 'Suggest an edit to this note';
+  a.dataset.tip = 'Suggest an edit';
   a.setAttribute('aria-label', a.dataset.tip);
   const ic = document.createElement('i');
   ic.className = 'ic ic-pencil';
