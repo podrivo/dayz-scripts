@@ -853,6 +853,24 @@ a.card { cursor: pointer; }
 .card-ext h3 { padding-right: 22px; }
 .card-ext .ic-ext { position: absolute; top: 12px; right: 12px; color: color-mix(in srgb, var(--fg2) 40%, transparent); transition: color .15s ease; pointer-events: none; }
 .card-ext:hover .ic-ext { color: var(--fg); }
+
+.videos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.video h3 { margin: 12px 0 0; color: var(--accent); font-size: var(--text-sm); }
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #000;
+}
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 .releases { margin: 8px 0 36px; }
 .releases details { border: 1px solid var(--line); border-radius: 12px; margin: 8px 0; padding: 10px 16px; }
 .releases summary { cursor: pointer; font-weight: 600; }
@@ -1887,6 +1905,7 @@ details.cmp-change { padding: 0; }
   .nav > a { height: auto; min-height: 32px; width: 100%; padding: 7px 10px; }
   .main { padding: 20px var(--gutter) 32px; }
   .cards { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .videos { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
   .search-trigger { width: 32px; padding: 0; justify-content: center; }
   .search-trigger kbd { display: none; }
   .search-trigger:hover { background: var(--bg2); border-color: var(--accent2); }

@@ -76,6 +76,18 @@ export const DISCORD_LINKS = [
   ]),
 ];
 
+/** Community video tutorials. Shown on /community/ only when development is on,
+ *  same gate as the Guides nav entry. The long-form intro is pinned first; the
+ *  rest are alphabetical. */
+export const VIDEO_LINKS = [
+  ['Scripting Theory and Foundational Basics', 'https://www.youtube.com/watch?v=Da_IVQ7KMws', 'ItsATreee · 3h49m raw intro to DayZ script modding'],
+  ...alpha([
+    ['DayZ Basic Animations Tutorial', 'https://youtu.be/sB1JDKOABQU', 'ItsATreee · animation basics for DayZ mods'],
+    ['DayZ Door Animations & Keycards', 'https://youtu.be/ZV3OHgA52hk', 'ItsATreee · door animations and keycard setup'],
+    ['Opening binarized P3Ds', 'https://youtu.be/OUXQgH3k8n0', 'ItsATreee · inspect binarized models without de-binarizing'],
+  ]),
+];
+
 /**
  * What the community has built around the scripts, grouped the way /community/
  * lists it. None of it is official, endorsed, or vetted here beyond being

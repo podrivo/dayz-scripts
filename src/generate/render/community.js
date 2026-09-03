@@ -3,9 +3,34 @@
 import { esc, layout, EXT } from '../html.js';
 import {
   OFFICIAL_LINKS, OFFICIAL_MODDING_LINKS, OFFICIAL_MAPS, WORKSHOP_MAPS,
-  DISCORD_LINKS, COMMUNITY_SECTIONS, REPO_URL,
+  DISCORD_LINKS, VIDEO_LINKS, COMMUNITY_SECTIONS, REPO_URL,
 } from '../content.js';
 import { linkCards } from './shared.js';
+
+function youtubeId(url) {
+  try {
+    const u = new URL(url);
+    if (u.hostname === 'youtu.be') return u.pathname.slice(1).split('/')[0];
+    return u.searchParams.get('v');
+  } catch {
+    return null;
+  }
+}
+
+function videoEmbeds(videos) {
+  return /* html */ `<div class="videos">
+${videos.map(([label, url]) => {
+    const id = youtubeId(url);
+    if (!id) return '';
+    return `<article class="video">
+  <div class="video-frame">
+    <iframe src="https://www.youtube-nocookie.com/embed/${esc(id)}" title="${esc(label)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+  <h3>${esc(label)}</h3>
+</article>`;
+  }).filter(Boolean).join('\n')}
+</div>`;
+}
 
 /**
  * Where to go for everything this site does not cover. The API is generated,
@@ -18,11 +43,17 @@ import { linkCards } from './shared.js';
  * Workshop mods are site/workshop.json. Nothing here is derived from a build,
  * so these bytes are identical across all of them and the page keeps its hard
  * link; see layout() in src/generate/html.js. The Workshop section is an empty
- * shell, filled by site/app/workshop.js.
+ * shell, filled by site/app/workshop.js. Videos ship only when development is
+ * on, matching the Guides nav gate.
  */
 export function renderCommunity(ctx) {
   const section = ({ id, title, links }) => /* html */ `<h2 id="${id}">${esc(title)}</h2>
 ${linkCards(links, true)}`;
+
+  const videos = ctx.development
+    ? /* html */ `<h2 id="videos">Videos</h2>
+${videoEmbeds(VIDEO_LINKS)}`
+    : '';
 
   const content = /* html */ `
 <h1>Community</h1>
@@ -43,6 +74,7 @@ ${COMMUNITY_SECTIONS.map(section).join('\n')}
 ${linkCards(OFFICIAL_MAPS, true)}
 <p>Community terrains load as Workshop mods. These are the ones servers actually run.</p>
 ${linkCards(WORKSHOP_MAPS, true)}
+${videos}
 <h2 id="notes">Community notes</h2>
 <p>Most of the script API has no doc comment. A community note fills one in: a short annotation on a class, enum or member — what an argument expects, whether a call is server-only, what a method does that its name does not say. Notes show up on that declaration's page, labelled as community writing rather than Bohemia's, and on every build at once.</p>
 <p>They live in one file, <code>site/notes.json</code>, keyed by a type name or <code>Type.Member</code>:</p>

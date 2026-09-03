@@ -112,6 +112,16 @@ test('a section is marked when the page sits under it', () => {
   assert.ok(guide.includes('<a class="nav-item active" href="guides/"'), 'guide pages count as Guides');
 });
 
+test('community videos ship only in development', async () => {
+  const { renderCommunity } = await import('../src/generate/render/community.js');
+  const ctx = { site: { label: '1.29.0' }, base: '', versionPath: '', versions: [], root: true };
+  assert.ok(!renderCommunity(ctx).includes('id="videos"'), 'videos hidden in production');
+  const html = renderCommunity({ ...ctx, development: true });
+  assert.ok(html.includes('id="videos"'), 'videos shown in development');
+  assert.ok(html.includes('youtube-nocookie.com/embed/Da_IVQ7KMws'), 'scripting theory is embedded');
+  assert.ok(html.indexOf('id="maps"') < html.indexOf('id="videos"'), 'videos sit after maps');
+});
+
 // The module topics differ from build to build, so they are fetched from
 // nav.json rather than written into the page. Were they inlined, no page would
 // be reusable across a build that added a topic, and every page reused across
