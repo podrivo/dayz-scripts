@@ -198,6 +198,13 @@ export function initNotes() {
   parkTarget();
   main.addEventListener('click', (e) => {
     const a = e.target.closest('.note-edit, .note-add, .note-ask');
-    if (a) track('suggest_note', { note_action: a.classList.contains('note-edit') ? 'edit' : 'add' });
+    if (!a) return;
+    const action = a.classList.contains('note-edit') ? 'edit'
+      : a.classList.contains('note-ask') ? 'ask' : 'add';
+    const host = a.closest('.member[id], .enum-table tr[id]');
+    const declaration = host
+      ? (host.matches('tr') ? `${type}.${host.id}` : keyFor(host))
+      : type;
+    track('suggest_note', { note_action: action, declaration: declaration.slice(0, 120) });
   });
 }

@@ -1,7 +1,7 @@
 /* Steam Workshop cards on /community/. The items are fetched when the page
    opens; the HTML is only the empty list. */
 
-import { $, esc } from './dom.js';
+import { $, esc, track } from './dom.js';
 
 const WORKSHOP = 'https://steamcommunity.com/app/221100/workshop/';
 const STORE = 'https://store.steampowered.com/app/221100/DayZ/';
@@ -24,9 +24,37 @@ const fromCatalog = (catalog) => ({
   })),
 });
 
+function sectionOf(el) {
+  if (el.closest('#workshop-list, #workshop-stats')) return 'workshop';
+  let s = el.closest('.cards, .stats, p, pre, .videos') || el;
+  while (s && !s.classList?.contains('main')) {
+    if (s.matches?.('h2[id]')) return s.id;
+    s = s.previousElementSibling || s.parentElement;
+  }
+  return '';
+}
+
 export function initWorkshop() {
   const box = $('#workshop-list');
   if (!box) return;
+
+  $('.main')?.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const inGrid = a.closest('.cards, .stats, #workshop-list, #workshop-stats');
+    if (!inGrid && a.target !== '_blank') return;
+    const label = (
+      a.matches('.card') ? a.querySelector('h3')?.textContent
+      : a.matches('.stat') ? a.querySelector('span')?.textContent || a.textContent
+      : a.textContent
+      || ''
+    ).replace(/\s+/g, ' ').trim();
+    track('community_card', {
+      link_label: label.slice(0, 100),
+      link_url: a.href.slice(0, 200),
+      link_section: sectionOf(a),
+    });
+  });
   const stats = $('#workshop-stats');
   const paint = (data) => {
     if (!data.items?.length) throw new Error();

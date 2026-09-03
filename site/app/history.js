@@ -287,7 +287,13 @@ function addTimeline(main, hist, builds, rec, here) {
       else more.remove();
       return;
     }
-    if (e.target.closest('.th-link')) close();
+    if (e.target.closest('.th-link')) {
+      track('history_jump', { jump_kind: 'member' });
+      close();
+      return;
+    }
+    const build = e.target.closest('.th-head a');
+    if (build) track('history_jump', { jump_kind: 'changelog' });
   });
 
   let state = 'idle';

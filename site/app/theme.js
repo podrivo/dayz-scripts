@@ -1,6 +1,6 @@
 /* Light / dark. */
 
-import { $, typing } from './dom.js';
+import { $, typing, track } from './dom.js';
 
 /* Two-state toggle over a three-state model (light / dark / system).
    Toggling to the value the OS already resolves to clears the override so
@@ -18,6 +18,7 @@ function toggleTheme() {
     document.documentElement.dataset.theme = next;
     try { localStorage.setItem('theme', next); } catch {}
   }
+  track('toggle_theme', { theme: next });
 }
 
 export function initTheme() {

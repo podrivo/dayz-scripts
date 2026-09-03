@@ -110,6 +110,7 @@ export function initVersionPicker() {
     await fillMenu();
     verMenu.hidden = false;
     verBtn.setAttribute('aria-expanded', 'true');
+    track('open_version_picker');
     const cur = verMenu.querySelector('.cur');
     if (cur) verMenu.scrollTop = cur.offsetTop - verMenu.clientHeight / 2;
   });

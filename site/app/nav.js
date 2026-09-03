@@ -1,7 +1,7 @@
 /* The header's navigation: a row of links, a drawer on a phone, and
    hiding once you have scrolled past it. */
 
-import { $ } from './dom.js';
+import { $, track } from './dom.js';
 
 export function initNav() {
   const menuBtn = $('#menuBtn');
@@ -15,6 +15,19 @@ export function initNav() {
     if (e.target.closest('#nav') || e.target.closest('#menuBtn')) return;
     if (document.body.classList.contains('nav-open')) setNavOpen(false);
   });
+  $('#nav')?.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (a) track('nav_click', { link_text: a.textContent.trim().slice(0, 40), link_url: a.href.slice(0, 200) });
+  });
+  $('.foot-nav')?.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (a) track('footer_click', { link_text: a.textContent.trim().slice(0, 40), link_url: a.href.slice(0, 200) });
+  });
+  for (const brand of document.querySelectorAll('a.brand')) {
+    brand.addEventListener('click', () => {
+      track('brand_click', { link_location: brand.closest('.foot') ? 'footer' : 'header' });
+    });
+  }
   hideOnScroll();
 }
 
