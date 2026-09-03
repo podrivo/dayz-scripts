@@ -105,7 +105,7 @@ export function renderEngineAndScriptGuide(ctx) {
 <tbody>
 <tr><td><code>proto</code></td><td>Declared in script and implemented by the engine</td><td>Call it as documented; there is no script body to inspect</td></tr>
 <tr><td><code>proto native</code></td><td>Engine implementation using the native calling convention</td><td>Do not treat it as an overrideable script method</td></tr>
-<tr><td><code>event</code></td><td>A callback the engine invokes on a script object</td><td>Override at an appropriate script layer and normally preserve the inherited call</td></tr>
+<tr><td><code>event</code></td><td>A callback the engine invokes on a script object</td><td>Override after <code>SetEventMask</code> opts the entity in. Do not call <code>super</code> on <code>IEntity</code> <code>EOn*</code> events — the original already runs</td></tr>
 <tr><td>Method with a body</td><td>Readable script implementation</td><td>Follow its calls and callers; extend it with inheritance or <code>modded class</code> where allowed</td></tr>
 </tbody>
 </table>
@@ -119,8 +119,11 @@ export function renderEngineAndScriptGuide(ctx) {
 <p>Engine-backed types and script implementations often form one inheritance chain. The boundary is not “engine class versus script class” by name; inspect the declaration and its modifiers member by member.</p>
 
 <h2 id="callbacks">Callbacks and extension points</h2>
-<p><code>event</code> marks a callback initiated by the engine. Script classes also define ordinary override hooks such as the <code>EE*</code> methods on ${typeLink(base, 'EntityAI')}. These are useful entry points because their script bodies and callers reveal how vanilla composes the behaviour.</p>
+<p><code>event</code> marks a callback initiated by the engine. Script classes also define ordinary override hooks such as the <code>EE*</code> methods on ${typeLink(base, 'EntityAI')}. These are useful entry points because their script bodies and callers reveal how vanilla composes the behaviour. On ${typeLink(base, 'IEntity')} <code>EOn*</code> events, skip <code>super</code>: the original is invoked regardless, and a super call only adds overhead.</p>
 <p><code>modded class</code> layers a rewrite over a class in the same compiled module, with <code>super</code> still reaching the previous implementation. Module boundaries matter: read <a href="${base}guides/script-layers/">Script layers</a> before deciding where a patch belongs.</p>
+
+<h2 id="version-defines">Version defines</h2>
+<p>The compiler defines <code>DAYZ_X_XX</code> as the current major.minor, for example <code>DAYZ_1_29</code> on 1.29. When experimental deprecates an API, wrap the old call in <code>#ifdef DAYZ_1_28</code> and the new one in <code>#else</code> so one PBO still builds against both until stable ships, then delete the dead branch.</p>
 
 <h2 id="reading">A practical reading path</h2>
 <ol>

@@ -30,7 +30,7 @@ const WORDS = {
   autoptr: 'A strong reference that also deletes the object when the variable holding it goes away.',
   out: 'Passed back to the caller: what the method assigns here is visible outside the call.',
   inout: 'Passed both ways: the method reads the caller\u2019s value and can write it back.',
-  notnull: 'This argument must not be null.',
+  notnull: 'This argument must not be null — handle null at the call site. Without notnull, null can be a valid argument.',
   thread: 'Runs the call on a script fiber of its own: it can Sleep() without holding up the frame.',
 };
 
