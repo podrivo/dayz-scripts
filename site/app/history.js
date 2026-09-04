@@ -27,6 +27,7 @@ function historyBadge(kind, text, title, href) {
   a.textContent = text;
   a.dataset.tip = title;
   a.href = href;
+  a.addEventListener('click', () => track('history_badge', { badge_kind: kind }));
   return a;
 }
 
@@ -52,6 +53,21 @@ function titleActions(title) {
 export function initHistory() {
   const main = $('.main');
   if (!pageType || !main) return;
+
+  // Depth on class/enum pages: 25/50/75/100, once each per load.
+  const marks = [25, 50, 75, 100];
+  const seen = new Set();
+  const onScroll = () => {
+    const max = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if (max <= 0) return;
+    const pct = (scrollY / max) * 100;
+    for (const m of marks) {
+      if (pct < m || seen.has(m)) continue;
+      seen.add(m);
+      track('scroll_depth', { percent: m, content_type: pageType.kind });
+    }
+  };
+  addEventListener('scroll', onScroll, { passive: true });
 
   const title = $('h1.class-title', main);
   const actions = title && titleActions(title);

@@ -5,7 +5,7 @@
    know because the bar is sticky and everything that scrolls to a heading
    has to clear it, and the one thing in it that does not fit a phone. */
 
-import { $ } from './dom.js';
+import { $, VPATH, track } from './dom.js';
 
 /** Below this the seven access chips are a menu instead of a row. */
 const NARROW = matchMedia('(max-width: 700px)');
@@ -122,6 +122,12 @@ function arrowRows(bar) {
 }
 
 export function initPageBar() {
+  if (VPATH === 'hierarchy/') {
+    $('.main')?.addEventListener('click', (e) => {
+      const a = e.target.closest('.catalog a[href]');
+      if (a) track('browse_hierarchy', { link_label: a.textContent.trim().slice(0, 80) });
+    });
+  }
   const bar = $('.pagebar');
   if (!bar) return;
   trackHeight(bar);

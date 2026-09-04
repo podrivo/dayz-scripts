@@ -5,7 +5,7 @@
    rows that are currently visible — the ones under an open folder — and
    expands or collapses with the usual arrow keys. */
 
-import { $, typing } from './dom.js';
+import { $, typing, track } from './dom.js';
 
 const KEYS = new Set(['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Home', 'End']);
 
@@ -160,6 +160,14 @@ export function wireTree(tree, { claim = KEYS, start = null, box = null } = {}) 
   // A <details> toggle does not bubble, so it is taken on the way down. Every
   // way a folder moves arrives here: a click, an arrow, a file revealed.
   tree.addEventListener('toggle', () => saveOpen(tree), { capture: true, signal });
+  tree.addEventListener('click', (e) => {
+    const a = e.target.closest('.tree-file > a');
+    if (!a) return;
+    track('browse_file', {
+      browse_source: box ? 'sidebar' : 'index',
+      file: (a.querySelector('code')?.textContent || a.textContent || '').trim().slice(0, 80),
+    });
+  }, { signal });
 
   const rows = () => tree.querySelectorAll('summary, .tree-file > a');
   let stop = null;

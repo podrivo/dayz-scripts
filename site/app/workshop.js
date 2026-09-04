@@ -1,7 +1,8 @@
 /* Steam Workshop cards on /community/. The items are fetched when the page
-   opens; the HTML is only the empty list. */
+   opens; the HTML is only the empty list. Card clicks on home / community /
+   about / guides are tracked here too. */
 
-import { $, esc, track } from './dom.js';
+import { $, esc, VPATH, track } from './dom.js';
 
 const WORKSHOP = 'https://steamcommunity.com/app/221100/workshop/';
 const STORE = 'https://store.steampowered.com/app/221100/DayZ/';
@@ -34,27 +35,41 @@ function sectionOf(el) {
   return '';
 }
 
-export function initWorkshop() {
-  const box = $('#workshop-list');
-  if (!box) return;
+const cardPage = () => {
+  if (VPATH === 'community/') return 'community';
+  if (VPATH === 'about/') return 'about';
+  if (VPATH === 'guides/') return 'guides';
+  if (VPATH === '') return 'home';
+  return null;
+};
 
+/** Home / community / about / guides card grids (and community outbound links). */
+export function initCards() {
+  const page = cardPage();
+  if (!page) return;
   $('.main')?.addEventListener('click', (e) => {
     const a = e.target.closest('a[href]');
     if (!a) return;
     const inGrid = a.closest('.cards, .stats, #workshop-list, #workshop-stats');
-    if (!inGrid && a.target !== '_blank') return;
+    if (!inGrid && !(page === 'community' && a.target === '_blank')) return;
     const label = (
       a.matches('.card') ? a.querySelector('h3')?.textContent
       : a.matches('.stat') ? a.querySelector('span')?.textContent || a.textContent
       : a.textContent
       || ''
     ).replace(/\s+/g, ' ').trim();
-    track('community_card', {
+    track('click_card', {
+      page,
       link_label: label.slice(0, 100),
       link_url: a.href.slice(0, 200),
       link_section: sectionOf(a),
     });
   });
+}
+
+export function initWorkshop() {
+  const box = $('#workshop-list');
+  if (!box) return;
   const stats = $('#workshop-stats');
   const paint = (data) => {
     if (!data.items?.length) throw new Error();

@@ -45,6 +45,7 @@ function srcLink() {
   a.className = 'member-src';
   a.textContent = 'src';
   a.title = 'View source';
+  a.addEventListener('click', () => track('view_source', { source: 'member' }));
   return a;
 }
 

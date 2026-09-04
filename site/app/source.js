@@ -208,6 +208,9 @@ export function initSourceView() {
   const srcEl = $('#src code');
   if (!srcEl) return;
   $('#ghSrc')?.addEventListener('click', () => track('view_github', { source: 'page' }));
+  $('#src')?.addEventListener('click', (e) => {
+    if (e.target.closest('.ldoc')) track('view_docs', { source: 'file' });
+  });
 
   const raw = srcEl.textContent;
   const paint = (resolve, decls) => {
