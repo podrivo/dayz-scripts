@@ -18,7 +18,7 @@ import { recordingSite, classDeps, enumDeps, membersDeps } from './memo.js';
 import {
   renderHome, renderAnnotated, renderClassesIndex, renderClassesLetter, renderClass,
   renderClassMembers, renderFields, renderEnum, renderGlobals, renderModulesIndex,
-  renderModule, renderFilesIndex, renderFile, renderHierarchy, renderCompare, renderDeprecated,
+  renderModule, renderFilesIndex, renderDirectory, renderFile, renderHierarchy, renderCompare, renderDeprecated,
   renderGuidesIndex, renderScriptLayersGuide, renderEngineAndScriptGuide,
   renderCommunity, renderAbout, renderCredits,
 } from './render.js';
@@ -173,6 +173,14 @@ export function* pages(site, opts) {
     yield page('guides/', 'index', () => renderGuidesIndex(ctx('guides/')));
     yield page('guides/script-layers/', 'index', () => renderScriptLayersGuide(ctx('guides/script-layers/')));
     yield page('guides/engine-and-script/', 'index', () => renderEngineAndScriptGuide(ctx('guides/engine-and-script/')));
+  }
+
+  const directoryQueue = [...site.dirRoots];
+  while (directoryQueue.length) {
+    const dir = directoryQueue.shift();
+    const rel = `files/${dir.path}/`;
+    yield page(rel, 'index', () => renderDirectory(ctx(rel), dir));
+    directoryQueue.unshift(...dir.dirs);
   }
 
   // file pages with embedded source

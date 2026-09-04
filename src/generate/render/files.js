@@ -1,8 +1,21 @@
-// The script files: the tree at /files/, and one file's source at
-// /files/<Dir>/<Name.c>/.
+// The script files: the tree at /files/, directory listings, and one file's
+// source at /files/<Dir>/<Name.c>/.
 
 import { esc, layout, EXT } from '../html.js';
 import { fileHref } from './shared.js';
+
+const fileRow = (site, base, f) => {
+  const n = (count, one, many) => count && `${count} ${count === 1 ? one : many}`;
+  const what = [
+    n(f.counts.classes, 'class', 'classes'),
+    n(f.counts.enums, 'enum', 'enums'),
+    n(f.counts.functions, 'function', 'functions'),
+    n(f.counts.globals, 'global', 'globals'),
+  ]
+    .filter(Boolean)
+    .join(', ');
+  return `<li class="tree-file"><a href="${fileHref(site, base, f.path)}"><code>${esc(f.name)}</code></a>${what ? ` <span class="muted">${what}</span>` : ''}</li>`;
+};
 
 /* No page bar anywhere under /files/. The layer tabs that used to sit here —
    All, 1_Core, 4_World — named the top folders of the tree, and the tree is
@@ -16,25 +29,12 @@ import { fileHref } from './shared.js';
 export function renderFilesIndex(ctx) {
   const { site, base } = ctx;
 
-  const fileRow = (f) => {
-    const n = (count, one, many) => count && `${count} ${count === 1 ? one : many}`;
-    const what = [
-      n(f.counts.classes, 'class', 'classes'),
-      n(f.counts.enums, 'enum', 'enums'),
-      n(f.counts.functions, 'function', 'functions'),
-      n(f.counts.globals, 'global', 'globals'),
-    ]
-      .filter(Boolean)
-      .join(', ');
-    return `<li class="tree-file"><a href="${fileHref(site, base, f.path)}"><code>${esc(f.name)}</code></a>${what ? ` <span class="muted">${what}</span>` : ''}</li>`;
-  };
-
   // Every folder shut. Which ones a reader wants open is theirs to say, and
   // site/app/tree.js remembers the answer; opening the six roots for them was
   // a guess that put four hundred rows between the top of the tree and the
   // second one.
   const dirNode = (d) => /* html */ `<li><details><summary><code>${esc(d.name)}</code> <span class="count">${d.count.toLocaleString('en-US')}</span></summary>
-<ul>${d.dirs.map(dirNode).join('')}${d.files.map(fileRow).join('')}</ul></details></li>`;
+<ul>${d.dirs.map(dirNode).join('')}${d.files.map((f) => fileRow(site, base, f)).join('')}</ul></details></li>`;
 
   /* The tree ships in the column it is read in.
 
@@ -50,7 +50,7 @@ export function renderFilesIndex(ctx) {
      would be rewritten by every build; there the column is still built in the
      browser from files.json. Here the tree is the content, and it changes with
      the build anyway. */
-  const tree = /* html */ `<ul class="tree">${site.dirRoots.map(dirNode).join('')}${site.rootFiles.map(fileRow).join('')}</ul>`;
+  const tree = /* html */ `<ul class="tree">${site.dirRoots.map(dirNode).join('')}${site.rootFiles.map((f) => fileRow(site, base, f)).join('')}</ul>`;
   const aside = /* html */ `<aside class="filetree" aria-label="Files"><p class="filetree-title">All files</p>${tree}</aside>`;
 
   // Below the column's width this is the whole page again, and the lede goes
@@ -64,6 +64,40 @@ export function renderFilesIndex(ctx) {
     active: 'files/',
     breadcrumbs: [{ label: 'Files' }],
     aside,
+    content,
+  });
+}
+
+export function renderDirectory(ctx, dir) {
+  const { site, base } = ctx;
+  const parts = dir.path.split('/');
+  const breadcrumbs = [{ label: 'Files', href: `${base}files/` }];
+  for (let i = 0; i < parts.length - 1; i++) {
+    breadcrumbs.push({
+      label: parts[i],
+      href: `${base}files/${parts.slice(0, i + 1).join('/')}/`,
+    });
+  }
+  breadcrumbs.push({ label: dir.name });
+
+  const directories = dir.dirs.length
+    ? `<h2>Directories <span class="count">${dir.dirs.length}</span></h2>
+<ul class="catalog directory-list">${dir.dirs.map((child) => `<li><div class="catalog-head"><a href="${base}files/${child.path}/"><code>${esc(child.name)}/</code></a><span class="count">${child.count.toLocaleString('en-US')} files</span></div></li>`).join('')}</ul>`
+    : '';
+  const files = dir.files.length
+    ? `<h2>Files <span class="count">${dir.files.length}</span></h2>
+<ul class="tree directory-files">${dir.files.map((f) => fileRow(site, base, f)).join('')}</ul>`
+    : '';
+  const content = /* html */ `
+<h1>${esc(dir.name)} <span class="count">${dir.count.toLocaleString('en-US')} files</span></h1>
+${directories}
+${files}`;
+  return layout({
+    ...ctx,
+    title: dir.name,
+    active: 'files/',
+    description: `Files and directories under ${dir.path} in the DayZ script tree.`,
+    breadcrumbs,
     content,
   });
 }
@@ -83,7 +117,7 @@ export function renderFile(ctx, fileEntry, fileModel, source) {
   const breadcrumbs = [{ label: 'Files', href: `${base}files/` }];
   for (let i = 0; i < parts.length - 1; i++) {
     const seg = parts[i];
-    breadcrumbs.push({ label: seg, href: `${base}files/#${parts.slice(0, i + 1).join('/')}` });
+    breadcrumbs.push({ label: seg, href: `${base}files/${parts.slice(0, i + 1).join('/')}/` });
   }
   breadcrumbs.push({ label: name });
 

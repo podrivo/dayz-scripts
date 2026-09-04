@@ -30,7 +30,7 @@ export {
 } from './render/classes.js';
 export { renderClass, renderClassMembers } from './render/class.js';
 export { renderEnum, renderGlobals } from './render/globals.js';
-export { renderFilesIndex, renderFile } from './render/files.js';
+export { renderFilesIndex, renderDirectory, renderFile } from './render/files.js';
 export { renderHierarchy } from './render/hierarchy.js';
 export { renderCompare, renderDeprecated } from './render/changelog.js';
 export {

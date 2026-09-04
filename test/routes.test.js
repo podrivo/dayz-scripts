@@ -8,6 +8,7 @@ import assert from 'node:assert/strict';
 import { parseFile } from '../src/parser/index.js';
 import { buildSiteModel } from '../src/generate/model.js';
 import { pages, resolve } from '../src/generate/routes.js';
+import { renderFile } from '../src/generate/render.js';
 import { doxygenRedirect } from '../src/doxygen.js';
 import { handler as doxygenHandler } from '../netlify/functions/doxygen.js';
 
@@ -89,6 +90,7 @@ test('URLs resolve to the renderer they name', () => {
     ['globals/constants/', 'index'],
     ['hierarchy/', 'index'],
     ['files/', 'index'],
+    ['files/3_Game/', 'index'],
     ['changelog/', 'index'],
     ['deprecated/', 'index'],
     ['community/', 'index'],
@@ -105,7 +107,7 @@ test('URLs resolve to the renderer they name', () => {
 });
 
 test('an unknown URL resolves to nothing', () => {
-  for (const rel of ['classes/Nope/', 'enum/Nope/', 'nonsense/', 'classes/Foo', 'class/Foo/', 'annotated/', 'changes/', 'compare/', 'module/Topic/', 'globals/variables/']) {
+  for (const rel of ['classes/Nope/', 'enum/Nope/', 'files/Nope/', 'nonsense/', 'classes/Foo', 'class/Foo/', 'annotated/', 'changes/', 'compare/', 'module/Topic/', 'globals/variables/']) {
     assert.equal(resolve(site, rel, opts), null, `${JSON.stringify(rel)} resolved`);
   }
 });
@@ -121,6 +123,7 @@ test('guides are available only in development', () => {
 
 test('pages go under their directory, sidecars stand alone', () => {
   assert.equal(resolve(site, 'classes/Foo/', opts).file, 'classes/Foo/index.html');
+  assert.equal(resolve(site, 'files/3_Game/', opts).file, 'files/3_Game/index.html');
   assert.equal(resolve(site, '', opts).file, 'index.html');
   assert.equal(resolve(site, 'search.json', opts).file, 'search.json');
 });
@@ -178,4 +181,19 @@ test('a resolved page renders without a memo behind it', () => {
     Object.keys(JSON.parse(resolve(site, 'xref-report.json', opts).render())),
     ['build', 'summary', 'issues']
   );
+});
+
+test('directory pages list immediate files and file breadcrumbs link back', () => {
+  const directory = resolve(site, 'files/3_Game/', opts).render();
+  assert.match(directory, /3_Game <span class="count">1 files<\/span>/);
+  assert.match(directory, /href="\.\.\/\.\.\/files\/3_Game\/Foo\.c\/"><code>Foo\.c<\/code><\/a>/);
+
+  const file = renderFile(
+    { site, versions: [], base: '../../../', root: '../../../', versionPath: 'files/3_Game/Foo.c/' },
+    site.files[0],
+    site.rawFiles[0],
+    SOURCE
+  );
+  assert.match(file, /href="\.\.\/\.\.\/\.\.\/files\/3_Game\/">3_Game<\/a>/);
+  assert.doesNotMatch(file, /files\/#3_Game/);
 });
