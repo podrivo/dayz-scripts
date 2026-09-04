@@ -6,7 +6,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { layout, SITE_TITLE } from '../src/generate/html.js';
 import { buildSiteModel } from '../src/generate/model.js';
-import { renderClass, renderEnum, renderCompare, renderFields } from '../src/generate/render.js';
+import { renderClass, renderEnum, renderCompare, renderDeprecated, renderFields } from '../src/generate/render.js';
 import { collectCredits } from '../src/generate/render/credits.js';
 import { classDeps } from '../src/generate/memo.js';
 import { SITE_URL } from '../src/generate/content.js';
@@ -166,7 +166,29 @@ test('the compare page is the same in every build', () => {
   assert.match(html, /id="release-notes"/, 'release notes sit on the page');
   assert.match(html, /release notes/, 'forum threads are linked');
   assert.match(html, /<select id="cmpFrom"[^>]*><\/select>/, 'the From picker is empty');
+  assert.match(html, /href="\.\.\/deprecated\/">Deprecated<\/a>/, 'the deprecation index is beside changes');
   assert.ok(!html.includes(`<strong title="${BUILD_A.build}">`), 'the current build is not marked');
+});
+
+test('deprecated page aggregates attributes and doc tags with guidance', () => {
+  const m = model(BUILD_A);
+  const foo = m.files[0].classes[0];
+  foo.attrs = ['[Obsolete("replaced by the NewFoo")]'];
+  foo.methods[0].doc = "@deprecated Handled by 'Foo.Run' now";
+  foo.methods.push({ name: 'Run', ret: 'void', params: [], line: 14, mods: [] });
+  foo.methods.push({ name: 'Old', ret: 'void', params: [], line: 15, mods: [], attrs: ['[Obsolete("1.30: No replacement")]'] });
+  foo.members.push({ name: 'OldField', type: 'int', line: 13, mods: [], attrs: ['[Obsolete]'] });
+  const s = buildSiteModel(m);
+  const html = renderDeprecated({
+    site: s, versions: [], base: '../', root: '../', versionPath: 'deprecated/', xref: true,
+  });
+
+  assert.match(html, /Deprecated <span class="count">4<\/span>/);
+  assert.match(html, /href="\.\.\/classes\/Foo\/"><code>Foo<\/code><\/a>/);
+  assert.match(html, /Use NewFoo instead/);
+  assert.match(html, /Use <a href="\.\.\/classes\/Foo\/#Run"><code>Foo\.Run<\/code><\/a> instead/);
+  assert.doesNotMatch(html, /No replacement|Not specified/i);
+  assert.match(html, /href="\.\.\/changelog\/">Changes<\/a>/);
 });
 
 // A class page lists where each of its methods is called from, so an edit to

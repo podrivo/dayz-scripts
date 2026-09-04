@@ -32,7 +32,7 @@ export { renderClass, renderClassMembers } from './render/class.js';
 export { renderEnum, renderGlobals } from './render/globals.js';
 export { renderFilesIndex, renderFile } from './render/files.js';
 export { renderHierarchy } from './render/hierarchy.js';
-export { renderCompare } from './render/changelog.js';
+export { renderCompare, renderDeprecated } from './render/changelog.js';
 export {
   renderGuidesIndex, renderScriptLayersGuide, renderEngineAndScriptGuide,
 } from './render/guides.js';

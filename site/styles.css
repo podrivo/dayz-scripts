@@ -951,6 +951,11 @@ table.list td:first-child > code { white-space: normal; }
 table.list.enum-index { table-layout: fixed; }
 table.list.enum-index td:first-child { width: 34%; white-space: normal; }
 table.list.enum-index td:nth-child(2) { width: 7em; white-space: nowrap; }
+body[data-vpath="deprecated/"] .main { max-width: 1200px; }
+table.list.deprecated-list td:first-child { white-space: nowrap; }
+table.list.deprecated-list td:first-child code { white-space: nowrap; overflow-wrap: normal; }
+table.list.deprecated-list th:nth-child(2),
+table.list.deprecated-list td:nth-child(2) { width: 1%; white-space: nowrap; }
 table.list.doc-table { margin-top: 28px; }
 table.list.doc-table:first-child { margin-top: 0; }
 table.list.doc-table th { white-space: nowrap; overflow-wrap: normal; }
@@ -1956,6 +1961,7 @@ details.cmp-change { padding: 0; }
   .palette { padding: 8vh 8px 8px; }
   .palette-hints { display: none; }
   table.list td:first-child { white-space: normal; }
+  table.list.deprecated-list td:first-child code { white-space: normal; }
   .minimap { display: none; }
   .cmp-stage { gap: 8px; }
   .cmp-mid { flex-direction: row; padding: 0; }

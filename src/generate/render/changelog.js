@@ -1,7 +1,14 @@
 // The changelog at /changelog/.
 
-import { layout } from '../html.js';
+import { parseDoc } from '../../parser/docparse.js';
+import { esc, layout } from '../html.js';
 import { renderReleases } from './shared.js';
+import { pageBar } from './pagebar.js';
+
+const changelogTabs = (base, active) => [
+  [`${base}changelog/`, 'Changes', active === 'changelog'],
+  [`${base}deprecated/`, 'Deprecated', active === 'deprecated'],
+];
 
 /**
  * An empty shell, filled in by site/compare.js.
@@ -45,8 +52,132 @@ ${renderReleases(ctx, { highlight: false, absolute: true })}
     ...ctx,
     title: 'Changelog',
     active: 'changelog/',
+    bar: pageBar({ tabs: changelogTabs(ctx.base, 'changelog') }),
     description: 'What changed in the DayZ Enforce Script API between two game builds.',
     breadcrumbs: [{ label: 'Changelog' }],
+    content,
+  });
+}
+
+function deprecationOf(item) {
+  const doc = parseDoc(item.doc);
+  let message;
+  if (doc && Object.hasOwn(doc, 'deprecated')) {
+    message = doc.deprecated;
+  } else {
+    const attr = item.attrs?.find((a) => /^\[\s*(?:Obsolete|Deprecated)\b/i.test(a));
+    if (!attr) return null;
+    message = attr.match(/\(\s*"((?:\\.|[^"])*)"/)?.[1];
+    message = message ? message.replace(/\\"/g, '"').replace(/\\\\/g, '\\') : '';
+  }
+
+  let text = message.trim();
+  const version = text.match(/^(\d+\.\d+):\s*(.*)$/);
+  const prefix = version ? `${version[1]}: ` : '';
+  if (version) text = version[2];
+  if (/^no replacement\.?$/i.test(text)) return '';
+
+  let match;
+  if ((match = text.match(/^handled by ['"]?(.+?)['"]? now\.?$/i))) {
+    text = `Use ${match[1]} instead`;
+  } else if ((match = text.match(/^(.+?) is used now instead\.?$/i))) {
+    text = `Use ${match[1]} instead`;
+  } else if ((match = text.match(/^replaced by (?:the )?(.+?)\.?$/i))) {
+    text = `Use ${match[1]} instead`;
+  } else if ((match = text.match(/^use the (.+?) instead\.?$/i))) {
+    text = `Use ${match[1]} instead`;
+  } else if ((match = text.match(/^deprecated use,\s*\w+ uses (.+?) now!?\s*$/i))) {
+    text = `Use ${match[1]} instead`;
+  } else if ((match = text.match(/^(\w+) handles all .+$/i))) {
+    text = `Use ${match[1]} instead`;
+  } else if (/^not used but kept in the case of modders needing\/using it\.?$/i.test(text)) {
+    text = 'Not used, but kept in case modders need it';
+  } else {
+    text = text.charAt(0).toUpperCase() + text.slice(1);
+  }
+  return prefix + text;
+}
+
+export function renderDeprecated(ctx) {
+  const { site, base } = ctx;
+  const entries = [];
+  const add = (kind, label, href, item, owner) => {
+    const guidance = deprecationOf(item);
+    if (guidance === null) return;
+    entries.push({ kind, label, href, guidance, owner });
+  };
+  const anchor = (name) => name.replace(/[^\w]/g, '_');
+  const memberOwner = (type, member) => {
+    const chain = [type, ...site.ancestorsOf(type)];
+    return chain.find((name) => {
+      const cls = site.classes.get(name);
+      return cls && [...cls.methods, ...cls.members].some((item) => item.name === member);
+    });
+  };
+  const guidanceHtml = (entry) => esc(entry.guidance).replace(
+    /\b([A-Za-z_]\w*)(?:(::|\.)([A-Za-z_]\w*))?\b/g,
+    (match, type, separator, member) => {
+      if (member) {
+        const owner = memberOwner(type, member);
+        if (owner) {
+          return `<a href="${base}classes/${owner}/#${anchor(member)}"><code>${esc(match)}</code></a>`;
+        }
+        if (site.classes.has(type)) {
+          return `<a href="${base}classes/${type}/"><code>${esc(type)}</code></a>${esc(separator + member)}`;
+        }
+      } else if (site.classes.has(type)) {
+        return `<a href="${base}classes/${type}/"><code>${esc(match)}</code></a>`;
+      } else if (entry.owner) {
+        const owner = memberOwner(entry.owner, type);
+        if (owner) {
+          return `<a href="${base}classes/${owner}/#${anchor(type)}"><code>${esc(match)}</code></a>`;
+        }
+      }
+      return esc(match);
+    }
+  );
+
+  for (const cls of site.classes.values()) {
+    const href = `${base}classes/${cls.name}/`;
+    add('Class', cls.name, href, cls);
+    for (const method of cls.methods) {
+      add('Method', `${cls.name}.${method.name}()`, `${href}#${anchor(method.name)}`, method, cls.name);
+    }
+    for (const member of cls.members) {
+      add('Field', `${cls.name}.${member.name}`, `${href}#${anchor(member.name)}`, member, cls.name);
+    }
+  }
+  for (const en of site.enums.values()) {
+    const href = `${base}enum/${en.name}/`;
+    add('Enum', en.name, href, en);
+    for (const value of en.values) add('Enum value', `${en.name}.${value.name}`, `${href}#${anchor(value.name)}`, value);
+  }
+  for (const fn of site.functions) add('Function', `${fn.name}()`, `${base}globals/functions/#${anchor(fn.name)}`, fn);
+  for (const value of site.globals) add('Constant', value.name, `${base}globals/constants/#${anchor(value.name)}`, value);
+  for (const type of site.typedefs) add('Typedef', type.name, `${base}globals/typedefs/#${anchor(type.name)}`, type);
+  for (const macro of site.defines) add('Macro', macro.name, `${base}globals/macros/#${anchor(macro.name)}`, macro);
+
+  entries.sort((a, b) => a.label.localeCompare(b.label));
+  const rows = entries.map((entry) => /* html */ `<tr>
+<td><a href="${entry.href}"><code>${esc(entry.label)}</code></a></td>
+<td>${entry.kind}</td>
+<td>${entry.guidance ? guidanceHtml(entry) : ''}</td>
+</tr>`).join('\n');
+  const list = rows
+    ? `<table class="list deprecated-list"><thead><tr><th>Declaration</th><th>Kind</th><th>Replacement or guidance</th></tr></thead><tbody>${rows}</tbody></table>`
+    : '<p class="muted">No deprecated declarations were found in this build.</p>';
+  const content = /* html */ `
+<h1>Deprecated <span class="count">${entries.length.toLocaleString('en-US')}</span></h1>
+<p>Declarations marked <code>Obsolete</code> or <code>@deprecated</code>, with the replacement or migration guidance supplied by the source when available.</p>
+${list}`;
+
+  return layout({
+    ...ctx,
+    title: 'Deprecated',
+    active: 'changelog/',
+    bar: pageBar({ tabs: changelogTabs(base, 'deprecated') }),
+    description: 'Deprecated DayZ Enforce Script declarations and their recommended replacements.',
+    breadcrumbs: [{ label: 'Deprecated' }],
     content,
   });
 }
