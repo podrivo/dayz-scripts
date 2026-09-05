@@ -289,6 +289,15 @@ test('class fields link to source and show both reference directions', () => {
   assert.match(html, /Referenced by<\/span> <a href="\.\.\/\.\.\/classes\/Foo\/#Do">Do\(\)<\/a>/);
 });
 
+test('long outbound reference lists collapse after three items', () => {
+  const m = model(BUILD_A);
+  m.files[0].classes[0].methods[0].calls = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo'];
+  const s = buildSiteModel(m);
+  const html = renderClass(ctx(s), s.classes.get('Foo'));
+  assert.match(html, /<summary>Show 2 more<\/summary>/);
+  assert.match(html, /<button class="xref-less" type="button">Show less<\/button>/);
+});
+
 test('class constructors appear before data members', () => {
   const m = model(BUILD_A);
   m.files[0].classes[0].methods.unshift({

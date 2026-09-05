@@ -71,6 +71,12 @@ export function writeList(items) {
   return `${items.slice(0, -1).join(', ')}<span class="xref-sep">, and </span>${items[items.length - 1]}`;
 }
 
+function expandableList(items) {
+  if (items.length <= CALLERS_SHOWN) return writeList(items);
+  const extra = items.length - CALLERS_SHOWN;
+  return `${items.slice(0, CALLERS_SHOWN).join(', ')} <details class="xref-more"><summary>Show ${extra} more</summary><span class="xref-more-list"><span class="xref-sep">, </span>${writeList(items.slice(CALLERS_SHOWN))} <button class="xref-less" type="button">Show less</button></span></details>`;
+}
+
 /** A name inside a reference list. Doxygen prints the scope only when it is
  *  not the scope of the page you are on, closes every function with "()", and
  *  falls back to plain text when the name will not resolve. */
@@ -107,7 +113,7 @@ export function callersBlock(name, ctx, scope = null, field = false) {
     extra <= 0
       ? ''
       : list.length <= CALLERS_LISTED
-        ? ` <details class="xref-more"><summary>Show ${extra} more</summary><span class="xref-more-list">${writeList(list.slice(CALLERS_SHOWN).map(link))} <button class="xref-less" type="button">Show less</button></span></details>`
+        ? ` <details class="xref-more"><summary>Show ${extra} more</summary><span class="xref-more-list"><span class="xref-sep">, </span>${writeList(list.slice(CALLERS_SHOWN).map(link))} <button class="xref-less" type="button">Show less</button></span></details>`
         : `, <span class="xref-rest">and ${extra.toLocaleString()} more</span>`;
   return /* html */ `<div class="xref"><span class="xref-label" title="Resolved from receiver types and lexical scope; globally unique names are used as a fallback">Referenced by</span> ${head}${rest}</div>`;
 }
@@ -131,7 +137,7 @@ export function referencesBlock(item, ctx, scope = null) {
     items.push(refName(ref.owner, ref.name, scope, base, true, false));
   }
   if (!items.length) return '';
-  return /* html */ `<div class="xref xref-out"><span class="xref-label">References</span> ${writeList(items)}</div>`;
+  return /* html */ `<div class="xref xref-out"><span class="xref-label">References</span> ${expandableList(items)}</div>`;
 }
 
 /**
