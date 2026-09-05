@@ -1014,8 +1014,9 @@ table.list.doc-table td:first-child { padding-left: 0; }
 /* Catalog: topics and the inheritance index. Most roots have no children;
    the ones that do show one level, and a bush stays folded. Deeper nests
    live on the topic or class page. */
+body[data-vpath="topics/"] .main { max-width: var(--w-prose); }
 .catalog {
-  column-count: 2;
+  column-count: 1;
   column-gap: 40px;
   list-style: none;
   padding: 0;
@@ -1078,14 +1079,71 @@ table.list.doc-table td:first-child { padding-left: 0; }
 }
 .catalog-kids .count { margin-left: auto; font-variant-numeric: tabular-nums; }
 .catalog-kids a { color: var(--fg2); }
+.catalog-head a:hover,
 .catalog-kids a:hover { color: var(--accent); text-decoration: none; }
+body[data-vpath="topics/"] :is(.catalog-head, .catalog-kids li) {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr) 4ch;
+  column-gap: 16px;
+  padding-block: 4px;
+}
+body[data-vpath="topics/"] :is(.catalog-head, .catalog-kids li) > a,
+body[data-vpath="topics/"] .catalog-desc {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+body[data-vpath="topics/"] .catalog-desc { grid-column: 2; grid-row: 1; margin: 0; }
+body[data-vpath="topics/"] :is(.catalog-head, .catalog-kids li) > .count {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  margin-left: 0;
+}
+body[data-vpath="topics/"] .catalog-kids { gap: 0; margin-top: 0; padding-left: 0; }
+body[data-vpath="topics/"] .catalog-kids a { padding-left: 14px; }
+body[data-vpath="topics/"] .catalog > li { padding-bottom: 10px; }
+body[data-vpath="classes/hierarchy/"] .main { max-width: var(--w-prose); }
+body[data-vpath="classes/hierarchy/"] :is(.catalog-head, .catalog-kids li) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 4ch;
+  column-gap: 16px;
+  padding-block: 4px;
+}
+body[data-vpath="classes/hierarchy/"] :is(.catalog-head, .catalog-kids li) > a {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+body[data-vpath="classes/hierarchy/"] :is(.catalog-head, .catalog-kids li) > .count {
+  grid-column: 2;
+  justify-self: end;
+  margin-left: 0;
+}
+body[data-vpath="classes/hierarchy/"] .catalog-kids { gap: 0; margin-top: 0; padding-left: 0; }
+body[data-vpath="classes/hierarchy/"] .catalog-kids a { padding-left: 14px; }
+body[data-vpath="classes/hierarchy/"] .catalog > li { padding-bottom: 10px; }
+body[data-vpath="classes/hierarchy/"] .main > h2 { margin: 32px 0 0; }
+body[data-vpath="classes/hierarchy/"] .main > h1 + h2 { margin-top: 16px; }
+body[data-vpath="classes/hierarchy/"] .catalog { margin-top: 4px; }
 .catalog-more { margin: 1px 0 0 14px; }
 .catalog-more .catalog-kids { padding-left: 0; margin-top: 2px; }
 .catalog-more > summary {
   cursor: pointer;
+  list-style: none;
   color: var(--fg2);
   font-size: var(--text-sm);
 }
+.catalog-more > summary::-webkit-details-marker { display: none; }
+.catalog-more > summary::before {
+  content: ''; display: inline-block; vertical-align: middle;
+  width: 10px; height: 10px; margin-right: 4px;
+  background: currentColor; opacity: .5;
+  -webkit-mask: var(--chev) center / contain no-repeat;
+  mask: var(--chev) center / contain no-repeat;
+  transform: rotate(-90deg);
+}
+.catalog-more[open] > summary::before { transform: none; }
 .catalog-more > summary:hover { color: var(--fg); }
 
 /* ---- class page ---- */

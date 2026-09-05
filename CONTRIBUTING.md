@@ -56,11 +56,11 @@ names the file.
 | --- | --- |
 | `/` | `src/generate/render/home.js` |
 | `/topics/`, `/topics/<Name>/` | `src/generate/render/topics.js` |
-| `/classes/`, `/classes/index/`, `/classes/<letter>/`, `/classes/fields/…` | `src/generate/render/classes.js` |
+| `/classes/`, `/classes/index/`, `/classes/<letter>/`, `/classes/members/…` | `src/generate/render/classes.js` |
 | `/classes/<Name>/`, `/classes/<Name>/members/` | `src/generate/render/class.js` |
 | `/enum/<Name>/`, `/globals/…` | `src/generate/render/globals.js` |
 | `/files/`, `/files/<Dir>/<Name.c>/` | `src/generate/render/files.js` |
-| `/hierarchy/` | `src/generate/render/hierarchy.js` |
+| `/classes/hierarchy/` | `src/generate/render/hierarchy.js` |
 | `/changelog/` | `src/generate/render/changelog.js` |
 | `/community/` | `src/generate/render/community.js` |
 | `/about/` | `src/generate/render/about.js` |

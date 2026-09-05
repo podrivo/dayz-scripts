@@ -165,6 +165,7 @@ function pinChrome() {
 
 export function initSwap() {
   if (!window.history?.pushState || !window.DOMParser) return;
+  if (!filePath(new URL(location.href))) return;
 
   pinChrome();
 

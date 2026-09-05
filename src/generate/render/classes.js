@@ -1,5 +1,5 @@
 // Everything under /classes/: the annotated list, the name-only index, the
-// per-letter pages, and the data-field pages at /classes/fields/.
+// per-letter pages, and the member indexes under /classes/.
 //
 // One class's own page is render/class.js.
 
@@ -92,9 +92,9 @@ export function renderClassesLetter(ctx, letter, names, letters) {
 export function renderFields(ctx, letter, letters, kind) {
   const { base } = ctx;
   const KINDS = {
-    all: ['Members', 'classes/fields/'],
-    functions: ['Methods', 'classes/fields/functions/'],
-    variables: ['Fields', 'classes/fields/variables/'],
+    all: ['Members', 'classes/members/'],
+    functions: ['Methods', 'classes/methods/'],
+    variables: ['Fields', 'classes/fields/'],
   };
   const [title, dir] = KINDS[kind];
 

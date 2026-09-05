@@ -314,10 +314,20 @@ const moveRedirects = [
   '/v/:build/globals/variables/ /v/:build/globals/constants/ 301',
 ];
 const fieldRedirects = [
-  '/fields/* /classes/fields/:splat 301',
-  '/fields/ /classes/fields/ 301',
-  '/v/:build/fields/* /v/:build/classes/fields/:splat 301',
-  '/v/:build/fields/ /v/:build/classes/fields/ 301',
+  '/fields/* /classes/members/:splat 301',
+  '/fields/ /classes/members/ 301',
+  '/v/:build/fields/* /v/:build/classes/members/:splat 301',
+  '/v/:build/fields/ /v/:build/classes/members/ 301',
+  '/hierarchy/ /classes/hierarchy/ 301',
+  '/v/:build/hierarchy/ /v/:build/classes/hierarchy/ 301',
+  '/classes/fields/functions/* /classes/methods/:splat 301',
+  '/classes/fields/functions/ /classes/methods/ 301',
+  '/v/:build/classes/fields/functions/* /v/:build/classes/methods/:splat 301',
+  '/v/:build/classes/fields/functions/ /v/:build/classes/methods/ 301',
+  '/classes/fields/variables/* /classes/fields/:splat 301',
+  '/classes/fields/variables/ /classes/fields/ 301',
+  '/v/:build/classes/fields/variables/* /v/:build/classes/fields/:splat 301',
+  '/v/:build/classes/fields/variables/ /v/:build/classes/fields/ 301',
 ];
 // The \defgroup pages were /module/ and then /modules/ before the site settled
 // on the name the nav, the breadcrumbs and every generated index already used.

@@ -41,7 +41,7 @@ const PAGES = [
   ['About', 'about/', 'Agents, the stack, and how to collaborate'],
   ['Credits', 'credits/', 'The DayZ credits roll, across every documented build'],
   ['Changelog', 'changelog/', 'What changed in the script API between two game builds'],
-  ['Hierarchy', 'hierarchy/', 'What extends what, from engine types down through every scripted subclass'],
+  ['Hierarchy', 'classes/hierarchy/', 'What extends what, from engine types down through every scripted subclass'],
   ['Guides', 'guides/', 'Conceptual maps for the DayZ script API', true],
   ['Script layers', 'guides/script-layers/', 'How 1_Core through 5_Mission compose and what belongs in each layer', true],
   ['Engine APIs and script code', 'guides/engine-and-script/', 'How to distinguish engine declarations from readable script implementations', true],

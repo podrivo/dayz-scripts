@@ -57,6 +57,16 @@ function hideOnScroll() {
   const slack = 16;
   let lastY = scrollY;
   let ticking = false;
+  let navigatingToc = false;
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.toc a')) return;
+    navigatingToc = true;
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      navigatingToc = false;
+      lastY = scrollY;
+    }));
+  });
 
   const pinned = () =>
     document.body.classList.contains('nav-open') ||
@@ -72,7 +82,7 @@ function hideOnScroll() {
     const showBtn = y >= header.offsetHeight;
     toTop.classList.toggle('on', showBtn);
     if (!showBtn && document.activeElement === toTop) toTop.blur();
-    if ($('.mm-track.grabbing')) return;
+    if (navigatingToc || $('.mm-track.grabbing')) return;
     if (y < header.offsetHeight || pinned() || dy < -slack) {
       document.documentElement.classList.remove('top-hidden');
     } else if (dy > slack) {

@@ -43,12 +43,12 @@ function indexTarget(file) {
   if (file === 'modules.html' || file === 'topics.html') return '/topics/';
   if (file === 'annotated.html') return '/classes/';
   if (file === 'classes.html') return '/classes/index/';
-  if (file === 'hierarchy.html') return '/hierarchy/';
+  if (file === 'hierarchy.html') return '/classes/hierarchy/';
   if (file === 'files.html' || file === 'dirs.html' || file.startsWith('dir_')) return '/files/';
-  if (file === 'functions.html') return '/classes/fields/';
-  if (file.startsWith('functions_func')) return '/classes/fields/functions/';
-  if (file.startsWith('functions_vars')) return '/classes/fields/variables/';
-  if (file.startsWith('functions_')) return '/classes/fields/';
+  if (file === 'functions.html') return '/classes/members/';
+  if (file.startsWith('functions_func')) return '/classes/methods/';
+  if (file.startsWith('functions_vars')) return '/classes/fields/';
+  if (file.startsWith('functions_')) return '/classes/members/';
   if (file === 'globals.html') return '/globals/';
   if (file.startsWith('globals_func')) return '/globals/functions/';
   if (file.startsWith('globals_vars')) return '/globals/constants/';

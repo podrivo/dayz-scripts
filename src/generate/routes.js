@@ -140,12 +140,12 @@ export function* pages(site, opts) {
     }
   }
 
-  // data fields: every class member, by initial and by kind
+  // every class member, by initial and by kind
   const fieldLetters = [...site.fields.keys()].sort();
   for (const [kind, dir] of [
-    ['all', 'classes/fields/'],
-    ['functions', 'classes/fields/functions/'],
-    ['variables', 'classes/fields/variables/'],
+    ['all', 'classes/members/'],
+    ['functions', 'classes/methods/'],
+    ['variables', 'classes/fields/'],
   ]) {
     yield page(dir, 'index', () => renderFields(ctx(dir), 'a', fieldLetters, kind));
     for (const l of fieldLetters) {
@@ -166,7 +166,7 @@ export function* pages(site, opts) {
     yield page(rel, 'index', () => renderGlobals(ctx(rel), kind));
   }
 
-  yield page('hierarchy/', 'index', () => renderHierarchy(ctx('hierarchy/')));
+  yield page('classes/hierarchy/', 'index', () => renderHierarchy(ctx('classes/hierarchy/')));
   yield page('files/', 'index', () => renderFilesIndex(ctx('files/')));
   // No diff is built for this one: it picks its own pair of builds and compares
   // them in the browser. See renderCompare in src/generate/render/changelog.js.

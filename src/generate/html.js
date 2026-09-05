@@ -268,7 +268,7 @@ export function briefOf(rawDoc, site, base) {
 // Labels are the DayZ names (Topics, Classes) rather than Doxygen's C-mode
 // ones (Modules, Data Structures).
 const NAV = [
-  ['classes/', 'Classes', ['hierarchy/']],
+  ['classes/', 'Classes'],
   ['files/', 'Files'],
   ['guides/', 'Guides'],
   ['globals/', 'Globals'],
@@ -276,19 +276,14 @@ const NAV = [
   ['changelog/', 'Changelog'],
 ];
 
-/** Whether this section owns `active`: its own path, anything under it,
- *  or an extra path that lives with it (Hierarchy sits with Classes). */
-function navHolds(href, extra, active) {
-  if (!active) return false;
-  if (href === active || active.startsWith(href)) return true;
-  return extra?.some((p) => p === active || active.startsWith(p)) ?? false;
-}
+/** Whether this section owns `active`: its own path or anything under it. */
+const navHolds = (href, active) => active && (href === active || active.startsWith(href));
 
 /** The bar itself. `active` is the version-relative directory of the page. */
 function navLevel(nodes, active, base) {
   return nodes
-    .map(([href, label, extra]) => {
-      const here = navHolds(href, extra, active);
+    .map(([href, label]) => {
+      const here = navHolds(href, active);
       return `<a class="nav-item${here ? ' active' : ''}" href="${base}${href}"${here ? ' aria-current="page"' : ''}>${esc(label)}</a>`;
     })
     .join('');

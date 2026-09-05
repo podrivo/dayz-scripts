@@ -35,7 +35,7 @@ export function renderHome(ctx) {
 <div class="home-stack">
 <section class="stats">
   ${stat(s.classes, 'classes', base + 'classes/')}
-  ${stat(s.methods, 'methods', base + 'classes/fields/functions/')}
+  ${stat(s.methods, 'methods', base + 'classes/methods/')}
   ${stat(s.enums, 'enums', base + 'globals/enums/')}
   ${stat(s.typedefs, 'typedefs', base + 'globals/typedefs/')}
   ${stat(s.globals, 'constants', base + 'globals/constants/')}
@@ -56,7 +56,7 @@ export function renderHome(ctx) {
       <h3>Topics</h3>
       <p>The ${site.groups.size} topics the scripts group themselves into — math, physics, entities, UI and the constant tables.</p>
     </a>
-    <a class="card" href="${base}hierarchy/">
+    <a class="card" href="${base}classes/hierarchy/">
       <h3>Hierarchy</h3>
       <p>What extends what, from engine types down through every scripted subclass.</p>
     </a>

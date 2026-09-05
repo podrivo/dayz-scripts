@@ -77,7 +77,7 @@ test('the nav names the DayZ-facing sections, and marks the page once', () => {
   assert.ok(html.includes('href="files/"'), 'Files is /files/');
   assert.ok(!html.includes('href="guides/"'), 'Guides is hidden in production');
   assert.ok(html.includes('href="globals/"'), 'Globals is /globals/');
-  assert.ok(!html.includes('href="classes/fields/"'), 'Members lives on the page bar, not the header');
+  assert.ok(!html.includes('href="classes/members/"'), 'Members lives on the page bar, not the header');
   assert.ok(!html.includes('href="files/#4_World"'), 'file layers live on the page bar, not the header');
   assert.ok(!html.includes('class="nav-sec"'), 'header sections are links, not hover menus');
   assert.ok(!html.includes('href="classes/index/"'), 'Class Index is not a nav entry');
@@ -106,7 +106,7 @@ test('the nav names the DayZ-facing sections, and marks the page once', () => {
 test('a section is marked when the page sits under it', () => {
   const html = layout({ title: 'x', base: '', active: 'classes/', versionPath: '', content: '' });
   assert.ok(html.includes('<a class="nav-item active" href="classes/"'));
-  const hierarchy = layout({ title: 'x', base: '', active: 'hierarchy/', versionPath: '', content: '' });
+  const hierarchy = layout({ title: 'x', base: '', active: 'classes/hierarchy/', versionPath: '', content: '' });
   assert.ok(hierarchy.includes('<a class="nav-item active" href="classes/"'), 'Hierarchy counts as Classes');
   const guide = layout({ title: 'x', base: '', active: 'guides/script-layers/', versionPath: '', development: true, content: '' });
   assert.ok(guide.includes('<a class="nav-item active" href="guides/"'), 'guide pages count as Guides');
@@ -566,7 +566,7 @@ test('fields letter pages are a shell, not an inlined member list', () => {
   const s = site(BUILD_A);
   const letters = [...s.fields.keys()].sort();
   const html = renderFields(
-    { site: s, versions: [], base: '../../../', root: '../../../', versionPath: 'classes/fields/d/', xref: true },
+    { site: s, versions: [], base: '../../../', root: '../../../', versionPath: 'classes/members/d/', xref: true },
     'd',
     letters,
     'all'

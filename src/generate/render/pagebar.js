@@ -44,16 +44,16 @@ const letterRow = ({ base, dir, list, current }) => {
 export function classTabs(base, active) {
   return [
     ['classes/', 'All'],
-    ['hierarchy/', 'Hierarchy'],
-    ['classes/fields/', 'Members'],
-    ['classes/fields/functions/', 'Methods'],
-    ['classes/fields/variables/', 'Fields'],
+    ['classes/hierarchy/', 'Hierarchy'],
+    ['classes/members/', 'Members'],
+    ['classes/methods/', 'Methods'],
+    ['classes/fields/', 'Fields'],
   ].map(([href, label]) => {
     const on =
       href === 'classes/'
         ? active === 'classes/' || active === 'classes/index/' || /^classes\/[a-z_]\//.test(active)
-        : href === 'classes/fields/'
-          ? active === 'classes/fields/' || /^classes\/fields\/[a-z_]\//.test(active)
+        : href === 'classes/members/'
+          ? active === 'classes/members/' || /^classes\/members\/[a-z_]\//.test(active)
           : active === href || active.startsWith(href);
     return [`${base}${href}`, label, on];
   });

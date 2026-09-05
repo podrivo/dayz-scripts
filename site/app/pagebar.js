@@ -122,7 +122,7 @@ function arrowRows(bar) {
 }
 
 export function initPageBar() {
-  if (VPATH === 'hierarchy/') {
+  if (VPATH === 'classes/hierarchy/') {
     $('.main')?.addEventListener('click', (e) => {
       const a = e.target.closest('.catalog a[href]');
       if (a) track('browse_hierarchy', { link_label: a.textContent.trim().slice(0, 80) });

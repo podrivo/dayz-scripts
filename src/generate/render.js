@@ -5,11 +5,11 @@
 //
 //   /                             render/home.js
 //   /topics/  /topics/<Name>/     render/topics.js
-//   /classes/ …  /classes/fields/ render/classes.js
+//   /classes/ …  /classes/members/ render/classes.js
 //   /classes/<Name>/  …/members/  render/class.js
 //   /enum/<Name>/  /globals/…     render/globals.js
 //   /files/  /files/<Dir>/<F.c>/  render/files.js
-//   /hierarchy/                   render/hierarchy.js
+//   /classes/hierarchy/           render/hierarchy.js
 //   /changelog/                   render/changelog.js
 //   /guides/  /guides/<Name>/     render/guides.js
 //   /community/                   render/community.js

@@ -1,4 +1,4 @@
-// The inheritance tree at /hierarchy/.
+// The inheritance tree at /classes/hierarchy/.
 
 import { esc, layout } from '../html.js';
 import { classTabs, pageBar } from './pagebar.js';
@@ -34,14 +34,25 @@ export function renderHierarchy(ctx) {
     return `<li><div class="catalog-head">${link}${count}</div>${childList}</li>`;
   };
 
+  const sections = new Map();
+  for (const name of roots) {
+    const first = name[0]?.toUpperCase();
+    const letter = first && /[A-Z]/.test(first) ? first : '#';
+    if (!sections.has(letter)) sections.set(letter, []);
+    sections.get(letter).push(name);
+  }
+
   const content = /* html */ `
 <h1>Hierarchy <span class="count">${site.classes.size.toLocaleString('en-US')}</span></h1>
-<ul class="catalog">${roots.map(root).join('')}</ul>`;
+${[...sections]
+    .map(([letter, names]) => `<h2 id="hierarchy-${letter === '#' ? 'other' : letter.toLowerCase()}">${letter} <span class="count">${names.length.toLocaleString('en-US')}</span></h2>
+<ul class="catalog">${names.map(root).join('')}</ul>`)
+    .join('\n')}`;
   return layout({
     ...ctx,
     title: 'Hierarchy',
-    active: 'hierarchy/',
-    bar: pageBar({ tabs: classTabs(base, 'hierarchy/') }),
+    active: 'classes/hierarchy/',
+    bar: pageBar({ tabs: classTabs(base, 'classes/hierarchy/') }),
     content,
   });
 }

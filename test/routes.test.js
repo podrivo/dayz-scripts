@@ -99,7 +99,7 @@ test('URLs resolve to the renderer they name', () => {
     ['enum/EFoo/', 'enum'],
     ['globals/functions/', 'index'],
     ['globals/constants/', 'index'],
-    ['hierarchy/', 'index'],
+    ['classes/hierarchy/', 'index'],
     ['files/', 'index'],
     ['files/3_Game/', 'index'],
     ['changelog/', 'index'],
