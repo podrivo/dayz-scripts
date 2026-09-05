@@ -11,12 +11,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { CACHE_DIR } from '../util.js';
 import { buildSearchIndex } from './search.js';
+import { conditionSlug } from './html.js';
 import { buildApi, renderLlmsTxt, renderAgentMd } from './api.js';
 import { renderFeed } from './feed.js';
 import { buildFileLinks, chainBuilder } from './srclinks.js';
 import { recordingSite, classDeps, enumDeps, membersDeps } from './memo.js';
 import {
-  renderHome, renderAnnotated, renderClassesIndex, renderClassesLetter, renderClass,
+  renderHome, collectConditions, renderConditionsIndex, renderCondition,
+  renderAnnotated, renderClassesIndex, renderClassesLetter, renderClass,
   renderClassMembers, renderFields, renderEnum, renderGlobals, renderModulesIndex,
   renderModule, renderFilesIndex, renderDirectory, renderFile, renderHierarchy, renderCompare, renderDeprecated,
   renderGuidesIndex, renderScriptLayersGuide, renderEngineAndScriptGuide,
@@ -213,6 +215,13 @@ export function* pages(site, opts) {
         return `${blobs.get(f.path) || ''}|${chains}`;
       },
     };
+  }
+
+  const conditions = collectConditions(site);
+  yield page('conditions/', 'index', () => renderConditionsIndex(ctx('conditions/'), conditions));
+  for (const group of conditions.values()) {
+    const rel = `conditions/${conditionSlug(group.name)}/`;
+    yield page(rel, 'index', () => renderCondition(ctx(rel), group));
   }
 
   // search index

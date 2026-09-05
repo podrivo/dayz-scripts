@@ -346,6 +346,7 @@ const caseRewrites = [
   '/files/* /_s/files/:splat 200',
   '/enum/* /_s/enum/:splat 200',
   '/topics/* /_s/topics/:splat 200',
+  '/conditions/* /_s/conditions/:splat 200',
 ];
 
 // every domain this site has been served from, pointing at the current one

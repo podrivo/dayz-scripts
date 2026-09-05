@@ -62,10 +62,22 @@ export function linkType(typeStr, site, base) {
   });
 }
 
-export function condBadges(cond) {
+export function conditionSlug(cond) {
+  const name = cond.startsWith('!') ? cond.slice(1) : cond;
+  return [...name]
+    .map((c) => /[A-Za-z0-9_-]/.test(c) ? c : `~${c.codePointAt(0).toString(16)}~`)
+    .join('');
+}
+
+export function condBadges(cond, base) {
   if (!cond || !cond.length) return '';
   return cond
-    .map((c) => `<span class="badge badge-cond" title="Only when ${esc(c.startsWith('!') ? c.slice(1) + ' is NOT defined' : c + ' is defined')}">${esc(c)}</span>`)
+    .map((c) => {
+      const neg = c.startsWith('!');
+      const name = neg ? c.slice(1) : c;
+      const tip = `Only when ${name} is ${neg ? 'NOT ' : ''}defined`;
+      return `<a class="badge badge-cond" href="${base}conditions/${conditionSlug(c)}/#${neg ? 'not-defined' : 'defined'}" data-tip="${esc(tip)}">${esc(c)}</a>`;
+    })
     .join('');
 }
 

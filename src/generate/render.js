@@ -24,6 +24,7 @@
 // URL to renderer.
 
 export { renderHome } from './render/home.js';
+export { collectConditions, renderConditionsIndex, renderCondition } from './render/conditions.js';
 export { renderModulesIndex, renderModule } from './render/topics.js';
 export {
   renderAnnotated, renderClassesIndex, renderClassesLetter, renderFields,

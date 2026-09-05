@@ -9,6 +9,7 @@ import { parseFile } from '../src/parser/index.js';
 import { buildSiteModel } from '../src/generate/model.js';
 import { pages, resolve } from '../src/generate/routes.js';
 import { renderFile } from '../src/generate/render.js';
+import { conditionSlug } from '../src/generate/html.js';
 import { doxygenRedirect } from '../src/doxygen.js';
 import { handler as doxygenHandler } from '../netlify/functions/doxygen.js';
 
@@ -20,6 +21,9 @@ class Foo extends Bar
 {
   int m_Count;
   void Do(int n);
+  #ifdef FEATURE_X
+  void Conditional();
+  #endif
 }
 /** @} */
 
@@ -81,6 +85,8 @@ test('URLs resolve to the renderer they name', () => {
     ['', 'index'],
     ['topics/', 'index'],
     ['topics/Topic/', 'index'],
+    ['conditions/', 'index'],
+    ['conditions/FEATURE_X/', 'index'],
     ['classes/', 'index'],
     ['classes/index/', 'index'],
     ['classes/f/', 'index'],
@@ -181,6 +187,20 @@ test('a resolved page renders without a memo behind it', () => {
     Object.keys(JSON.parse(resolve(site, 'xref-report.json', opts).render())),
     ['build', 'summary', 'issues']
   );
+});
+
+test('condition badges use the site tooltip and link to declaration indexes', () => {
+  const cls = resolve(site, 'classes/Foo/', opts).render();
+  assert.match(cls, /class="badge badge-cond" href="\.\.\/\.\.\/conditions\/FEATURE_X\/#defined" data-tip="Only when FEATURE_X is defined">FEATURE_X<\/a>/);
+
+  const condition = resolve(site, 'conditions/FEATURE_X/', opts).render();
+  assert.match(condition, /When <span class="badge badge-cond">FEATURE_X<\/span> is defined/);
+  assert.match(condition, /href="\.\.\/\.\.\/classes\/Foo\/#Conditional"><code>Foo\.Conditional\(\)<\/code><\/a>/);
+});
+
+test('condition URLs safely preserve preprocessor expressions', () => {
+  assert.equal(conditionSlug('defined(A) && B'), 'defined~28~A~29~~20~~26~~26~~20~B');
+  assert.equal(conditionSlug('!FEATURE_X'), 'FEATURE_X');
 });
 
 test('directory pages list immediate files and file breadcrumbs link back', () => {

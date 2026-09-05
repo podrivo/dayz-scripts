@@ -27,11 +27,11 @@ export function renderEnum(ctx, en) {
   const { site, base } = ctx;
   const rows = en.values
     .map(
-      (v) => `<tr id="${esc(v.name)}"><td><code>${esc(v.name)}</code>${condBadges(v.cond)}</td><td>${v.value !== undefined ? `<code class="lit">${esc(v.value)}</code>` : ''}</td><td>${v.doc ? renderDoc(v.doc, site, base) : ''}</td></tr>`
+      (v) => `<tr id="${esc(v.name)}"><td><code>${esc(v.name)}</code>${condBadges(v.cond, base)}</td><td>${v.value !== undefined ? `<code class="lit">${esc(v.value)}</code>` : ''}</td><td>${v.doc ? renderDoc(v.doc, site, base) : ''}</td></tr>`
     )
     .join('\n');
   const content = /* html */ `
-<h1 class="class-title"><span class="kw">enum</span> ${esc(en.name)}${en.base ? ` <span class="chain-sep">:</span> ${linkType(en.base, site, base)}` : ''}${condBadges(en.cond)}${fileButtons(site, base, en.locations)}</h1>
+<h1 class="class-title"><span class="kw">enum</span> ${esc(en.name)}${en.base ? ` <span class="chain-sep">:</span> ${linkType(en.base, site, base)}` : ''}${condBadges(en.cond, base)}${fileButtons(site, base, en.locations)}</h1>
 ${en.doc ? `<div class="class-doc">${renderDoc(en.doc, site, base)}</div>` : ''}
 <table class="list enum-table"><thead><tr><th>Name</th><th>Value</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
   return layout({
@@ -53,7 +53,7 @@ function globalSections(ctx, site, base) {
     const id = anchorFor(used, fn.name);
     const doc = fn.doc ? `<div class="member-doc">${renderDoc(fn.doc, site, base)}</div>` : '';
     return /* html */ `<div class="member" id="${id}"${dataSrc(fn)}>
-<div class="member-sig"><code>${methodSig(fn, site, base)}</code>${condBadges(fn.cond)}</div>
+<div class="member-sig"><code>${methodSig(fn, site, base)}</code>${condBadges(fn.cond, base)}</div>
 ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
   });
 
@@ -74,7 +74,7 @@ ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
         : 'Ungrouped';
       const rows = items
         .map(
-          (v) => `<tr id="${esc(v.name)}"${dataSrc(v)}><td><code>${varSig(v, site, base)}</code>${condBadges(v.cond)}</td><td>${v.doc ? briefOf(v.doc, site, base) : ''}</td><td></td></tr>`
+          (v) => `<tr id="${esc(v.name)}"${dataSrc(v)}><td><code>${varSig(v, site, base)}</code>${condBadges(v.cond, base)}</td><td>${v.doc ? briefOf(v.doc, site, base) : ''}</td><td></td></tr>`
         )
         .join('\n');
       return /* html */ `<h3 id="${esc(g || 'ungrouped')}">${heading} <span class="count">${items.length}</span></h3>
@@ -84,13 +84,13 @@ ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
 
   const typedefs = [...site.typedefs].sort(byName)
     .map(
-      (t) => `<tr id="${esc(t.name)}"${dataSrc(t)}><td><code>${esc(t.name)}</code>${condBadges(t.cond)}</td><td><code>${linkType(t.type, site, base)}</code></td><td></td></tr>`
+      (t) => `<tr id="${esc(t.name)}"${dataSrc(t)}><td><code>${esc(t.name)}</code>${condBadges(t.cond, base)}</td><td><code>${linkType(t.type, site, base)}</code></td><td></td></tr>`
     )
     .join('\n');
 
   const enums = [...site.enums.values()].sort(byName)
     .map(
-      (e) => `<tr><td><a href="${base}enum/${e.name}/">${esc(e.name)}</a>${condBadges(e.cond)}</td><td>${e.values.length} values</td><td>${e.doc ? briefOf(e.doc, site, base) : ''}</td></tr>`
+      (e) => `<tr><td><a href="${base}enum/${e.name}/">${esc(e.name)}</a>${condBadges(e.cond, base)}</td><td>${e.values.length} values</td><td>${e.doc ? briefOf(e.doc, site, base) : ''}</td></tr>`
     )
     .join('\n');
 
@@ -104,7 +104,7 @@ ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
 
   const macros = [...site.defines].sort(byName)
     .map(
-      (d) => `<tr id="${esc(d.name)}"${dataSrc(d)}><td><code>${esc(d.name)}</code>${condBadges(d.cond)}</td><td>${d.value ? `<code class="lit">${esc(d.value)}</code>` : ''}</td><td></td></tr>`
+      (d) => `<tr id="${esc(d.name)}"${dataSrc(d)}><td><code>${esc(d.name)}</code>${condBadges(d.cond, base)}</td><td>${d.value ? `<code class="lit">${esc(d.value)}</code>` : ''}</td><td></td></tr>`
     )
     .join('\n');
 

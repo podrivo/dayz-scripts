@@ -15,7 +15,7 @@ export function renderAnnotated(ctx, letters) {
         .map((n) => {
           const c = site.classes.get(n);
           const brief = c.doc ? briefOf(c.doc, site, base) : '';
-          const badges = (c.modded ? '<span class="badge badge-mod">modded</span>' : '') + condBadges(c.cond);
+          const badges = (c.modded ? '<span class="badge badge-mod">modded</span>' : '') + condBadges(c.cond, base);
           return `<tr><td><a href="${base}classes/${n}/">${esc(n)}</a>${badges}</td><td>${brief}</td></tr>`;
         })
         .join('\n');
@@ -66,7 +66,7 @@ export function renderClassesLetter(ctx, letter, names, letters) {
     .map((n) => {
       const c = site.classes.get(n);
       const brief = c.doc ? briefOf(c.doc, site, base) : '';
-      const badges = (c.modded ? '<span class="badge badge-mod">modded</span>' : '') + condBadges(c.cond);
+      const badges = (c.modded ? '<span class="badge badge-mod">modded</span>' : '') + condBadges(c.cond, base);
       return `<tr><td><a href="${base}classes/${n}/">${esc(n)}</a>${badges}</td><td>${brief}</td></tr>`;
     })
     .join('\n');

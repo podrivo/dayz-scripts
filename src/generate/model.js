@@ -110,6 +110,7 @@ export function buildSiteModel(model) {
           modded: false,
           mods: [],
           attrs: [],
+          cond: c.cond,
           doc: null,
           group: undefined,
           locations: [],
@@ -118,6 +119,8 @@ export function buildSiteModel(model) {
           methodKeys: new Map(),
         };
         classes.set(c.name, mc);
+      } else if (!condsEqual(mc.cond, c.cond)) {
+        mc.cond = undefined;
       }
       mc.locations.push({ path: f.path, line: c.line, forward: !!c.forward });
       if (c.group && !mc.group) mc.group = c.group;

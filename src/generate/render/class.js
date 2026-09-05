@@ -71,7 +71,7 @@ export function renderClass(ctx, cls) {
   const basesNote =
     cls.bases.length > 1
       ? `<p class="alt-bases">Base class depends on build flags: ${cls.bases
-          .map((b) => `${linkType(b.base, site, base)}${condBadges(b.cond)}`)
+          .map((b) => `${linkType(b.base, site, base)}${condBadges(b.cond, base)}`)
           .join(' · ')}</p>`
       : '';
 
@@ -85,7 +85,7 @@ export function renderClass(ctx, cls) {
     const doc = v.doc ? `<div class="member-doc">${renderDoc(v.doc, site, base)}</div>` : '';
     const src = v.file ? ` data-src="${fileLineHref(site, base, v.file, v.line)}"` : '';
     return /* html */ `<div class="member" id="${id}"${src}>
-<div class="member-sig"><code>${varSig(v, site, base)}</code>${condBadges(v.cond)}</div>
+<div class="member-sig"><code>${varSig(v, site, base)}</code>${condBadges(v.cond, base)}</div>
 ${doc}${callersBlock(v.name, ctx, cls.name, true)}</div>`;
   };
 
@@ -94,7 +94,7 @@ ${doc}${callersBlock(v.name, ctx, cls.name, true)}</div>`;
     const doc = m.doc ? `<div class="member-doc">${renderDoc(m.doc, site, base)}</div>` : '';
     const src = m.file ? ` data-src="${fileLineHref(site, base, m.file, m.line)}"` : '';
     return /* html */ `<div class="member" id="${id}"${src}>
-<div class="member-sig"><code>${methodSig(m, site, base)}</code>${condBadges(m.cond)}</div>
+<div class="member-sig"><code>${methodSig(m, site, base)}</code>${condBadges(m.cond, base)}</div>
 ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}</div>`;
   };
 
@@ -114,7 +114,7 @@ ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}
   const badges =
     (cls.modded ? '<span class="badge badge-mod">modded</span>' : '') +
     modBadges(cls.mods) +
-    condBadges(cls.cond);
+    condBadges(cls.cond, base);
 
   const attrs = cls.attrs.length
     ? `<pre class="attrs"><code>${cls.attrs.map(esc).join('\n')}</code></pre>`

@@ -932,6 +932,7 @@ a.card { cursor: pointer; }
 }
 .badge-mod { background: var(--accent-bg); color: var(--accent); }
 .badge-cond { background: var(--pre-bg); color: var(--pre); border: 1px solid var(--pre); }
+.condition-heading .badge-cond { margin-left: 0; }
 /* Quiet, because on an all-members page most rows carry one: they mark the
    exception, which is the handful the class declares itself. */
 .badge-inherited { margin: 0; background: var(--bg3); color: var(--fg2); font-weight: 500; }

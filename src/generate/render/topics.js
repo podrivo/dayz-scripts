@@ -150,7 +150,7 @@ export function renderModule(ctx, mod) {
       ? /* html */ `<table class="list"><tbody>${entries
           .map((e) => {
             const more = e.extra ? `<a class="member-src" href="#${e.id}">more…</a>` : '';
-            return `<tr${e.extra ? '' : ` id="${e.id}"`}${dataSrc(e.item)}><td><code>${sigOf(e)}</code>${e.ordinal || ''}${condBadges(e.item.cond)}</td><td>${
+            return `<tr${e.extra ? '' : ` id="${e.id}"`}${dataSrc(e.item)}><td><code>${sigOf(e)}</code>${e.ordinal || ''}${condBadges(e.item.cond, base)}</td><td>${
               e.item.doc ? briefOf(e.item.doc, site, base) : ''
             }</td><td>${more}</td></tr>`;
           })
@@ -175,7 +175,7 @@ export function renderModule(ctx, mod) {
             const doc = e.item.doc ? `<div class="member-doc">${renderDoc(e.item.doc, site, base)}</div>` : '';
             return /* html */ `<div class="member" id="${e.id}"${dataSrc(e.item)}>
 <h3 class="member-name">${esc(e.item.name)}${e.ordinal || ''}${owner}</h3>
-<div class="member-sig"><code>${sigOf(e)}</code>${condBadges(e.item.cond)}</div>
+<div class="member-sig"><code>${sigOf(e)}</code>${condBadges(e.item.cond, base)}</div>
 ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e.owner)}</div>`;
           })
           .join('\n')
@@ -186,7 +186,7 @@ ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e
     ? `<table class="list"><tbody>${[...mod.defines]
         .sort(byName)
         .map(
-          (d) => `<tr id="${esc(d.name)}"${dataSrc(d)}><td><code>${esc(d.name)}</code>${condBadges(d.cond)}</td><td>${d.value ? `<code class="lit">${esc(d.value)}</code>` : ''}</td><td></td></tr>`
+          (d) => `<tr id="${esc(d.name)}"${dataSrc(d)}><td><code>${esc(d.name)}</code>${condBadges(d.cond, base)}</td><td>${d.value ? `<code class="lit">${esc(d.value)}</code>` : ''}</td><td></td></tr>`
         )
         .join('\n')}</tbody></table>`
     : '';
