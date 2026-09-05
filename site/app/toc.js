@@ -24,22 +24,6 @@ function buildToc(main) {
   toc.setAttribute('aria-label', 'On this page');
   const nav = document.createElement('nav');
 
-  // The page title is the way back to the top: above the first section there
-  // is otherwise nothing to mark, and "Index" / "Start" would collide with
-  // real pages. Strip the chrome the h1 carries for the page itself.
-  const title = $('h1', main);
-  let titleLink = null;
-  if (title) {
-    if (!title.id) title.id = 'top';
-    titleLink = document.createElement('a');
-    titleLink.href = `#${title.id}`;
-    titleLink.className = 'toc-1';
-    const label = title.cloneNode(true);
-    label.querySelectorAll('.count, .kw, .badge, .generics').forEach((el) => el.remove());
-    titleLink.textContent = label.textContent.trim();
-    nav.append(titleLink);
-  }
-
   const links = heads.map((h) => {
     // Most headings are anchored already; the rest are given one here rather
     // than in the generator, where it would be an id nothing links to.
@@ -63,9 +47,9 @@ function buildToc(main) {
       and the page bar under it where there is one. Count the heading's top
       margin: that gap is this section, not the previous one, and a TOC click
       parks the heading on scroll-padding-top, which sat below the old
-      heading-box threshold. Above every section, the title. */
+      heading-box threshold. */
   const spy = () => {
-    let cur = titleLink;
+    let cur = null;
     const css = getComputedStyle(document.documentElement);
     const px = (name, fallback) => parseFloat(css.getPropertyValue(name)) || fallback;
     const line = px('--h-top', 56) + px('--h-bar', 0);
@@ -74,7 +58,6 @@ function buildToc(main) {
       if (heads[i].getBoundingClientRect().top - margins[i] > line) break;
       cur = links[i];
     }
-    if (titleLink) titleLink.classList.toggle('cur', titleLink === cur);
     for (const a of links) a.classList.toggle('cur', a === cur);
   };
   addEventListener('scroll', spy, { passive: true });
