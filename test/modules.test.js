@@ -96,6 +96,13 @@ class AbstractSoundScene {}
   assert.equal(site.groups.get('Sound').label, 'Sound');
 });
 
+test('the SoundController API uses its descriptive public name', () => {
+  const site = siteOf('/** \\defgroup SoundController API */');
+  const mod = site.groups.get('SoundController');
+  assert.equal(mod.label, 'SoundController API');
+  assert.equal(mod.slug, 'SoundControllerAPI');
+});
+
 test('a documented @} does end a topic', () => {
   const site = siteOf(`
 /** \\defgroup Sound API

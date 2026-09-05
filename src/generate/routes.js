@@ -32,6 +32,10 @@ import {
  * at its own prefix would loop.
  */
 export const TOPIC_ALIASES = ['module', 'modules', 'topic'];
+export const TOPIC_PATH_ALIASES = {
+  API: 'SoundControllerAPI',
+  SoundController: 'SoundControllerAPI',
+};
 
 /**
  * Every page of one build, as descriptors:
@@ -88,7 +92,7 @@ export function* pages(site, opts) {
   // topics (\defgroup groups)
   yield page('topics/', 'index', () => renderModulesIndex(ctx('topics/')));
   for (const mod of site.groups.values()) {
-    const rel = `topics/${mod.name}/`;
+    const rel = `topics/${mod.slug}/`;
     yield page(rel, 'index', () => renderModule(ctx(rel), mod));
   }
 
@@ -243,7 +247,12 @@ export function* pages(site, opts) {
     kind: 'index',
     asset: true,
     keep: true,
-    render: () => JSON.stringify({ topics: site.moduleRoots.map((n) => [n, site.groups.get(n).label]) }),
+    render: () => JSON.stringify({
+      topics: site.moduleRoots.map((n) => {
+        const mod = site.groups.get(n);
+        return [mod.slug, mod.label];
+      }),
+    }),
   };
 
   // The tree the file pages show beside the source, for the reason nav.json

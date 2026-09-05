@@ -107,8 +107,9 @@ ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}
     cls.locations.filter((l) => !l.forward).concat(cls.locations.filter((l) => l.forward))
   );
 
-  const module = cls.group && site.groups.has(cls.group)
-    ? `<p class="in-module">Part of <a href="${base}topics/${cls.group}/">${esc(site.groups.get(cls.group).label)}</a></p>`
+  const classTopic = cls.group && site.groups.get(cls.group);
+  const module = classTopic
+    ? `<p class="in-module">Part of <a href="${base}topics/${classTopic.slug}/">${esc(classTopic.label)}</a></p>`
     : '';
 
   const badges =

@@ -142,7 +142,7 @@ export function buildApi(site) {
 
   const topics = [...site.groups.values()]
     .map((g) => {
-      const o = { name: g.name, title: g.label, url: `topics/${g.name}/` };
+      const o = { name: g.name, title: g.label, url: `topics/${g.slug}/` };
       if (g.parent) o.parent = g.parent;
       return o;
     })

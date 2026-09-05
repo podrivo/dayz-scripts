@@ -33,12 +33,12 @@ export function renderModulesIndex(ctx) {
     const mod = site.groups.get(name);
     const total = site.moduleTotal(name);
     const count = total ? ` <span class="count">${total.toLocaleString('en-US')}</span>` : '';
-    return `<li><a href="${base}topics/${name}/">${esc(mod.label)}</a>${count}${topicBrief(mod)}</li>`;
+    return `<li><a href="${base}topics/${mod.slug}/">${esc(mod.label)}</a>${count}${topicBrief(mod)}</li>`;
   };
   const root = (name) => {
     const mod = site.groups.get(name);
     const total = site.moduleTotal(name);
-    const link = `<a href="${base}topics/${name}/">${esc(mod.label)}</a>`;
+    const link = `<a href="${base}topics/${mod.slug}/">${esc(mod.label)}</a>`;
     const count = total ? `<span class="count">${total.toLocaleString('en-US')}</span>` : '';
     const n = mod.children.length;
     let kids = '';
@@ -81,7 +81,7 @@ export function renderModule(ctx, mod) {
         .map((k) => {
           const kid = site.groups.get(k);
           const total = site.moduleTotal(k);
-          return `<li><a href="${base}topics/${k}/">${esc(kid.label)}</a>${total ? ` <span class="count">${total}</span>` : ''}</li>`;
+          return `<li><a href="${base}topics/${kid.slug}/">${esc(kid.label)}</a>${total ? ` <span class="count">${total}</span>` : ''}</li>`;
         })
         .join('')}</ul>`
     : '';
@@ -200,8 +200,9 @@ ${doc}${referencesBlock(e.item, ctx, e.owner)}${callersBlock(e.item.name, ctx, e
         .join('\n')}</tbody></table>`
     : '';
 
-  const parent = mod.parent && site.groups.has(mod.parent)
-    ? `<p class="in-module">Part of <a href="${base}topics/${mod.parent}/">${esc(site.groups.get(mod.parent).label)}</a></p>`
+  const parentMod = mod.parent && site.groups.get(mod.parent);
+  const parent = parentMod
+    ? `<p class="in-module">Part of <a href="${base}topics/${parentMod.slug}/">${esc(parentMod.label)}</a></p>`
     : '';
 
   const empty =

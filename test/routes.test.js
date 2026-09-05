@@ -7,13 +7,15 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { parseFile } from '../src/parser/index.js';
 import { buildSiteModel } from '../src/generate/model.js';
-import { pages, resolve } from '../src/generate/routes.js';
+import { pages, resolve, TOPIC_PATH_ALIASES } from '../src/generate/routes.js';
 import { renderFile } from '../src/generate/render.js';
 import { conditionSlug } from '../src/generate/html.js';
 import { doxygenRedirect } from '../src/doxygen.js';
 import { handler as doxygenHandler } from '../netlify/functions/doxygen.js';
 
 const SOURCE = `
+/** \\defgroup SoundController API */
+
 /** \\defgroup Topic Some topic
  * @{ */
 /** A class. */
@@ -85,6 +87,7 @@ test('URLs resolve to the renderer they name', () => {
     ['', 'index'],
     ['topics/', 'index'],
     ['topics/Topic/', 'index'],
+    ['topics/SoundControllerAPI/', 'index'],
     ['conditions/', 'index'],
     ['conditions/FEATURE_X/', 'index'],
     ['classes/', 'index'],
@@ -110,6 +113,15 @@ test('URLs resolve to the renderer they name', () => {
     assert.ok(p, `no page at ${JSON.stringify(rel)}`);
     assert.equal(p.kind, kind, `${JSON.stringify(rel)} is a ${p.kind} page`);
   }
+});
+
+test('old SoundController topic URLs point to the canonical slug', () => {
+  assert.deepEqual(TOPIC_PATH_ALIASES, {
+    API: 'SoundControllerAPI',
+    SoundController: 'SoundControllerAPI',
+  });
+  assert.equal(resolve(site, 'topics/SoundController/', opts), null);
+  assert.equal(resolve(site, 'topics/API/', opts), null);
 });
 
 test('an unknown URL resolves to nothing', () => {

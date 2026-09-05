@@ -70,7 +70,7 @@ ${doc}${referencesBlock(fn, ctx)}${callersBlock(fn.name, ctx)}</div>`;
     .map(([g, items]) => {
       const mod = site.groups.get(g);
       const heading = mod
-        ? `<a href="${base}topics/${g}/">${esc(mod.label)}</a>`
+        ? `<a href="${base}topics/${mod.slug}/">${esc(mod.label)}</a>`
         : 'Ungrouped';
       const rows = items
         .map(

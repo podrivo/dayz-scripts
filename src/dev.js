@@ -20,7 +20,7 @@ import { doxygenRedirect } from './doxygen.js';
 import { buildSiteModel } from './generate/model.js';
 import { diffModels } from './generate/diff.js';
 import { buildHistoryAssets } from './generate/history.js';
-import { resolve as resolvePage, TOPIC_ALIASES } from './generate/routes.js';
+import { resolve as resolvePage, TOPIC_ALIASES, TOPIC_PATH_ALIASES } from './generate/routes.js';
 import { render404 } from './generate/render.js';
 import { sendWorkshop } from './workshop.js';
 
@@ -219,6 +219,9 @@ function relocated(rel) {
   if (rel === 'changes/' || rel === 'compare/') return 'changelog/';
   if (rel === 'globals/variables/') return 'globals/constants/';
   if (rel.startsWith('fields/')) return `classes/${rel}`;
+  for (const [from, to] of Object.entries(TOPIC_PATH_ALIASES)) {
+    if (rel === `topics/${from}/`) return `topics/${to}/`;
+  }
   for (const a of TOPIC_ALIASES) {
     if (rel.startsWith(`${a}/`)) return `topics/${rel.slice(a.length + 1)}`;
   }

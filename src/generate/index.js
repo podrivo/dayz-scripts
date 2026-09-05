@@ -27,7 +27,7 @@ import { buildSiteModel } from './model.js';
 import { diffModels } from './diff.js';
 import { SITE_URL } from './content.js';
 import { PageMemo } from './memo.js';
-import { pages as sitePages, TOPIC_ALIASES } from './routes.js';
+import { pages as sitePages, TOPIC_ALIASES, TOPIC_PATH_ALIASES } from './routes.js';
 import { render404 } from './render.js';
 import { layout, lastPacked, ARCHIVE_MARK } from './html.js';
 import { pageExceptions } from './archive.js';
@@ -326,6 +326,10 @@ const topicRedirects = TOPIC_ALIASES.flatMap((from) => [
   `/${from}/* /topics/:splat 301`,
   `/v/:build/${from}/* /v/:build/topics/:splat 301`,
 ]);
+const topicPathRedirects = Object.entries(TOPIC_PATH_ALIASES).flatMap(([from, to]) => [
+  `/topics/${from}/ /topics/${to}/ 301`,
+  `/v/:build/topics/${from}/ /v/:build/topics/${to}/ 301`,
+]);
 const fileRedirects = [
   '/file/* /files/:splat 301',
   '/v/:build/file/* /v/:build/files/:splat 301',
@@ -362,6 +366,7 @@ fs.writeFileSync(
     ...moveRedirects,
     ...fieldRedirects,
     ...topicRedirects,
+    ...topicPathRedirects,
     ...fileRedirects,
     ...classRedirects,
     ...caseRewrites,
