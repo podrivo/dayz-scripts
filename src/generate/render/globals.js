@@ -5,7 +5,7 @@ import {
   esc, layout, linkType, condBadges, methodSig, varSig, renderDoc, briefOf,
 } from '../html.js';
 import {
-  anchorFor, byName, callersBlock, fileLineHref, locationLinks, referencesBlock,
+  anchorFor, byName, callersBlock, fileLineHref, fileButtons, referencesBlock,
 } from './shared.js';
 import { pageBar } from './pagebar.js';
 
@@ -31,11 +31,9 @@ export function renderEnum(ctx, en) {
     )
     .join('\n');
   const content = /* html */ `
-<h1 class="class-title"><span class="kw">enum</span> ${esc(en.name)}${en.base ? ` <span class="chain-sep">:</span> ${linkType(en.base, site, base)}` : ''}${condBadges(en.cond)}</h1>
+<h1 class="class-title"><span class="kw">enum</span> ${esc(en.name)}${en.base ? ` <span class="chain-sep">:</span> ${linkType(en.base, site, base)}` : ''}${condBadges(en.cond)}${fileButtons(site, base, en.locations)}</h1>
 ${en.doc ? `<div class="class-doc">${renderDoc(en.doc, site, base)}</div>` : ''}
-<table class="list enum-table"><thead><tr><th>Name</th><th>Value</th><th></th></tr></thead><tbody>${rows}</tbody></table>
-<h2>Defined in</h2>
-<p class="locations">${locationLinks(site, base, en.locations)}</p>`;
+<table class="list enum-table"><thead><tr><th>Name</th><th>Value</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
   return layout({
     ...ctx,
     title: en.name,

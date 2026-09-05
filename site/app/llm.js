@@ -25,7 +25,7 @@ const clean = (s) => s.replace(/\s+/g, ' ').trim();
  */
 function textOf(el) {
   const c = el.cloneNode(true);
-  for (const junk of c.querySelectorAll('.anchor, .copy-btn, .hist-btn, .member-src, .note-tag, .note-edit, .note-add, .note-ask')) junk.remove();
+  for (const junk of c.querySelectorAll('.anchor, .copy-btn, .hist-btn, .file-btn, .title-actions, .member-src, .note-tag, .note-edit, .note-add, .note-ask')) junk.remove();
   for (const block of c.querySelectorAll('p, div, li, pre, br')) block.append('\n');
   return c.textContent;
 }
@@ -87,8 +87,12 @@ function pageMarkdown(main) {
     if (el.matches('h1.class-title')) {
       const c = el.cloneNode(true);
       const badges = badgesOf(c);
-      for (const b of c.querySelectorAll('.badge, .note-ask')) b.remove();
+      const files = [...c.querySelectorAll('.file-btn')]
+        .map((a) => `- ${a.dataset.tip || clean(a.textContent)}`)
+        .join('\n');
+      for (const b of c.querySelectorAll('.badge, .note-ask, .title-actions')) b.remove();
       out.push(`# ${clean(c.textContent)}${badges ? ` ${badges}` : ''}`);
+      if (files) out.push(files);
     } else if (el.matches('.chain')) {
       out.push(`Inheritance: ${clean(el.textContent)}`);
     } else if (el.matches('.in-module, .alt-bases')) {
@@ -114,8 +118,6 @@ function pageMarkdown(main) {
     } else if (el.matches('.enum-table')) {
       const rows = [...el.querySelectorAll('tbody tr')].map(rowMd).filter(Boolean);
       out.push(`## Values (${rows.length})`, rows.join('\n'));
-    } else if (el.matches('.locations')) {
-      out.push([...el.querySelectorAll('a')].map((a) => `- ${clean(a.textContent)}`).join('\n'));
     }
   }
   flush();

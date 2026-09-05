@@ -44,15 +44,16 @@ export function fileLineHref(site, base, path, line) {
   return `${fileHref(site, base, path)}#L${line}`;
 }
 
-/** Source link for a declaration, labelled with its path and line. */
-export function locationLinks(site, base, locations) {
-  return locations
-    .map(
-      (l) =>
-        `<a href="${fileLineHref(site, base, l.path, l.line)}"><code>${esc(shown(site, l.path))}</code>:${l.line}</a>` +
-        (l.forward ? ' <span class="muted">(declaration)</span>' : '')
-    )
-    .join('<br>');
+/** Source chip(s) for a class/enum title: "File" with the path:line as tip. */
+export function fileButtons(site, base, locations) {
+  if (!locations.length) return '';
+  return `<span class="title-actions">${locations
+    .map((l) => {
+      const tip =
+        `${shown(site, l.path)}:${l.line}` + (l.forward ? ' (declaration)' : '');
+      return `<a class="file-btn" href="${fileLineHref(site, base, l.path, l.line)}" data-tip="${esc(tip)}" aria-label="${esc(tip)}">File</a>`;
+    })
+    .join('')}</span>`;
 }
 
 /** How many callers to show, and the point past which the rest are only
@@ -98,14 +99,14 @@ export function callersBlock(name, ctx, scope = null) {
   const link = (c) => refName(c.owner || null, c.name, scope, base, true);
   const extra = list.length - CALLERS_SHOWN;
   // "and" belongs before the last entry only when the last entry is shown;
-  // a truncated head runs on into the "and N more" that follows it.
+  // a truncated head runs on into the "Show N more" that follows it.
   const first = list.slice(0, CALLERS_SHOWN).map(link);
   const head = extra <= 0 ? writeList(first) : first.join(', ');
   const rest =
     extra <= 0
       ? '.'
       : list.length <= CALLERS_LISTED
-        ? `, <details class="xref-more"><summary>and ${extra} more</summary>${writeList(list.slice(CALLERS_SHOWN).map(link))}.</details>`
+        ? `, <details class="xref-more"><summary><span class="xref-more-closed">Show ${extra} more</span><span class="xref-more-open">Show less</span></summary><span class="xref-more-list">${writeList(list.slice(CALLERS_SHOWN).map(link))}.</span></details>`
         : `, <span class="xref-rest">and ${extra.toLocaleString()} more.</span>`;
   return /* html */ `<div class="xref"><span class="xref-label" title="Resolved from receiver types and lexical scope; globally unique names are used as a fallback">Referenced by</span> ${head}${rest}</div>`;
 }

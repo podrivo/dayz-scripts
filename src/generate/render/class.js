@@ -6,7 +6,7 @@ import {
   renderDoc, briefOf, slug,
 } from '../html.js';
 import {
-  anchorFor, callersBlock, fileLineHref, locationLinks, referencesBlock,
+  anchorFor, callersBlock, fileLineHref, fileButtons, referencesBlock,
 } from './shared.js';
 import { classTabs, pageBar } from './pagebar.js';
 
@@ -71,7 +71,7 @@ ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}
   const section = (title, items, block) =>
     items.length ? `<h2 id="${slug(title)}">${title} <span class="count">${items.length}</span></h2>\n${items.map(block).join('\n')}` : '';
 
-  const locations = locationLinks(
+  const files = fileButtons(
     site,
     base,
     cls.locations.filter((l) => !l.forward).concat(cls.locations.filter((l) => l.forward))
@@ -91,7 +91,7 @@ ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}
     : '';
 
   const content = /* html */ `
-<h1 class="class-title"><span class="kw">class</span> ${esc(cls.name)}${cls.generics ? `<span class="generics">${esc(cls.generics)}</span>` : ''}${badges}</h1>
+<h1 class="class-title"><span class="kw">class</span> ${esc(cls.name)}${cls.generics ? `<span class="generics">${esc(cls.generics)}</span>` : ''}${badges}${files}</h1>
 ${chain}
 ${module}
 ${basesNote}
@@ -101,9 +101,7 @@ ${cls.doc ? `<div class="class-doc">${renderDoc(cls.doc, site, base)}</div>` : '
 ${section('Constants', constants, memberBlock)}
 ${section('Members', vars, memberBlock)}
 ${section('Constructors', ctors, methodBlock)}
-${section('Methods', methods, methodBlock)}
-<h2 id="defined-in">Defined in</h2>
-<p class="locations">${locations}</p>`;
+${section('Methods', methods, methodBlock)}`;
 
   const brief = cls.doc ? briefOf(cls.doc, null, base).replace(/<[^>]+>/g, '') : '';
   return layout({

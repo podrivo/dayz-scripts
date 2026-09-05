@@ -6,7 +6,7 @@ export function render404(ctx) {
   const content = /* html */ `
 <h1>Page not found</h1>
 <p>Try using the search below:</p>
-<button class="search-trigger notfound-search" id="notfoundSearchBtn" type="button" aria-label="Search"><i class="ic ic-search"></i><span>Search for classes, methods, and more…</span><kbd>⌘K</kbd></button>`;
+<button class="search-trigger search-cta" id="notfoundSearchBtn" type="button" aria-label="Search"><i class="ic ic-search"></i><span>Search for classes, methods, and more…</span><kbd>⌘K</kbd></button>`;
   // site/notfound.js reads the url and forwards a mis-cased one to the page it
   // names, which is why it belongs here and nowhere else.
   return layout({ ...ctx, title: 'Not found', noindex: true, script: 'notfound.js', content });

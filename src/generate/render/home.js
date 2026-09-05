@@ -31,6 +31,7 @@ export function renderHome(ctx) {
   <p>${SITE_TITLE}. Browsable documentation for the DayZ Enforce Script sources — every class, method, enum and constant of DayZ, generated automatically from the official <a href="https://github.com/BohemiaInteractive/DayZ-Script-Diff" ${EXT}>DayZ&nbsp;Script&nbsp;Diff</a> repository.</p>
   <p>Made for anyone wandering the DayZ modding and scripting world, and meant to be quicker to browse than the raw sources. This is just the tip of the iceberg: there is no official detailed documentation on the subject, so community content is your best friend. Once you join one of the Discord servers on <a href="${base}community/">Community</a>, check the pinned messages — most recurring questions are answered there.</p>
 </section>
+<button class="search-trigger search-cta" id="homeSearchBtn" type="button" aria-label="Search"><i class="ic ic-search"></i><span>Search for classes, methods, and more…</span><kbd>⌘K</kbd></button>
 <div class="home-stack">
 <section class="stats">
   ${stat(s.classes, 'classes', base + 'classes/')}

@@ -281,9 +281,9 @@ html.top-hidden .pagebar { top: min(-56px, calc(-1 * var(--h-bar-size, 0px))); }
 
 /* ---- search: header trigger + command palette ---- */
 .search-trigger {
-  display: flex; align-items: center; gap: 8px;
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
   flex: none; margin-left: auto;
-  height: 32px; padding: 0 4px 0 8px;
+  width: 80px; height: 32px; padding: 0 4px 0 8px;
   border: 1px solid var(--line); border-radius: 12px;
   background: var(--bg2); color: var(--fg2); font: inherit; font-size: var(--text-sm);
   cursor: pointer;
@@ -294,11 +294,12 @@ html.top-hidden .pagebar { top: min(-56px, calc(-1 * var(--h-bar-size, 0px))); }
   border: 1px solid var(--line); border-radius: 8px;
   color: var(--fg2); font-size: var(--text-xs); line-height: 18px; background: var(--bg);
 }
-.search-trigger.notfound-search {
+.search-trigger.search-cta {
   justify-content: flex-start; width: min(100%, var(--w-search)); height: 44px;
-  margin: 24px 0 0; padding: 0 10px 0 12px;
+  margin: 48px 0 0; padding: 0 10px 0 12px;
 }
-.notfound-search span { flex: 1; text-align: left; }
+.search-cta span { flex: 1; text-align: left; }
+.home-stack .search-cta { margin: 0; }
 
 .palette {
   position: fixed; inset: 0; z-index: 100;
@@ -519,9 +520,13 @@ h3.member-name .ordinal { font-size: var(--text-xs); font-weight: 400; color: va
 .xref a:hover { color: var(--accent); }
 .xref-owner { opacity: .6; }
 .xref-more { display: inline; }
-.xref-more > summary { display: inline; cursor: pointer; color: var(--accent); }
+.xref-more > summary { display: inline; cursor: pointer; color: var(--accent); list-style: none; }
 .xref-more > summary::-webkit-details-marker { display: none; }
-.xref-more[open] > summary { display: block; }
+.xref-more-open { display: none; }
+.xref-more[open] { display: flex; flex-direction: column; align-items: flex-start; }
+.xref-more[open] > summary { order: 1; display: block; }
+.xref-more[open] .xref-more-closed { display: none; }
+.xref-more[open] .xref-more-open { display: inline; }
 .xref-rest { opacity: .7; }
 /* What a body calls, above where it is called from: reading order follows the
    signature down into the implementation and then back out to its callers. */
@@ -1289,7 +1294,7 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 /* ---- chips ----
    Title actions, member-row src/copy/history, and the note invitations
    share one 24×8 outlined chip so a row of them reads as one set. */
-.copy-btn, .hist-btn, .note-ask, .note-add, .member-src,
+.copy-btn, .hist-btn, .file-btn, .note-ask, .note-add, .member-src,
 .badge-since, .badge-added, .badge-changed {
   box-sizing: border-box; display: inline-flex; align-items: center;
   height: 24px; padding: 0 8px;
@@ -1304,7 +1309,7 @@ pre.src .line.folded::after { content: " \22EF"; color: var(--com); }
 .badge-changed { background: var(--note-bg); color: var(--note-line); }
 .copy-btn::before { content: "Copy"; }
 .copy-btn:hover, .hist-btn:hover, .hist-btn[aria-expanded="true"],
-.note-ask:hover, .note-add:hover, .member-src:hover,
+.file-btn:hover, .note-ask:hover, .note-add:hover, .member-src:hover,
 a.badge-since:hover, a.badge-added:hover, a.badge-changed:hover {
   color: var(--accent); border-color: var(--accent2); text-decoration: none;
 }
