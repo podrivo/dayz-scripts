@@ -33,7 +33,7 @@ import {
  */
 export const TOPIC_ALIASES = ['module', 'modules', 'topic'];
 export const TOPIC_PATH_ALIASES = {
-  API: 'SoundControllerAPI',
+  Gamepad: 'GamepadAPI',
   SoundController: 'SoundControllerAPI',
 };
 

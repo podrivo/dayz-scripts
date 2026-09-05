@@ -948,6 +948,7 @@ a.badge:hover { color: inherit; text-decoration: underline; }
 /* ---- tables ---- */
 table.list { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
 table.list td, table.list th { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
+table.list :is(td, th):first-child { padding-left: 0; }
 table.list th { color: var(--fg2); font-weight: 600; font-size: var(--text-sm); }
 table.list tr:hover td { background: var(--bg2); }
 table.list tr:target td { background: var(--accent-bg); }
@@ -956,6 +957,7 @@ table.list tr:target td { background: var(--accent-bg); }
    but points at an in-page id, so it stays visible. data-src marks rows
    that get an injected src chip on hover. */
 table.list a.member-src:not([href^="#"]) {
+  position: absolute; top: 7px; right: 10px;
   opacity: var(--show);
   pointer-events: none;
   transition: color var(--fade), border-color var(--fade);
@@ -967,6 +969,9 @@ table.list tr:hover a.member-src,
 table.list tr:target a.member-src,
 table.list a.member-src:focus-visible { pointer-events: auto; }
 table.list a.member-src:focus-visible { opacity: 1; }
+table.list:has([data-src]) td:last-child {
+  position: relative; padding-right: 69px;
+}
 table.list:has([data-src]) td:last-child,
 table.list:has(.member-src) td:last-child { width: 1%; white-space: nowrap; }
 table.list td:first-child { white-space: nowrap; }
@@ -1110,7 +1115,7 @@ table.list.doc-table td:first-child { padding-left: 0; }
 .desc-tree a:hover { color: var(--accent); }
 .alt-bases { font-size: var(--text-sm); color: var(--fg2); }
 
-.derived-list { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 10px 4px; font-size: var(--text-sm); }
+.derived-list { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 10px 4px 10px 0; font-size: var(--text-sm); }
 
 /* ---- what happened to this type, build by build ----
    The History button site/app/history.js puts beside the title. The panel
@@ -1185,6 +1190,8 @@ table.list.doc-table td:first-child { padding-left: 0; }
   background: var(--accent2); color: var(--bg); font-size: var(--text-xs); font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.04em; vertical-align: 1px;
 }
+.doc-note:not(.note-community) > .note-tag { background: var(--note-line); }
+.doc-warning > .note-tag { background: var(--warn-line); }
 .enum-table .note-community { margin: 6px 0 0; }
 
 /* ---- tooltips ----

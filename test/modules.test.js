@@ -93,14 +93,19 @@ class AbstractSoundScene {}
 `);
   assert.deepEqual(site.groups.get('Sound').classes, ['AbstractSoundScene']);
   assert.equal(site.groups.get('Sound').title, 'API');
-  assert.equal(site.groups.get('Sound').label, 'Sound');
+  assert.equal(site.groups.get('Sound').label, 'Sound API');
+  assert.equal(site.groups.get('Sound').slug, 'SoundAPI');
 });
 
-test('the SoundController API uses its descriptive public name', () => {
-  const site = siteOf('/** \\defgroup SoundController API */');
-  const mod = site.groups.get('SoundController');
-  assert.equal(mod.label, 'SoundController API');
-  assert.equal(mod.slug, 'SoundControllerAPI');
+test('generic API titles use descriptive public names', () => {
+  const site = siteOf(`
+/** \\defgroup SoundController API */
+/** \\defgroup Gamepad API */
+`);
+  assert.equal(site.groups.get('SoundController').label, 'SoundController API');
+  assert.equal(site.groups.get('SoundController').slug, 'SoundControllerAPI');
+  assert.equal(site.groups.get('Gamepad').label, 'Gamepad API');
+  assert.equal(site.groups.get('Gamepad').slug, 'GamepadAPI');
 });
 
 test('a documented @} does end a topic', () => {

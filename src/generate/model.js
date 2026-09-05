@@ -223,11 +223,11 @@ export function buildSiteModel(model) {
   const titleCounts = new Map();
   for (const mod of groups.values()) titleCounts.set(mod.title, (titleCounts.get(mod.title) || 0) + 1);
   for (const mod of groups.values()) {
-    const soundController = mod.name === 'SoundController' && mod.title === 'API';
-    mod.label = soundController
-      ? 'SoundController API'
-      : (mod.title === 'API' || titleCounts.get(mod.title) > 1) ? mod.name : mod.title;
-    mod.slug = soundController ? 'SoundControllerAPI' : mod.name;
+    const api = mod.title === 'API';
+    mod.label = api
+      ? `${mod.name} API`
+      : titleCounts.get(mod.title) > 1 ? mod.name : mod.title;
+    mod.slug = api ? `${mod.name}API` : mod.name;
   }
   const byLabel = (a, b) => groups.get(a).label.localeCompare(groups.get(b).label);
   moduleRoots.sort(byLabel);

@@ -15,6 +15,7 @@ import { handler as doxygenHandler } from '../netlify/functions/doxygen.js';
 
 const SOURCE = `
 /** \\defgroup SoundController API */
+/** \\defgroup Gamepad API */
 
 /** \\defgroup Topic Some topic
  * @{ */
@@ -88,6 +89,7 @@ test('URLs resolve to the renderer they name', () => {
     ['topics/', 'index'],
     ['topics/Topic/', 'index'],
     ['topics/SoundControllerAPI/', 'index'],
+    ['topics/GamepadAPI/', 'index'],
     ['conditions/', 'index'],
     ['conditions/FEATURE_X/', 'index'],
     ['classes/', 'index'],
@@ -115,12 +117,13 @@ test('URLs resolve to the renderer they name', () => {
   }
 });
 
-test('old SoundController topic URLs point to the canonical slug', () => {
+test('old API topic slugs point to their canonical URLs', () => {
   assert.deepEqual(TOPIC_PATH_ALIASES, {
-    API: 'SoundControllerAPI',
+    Gamepad: 'GamepadAPI',
     SoundController: 'SoundControllerAPI',
   });
   assert.equal(resolve(site, 'topics/SoundController/', opts), null);
+  assert.equal(resolve(site, 'topics/Gamepad/', opts), null);
   assert.equal(resolve(site, 'topics/API/', opts), null);
 });
 

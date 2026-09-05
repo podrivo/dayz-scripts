@@ -234,7 +234,7 @@ export function renderDoc(rawDoc, site, base) {
   const d = parseDoc(rawDoc);
   if (!d) return '';
   let html = '';
-  if (d.deprecated) html += `<div class="doc-warning"><strong>Deprecated.</strong> ${inlineDoc(d.deprecated, site, base)}</div>`;
+  if (d.deprecated) html += `<div class="doc-warning"><span class="note-tag">Warning</span><strong>Deprecated.</strong> ${inlineDoc(d.deprecated, site, base)}</div>`;
   if (d.brief) html += `<p class="doc-brief">${inlineDoc(d.brief, site, base)}</p>`;
   if (d.desc) html += paragraphs(d.desc, site, base);
   if (d.params?.length) {
@@ -246,8 +246,8 @@ export function renderDoc(rawDoc, site, base) {
     html += '</dl>';
   }
   if (d.returns) html += `<p class="doc-returns"><strong>Returns:</strong> ${inlineDoc(d.returns, site, base)}</p>`;
-  for (const n of d.notes || []) html += `<div class="doc-note">${inlineDoc(n, site, base)}</div>`;
-  for (const w of d.warnings || []) html += `<div class="doc-warning">${inlineDoc(w, site, base)}</div>`;
+  for (const n of d.notes || []) html += `<div class="doc-note"><span class="note-tag">Note</span>${inlineDoc(n, site, base)}</div>`;
+  for (const w of d.warnings || []) html += `<div class="doc-warning"><span class="note-tag">Warning</span>${inlineDoc(w, site, base)}</div>`;
   for (const c of d.code || []) html += `<pre class="code" data-hl><code>${esc(c)}</code></pre>`;
   if (d.see?.length) {
     html += `<p class="doc-see"><strong>See also:</strong> ${d.see.map((s) => inlineDoc(s, site, base)).join(', ')}</p>`;
