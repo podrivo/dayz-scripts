@@ -299,7 +299,7 @@ html.top-hidden .pagebar { top: min(-56px, calc(-1 * var(--h-bar-size, 0px))); }
   margin: 48px 0 0; padding: 0 10px 0 12px;
 }
 .search-cta span { flex: 1; text-align: left; }
-.home-stack .search-cta { margin: 0; }
+#homeSearchBtn { width: 100%; max-width: var(--w-prose); }
 
 .palette {
   position: fixed; inset: 0; z-index: 100;
