@@ -9,7 +9,7 @@ import path from 'node:path';
 import { DATA_DIR, extractSources, readJson, walk, writeJson } from './util.js';
 import { parseFile } from './parser/index.js';
 
-const MODEL_VERSION = 4;
+const MODEL_VERSION = 6;
 const { versions } = readJson(path.join(DATA_DIR, 'versions.json'));
 const only = process.env.ONLY_VERSION; // minor ("1.29") or full build ("1.29.163709")
 
@@ -53,6 +53,19 @@ function parseVersion(v) {
       stats.documented += c.methods.filter((m) => m.doc).length;
     }
     model.files.push(fm);
+  }
+  const memberNames = new Set(
+    model.files.flatMap((f) => f.classes.flatMap((c) => c.members.map((m) => m.name)))
+  );
+  for (const f of model.files) {
+    for (const c of f.classes) {
+      for (const m of c.methods) {
+        if (m.refs) {
+          m.refs = m.refs.filter((ref) => memberNames.has(ref.name));
+          if (!m.refs.length) delete m.refs;
+        }
+      }
+    }
   }
 
   model.stats = stats;

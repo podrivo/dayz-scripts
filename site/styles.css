@@ -467,7 +467,7 @@ body.palette-open { overflow: hidden; }
 }
 .ver-menu a:hover { background: var(--bg3); text-decoration: none; }
 .ver-menu a.cur { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
-.ver-row { display: flex; align-items: center; gap: 8px; }
+.ver-row { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
 .ver-build {
   color: var(--fg2); font-size: var(--text-xs);
   font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
@@ -891,14 +891,26 @@ a.card { cursor: pointer; }
 .releases details { border: 1px solid var(--line); border-radius: 12px; margin: 8px 0; padding: 10px 16px; }
 .releases summary { cursor: pointer; font-weight: 600; }
 .releases ul { list-style: none; margin: 8px 0 2px; padding: 0; font-size: var(--text-sm); }
-.releases li { display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 4px 0; }
-.releases li > :first-child { min-width: 128px; }
+.releases li {
+  display: grid; grid-template-columns: minmax(128px, 1fr) 200px 104px max-content;
+  align-items: center; gap: 12px; padding: 7px 0; border-top: 1px solid var(--line);
+}
+.releases li:first-child { border-top: 0; }
+.releases li > :first-child { min-width: 0; font-weight: 600; }
 .releases .rpatch {
-  color: var(--fg2); font-size: var(--text-xs); min-width: 52px;
+  color: var(--fg2); font-size: var(--text-xs);
   font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
 }
-.releases .rdate { color: var(--fg2); min-width: 96px; }
+.releases .rdate { color: var(--fg2); }
 .releases .rbuild { color: var(--fg2); cursor: help; }
+.release-link { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.release-link .ic-ext { width: 13px; height: 13px; }
+@media (max-width: 760px) {
+  .releases li { grid-template-columns: 1fr max-content; }
+  .releases .rpatch { grid-column: 1; }
+  .releases .rdate { grid-column: 2; grid-row: 1; }
+  .release-link { grid-column: 2; grid-row: 2; }
+}
 
 /* ---- badges ---- */
 .badge {

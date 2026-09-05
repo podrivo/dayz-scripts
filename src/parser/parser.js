@@ -293,7 +293,7 @@ export class Parser {
    *  name (`PlayerBase.Cast(...)`), or `new X(...)` (a constructor).
    *  Given a second Map, records local declarations (`PlayerBase player = …`,
    *  `foreach (Widget w : list)`) so those receivers can later be typed. */
-  skipBraces(calls, locals) {
+  skipBraces(calls, locals, refs) {
     let depth = 0;
     const history = [];
     const stmt = []; // tokens since the last statement boundary
@@ -302,6 +302,14 @@ export class Parser {
       if (t.type === 'eof') return;
       this.pos++;
       const name = history.at(-1);
+      if (refs && t.type === 'ident' && this.peek().value !== '(') {
+        const dotted = history.at(-1)?.value === '.' || history.at(-1)?.value === '::';
+        const receiverToken = dotted ? history.at(-2) : undefined;
+        const receiver = receiverToken?.type === 'ident' ? receiverToken.value : undefined;
+        if (!dotted || receiver) {
+          refs.set(`${receiver || ''}\0${t.value}`, receiver ? { name: t.value, receiver } : { name: t.value });
+        }
+      }
       if (calls && t.value === '(' && name?.type === 'ident' && !NOT_CALLS.has(name.value)) {
         const matchBack = (close, open, from) => {
           let d = 0;
@@ -938,15 +946,19 @@ export class Parser {
       } else if (after.value === '{') {
         const calls = new Map();
         const locals = new Map();
-        this.skipBraces(calls, locals);
+        const refs = new Map();
+        this.skipBraces(calls, locals, refs);
         calls.delete(`\0${name}`); // recursion is not a cross-reference worth listing
         calls.delete(`this\0${name}`);
         if (calls.size) {
           fn.calls = [...calls.values()].sort(
             (a, b) => a.name.localeCompare(b.name) || (a.receiver || '').localeCompare(b.receiver || '')
           );
-          if (locals.size) fn.locals = Object.fromEntries(locals);
         }
+        if (locals.size) fn.locals = Object.fromEntries(locals);
+        if (refs.size) fn.refs = [...refs.values()].sort(
+          (a, b) => a.name.localeCompare(b.name) || (a.receiver || '').localeCompare(b.receiver || '')
+        );
         this.eatIf(';');
       } else if (after.value === '}' || after.type === 'eof' || (after.type === 'ident' && after.line > closeLine)) {
         // Missing ';' after a prototype — the engine compiler tolerates this

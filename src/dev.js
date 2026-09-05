@@ -125,7 +125,7 @@ const TYPES = {
 // The build list the client stamps the chrome from, which the generator writes
 // into dist/assets/. Mirrors src/generate/index.js.
 const versionsAsset = JSON.stringify(
-  versions.map((v) => ({ build: v.build, version: v.version, date: v.date, sha: v.sha }))
+  versions.map((v) => ({ build: v.build, version: v.version, rev: v.rev, date: v.date, sha: v.sha }))
 );
 
 function historyAssets() {

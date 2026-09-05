@@ -44,14 +44,14 @@ export function fileLineHref(site, base, path, line) {
   return `${fileHref(site, base, path)}#L${line}`;
 }
 
-/** Source chip(s) for a class/enum title: "File" with the path:line as tip. */
+/** Source chip(s) for a class/enum title: "Source" with the path:line as tip. */
 export function fileButtons(site, base, locations) {
   if (!locations.length) return '';
   return `<span class="title-actions">${locations
     .map((l) => {
       const tip =
         `${shown(site, l.path)}:${l.line}` + (l.forward ? ' (declaration)' : '');
-      return `<a class="file-btn" href="${fileLineHref(site, base, l.path, l.line)}" data-tip="${esc(tip)}" aria-label="${esc(tip)}">File</a>`;
+      return `<a class="file-btn" href="${fileLineHref(site, base, l.path, l.line)}" data-tip="${esc(tip)}" aria-label="${esc(tip)}">Source</a>`;
     })
     .join('')}</span>`;
 }
@@ -74,8 +74,9 @@ export function writeList(items) {
 /** A name inside a reference list. Doxygen prints the scope only when it is
  *  not the scope of the page you are on, closes every function with "()", and
  *  falls back to plain text when the name will not resolve. */
-export function refName(owner, name, scope, base, linked) {
-  const label = owner && owner !== scope ? `<span class="xref-owner">${esc(owner)}.</span>${esc(name)}()` : `${esc(name)}()`;
+export function refName(owner, name, scope, base, linked, method = true) {
+  const suffix = method ? '()' : '';
+  const label = owner && owner !== scope ? `<span class="xref-owner">${esc(owner)}.</span>${esc(name)}${suffix}` : `${esc(name)}${suffix}`;
   if (!linked) return label;
   const anchor = name.replace(/[^\w]/g, '_');
   const href = owner ? `${base}classes/${owner}/#${anchor}` : `${base}globals/functions/#${anchor}`;
@@ -90,10 +91,10 @@ export function refName(owner, name, scope, base, linked) {
  * Receiver types and lexical class scope are resolved where the parsed source
  * carries enough information; globally unique names are the fallback.
  */
-export function callersBlock(name, ctx, scope = null) {
+export function callersBlock(name, ctx, scope = null, field = false) {
   const { site, base } = ctx;
   if (!ctx.xref) return '';
-  const list = site.callers?.get(scope ? `${scope}.${name}` : name);
+  const list = (field ? site.fieldCallers : site.callers)?.get(scope ? `${scope}.${name}` : name);
   if (!list?.length) return '';
 
   const link = (c) => refName(c.owner || null, c.name, scope, base, true);
@@ -117,8 +118,8 @@ export function callersBlock(name, ctx, scope = null) {
  */
 export function referencesBlock(item, ctx, scope = null) {
   const { site, base } = ctx;
-  if (!ctx.xref || !item.calls?.length) return '';
-  const items = site.callResolutions.get(item).map((resolution) => {
+  if (!ctx.xref) return '';
+  const items = (site.callResolutions.get(item) || []).map((resolution) => {
     const t = resolution.target;
     if (resolution.ctor) {
       const label = `new ${esc(resolution.name)}()`;
@@ -126,6 +127,10 @@ export function referencesBlock(item, ctx, scope = null) {
     }
     return refName(t?.owner || null, resolution.name, scope, base, Boolean(t));
   });
+  for (const ref of site.fieldReferences.get(item) || []) {
+    items.push(refName(ref.owner, ref.name, scope, base, true, false));
+  }
+  if (!items.length) return '';
   return /* html */ `<div class="xref xref-out"><span class="xref-label">References</span> ${writeList(items)}.</div>`;
 }
 
@@ -220,7 +225,7 @@ export function renderReleases(ctx, { highlight = true, absolute = false } = {})
     const href = absolute
       ? (i === 0 ? '/' : `/v/${v.label}/`)
       : (i === 0 ? root : `${root}v/${v.label}/`);
-    rowsFor(v.version).set(v.build, { build: v.build, date: v.date, docs: href });
+    rowsFor(v.version).set(v.build, { build: v.build, rev: v.rev, date: v.date, docs: href });
   });
 
   for (const [build, thread] of Object.entries(FORUM_THREADS)) {
@@ -231,7 +236,7 @@ export function renderReleases(ctx, { highlight = true, absolute = false } = {})
     rows.set(build, row);
   }
 
-  const openAt = highlight ? site.version : null;
+  const openAt = highlight ? site.version : versions[0]?.version;
 
   return [...groups.entries()]
     .sort((a, b) => versionNo(b[0]) - versionNo(a[0]))
@@ -246,8 +251,11 @@ export function renderReleases(ctx, { highlight = true, absolute = false } = {})
           if (highlight && r.build === site.build) label = `<strong title="${esc(r.build)}">${esc(name)}</strong>`;
           else if (r.docs) label = `<a href="${r.docs}" title="${esc(r.build)}">${esc(name)}</a>`;
           else label = `<span class="rbuild" title="Scripts for this build are not in the Script Diff repository (${esc(r.build)})">${esc(name)}</span>`;
-          const notes = r.url ? ` <a href="${r.url}" ${EXT}>release notes</a>` : '';
-          return `<li>${label}<span class="rpatch">${esc(patch)}</span><span class="rdate">${esc(fmtDate(r.date))}</span>${notes}</li>`;
+          const notes = r.url
+            ? ` <a class="release-link" href="${r.url}" ${EXT}>Release notes <i class="ic ic-ext" aria-hidden="true"></i></a>`
+            : '';
+          const revision = r.rev ? `, Scripts Rev. ${r.rev}` : '';
+          return `<li>${label}<span class="rpatch">${esc(patch + revision)}</span><span class="rdate">${esc(fmtDate(r.date))}</span>${notes}</li>`;
         })
         .join('\n');
       return /* html */ `<details${version === openAt ? ' open' : ''}>

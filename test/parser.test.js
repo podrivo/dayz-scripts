@@ -163,6 +163,24 @@ test('calls retain their direct receiver', () => {
   ]);
 });
 
+test('member references retain direct and named receivers', () => {
+  const m = parseClean(`
+    class A {
+      int m_Value;
+      void Set(int value, A other) {
+        m_Value = value;
+        this.m_Value++;
+        other.m_Value = 0;
+      }
+    }
+  `);
+  assert.deepEqual(m.classes[0].methods[0].refs.filter((ref) => ref.name === 'm_Value'), [
+    { name: 'm_Value' },
+    { name: 'm_Value', receiver: 'other' },
+    { name: 'm_Value', receiver: 'this' },
+  ]);
+});
+
 test('call chains, constructors, and local declarations are captured', () => {
   const m = parseClean(`
     class A {
@@ -408,6 +426,11 @@ test('parseDoc structures doxygen tags', () => {
   assert.match(d.returns, /down-casted/);
   assert.deepEqual(d.notes, ['be careful']);
   assert.match(d.code[0], /Man\.Cast/);
+});
+
+test('parseDoc omits declaration tags already represented by the page', () => {
+  const d = parseDoc('@class AbilityRecord\n@brief pair ( action, actionType )');
+  assert.deepEqual(d, { brief: 'pair ( action, actionType )' });
 });
 
 test('plain description becomes brief', () => {

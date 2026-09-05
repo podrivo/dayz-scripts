@@ -11,8 +11,8 @@ import { collectCredits } from '../src/generate/render/credits.js';
 import { classDeps } from '../src/generate/memo.js';
 import { SITE_URL } from '../src/generate/content.js';
 
-const BUILD_A = { label: '1.29.163709', version: '1.29', build: '1.29.163709', date: '2026-08-12', sha: 'aaa' };
-const BUILD_B = { label: '1.19.155390', version: '1.19', build: '1.19.155390', date: '2022-11-15', sha: 'bbb' };
+const BUILD_A = { label: '1.29.163709', version: '1.29', build: '1.29.163709', rev: 125372, date: '2026-08-12', sha: 'aaa' };
+const BUILD_B = { label: '1.19.155390', version: '1.19', build: '1.19.155390', rev: 73573, date: '2022-11-15', sha: 'bbb' };
 
 /** A minimal parsed model with one class and one enum, identical in both builds. */
 function model(meta) {
@@ -164,7 +164,9 @@ test('the compare page is the same in every build', () => {
   const html = cmp(site(BUILD_A), '../');
   assert.match(html, /id="compare"/, 'the container compare.js fills must be there');
   assert.match(html, /id="release-notes"/, 'release notes sit on the page');
-  assert.match(html, /release notes/, 'forum threads are linked');
+  assert.match(html, /<details open>\s*<summary>DayZ 1\.29/, 'the newest release group starts open');
+  assert.match(html, /class="release-link"[^>]*>Release notes <i class="ic ic-ext"/, 'forum threads are marked external');
+  assert.match(html, /163709, Scripts Rev\. 125372/, 'script revisions are listed with builds');
   assert.match(html, /<select id="cmpFrom"[^>]*><\/select>/, 'the From picker is empty');
   assert.match(html, /href="\.\.\/deprecated\/">Deprecated<\/a>/, 'the deprecation index is beside changes');
   assert.ok(!html.includes(`<strong title="${BUILD_A.build}">`), 'the current build is not marked');
@@ -222,6 +224,31 @@ test('a class page depends on callers declared outside it', () => {
     classDeps(b, b.classes.get('Foo')),
     'so its memo key must differ too'
   );
+});
+
+test('class fields link to source and show both reference directions', () => {
+  const m = model(BUILD_A);
+  const foo = m.files[0].classes[0];
+  foo.members.push({ name: 'm_Value', type: 'int', line: 11, mods: ['private'] });
+  foo.methods[0].params = [{ type: 'Foo', name: 'rec' }];
+  foo.methods[0].refs = [{ name: 'm_Value', receiver: 'rec' }];
+  const s = buildSiteModel(m);
+  const html = renderClass(ctx(s), s.classes.get('Foo'));
+
+  assert.match(html, /id="m_Value" data-src="\.\.\/\.\.\/files\/3_Game\/Foo\.c\/#L11"/);
+  assert.match(html, /References<\/span> <a href="\.\.\/\.\.\/classes\/Foo\/#m_Value">m_Value<\/a>/);
+  assert.match(html, /Referenced by<\/span> <a href="\.\.\/\.\.\/classes\/Foo\/#Do">Do\(\)<\/a>/);
+});
+
+test('class constructors appear before data members', () => {
+  const m = model(BUILD_A);
+  m.files[0].classes[0].methods.unshift({
+    name: 'Foo', ret: 'void', params: [], line: 11, mods: [], kind: 'ctor',
+  });
+  m.files[0].classes[0].members.push({ name: 'm_Value', type: 'int', line: 13, mods: [] });
+  const s = buildSiteModel(m);
+  const html = renderClass(ctx(s), s.classes.get('Foo'));
+  assert.ok(html.indexOf('id="constructors"') < html.indexOf('id="members"'));
 });
 
 // The other direction of the same graph. A name a method calls is printed as a

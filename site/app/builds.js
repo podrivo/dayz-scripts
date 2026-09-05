@@ -48,6 +48,11 @@ export function stampBuild() {
   if (!current) return;
   const label = $('.ver-label');
   if (label) label.textContent = current.name;
+  const button = $('#verBtn');
+  if (button) {
+    button.title = `DayZ ${current.name} · build ${current.build}`;
+    button.setAttribute('aria-label', button.title);
+  }
   const gh = $('#ghSrc');
   if (gh && current.sha) gh.href = gh.href.replace('/blob/main/', `/blob/${current.sha}/`);
 }

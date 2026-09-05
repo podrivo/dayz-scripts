@@ -273,6 +273,7 @@ fs.writeFileSync(
     buildList.map((v) => ({
       build: v.build,
       version: v.version,
+      rev: v.rev,
       date: v.date,
       sha: v.sha,
     }))

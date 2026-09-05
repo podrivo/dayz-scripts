@@ -150,10 +150,10 @@ function digestFor(site, key, compute) {
   return digest;
 }
 
-function callerDigest(site, owner, name) {
+function callerDigest(site, owner, name, field = false) {
   const key = owner ? `${owner}.${name}` : name;
-  return digestFor(site, `<${key}`, () => {
-    const list = site.callers?.get(key);
+  return digestFor(site, `${field ? 'f' : '<'}${key}`, () => {
+    const list = (field ? site.fieldCallers : site.callers)?.get(key);
     return list ? sha1(list.map((c) => (c.owner ? `${c.owner}.${c.name}` : c.name)).join(',')) : '';
   });
 }
@@ -174,12 +174,13 @@ export function classDeps(site, cls, xref = true) {
   const kids = (site.children.get(cls.name) || []).join(',');
   const module = cls.group ? site.groups.get(cls.group)?.label : '';
   const xrefs = xref
-    ? cls.methods
-        .map(
+    ? [
+        ...cls.methods.map(
           (m) =>
-            `${callerDigest(site, cls.name, m.name)}|${(site.callResolutions.get(m) || []).map(targetDigest).join(',')}`
-        )
-        .join(';')
+            `${callerDigest(site, cls.name, m.name)}|${(site.callResolutions.get(m) || []).map(targetDigest).join(',')}|${(site.fieldReferences.get(m) || []).map((r) => `${r.owner}.${r.name}`).join(',')}`
+        ),
+        ...cls.members.map((m) => callerDigest(site, cls.name, m.name, true)),
+      ].join(';')
     : 'none';
   return sha1(`${chain}\n${kids}\n${module}\n${shownPaths(site, cls.locations)}\n${xrefs}\n${JSON.stringify(cls)}`);
 }

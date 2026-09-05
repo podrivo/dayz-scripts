@@ -5,6 +5,7 @@
 // Unrecognized tags are kept in the description so nothing is lost.
 
 const TAG_RE = /^[\\@](brief|param|returns?|return|note|warning|see|code|endcode|desc|deprecated)\b(?:\[(\w+)\])?\s*/;
+const DECL_RE = /^[\\@](?:class|fn|struct|enum|file)\b/;
 
 export function parseDoc(text) {
   if (!text) return null;
@@ -45,6 +46,11 @@ export function parseDoc(text) {
 
   while (i < lines.length) {
     let line = lines[i].trim();
+
+    if (DECL_RE.test(line)) {
+      i++;
+      continue;
+    }
 
     // code block: capture verbatim until @endcode
     if (/^[\\@]code\b/.test(line)) {

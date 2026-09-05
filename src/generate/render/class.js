@@ -54,9 +54,10 @@ export function renderClass(ctx, cls) {
   const memberBlock = (v) => {
     const id = anchorFor(used, v.name);
     const doc = v.doc ? `<div class="member-doc">${renderDoc(v.doc, site, base)}</div>` : '';
-    return /* html */ `<div class="member" id="${id}">
+    const src = v.file ? ` data-src="${fileLineHref(site, base, v.file, v.line)}"` : '';
+    return /* html */ `<div class="member" id="${id}"${src}>
 <div class="member-sig"><code>${varSig(v, site, base)}</code>${condBadges(v.cond)}</div>
-${doc}</div>`;
+${doc}${callersBlock(v.name, ctx, cls.name, true)}</div>`;
   };
 
   const methodBlock = (m) => {
@@ -98,9 +99,9 @@ ${basesNote}
 ${allMembers}
 ${attrs}
 ${cls.doc ? `<div class="class-doc">${renderDoc(cls.doc, site, base)}</div>` : ''}
+${section('Constructors', ctors, methodBlock)}
 ${section('Constants', constants, memberBlock)}
 ${section('Members', vars, memberBlock)}
-${section('Constructors', ctors, methodBlock)}
 ${section('Methods', methods, methodBlock)}`;
 
   const brief = cls.doc ? briefOf(cls.doc, null, base).replace(/<[^>]+>/g, '') : '';

@@ -352,6 +352,18 @@ export function buildSiteModel(model) {
     const found = methodDeclInHierarchy(start, name);
     return found ? { owner: found.owner, name, method: true } : null;
   };
+  const memberInHierarchy = (start, name) => {
+    const seen = new Set();
+    let cur = start;
+    while (cur && !seen.has(cur)) {
+      seen.add(cur);
+      const cls = classes.get(cur);
+      if (!cls) return null;
+      if (cls.members.some((m) => m.name === name)) return { owner: cur, name, method: false };
+      cur = baseClass(cls);
+    }
+    return null;
+  };
   // Same-named globals shadow by module load order (1_core … 5_mission), so
   // the last declaration wins: `Game GetGame()` in gamelib is superseded by
   // `DayZGame GetGame()` in 3_game.
@@ -572,6 +584,8 @@ export function buildSiteModel(model) {
 
   const callResolutions = new Map();
   const callerSets = new Map();
+  const fieldReferences = new Map();
+  const fieldCallerSets = new Map();
   const summary = { total: 0, typed: 0, scope: 0, unique: 0, ambiguous: 0, unresolved: 0 };
   const issueGroups = new Map();
   const resolveBody = (fn, owner) => {
@@ -609,6 +623,29 @@ export function buildSiteModel(model) {
       issue.count++;
       if (issue.callers.length < 5 && !issue.callers.includes(callerKey)) issue.callers.push(callerKey);
     }
+    const shadowed = new Set([
+      ...(fn.params || []).map((p) => p.name),
+      ...Object.keys(fn.locals || {}),
+    ]);
+    const refs = (fn.refs || [])
+      .filter((ref) => ref.receiver || !shadowed.has(ref.name))
+      .map((ref) => {
+        const receiver = ref.receiver === 'super'
+          ? baseOf(owner)
+          : ref.receiver && ref.receiver !== 'this'
+            ? receiverClass(owner, fn, ref.receiver)
+            : owner;
+        return memberInHierarchy(receiver, ref.name);
+      })
+      .filter(Boolean);
+    const uniqueRefs = [...new Map(refs.map((ref) => [targetKey(ref), ref])).values()];
+    fieldReferences.set(fn, uniqueRefs);
+    for (const ref of uniqueRefs) {
+      const key = targetKey(ref);
+      let set = fieldCallerSets.get(key);
+      if (!set) fieldCallerSets.set(key, (set = new Map()));
+      set.set(callerKey, caller);
+    }
   };
   for (const mc of classes.values()) for (const m of mc.methods) resolveBody(m, mc.name);
   for (const fn of functions) resolveBody(fn, null);
@@ -616,6 +653,15 @@ export function buildSiteModel(model) {
   const callers = new Map();
   for (const [key, set] of callerSets) {
     callers.set(
+      key,
+      [...set.values()].sort(
+        (a, b) => (a.owner || '').localeCompare(b.owner || '') || a.name.localeCompare(b.name)
+      )
+    );
+  }
+  const fieldCallers = new Map();
+  for (const [key, set] of fieldCallerSets) {
+    fieldCallers.set(
       key,
       [...set.values()].sort(
         (a, b) => (a.owner || '').localeCompare(b.owner || '') || a.name.localeCompare(b.name)
@@ -638,6 +684,8 @@ export function buildSiteModel(model) {
     stats: model.stats,
     callers,
     callResolutions,
+    fieldCallers,
+    fieldReferences,
     xrefReport,
     classes,
     enums,
