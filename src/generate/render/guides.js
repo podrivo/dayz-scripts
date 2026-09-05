@@ -7,7 +7,7 @@ const GUIDES = [
 ];
 
 const typeLink = (base, name, label = name) => `<a href="${base}classes/${name}/"><code>${label}</code></a>`;
-const layerLink = (base, name) => `<a href="${base}files/#${name}"><code>${name}</code></a>`;
+const layerLink = (base, name) => `<a href="${base}files/${name}/"><code>${name}</code></a>`;
 const topicLink = (base, name, label = name) => `<a href="${base}topics/${name}/">${label}</a>`;
 
 export function renderGuidesIndex(ctx) {
