@@ -2,7 +2,8 @@ name: Sync script data
 
 on:
   schedule:
-    - cron: '13 */6 * * *' # every 6h UTC; skips early when upstream has no new commit
+    # every 6h UTC; skips early when upstream is unchanged and models match MODEL_VERSION
+    - cron: '13 */6 * * *'
   push:
     branches: [main]
   workflow_dispatch:
@@ -58,13 +59,38 @@ jobs:
             echo "No committed versions.json"
           fi
 
+          # Heal MODEL_VERSION bumps that only rewrote the tip model (or missing files).
+          STALE=$(node -e '
+            const fs = require("fs");
+            const path = require("path");
+            const src = fs.readFileSync("src/parse-all.js", "utf8");
+            const expected = Number(src.match(/MODEL_VERSION\s*=\s*(\d+)/)[1]);
+            const versions = fs.existsSync("data/versions.json")
+              ? require("./data/versions.json").versions
+              : [];
+            let stale = 0;
+            for (const v of versions) {
+              const file = path.join("data", `model-${v.label}.json`);
+              if (!fs.existsSync(file)) { stale++; continue; }
+              const buf = Buffer.alloc(64);
+              const fd = fs.openSync(file, "r");
+              fs.readSync(fd, buf, 0, 64, 0);
+              fs.closeSync(fd);
+              const m = buf.toString("utf8").match(/"modelVersion"\s*:\s*(\d+)/);
+              if (!m || Number(m[1]) !== expected) stale++;
+            }
+            console.log(stale);
+          ')
+          echo "stale=$STALE" >> "$GITHUB_OUTPUT"
+          echo "Stale/missing models: $STALE (MODEL_VERSION from parse-all.js)"
+
       - name: Decide whether to sync
         id: decide
         run: |
-          if [[ "${{ github.event_name }}" != "schedule" || "${{ inputs.force }}" == "true" || "${{ steps.upstream.outputs.head }}" != "${{ steps.upstream.outputs.committed }}" ]]; then
+          if [[ "${{ github.event_name }}" != "schedule" || "${{ inputs.force }}" == "true" || "${{ steps.upstream.outputs.head }}" != "${{ steps.upstream.outputs.committed }}" || "${{ steps.upstream.outputs.stale }}" != "0" ]]; then
             echo "sync=true" >> "$GITHUB_OUTPUT"
           else
-            echo "Upstream unchanged - skipping."
+            echo "Upstream unchanged and models current - skipping."
             echo "sync=false" >> "$GITHUB_OUTPUT"
           fi
 
@@ -118,5 +144,6 @@ jobs:
             echo "- Event: \`${{ github.event_name }}\`"
             echo "- Upstream: \`${{ steps.upstream.outputs.head }}\`"
             echo "- In repo: \`${{ steps.upstream.outputs.committed }}\`"
+            echo "- Stale/missing models: \`${{ steps.upstream.outputs.stale }}\`"
             echo "- Sync: \`${{ steps.decide.outputs.sync }}\`"
           } >> "$GITHUB_STEP_SUMMARY"
