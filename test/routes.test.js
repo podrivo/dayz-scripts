@@ -117,10 +117,29 @@ test('URLs resolve to the renderer they name', () => {
   }
 });
 
-test('old API topic slugs point to their canonical URLs', () => {
+test('old topic slugs point to their API-aligned canonical URLs', () => {
   assert.deepEqual(TOPIC_PATH_ALIASES, {
+    Constraints: 'ConstraintsAPI',
+    DebugShape: 'DebugShapeAPI',
+    DebugUI: 'DebugUIAPI',
+    Decals: 'DecalsAPI',
+    DiagMenu: 'DiagMenuAPI',
+    EntityAPI: 'Entity',
+    File: 'FileAPI',
     Gamepad: 'GamepadAPI',
+    Geometry: 'GeometryAPI',
+    Keyboard: 'KeyboardAPI',
+    Light: 'LightAPI',
+    Math3DAPI: 'Math3D',
+    Mouse: 'MouseAPI',
+    Ocean: 'OceanAPI',
+    ParticleEffect: 'ParticleEffectAPI',
+    Profiler: 'ProfilerAPI',
+    RigidBody: 'RigidBodyAPI',
     SoundController: 'SoundControllerAPI',
+    VRDeviceAPI: 'VRDevice',
+    WidgetAPI: 'Widget',
+    WorldTrace: 'WorldTraceAPI',
   });
   assert.equal(resolve(site, 'topics/SoundController/', opts), null);
   assert.equal(resolve(site, 'topics/Gamepad/', opts), null);

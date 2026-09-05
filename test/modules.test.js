@@ -97,15 +97,21 @@ class AbstractSoundScene {}
   assert.equal(site.groups.get('Sound').slug, 'SoundAPI');
 });
 
-test('generic API titles use descriptive public names', () => {
+test('public slugs align with API in topic titles', () => {
   const site = siteOf(`
 /** \\defgroup SoundController API */
 /** \\defgroup Gamepad API */
+/** \\defgroup DebugUI Debug UI API */
+/** \\defgroup Math3DAPI Math3D library */
 `);
   assert.equal(site.groups.get('SoundController').label, 'SoundController API');
   assert.equal(site.groups.get('SoundController').slug, 'SoundControllerAPI');
   assert.equal(site.groups.get('Gamepad').label, 'Gamepad API');
   assert.equal(site.groups.get('Gamepad').slug, 'GamepadAPI');
+  assert.equal(site.groups.get('DebugUI').label, 'Debug UI API');
+  assert.equal(site.groups.get('DebugUI').slug, 'DebugUIAPI');
+  assert.equal(site.groups.get('Math3DAPI').label, 'Math3D library');
+  assert.equal(site.groups.get('Math3DAPI').slug, 'Math3D');
 });
 
 test('a documented @} does end a topic', () => {

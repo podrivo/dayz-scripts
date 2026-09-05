@@ -33,8 +33,27 @@ import {
  */
 export const TOPIC_ALIASES = ['module', 'modules', 'topic'];
 export const TOPIC_PATH_ALIASES = {
+  Constraints: 'ConstraintsAPI',
+  DebugShape: 'DebugShapeAPI',
+  DebugUI: 'DebugUIAPI',
+  Decals: 'DecalsAPI',
+  DiagMenu: 'DiagMenuAPI',
+  EntityAPI: 'Entity',
+  File: 'FileAPI',
   Gamepad: 'GamepadAPI',
+  Geometry: 'GeometryAPI',
+  Keyboard: 'KeyboardAPI',
+  Light: 'LightAPI',
+  Math3DAPI: 'Math3D',
+  Mouse: 'MouseAPI',
+  Ocean: 'OceanAPI',
+  ParticleEffect: 'ParticleEffectAPI',
+  Profiler: 'ProfilerAPI',
+  RigidBody: 'RigidBodyAPI',
   SoundController: 'SoundControllerAPI',
+  VRDeviceAPI: 'VRDevice',
+  WidgetAPI: 'Widget',
+  WorldTrace: 'WorldTraceAPI',
 };
 
 /**
