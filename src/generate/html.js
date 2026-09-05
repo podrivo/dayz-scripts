@@ -468,6 +468,7 @@ ${social}
 </div>
 <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" data-tip="Toggle light and dark"><i class="ic ic-theme"></i></button>
 </header>
+<script>try{const b=location.pathname.match(/^\\/v\\/([^/]+)\\//)?.[1]||'latest';const n=sessionStorage.getItem('build-name:'+b);if(n)document.querySelector('.ver-label').textContent=n}catch(e){}</script>
 ${o.bar || ''}
 <div class="shell">${o.aside || ''}
 <main class="main">${inner}</main>

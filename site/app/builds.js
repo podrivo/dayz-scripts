@@ -66,6 +66,7 @@ export function identity() {
   return (identityPromise ||= loadBuilds().then((builds) => {
     if (Array.isArray(builds)) nameBuilds(builds);
     current = (pathBuild && builds.find((b) => b.build === pathBuild)) || builds[0];
+    try { sessionStorage.setItem(`build-name:${pathBuild || 'latest'}`, current.name); } catch {}
     stampBuild();
     return builds;
   }));
