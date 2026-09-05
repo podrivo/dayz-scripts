@@ -377,11 +377,16 @@ export function buildSiteModel(model) {
     return cls ? baseClass(cls) : undefined;
   };
   const globalReceiverClasses = new Map();
+  const globalReceiverAlts = new Map();
   for (const item of globals) {
     const cls = classInType(item.type);
-    if (cls && (!globalReceiverClasses.has(item.name) || !item.cond)) {
+    if (!cls) continue;
+    if (!globalReceiverClasses.has(item.name) || !item.cond) {
       globalReceiverClasses.set(item.name, cls);
     }
+    let alts = globalReceiverAlts.get(item.name);
+    if (!alts) globalReceiverAlts.set(item.name, (alts = []));
+    if (!alts.includes(cls)) alts.push(cls);
   }
   const memberClass = (start, name) => {
     const seen = new Set();
@@ -396,15 +401,55 @@ export function buildSiteModel(model) {
     }
     return null;
   };
-  /** Class of a receiver chain: each segment is a field (`a.b`) or a call
-   *  (`GetGame()`), typed by locals, params, members, globals, class names
-   *  (static access) and return types, in that order of specificity. */
+  /** Element/value type of an indexed access (`items[i]`, `map[k]`). `array`
+   *  and `map` are themselves classes, so classInType alone would stop there. */
+  const elementClass = (type, arrayParam) => {
+    if (!type && arrayParam == null) return undefined;
+    if (arrayParam != null && arrayParam !== false) return classInType(type);
+    const trimmed = type?.trim();
+    if (trimmed && typeAliases.has(trimmed)) return elementClass(typeAliases.get(trimmed));
+    // map<K, V>[key] yields V (often an array/map, not V's element type).
+    const mapMatch = trimmed?.match(/\bmap\s*<\s*[^,]+,\s*(?:ref\s+)?(.+)\s*>$/i);
+    if (mapMatch) return classInType(mapMatch[1].trim());
+    const arrayMatch = trimmed?.match(/\barray\s*<\s*(?:ref\s+)?([A-Za-z_]\w*)/i);
+    if (arrayMatch) return classInType(arrayMatch[1]);
+    const stripped = trimmed?.replace(/\s*\[\s*\d*\s*\]\s*$/, '');
+    if (stripped && stripped !== trimmed) return classInType(stripped);
+    return undefined;
+  };
+  /** Type of a bare name in a function: params, locals, members, globals. */
+  const nameType = (owner, fn, name) => {
+    const param = fn.params?.find((p) => p.name === name);
+    if (param) return { type: param.type, array: param.array };
+    if (fn.locals?.[name]) return { type: fn.locals[name] };
+    const seen = new Set();
+    let cur = owner;
+    while (cur && !seen.has(cur)) {
+      seen.add(cur);
+      const cls = classes.get(cur);
+      if (!cls) break;
+      const member = cls.members.find((m) => m.name === name);
+      if (member) return { type: member.type, array: member.array };
+      cur = baseClass(cls);
+    }
+    const global = globals.find((g) => g.name === name);
+    if (global) return { type: global.type };
+    return null;
+  };
+  /** Class of a receiver chain: each segment is a field (`a.b`), an array
+   *  element (`a[]`), or a call (`GetGame()`), typed by locals, params,
+   *  members, globals, class names (static access) and return types. */
   const receiverClass = (owner, fn, receiver) => {
     let resolved = null;
     const segments = receiver.split('.');
     for (let i = 0; i < segments.length; i++) {
       const isCall = segments[i].endsWith('()');
-      const name = isCall ? segments[i].slice(0, -2) : segments[i];
+      const isElem = !isCall && segments[i].endsWith('[]');
+      const name = isCall
+        ? segments[i].slice(0, -2)
+        : isElem
+          ? segments[i].slice(0, -2)
+          : segments[i];
       if (isCall) {
         const found =
           methodDeclInHierarchy(i === 0 ? owner : resolved, name) ||
@@ -414,6 +459,26 @@ export function buildSiteModel(model) {
         if (name === 'Cast' && found?.owner === 'Class' && resolved) continue;
         const decl = found?.decl || (i === 0 ? functionDecls.get(name) : null);
         resolved = classInType(decl?.ret);
+      } else if (isElem) {
+        if (i === 0) {
+          const info = nameType(owner, fn, name);
+          resolved = info ? elementClass(info.type, info.array) : null;
+        } else {
+          const member = (() => {
+            const seen = new Set();
+            let cur = resolved;
+            while (cur && !seen.has(cur)) {
+              seen.add(cur);
+              const cls = classes.get(cur);
+              if (!cls) return null;
+              const m = cls.members.find((x) => x.name === name);
+              if (m) return m;
+              cur = baseClass(cls);
+            }
+            return null;
+          })();
+          resolved = member ? elementClass(member.type, member.array) : null;
+        }
       } else if (i === 0) {
         resolved =
           (name === 'this' ? owner : name === 'super' ? baseOf(owner) : null) ||
@@ -456,6 +521,22 @@ export function buildSiteModel(model) {
       else receiver = receiverClass(owner, fn, c.receiver);
       target = receiver && methodInHierarchy(receiver, c.name);
       if (!target && receiver) target = methodInHierarchy('Class', c.name);
+      // Globals may be declared under alternate #ifdef types (`Game g_Game` vs
+      // `DayZGame g_Game`). When the preferred type lacks the method, a unique
+      // hit on another declared type is still typed evidence — not a guess
+      // among unrelated same-named methods.
+      if (!target && receiver && !c.receiver.includes('.')) {
+        const alts = globalReceiverAlts.get(c.receiver);
+        if (alts?.length > 1) {
+          const hits = [];
+          for (const alt of alts) {
+            const found = methodInHierarchy(alt, c.name) || methodInHierarchy('Class', c.name);
+            if (found) hits.push(found);
+          }
+          const uniq = [...new Map(hits.map((hit) => [targetKey(hit), hit])).values()];
+          if (uniq.length === 1) target = uniq[0];
+        }
+      }
       if (target) confidence = receiver && !['this', 'super'].includes(c.receiver) ? 'typed' : 'scope';
       else if (receiver) {
         return {

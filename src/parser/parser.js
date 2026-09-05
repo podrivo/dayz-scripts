@@ -303,30 +303,74 @@ export class Parser {
       this.pos++;
       const name = history.at(-1);
       if (calls && t.value === '(' && name?.type === 'ident' && !NOT_CALLS.has(name.value)) {
+        const matchBack = (close, open, from) => {
+          let d = 0;
+          for (let j = from; j >= 0; j--) {
+            if (history[j].value === close) d++;
+            else if (history[j].value === open && --d === 0) return j;
+          }
+          return -1;
+        };
         const segments = [];
         let i = history.length - 2;
         for (;;) {
           if (history[i]?.value !== '.' && history[i]?.value !== '::') break;
-          const before = history[i - 1];
+          // Peel grouping parentheses: `(Type.Cast(x)).Method`
+          let k = i - 1;
+          for (;;) {
+            if (history[k]?.value !== ')') break;
+            const open = matchBack(')', '(', k);
+            if (open < 0) {
+              k = -1;
+              break;
+            }
+            const prev = history[open - 1];
+            if (prev?.type === 'ident' && !NOT_CALLS.has(prev.value)) break;
+            k -= 1;
+          }
+          if (k < 0) {
+            segments.length = 0;
+            break;
+          }
+          const before = history[k];
           if (before?.type === 'ident') {
             segments.unshift(before.value);
-            i -= 2;
+            i = k - 1;
+          } else if (before?.type === 'string') {
+            // `"text".Length()` — the receiver is the string class.
+            segments.unshift('string');
+            break;
           } else if (before?.value === ')') {
-            // a call in the chain: scan back over its arguments to its name
-            let d = 0;
-            let j = i - 1;
-            while (j >= 0) {
-              if (history[j].value === ')') d++;
-              else if (history[j].value === '(' && --d === 0) break;
-              j--;
-            }
-            const callee = history[j - 1];
-            if (j <= 0 || callee?.type !== 'ident' || NOT_CALLS.has(callee.value)) {
+            const open = matchBack(')', '(', k);
+            const callee = history[open - 1];
+            if (open < 0 || callee?.type !== 'ident' || NOT_CALLS.has(callee.value)) {
               segments.length = 0;
               break;
             }
             segments.unshift(`${callee.value}()`);
-            i = j - 2;
+            i = open - 2;
+          } else if (before?.value === ']') {
+            // `ingredients[0].IsEmpty()` — type the element via the array name.
+            const open = matchBack(']', '[', k);
+            const base = history[open - 1];
+            if (open < 0 || base?.type !== 'ident') {
+              segments.length = 0;
+              break;
+            }
+            // `name[]` marks element access so the resolver uses the element type,
+            // not the array class (which is itself a declared type in Enforce).
+            segments.unshift(`${base.value}[]`);
+            i = open - 2;
+          } else if (before?.value === '>') {
+            // `JsonFileLoader<T>.LoadFile()` — skip template arguments.
+            const open = matchBack('>', '<', k);
+            const base = history[open - 1];
+            if (open < 0 || base?.type !== 'ident') {
+              segments.length = 0;
+              break;
+            }
+            segments.unshift(base.value);
+            i = open - 2;
           } else {
             segments.length = 0;
             break;

@@ -195,6 +195,28 @@ test('call chains, constructors, and local declarations are captured', () => {
   });
 });
 
+test('subscript, template, grouping, and string-literal receivers are retained', () => {
+  const m = parseClean(`
+    class A {
+      void Call(ItemBase ingredients[], array<string> parts) {
+        ingredients[0].IsEmpty();
+        parts[1].Length();
+        JsonFileLoader<CfgGameplayJson>.LoadFile(path, data, err);
+        (HandsContainer.Cast(parent)).DraggingOverGrid(w, 0, 0, null);
+        "SeedBase_".Length();
+      }
+    }
+  `);
+  assert.deepEqual(m.classes[0].methods[0].calls, [
+    { name: 'Cast', receiver: 'HandsContainer' },
+    { name: 'DraggingOverGrid', receiver: 'HandsContainer.Cast()' },
+    { name: 'IsEmpty', receiver: 'ingredients[]' },
+    { name: 'Length', receiver: 'parts[]' },
+    { name: 'Length', receiver: 'string' },
+    { name: 'LoadFile', receiver: 'JsonFileLoader' },
+  ]);
+});
+
 // ---------------------------------------------------------------------------
 // Members
 

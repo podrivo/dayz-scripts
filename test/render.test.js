@@ -373,6 +373,97 @@ test('calls resolve by receiver type and lexical scope before unique-name fallba
   assert.ok(!html.includes(`>new Ghost()</a>`));
 });
 
+test('array elements and alternate global types resolve without guessing', () => {
+  const m = model(BUILD_A);
+  const foo = m.files[0].classes[0];
+  foo.methods.push({
+    name: 'Call',
+    ret: 'void',
+    params: [{ type: 'ItemBase', name: 'ingredients', array: '' }],
+    line: 14,
+    mods: [],
+    calls: [
+      { name: 'IsEmpty', receiver: 'ingredients[]' },
+      { name: 'GetInputManager', receiver: 'g_Game' },
+      { name: 'MissingOnBoth', receiver: 'g_Game' },
+    ],
+  });
+  m.files[0].globals.push(
+    { name: 'g_Game', type: 'Game', line: 2, cond: ['GAME_TEMPLATE'] },
+    { name: 'g_Game', type: 'DayZGame', line: 3 },
+  );
+  m.files[0].classes.push(
+    {
+      name: 'ItemBase', line: 50, mods: [], attrs: [], members: [],
+      methods: [],
+      base: 'EntityAI',
+    },
+    {
+      name: 'EntityAI', line: 55, mods: [], attrs: [], members: [],
+      methods: [{ name: 'IsEmpty', ret: 'bool', params: [], line: 56, mods: [] }],
+    },
+    {
+      name: 'array', line: 58, mods: [], attrs: [], members: [],
+      methods: [{ name: 'Count', ret: 'int', params: [], line: 59, mods: [] }],
+    },
+    {
+      name: 'Game', line: 60, mods: [], attrs: [], members: [],
+      methods: [{ name: 'GetInputManager', ret: 'void', params: [], line: 61, mods: [] }],
+    },
+    {
+      name: 'DayZGame', line: 70, mods: [], attrs: [], members: [],
+      methods: [],
+      base: 'CGame',
+    },
+    {
+      name: 'CGame', line: 80, mods: [], attrs: [], members: [],
+      methods: [],
+    },
+    {
+      name: 'Class', line: 90, mods: [], attrs: [], members: [],
+      methods: [{ name: 'Cast', ret: 'Class', params: [], line: 91, mods: ['static'] }],
+    },
+    {
+      name: 'Holder', line: 100, mods: [], attrs: [],
+      members: [
+        { name: 'm_Items', type: 'ref array<EntityAI>', line: 101, mods: [] },
+        { name: 'm_ByKind', type: 'ref map<int, ref array<EntityAI>>', line: 102, mods: [] },
+      ],
+      methods: [
+        {
+          name: 'Check',
+          ret: 'void',
+          params: [],
+          line: 103,
+          mods: [],
+          calls: [
+            { name: 'IsEmpty', receiver: 'm_Items[]' },
+            { name: 'Count', receiver: 'm_ByKind[]' },
+          ],
+        },
+      ],
+    },
+  );
+  const s = buildSiteModel(m);
+  const call = s.classes.get('Foo').methods.find((method) => method.name === 'Call');
+  assert.deepEqual(
+    s.callResolutions.get(call).map((r) => [r.name, r.target?.owner, r.confidence]),
+    [
+      ['IsEmpty', 'EntityAI', 'typed'],
+      ['GetInputManager', 'Game', 'typed'],
+      ['MissingOnBoth', undefined, 'unresolved'],
+    ]
+  );
+  const check = s.classes.get('Holder').methods.find((method) => method.name === 'Check');
+  assert.deepEqual(
+    s.callResolutions.get(check).map((r) => [r.receiver, r.name, r.target?.owner, r.confidence]),
+    [
+      ['m_Items[]', 'IsEmpty', 'EntityAI', 'typed'],
+      ['m_ByKind[]', 'Count', 'array', 'typed'],
+    ]
+  );
+});
+
 // The canonical URL is the one absolute URL a page carries, so it is also the
 // one place a build number could leak back into the bytes. It names the page
 // at the site root instead, which is both the right answer for a crawler

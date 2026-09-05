@@ -1,0 +1,25 @@
+{
+  "model": "model-1.29.163709.json",
+  "summary": {
+    "total": 79362,
+    "typed": 55177,
+    "scope": 23347,
+    "unique": 190,
+    "ambiguous": 634,
+    "unresolved": 14
+  },
+  "rates": {
+    "typed": 0.69526,
+    "scope": 0.29418,
+    "unique": 0.00239,
+    "ambiguous": 0.00799,
+    "unresolved": 0.00018
+  },
+  "maxAmbiguousRate": 0.00799,
+  "maxUnresolvedRate": 0.00018,
+  "slack": {
+    "ambiguous": 0.0005,
+    "unresolved": 0.0001
+  },
+  "rationale": "Ceilings are the measured rates on the latest scripts model after typed receivers (subscripts, templates, grouping casts, string literals) and alternate global types. Slack absorbs tiny corpus drift without allowing a real resolver regression. Ambiguous and unresolved calls stay unlinked."
+}

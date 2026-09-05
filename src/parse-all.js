@@ -9,7 +9,7 @@ import path from 'node:path';
 import { DATA_DIR, extractSources, readJson, walk, writeJson } from './util.js';
 import { parseFile } from './parser/index.js';
 
-const MODEL_VERSION = 3;
+const MODEL_VERSION = 4;
 const { versions } = readJson(path.join(DATA_DIR, 'versions.json'));
 const only = process.env.ONLY_VERSION; // minor ("1.29") or full build ("1.29.163709")
 
