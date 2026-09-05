@@ -98,7 +98,7 @@ export function initNotes() {
   const type = pageType.name;
   const keyFor = (el) => `${type}.${el.id.replace(/-\d+$/, '')}`;
 
-  fetch(ROOT + 'assets/notes.json')
+  const ready = fetch(ROOT + 'assets/notes.json')
     .then((r) => (r.ok ? r.json() : null))
     .then((notes) => {
       if (!notes) return;
@@ -114,11 +114,10 @@ export function initNotes() {
         else if (table) table.before(own);
         else if (h2) h2.before(own);
         else main.append(own);
-      } else if (!$('.class-doc', main)) {
+      } else {
         const actions = $('.title-actions', main);
         if (actions) {
           actions.append(askEl(type));
-          actions.hidden = false;
         }
       }
       for (const mem of main.querySelectorAll('.member[id]')) {
@@ -149,7 +148,8 @@ export function initNotes() {
     a.target = '_blank';
     a.rel = 'noopener';
     a.textContent = 'Suggest a note';
-    a.title = 'Suggest a community note for this declaration';
+    a.dataset.tip = 'Suggest a community note';
+    a.setAttribute('aria-label', a.dataset.tip);
     return a;
   };
   const suggest = makeSuggest();
@@ -207,4 +207,5 @@ export function initNotes() {
       : type;
     track('suggest_note', { note_action: action, declaration: declaration.slice(0, 120) });
   });
+  return ready;
 }

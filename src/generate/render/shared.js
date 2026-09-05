@@ -68,7 +68,7 @@ const CALLERS_LISTED = 50;
  *  (trWriteList in translator_en.h). */
 export function writeList(items) {
   if (items.length < 2) return items.join('');
-  return `${items.slice(0, -1).join(', ')}, and ${items[items.length - 1]}`;
+  return `${items.slice(0, -1).join(', ')}<span class="xref-sep">, and </span>${items[items.length - 1]}`;
 }
 
 /** A name inside a reference list. Doxygen prints the scope only when it is
@@ -105,10 +105,10 @@ export function callersBlock(name, ctx, scope = null, field = false) {
   const head = extra <= 0 ? writeList(first) : first.join(', ');
   const rest =
     extra <= 0
-      ? '.'
+      ? ''
       : list.length <= CALLERS_LISTED
-        ? `, <details class="xref-more"><summary><span class="xref-more-closed">Show ${extra} more</span><span class="xref-more-open">Show less</span></summary><span class="xref-more-list">${writeList(list.slice(CALLERS_SHOWN).map(link))}.</span></details>`
-        : `, <span class="xref-rest">and ${extra.toLocaleString()} more.</span>`;
+        ? ` <details class="xref-more"><summary>Show ${extra} more</summary><span class="xref-more-list">${writeList(list.slice(CALLERS_SHOWN).map(link))} <button class="xref-less" type="button">Show less</button></span></details>`
+        : `, <span class="xref-rest">and ${extra.toLocaleString()} more</span>`;
   return /* html */ `<div class="xref"><span class="xref-label" title="Resolved from receiver types and lexical scope; globally unique names are used as a fallback">Referenced by</span> ${head}${rest}</div>`;
 }
 
@@ -131,7 +131,7 @@ export function referencesBlock(item, ctx, scope = null) {
     items.push(refName(ref.owner, ref.name, scope, base, true, false));
   }
   if (!items.length) return '';
-  return /* html */ `<div class="xref xref-out"><span class="xref-label">References</span> ${writeList(items)}.</div>`;
+  return /* html */ `<div class="xref xref-out"><span class="xref-label">References</span> ${writeList(items)}</div>`;
 }
 
 /**

@@ -515,18 +515,29 @@ h3.member-name .ordinal { font-size: var(--text-xs); font-weight: 400; color: va
 /* Cross-references for a member. Reads as a footnote to the signature above it,
    not as a section of its own. */
 .xref { margin: 6px 0 0; font-size: var(--text-xs); line-height: 1.7; color: var(--fg2); }
-.xref-label { text-transform: uppercase; letter-spacing: .04em; font-size: var(--text-xs); opacity: .7; }
+.xref-label, .xref-sep { opacity: .7; }
+.xref-label { text-transform: uppercase; letter-spacing: .04em; font-size: var(--text-xs); }
 .xref a { color: var(--fg2); }
 .xref a:hover { color: var(--accent); }
 .xref-owner { opacity: .6; }
 .xref-more { display: inline; }
-.xref-more > summary { display: inline; cursor: pointer; color: var(--accent); list-style: none; }
+.xref-more > summary {
+  display: inline; cursor: pointer; color: var(--accent); list-style: none;
+  text-decoration: none;
+}
+.xref-more > summary:hover {
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px;
+}
 .xref-more > summary::-webkit-details-marker { display: none; }
-.xref-more-open { display: none; }
-.xref-more[open] { display: flex; flex-direction: column; align-items: flex-start; }
-.xref-more[open] > summary { order: 1; display: block; }
-.xref-more[open] .xref-more-closed { display: none; }
-.xref-more[open] .xref-more-open { display: inline; }
+.xref-more[open] { display: inline; }
+.xref-more[open] > summary { display: none; }
+.xref-less {
+  border: 0; padding: 0; background: none; color: var(--accent);
+  font: inherit; cursor: pointer; white-space: nowrap;
+}
+.xref-less:hover {
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px;
+}
 .xref-rest { opacity: .7; }
 /* What a body calls, above where it is called from: reading order follows the
    signature down into the implementation and then back out to its callers. */
@@ -534,13 +545,13 @@ h3.member-name .ordinal { font-size: var(--text-xs); font-weight: 400; color: va
 
 .main { flex: 1; min-width: 0; padding: 28px var(--gutter) 40px; max-width: var(--w-page); }
 
-/* Running text is capped wherever it appears, so prose shares one edge across
-   every page. Data — tables, cards, trees, signatures, source — keeps the full
-   column, as do the two paragraphs that are really dense lists of links. */
+/* Long-form page prose keeps a readable measure. Member documentation stays
+   with its declaration and can use the full member width. Data — tables,
+   cards, trees, signatures, source — also keeps the full column. */
 .main > p:not(.chain, .locations), .hero p,
-.class-doc, .member-doc { max-width: var(--w-prose); }
+.class-doc { max-width: var(--w-prose); }
 /* A markdown table in a comment is data, so it takes the page column. */
-.class-doc:has(table), .member-doc:has(table) { max-width: none; }
+.class-doc:has(table) { max-width: none; }
 
 .foot {
   padding: 36px 0 40px;
@@ -837,7 +848,8 @@ html:has(body.credits-cinema:not(.credits-ui))::-webkit-scrollbar { display: non
 }
 
 .main > h1:has(+ .crumbs),
-.main > h1:has(+ .chain) { margin-bottom: 4px; }
+.main > h1:has(+ .chain),
+.main > h1:has(+ .descendants) { margin-bottom: 4px; }
 .crumbs { font-size: var(--text-sm); color: var(--fg2); margin: 0 0 16px; }
 .crumb-sep { margin: 0 6px; opacity: 0.6; }
 
@@ -1077,6 +1089,24 @@ table.list.doc-table td:first-child { padding-left: 0; }
 .chain { color: var(--fg2); font-size: var(--text-xs); }
 .chain a { color: var(--fg2); }
 .chain-sep { opacity: 0.5; margin: 0 2px; }
+.descendants {
+  display: flex; align-items: flex-start; gap: 12px;
+  margin: 6px 0 14px; color: var(--fg2); font-size: var(--text-xs);
+}
+.descendants-label { flex: none; font-weight: 600; }
+.desc-tree, .desc-tree ul { list-style: none; margin: 0; padding: 0; }
+.desc-tree ul {
+  margin: 3px 0 3px 4px; padding-left: 14px;
+  border-left: 1px solid var(--line);
+}
+.desc-tree li { position: relative; margin: 0 0 3px; }
+.desc-tree li:last-child { margin-bottom: 0; }
+.desc-tree ul > li::before {
+  content: ""; position: absolute; top: .75em; left: -14px;
+  width: 10px; border-top: 1px solid var(--line);
+}
+.desc-tree a { color: var(--fg2); }
+.desc-tree a:hover { color: var(--accent); }
 .alt-bases { font-size: var(--text-sm); color: var(--fg2); }
 
 .derived-list { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 10px 4px; font-size: var(--text-sm); }

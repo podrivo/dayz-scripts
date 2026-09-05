@@ -26,6 +26,7 @@ import { initGlossary } from './app/glossary.js';
 import { initTooltip } from './app/tooltip.js';
 import { initCopyBlocks, initCopySignatures } from './app/copy.js';
 import { initLlmCopy } from './app/llm.js';
+import { initXrefs } from './app/xrefs.js';
 import { initPageBar } from './app/pagebar.js';
 import { initFileTree } from './app/filetree.js';
 import { initAllMembers, initFieldsIndex } from './app/members.js';
@@ -54,8 +55,10 @@ initShare();
 initInlineCode();
 
 // what gets added to a declaration once the page is up
-initHistory();
-initNotes();
+const historyReady = initHistory();
+const titleActions = document.querySelector('h1.class-title .title-actions');
+if (titleActions) titleActions.hidden = true;
+const notesReady = initNotes();
 // before the tooltip: the glossary lays data-tip on a keyword during the
 // same pointerover the tooltip then reads it on
 initGlossary();
@@ -63,6 +66,10 @@ initTooltip();
 initCopyBlocks();
 initCopySignatures();
 initLlmCopy();
+initXrefs();
+Promise.allSettled([historyReady, notesReady]).then(() => {
+  if (titleActions) titleActions.hidden = false;
+});
 
 // moving around a long page
 initPageBar();

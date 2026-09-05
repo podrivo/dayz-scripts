@@ -24,12 +24,12 @@ export function copyText(text, btn, kind) {
   }, () => {});
 }
 
-function copyButton() {
+function copyButton(tip = 'Copy code') {
   const b = document.createElement('button');
   b.type = 'button';
   b.className = 'copy-btn';
-  b.setAttribute('aria-label', 'Copy');
-  b.title = 'Copy';
+  b.dataset.tip = tip;
+  b.setAttribute('aria-label', b.dataset.tip);
   return b;
 }
 
@@ -43,10 +43,17 @@ function anchorLink() {
 function srcLink() {
   const a = document.createElement('a');
   a.className = 'member-src';
-  a.textContent = 'src';
-  a.title = 'View source';
+  a.textContent = 'Source';
   a.addEventListener('click', () => track('view_source', { source: 'member' }));
   return a;
+}
+
+function setSource(link, href) {
+  link.href = href;
+  const match = href.match(/files\/(.+?)\/#L(\d+)$/);
+  const label = match ? `${decodeURIComponent(match[1])}:${match[2]}` : 'View source';
+  link.dataset.tip = label;
+  link.setAttribute('aria-label', label);
 }
 
 /** One button per code block: source listings, doc examples, attribute lists. */
@@ -134,7 +141,7 @@ function mountMember(sig, mem, chips) {
     anchor.remove();
   }
   if (mem.dataset.src) {
-    src.href = mem.dataset.src;
+    setSource(src, mem.dataset.src);
     sig.append(src);
   } else {
     src.remove();
@@ -150,13 +157,13 @@ export function initCopySignatures() {
   const hover = {
     anchor: anchorLink(),
     src: srcLink(),
-    copy: copyButton(),
+    copy: copyButton('Copy declaration'),
   };
   hover.copy.classList.add('copy-sig');
   const target = {
     anchor: anchorLink(),
     src: srcLink(),
-    copy: copyButton(),
+    copy: copyButton('Copy declaration'),
   };
   target.copy.classList.add('copy-sig');
 
@@ -165,8 +172,8 @@ export function initCopySignatures() {
   const sigOverride = cls && copyButton();
   if (sigOverride) {
     sigOverride.classList.add('copy-override');
-    sigOverride.title = `Copy a modded class ${cls} override of this method`;
-    sigOverride.setAttribute('aria-label', 'Copy override');
+    sigOverride.dataset.tip = `Copy a modded class ${cls} override of this method`;
+    sigOverride.setAttribute('aria-label', sigOverride.dataset.tip);
   }
 
   let hoverFor = null;
@@ -204,7 +211,7 @@ export function initCopySignatures() {
     if (host.matches('tr')) {
       target.anchor.remove();
       target.copy.remove();
-      target.src.href = host.dataset.src;
+      setSource(target.src, host.dataset.src);
       (host.cells[host.cells.length - 1] || host).append(target.src);
       targetFor = host;
       if (srcRowFor === host) {
@@ -240,7 +247,7 @@ export function initCopySignatures() {
     const row = e.target.closest?.('table.list tr[data-src]');
     if (row && row !== srcRowFor && row !== targetFor) {
       srcRowFor = row;
-      rowSrc.href = row.dataset.src;
+      setSource(rowSrc, row.dataset.src);
       (row.cells[row.cells.length - 1] || row).append(rowSrc);
     }
 

@@ -146,6 +146,55 @@ test('class page is byte-identical across builds when its content is unchanged',
   assert.equal(a, b);
 });
 
+test('class pages show the complete descendant tree', () => {
+  const makeSite = (withGreatGrandchild) => {
+    const m = model(BUILD_A);
+    const cls = (name, base) => ({
+      name, base, line: 1, mods: [], attrs: [], members: [], methods: [],
+    });
+    m.files[0].classes = [
+      cls('Root'),
+      cls('Child', 'Root'),
+      cls('Grandchild', 'Child'),
+      cls('Sibling', 'Root'),
+      ...(withGreatGrandchild ? [cls('GreatGrandchild', 'Grandchild')] : []),
+    ];
+    return buildSiteModel(m);
+  };
+  const before = makeSite(false);
+  const after = makeSite(true);
+  const html = renderClass(ctx(after), after.classes.get('Root'));
+  assert.match(
+    html,
+    /<ul class="desc-tree"><li><a[^>]*>Child<\/a><ul><li><a[^>]*>Grandchild<\/a><ul><li><a[^>]*>GreatGrandchild<\/a>/,
+  );
+  assert.match(html, /<\/ul><\/li><li><a[^>]*>Sibling<\/a><\/li><\/ul>/);
+  assert.notEqual(
+    classDeps(before, before.classes.get('Root')),
+    classDeps(after, after.classes.get('Root')),
+    'a descendant added below a child must invalidate the root page',
+  );
+});
+
+test('a linear descendant hierarchy stays in one derived-to-base chain', () => {
+  const m = model(BUILD_A);
+  const cls = (name, base) => ({
+    name, base, line: 1, mods: [], attrs: [], members: [], methods: [],
+  });
+  m.files[0].classes = [
+    cls('AbstractAITargetCallbacks'),
+    cls('AITargetCallbacks', 'AbstractAITargetCallbacks'),
+    cls('AITargetCallbacksPlayer', 'AITargetCallbacks'),
+  ];
+  const s = buildSiteModel(m);
+  const html = renderClass(ctx(s), s.classes.get('AbstractAITargetCallbacks'));
+  assert.match(
+    html,
+    /AITargetCallbacksPlayer<\/a>.*AITargetCallbacks<\/a>.*<strong>AbstractAITargetCallbacks<\/strong>/,
+  );
+  assert.ok(!html.includes('class="descendants"'));
+});
+
 test('enum page is byte-identical across builds when its content is unchanged', () => {
   const a = renderEnum(ctx(site(BUILD_A)), site(BUILD_A).enums.get('EFoo'));
   const b = renderEnum(ctx(site(BUILD_B)), site(BUILD_B).enums.get('EFoo'));

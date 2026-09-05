@@ -14,9 +14,9 @@ export function renderClass(ctx, cls) {
   const { site, base } = ctx;
   const used = new Set();
 
-  // inheritance chain — derived classes on the left, ancestors on the right,
-  // hidden when the class stands alone the same way a one-level breadcrumb
-  // is hidden once the title has said the name.
+  // A single descendant path reads best as one derived-to-base chain. Once it
+  // branches, keep ancestors compact and render descendants as a real tree so
+  // siblings are never presented as inheriting from one another.
   const ancestors = site.ancestorsOf(cls.name);
   const kids = site.children.get(cls.name) || [];
   const chainName = (n, current) => {
@@ -24,11 +24,40 @@ export function renderClass(ctx, cls) {
     return site.classes.has(n) ? `<a href="${base}classes/${n}/">${esc(n)}</a>` : esc(n);
   };
   const sep = ' <span class="chain-sep">›</span> ';
-  const kidLinks = kids.map((n) => chainName(n, false)).join(', ');
-  const ancestorLinks = ancestors.map((n) => chainName(n, false)).join(sep);
-  const parts = [kidLinks, chainName(cls.name, true), ancestorLinks].filter(Boolean);
-  const chain = kids.length || ancestors.length
-    ? `<p class="chain">${parts.join(sep)}</p>`
+  const linearDescendants = [];
+  const linearSeen = new Set([cls.name]);
+  let cursor = cls.name;
+  let branched = false;
+  while (true) {
+    const children = site.children.get(cursor) || [];
+    if (!children.length) break;
+    if (children.length > 1 || linearSeen.has(children[0])) {
+      branched = true;
+      break;
+    }
+    cursor = children[0];
+    linearSeen.add(cursor);
+    linearDescendants.push(cursor);
+  }
+  const chainNames = branched
+    ? [cls.name, ...ancestors]
+    : [...linearDescendants.reverse(), cls.name, ...ancestors];
+  const chain = chainNames.length > 1
+    ? `<p class="chain">${chainNames.map((name) => chainName(name, name === cls.name)).join(sep)}</p>`
+    : '';
+  const descendantNode = (name, seen) => {
+    if (seen.has(name)) return '';
+    const nextSeen = new Set(seen).add(name);
+    const children = (site.children.get(name) || [])
+      .map((child) => descendantNode(child, nextSeen))
+      .filter(Boolean)
+      .join('');
+    return `<li><a href="${base}classes/${name}/">${esc(name)}</a>${children ? `<ul>${children}</ul>` : ''}</li>`;
+  };
+  const descendants = branched && kids.length
+    ? `<div class="descendants"><span class="descendants-label">Derived classes</span><ul class="desc-tree">${kids
+        .map((child) => descendantNode(child, new Set([cls.name])))
+        .join('')}</ul></div>`
     : '';
 
   // Only worth its own page when there is something above to inherit from;
@@ -94,6 +123,7 @@ ${doc}${referencesBlock(m, ctx, cls.name)}${callersBlock(m.name, ctx, cls.name)}
   const content = /* html */ `
 <h1 class="class-title"><span class="kw">class</span> ${esc(cls.name)}${cls.generics ? `<span class="generics">${esc(cls.generics)}</span>` : ''}${badges}${files}</h1>
 ${chain}
+${descendants}
 ${module}
 ${basesNote}
 ${allMembers}

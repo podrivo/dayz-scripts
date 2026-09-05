@@ -72,7 +72,7 @@ export function initHistory() {
   const title = $('h1.class-title', main);
   const actions = title && titleActions(title);
 
-  Promise.all([
+  return Promise.all([
     fetch(ROOT + 'assets/history.json').then((r) => (r.ok ? r.json() : null)),
     identity(),
   ]).then(([hist, builds]) => {
@@ -132,9 +132,7 @@ export function initHistory() {
     }
 
     addTimeline(main, hist, builds, rec, here);
-  }).catch(() => {}).finally(() => {
-    if (actions) actions.hidden = false;
-  });
+  }).catch(() => {});
 }
 
 /* ---------- the timeline ----------

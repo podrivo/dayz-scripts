@@ -166,12 +166,20 @@ function targetDigest(resolution) {
   return `${kind}${resolution.confidence}:${(resolution.candidates || []).join(',')}`;
 }
 
+function descendantDigest(site, name, seen = new Set()) {
+  if (seen.has(name)) return '';
+  const nextSeen = new Set(seen).add(name);
+  return (site.children.get(name) || [])
+    .map((child) => `${child}(${descendantDigest(site, child, nextSeen)})`)
+    .join(',');
+}
+
 export function classDeps(site, cls, xref = true) {
   const chain = site
     .ancestorsOf(cls.name)
     .map((n) => (site.classes.has(n) ? `+${n}` : `-${n}`))
     .join(',');
-  const kids = (site.children.get(cls.name) || []).join(',');
+  const kids = descendantDigest(site, cls.name);
   const module = cls.group ? site.groups.get(cls.group)?.label : '';
   const xrefs = xref
     ? [
